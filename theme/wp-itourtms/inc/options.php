@@ -1,20 +1,50 @@
 <?php
 /**
  * Theme Options: definitions, defaults, reading, and applying them to theme.json and templates.
- * Everything is stored in one option, `wp_itourtms_options` (WordPress.org requirement).
+ * The theme's own settings live in one option, `wp_itourtms_options` (WordPress.org requirement).
+ *
+ * Plugins (the iTour modules) add their own vertical tabs with the `wp_itourtms_option_sections`
+ * filter. Each such section names its own `store` option, so its settings stay with the plugin:
+ *
+ *   add_filter( 'wp_itourtms_option_sections', function ( $sections ) {
+ *       $sections['crm'] = array(
+ *           'title'       => 'Tours & Excursions',
+ *           'description' => 'Pages the module uses.',
+ *           'store'       => 'itour_crm_pages',
+ *           'fields'      => array(
+ *               'listing_page' => array( 'label' => 'Tours listing page', 'type' => 'page', 'default' => 0 ),
+ *           ),
+ *       );
+ *       return $sections;
+ *   } );
  *
  * @package WP_iTourTMS
  */
 
 defined( 'ABSPATH' ) || exit;
 
+const WP_ITOURTMS_STORE = 'wp_itourtms_options';
+
 /**
- * Option fields grouped by section: section => [ 'title' => …, 'fields' => [ key => field ] ].
- * Field types: color, px, number, checkbox, text.
+ * All sections shown in the Options tab: the theme's plus any added by plugins.
+ * Field types: color, px, number, checkbox, text, select, font, page.
  *
- * @return array<string,array{title:string,fields:array<string,array<string,mixed>>}>
+ * @return array<string,array{title:string,description?:string,store:string,fields:array<string,array<string,mixed>>}>
  */
 function wp_itourtms_option_fields(): array {
+	$sections = (array) apply_filters( 'wp_itourtms_option_sections', wp_itourtms_theme_option_fields() );
+	foreach ( $sections as $id => $s ) {
+		$sections[ $id ]['store'] = sanitize_key( $s['store'] ?? WP_ITOURTMS_STORE );
+	}
+	return $sections;
+}
+
+/**
+ * The theme's own option sections (stored in wp_itourtms_options).
+ *
+ * @return array<string,array{title:string,description?:string,fields:array<string,array<string,mixed>>}>
+ */
+function wp_itourtms_theme_option_fields(): array {
 	return array(
 		'colors' => array(
 			'title'  => __( 'Colours', 'wp-itourtms' ),
@@ -51,6 +81,44 @@ function wp_itourtms_option_fields(): array {
 					'label'   => __( 'Page background', 'wp-itourtms' ),
 					'type'    => 'color',
 					'default' => '#ffffff',
+				),
+			),
+		),
+		'fonts'  => array(
+			'title'       => __( 'Fonts', 'wp-itourtms' ),
+			'description' => __( 'Choose from every Google Font, or keep the fast system font. Google Fonts load from Google’s servers.', 'wp-itourtms' ),
+			'fields'      => array(
+				'font_body'      => array(
+					'label'   => __( 'Body font', 'wp-itourtms' ),
+					'type'    => 'font',
+					'default' => '',
+					'help'    => __( 'Paragraphs, menus, buttons and forms.', 'wp-itourtms' ),
+				),
+				'font_heading'   => array(
+					'label'   => __( 'Heading font', 'wp-itourtms' ),
+					'type'    => 'font',
+					'default' => '',
+					'help'    => __( 'Titles and headings. Leave on “Same as body” for one family.', 'wp-itourtms' ),
+				),
+				'font_size'      => array(
+					'label'   => __( 'Base text size', 'wp-itourtms' ),
+					'type'    => 'px',
+					'default' => 16,
+					'min'     => 14,
+					'max'     => 20,
+				),
+				'heading_weight' => array(
+					'label'   => __( 'Heading weight', 'wp-itourtms' ),
+					'type'    => 'select',
+					'default' => '700',
+					'options' => array(
+						'400' => __( 'Regular (400)', 'wp-itourtms' ),
+						'500' => __( 'Medium (500)', 'wp-itourtms' ),
+						'600' => __( 'Semibold (600)', 'wp-itourtms' ),
+						'700' => __( 'Bold (700)', 'wp-itourtms' ),
+						'800' => __( 'Extra bold (800)', 'wp-itourtms' ),
+						'900' => __( 'Black (900)', 'wp-itourtms' ),
+					),
 				),
 			),
 		),
@@ -140,62 +208,90 @@ function wp_itourtms_option_fields(): array {
 }
 
 /**
- * Default value of every option.
+ * Fields kept in one storage option.
  *
- * @return array<string,mixed>
+ * @param string $store Option name.
+ * @return array<string,array<string,mixed>>
  */
-function wp_itourtms_option_defaults(): array {
-	$defaults = array();
-	foreach ( wp_itourtms_option_fields() as $section ) {
-		foreach ( $section['fields'] as $key => $f ) {
-			$defaults[ $key ] = $f['default'];
+function wp_itourtms_store_fields( string $store = WP_ITOURTMS_STORE ): array {
+	$fields = array();
+	foreach ( WP_ITOURTMS_STORE === $store ? wp_itourtms_theme_option_fields() : wp_itourtms_option_fields() as $section ) {
+		if ( ( $section['store'] ?? WP_ITOURTMS_STORE ) === $store ) {
+			$fields += $section['fields'];
 		}
 	}
-	return $defaults;
+	return $fields;
 }
 
 /**
- * All options with defaults filled in.
+ * Default values for one storage option.
  *
+ * @param string $store Option name.
  * @return array<string,mixed>
  */
-function wp_itourtms_options(): array {
-	return array_merge( wp_itourtms_option_defaults(), (array) get_option( 'wp_itourtms_options', array() ) );
+function wp_itourtms_option_defaults( string $store = WP_ITOURTMS_STORE ): array {
+	return array_map( static fn( $f ) => $f['default'], wp_itourtms_store_fields( $store ) );
 }
 
 /**
- * Sanitize submitted options against the field definitions.
+ * Saved values with defaults filled in (the theme's options unless another store is named).
  *
- * @param mixed $input Submitted values.
+ * @param string $store Option name.
  * @return array<string,mixed>
  */
-function wp_itourtms_sanitize_options( $input ): array {
-	$input   = is_array( $input ) ? $input : array();
-	$allowed = array(
-		'a'      => array( 'href' => array() ),
-		'strong' => array(),
-		'em'     => array(),
-	);
-	$out     = array();
-	foreach ( wp_itourtms_option_fields() as $section ) {
-		foreach ( $section['fields'] as $key => $f ) {
-			$v = $input[ $key ] ?? null;
-			switch ( $f['type'] ) {
-				case 'color':
-					$hex         = (string) sanitize_hex_color( (string) $v );
-					$out[ $key ] = '' !== $hex ? $hex : $f['default'];
-					break;
-				case 'checkbox':
-					$out[ $key ] = empty( $v ) ? 0 : 1;
-					break;
-				case 'px':
-				case 'number':
-					$out[ $key ] = max( (int) $f['min'], min( (int) $f['max'], null === $v ? (int) $f['default'] : (int) $v ) );
-					break;
-				default:
-					$out[ $key ] = wp_kses( (string) $v, $allowed );
-			}
-		}
+function wp_itourtms_options( string $store = WP_ITOURTMS_STORE ): array {
+	return array_merge( wp_itourtms_option_defaults( $store ), (array) get_option( $store, array() ) );
+}
+
+/**
+ * Sanitize one value for its field type.
+ *
+ * @param array<string,mixed> $f Field.
+ * @param mixed               $v Submitted value.
+ * @return mixed
+ */
+function wp_itourtms_sanitize_value( array $f, $v ) {
+	switch ( $f['type'] ) {
+		case 'color':
+			$hex = (string) sanitize_hex_color( (string) $v );
+			return '' !== $hex ? $hex : $f['default'];
+		case 'checkbox':
+			return empty( $v ) ? 0 : 1;
+		case 'px':
+		case 'number':
+			return max( (int) $f['min'], min( (int) $f['max'], null === $v ? (int) $f['default'] : (int) $v ) );
+		case 'select':
+			return array_key_exists( (string) $v, (array) $f['options'] ) ? (string) $v : $f['default'];
+		case 'page':
+			$id = absint( $v );
+			return $id && 'page' === get_post_type( $id ) ? $id : 0;
+		case 'font':
+			$v = sanitize_text_field( (string) $v );
+			return '' === $v || isset( wp_itourtms_google_fonts()[ $v ] ) ? $v : $f['default'];
+		default:
+			return wp_kses(
+				(string) $v,
+				array(
+					'a'      => array( 'href' => array() ),
+					'strong' => array(),
+					'em'     => array(),
+				)
+			);
+	}
+}
+
+/**
+ * Sanitize submitted values for one storage option.
+ *
+ * @param mixed  $input Submitted values.
+ * @param string $store Option name.
+ * @return array<string,mixed>
+ */
+function wp_itourtms_sanitize_options( $input, string $store = WP_ITOURTMS_STORE ): array {
+	$input = is_array( $input ) ? $input : array();
+	$out   = array();
+	foreach ( wp_itourtms_store_fields( $store ) as $key => $f ) {
+		$out[ $key ] = wp_itourtms_sanitize_value( $f, $input[ $key ] ?? null );
 	}
 	return $out;
 }
@@ -204,14 +300,88 @@ add_action(
 	static function (): void {
 		register_setting(
 			'wp_itourtms',
-			'wp_itourtms_options',
+			WP_ITOURTMS_STORE,
 			array(
 				'type'              => 'array',
-				'sanitize_callback' => 'wp_itourtms_sanitize_options',
+				'sanitize_callback' => static fn( $v ) => wp_itourtms_sanitize_options( $v ),
 				'default'           => array(),
 			)
 		);
 	}
+);
+
+/**
+ * Bundled Google Fonts list: family => [ category, weights ] (built by tools/build-google-fonts.py).
+ *
+ * @return array<string,array{0:string,1:int[]}>
+ */
+function wp_itourtms_google_fonts(): array {
+	static $fonts = null;
+	if ( null === $fonts ) {
+		$fonts = array();
+		$json  = (string) file_get_contents( get_template_directory() . '/assets/data/google-fonts.json' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- bundled file.
+		foreach ( (array) json_decode( $json, true ) as $f ) {
+			$fonts[ (string) $f[0] ] = array( (string) $f[1], array_map( 'intval', (array) $f[2] ) );
+		}
+	}
+	return $fonts;
+}
+
+/**
+ * CSS font stack for a chosen family ('' = system font).
+ *
+ * @param string $family Google font family or ''.
+ */
+function wp_itourtms_font_stack( string $family ): string {
+	$system = 'system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif';
+	if ( '' === $family ) {
+		return $system;
+	}
+	$cat      = wp_itourtms_google_fonts()[ $family ][0] ?? 'sans-serif';
+	$fallback = array(
+		'serif'       => 'Georgia, "Times New Roman", serif',
+		'monospace'   => 'ui-monospace, Menlo, Consolas, monospace',
+		'handwriting' => 'cursive',
+	)[ $cat ] ?? $system;
+	return '"' . str_replace( '"', '', $family ) . '", ' . $fallback;
+}
+
+/**
+ * Google Fonts stylesheet URL for the chosen families ('' when only the system font is used).
+ */
+function wp_itourtms_google_fonts_url(): string {
+	$o        = wp_itourtms_options();
+	$families = array();
+	foreach ( array_unique( array_filter( array( (string) $o['font_body'], (string) $o['font_heading'] ) ) ) as $family ) {
+		$available = wp_itourtms_google_fonts()[ $family ][1] ?? array( 400 );
+		$wanted    = array_values( array_intersect( $available, array( 400, 500, 600, 700, (int) $o['heading_weight'] ) ) );
+		$wanted    = $wanted ? $wanted : array( $available[0] );
+		sort( $wanted );
+		$families[] = 'family=' . str_replace( '%20', '+', rawurlencode( $family ) ) . ( count( $available ) > 1 ? ':wght@' . implode( ';', array_unique( $wanted ) ) : '' );
+	}
+	return $families ? 'https://fonts.googleapis.com/css2?' . implode( '&', $families ) . '&display=swap' : '';
+}
+
+/**
+ * Load the chosen Google Fonts on the site and in the block editor.
+ */
+function wp_itourtms_enqueue_fonts(): void {
+	$url = wp_itourtms_google_fonts_url();
+	if ( '' !== $url ) {
+		wp_enqueue_style( 'wp-itourtms-fonts', $url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL is versioned by its query.
+	}
+}
+add_action( 'wp_enqueue_scripts', 'wp_itourtms_enqueue_fonts' );
+add_action( 'enqueue_block_editor_assets', 'wp_itourtms_enqueue_fonts' );
+add_action(
+	'after_setup_theme',
+	static function (): void {
+		$url = wp_itourtms_google_fonts_url();
+		if ( '' !== $url ) {
+			add_editor_style( $url );
+		}
+	},
+	20
 );
 
 /**
@@ -302,14 +472,37 @@ function wp_itourtms_theme_json( $data ) {
 		array(
 			'version'  => 3,
 			'settings' => array(
-				'color'  => array( 'palette' => $palette ),
-				'layout' => array(
+				'color'      => array( 'palette' => $palette ),
+				'layout'     => array(
 					'contentSize' => (int) $o['content_width'] . 'px',
 					'wideSize'    => (int) $o['wide_width'] . 'px',
 				),
+				'typography' => array(
+					'fontFamilies' => array(
+						array(
+							'slug'       => 'system',
+							'name'       => '' !== $o['font_body'] ? (string) $o['font_body'] : __( 'System', 'wp-itourtms' ),
+							'fontFamily' => wp_itourtms_font_stack( (string) $o['font_body'] ),
+						),
+						array(
+							'slug'       => 'heading',
+							'name'       => __( 'Headings', 'wp-itourtms' ),
+							'fontFamily' => wp_itourtms_font_stack( '' !== $o['font_heading'] ? (string) $o['font_heading'] : (string) $o['font_body'] ),
+						),
+					),
+				),
 			),
 			'styles'   => array(
-				'elements' => array( 'button' => array( 'border' => array( 'radius' => (int) $o['radius'] . 'px' ) ) ),
+				'typography' => array( 'fontSize' => (int) $o['font_size'] . 'px' ),
+				'elements'   => array(
+					'button'  => array( 'border' => array( 'radius' => (int) $o['radius'] . 'px' ) ),
+					'heading' => array(
+						'typography' => array(
+							'fontFamily' => 'var(--wp--preset--font-family--heading)',
+							'fontWeight' => (string) $o['heading_weight'],
+						),
+					),
+				),
 			),
 		)
 	);

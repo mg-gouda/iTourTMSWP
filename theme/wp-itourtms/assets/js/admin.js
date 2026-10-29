@@ -96,15 +96,25 @@
 
 	// Options form.
 	var form = root.querySelector( '[data-wpit-options]' );
-	function collect() {
-		var v = {};
-		form.querySelectorAll( '[data-key]' ).forEach( function ( el ) {
-			v[ el.getAttribute( 'data-key' ) ] = 'switch' === el.getAttribute( 'role' ) ? ( 'true' === el.getAttribute( 'aria-checked' ) ? 1 : 0 ) : el.value;
-		} );
-		return v;
+	// Values are grouped by the option ("store") each section saves to: the theme's or a module's.
+	function storeOf( el ) {
+		return el.closest( '[data-store]' ).getAttribute( 'data-store' );
 	}
-	function fill( values ) {
+	function collect() {
+		var stores = {};
 		form.querySelectorAll( '[data-key]' ).forEach( function ( el ) {
+			var s = storeOf( el );
+			stores[ s ] = stores[ s ] || {};
+			stores[ s ][ el.getAttribute( 'data-key' ) ] = 'switch' === el.getAttribute( 'role' ) ? ( 'true' === el.getAttribute( 'aria-checked' ) ? 1 : 0 ) : el.value;
+		} );
+		return stores;
+	}
+	function fill( stores ) {
+		form.querySelectorAll( '[data-key]' ).forEach( function ( el ) {
+			var values = stores[ storeOf( el ) ];
+			if ( ! values || ! ( el.getAttribute( 'data-key' ) in values ) ) {
+				return;
+			}
 			var val = values[ el.getAttribute( 'data-key' ) ];
 			if ( 'switch' === el.getAttribute( 'role' ) ) {
 				el.setAttribute( 'aria-checked', val ? 'true' : 'false' );
@@ -116,15 +126,59 @@
 		form.querySelectorAll( '[data-sync]' ).forEach( function ( src ) {
 			src.value = document.getElementById( src.getAttribute( 'data-sync' ) ).value;
 		} );
+		preview();
 	}
+
+	// Font preview: loads a Google font only after the user picks it.
+	var box = root.querySelector( '[data-wpit-font-preview]' );
+	var loaded = {};
+	function stack( family ) {
+		return family ? '"' + family.replace( /"/g, '' ) + '", system-ui, sans-serif' : 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+	}
+	function load( family ) {
+		var known = document.querySelector( '#wpit-google-fonts option[value="' + ( window.CSS && CSS.escape ? CSS.escape( family ) : family ) + '"]' );
+		if ( ! family || loaded[ family ] || ! known ) {
+			return;
+		}
+		loaded[ family ] = true;
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.href = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent( family ).replace( /%20/g, '+' ) + ':wght@400;700&display=swap';
+		document.head.appendChild( link );
+	}
+	function preview() {
+		if ( ! box ) {
+			return;
+		}
+		var body = ( document.getElementById( 'wpit-font_body' ) || {} ).value || '';
+		var head = ( document.getElementById( 'wpit-font_heading' ) || {} ).value || body;
+		var weight = ( document.getElementById( 'wpit-heading_weight' ) || {} ).value || '700';
+		var size = ( document.getElementById( 'wpit-font_size' ) || {} ).value || '16';
+		load( body );
+		load( head );
+		box.querySelector( '.wpit-preview-heading' ).style.cssText = 'font-family:' + stack( head ) + ';font-weight:' + weight;
+		box.querySelector( '.wpit-preview-body' ).style.cssText = 'font-family:' + stack( body ) + ';font-size:' + size + 'px';
+	}
+	[ 'wpit-font_body', 'wpit-font_heading', 'wpit-heading_weight', 'wpit-font_size' ].forEach( function ( id ) {
+		var el = document.getElementById( id );
+		if ( el ) {
+			el.addEventListener( 'change', preview );
+			el.addEventListener( 'input', function () {
+				if ( 'font' !== id.slice( 5, 9 ) ) {
+					preview();
+				}
+			} );
+		}
+	} );
+	preview();
 	if ( form ) {
 		form.addEventListener( 'submit', function ( e ) {
 			e.preventDefault();
 			var btn = form.querySelector( '.wpit-btn-primary' );
 			busy( btn, true );
-			api( 'options', 'POST', { values: collect() } )
+			api( 'options', 'POST', { stores: collect() } )
 				.then( function ( res ) {
-					fill( res.values );
+					fill( res.stores );
 					toast( t.saved, 'ok' );
 					( res.warnings || [] ).forEach( function ( w ) {
 						toast( w, 'warn' );
@@ -144,7 +198,7 @@
 			busy( e.currentTarget, true );
 			api( 'options', 'DELETE' )
 				.then( function ( res ) {
-					fill( res.values );
+					fill( res.stores );
 					toast( t.reset, 'ok' );
 				} )
 				.catch( function ( err ) {

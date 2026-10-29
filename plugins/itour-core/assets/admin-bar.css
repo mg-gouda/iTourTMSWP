@@ -1,0 +1,10 @@
+/* iTourTMS admin bar (front end and wp-admin). */
+#wpadminbar { background: #1a0a1a; }
+#wpadminbar .ab-item, #wpadminbar a.ab-item, #wpadminbar > #wp-toolbar span.ab-label, #wpadminbar > #wp-toolbar span.noticon { color: #d5d0e3; }
+#wpadminbar .ab-icon::before, #wpadminbar .ab-item::before, #wpadminbar #adminbarsearch::before { color: #b366b3; }
+#wpadminbar .ab-top-menu > li:hover > .ab-item, #wpadminbar .ab-top-menu > li.hover > .ab-item, #wpadminbar .ab-top-menu > li > .ab-item:focus { background: #2a122a; color: #fff; }
+#wpadminbar .ab-top-menu > li:hover > .ab-item::before, #wpadminbar .ab-top-menu > li.hover > .ab-item .ab-icon::before { color: #fff; }
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input { background: #120712; }
+#wpadminbar .ab-submenu .ab-item, #wpadminbar .quicklinks .menupop ul li a { color: #cfc6dd; }
+#wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:focus { color: #fff; background: transparent; }
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary { background: #1a0a1a; }

@@ -81,6 +81,13 @@
 .wp-itourtms-admin .wpit-suffix .wpit-input { padding-inline-end: 44px; }
 .wpit-suffix span { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); color: var(--wpit-muted-fg); font-size: 13px; pointer-events: none; }
 
+/* Font preview */
+.wpit-font-preview { padding: 16px 18px; border: 1px dashed var(--wpit-border); border-radius: var(--wpit-radius); background: #fafbfc; }
+.wpit-font-preview .wpit-label { margin: 0 0 8px; font-size: 12px; color: var(--wpit-muted-fg); }
+.wpit-preview-heading { margin: 0 0 6px; font-size: 24px; line-height: 1.25; color: var(--wpit-fg); }
+.wpit-preview-body { margin: 0; max-width: 60ch; line-height: 1.6; color: var(--wpit-fg); }
+select.wpit-input { max-width: 100%; padding-inline-end: 28px; }
+
 /* Switch */
 .wpit-switch { position: relative; flex: none; width: 40px; height: 22px; padding: 0; border: 0; border-radius: 999px; background: #c9ced8; cursor: pointer; transition: background-color .15s ease; }
 .wpit-switch-thumb { position: absolute; top: 2px; inset-inline-start: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / 0.25); transition: transform .15s ease; }

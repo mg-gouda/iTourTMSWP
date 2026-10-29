@@ -29,7 +29,7 @@ No. It is designed for the WordPress block editor.
 
 = Does the theme collect any data? =
 
-No. It stores no personal data, sets no cookies, loads nothing from other servers and does no tracking.
+No. It stores no personal data, sets no cookies and does no tracking. By default it loads nothing from other servers. If you choose a Google Font under Appearance → Theme Options → Fonts, visitors' browsers load that font from Google (fonts.googleapis.com, fonts.gstatic.com; see https://policies.google.com/privacy).
 
 == Changelog ==
 
@@ -54,5 +54,10 @@ GNU General Public License for more details.
 == Resources ==
 
 The theme bundles no third-party code, fonts or images.
+
+assets/data/google-fonts.json: the list of Google Fonts family names, categories and weights, taken from
+WordPress.org's font collection (https://s.w.org/images/fonts/wp-7.1/collections/google-fonts-with-preview.json).
+No font files are bundled. The fonts themselves are served by Google under the SIL Open Font License 1.1
+or Apache License 2.0 (https://fonts.google.com/attribution), both GPL-compatible.
 
 screenshot.png, (C) 2026 Mohamed Gouda, GPLv2 or later. A capture of the theme itself.

@@ -95,6 +95,13 @@ final class Company {
 				},
 				'default' => 1,
 			),
+			array(
+				'key'            => 'admin_skin',
+				'label'          => __( 'Admin look', 'itour-core' ),
+				'type'           => 'checkbox',
+				'default'        => 1,
+				'checkbox_label' => __( 'Use the iTourTMS look for the dashboard and login page', 'itour-core' ),
+			),
 		);
 	}
 
@@ -109,6 +116,7 @@ final class Company {
 			'base_currency'     => 'USD',
 			'country'           => '',
 			'fiscal_year_start' => 1,
+			'admin_skin'        => 1,
 		);
 	}
 

@@ -115,8 +115,12 @@ function wp_itourtms_admin_render(): void {
  */
 function wp_itourtms_render_options_tab(): void {
 	$fields = wp_itourtms_option_fields();
-	$values = wp_itourtms_options();
 	$first  = (string) array_key_first( $fields );
+	echo '<datalist id="wpit-google-fonts">';
+	foreach ( wp_itourtms_google_fonts() as $family => $info ) {
+		echo '<option value="' . esc_attr( $family ) . '">' . esc_html( $info[0] ) . '</option>';
+	}
+	echo '</datalist>';
 
 	echo '<form class="wpit-options" data-wpit-options novalidate><div class="wpit-split">';
 	echo '<div class="wpit-vtabs" role="tablist" aria-orientation="vertical" aria-label="' . esc_attr__( 'Option groups', 'wp-itourtms' ) . '">';
@@ -141,14 +145,21 @@ function wp_itourtms_render_options_tab(): void {
 		'blog'   => __( 'What posts show in lists and on their own page.', 'wp-itourtms' ),
 	);
 	foreach ( $fields as $id => $section ) {
-		printf( '<section class="wpit-card" role="tabpanel" id="wpit-panel-%1$s" aria-labelledby="wpit-tab-%1$s"%2$s>', esc_attr( $id ), $id === $first ? '' : ' hidden' );
+		$values = wp_itourtms_options( $section['store'] );
+		$desc   = $section['description'] ?? ( $descriptions[ $id ] ?? '' );
+		printf( '<section class="wpit-card" role="tabpanel" id="wpit-panel-%1$s" aria-labelledby="wpit-tab-%1$s" data-store="%2$s"%3$s>', esc_attr( $id ), esc_attr( $section['store'] ), $id === $first ? '' : ' hidden' );
 		echo '<div class="wpit-card-head"><h2 class="wpit-card-title">' . esc_html( $section['title'] ) . '</h2>';
-		if ( isset( $descriptions[ $id ] ) ) {
-			echo '<p class="wpit-card-desc">' . esc_html( $descriptions[ $id ] ) . '</p>';
+		if ( '' !== $desc ) {
+			echo '<p class="wpit-card-desc">' . esc_html( $desc ) . '</p>';
 		}
 		echo '</div><div class="wpit-card-body' . ( 'colors' === $id ? ' wpit-grid' : '' ) . '">';
 		foreach ( $section['fields'] as $key => $f ) {
-			wp_itourtms_render_option_field( $key, $f, $values[ $key ] );
+			wp_itourtms_render_option_field( $key, $f, $values[ $key ] ?? $f['default'] );
+		}
+		if ( 'fonts' === $id ) {
+			echo '<div class="wpit-font-preview" data-wpit-font-preview><p class="wpit-label">' . esc_html__( 'Preview', 'wp-itourtms' ) . '</p>';
+			echo '<p class="wpit-preview-heading">' . esc_html__( 'Nile cruise from Luxor to Aswan', 'wp-itourtms' ) . '</p>';
+			echo '<p class="wpit-preview-body">' . esc_html__( 'Four nights on the river with guided visits to Karnak, Edfu and Kom Ombo. Breakfast, lunch and dinner included.', 'wp-itourtms' ) . '</p></div>';
 		}
 		echo '</div></section>';
 	}
@@ -188,6 +199,30 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 				esc_attr( $key ),
 				$desc // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_attr above.
 			);
+			break;
+		case 'font':
+			printf(
+				'<input type="text" class="wpit-input" id="%1$s" data-key="%2$s" value="%3$s" list="wpit-google-fonts" placeholder="%4$s" autocomplete="off"%5$s>',
+				esc_attr( $id ),
+				esc_attr( $key ),
+				esc_attr( (string) $value ),
+				esc_attr( 'font_heading' === $key ? __( 'Same as body', 'wp-itourtms' ) : __( 'System font (fastest)', 'wp-itourtms' ) ),
+				$desc // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_attr above.
+			);
+			break;
+		case 'select':
+			echo '<select class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '"' . $desc . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
+			foreach ( (array) $f['options'] as $opt => $text ) {
+				echo '<option value="' . esc_attr( (string) $opt ) . '"' . selected( (string) $value, (string) $opt, false ) . '>' . esc_html( $text ) . '</option>';
+			}
+			echo '</select>';
+			break;
+		case 'page':
+			echo '<select class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '"' . $desc . '><option value="0">' . esc_html__( '— Choose a page —', 'wp-itourtms' ) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
+			foreach ( get_pages( array( 'post_status' => 'publish,private,draft' ) ) as $page ) {
+				echo '<option value="' . (int) $page->ID . '"' . selected( (int) $value, (int) $page->ID, false ) . '>' . esc_html( $page->post_title ? $page->post_title : '#' . $page->ID ) . '</option>';
+			}
+			echo '</select>';
 			break;
 		case 'px':
 		case 'number':

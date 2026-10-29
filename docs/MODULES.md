@@ -15,6 +15,12 @@ Each iTourTMS module becomes one plugin. Every plugin needs `itour-core`. Some n
 | `itour-b2c` | `b2c-site` (10 routers, 10 models, 14 screens) | core | B2C markup rules, hero slides, testimonials, newsletter, enquiries. Public pages, blog and FAQ use WordPress itself. |
 | `itour-finance` | `finance` (31 routers, 40 models, 96 screens) | core | Double-entry accounting. Other modules post to it through `itour/finance/post` hooks only, so none of them requires it. |
 
+## Theme Options tab per module
+When a module is finished it adds its own vertical tab to **Appearance → Theme Options → Options**. The tab holds its page choices (for example the tours listing, booking and checkout pages) and its front-end settings. It uses the `wp_itourtms_option_sections` filter with its own `store` option (for example `itour_crm_pages`), so the settings stay with the plugin if the theme changes. Field types: color, px, number, checkbox, text, select, font, page.
+
+## Admin look
+`itour-core` restyles all of wp-admin and the login page in the iTourTMS look (`Admin\Skin`, switch on iTour → Company). This lives in the plugin because restyling wp-admin is plugin territory for themes.
+
 ## How modules talk to each other
 - **No direct class use across modules.** A module reaches another only through `itour-core` services, actions/filters (`itour/{module}/{event}`), or the REST API.
 - **Optional integration:** a module checks `itour()->modules()->active( 'finance' )` and only then hooks in.

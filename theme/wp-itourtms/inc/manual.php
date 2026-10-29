@@ -98,7 +98,9 @@ function wp_itourtms_manual(): array {
 							'list',
 							array(
 								__( 'Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read.', 'wp-itourtms' ),
+								__( 'Fonts: pick any Google Font for body text and headings (type to search), the base text size and heading weight. The preview shows the result before you save. Leave empty for the fast system font.', 'wp-itourtms' ),
 								__( 'Layout: text column width, wide width (header, footer, wide blocks) and corner rounding.', 'wp-itourtms' ),
+								__( 'Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses.', 'wp-itourtms' ),
 								__( 'Header: keep the header fixed while scrolling; show the site title next to the logo.', 'wp-itourtms' ),
 								__( 'Footer: the footer line. {year} and {site} are filled in for you; leave it empty to hide it.', 'wp-itourtms' ),
 								__( 'Blog: show dates, show the featured image on posts, and the length of summaries in lists.', 'wp-itourtms' ),
@@ -182,7 +184,8 @@ function wp_itourtms_manual(): array {
 					'id'     => 'hooks',
 					'title'  => __( 'Hooks for developers', 'wp-itourtms' ),
 					'blocks' => array(
-						array( 'list', array( __( 'wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin.', 'wp-itourtms' ), __( 'Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content.', 'wp-itourtms' ) ) ),
+						array( 'list', array( __( 'wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin.', 'wp-itourtms' ), __( 'wp_itourtms_option_sections (filter): add a vertical tab to Theme Options → Options. Give the section its own “store” option name so its settings stay with your plugin. Field types: color, px, number, checkbox, text, select, font, page.', 'wp-itourtms' ), __( 'wp_itourtms_options( $store ) returns the saved values with defaults.', 'wp-itourtms' ), __( 'Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content.', 'wp-itourtms' ) ) ),
+						array( 'code', "add_filter( 'wp_itourtms_option_sections', function ( \$sections ) {\n\t\$sections['tours'] = array(\n\t\t'title'  => 'Tours & Excursions',\n\t\t'store'  => 'itour_crm_pages',\n\t\t'fields' => array(\n\t\t\t'listing_page' => array( 'label' => 'Tours listing page', 'type' => 'page', 'default' => 0 ),\n\t\t),\n\t);\n\treturn \$sections;\n} );" ),
 						array( 'code', "add_filter( 'wp_itourtms_manual', function ( \$manual ) {\n\t\$manual['manual']['sections'][] = array(\n\t\t'id'     => 'my-section',\n\t\t'title'  => 'My section',\n\t\t'blocks' => array( array( 'p', 'Text…' ) ),\n\t);\n\treturn \$manual;\n} );" ),
 					),
 				),
@@ -204,7 +207,7 @@ function wp_itourtms_manual(): array {
 					'id'     => 'privacy',
 					'title'  => __( 'Privacy', 'wp-itourtms' ),
 					'blocks' => array(
-						array( 'p', __( 'The theme stores no personal data, sets no cookies, loads nothing from other servers and does no tracking.', 'wp-itourtms' ) ),
+						array( 'p', __( 'The theme stores no personal data, sets no cookies and does no tracking. With the default system font it loads nothing from other servers. If you choose a Google Font, visitors’ browsers load it from Google’s servers (fonts.googleapis.com and fonts.gstatic.com); mention this in your privacy policy.', 'wp-itourtms' ) ),
 					),
 				),
 				array(

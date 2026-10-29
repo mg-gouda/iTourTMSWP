@@ -1,0 +1,102 @@
+/*
+ * iTourTMS admin skin for all of wp-admin (scoped to body.itour-skin). Visual language of the iTourTMS
+ * admin before its Apple restyle: aubergine sidebar, purple brand, white cards, 8–12px radii, Inter.
+ */
+body.itour-skin {
+	--it-fg: #17141a;
+	--it-muted: #edf0f4;
+	--it-muted-fg: #5b6275;
+	--it-border: #d5dae3;
+	--it-primary: #660066;
+	--it-primary-hover: #8a248a;
+	--it-accent: #f2e6f2;
+	--it-ring: rgb(122 61 122 / 0.4);
+	--it-side: #1a0a1a;
+	--it-side-2: #120712;
+	--it-side-fg: #d5d0e3;
+	--it-side-icon: #b366b3;
+	--it-shadow: 0 1px 2px rgb(23 20 26 / 0.06), 0 1px 3px rgb(23 20 26 / 0.05);
+	background: #f5f6f9;
+	color: var(--it-fg);
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ── Sidebar menu ─────────────────────────────── */
+.itour-skin #adminmenuback, .itour-skin #adminmenuwrap, .itour-skin #adminmenu { background: var(--it-side); }
+.itour-skin #adminmenu a { color: var(--it-side-fg); }
+.itour-skin #adminmenu div.wp-menu-image::before { color: var(--it-side-icon); }
+.itour-skin #adminmenu li.menu-top:hover, .itour-skin #adminmenu li.opensub > a.menu-top, .itour-skin #adminmenu li > a.menu-top:focus { background: #2a122a; color: #fff; }
+.itour-skin #adminmenu li.menu-top:hover div.wp-menu-image::before, .itour-skin #adminmenu li.opensub div.wp-menu-image::before { color: #fff; }
+.itour-skin #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .itour-skin #adminmenu li.current a.menu-top, .itour-skin #adminmenu .wp-menu-arrow, .itour-skin #adminmenu .wp-menu-arrow div, .itour-skin #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head { background: var(--it-primary); color: #fff; }
+.itour-skin #adminmenu li.wp-has-current-submenu div.wp-menu-image::before, .itour-skin #adminmenu li.current div.wp-menu-image::before { color: #fff; }
+.itour-skin #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu::after, .itour-skin #adminmenu li.current a.menu-top::after { border-inline-end-color: #f5f6f9; }
+.itour-skin #adminmenu .wp-submenu, .itour-skin #adminmenu .wp-has-current-submenu .wp-submenu, .itour-skin #adminmenu .wp-has-current-submenu.opensub .wp-submenu, .itour-skin #adminmenu a.wp-has-current-submenu:focus + .wp-submenu { background: var(--it-side-2); }
+.itour-skin #adminmenu .wp-submenu a { color: #bfb6cf; }
+.itour-skin #adminmenu .wp-submenu a:hover, .itour-skin #adminmenu .wp-submenu a:focus { color: #fff; }
+.itour-skin #adminmenu .wp-submenu li.current a, .itour-skin #adminmenu .wp-submenu li.current a:hover { color: #fff; font-weight: 600; }
+.itour-skin #adminmenu .wp-not-current-submenu .wp-submenu::after { border-inline-end-color: var(--it-side-2); }
+.itour-skin #adminmenu .awaiting-mod, .itour-skin #adminmenu .update-plugins { background: var(--it-side-icon); color: var(--it-side); }
+.itour-skin #collapse-button { color: #9d93ae; }
+.itour-skin #collapse-button:hover { color: #fff; }
+
+/* ── Page headings ─────────────────────────────── */
+.itour-skin .wrap h1, .itour-skin .wrap h1.wp-heading-inline { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: var(--it-fg); }
+.itour-skin .wrap h2 { color: var(--it-fg); }
+.itour-skin .wrap .page-title-action { padding: 4px 12px; border: 1px solid var(--it-border); border-radius: 8px; background: #fff; color: var(--it-primary); font-weight: 500; box-shadow: var(--it-shadow); }
+.itour-skin .wrap .page-title-action:hover { border-color: var(--it-primary); background: var(--it-accent); color: var(--it-primary); }
+
+/* ── Links ─────────────────────────────── */
+.itour-skin #wpbody-content a { color: var(--it-primary); }
+.itour-skin #wpbody-content a:hover, .itour-skin #wpbody-content a:active { color: var(--it-primary-hover); }
+.itour-skin #wpbody-content .row-actions .trash a, .itour-skin #wpbody-content a.submitdelete { color: #af031d; }
+
+/* ── Buttons ─────────────────────────────── */
+.itour-skin .button, .itour-skin .button-secondary { min-height: 32px; border-radius: 8px; border-color: var(--it-border); background: #fff; color: var(--it-fg); box-shadow: 0 1px 2px rgb(23 20 26 / 0.04); }
+.itour-skin .button:hover, .itour-skin .button-secondary:hover { border-color: #b9c0cd; background: var(--it-muted); color: var(--it-fg); }
+.itour-skin .button-primary, .itour-skin .wp-core-ui .button-primary { border-color: var(--it-primary); background: var(--it-primary); color: #fff; }
+.itour-skin .button-primary:hover, .itour-skin .button-primary:focus { border-color: var(--it-primary-hover); background: var(--it-primary-hover); color: #fff; }
+.itour-skin .button:focus, .itour-skin .button-primary:focus { box-shadow: 0 0 0 3px var(--it-ring); outline: none; }
+.itour-skin .button-link { color: var(--it-primary); }
+
+/* ── Form controls ─────────────────────────────── */
+.itour-skin input[type="text"], .itour-skin input[type="search"], .itour-skin input[type="email"], .itour-skin input[type="url"], .itour-skin input[type="password"], .itour-skin input[type="number"], .itour-skin input[type="tel"], .itour-skin input[type="date"], .itour-skin select, .itour-skin textarea {
+	border-color: var(--it-border); border-radius: 8px; box-shadow: 0 1px 2px rgb(23 20 26 / 0.04);
+}
+.itour-skin input:focus, .itour-skin select:focus, .itour-skin textarea:focus { border-color: #7a3d7a; box-shadow: 0 0 0 3px var(--it-ring); outline: none; }
+.itour-skin input[type="checkbox"]:checked::before { content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23660066%27%2F%3E%3C%2Fsvg%3E"); }
+.itour-skin input[type="radio"]:checked::before { background: var(--it-primary); }
+.itour-skin input[type="checkbox"]:focus, .itour-skin input[type="radio"]:focus { border-color: #7a3d7a; box-shadow: 0 0 0 3px var(--it-ring); }
+
+/* ── Cards, boxes, widgets ─────────────────────────────── */
+.itour-skin .postbox, .itour-skin .card, .itour-skin .stuffbox, .itour-skin .welcome-panel, .itour-skin #dashboard-widgets .postbox { border: 1px solid var(--it-border); border-radius: 12px; box-shadow: var(--it-shadow); overflow: hidden; }
+.itour-skin .postbox .postbox-header { border-block-end-color: var(--it-border); }
+.itour-skin .postbox .hndle, .itour-skin .postbox-header h2 { font-weight: 600; }
+.itour-skin .welcome-panel { background: linear-gradient(135deg, #1a0a1a, #660066); }
+
+/* ── List tables ─────────────────────────────── */
+.itour-skin .wp-list-table { border: 1px solid var(--it-border); border-radius: 12px; border-spacing: 0; overflow: hidden; box-shadow: var(--it-shadow); }
+.itour-skin .wp-list-table thead th, .itour-skin .wp-list-table thead td, .itour-skin .wp-list-table tfoot th, .itour-skin .wp-list-table tfoot td { background: #f8f9fb; border-color: var(--it-border); color: var(--it-muted-fg); font-weight: 500; }
+.itour-skin .wp-list-table tbody tr:hover { background: #fbf6fb; }
+.itour-skin .striped > tbody > :nth-child(odd) { background: #fcfcfd; }
+.itour-skin .widefat td, .itour-skin .widefat th { border-color: #e7eaf0; }
+
+/* ── Tabs ─────────────────────────────── */
+.itour-skin .nav-tab-wrapper, .itour-skin .wrap h2.nav-tab-wrapper { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 4px; border: 0; border-radius: 10px; background: var(--it-muted); }
+.itour-skin .nav-tab { margin: 0; padding: 6px 14px; border: 0; border-radius: 8px; background: transparent; color: var(--it-muted-fg); font-size: 14px; font-weight: 500; line-height: 20px; }
+.itour-skin .nav-tab:hover { background: rgb(255 255 255 / 0.6); color: var(--it-fg); }
+.itour-skin .nav-tab-active, .itour-skin .nav-tab-active:hover, .itour-skin .nav-tab-active:focus { background: #fff; color: var(--it-fg); box-shadow: var(--it-shadow); }
+
+/* ── Notices (full tinted boxes) ─────────────────────────────── */
+.itour-skin .notice, .itour-skin div.updated, .itour-skin div.error { border: 1px solid var(--it-border); border-radius: 10px; box-shadow: var(--it-shadow); }
+.itour-skin .notice-success, .itour-skin div.updated { border-color: #bbf7d0; background: #f0fdf4; }
+.itour-skin .notice-error, .itour-skin div.error { border-color: #fecaca; background: #fef2f2; }
+.itour-skin .notice-warning { border-color: #fde68a; background: #fffbeb; }
+.itour-skin .notice-info { border-color: #e9cfe9; background: var(--it-accent); }
+
+/* ── Misc ─────────────────────────────── */
+.itour-skin .subsubsub a.current { color: var(--it-primary); font-weight: 600; }
+.itour-skin .tablenav .tablenav-pages a, .itour-skin .tablenav-pages-navspan { border-radius: 8px; }
+.itour-skin .wp-filter, .itour-skin .media-toolbar { border-radius: 12px; border-color: var(--it-border); box-shadow: var(--it-shadow); }
+.itour-skin #wpfooter { color: var(--it-muted-fg); }
+.itour-skin .wp-core-ui .button-primary-disabled, .itour-skin .button-primary:disabled { border-color: #c9a6c9 !important; background: #c9a6c9 !important; color: #fff !important; }
