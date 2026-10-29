@@ -102,6 +102,7 @@ function wp_itourtms_manual(): array {
 								__( 'Layout: text column width, wide width (header, footer, wide blocks) and corner rounding.', 'wp-itourtms' ),
 								__( 'Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses.', 'wp-itourtms' ),
 								__( 'Header: keep the header fixed while scrolling; show the site title next to the logo.', 'wp-itourtms' ),
+								__( 'Header → Top bar: switch on “Show top bar” to reveal its settings: a short message, phone, email, WhatsApp, social links (Facebook, Instagram, X, TikTok, YouTube, LinkedIn), its colours, and whether it shows on phones (as icons). Empty fields are simply left out.', 'wp-itourtms' ),
 								__( 'Footer: the footer line. {year} and {site} are filled in for you; leave it empty to hide it.', 'wp-itourtms' ),
 								__( 'Blog: show dates, show the featured image on posts, and the length of summaries in lists.', 'wp-itourtms' ),
 							),

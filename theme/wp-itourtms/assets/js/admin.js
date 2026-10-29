@@ -74,12 +74,22 @@
 		} );
 	} );
 
+	// Fields with data-show-if="<switch id>" appear only while that switch is on.
+	function conditions() {
+		root.querySelectorAll( '[data-show-if]' ).forEach( function ( el ) {
+			var sw = document.getElementById( el.getAttribute( 'data-show-if' ) );
+			el.hidden = !! sw && 'true' !== sw.getAttribute( 'aria-checked' );
+		} );
+	}
+
 	// Switches.
 	root.querySelectorAll( '.wpit-switch' ).forEach( function ( sw ) {
 		sw.addEventListener( 'click', function () {
 			sw.setAttribute( 'aria-checked', 'true' === sw.getAttribute( 'aria-checked' ) ? 'false' : 'true' );
+			conditions();
 		} );
 	} );
+	conditions();
 
 	// Colour swatch ↔ hex field, range ↔ number field.
 	root.querySelectorAll( '[data-sync]' ).forEach( function ( src ) {
@@ -126,6 +136,7 @@
 		form.querySelectorAll( '[data-sync]' ).forEach( function ( src ) {
 			src.value = document.getElementById( src.getAttribute( 'data-sync' ) ).value;
 		} );
+		conditions();
 		preview();
 	}
 

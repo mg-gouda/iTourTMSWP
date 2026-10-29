@@ -81,6 +81,12 @@
 .wp-itourtms-admin .wpit-suffix .wpit-input { padding-inline-end: 44px; }
 .wpit-suffix span { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); color: var(--wpit-muted-fg); font-size: 13px; pointer-events: none; }
 
+/* Sub-groups inside a card (e.g. Header → Top bar) */
+.wpit-subhead { margin-block-start: 8px; padding-block-start: 18px; border-block-start: 1px solid var(--wpit-border); }
+.wp-itourtms-admin .wpit-subhead h3 { margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--wpit-fg); }
+.wpit-subhead .wpit-help { margin: 0; }
+.wpit-field[hidden], .wpit-subhead[hidden] { display: none; }
+
 /* Font preview */
 .wpit-font-preview { padding: 16px 18px; border: 1px dashed var(--wpit-border); border-radius: var(--wpit-radius); background: #fafbfc; }
 .wpit-font-preview .wpit-label { margin: 0 0 8px; font-size: 12px; color: var(--wpit-muted-fg); }

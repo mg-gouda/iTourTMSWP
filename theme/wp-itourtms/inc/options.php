@@ -27,7 +27,8 @@ const WP_ITOURTMS_STORE = 'wp_itourtms_options';
 
 /**
  * All sections shown in the Options tab: the theme's plus any added by plugins.
- * Field types: color, px, number, checkbox, text, select, font, page.
+ * Field types: color, px, number, checkbox, text, email, url, tel, select, font, page, heading (a sub-title, no value).
+ * Any field can carry 'show_if' => '<checkbox key>' to appear only while that switch is on.
  *
  * @return array<string,array{title:string,description?:string,store:string,fields:array<string,array<string,mixed>>}>
  */
@@ -166,6 +167,98 @@ function wp_itourtms_theme_option_fields(): array {
 					'default' => 0,
 					'text'    => __( 'Show the site title next to the logo', 'wp-itourtms' ),
 				),
+				'topbar_heading'    => array(
+					'label' => __( 'Top bar', 'wp-itourtms' ),
+					'type'  => 'heading',
+					'help'  => __( 'A thin bar above the header for contact details, a short message and social links.', 'wp-itourtms' ),
+				),
+				'topbar_enabled'    => array(
+					'label'   => __( 'Show top bar', 'wp-itourtms' ),
+					'type'    => 'checkbox',
+					'default' => 0,
+					'text'    => __( 'Display the top bar above the header', 'wp-itourtms' ),
+				),
+				'topbar_text'       => array(
+					'label'   => __( 'Message', 'wp-itourtms' ),
+					'type'    => 'text',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+					'help'    => __( 'Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed.', 'wp-itourtms' ),
+				),
+				'topbar_phone'      => array(
+					'label'   => __( 'Phone', 'wp-itourtms' ),
+					'type'    => 'tel',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'topbar_email'      => array(
+					'label'   => __( 'Email', 'wp-itourtms' ),
+					'type'    => 'email',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'topbar_whatsapp'   => array(
+					'label'   => __( 'WhatsApp', 'wp-itourtms' ),
+					'type'    => 'tel',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+					'help'    => __( 'International format, e.g. +20 100 000 0000. Opens a WhatsApp chat.', 'wp-itourtms' ),
+				),
+				'social_facebook'   => array(
+					'label'   => 'Facebook',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'social_instagram'  => array(
+					'label'   => 'Instagram',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'social_x'          => array(
+					'label'   => 'X',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'social_tiktok'     => array(
+					'label'   => 'TikTok',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'social_youtube'    => array(
+					'label'   => 'YouTube',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'social_linkedin'   => array(
+					'label'   => 'LinkedIn',
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => 'topbar_enabled',
+				),
+				'topbar_bg'         => array(
+					'label'   => __( 'Top bar background', 'wp-itourtms' ),
+					'type'    => 'color',
+					'default' => '#1a2b48',
+					'show_if' => 'topbar_enabled',
+				),
+				'topbar_fg'         => array(
+					'label'   => __( 'Top bar text', 'wp-itourtms' ),
+					'type'    => 'color',
+					'default' => '#ffffff',
+					'show_if' => 'topbar_enabled',
+				),
+				'topbar_mobile'     => array(
+					'label'   => __( 'On phones', 'wp-itourtms' ),
+					'type'    => 'checkbox',
+					'default' => 0,
+					'show_if' => 'topbar_enabled',
+					'text'    => __( 'Also show the top bar on small screens', 'wp-itourtms' ),
+				),
 			),
 		),
 		'footer' => array(
@@ -217,7 +310,7 @@ function wp_itourtms_store_fields( string $store = WP_ITOURTMS_STORE ): array {
 	$fields = array();
 	foreach ( WP_ITOURTMS_STORE === $store ? wp_itourtms_theme_option_fields() : wp_itourtms_option_fields() as $section ) {
 		if ( ( $section['store'] ?? WP_ITOURTMS_STORE ) === $store ) {
-			$fields += $section['fields'];
+			$fields += array_filter( $section['fields'], static fn( $f ) => 'heading' !== $f['type'] ); // Headings hold no value.
 		}
 	}
 	return $fields;
@@ -262,6 +355,12 @@ function wp_itourtms_sanitize_value( array $f, $v ) {
 			return max( (int) $f['min'], min( (int) $f['max'], null === $v ? (int) $f['default'] : (int) $v ) );
 		case 'select':
 			return array_key_exists( (string) $v, (array) $f['options'] ) ? (string) $v : $f['default'];
+		case 'email':
+			return sanitize_email( (string) $v );
+		case 'url':
+			return esc_url_raw( trim( (string) $v ), array( 'http', 'https' ) );
+		case 'tel':
+			return trim( (string) preg_replace( '/[^0-9+()\-\s]/', '', (string) $v ) );
 		case 'page':
 			$id = absint( $v );
 			return $id && 'page' === get_post_type( $id ) ? $id : 0;
@@ -421,7 +520,10 @@ function wp_itourtms_contrast_warnings( array $o ): array {
 		array( 'color_ink', 'color_brand', __( 'Text on brand buttons', 'wp-itourtms' ) ),
 		array( 'color_base', 'color_brand_dark', __( 'White text on the hover colour', 'wp-itourtms' ) ),
 	);
-	$out   = array();
+	if ( ! empty( $o['topbar_enabled'] ) ) {
+		$pairs[] = array( 'topbar_fg', 'topbar_bg', __( 'Top bar text on its background', 'wp-itourtms' ) );
+	}
+	$out = array();
 	foreach ( $pairs as $p ) {
 		$ratio = wp_itourtms_contrast( (string) $o[ $p[0] ], (string) $o[ $p[1] ] );
 		if ( $ratio < 4.5 ) {

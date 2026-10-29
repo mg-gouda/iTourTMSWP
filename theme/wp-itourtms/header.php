@@ -17,6 +17,11 @@ defined( 'ABSPATH' ) || exit;
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wp-itourtms' ); ?></a>
+<?php
+if ( wp_itourtms_option( 'topbar_enabled' ) ) {
+	get_template_part( 'template-parts/topbar' );
+}
+?>
 <header class="site-header">
 	<div class="container site-header__inner">
 		<div class="site-branding">

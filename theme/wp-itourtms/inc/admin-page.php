@@ -154,7 +154,7 @@ function wp_itourtms_render_options_tab(): void {
 		}
 		echo '</div><div class="wpit-card-body' . ( 'colors' === $id ? ' wpit-grid' : '' ) . '">';
 		foreach ( $section['fields'] as $key => $f ) {
-			wp_itourtms_render_option_field( $key, $f, $values[ $key ] ?? $f['default'] );
+			wp_itourtms_render_option_field( $key, $f, $values[ $key ] ?? ( $f['default'] ?? null ) );
 		}
 		if ( 'fonts' === $id ) {
 			echo '<div class="wpit-font-preview" data-wpit-font-preview><p class="wpit-label">' . esc_html__( 'Preview', 'wp-itourtms' ) . '</p>';
@@ -180,15 +180,39 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 	$id   = 'wpit-' . $key;
 	$help = empty( $f['help'] ) ? '' : '<p class="wpit-help" id="' . esc_attr( $id ) . '-help">' . esc_html( $f['help'] ) . '</p>';
 	$desc = empty( $f['help'] ) ? '' : ' aria-describedby="' . esc_attr( $id ) . '-help"';
+	$cond = empty( $f['show_if'] ) ? '' : ' data-show-if="' . esc_attr( 'wpit-' . $f['show_if'] ) . '"';
 
+	if ( 'heading' === $f['type'] ) {
+		echo '<div class="wpit-subhead"' . $cond . '><h3>' . esc_html( $f['label'] ) . '</h3>' . $help . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_* above.
+		return;
+	}
 	if ( 'checkbox' === $f['type'] ) {
-		echo '<div class="wpit-field wpit-field-row"><div><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>';
+		echo '<div class="wpit-field wpit-field-row"' . $cond . '><div><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cond built with esc_attr.
 		echo '<p class="wpit-help">' . esc_html( $f['text'] ) . '</p></div>';
 		printf( '<button type="button" role="switch" class="wpit-switch" id="%1$s" data-key="%2$s" aria-checked="%3$s"><span class="wpit-switch-thumb"></span></button></div>', esc_attr( $id ), esc_attr( $key ), $value ? 'true' : 'false' );
 		return;
 	}
-	echo '<div class="wpit-field"><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>';
+	echo '<div class="wpit-field"' . $cond . '><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cond built with esc_attr.
 	switch ( $f['type'] ) {
+		case 'email':
+		case 'url':
+		case 'tel':
+			printf(
+				'<input type="%1$s" class="wpit-input" id="%2$s" data-key="%3$s" value="%4$s" placeholder="%5$s"%6$s>',
+				esc_attr( $f['type'] ),
+				esc_attr( $id ),
+				esc_attr( $key ),
+				esc_attr( (string) $value ),
+				esc_attr(
+					array(
+						'email' => 'info@example.com',
+						'url'   => 'https://',
+						'tel'   => '+20 100 000 0000',
+					)[ $f['type'] ]
+				),
+				$desc // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_attr above.
+			);
+			break;
 		case 'color':
 			printf(
 				'<div class="wpit-color"><input type="color" class="wpit-swatch" value="%1$s" aria-label="%2$s" data-sync="%3$s"><input type="text" class="wpit-input wpit-mono" id="%3$s" data-key="%4$s" value="%1$s" maxlength="7" pattern="#[0-9a-fA-F]{6}"%5$s></div>',
