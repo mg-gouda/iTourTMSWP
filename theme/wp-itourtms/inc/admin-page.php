@@ -29,8 +29,10 @@ function wp_itourtms_admin_menu(): void {
 				return;
 			}
 			$uri = get_template_directory_uri() . '/assets';
-			wp_enqueue_style( 'wp-itourtms-admin', $uri . '/css/admin.css', array(), WP_ITOURTMS_VERSION );
-			wp_enqueue_script( 'wp-itourtms-admin', $uri . '/js/admin.js', array(), WP_ITOURTMS_VERSION, true );
+			$dir = get_template_directory() . '/assets';
+			$dev = 'theme' === wp_get_development_mode();
+			wp_enqueue_style( 'wp-itourtms-admin', $uri . '/css/admin.css', array(), $dev ? (string) filemtime( $dir . '/css/admin.css' ) : WP_ITOURTMS_VERSION );
+			wp_enqueue_script( 'wp-itourtms-admin', $uri . '/js/admin.js', array(), $dev ? (string) filemtime( $dir . '/js/admin.js' ) : WP_ITOURTMS_VERSION, true );
 			wp_localize_script(
 				'wp-itourtms-admin',
 				'wpItourtms',
@@ -46,6 +48,9 @@ function wp_itourtms_admin_menu(): void {
 						'removed'       => __( 'License removed from this site.', 'wp-itourtms' ),
 						'checked'       => __( 'License checked with the server.', 'wp-itourtms' ),
 						'confirmRemove' => __( 'Remove the license from this site?', 'wp-itourtms' ),
+						'search'        => __( 'Search…', 'wp-itourtms' ),
+						'noMatch'       => __( 'No matches', 'wp-itourtms' ),
+						'keepTyping'    => __( 'Keep typing to see more', 'wp-itourtms' ),
 					),
 				)
 			);
@@ -116,11 +121,6 @@ function wp_itourtms_admin_render(): void {
 function wp_itourtms_render_options_tab(): void {
 	$fields = wp_itourtms_option_fields();
 	$first  = (string) array_key_first( $fields );
-	echo '<datalist id="wpit-google-fonts">';
-	foreach ( wp_itourtms_google_fonts() as $family => $info ) {
-		echo '<option value="' . esc_attr( $family ) . '">' . esc_html( $info[0] ) . '</option>';
-	}
-	echo '</datalist>';
 
 	echo '<form class="wpit-options" data-wpit-options novalidate><div class="wpit-split">';
 	echo '<div class="wpit-vtabs" role="tablist" aria-orientation="vertical" aria-label="' . esc_attr__( 'Option groups', 'wp-itourtms' ) . '">';
@@ -201,14 +201,13 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 			);
 			break;
 		case 'font':
-			printf(
-				'<input type="text" class="wpit-input" id="%1$s" data-key="%2$s" value="%3$s" list="wpit-google-fonts" placeholder="%4$s" autocomplete="off"%5$s>',
-				esc_attr( $id ),
-				esc_attr( $key ),
-				esc_attr( (string) $value ),
-				esc_attr( 'font_heading' === $key ? __( 'Same as body', 'wp-itourtms' ) : __( 'System font (fastest)', 'wp-itourtms' ) ),
-				$desc // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_attr above.
-			);
+			// A plain <select>; admin.js turns every .wpit-input select into a searchable combobox.
+			echo '<select class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '"' . $desc . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
+			echo '<option value="">' . esc_html( 'font_heading' === $key ? __( 'Same as body', 'wp-itourtms' ) : __( 'System font (fastest)', 'wp-itourtms' ) ) . '</option>';
+			foreach ( wp_itourtms_google_fonts() as $family => $info ) {
+				echo '<option value="' . esc_attr( $family ) . '" data-hint="' . esc_attr( $info[0] ) . '"' . selected( (string) $value, $family, false ) . '>' . esc_html( $family ) . '</option>';
+			}
+			echo '</select>';
 			break;
 		case 'select':
 			echo '<select class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '"' . $desc . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
