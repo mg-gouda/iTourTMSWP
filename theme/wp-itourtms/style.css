@@ -1,0 +1,20 @@
+/*
+Theme Name:        WP iTourTMS
+Theme URI:         https://github.com/mg-gouda/iTourTMSWP
+Author:            Mohamed Gouda
+Author URI:        https://wa.me/+201002805139
+Description:       A clean, fast theme for tour operators, destination management companies and travel agencies. Pages are built with the WordPress block editor; colours, type and spacing come from theme.json, so the editor and the site always match. No page builder, no jQuery on the front end, right-to-left ready. Works on its own and pairs with the iTourTMS plugins for tours, transfers, hotels and bookings.
+Version:           0.1.0
+Requires at least: 6.5
+Tested up to:      7.1
+Requires PHP:      8.1
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       wp-itourtms
+Tags:              blog, e-commerce, one-column, custom-logo, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, rtl-language-support, wide-blocks, block-styles
+
+WP iTourTMS, (C) 2026 Mohamed Gouda.
+WP iTourTMS is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/* The theme's styles are in assets/css/main.css; this file carries the theme header only. */

@@ -7,4 +7,4 @@
 
 define( 'ITOUR_CORE_VERSION', '0.0.0' );
 define( 'ITOUR_CORE_FILE', __FILE__ );
-define( 'ITOUR_THEME_VERSION', '0.0.0' );
+define( 'WP_ITOURTMS_VERSION', '0.0.0' );

@@ -27,7 +27,7 @@ ssh_cmd=(ssh -p "${ITOUR_SSH_PORT:-22}")
 [ -n "${ITOUR_SSH_KEY:-}" ] && ssh_cmd+=(-i "$ITOUR_SSH_KEY")
 
 targets=("$@")
-[ ${#targets[@]} -eq 0 ] && targets=(theme/itour plugins/*)
+[ ${#targets[@]} -eq 0 ] && targets=(theme/* plugins/*)
 
 for src in "${targets[@]}"; do
 	src="${src%/}"

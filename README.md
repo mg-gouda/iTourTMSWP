@@ -4,7 +4,8 @@
 
 | Folder | What it is |
 |---|---|
-| `theme/itour` | The front-end theme: no page builder, no jQuery, RTL-ready |
+| `theme/wp-itourtms` | **WP iTourTMS** theme: block editor + theme.json, no page builder, no jQuery, RTL-ready, built-in manual (Appearance → WP iTourTMS) |
+| `theme/wp-itourtms-child` | Child theme for site-specific changes |
 | `plugins/itour-core` | Required foundation: module registry, migrations, admin menu, shared services |
 | `plugins/itour-crm` | Tours and excursions (first module) |
 | `plugins/itour-traffic` | Transfers and fleet |
@@ -23,6 +24,7 @@ Needs WordPress 6.5+ and PHP 8.1+. Install **iTour Core** first; WordPress then 
 - [Module map](docs/MODULES.md)
 - [Decisions](docs/DECISIONS.md)
 - [Phase 0 audit](docs/audit.md)
+- [Releasing (WordPress.org + ThemeForest)](docs/RELEASE.md)
 
 ## Development
 ```bash
@@ -31,6 +33,8 @@ bin/dev.sh wp plugin list   # WP-CLI against the dev site
 bin/dev.sh stop          # stop it
 bin/lint.sh              # PHP syntax, WordPress Coding Standards, PHPStan (runs in Docker)
 bin/lint.sh fix          # auto-fix coding-standard issues
+bin/theme-check.sh       # WordPress.org Theme Check on the dev site
+bin/package.sh           # build dist/ zips for WordPress.org and ThemeForest
 bin/deploy-staging.sh    # copy theme and plugins to the staging site in .deploy.env
 ```
 CI runs the same checks on every push.

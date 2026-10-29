@@ -1,0 +1,13 @@
+/* Appearance → WP iTourTMS only (enqueued on that screen). Core admin look, readable line length. */
+.wp-itourtms-admin .wp-itourtms-version { font-size: 13px; font-weight: 400; color: #50575e; }
+.wp-itourtms-layout { display: grid; grid-template-columns: 1fr; gap: 24px; margin-block-start: 20px; }
+@media (min-width: 960px) { .wp-itourtms-layout { grid-template-columns: 200px minmax(0, 760px); } }
+.wp-itourtms-toc ul { position: sticky; top: 48px; margin: 0; }
+.wp-itourtms-toc a { text-decoration: none; }
+.wp-itourtms-body { max-width: 75ch; }
+.wp-itourtms-doc { margin-block-end: 28px; padding: 4px 20px 12px; background: #fff; border: 1px solid #c3c4c7; }
+.wp-itourtms-doc ol, .wp-itourtms-doc ul { margin-inline-start: 1.5em; }
+.wp-itourtms-doc ul { list-style: disc; }
+.wp-itourtms-doc li { margin-block-end: 6px; }
+.wp-itourtms-doc pre { overflow: auto; padding: 12px; background: #f6f7f7; border: 1px solid #dcdcde; }
+.wp-itourtms-note { padding: 8px 12px; background: #fcf9e8; border: 1px solid #dba617; }

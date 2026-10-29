@@ -44,7 +44,8 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="itour"/>
+				<element value="wp-itourtms"/>
+				<element value="wp-itourtms-child"/>
 				<element value="itour-core"/>
 				<element value="itour-crm"/>
 				<element value="itour-traffic"/>
@@ -64,6 +65,8 @@
 			<property name="prefixes" type="array">
 				<element value="itour"/>
 				<element value="ITour"/>
+				<element value="wp_itourtms"/>
+				<element value="WP_ITOURTMS"/>
 			</property>
 		</properties>
 	</rule>

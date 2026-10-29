@@ -1,0 +1,548 @@
+# Copyright (C) 2026 Mohamed Gouda
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP iTourTMS 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-29T08:07:24+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wp-itourtms\n"
+
+#. Theme Name of the theme
+#: style.css
+#: functions.php:53
+#: inc/admin-page.php:15
+#: inc/admin-page.php:16
+#: inc/admin-page.php:48
+msgid "WP iTourTMS"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "A clean, fast theme for tour operators, destination management companies and travel agencies. Pages are built with the WordPress block editor; colours, type and spacing come from theme.json, so the editor and the site always match. No page builder, no jQuery on the front end, right-to-left ready. Works on its own and pairs with the iTourTMS plugins for tours, transfers, hotels and bookings."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: 404.php:13
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:14
+msgid "The page you were looking for has moved or no longer exists."
+msgstr ""
+
+#: 404.php:16
+msgid "Back to home"
+msgstr ""
+
+#. translators: %s: number of comments.
+#: comments.php:19
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:14
+#: functions.php:43
+msgid "Footer menu"
+msgstr ""
+
+#: functions.php:42
+#: header.php:28
+msgid "Main menu"
+msgstr ""
+
+#: functions.php:58
+msgid "Rounded"
+msgstr ""
+
+#: header.php:19
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:30
+msgid "Menu"
+msgstr ""
+
+#: inc/admin-page.php:49
+msgid "Help sections"
+msgstr ""
+
+#: inc/admin-page.php:60
+msgid "On this page"
+msgstr ""
+
+#: inc/manual.php:22
+msgid "Getting started"
+msgstr ""
+
+#: inc/manual.php:26
+msgid "Requirements"
+msgstr ""
+
+#: inc/manual.php:28
+msgid "WordPress 6.5 or newer (tested up to 7.1)."
+msgstr ""
+
+#: inc/manual.php:28
+msgid "PHP 8.1 or newer."
+msgstr ""
+
+#: inc/manual.php:28
+msgid "No other plugins are required. The theme works on its own."
+msgstr ""
+
+#: inc/manual.php:33
+msgid "Install and activate"
+msgstr ""
+
+#: inc/manual.php:38
+msgid "In the dashboard go to Appearance → Themes → Add New Theme → Upload Theme."
+msgstr ""
+
+#: inc/manual.php:39
+msgid "Choose wp-itourtms.zip and click Install Now."
+msgstr ""
+
+#: inc/manual.php:40
+msgid "Click Activate."
+msgstr ""
+
+#: inc/manual.php:41
+msgid "To change templates or styles safely, also install wp-itourtms-child.zip and activate the child theme instead (see “Child theme” below)."
+msgstr ""
+
+#: inc/manual.php:48
+msgid "First setup (10 minutes)"
+msgstr ""
+
+#: inc/manual.php:53
+msgid "Logo: Appearance → Customize → Site Identity → Select logo. A transparent PNG or SVG about 200 × 48 px works best."
+msgstr ""
+
+#: inc/manual.php:54
+msgid "Menus: Appearance → Menus. Create a menu, add pages, then tick “Main menu” (header) or “Footer menu” under Menu Settings."
+msgstr ""
+
+#: inc/manual.php:55
+msgid "Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page."
+msgstr ""
+
+#: inc/manual.php:56
+msgid "Pretty links: Settings → Permalinks → “Post name” → Save."
+msgstr ""
+
+#: inc/manual.php:57
+msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
+msgstr ""
+
+#: inc/manual.php:64
+msgid "Child theme"
+msgstr ""
+
+#: inc/manual.php:66
+msgid "Updates replace the theme’s files. Put your own changes in the WP iTourTMS Child theme (included in the package) so they survive updates. Activate the child theme; it loads the parent automatically."
+msgstr ""
+
+#: inc/manual.php:72
+msgid "User manual"
+msgstr ""
+
+#: inc/manual.php:76
+msgid "Create and edit pages"
+msgstr ""
+
+#: inc/manual.php:78
+msgid "Pages are built with the WordPress block editor. No page builder is needed. Ready-made sections (hero banner, reasons to book, call to action) are under + → Patterns → “WP iTourTMS”."
+msgstr ""
+
+#: inc/manual.php:82
+msgid "Go to Pages → Add New Page and type a title."
+msgstr ""
+
+#: inc/manual.php:83
+msgid "Click + (top left) to add a block: Paragraph, Heading, Image, Columns, Buttons, Cover and so on. Type / in an empty line to search blocks quickly."
+msgstr ""
+
+#: inc/manual.php:84
+msgid "Select a block to change its colour, spacing or width in the right-hand panel. The theme’s colours appear as swatches."
+msgstr ""
+
+#: inc/manual.php:85
+msgid "Use “Wide width” or “Full width” on Image, Cover and Group blocks for banners and galleries."
+msgstr ""
+
+#: inc/manual.php:86
+msgid "Click Publish (or Update). Use Preview first to check it on the site."
+msgstr ""
+
+#: inc/manual.php:93
+msgid "Colours and fonts for the whole site"
+msgstr ""
+
+#: inc/manual.php:95
+msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
+msgstr ""
+
+#: inc/manual.php:96
+msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
+msgstr ""
+
+#: inc/manual.php:101
+msgid "Images"
+msgstr ""
+
+#: inc/manual.php:103
+msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
+msgstr ""
+
+#: inc/manual.php:103
+msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
+msgstr ""
+
+#: inc/manual.php:103
+msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
+msgstr ""
+
+#: inc/manual.php:108
+msgid "Blog posts"
+msgstr ""
+
+#: inc/manual.php:110
+msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
+msgstr ""
+
+#: inc/manual.php:115
+msgid "Menus"
+msgstr ""
+
+#: inc/manual.php:117
+msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
+msgstr ""
+
+#: inc/manual.php:122
+msgid "Comments"
+msgstr ""
+
+#: inc/manual.php:124
+msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
+msgstr ""
+
+#: inc/manual.php:129
+msgid "Getting help"
+msgstr ""
+
+#: inc/manual.php:131
+msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
+msgstr ""
+
+#: inc/manual.php:137
+msgid "Documentation"
+msgstr ""
+
+#: inc/manual.php:141
+msgid "Theme files"
+msgstr ""
+
+#: inc/manual.php:148
+msgid "Colours, fonts and spacing"
+msgstr ""
+
+#: inc/manual.php:150
+msgid "All design values live in theme.json and become CSS custom properties such as --wp--preset--color--brand. Change them in a child theme’s theme.json and both the editor and the site update; you don’t need to edit CSS."
+msgstr ""
+
+#: inc/manual.php:152
+msgid "Keep at least 4.5:1 contrast between text and its background. The default palette meets WCAG 2.2 AA."
+msgstr ""
+
+#: inc/manual.php:157
+msgid "Overriding templates"
+msgstr ""
+
+#: inc/manual.php:159
+msgid "Copy any template or template part into the child theme at the same path and edit the copy. For example, to change how posts look in lists, copy template-parts/content-summary.php."
+msgstr ""
+
+#: inc/manual.php:164
+msgid "Hooks for developers"
+msgstr ""
+
+#: inc/manual.php:166
+msgid "wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin."
+msgstr ""
+
+#: inc/manual.php:166
+msgid "Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content."
+msgstr ""
+
+#: inc/manual.php:172
+msgid "Translation and right-to-left"
+msgstr ""
+
+#: inc/manual.php:174
+msgid "Every string uses the wp-itourtms text domain. Translate languages/wp-itourtms.pot with Poedit or Loco Translate and save wp-itourtms-{locale}.mo in wp-content/languages/themes/. Layout uses CSS logical properties, so right-to-left languages need no extra stylesheet."
+msgstr ""
+
+#: inc/manual.php:179
+msgid "Accessibility"
+msgstr ""
+
+#: inc/manual.php:181
+msgid "Skip link to the main content as the first focusable element."
+msgstr ""
+
+#: inc/manual.php:181
+msgid "Visible focus outline on every link, button and form field."
+msgstr ""
+
+#: inc/manual.php:181
+msgid "Menus work with the keyboard; drop-downs open on focus."
+msgstr ""
+
+#: inc/manual.php:181
+msgid "Animations are switched off when the visitor prefers reduced motion."
+msgstr ""
+
+#: inc/manual.php:186
+msgid "Privacy"
+msgstr ""
+
+#: inc/manual.php:188
+msgid "The theme stores no personal data, sets no cookies, loads nothing from other servers and does no tracking."
+msgstr ""
+
+#: inc/manual.php:193
+msgid "Credits and licence"
+msgstr ""
+
+#: inc/manual.php:195
+msgid "WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used."
+msgstr ""
+
+#: inc/manual.php:200
+msgid "Changelog"
+msgstr ""
+
+#: inc/manual.php:202
+msgid "0.1.0: first release."
+msgstr ""
+
+#: inc/manual.php:238
+msgid "Note:"
+msgstr ""
+
+#. translators: %s: search query.
+#: index.php:29
+#, php-format
+msgid "Search results for “%s”"
+msgstr ""
+
+#: patterns/call-to-action.php
+msgctxt "Pattern title"
+msgid "Call to action"
+msgstr ""
+
+#: patterns/call-to-action.php
+msgctxt "Pattern description"
+msgid "A brand-coloured band with a short question and a contact button."
+msgstr ""
+
+#: patterns/call-to-action.php:17
+msgid "Not sure where to start?"
+msgstr ""
+
+#: patterns/call-to-action.php:22
+msgid "Plan my trip"
+msgstr ""
+
+#: patterns/hero.php
+msgctxt "Pattern title"
+msgid "Hero banner"
+msgstr ""
+
+#: patterns/hero.php
+msgctxt "Pattern description"
+msgid "A full-width banner with a headline, short intro and two buttons. Add a photo with “Replace” on the Cover block."
+msgstr ""
+
+#: patterns/hero.php:18
+msgid "Egypt, planned by people who live here"
+msgstr ""
+
+#: patterns/hero.php:22
+msgid "Day trips, Nile cruises and private transfers with local guides, clear prices and free cancellation on most bookings."
+msgstr ""
+
+#: patterns/hero.php:27
+msgid "Find a trip"
+msgstr ""
+
+#: patterns/hero.php:31
+msgid "Talk to us"
+msgstr ""
+
+#: patterns/why-book.php
+msgctxt "Pattern title"
+msgid "Why book with us"
+msgstr ""
+
+#: patterns/why-book.php
+msgctxt "Pattern description"
+msgid "A heading beside three short reasons to book, as a plain list."
+msgstr ""
+
+#: patterns/why-book.php:18
+msgid "Why travellers book with us"
+msgstr ""
+
+#: patterns/why-book.php:25
+msgid "Local team."
+msgstr ""
+
+#: patterns/why-book.php:25
+msgid "Offices in the cities you visit, reachable on WhatsApp day and night."
+msgstr ""
+
+#: patterns/why-book.php:29
+msgid "Clear prices."
+msgstr ""
+
+#: patterns/why-book.php:29
+msgid "The price you see is the price you pay, with taxes included."
+msgstr ""
+
+#: patterns/why-book.php:33
+msgid "Flexible plans."
+msgstr ""
+
+#: patterns/why-book.php:33
+msgid "Free cancellation up to 24 hours before most trips."
+msgstr ""
+
+#: template-parts/content-none.php:11
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Nothing matches yet. Try a different search, or head back to the home page."
+msgstr ""
+
+#: template-parts/content-single.php:24
+msgid "Page"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand dark"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Muted"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Line"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "System"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XS"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "S"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "M"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "L"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XL"
+msgstr ""
