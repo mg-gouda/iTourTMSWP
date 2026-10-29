@@ -1,0 +1,6 @@
+/* iTour admin: only what wp-admin doesn't already provide. */
+.itour .itour-req { color: #b32d2e; }
+.itour .itour-error { margin: 6px 0 0; color: #b32d2e; font-weight: 500; }
+.itour [aria-invalid="true"] { border-color: #b32d2e; box-shadow: 0 0 0 1px #b32d2e; }
+.itour input[readonly] { background: #f6f7f7; color: #50575e; }
+.itour .search-form { float: inline-end; margin-block-start: -6px; }

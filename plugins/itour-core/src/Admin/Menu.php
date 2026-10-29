@@ -40,7 +40,10 @@ final class Menu {
 		add_submenu_page( 'itour', __( 'Overview', 'itour-core' ), __( 'Overview', 'itour-core' ), 'manage_options', 'itour', array( $this, 'render_overview' ) );
 		foreach ( $this->modules->all() as $slug => $module ) {
 			foreach ( $module->admin_pages() as $page => $screen ) {
-				add_submenu_page( 'itour', $screen['title'], $screen['title'], $module->capability(), "itour-{$slug}-{$page}", $screen['callback'] );
+				$hook = add_submenu_page( 'itour', $screen['title'], $screen['title'], $module->capability(), "itour-{$slug}-{$page}", $screen['callback'] );
+				if ( $hook && isset( $screen['load'] ) ) {
+					add_action( "load-{$hook}", $screen['load'] );
+				}
 			}
 		}
 	}
@@ -50,7 +53,7 @@ final class Menu {
 	 */
 	public function render_overview(): void {
 		echo '<div class="wrap"><h1>' . esc_html__( 'iTour', 'itour-core' ) . '</h1>';
-		$modules = $this->modules->all();
+		$modules = array_diff_key( $this->modules->all(), array( 'core' => 1 ) );
 		if ( ! $modules ) {
 			echo '<p>' . esc_html__( 'No modules are installed yet. Add a module plugin, such as iTour CRM, to get started.', 'itour-core' ) . '</p></div>';
 			return;

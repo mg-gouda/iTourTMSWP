@@ -53,9 +53,18 @@ abstract class Module {
 	}
 
 	/**
-	 * Admin screens: `slug => [ 'title' => …, 'callback' => callable ]`, shown under the iTour menu.
+	 * Runs after the module's tables were created or updated (e.g. to seed data).
 	 *
-	 * @return array<string,array{title:string,callback:callable}>
+	 * @param string $from Previous schema version ('' on first install).
+	 */
+	public function installed( string $from ): void {
+	}
+
+	/**
+	 * Admin screens: `slug => [ 'title' => …, 'callback' => callable, 'load' => callable ]`, shown under
+	 * the iTour menu. `load` runs before output (save, redirect).
+	 *
+	 * @return array<string,array{title:string,callback:callable,load?:callable}>
 	 */
 	public function admin_pages(): array {
 		return array();

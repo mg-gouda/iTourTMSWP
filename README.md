@@ -26,6 +26,9 @@ Needs WordPress 6.5+ and PHP 8.1+. Install **iTour Core** first; WordPress then 
 
 ## Development
 ```bash
+bin/dev.sh               # local WordPress at http://localhost:8091 (Docker; login in .dev.env)
+bin/dev.sh wp plugin list   # WP-CLI against the dev site
+bin/dev.sh stop          # stop it
 bin/lint.sh              # PHP syntax, WordPress Coding Standards, PHPStan (runs in Docker)
 bin/lint.sh fix          # auto-fix coding-standard issues
 bin/deploy-staging.sh    # copy theme and plugins to the staging site in .deploy.env

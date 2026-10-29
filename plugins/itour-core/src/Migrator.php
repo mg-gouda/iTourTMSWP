@@ -46,6 +46,7 @@ final class Migrator {
 				continue;
 			}
 			$this->migrate( $module );
+			$module->installed( (string) ( $done[ $slug ] ?? '' ) );
 			$this->grant_capability( $module->capability() );
 			$done[ $slug ] = $module->version();
 			$changed       = true;

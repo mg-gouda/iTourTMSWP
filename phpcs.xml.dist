@@ -20,6 +20,15 @@
 	</rule>
 	<rule ref="PHPCompatibilityWP"/>
 
+	<!-- Capabilities added by iTour modules (itour_manage_{module}). -->
+	<rule ref="WordPress.WP.Capabilities">
+		<properties>
+			<property name="custom_capabilities" type="array">
+				<element value="itour_manage_core"/>
+			</property>
+		</properties>
+	</rule>
+
 	<!-- Classes live in PSR-4 paths (src/Foo/Bar.php), not class-foo-bar.php. -->
 	<rule ref="WordPress.Files.FileName">
 		<exclude-pattern>*/src/*</exclude-pattern>

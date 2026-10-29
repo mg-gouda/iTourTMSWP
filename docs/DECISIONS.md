@@ -4,6 +4,7 @@ Newest first. Status is **Decided** or **Open**; an open decision shows the reco
 
 | ID | Decision | Status | Choice / recommendation | Why |
 |---|---|---|---|---|
+| D-011 | Page building | Decided (29 Oct 2026, owner) | WordPress's own block editor (Gutenberg) for all page content. The `itour` theme adds `theme.json` (tokens shared by editor and front end); modules ship native blocks (search box, product grid, booking form). Booking/listing templates stay PHP. No WPBakery, Elementor or other builders | Native, no extra plugin, editors keep a visual builder |
 | D-010 | Rehlla's own plugins (`rehlla-transfers`, `rehlla-ai-mode`, `rehlla-languages`, `travel-b2b`) | Decided | Kept out of this public repo; used as references when porting into `itour-traffic`, `itour-ai`, `itour-b2b` | This repo is public and generic; those plugins hold Rehlla-specific code |
 | D-009 | Repo visibility | Decided | Public (`mg-gouda/iTourTMSWP`) | Owner's choice. No hostnames, keys or credentials are ever committed; deploy targets live in a git-ignored `.deploy.env` |
 | D-008 | Tenancy | Decided (29 Oct 2026, owner approved) | One WordPress install per company, with branches inside it. Multisite is not supported at first | Matches how DMCs host sites; much simpler than iTourTMS's multi-company tables |
