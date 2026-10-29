@@ -78,6 +78,10 @@ function wp_itourtms_assets(): void {
 add_action( 'wp_enqueue_scripts', 'wp_itourtms_assets' );
 
 require get_template_directory() . '/inc/options.php';
+require get_template_directory() . '/inc/rest.php';
+if ( is_readable( get_template_directory() . '/inc/license.php' ) ) {
+	require get_template_directory() . '/inc/license.php'; // Commercial edition only; left out of the WordPress.org build.
+}
 
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/manual.php';

@@ -7,3 +7,4 @@ node_modules/
 .dev.env
 .shots/
 dist/
+theme/wp-itourtms/inc/license-pubkey.pem

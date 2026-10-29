@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Build release packages (needs the dev site running: bin/dev.sh).
-#   dist/wp-itourtms.zip               → upload to WordPress.org (theme only)
-#   dist/themeforest/wp-itourtms.zip   → ThemeForest "Installable WordPress file"
+#   dist/wp-itourtms.zip               → upload to WordPress.org (no License tab: inc/license.php left out)
+#   dist/themeforest/wp-itourtms.zip   → ThemeForest "Installable WordPress file" (with License tab)
 #   dist/themeforest/WP-iTourTMS.zip   → ThemeForest "Main file": theme, child theme, plugins, documentation, licensing
+# The dev public key (theme/wp-itourtms/inc/license-pubkey.pem) never ships. For a real release pass the
+# MG License Server's key:  ITOUR_LICENSE_PUBKEY_FILE=/path/pubkey.pem bin/package.sh
 # Also refreshes theme/wp-itourtms/languages/wp-itourtms.pot.
 set -euo pipefail
 
@@ -11,13 +13,19 @@ root="$PWD"
 ver="$(sed -n 's/^Version:[[:space:]]*//p' theme/wp-itourtms/style.css | tr -d '\r')"
 rm -rf dist && mkdir -p dist/themeforest dist/stage
 
-zipdir() { # zipdir <parent-dir> <folder> <out.zip>
-	(cd "$1" && python3 -I -c 'import sys, zipfile, pathlib
-src, out = pathlib.Path(sys.argv[1]), sys.argv[2]
+zipdir() { # zipdir <parent-dir> <folder> <out.zip> [excluded paths relative to parent…] ; EXTRA="src=dest" adds a file
+	local parent="$1" folder="$2" out="$3"
+	shift 3
+	(cd "$parent" && python3 -I -c 'import os, sys, zipfile, pathlib
+src, out, skip = pathlib.Path(sys.argv[1]), sys.argv[2], set(sys.argv[3:])
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     for p in sorted(src.rglob("*")):
-        if p.is_file() and not any(part.startswith(".") for part in p.parts):
-            z.write(p, p.as_posix())' "$2" "$3")
+        if p.is_file() and p.as_posix() not in skip and not any(part.startswith(".") for part in p.parts):
+            z.write(p, p.as_posix())
+    extra = os.environ.get("EXTRA", "")
+    if extra:
+        s, d = extra.split("=", 1)
+        z.write(s, d)' "$folder" "$out" "$@")
 }
 
 echo "→ translation template"
@@ -36,10 +44,16 @@ docker cp itourwp-wp:/var/www/html/documentation.html dist/stage/documentation/i
 docker exec itourwp-wp rm -f /var/www/html/build-docs.php /var/www/html/documentation.html
 
 echo "→ theme zips"
-zipdir theme wp-itourtms "$root/dist/wp-itourtms.zip"
-cp dist/wp-itourtms.zip dist/themeforest/wp-itourtms.zip
+key=wp-itourtms/inc/license-pubkey.pem
+zipdir theme wp-itourtms "$root/dist/wp-itourtms.zip" wp-itourtms/inc/license.php "$key"
+if [ -n "${ITOUR_LICENSE_PUBKEY_FILE:-}" ]; then
+	EXTRA="$(realpath "$ITOUR_LICENSE_PUBKEY_FILE")=$key" zipdir theme wp-itourtms "$root/dist/themeforest/wp-itourtms.zip" "$key"
+else
+	echo "  ! no ITOUR_LICENSE_PUBKEY_FILE: the ThemeForest build will need the key set in wp-config.php"
+	zipdir theme wp-itourtms "$root/dist/themeforest/wp-itourtms.zip" "$key"
+fi
 zipdir theme wp-itourtms-child "$root/dist/stage/wp-itourtms-child.zip"
-cp dist/wp-itourtms.zip dist/stage/
+cp dist/themeforest/wp-itourtms.zip dist/stage/
 
 echo "→ plugins"
 mkdir -p dist/stage/plugins

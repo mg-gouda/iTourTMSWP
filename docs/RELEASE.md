@@ -25,6 +25,11 @@ Source: <https://make.wordpress.org/themes/handbook/review/required/> (last upda
 - Skip link, visible focus, keyboard-operable menus, and reduced motion are supported.
 - Screenshot is 1200 × 900 (4:3), showing the theme itself.
 
+## License (commercial edition)
+- Before a ThemeForest release, register product slug `wp-itourtms` on the MG License Server and save its public key (`curl https://<server>/api/v1/pubkey`). Then build with `ITOUR_LICENSE_PUBKEY_FILE=/path/pubkey.pem bin/package.sh` and set `WP_ITOURTMS_LICENSE_SERVER` (wp-config, or default it in `inc/license.php` once the server URL is final).
+- The WordPress.org zip leaves out `inc/license.php`, so it has no License tab, no external calls and no license wording.
+- Dev testing: `tools/dev-license.php` makes a local key pair and test tokens; `tools/mock-license-server.py` answers heartbeats (`docker run -d --name itourwp-lic --network itourwp -v $PWD/tools/mock-license-server.py:/srv.py:ro python:3.12-alpine python -u /srv.py`, then `bin/dev.sh wp config set WP_ITOURTMS_LICENSE_SERVER http://itourwp-lic:8080`).
+
 ## ThemeForest additions
 - The main file includes documentation (`documentation/index.html`, built from the same source as the in-dashboard manual), a child theme and licensing.
 - The sales page must state the item is 100% GPL; WordPress.org requires this of authors who sell themes elsewhere.

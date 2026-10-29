@@ -1,16 +1,142 @@
-/* Appearance → Theme Options only (enqueued on that screen). Core admin look, readable line length. */
-.wp-itourtms-intro { max-width: 75ch; }
-.wp-itourtms-options h2 { margin-block-start: 28px; padding-block-start: 16px; border-block-start: 1px solid #dcdcde; }
-.wp-itourtms-options h2:first-of-type { border: 0; padding-block-start: 0; }
-.wp-itourtms-admin .wp-itourtms-version { font-size: 13px; font-weight: 400; color: #50575e; }
-.wp-itourtms-layout { display: grid; grid-template-columns: 1fr; gap: 24px; margin-block-start: 20px; }
-@media (min-width: 960px) { .wp-itourtms-layout { grid-template-columns: 200px minmax(0, 760px); } }
-.wp-itourtms-toc ul { position: sticky; top: 48px; margin: 0; }
-.wp-itourtms-toc a { text-decoration: none; }
-.wp-itourtms-body { max-width: 75ch; }
-.wp-itourtms-doc { margin-block-end: 28px; padding: 4px 20px 12px; background: #fff; border: 1px solid #c3c4c7; }
-.wp-itourtms-doc ol, .wp-itourtms-doc ul { margin-inline-start: 1.5em; }
-.wp-itourtms-doc ul { list-style: disc; }
-.wp-itourtms-doc li { margin-block-end: 6px; }
-.wp-itourtms-doc pre { overflow: auto; padding: 12px; background: #f6f7f7; border: 1px solid #dcdcde; }
-.wp-itourtms-note { padding: 8px 12px; background: #fcf9e8; border: 1px solid #dba617; }
+/*
+ * Appearance → Theme Options (enqueued on that screen only; everything is scoped to .wp-itourtms-admin).
+ * Visual language of the iTourTMS admin: shadcn-style cards, pill tabs, switches, purple brand.
+ */
+.wp-itourtms-admin {
+	--wpit-bg: #ffffff;
+	--wpit-fg: #17141a;
+	--wpit-muted: #edf0f4;
+	--wpit-muted-fg: #5b6275;
+	--wpit-border: #d5dae3;
+	--wpit-primary: #660066;
+	--wpit-primary-hover: #8a248a;
+	--wpit-accent: #f2e6f2;
+	--wpit-ring: rgb(122 61 122 / 0.45);
+	--wpit-danger: #af031d;
+	--wpit-radius: 10px;
+	--wpit-shadow: 0 1px 2px rgb(23 20 26 / 0.06), 0 1px 3px rgb(23 20 26 / 0.05);
+	margin: 0 20px 0 2px;
+	color: var(--wpit-fg);
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
+.wp-itourtms-admin *, .wp-itourtms-admin *::before, .wp-itourtms-admin *::after { box-sizing: border-box; }
+.wpit-page { max-width: 1120px; padding-block: 20px 48px; }
+
+/* Page header with the iTourTMS accent underline */
+.wpit-head { position: relative; margin-block-end: 20px; padding-block-end: 12px; }
+.wpit-head::after { content: ""; position: absolute; inset-inline-start: 0; bottom: 0; width: 3rem; height: 2px; border-radius: 1px; background: linear-gradient(90deg, var(--wpit-primary), var(--wpit-primary-hover)); }
+.wp-itourtms-admin .wpit-title { margin: 0; padding: 0; font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: var(--wpit-fg); }
+.wpit-sub { margin: 4px 0 0; color: var(--wpit-muted-fg); font-size: 14px; }
+
+/* Pill tabs */
+.wpit-tabs { display: inline-flex; flex-wrap: wrap; gap: 2px; margin-block-end: 16px; padding: 4px; background: var(--wpit-muted); border-radius: var(--wpit-radius); }
+.wpit-tab { padding: 6px 14px; border-radius: 8px; color: var(--wpit-muted-fg); font-weight: 500; line-height: 20px; text-decoration: none; transition: background-color .15s ease, color .15s ease; }
+.wpit-tab:hover { color: var(--wpit-fg); }
+.wpit-tab.is-active { background: var(--wpit-bg); color: var(--wpit-fg); box-shadow: var(--wpit-shadow); }
+
+/* Focus ring */
+.wp-itourtms-admin a:focus, .wp-itourtms-admin button:focus, .wp-itourtms-admin input:focus, .wp-itourtms-admin textarea:focus { box-shadow: none; outline: none; }
+.wp-itourtms-admin :focus-visible { outline: none; box-shadow: 0 0 0 3px var(--wpit-ring) !important; }
+
+/* Split layout: vertical tabs left, content right */
+.wpit-split { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .wpit-split { grid-template-columns: 210px minmax(0, 1fr); align-items: start; } }
+.wpit-vtabs { display: flex; flex-direction: column; gap: 2px; padding: 4px; background: var(--wpit-muted); border-radius: var(--wpit-radius); }
+@media (min-width: 900px) { .wpit-vtabs { position: sticky; top: 52px; } }
+.wpit-vtab { display: block; width: 100%; padding: 8px 12px; border: 0; border-radius: 8px; background: transparent; color: var(--wpit-muted-fg); font: inherit; font-weight: 500; text-align: start; text-decoration: none; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+.wpit-vtab:hover { color: var(--wpit-fg); background: rgb(255 255 255 / 0.6); }
+.wpit-vtab.is-active { background: var(--wpit-bg); color: var(--wpit-primary); font-weight: 600; box-shadow: var(--wpit-shadow); }
+.wpit-panels { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+/* Cards */
+.wpit-card { background: var(--wpit-bg); border: 1px solid var(--wpit-border); border-radius: 14px; box-shadow: var(--wpit-shadow); }
+.wpit-card[hidden] { display: none; }
+.wpit-card-head { padding: 22px 24px 0; }
+.wp-itourtms-admin .wpit-card-title { margin: 0; padding: 0; font-size: 16px; font-weight: 600; line-height: 1.3; color: var(--wpit-fg); }
+.wpit-card-desc { margin: 6px 0 0; color: var(--wpit-muted-fg); }
+.wpit-card-body { display: flex; flex-direction: column; gap: 20px; padding: 20px 24px 24px; }
+.wpit-card-body.wpit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* Fields */
+.wpit-field { display: flex; flex-direction: column; gap: 6px; }
+.wpit-field-row { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px; border: 1px solid var(--wpit-border); border-radius: var(--wpit-radius); }
+.wpit-label { font-weight: 500; color: var(--wpit-fg); }
+.wpit-help { margin: 0; color: var(--wpit-muted-fg); font-size: 13px; line-height: 1.45; }
+.wp-itourtms-admin .wpit-input { width: 100%; min-height: 36px; margin: 0; padding: 6px 12px; border: 1px solid var(--wpit-border); border-radius: 8px; background: var(--wpit-bg); color: var(--wpit-fg); font: inherit; line-height: 22px; box-shadow: 0 1px 2px rgb(23 20 26 / 0.04); }
+.wp-itourtms-admin .wpit-input:hover { border-color: #b9c0cd; }
+.wp-itourtms-admin textarea.wpit-input { min-height: 84px; resize: vertical; }
+.wpit-mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important; font-size: 13px !important; }
+
+.wpit-color { display: flex; gap: 8px; }
+.wpit-swatch { flex: none; width: 36px; height: 36px; padding: 0; border: 1px solid var(--wpit-border); border-radius: 8px; background: none; cursor: pointer; }
+.wpit-swatch::-webkit-color-swatch-wrapper { padding: 3px; }
+.wpit-swatch::-webkit-color-swatch { border: 0; border-radius: 5px; }
+.wpit-swatch::-moz-color-swatch { border: 0; border-radius: 5px; }
+
+.wpit-range { display: flex; align-items: center; gap: 14px; }
+.wpit-range input[type="range"] { flex: 1; accent-color: var(--wpit-primary); }
+.wpit-suffix { position: relative; flex: none; width: 110px; }
+.wp-itourtms-admin .wpit-suffix .wpit-input { padding-inline-end: 44px; }
+.wpit-suffix span { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); color: var(--wpit-muted-fg); font-size: 13px; pointer-events: none; }
+
+/* Switch */
+.wpit-switch { position: relative; flex: none; width: 40px; height: 22px; padding: 0; border: 0; border-radius: 999px; background: #c9ced8; cursor: pointer; transition: background-color .15s ease; }
+.wpit-switch-thumb { position: absolute; top: 2px; inset-inline-start: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / 0.25); transition: transform .15s ease; }
+.wpit-switch[aria-checked="true"] { background: var(--wpit-primary); }
+.wpit-switch[aria-checked="true"] .wpit-switch-thumb { transform: translateX(18px); }
+[dir="rtl"] .wpit-switch[aria-checked="true"] .wpit-switch-thumb { transform: translateX(-18px); }
+
+/* Buttons */
+.wpit-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.wpit-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 16px; border: 1px solid transparent; border-radius: 8px; font: inherit; font-weight: 500; cursor: pointer; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+.wpit-btn:disabled { opacity: .6; cursor: default; }
+.wpit-btn.is-busy::before { content: ""; width: 14px; height: 14px; border: 2px solid currentColor; border-inline-end-color: transparent; border-radius: 50%; animation: wpit-spin .7s linear infinite; }
+.wpit-btn-primary { background: var(--wpit-primary); color: #fff; }
+.wpit-btn-primary:hover:not(:disabled) { background: var(--wpit-primary-hover); }
+.wpit-btn-outline { background: var(--wpit-bg); border-color: var(--wpit-border); color: var(--wpit-fg); box-shadow: 0 1px 2px rgb(23 20 26 / 0.04); }
+.wpit-btn-outline:hover:not(:disabled) { background: var(--wpit-muted); }
+.wpit-btn-ghost-danger { background: transparent; color: var(--wpit-danger); }
+.wpit-btn-ghost-danger:hover:not(:disabled) { background: #fbe9ec; }
+.wpit-note { flex-basis: 100%; margin: 0; color: var(--wpit-muted-fg); font-size: 13px; }
+.wpit-options .wpit-actions { padding-block-start: 4px; }
+@keyframes wpit-spin { to { transform: rotate(360deg); } }
+
+/* Licence */
+.wpit-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 24px; margin: 0; }
+.wpit-details dt { margin-block-end: 4px; color: var(--wpit-muted-fg); font-size: 12px; }
+.wpit-details dd { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+.wpit-badge { display: inline-flex; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+.wpit-badge.is-ok { background: #dcfce7; color: #166534; }
+.wpit-badge.is-warn { background: #fef9c3; color: #854d0e; }
+.wpit-badge.is-bad { background: #fee2e2; color: #991b1b; }
+.wpit-badge.is-muted { background: var(--wpit-muted); color: var(--wpit-muted-fg); }
+.wpit-license-form { display: flex; flex-direction: column; gap: 8px; padding-block-start: 20px; border-block-start: 1px solid var(--wpit-border); }
+.wpit-license-form .wpit-actions { padding-block-start: 6px; }
+.wpit-alert { margin: 0; padding: 12px 14px; border: 1px solid #fde68a; border-radius: var(--wpit-radius); background: #fffbeb; color: #854d0e; }
+
+/* Manual */
+.wpit-doc .wp-itourtms-doc { padding: 22px 24px; background: var(--wpit-bg); border: 1px solid var(--wpit-border); border-radius: 14px; box-shadow: var(--wpit-shadow); }
+.wpit-doc .wp-itourtms-doc h2 { margin: 0 0 10px; font-size: 16px; font-weight: 600; color: var(--wpit-fg); }
+.wpit-doc .wp-itourtms-doc p, .wpit-doc .wp-itourtms-doc li { max-width: 75ch; font-size: 14px; line-height: 1.6; }
+.wpit-doc .wp-itourtms-doc ol, .wpit-doc .wp-itourtms-doc ul { margin: 0 0 0 1.4em; }
+.wpit-doc .wp-itourtms-doc ul { list-style: disc; }
+.wpit-doc .wp-itourtms-doc li { margin-block-end: 6px; }
+.wpit-doc .wp-itourtms-doc pre { overflow: auto; margin: 12px 0 0; padding: 12px 14px; border-radius: var(--wpit-radius); background: var(--wpit-muted); font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; }
+.wpit-doc pre code { padding: 0; background: none; font: inherit; }
+.wpit-doc .wp-itourtms-note { padding: 10px 14px; border: 1px solid #e9cfe9; border-radius: var(--wpit-radius); background: var(--wpit-accent); color: var(--wpit-primary); }
+.wpit-vtabs.is-links .wpit-vtab:hover { color: var(--wpit-primary); }
+
+/* Toasts */
+.wpit-toasts { position: fixed; inset-inline-end: 24px; bottom: 24px; z-index: 100000; display: flex; flex-direction: column; gap: 8px; max-width: 380px; }
+.wpit-toast { padding: 12px 16px; border: 1px solid var(--wpit-border); border-inline-start-width: 1px; border-radius: var(--wpit-radius); background: var(--wpit-bg); color: var(--wpit-fg); font-weight: 500; box-shadow: 0 10px 24px rgb(23 20 26 / 0.12); animation: wpit-in .2s ease-out; }
+.wpit-toast.is-ok { border-color: #bbf7d0; background: #f0fdf4; color: #166534; }
+.wpit-toast.is-warn { border-color: #fde68a; background: #fffbeb; color: #854d0e; }
+.wpit-toast.is-bad { border-color: #fecaca; background: #fef2f2; color: #991b1b; }
+.wpit-toast.is-leaving { opacity: 0; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease; }
+@keyframes wpit-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-itourtms-admin *, .wpit-toast { animation: none !important; transition: none !important; }
+}

@@ -159,7 +159,7 @@ function wp_itourtms_manual(): array {
 					'id'     => 'files',
 					'title'  => __( 'Theme files', 'wp-itourtms' ),
 					'blocks' => array(
-						array( 'code', "style.css              theme header\nfunctions.php          setup, assets\ntheme.json             colours, fonts, spacing, layout (editor + site)\nheader.php, footer.php site header and footer\nindex.php              posts, pages, archives, search\n404.php, comments.php\ntemplate-parts/        content-single, content-summary, content-none\nassets/css/main.css    styles (uses theme.json presets)\nassets/js/main.js      front-end script (vanilla, deferred)\npatterns/              block patterns (hero, why-book, call-to-action)\ninc/                   admin page and this manual\nlanguages/             wp-itourtms.pot" ),
+						array( 'code', "style.css              theme header\nfunctions.php          setup, assets\ntheme.json             colours, fonts, spacing, layout (editor + site)\nheader.php, footer.php site header and footer\nindex.php              posts, pages, archives, search\n404.php, comments.php\ntemplate-parts/        content-single, content-summary, content-none\nassets/css/main.css    styles (uses theme.json presets)\nassets/js/main.js      front-end script (vanilla, deferred)\npatterns/              block patterns (hero, why-book, call-to-action)\ninc/options.php        Theme Options fields, defaults, theme.json bridge\ninc/rest.php           save endpoint for Theme Options\ninc/admin-page.php     Appearance → Theme Options screen\ninc/manual.php         this manual\nlanguages/             wp-itourtms.pot" ),
 					),
 				),
 				array(
@@ -209,7 +209,7 @@ function wp_itourtms_manual(): array {
 				),
 				array(
 					'id'     => 'credits',
-					'title'  => __( 'Credits and licence', 'wp-itourtms' ),
+					'title'  => __( 'Credits and license', 'wp-itourtms' ),
 					'blocks' => array(
 						array( 'p', __( 'WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used.', 'wp-itourtms' ) ),
 					),

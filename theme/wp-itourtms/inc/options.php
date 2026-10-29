@@ -140,22 +140,126 @@ function wp_itourtms_option_fields(): array {
 }
 
 /**
+ * Default value of every option.
+ *
+ * @return array<string,mixed>
+ */
+function wp_itourtms_option_defaults(): array {
+	$defaults = array();
+	foreach ( wp_itourtms_option_fields() as $section ) {
+		foreach ( $section['fields'] as $key => $f ) {
+			$defaults[ $key ] = $f['default'];
+		}
+	}
+	return $defaults;
+}
+
+/**
  * All options with defaults filled in.
  *
  * @return array<string,mixed>
  */
 function wp_itourtms_options(): array {
-	static $cache = null;
-	if ( null === $cache ) {
-		$defaults = array();
-		foreach ( wp_itourtms_option_fields() as $section ) {
-			foreach ( $section['fields'] as $key => $f ) {
-				$defaults[ $key ] = $f['default'];
+	return array_merge( wp_itourtms_option_defaults(), (array) get_option( 'wp_itourtms_options', array() ) );
+}
+
+/**
+ * Sanitize submitted options against the field definitions.
+ *
+ * @param mixed $input Submitted values.
+ * @return array<string,mixed>
+ */
+function wp_itourtms_sanitize_options( $input ): array {
+	$input   = is_array( $input ) ? $input : array();
+	$allowed = array(
+		'a'      => array( 'href' => array() ),
+		'strong' => array(),
+		'em'     => array(),
+	);
+	$out     = array();
+	foreach ( wp_itourtms_option_fields() as $section ) {
+		foreach ( $section['fields'] as $key => $f ) {
+			$v = $input[ $key ] ?? null;
+			switch ( $f['type'] ) {
+				case 'color':
+					$hex         = (string) sanitize_hex_color( (string) $v );
+					$out[ $key ] = '' !== $hex ? $hex : $f['default'];
+					break;
+				case 'checkbox':
+					$out[ $key ] = empty( $v ) ? 0 : 1;
+					break;
+				case 'px':
+				case 'number':
+					$out[ $key ] = max( (int) $f['min'], min( (int) $f['max'], null === $v ? (int) $f['default'] : (int) $v ) );
+					break;
+				default:
+					$out[ $key ] = wp_kses( (string) $v, $allowed );
 			}
 		}
-		$cache = array_merge( $defaults, (array) get_option( 'wp_itourtms_options', array() ) );
 	}
-	return $cache;
+	return $out;
+}
+add_action(
+	'init',
+	static function (): void {
+		register_setting(
+			'wp_itourtms',
+			'wp_itourtms_options',
+			array(
+				'type'              => 'array',
+				'sanitize_callback' => 'wp_itourtms_sanitize_options',
+				'default'           => array(),
+			)
+		);
+	}
+);
+
+/**
+ * WCAG contrast ratio of two hex colours.
+ *
+ * @param string $a Hex colour.
+ * @param string $b Hex colour.
+ */
+function wp_itourtms_contrast( string $a, string $b ): float {
+	$lum = static function ( string $hex ): float {
+		$hex = ltrim( $hex, '#' );
+		if ( 3 === strlen( $hex ) ) {
+			$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+		}
+		$c = array_map(
+			static function ( string $h ): float {
+				$v = hexdec( $h ) / 255;
+				return $v <= 0.03928 ? $v / 12.92 : ( ( $v + 0.055 ) / 1.055 ) ** 2.4;
+			},
+			str_split( $hex, 2 )
+		);
+		return 0.2126 * $c[0] + 0.7152 * $c[1] + 0.0722 * $c[2];
+	};
+	$l   = array( $lum( $a ), $lum( $b ) );
+	return ( max( $l ) + 0.05 ) / ( min( $l ) + 0.05 );
+}
+
+/**
+ * Readability warnings for colour pairs below WCAG AA (4.5:1).
+ *
+ * @param array<string,mixed> $o Options.
+ * @return string[]
+ */
+function wp_itourtms_contrast_warnings( array $o ): array {
+	$pairs = array(
+		array( 'color_ink', 'color_base', __( 'Text on the page background', 'wp-itourtms' ) ),
+		array( 'color_ink', 'color_brand', __( 'Text on brand buttons', 'wp-itourtms' ) ),
+		array( 'color_base', 'color_brand_dark', __( 'White text on the hover colour', 'wp-itourtms' ) ),
+	);
+	$out   = array();
+	foreach ( $pairs as $p ) {
+		$ratio = wp_itourtms_contrast( (string) $o[ $p[0] ], (string) $o[ $p[1] ] );
+		if ( $ratio < 4.5 ) {
+			/* translators: 1: colour pair, 2: contrast ratio. */
+			$out[] = sprintf( __( '%1$s is hard to read (%2$s:1). Aim for at least 4.5:1.', 'wp-itourtms' ), $p[2], number_format_i18n( $ratio, 1 ) );
+		}
+	}
+	return $out;
 }
 
 /**

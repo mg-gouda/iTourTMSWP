@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-29T08:21:42+00:00\n"
+"POT-Creation-Date: 2026-10-29T08:36:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-itourtms\n"
@@ -91,63 +91,259 @@ msgid "WP iTourTMS Theme Options"
 msgstr ""
 
 #: inc/admin-page.php:17
-#: inc/admin-page.php:197
+#: inc/admin-page.php:87
 #: inc/manual.php:94
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin-page.php:90
-msgid "words"
+#: inc/admin-page.php:41
+msgid "Theme options saved."
 msgstr ""
 
-#: inc/admin-page.php:109
+#: inc/admin-page.php:42
 msgid "Theme options were reset to their defaults."
 msgstr ""
 
-#: inc/admin-page.php:140
-msgid "Text on the page background"
-msgstr ""
-
-#: inc/admin-page.php:141
-msgid "Text on brand buttons"
-msgstr ""
-
-#: inc/admin-page.php:142
-msgid "White text on the hover colour"
-msgstr ""
-
-#. translators: 1: colour pair, 2: contrast ratio.
-#: inc/admin-page.php:151
-#, php-format
-msgid "Saved, but hard to read: %1$s has a contrast of %2$s:1. Aim for at least 4.5:1."
-msgstr ""
-
-#: inc/admin-page.php:191
-msgid "Options"
-msgstr ""
-
-#: inc/admin-page.php:198
-msgid "Theme Options sections"
-msgstr ""
-
-#: inc/admin-page.php:213
-msgid "These settings apply to the whole site and to the block editor. Changes made later under Appearance → Design → Styles take priority over the colours and widths here."
-msgstr ""
-
-#: inc/admin-page.php:218
-msgid "Save options"
-msgstr ""
-
-#: inc/admin-page.php:221
-msgid "Reset to defaults"
-msgstr ""
-
-#: inc/admin-page.php:227
+#: inc/admin-page.php:43
 msgid "Reset all theme options to their defaults?"
 msgstr ""
 
-#: inc/admin-page.php:234
+#: inc/admin-page.php:44
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: inc/admin-page.php:45
+msgid "License activated."
+msgstr ""
+
+#: inc/admin-page.php:46
+msgid "License removed from this site."
+msgstr ""
+
+#: inc/admin-page.php:47
+msgid "License checked with the server."
+msgstr ""
+
+#: inc/admin-page.php:48
+msgid "Remove the license from this site?"
+msgstr ""
+
+#: inc/admin-page.php:65
+msgid "License"
+msgstr ""
+
+#: inc/admin-page.php:67
+msgid "Options"
+msgstr ""
+
+#. translators: %s: theme version.
+#: inc/admin-page.php:88
+#, php-format
+msgid "WP iTourTMS %s · settings, license and help for your theme"
+msgstr ""
+
+#: inc/admin-page.php:90
+msgid "Theme Options sections"
+msgstr ""
+
+#: inc/admin-page.php:122
+msgid "Option groups"
+msgstr ""
+
+#: inc/admin-page.php:137
+msgid "Your brand colours. They apply to the site and the block editor."
+msgstr ""
+
+#: inc/admin-page.php:138
+msgid "How wide content runs and how rounded corners are."
+msgstr ""
+
+#: inc/admin-page.php:139
+msgid "How the site header behaves."
+msgstr ""
+
+#: inc/admin-page.php:140
+msgid "The line at the bottom of every page."
+msgstr ""
+
+#: inc/admin-page.php:141
+msgid "What posts show in lists and on their own page."
+msgstr ""
+
+#: inc/admin-page.php:155
+msgid "Save options"
+msgstr ""
+
+#: inc/admin-page.php:156
+msgid "Reset to defaults"
+msgstr ""
+
+#: inc/admin-page.php:157
+msgid "Changes under Appearance → Design → Styles take priority over these colours and widths."
+msgstr ""
+
+#. translators: %s: colour name.
+#: inc/admin-page.php:186
+#, php-format
+msgid "Pick %s colour"
+msgstr ""
+
+#: inc/admin-page.php:202
+msgid "words"
+msgstr ""
+
+#: inc/admin-page.php:215
+msgid "License Information"
+msgstr ""
+
+#: inc/admin-page.php:216
+msgid "Activate your license to receive theme updates and support. Your site keeps working either way."
+msgstr ""
+
+#: inc/admin-page.php:218
+msgid "The license server is not set up on this site yet. Add WP_ITOURTMS_LICENSE_SERVER and WP_ITOURTMS_LICENSE_PUBKEY to wp-config.php (see Documentation → License)."
+msgstr ""
+
+#: inc/admin-page.php:224
+msgid "Replace license key"
+msgstr ""
+
+#: inc/admin-page.php:224
+msgid "License key"
+msgstr ""
+
+#: inc/admin-page.php:225
+msgid "Paste the license key from your purchase email"
+msgstr ""
+
+#: inc/admin-page.php:226
+msgid "Activate"
+msgstr ""
+
+#: inc/admin-page.php:228
+msgid "Check now"
+msgstr ""
+
+#: inc/admin-page.php:229
+msgid "Remove license"
+msgstr ""
+
+#: inc/admin-page.php:241
+msgid "Not activated"
+msgstr ""
+
+#: inc/admin-page.php:242
+msgid "Active"
+msgstr ""
+
+#: inc/admin-page.php:243
+msgid "Active (needs attention)"
+msgstr ""
+
+#: inc/admin-page.php:244
+msgid "Expired"
+msgstr ""
+
+#: inc/admin-page.php:245
+msgid "Revoked"
+msgstr ""
+
+#: inc/admin-page.php:246
+msgid "Invalid key"
+msgstr ""
+
+#: inc/admin-page.php:247
+msgid "Not licensed for this domain"
+msgstr ""
+
+#: inc/admin-page.php:248
+msgid "Install limit reached"
+msgstr ""
+
+#: inc/admin-page.php:249
+msgid "Server IP not allowed"
+msgstr ""
+
+#: inc/admin-page.php:250
+msgid "Could not reach the license server"
+msgstr ""
+
+#. translators: %d: days.
+#: inc/admin-page.php:255
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/admin-page.php:257
+#: inc/admin-page.php:272
+msgid "License Key"
+msgstr ""
+
+#: inc/admin-page.php:258
+#: inc/admin-page.php:269
+msgid "Status"
+msgstr ""
+
+#: inc/admin-page.php:259
+msgid "Licensed to"
+msgstr ""
+
+#: inc/admin-page.php:260
+msgid "Plan"
+msgstr ""
+
+#: inc/admin-page.php:261
+msgid "Expires On"
+msgstr ""
+
+#: inc/admin-page.php:262
+msgid "Days Remaining"
+msgstr ""
+
+#: inc/admin-page.php:263
+msgid "Domains"
+msgstr ""
+
+#: inc/admin-page.php:264
+msgid "Last checked"
+msgstr ""
+
+#: inc/admin-page.php:286
 msgid "On this page"
+msgstr ""
+
+#: inc/license.php:330
+msgid "Activate your license"
+msgstr ""
+
+#: inc/license.php:335
+msgid "Open Appearance → Theme Options → License."
+msgstr ""
+
+#: inc/license.php:336
+msgid "Paste the license key from your purchase email and click Activate."
+msgstr ""
+
+#: inc/license.php:337
+msgid "The status turns Active once the license server confirms it. The license is checked again about once a day."
+msgstr ""
+
+#: inc/license.php:340
+msgid "Your site keeps working without a license; the license unlocks updates and support. A key works only on the domains it was issued for."
+msgstr ""
+
+#: inc/license.php:345
+msgid "License server"
+msgstr ""
+
+#: inc/license.php:347
+msgid "License keys are Ed25519-signed tokens from the MG License Server. They are verified on the site (signature, product, domain, expiry) and confirmed online about once a day; if the server cannot be reached the license keeps working for 7 days. Set the server and its public key in wp-config.php, or ship the key as inc/license-pubkey.pem:"
+msgstr ""
+
+#: inc/license.php:349
+msgid "Other code can read the status with wp_itourtms_license_check() — it returns ok, status, plan and expiry."
 msgstr ""
 
 #: inc/manual.php:22
@@ -423,7 +619,7 @@ msgid "The theme stores no personal data, sets no cookies, loads nothing from ot
 msgstr ""
 
 #: inc/manual.php:212
-msgid "Credits and licence"
+msgid "Credits and license"
 msgstr ""
 
 #: inc/manual.php:214
@@ -447,7 +643,7 @@ msgid "Colours"
 msgstr ""
 
 #: inc/options.php:23
-#: inc/options.php:182
+#: inc/options.php:286
 msgid "Brand"
 msgstr ""
 
@@ -571,27 +767,45 @@ msgstr ""
 msgid "Words shown for each post in lists when the post has no manual excerpt."
 msgstr ""
 
-#: inc/options.php:183
+#: inc/options.php:250
+msgid "Text on the page background"
+msgstr ""
+
+#: inc/options.php:251
+msgid "Text on brand buttons"
+msgstr ""
+
+#: inc/options.php:252
+msgid "White text on the hover colour"
+msgstr ""
+
+#. translators: 1: colour pair, 2: contrast ratio.
+#: inc/options.php:259
+#, php-format
+msgid "%1$s is hard to read (%2$s:1). Aim for at least 4.5:1."
+msgstr ""
+
+#: inc/options.php:287
 msgid "Brand dark"
 msgstr ""
 
-#: inc/options.php:184
+#: inc/options.php:288
 msgid "Ink"
 msgstr ""
 
-#: inc/options.php:185
+#: inc/options.php:289
 msgid "Muted"
 msgstr ""
 
-#: inc/options.php:186
+#: inc/options.php:290
 msgid "Line"
 msgstr ""
 
-#: inc/options.php:187
+#: inc/options.php:291
 msgid "Surface"
 msgstr ""
 
-#: inc/options.php:188
+#: inc/options.php:292
 msgid "Base"
 msgstr ""
 
