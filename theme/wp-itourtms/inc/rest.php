@@ -24,6 +24,9 @@ function wp_itourtms_save_stores( array $stores ): array {
 		}
 		$clean = wp_itourtms_sanitize_options( array_merge( wp_itourtms_options( $store ), $values ), $store );
 		update_option( $store, $clean );
+		if ( WP_ITOURTMS_STORE === $store ) {
+			wp_itourtms_sync_menu_locations( null, $clean ); // Runs even when update_option() saw no change.
+		}
 		$saved[ $store ] = $clean;
 	}
 	return $saved;

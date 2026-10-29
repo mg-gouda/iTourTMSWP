@@ -74,13 +74,29 @@
 		} );
 	} );
 
-	// Fields with data-show-if="<switch id>" appear only while that switch is on.
+	// data-show-if="wpit-a;wpit-b=x|y": show the field only while every condition holds —
+	// a switch is on, or a select has one of the listed values.
+	function holds( rule ) {
+		var parts = rule.split( '=' );
+		var el = document.getElementById( parts[ 0 ] );
+		if ( ! el ) {
+			return true;
+		}
+		if ( 1 === parts.length ) {
+			return 'true' === el.getAttribute( 'aria-checked' );
+		}
+		return -1 !== parts[ 1 ].split( '|' ).indexOf( el.value );
+	}
 	function conditions() {
 		root.querySelectorAll( '[data-show-if]' ).forEach( function ( el ) {
-			var sw = document.getElementById( el.getAttribute( 'data-show-if' ) );
-			el.hidden = !! sw && 'true' !== sw.getAttribute( 'aria-checked' );
+			el.hidden = ! el.getAttribute( 'data-show-if' ).split( ';' ).every( holds );
 		} );
 	}
+	root.addEventListener( 'change', function ( e ) {
+		if ( e.target.matches && e.target.matches( 'select' ) ) {
+			conditions();
+		}
+	} );
 
 	// Switches.
 	root.querySelectorAll( '.wpit-switch' ).forEach( function ( sw ) {

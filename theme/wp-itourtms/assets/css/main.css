@@ -18,7 +18,7 @@ img, video { max-width: 100%; height: auto; }
 .site-topbar a { color: inherit; text-decoration: none; }
 .site-topbar a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .site-topbar ul { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin: 0; padding: 0; list-style: none; }
-.site-topbar__contacts a { display: inline-flex; align-items: center; gap: 6px; }
+.site-contact__item { display: inline-flex; align-items: center; gap: 6px; }
 .site-topbar svg { flex: none; width: 16px; height: 16px; fill: currentColor; }
 .site-topbar__text { flex: 1; margin: 0; text-align: center; opacity: .92; }
 .site-topbar__social { gap: 4px 12px; }
@@ -28,7 +28,7 @@ img, video { max-width: 100%; height: auto; }
 	.site-topbar__inner { gap: 4px 12px; }
 	.site-topbar__text { flex-basis: 100%; order: -1; font-size: 0.8125rem; }
 	/* Icons only on phones; the label stays for screen readers. */
-	.site-topbar__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+	.site-topbar .site-contact__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 	.site-topbar ul, .site-topbar__social { gap: 0 2px; }
 	.site-topbar__contacts a, .site-topbar__social a { padding: 7px; }
 	.site-topbar svg { width: 18px; height: 18px; }
@@ -94,9 +94,32 @@ img, video { max-width: 100%; height: auto; }
 .search-submit:hover, .comment-form .submit:hover, .wp-element-button:hover { background: var(--wp--preset--color--brand-dark); color: var(--wp--preset--color--base); }
 
 /* Footer */
-.site-footer { padding-block: var(--wp--preset--spacing--50); background: var(--wp--preset--color--ink); color: var(--wp--preset--color--base); }
-.site-footer a { color: inherit; }
-.site-footer ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin: 0 0 16px; padding: 0; list-style: none; }
+.site-footer { padding-block: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40); background: var(--wp-itourtms-footer-bg, var(--wp--preset--color--ink)); color: var(--wp-itourtms-footer-fg, var(--wp--preset--color--base)); }
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.site-footer ul { margin: 0; padding: 0; list-style: none; }
+.site-footer__cols { display: grid; grid-template-columns: 1fr; gap: var(--wp--preset--spacing--40); padding-block-end: var(--wp--preset--spacing--50); }
+@media (min-width: 640px) { .site-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 960px) {
+	.site-footer__cols--3 { grid-template-columns: 1.4fr 1fr 1fr; }
+	.site-footer__cols--4 { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+}
+.site-footer__title { margin: 0 0 12px; font-size: var(--wp--preset--font-size--medium); font-weight: 600; letter-spacing: .01em; }
+.site-footer__brand { margin-block-end: 12px; }
+.site-footer__brand .custom-logo { max-height: 44px; width: auto; }
+.site-footer__site { font-size: var(--wp--preset--font-size--large); font-weight: 700; }
+.site-footer__text { margin: 0; max-width: 36ch; font-size: var(--wp--preset--font-size--small); line-height: 1.7; opacity: .85; }
+.site-footer__menu { display: grid; gap: 8px; font-size: var(--wp--preset--font-size--small); }
+.site-footer__contacts { display: grid; gap: 10px; font-size: var(--wp--preset--font-size--small); }
+.site-footer__contacts .site-contact__item { align-items: flex-start; gap: 10px; line-height: 1.5; }
+.site-footer svg { flex: none; width: 18px; height: 18px; margin-block-start: 1px; fill: currentColor; opacity: .9; }
+.site-footer__social { display: flex; flex-wrap: wrap; gap: 8px; }
+.site-footer__social a { display: inline-flex; padding: 9px; border: 1px solid rgb(255 255 255 / 0.2); border-radius: var(--wp-itourtms-radius, 10px); }
+.site-footer__social a:hover { background: rgb(255 255 255 / 0.1); text-decoration: none; }
+.footer-widget + .footer-widget { margin-block-start: var(--wp--preset--spacing--30); }
+.site-footer__bottom { padding-block-start: var(--wp--preset--spacing--40); border-block-start: 1px solid rgb(255 255 255 / 0.14); }
+.site-footer__cols:empty + .site-footer__bottom, .site-footer > .container > .site-footer__bottom:first-child { padding-block-start: 0; border: 0; }
+.site-footer__bottom ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-block-end: 12px; font-size: var(--wp--preset--font-size--small); }
 .site-footer__copy { margin: 0; font-size: var(--wp--preset--font-size--small); text-align: center; opacity: .85; }
 
 /* WordPress core classes the theme must style */

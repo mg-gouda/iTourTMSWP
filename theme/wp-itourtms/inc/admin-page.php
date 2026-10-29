@@ -180,7 +180,8 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 	$id   = 'wpit-' . $key;
 	$help = empty( $f['help'] ) ? '' : '<p class="wpit-help" id="' . esc_attr( $id ) . '-help">' . esc_html( $f['help'] ) . '</p>';
 	$desc = empty( $f['help'] ) ? '' : ' aria-describedby="' . esc_attr( $id ) . '-help"';
-	$cond = empty( $f['show_if'] ) ? '' : ' data-show-if="' . esc_attr( 'wpit-' . $f['show_if'] ) . '"';
+	// Conditions become "wpit-<key>" or "wpit-<key>=a|b", joined by ";" (all must hold); admin.js evaluates them.
+	$cond = empty( $f['show_if'] ) ? '' : ' data-show-if="' . esc_attr( implode( ';', array_map( static fn( $c ) => 'wpit-' . $c, (array) $f['show_if'] ) ) ) . '"';
 
 	if ( 'heading' === $f['type'] ) {
 		echo '<div class="wpit-subhead"' . $cond . '><h3>' . esc_html( $f['label'] ) . '</h3>' . $help . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_* above.
@@ -194,6 +195,16 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 	}
 	echo '<div class="wpit-field"' . $cond . '><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cond built with esc_attr.
 	switch ( $f['type'] ) {
+		case 'textarea':
+			echo '<textarea class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '" rows="3"' . $desc . '>' . esc_textarea( (string) $value ) . '</textarea>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
+			break;
+		case 'menu':
+			echo '<select class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '"' . $desc . '><option value="0">' . esc_html__( '— Choose a menu —', 'wp-itourtms' ) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
+			foreach ( wp_get_nav_menus() as $menu ) {
+				echo '<option value="' . (int) $menu->term_id . '"' . selected( (int) $value, (int) $menu->term_id, false ) . '>' . esc_html( $menu->name ) . '</option>';
+			}
+			echo '</select>';
+			break;
 		case 'email':
 		case 'url':
 		case 'tel':

@@ -39,12 +39,42 @@ function wp_itourtms_setup(): void {
 	add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
 	register_nav_menus(
 		array(
-			'primary' => __( 'Main menu', 'wp-itourtms' ),
-			'footer'  => __( 'Footer menu', 'wp-itourtms' ),
+			'primary'  => __( 'Main menu', 'wp-itourtms' ),
+			'footer'   => __( 'Footer menu', 'wp-itourtms' ),
+			/* translators: %d: column number. */
+			'footer-1' => sprintf( __( 'Footer column %d', 'wp-itourtms' ), 1 ),
+			/* translators: %d: column number. */
+			'footer-2' => sprintf( __( 'Footer column %d', 'wp-itourtms' ), 2 ),
+			/* translators: %d: column number. */
+			'footer-3' => sprintf( __( 'Footer column %d', 'wp-itourtms' ), 3 ),
+			/* translators: %d: column number. */
+			'footer-4' => sprintf( __( 'Footer column %d', 'wp-itourtms' ), 4 ),
 		)
 	);
 }
 add_action( 'after_setup_theme', 'wp_itourtms_setup' );
+
+/**
+ * Widget areas for footer columns set to “Widgets” in Theme Options.
+ */
+function wp_itourtms_widgets(): void {
+	for ( $n = 1; $n <= 4; $n++ ) {
+		register_sidebar(
+			array(
+				/* translators: %d: column number. */
+				'name'          => sprintf( __( 'Footer column %d', 'wp-itourtms' ), $n ),
+				'id'            => 'footer-' . $n,
+				/* translators: %d: column number. */
+				'description'   => sprintf( __( 'Shown when footer column %d is set to “Widgets” in Appearance → Theme Options → Footer.', 'wp-itourtms' ), $n ),
+				'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="site-footer__title">',
+				'after_title'   => '</h2>',
+			)
+		);
+	}
+}
+add_action( 'widgets_init', 'wp_itourtms_widgets' );
 
 /**
  * Block styles (patterns are registered automatically from /patterns).
@@ -78,6 +108,7 @@ function wp_itourtms_assets(): void {
 add_action( 'wp_enqueue_scripts', 'wp_itourtms_assets' );
 
 require get_template_directory() . '/inc/options.php';
+require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/rest.php';
 if ( is_readable( get_template_directory() . '/inc/license.php' ) ) {
 	require get_template_directory() . '/inc/license.php'; // Commercial edition only; left out of the WordPress.org build.

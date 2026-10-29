@@ -27,8 +27,10 @@ const WP_ITOURTMS_STORE = 'wp_itourtms_options';
 
 /**
  * All sections shown in the Options tab: the theme's plus any added by plugins.
- * Field types: color, px, number, checkbox, text, email, url, tel, select, font, page, heading (a sub-title, no value).
- * Any field can carry 'show_if' => '<checkbox key>' to appear only while that switch is on.
+ * Field types: color, px, number, checkbox, text, textarea, email, url, tel, select, font, page, menu,
+ * heading (a sub-title, no value).
+ * 'show_if' shows a field only when a condition holds: '<checkbox key>' (switch on), '<select key>=a|b'
+ * (one of those values), or an array of these (all must hold).
  *
  * @return array<string,array{title:string,description?:string,store:string,fields:array<string,array<string,mixed>>}>
  */
@@ -47,7 +49,7 @@ function wp_itourtms_option_fields(): array {
  */
 function wp_itourtms_theme_option_fields(): array {
 	return array(
-		'colors' => array(
+		'colors'  => array(
 			'title'  => __( 'Colours', 'wp-itourtms' ),
 			'fields' => array(
 				'color_brand'      => array(
@@ -85,7 +87,7 @@ function wp_itourtms_theme_option_fields(): array {
 				),
 			),
 		),
-		'fonts'  => array(
+		'fonts'   => array(
 			'title'       => __( 'Fonts', 'wp-itourtms' ),
 			'description' => __( 'Choose from every Google Font, or keep the fast system font. Google Fonts load from Google’s servers.', 'wp-itourtms' ),
 			'fields'      => array(
@@ -123,7 +125,7 @@ function wp_itourtms_theme_option_fields(): array {
 				),
 			),
 		),
-		'layout' => array(
+		'layout'  => array(
 			'title'  => __( 'Layout', 'wp-itourtms' ),
 			'fields' => array(
 				'content_width' => array(
@@ -152,107 +154,66 @@ function wp_itourtms_theme_option_fields(): array {
 				),
 			),
 		),
-		'header' => array(
+		'header'  => array(
 			'title'  => __( 'Header', 'wp-itourtms' ),
 			'fields' => array(
-				'header_sticky'     => array(
+				'header_sticky'        => array(
 					'label'   => __( 'Sticky header', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Keep the header at the top of the screen while scrolling', 'wp-itourtms' ),
 				),
-				'header_show_title' => array(
+				'header_show_title'    => array(
 					'label'   => __( 'Site title with logo', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Show the site title next to the logo', 'wp-itourtms' ),
 				),
-				'topbar_heading'    => array(
+				'topbar_heading'       => array(
 					'label' => __( 'Top bar', 'wp-itourtms' ),
 					'type'  => 'heading',
 					'help'  => __( 'A thin bar above the header for contact details, a short message and social links.', 'wp-itourtms' ),
 				),
-				'topbar_enabled'    => array(
+				'topbar_enabled'       => array(
 					'label'   => __( 'Show top bar', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Display the top bar above the header', 'wp-itourtms' ),
 				),
-				'topbar_text'       => array(
+				'topbar_text'          => array(
 					'label'   => __( 'Message', 'wp-itourtms' ),
 					'type'    => 'text',
 					'default' => '',
 					'show_if' => 'topbar_enabled',
 					'help'    => __( 'Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed.', 'wp-itourtms' ),
 				),
-				'topbar_phone'      => array(
-					'label'   => __( 'Phone', 'wp-itourtms' ),
-					'type'    => 'tel',
-					'default' => '',
+				'topbar_show_contacts' => array(
+					'label'   => __( 'Contact details', 'wp-itourtms' ),
+					'type'    => 'checkbox',
+					'default' => 1,
 					'show_if' => 'topbar_enabled',
+					'text'    => __( 'Show phone, email and WhatsApp from the Contact & social tab', 'wp-itourtms' ),
 				),
-				'topbar_email'      => array(
-					'label'   => __( 'Email', 'wp-itourtms' ),
-					'type'    => 'email',
-					'default' => '',
+				'topbar_show_social'   => array(
+					'label'   => __( 'Social links', 'wp-itourtms' ),
+					'type'    => 'checkbox',
+					'default' => 1,
 					'show_if' => 'topbar_enabled',
+					'text'    => __( 'Show the social icons from the Contact & social tab', 'wp-itourtms' ),
 				),
-				'topbar_whatsapp'   => array(
-					'label'   => __( 'WhatsApp', 'wp-itourtms' ),
-					'type'    => 'tel',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-					'help'    => __( 'International format, e.g. +20 100 000 0000. Opens a WhatsApp chat.', 'wp-itourtms' ),
-				),
-				'social_facebook'   => array(
-					'label'   => 'Facebook',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'social_instagram'  => array(
-					'label'   => 'Instagram',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'social_x'          => array(
-					'label'   => 'X',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'social_tiktok'     => array(
-					'label'   => 'TikTok',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'social_youtube'    => array(
-					'label'   => 'YouTube',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'social_linkedin'   => array(
-					'label'   => 'LinkedIn',
-					'type'    => 'url',
-					'default' => '',
-					'show_if' => 'topbar_enabled',
-				),
-				'topbar_bg'         => array(
+				'topbar_bg'            => array(
 					'label'   => __( 'Top bar background', 'wp-itourtms' ),
 					'type'    => 'color',
 					'default' => '#1a2b48',
 					'show_if' => 'topbar_enabled',
 				),
-				'topbar_fg'         => array(
+				'topbar_fg'            => array(
 					'label'   => __( 'Top bar text', 'wp-itourtms' ),
 					'type'    => 'color',
 					'default' => '#ffffff',
 					'show_if' => 'topbar_enabled',
 				),
-				'topbar_mobile'     => array(
+				'topbar_mobile'        => array(
 					'label'   => __( 'On phones', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
@@ -261,18 +222,73 @@ function wp_itourtms_theme_option_fields(): array {
 				),
 			),
 		),
-		'footer' => array(
-			'title'  => __( 'Footer', 'wp-itourtms' ),
-			'fields' => array(
-				'footer_text' => array(
-					'label'   => __( 'Footer text', 'wp-itourtms' ),
-					'type'    => 'text',
-					'default' => '© {year} {site}',
-					'help'    => __( '{year} becomes the current year and {site} the site title. Basic links and bold are allowed.', 'wp-itourtms' ),
+		'contact' => array(
+			'title'       => __( 'Contact & social', 'wp-itourtms' ),
+			'description' => __( 'Entered once, used by the top bar and the footer. Leave a field empty to hide it.', 'wp-itourtms' ),
+			'fields'      => array(
+				'contact_phone'    => array(
+					'label'   => __( 'Phone', 'wp-itourtms' ),
+					'type'    => 'tel',
+					'default' => '',
+				),
+				'contact_email'    => array(
+					'label'   => __( 'Email', 'wp-itourtms' ),
+					'type'    => 'email',
+					'default' => '',
+				),
+				'contact_whatsapp' => array(
+					'label'   => __( 'WhatsApp', 'wp-itourtms' ),
+					'type'    => 'tel',
+					'default' => '',
+					'help'    => __( 'International format, e.g. +20 100 000 0000. Opens a WhatsApp chat.', 'wp-itourtms' ),
+				),
+				'contact_address'  => array(
+					'label'   => __( 'Address', 'wp-itourtms' ),
+					'type'    => 'textarea',
+					'default' => '',
+				),
+				'social_heading'   => array(
+					'label' => __( 'Social links', 'wp-itourtms' ),
+					'type'  => 'heading',
+				),
+				'social_facebook'  => array(
+					'label'   => 'Facebook',
+					'type'    => 'url',
+					'default' => '',
+				),
+				'social_instagram' => array(
+					'label'   => 'Instagram',
+					'type'    => 'url',
+					'default' => '',
+				),
+				'social_x'         => array(
+					'label'   => 'X',
+					'type'    => 'url',
+					'default' => '',
+				),
+				'social_tiktok'    => array(
+					'label'   => 'TikTok',
+					'type'    => 'url',
+					'default' => '',
+				),
+				'social_youtube'   => array(
+					'label'   => 'YouTube',
+					'type'    => 'url',
+					'default' => '',
+				),
+				'social_linkedin'  => array(
+					'label'   => 'LinkedIn',
+					'type'    => 'url',
+					'default' => '',
 				),
 			),
 		),
-		'blog'   => array(
+		'footer'  => array(
+			'title'       => __( 'Footer', 'wp-itourtms' ),
+			'description' => __( 'Columns at the top of the footer, its colours and the bottom line.', 'wp-itourtms' ),
+			'fields'      => wp_itourtms_footer_fields(),
+		),
+		'blog'    => array(
 			'title'  => __( 'Blog', 'wp-itourtms' ),
 			'fields' => array(
 				'blog_show_date'     => array(
@@ -296,6 +312,108 @@ function wp_itourtms_theme_option_fields(): array {
 					'help'    => __( 'Words shown for each post in lists when the post has no manual excerpt.', 'wp-itourtms' ),
 				),
 			),
+		),
+	);
+}
+
+/**
+ * Footer fields: layout, one group per column (what it shows), colours and the bottom line.
+ *
+ * @return array<string,array<string,mixed>>
+ */
+function wp_itourtms_footer_fields(): array {
+	$types    = array(
+		'about'   => __( 'About (logo and text)', 'wp-itourtms' ),
+		'menu'    => __( 'Menu', 'wp-itourtms' ),
+		'contact' => __( 'Contact details', 'wp-itourtms' ),
+		'social'  => __( 'Social links', 'wp-itourtms' ),
+		'text'    => __( 'Text', 'wp-itourtms' ),
+		'widgets' => __( 'Widgets (Appearance → Widgets)', 'wp-itourtms' ),
+		'none'    => __( 'Empty', 'wp-itourtms' ),
+	);
+	$defaults = array(
+		1 => array( 'about', '' ),
+		2 => array( 'menu', __( 'Explore', 'wp-itourtms' ) ),
+		3 => array( 'contact', __( 'Contact', 'wp-itourtms' ) ),
+		4 => array( 'social', __( 'Follow us', 'wp-itourtms' ) ),
+	);
+	$fields   = array(
+		'footer_columns' => array(
+			'label'   => __( 'Layout', 'wp-itourtms' ),
+			'type'    => 'select',
+			'default' => '4',
+			'options' => array(
+				'0' => __( 'No columns (bottom line only)', 'wp-itourtms' ),
+				'3' => __( '3 columns', 'wp-itourtms' ),
+				'4' => __( '4 columns', 'wp-itourtms' ),
+			),
+		),
+	);
+	for ( $n = 1; $n <= 4; $n++ ) {
+		$visible = 4 === $n ? 'footer_columns=4' : 'footer_columns=3|4';
+		$type    = "footer_col{$n}_type";
+
+		$fields[ "footer_col{$n}_heading" ] = array(
+			/* translators: %d: column number. */
+			'label'   => sprintf( __( 'Column %d', 'wp-itourtms' ), $n ),
+			'type'    => 'heading',
+			'show_if' => $visible,
+		);
+		$fields[ $type ]                    = array(
+			'label'   => __( 'Shows', 'wp-itourtms' ),
+			'type'    => 'select',
+			'default' => $defaults[ $n ][0],
+			'options' => $types,
+			'show_if' => $visible,
+		);
+		$fields[ "footer_col{$n}_title" ]   = array(
+			'label'   => __( 'Title', 'wp-itourtms' ),
+			'type'    => 'text',
+			'default' => $defaults[ $n ][1],
+			'show_if' => array( $visible, "{$type}=menu|contact|social|text|about" ),
+		);
+		$fields[ "footer_col{$n}_menu" ]    = array(
+			'label'    => __( 'Menu', 'wp-itourtms' ),
+			'type'     => 'menu',
+			'default'  => 0,
+			'location' => "footer-{$n}", // The choice is stored as this menu location's assignment.
+			'show_if'  => array( $visible, "{$type}=menu" ),
+			'help'     => __( 'Create menus under Appearance → Menus. This sets the “Footer column” menu location.', 'wp-itourtms' ),
+		);
+		$fields[ "footer_col{$n}_text" ]    = array(
+			'label'   => __( 'Text', 'wp-itourtms' ),
+			'type'    => 'textarea',
+			'default' => '',
+			'show_if' => array( $visible, "{$type}=about|text" ),
+			'help'    => __( 'Basic links, bold and line breaks are allowed. For “About”, leave empty to use the site tagline.', 'wp-itourtms' ),
+		);
+		$fields[ "footer_col{$n}_widgets" ] = array(
+			/* translators: %d: column number. */
+			'label'   => sprintf( __( 'Add blocks to “Footer column %d” under Appearance → Widgets.', 'wp-itourtms' ), $n ),
+			'type'    => 'heading',
+			'show_if' => array( $visible, "{$type}=widgets" ),
+		);
+	}
+	return $fields + array(
+		'footer_style_heading' => array(
+			'label' => __( 'Colours and bottom line', 'wp-itourtms' ),
+			'type'  => 'heading',
+		),
+		'footer_bg'            => array(
+			'label'   => __( 'Footer background', 'wp-itourtms' ),
+			'type'    => 'color',
+			'default' => '#1a2b48',
+		),
+		'footer_fg'            => array(
+			'label'   => __( 'Footer text', 'wp-itourtms' ),
+			'type'    => 'color',
+			'default' => '#ffffff',
+		),
+		'footer_text'          => array(
+			'label'   => __( 'Bottom line', 'wp-itourtms' ),
+			'type'    => 'text',
+			'default' => '© {year} {site}',
+			'help'    => __( '{year} becomes the current year and {site} the site title. Basic links and bold are allowed. Leave empty to hide it.', 'wp-itourtms' ),
 		),
 	);
 }
@@ -333,7 +451,8 @@ function wp_itourtms_option_defaults( string $store = WP_ITOURTMS_STORE ): array
  * @return array<string,mixed>
  */
 function wp_itourtms_options( string $store = WP_ITOURTMS_STORE ): array {
-	return array_merge( wp_itourtms_option_defaults( $store ), (array) get_option( $store, array() ) );
+	$values = array_merge( wp_itourtms_option_defaults( $store ), (array) get_option( $store, array() ) );
+	return WP_ITOURTMS_STORE === $store ? wp_itourtms_menu_location_values( $values ) : $values;
 }
 
 /**
@@ -355,6 +474,19 @@ function wp_itourtms_sanitize_value( array $f, $v ) {
 			return max( (int) $f['min'], min( (int) $f['max'], null === $v ? (int) $f['default'] : (int) $v ) );
 		case 'select':
 			return array_key_exists( (string) $v, (array) $f['options'] ) ? (string) $v : $f['default'];
+		case 'textarea':
+			return wp_kses(
+				(string) $v,
+				array(
+					'a'      => array( 'href' => array() ),
+					'strong' => array(),
+					'em'     => array(),
+					'br'     => array(),
+				)
+			);
+		case 'menu':
+			$id = absint( $v );
+			return $id && is_nav_menu( $id ) ? $id : 0;
 		case 'email':
 			return sanitize_email( (string) $v );
 		case 'url':
@@ -390,7 +522,8 @@ function wp_itourtms_sanitize_options( $input, string $store = WP_ITOURTMS_STORE
 	$input = is_array( $input ) ? $input : array();
 	$out   = array();
 	foreach ( wp_itourtms_store_fields( $store ) as $key => $f ) {
-		$out[ $key ] = wp_itourtms_sanitize_value( $f, $input[ $key ] ?? null );
+		// A field missing from the input (e.g. added in a theme update) gets its default, not "empty".
+		$out[ $key ] = wp_itourtms_sanitize_value( $f, array_key_exists( $key, $input ) ? $input[ $key ] : $f['default'] );
 	}
 	return $out;
 }
@@ -523,7 +656,8 @@ function wp_itourtms_contrast_warnings( array $o ): array {
 	if ( ! empty( $o['topbar_enabled'] ) ) {
 		$pairs[] = array( 'topbar_fg', 'topbar_bg', __( 'Top bar text on its background', 'wp-itourtms' ) );
 	}
-	$out = array();
+	$pairs[] = array( 'footer_fg', 'footer_bg', __( 'Footer text on its background', 'wp-itourtms' ) );
+	$out     = array();
 	foreach ( $pairs as $p ) {
 		$ratio = wp_itourtms_contrast( (string) $o[ $p[0] ], (string) $o[ $p[1] ] );
 		if ( $ratio < 4.5 ) {
@@ -610,6 +744,42 @@ function wp_itourtms_theme_json( $data ) {
 	);
 }
 add_filter( 'wp_theme_json_data_theme', 'wp_itourtms_theme_json' );
+
+/**
+ * Menu fields with a 'location' are stored as that menu location's assignment (theme_location is
+ * required for menus), so Appearance → Menus and Theme Options always agree.
+ *
+ * @param mixed $old   Previous value (unused).
+ * @param mixed $value Saved options.
+ */
+function wp_itourtms_sync_menu_locations( $old, $value = null ): void {
+	$value     = is_array( $value ) ? $value : (array) $old;
+	$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
+	foreach ( wp_itourtms_store_fields() as $key => $f ) {
+		if ( 'menu' === $f['type'] && ! empty( $f['location'] ) && isset( $value[ $key ] ) ) {
+			$locations[ $f['location'] ] = (int) $value[ $key ];
+		}
+	}
+	set_theme_mod( 'nav_menu_locations', $locations );
+}
+add_action( 'update_option_wp_itourtms_options', 'wp_itourtms_sync_menu_locations', 10, 2 );
+add_action( 'add_option_wp_itourtms_options', 'wp_itourtms_sync_menu_locations', 10, 2 );
+
+/**
+ * Show the current location assignment as the value of location-backed menu fields.
+ *
+ * @param array<string,mixed> $values Option values.
+ * @return array<string,mixed>
+ */
+function wp_itourtms_menu_location_values( array $values ): array {
+	$locations = get_nav_menu_locations();
+	foreach ( wp_itourtms_store_fields() as $key => $f ) {
+		if ( 'menu' === $f['type'] && ! empty( $f['location'] ) ) {
+			$values[ $key ] = (int) ( $locations[ $f['location'] ] ?? 0 );
+		}
+	}
+	return $values;
+}
 
 // Saved options change theme.json data, so drop WordPress's cached copy.
 add_action( 'update_option_wp_itourtms_options', 'wp_clean_theme_json_cache' );
