@@ -1,0 +1,6 @@
+/vendor/
+node_modules/
+.deploy.env
+.phpcs-cache
+.DS_Store
+*.log

@@ -1,0 +1,15 @@
+/*
+Theme Name:        iTour
+Theme URI:         https://github.com/mg-gouda/iTourTMSWP
+Description:       A clean, fast theme for travel companies running the iTourTMS plugins. No page builder and no jQuery; styles come from a small set of design tokens.
+Version:           0.1.0
+Requires at least: 6.5
+Requires PHP:      8.1
+Author:            Mohamed Gouda
+Author URI:        https://wa.me/+201002805139
+License:           GPL-2.0-or-later
+Text Domain:       itour
+Tags:              travel, rtl-language-support, accessibility-ready, custom-logo, custom-menu
+*/
+
+/* Styles live in assets/css/main.css; this file only carries the theme header. */

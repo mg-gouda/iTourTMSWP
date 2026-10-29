@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          coverage: none
+      - run: composer install --no-interaction --no-progress
+      - name: PHP syntax
+        run: find plugins theme -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+      - name: WordPress Coding Standards
+        run: composer lint
+      - name: PHPStan
+        run: composer analyse

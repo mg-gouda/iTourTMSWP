@@ -1,0 +1,9 @@
+parameters:
+	level: 6
+	paths:
+		- plugins
+		- theme
+	excludePaths:
+		- */vendor/*
+	bootstrapFiles:
+		- tools/phpstan-bootstrap.php

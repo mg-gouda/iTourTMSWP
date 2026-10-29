@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.sh text eol=lf
+/docs export-ignore
+/tools export-ignore
+/bin export-ignore
+/.github export-ignore
