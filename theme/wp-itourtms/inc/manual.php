@@ -1,6 +1,6 @@
 <?php
 /**
- * Built-in documentation and user manual. One source renders the Appearance → WP iTourTMS page
+ * Built-in documentation and user manual. One source renders the Appearance → Theme Options page
  * and the static HTML documentation shipped in the download package.
  *
  * Content blocks: [ 'p', text ], [ 'steps', [ text … ] ], [ 'list', [ text … ] ], [ 'code', text ], [ 'note', text ].
@@ -55,6 +55,7 @@ function wp_itourtms_manual(): array {
 								__( 'Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page.', 'wp-itourtms' ),
 								__( 'Pretty links: Settings → Permalinks → “Post name” → Save.', 'wp-itourtms' ),
 								__( 'Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically.', 'wp-itourtms' ),
+								__( 'Your brand: Appearance → Theme Options → Options. Set your colours, widths, header and footer (see “Theme Options” in the User manual).', 'wp-itourtms' ),
 							),
 						),
 					),
@@ -86,6 +87,24 @@ function wp_itourtms_manual(): array {
 								__( 'Click Publish (or Update). Use Preview first to check it on the site.', 'wp-itourtms' ),
 							),
 						),
+					),
+				),
+				array(
+					'id'     => 'theme-options',
+					'title'  => __( 'Theme Options', 'wp-itourtms' ),
+					'blocks' => array(
+						array( 'p', __( 'Appearance → Theme Options → Options holds every theme setting. Click “Save options” to apply them to the site and the block editor together.', 'wp-itourtms' ) ),
+						array(
+							'list',
+							array(
+								__( 'Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read.', 'wp-itourtms' ),
+								__( 'Layout: text column width, wide width (header, footer, wide blocks) and corner rounding.', 'wp-itourtms' ),
+								__( 'Header: keep the header fixed while scrolling; show the site title next to the logo.', 'wp-itourtms' ),
+								__( 'Footer: the footer line. {year} and {site} are filled in for you; leave it empty to hide it.', 'wp-itourtms' ),
+								__( 'Blog: show dates, show the featured image on posts, and the length of summaries in lists.', 'wp-itourtms' ),
+							),
+						),
+						array( 'p', __( '“Reset to defaults” puts every option back to the theme’s original values.', 'wp-itourtms' ) ),
 					),
 				),
 				array(

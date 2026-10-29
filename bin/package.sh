@@ -60,7 +60,7 @@ WP iTourTMS ${ver}
 wp-itourtms.zip         the theme: Appearance → Themes → Add New Theme → Upload Theme
 wp-itourtms-child.zip   optional child theme for your own changes
 plugins/                optional iTourTMS modules: install iTour Core first, then the modules you need
-documentation/          open index.html (also built in: Appearance → WP iTourTMS)
+documentation/          open index.html (also built in: Appearance → Theme Options)
 licensing/              licence information
 EOF
 mv dist/stage dist/WP-iTourTMS

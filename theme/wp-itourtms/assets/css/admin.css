@@ -1,4 +1,7 @@
-/* Appearance → WP iTourTMS only (enqueued on that screen). Core admin look, readable line length. */
+/* Appearance → Theme Options only (enqueued on that screen). Core admin look, readable line length. */
+.wp-itourtms-intro { max-width: 75ch; }
+.wp-itourtms-options h2 { margin-block-start: 28px; padding-block-start: 16px; border-block-start: 1px solid #dcdcde; }
+.wp-itourtms-options h2:first-of-type { border: 0; padding-block-start: 0; }
 .wp-itourtms-admin .wp-itourtms-version { font-size: 13px; font-weight: 400; color: #50575e; }
 .wp-itourtms-layout { display: grid; grid-template-columns: 1fr; gap: 24px; margin-block-start: 20px; }
 @media (min-width: 960px) { .wp-itourtms-layout { grid-template-columns: 200px minmax(0, 760px); } }

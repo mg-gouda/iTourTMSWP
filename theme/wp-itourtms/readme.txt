@@ -13,13 +13,13 @@ A clean, fast theme for tour operators, destination management companies and tra
 
 WP iTourTMS is a lightweight theme for travel businesses. Pages are built with the WordPress block editor, and colours, type and spacing come from theme.json, so the editor matches the site. There is no page builder and no jQuery on the front end, and the layout works in right-to-left languages such as Arabic.
 
-Built-in help: Appearance → WP iTourTMS has a getting-started guide, a user manual for site editors and developer documentation.
+Built-in help: Appearance → Theme Options has a getting-started guide, a user manual for site editors and developer documentation.
 
 == Installation ==
 
 1. In your dashboard go to Appearance → Themes → Add New Theme → Upload Theme.
 2. Upload wp-itourtms.zip, click Install Now, then Activate.
-3. Open Appearance → WP iTourTMS and follow “Getting started”.
+3. Open Appearance → Theme Options and follow “Getting started”.
 
 == Frequently Asked Questions ==
 

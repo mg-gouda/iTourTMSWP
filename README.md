@@ -4,7 +4,7 @@
 
 | Folder | What it is |
 |---|---|
-| `theme/wp-itourtms` | **WP iTourTMS** theme: block editor + theme.json, no page builder, no jQuery, RTL-ready, built-in manual (Appearance → WP iTourTMS) |
+| `theme/wp-itourtms` | **WP iTourTMS** theme: block editor + theme.json, no page builder, no jQuery, RTL-ready, built-in manual (Appearance → Theme Options) |
 | `theme/wp-itourtms-child` | Child theme for site-specific changes |
 | `plugins/itour-core` | Required foundation: module registry, migrations, admin menu, shared services |
 | `plugins/itour-crm` | Tours and excursions (first module) |

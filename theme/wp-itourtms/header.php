@@ -19,11 +19,12 @@ defined( 'ABSPATH' ) || exit;
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wp-itourtms' ); ?></a>
 <header class="site-header">
 	<div class="container site-header__inner">
-		<?php if ( has_custom_logo() ) : ?>
+		<div class="site-branding">
 			<?php the_custom_logo(); ?>
-		<?php else : ?>
-			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-		<?php endif; ?>
+			<?php if ( ! has_custom_logo() || wp_itourtms_option( 'header_show_title' ) ) : ?>
+				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<?php endif; ?>
+		</div>
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<nav class="site-nav" aria-label="<?php esc_attr_e( 'Main menu', 'wp-itourtms' ); ?>">
 				<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-menu" hidden>

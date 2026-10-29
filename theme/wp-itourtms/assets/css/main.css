@@ -15,13 +15,17 @@ img, video { max-width: 100%; height: auto; }
 /* Header */
 .site-header { border-block-end: 1px solid var(--wp--preset--color--line); background: var(--wp--preset--color--base); }
 .site-header__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; min-height: 64px; }
+.wp-itourtms-sticky-header .site-header { position: sticky; top: 0; z-index: 20; }
+.admin-bar.wp-itourtms-sticky-header .site-header { top: var(--wp-admin--admin-bar--height, 32px); }
+.site-branding { display: flex; align-items: center; gap: 12px; }
 .site-title { font-size: var(--wp--preset--font-size--large); font-weight: 700; text-decoration: none; }
+.entry__image img { display: block; width: 100%; border-radius: var(--wp-itourtms-radius, 10px); }
 .custom-logo { display: block; width: auto; max-height: 48px; }
 .site-nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; }
 .site-nav li { position: relative; }
 .site-nav a { display: block; padding-block: 8px; font-weight: 500; text-decoration: none; }
 .site-nav .current-menu-item > a { color: var(--wp--preset--color--brand-dark); }
-.site-nav .sub-menu { position: absolute; inset-inline-start: 0; top: 100%; z-index: 10; display: none; min-width: 200px; padding: 8px 12px; background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--line); border-radius: 10px; }
+.site-nav .sub-menu { position: absolute; inset-inline-start: 0; top: 100%; z-index: 10; display: none; min-width: 200px; padding: 8px 12px; background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--line); border-radius: var(--wp-itourtms-radius, 10px); }
 .site-nav li:hover > .sub-menu, .site-nav li:focus-within > .sub-menu { display: block; }
 .site-nav__toggle { display: none; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; font: inherit; font-weight: 600; color: inherit; background: none; border: 1px solid var(--wp--preset--color--line); border-radius: 10px; cursor: pointer; }
 .site-nav__bars, .site-nav__bars::before, .site-nav__bars::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
@@ -47,7 +51,7 @@ img, video { max-width: 100%; height: auto; }
 .entry__meta, .archive-description { color: var(--wp--preset--color--muted); font-size: var(--wp--preset--font-size--small); }
 .entry--summary { display: grid; grid-template-columns: 1fr; gap: var(--wp--preset--spacing--30); padding-block: var(--wp--preset--spacing--40); border-block-end: 1px solid var(--wp--preset--color--line); }
 @media (min-width: 640px) { .entry--summary:has(.entry__thumb) { grid-template-columns: 220px 1fr; } }
-.entry__thumb img { display: block; border-radius: 10px; aspect-ratio: 4 / 3; object-fit: cover; }
+.entry__thumb img { display: block; border-radius: var(--wp-itourtms-radius, 10px); aspect-ratio: 4 / 3; object-fit: cover; }
 .entry--summary .entry__title { margin-block: 0 4px; font-size: var(--wp--preset--font-size--large); }
 .page-links, .entry__tags { margin-block-start: var(--wp--preset--spacing--40); }
 .pagination .nav-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-block-start: var(--wp--preset--spacing--50); }
@@ -64,7 +68,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Forms and buttons outside blocks */
 .search-form { display: flex; gap: 8px; max-width: 480px; }
-.search-submit, .comment-form .submit, .wp-element-button { padding: 10px 20px; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; border: 0; border-radius: 10px; background: var(--wp--preset--color--brand); color: var(--wp--preset--color--ink); }
+.search-submit, .comment-form .submit, .wp-element-button { padding: 10px 20px; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; border: 0; border-radius: var(--wp-itourtms-radius, 10px); background: var(--wp--preset--color--brand); color: var(--wp--preset--color--ink); }
 .search-submit:hover, .comment-form .submit:hover, .wp-element-button:hover { background: var(--wp--preset--color--brand-dark); color: var(--wp--preset--color--base); }
 
 /* Footer */

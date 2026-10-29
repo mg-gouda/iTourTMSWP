@@ -23,7 +23,10 @@ defined( 'ABSPATH' ) || exit;
 				?>
 			</nav>
 		<?php endif; ?>
-		<p class="site-footer__copy">&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></p>
+		<?php $wp_itourtms_footer = wp_itourtms_footer_text(); ?>
+		<?php if ( '' !== $wp_itourtms_footer ) : ?>
+			<p class="site-footer__copy"><?php echo $wp_itourtms_footer; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses() in wp_itourtms_footer_text(). ?></p>
+		<?php endif; ?>
 	</div>
 </footer>
 <?php wp_footer(); ?>

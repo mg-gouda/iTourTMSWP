@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-29T08:07:24+00:00\n"
+"POT-Creation-Date: 2026-10-29T08:21:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-itourtms\n"
@@ -17,9 +17,6 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 #: functions.php:53
-#: inc/admin-page.php:15
-#: inc/admin-page.php:16
-#: inc/admin-page.php:48
 msgid "WP iTourTMS"
 msgstr ""
 
@@ -73,7 +70,7 @@ msgid "Footer menu"
 msgstr ""
 
 #: functions.php:42
-#: header.php:28
+#: header.php:29
 msgid "Main menu"
 msgstr ""
 
@@ -85,15 +82,71 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:30
+#: header.php:31
 msgid "Menu"
 msgstr ""
 
-#: inc/admin-page.php:49
-msgid "Help sections"
+#: inc/admin-page.php:16
+msgid "WP iTourTMS Theme Options"
 msgstr ""
 
-#: inc/admin-page.php:60
+#: inc/admin-page.php:17
+#: inc/admin-page.php:197
+#: inc/manual.php:94
+msgid "Theme Options"
+msgstr ""
+
+#: inc/admin-page.php:90
+msgid "words"
+msgstr ""
+
+#: inc/admin-page.php:109
+msgid "Theme options were reset to their defaults."
+msgstr ""
+
+#: inc/admin-page.php:140
+msgid "Text on the page background"
+msgstr ""
+
+#: inc/admin-page.php:141
+msgid "Text on brand buttons"
+msgstr ""
+
+#: inc/admin-page.php:142
+msgid "White text on the hover colour"
+msgstr ""
+
+#. translators: 1: colour pair, 2: contrast ratio.
+#: inc/admin-page.php:151
+#, php-format
+msgid "Saved, but hard to read: %1$s has a contrast of %2$s:1. Aim for at least 4.5:1."
+msgstr ""
+
+#: inc/admin-page.php:191
+msgid "Options"
+msgstr ""
+
+#: inc/admin-page.php:198
+msgid "Theme Options sections"
+msgstr ""
+
+#: inc/admin-page.php:213
+msgid "These settings apply to the whole site and to the block editor. Changes made later under Appearance → Design → Styles take priority over the colours and widths here."
+msgstr ""
+
+#: inc/admin-page.php:218
+msgid "Save options"
+msgstr ""
+
+#: inc/admin-page.php:221
+msgid "Reset to defaults"
+msgstr ""
+
+#: inc/admin-page.php:227
+msgid "Reset all theme options to their defaults?"
+msgstr ""
+
+#: inc/admin-page.php:234
 msgid "On this page"
 msgstr ""
 
@@ -161,200 +214,385 @@ msgstr ""
 msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
 msgstr ""
 
-#: inc/manual.php:64
+#: inc/manual.php:58
+msgid "Your brand: Appearance → Theme Options → Options. Set your colours, widths, header and footer (see “Theme Options” in the User manual)."
+msgstr ""
+
+#: inc/manual.php:65
 msgid "Child theme"
 msgstr ""
 
-#: inc/manual.php:66
+#: inc/manual.php:67
 msgid "Updates replace the theme’s files. Put your own changes in the WP iTourTMS Child theme (included in the package) so they survive updates. Activate the child theme; it loads the parent automatically."
 msgstr ""
 
-#: inc/manual.php:72
+#: inc/manual.php:73
 msgid "User manual"
 msgstr ""
 
-#: inc/manual.php:76
+#: inc/manual.php:77
 msgid "Create and edit pages"
 msgstr ""
 
-#: inc/manual.php:78
+#: inc/manual.php:79
 msgid "Pages are built with the WordPress block editor. No page builder is needed. Ready-made sections (hero banner, reasons to book, call to action) are under + → Patterns → “WP iTourTMS”."
 msgstr ""
 
-#: inc/manual.php:82
+#: inc/manual.php:83
 msgid "Go to Pages → Add New Page and type a title."
 msgstr ""
 
-#: inc/manual.php:83
+#: inc/manual.php:84
 msgid "Click + (top left) to add a block: Paragraph, Heading, Image, Columns, Buttons, Cover and so on. Type / in an empty line to search blocks quickly."
 msgstr ""
 
-#: inc/manual.php:84
+#: inc/manual.php:85
 msgid "Select a block to change its colour, spacing or width in the right-hand panel. The theme’s colours appear as swatches."
 msgstr ""
 
-#: inc/manual.php:85
+#: inc/manual.php:86
 msgid "Use “Wide width” or “Full width” on Image, Cover and Group blocks for banners and galleries."
 msgstr ""
 
-#: inc/manual.php:86
+#: inc/manual.php:87
 msgid "Click Publish (or Update). Use Preview first to check it on the site."
 msgstr ""
 
-#: inc/manual.php:93
-msgid "Colours and fonts for the whole site"
-msgstr ""
-
-#: inc/manual.php:95
-msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
-msgstr ""
-
 #: inc/manual.php:96
-msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
+msgid "Appearance → Theme Options → Options holds every theme setting. Click “Save options” to apply them to the site and the block editor together."
+msgstr ""
+
+#: inc/manual.php:100
+msgid "Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read."
 msgstr ""
 
 #: inc/manual.php:101
-msgid "Images"
+msgid "Layout: text column width, wide width (header, footer, wide blocks) and corner rounding."
+msgstr ""
+
+#: inc/manual.php:102
+msgid "Header: keep the header fixed while scrolling; show the site title next to the logo."
 msgstr ""
 
 #: inc/manual.php:103
-msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
+msgid "Footer: the footer line. {year} and {site} are filled in for you; leave it empty to hide it."
 msgstr ""
 
-#: inc/manual.php:103
-msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
+#: inc/manual.php:104
+msgid "Blog: show dates, show the featured image on posts, and the length of summaries in lists."
 msgstr ""
 
-#: inc/manual.php:103
-msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
+#: inc/manual.php:107
+msgid "“Reset to defaults” puts every option back to the theme’s original values."
 msgstr ""
 
-#: inc/manual.php:108
-msgid "Blog posts"
+#: inc/manual.php:112
+msgid "Colours and fonts for the whole site"
 msgstr ""
 
-#: inc/manual.php:110
-msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
+#: inc/manual.php:114
+msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
 msgstr ""
 
 #: inc/manual.php:115
-msgid "Menus"
+msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
 msgstr ""
 
-#: inc/manual.php:117
-msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
+#: inc/manual.php:120
+msgid "Images"
 msgstr ""
 
 #: inc/manual.php:122
-msgid "Comments"
+msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
 msgstr ""
 
-#: inc/manual.php:124
-msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
+#: inc/manual.php:122
+msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
+msgstr ""
+
+#: inc/manual.php:122
+msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
+msgstr ""
+
+#: inc/manual.php:127
+msgid "Blog posts"
 msgstr ""
 
 #: inc/manual.php:129
-msgid "Getting help"
+msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
 msgstr ""
 
-#: inc/manual.php:131
-msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
+#: inc/manual.php:134
+msgid "Menus"
 msgstr ""
 
-#: inc/manual.php:137
-msgid "Documentation"
+#: inc/manual.php:136
+msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
 msgstr ""
 
 #: inc/manual.php:141
-msgid "Theme files"
+msgid "Comments"
+msgstr ""
+
+#: inc/manual.php:143
+msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
 msgstr ""
 
 #: inc/manual.php:148
-msgid "Colours, fonts and spacing"
+msgid "Getting help"
 msgstr ""
 
 #: inc/manual.php:150
+msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
+msgstr ""
+
+#: inc/manual.php:156
+msgid "Documentation"
+msgstr ""
+
+#: inc/manual.php:160
+msgid "Theme files"
+msgstr ""
+
+#: inc/manual.php:167
+msgid "Colours, fonts and spacing"
+msgstr ""
+
+#: inc/manual.php:169
 msgid "All design values live in theme.json and become CSS custom properties such as --wp--preset--color--brand. Change them in a child theme’s theme.json and both the editor and the site update; you don’t need to edit CSS."
 msgstr ""
 
-#: inc/manual.php:152
+#: inc/manual.php:171
 msgid "Keep at least 4.5:1 contrast between text and its background. The default palette meets WCAG 2.2 AA."
 msgstr ""
 
-#: inc/manual.php:157
+#: inc/manual.php:176
 msgid "Overriding templates"
 msgstr ""
 
-#: inc/manual.php:159
+#: inc/manual.php:178
 msgid "Copy any template or template part into the child theme at the same path and edit the copy. For example, to change how posts look in lists, copy template-parts/content-summary.php."
 msgstr ""
 
-#: inc/manual.php:164
+#: inc/manual.php:183
 msgid "Hooks for developers"
 msgstr ""
 
-#: inc/manual.php:166
+#: inc/manual.php:185
 msgid "wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin."
 msgstr ""
 
-#: inc/manual.php:166
+#: inc/manual.php:185
 msgid "Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content."
 msgstr ""
 
-#: inc/manual.php:172
+#: inc/manual.php:191
 msgid "Translation and right-to-left"
 msgstr ""
 
-#: inc/manual.php:174
+#: inc/manual.php:193
 msgid "Every string uses the wp-itourtms text domain. Translate languages/wp-itourtms.pot with Poedit or Loco Translate and save wp-itourtms-{locale}.mo in wp-content/languages/themes/. Layout uses CSS logical properties, so right-to-left languages need no extra stylesheet."
 msgstr ""
 
-#: inc/manual.php:179
+#: inc/manual.php:198
 msgid "Accessibility"
 msgstr ""
 
-#: inc/manual.php:181
+#: inc/manual.php:200
 msgid "Skip link to the main content as the first focusable element."
 msgstr ""
 
-#: inc/manual.php:181
+#: inc/manual.php:200
 msgid "Visible focus outline on every link, button and form field."
 msgstr ""
 
-#: inc/manual.php:181
+#: inc/manual.php:200
 msgid "Menus work with the keyboard; drop-downs open on focus."
 msgstr ""
 
-#: inc/manual.php:181
+#: inc/manual.php:200
 msgid "Animations are switched off when the visitor prefers reduced motion."
 msgstr ""
 
-#: inc/manual.php:186
+#: inc/manual.php:205
 msgid "Privacy"
 msgstr ""
 
-#: inc/manual.php:188
+#: inc/manual.php:207
 msgid "The theme stores no personal data, sets no cookies, loads nothing from other servers and does no tracking."
 msgstr ""
 
-#: inc/manual.php:193
+#: inc/manual.php:212
 msgid "Credits and licence"
 msgstr ""
 
-#: inc/manual.php:195
+#: inc/manual.php:214
 msgid "WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used."
 msgstr ""
 
-#: inc/manual.php:200
+#: inc/manual.php:219
 msgid "Changelog"
 msgstr ""
 
-#: inc/manual.php:202
+#: inc/manual.php:221
 msgid "0.1.0: first release."
 msgstr ""
 
-#: inc/manual.php:238
+#: inc/manual.php:257
 msgid "Note:"
+msgstr ""
+
+#: inc/options.php:20
+msgid "Colours"
+msgstr ""
+
+#: inc/options.php:23
+#: inc/options.php:182
+msgid "Brand"
+msgstr ""
+
+#: inc/options.php:26
+msgid "Buttons, highlights and call-to-action bands."
+msgstr ""
+
+#: inc/options.php:29
+msgid "Brand (hover)"
+msgstr ""
+
+#: inc/options.php:32
+msgid "Buttons and links on hover, focus outlines. White text sits on it, so keep it dark."
+msgstr ""
+
+#: inc/options.php:35
+msgid "Text"
+msgstr ""
+
+#: inc/options.php:38
+msgid "Body text, headings and the footer background."
+msgstr ""
+
+#: inc/options.php:41
+msgid "Secondary text"
+msgstr ""
+
+#: inc/options.php:46
+msgid "Soft background"
+msgstr ""
+
+#: inc/options.php:51
+msgid "Page background"
+msgstr ""
+
+#: inc/options.php:58
+msgid "Layout"
+msgstr ""
+
+#: inc/options.php:61
+msgid "Text column width"
+msgstr ""
+
+#: inc/options.php:66
+msgid "Width of paragraphs and normal blocks. 680–800 px reads best."
+msgstr ""
+
+#: inc/options.php:69
+msgid "Wide width"
+msgstr ""
+
+#: inc/options.php:74
+msgid "Width of the header, footer and “Wide width” blocks."
+msgstr ""
+
+#: inc/options.php:77
+msgid "Corner rounding"
+msgstr ""
+
+#: inc/options.php:82
+msgid "Buttons, images in lists and menus. 0 gives square corners."
+msgstr ""
+
+#: inc/options.php:87
+msgid "Header"
+msgstr ""
+
+#: inc/options.php:90
+msgid "Sticky header"
+msgstr ""
+
+#: inc/options.php:93
+msgid "Keep the header at the top of the screen while scrolling"
+msgstr ""
+
+#: inc/options.php:96
+msgid "Site title with logo"
+msgstr ""
+
+#: inc/options.php:99
+msgid "Show the site title next to the logo"
+msgstr ""
+
+#: inc/options.php:104
+msgid "Footer"
+msgstr ""
+
+#: inc/options.php:107
+msgid "Footer text"
+msgstr ""
+
+#: inc/options.php:110
+msgid "{year} becomes the current year and {site} the site title. Basic links and bold are allowed."
+msgstr ""
+
+#: inc/options.php:115
+msgid "Blog"
+msgstr ""
+
+#: inc/options.php:118
+msgid "Post dates"
+msgstr ""
+
+#: inc/options.php:121
+msgid "Show the date on posts and in lists"
+msgstr ""
+
+#: inc/options.php:124
+msgid "Featured image on posts"
+msgstr ""
+
+#: inc/options.php:127
+msgid "Show the featured image at the top of each post"
+msgstr ""
+
+#: inc/options.php:130
+msgid "Summary length"
+msgstr ""
+
+#: inc/options.php:135
+msgid "Words shown for each post in lists when the post has no manual excerpt."
+msgstr ""
+
+#: inc/options.php:183
+msgid "Brand dark"
+msgstr ""
+
+#: inc/options.php:184
+msgid "Ink"
+msgstr ""
+
+#: inc/options.php:185
+msgid "Muted"
+msgstr ""
+
+#: inc/options.php:186
+msgid "Line"
+msgstr ""
+
+#: inc/options.php:187
+msgid "Surface"
+msgstr ""
+
+#: inc/options.php:188
+msgid "Base"
 msgstr ""
 
 #. translators: %s: search query.
@@ -453,7 +691,7 @@ msgstr ""
 msgid "Nothing matches yet. Try a different search, or head back to the home page."
 msgstr ""
 
-#: template-parts/content-single.php:24
+#: template-parts/content-single.php:27
 msgid "Page"
 msgstr ""
 
