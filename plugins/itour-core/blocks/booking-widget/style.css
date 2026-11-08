@@ -1,0 +1,83 @@
+/*
+ * iTour Booking widget: three models. Colours, radius and font come from the active theme's
+ * tokens (WP iTourTMS), with neutral fallbacks for other themes.
+ */
+.itour-bw {
+	--bw-brand: var(--wp--preset--color--brand, #e8851a);
+	--bw-brand-dark: var(--wp--preset--color--brand-dark, #9a530a);
+	--bw-ink: var(--wp--preset--color--ink, #1a2b48);
+	--bw-muted: var(--wp--preset--color--muted, #4f5d6b);
+	--bw-line: var(--wp--preset--color--line, #e3e7ed);
+	--bw-surface: var(--wp--preset--color--surface, #f4f6f9);
+	--bw-base: var(--wp--preset--color--base, #fff);
+	--bw-r: var(--wp-itourtms-radius, 10px);
+	color: var(--bw-ink);
+}
+.itour-bw [hidden] { display: none !important; }
+.itour-bw__form { margin: 0; }
+.itour-bw__field { position: relative; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.itour-bw__field label { font-size: 0.75rem; font-weight: 600; letter-spacing: .01em; color: var(--bw-muted); }
+.itour-bw__field input, .itour-bw__field select {
+	width: 100%; min-height: 44px; margin: 0; padding: 8px 12px; font: inherit; font-size: 0.95rem; color: var(--bw-ink);
+	border: 1px solid var(--bw-line); border-radius: var(--bw-r); background: var(--bw-base);
+}
+.itour-bw__field input:focus-visible, .itour-bw__field select:focus-visible, .itour-bw__submit:focus-visible, .itour-bw__tab:focus-visible { outline: 3px solid var(--bw-brand-dark); outline-offset: 2px; }
+.itour-bw__icon { flex: none; color: var(--bw-brand-dark); }
+.itour-bw__submit { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 0; border-radius: var(--bw-r); background: var(--bw-brand); color: var(--bw-ink); font: inherit; font-weight: 700; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+.itour-bw__submit:hover { background: var(--bw-brand-dark); color: var(--bw-base); }
+.itour-bw__submit .itour-bw__icon { color: currentColor; }
+.itour-bw__empty { padding: 12px 16px; border: 1px dashed var(--bw-line); border-radius: var(--bw-r); color: var(--bw-muted); }
+
+/* ── Model A · Tabs: pill tabs sitting on top of a white panel ───────────── */
+.itour-bw--tabs .itour-bw__switch { display: inline-flex; gap: 4px; padding: 4px; margin-block-end: -1px; border-radius: calc(var(--bw-r) + 4px) calc(var(--bw-r) + 4px) 0 0; background: var(--bw-base); }
+.itour-bw--tabs .itour-bw__tab { padding: 9px 16px; border: 0; border-radius: var(--bw-r); background: transparent; color: var(--bw-muted); font: inherit; font-weight: 600; cursor: pointer; }
+.itour-bw--tabs .itour-bw__tab[aria-selected="true"] { background: var(--bw-ink); color: var(--bw-base); }
+.itour-bw--tabs .itour-bw__form { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 18px; border-radius: 0 calc(var(--bw-r) + 4px) calc(var(--bw-r) + 4px); background: var(--bw-base); box-shadow: 0 18px 40px rgb(13 18 30 / 0.16); }
+.itour-bw--tabs .itour-bw__fields { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.itour-bw--tabs .itour-bw__field { padding: 0; }
+.itour-bw--tabs .itour-bw__field .itour-bw__icon { position: absolute; inset-inline-start: 12px; bottom: 13px; }
+.itour-bw--tabs .itour-bw__field input, .itour-bw--tabs .itour-bw__field select { padding-inline-start: 38px; }
+@media (min-width: 900px) {
+	.itour-bw--tabs .itour-bw__form { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+/* ── Model B · Search bar: one rounded bar, segments split by hairlines ──── */
+.itour-bw--bar .itour-bw__form { display: flex; flex-direction: column; gap: 10px; padding: 10px; border: 1px solid var(--bw-line); border-radius: 22px; background: var(--bw-base); box-shadow: 0 10px 30px rgb(13 18 30 / 0.12); }
+.itour-bw--bar .itour-bw__fields { display: contents; }
+.itour-bw--bar .itour-bw__field { padding: 8px 14px; border-radius: 14px; }
+.itour-bw--bar .itour-bw__field:hover { background: var(--bw-surface); }
+.itour-bw--bar .itour-bw__field .itour-bw__icon { display: none; }
+.itour-bw--bar .itour-bw__field input, .itour-bw--bar .itour-bw__field select { min-height: 0; padding: 0; border: 0; background: transparent; font-weight: 600; }
+.itour-bw--bar .itour-bw__field input:focus-visible, .itour-bw--bar .itour-bw__field select:focus-visible { outline: none; }
+.itour-bw--bar .itour-bw__field:focus-within { background: var(--bw-surface); box-shadow: inset 0 0 0 2px var(--bw-brand-dark); }
+.itour-bw--bar .itour-bw__field--kind select { color: var(--bw-brand-dark); }
+.itour-bw--bar .itour-bw__submit { border-radius: 16px; }
+@media (min-width: 900px) {
+	.itour-bw--bar .itour-bw__form { flex-direction: row; align-items: center; gap: 0; padding: 8px 8px 8px 10px; border-radius: 999px; }
+	.itour-bw--bar .itour-bw__field { flex: 1 1 0; padding: 8px 20px; border-radius: 999px; }
+	.itour-bw--bar .itour-bw__field + .itour-bw__field::before { content: ""; position: absolute; inset-inline-start: 0; top: 22%; height: 56%; border-inline-start: 1px solid var(--bw-line); }
+	.itour-bw--bar .itour-bw__field:hover::before, .itour-bw--bar .itour-bw__field:hover + .itour-bw__field::before { opacity: 0; }
+	.itour-bw--bar .itour-bw__submit { width: 52px; height: 52px; min-height: 0; padding: 0; border-radius: 50%; }
+	.itour-bw--bar .itour-bw__submit span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+	.itour-bw--bar .itour-bw__submit .itour-bw__icon { width: 20px; height: 20px; }
+}
+
+/* ── Model C · Card: compact vertical card with a segmented switch ───────── */
+.itour-bw--card { max-width: 420px; padding: 22px; border: 1px solid var(--bw-line); border-radius: calc(var(--bw-r) + 8px); background: var(--bw-base); box-shadow: 0 24px 60px rgb(13 18 30 / 0.18); }
+.itour-bw.itour-bw--card.alignwide, .itour-bw.itour-bw--card.alignfull { max-width: 420px !important; } /* The card is a compact design whatever the block width. */
+.itour-bw__title { margin: 0 0 14px; font-family: var(--wp--preset--font-family--heading, inherit); font-size: 1.4rem; font-weight: 700; line-height: 1.2; }
+.itour-bw--card .itour-bw__switch { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; padding: 3px; margin-block-end: 16px; border-radius: calc(var(--bw-r) + 2px); background: var(--bw-surface); }
+.itour-bw--card .itour-bw__tab { padding: 8px 6px; border: 0; border-radius: var(--bw-r); background: transparent; color: var(--bw-muted); font: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+.itour-bw--card .itour-bw__tab[aria-selected="true"] { background: var(--bw-base); color: var(--bw-ink); box-shadow: 0 1px 3px rgb(0 0 0 / 0.12); }
+.itour-bw--card .itour-bw__form { display: grid; gap: 14px; }
+.itour-bw--card .itour-bw__fields { display: grid; gap: 12px; }
+.itour-bw--card .itour-bw__field { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; padding: 8px 12px; border: 1px solid var(--bw-line); border-radius: var(--bw-r); }
+.itour-bw--card .itour-bw__field:focus-within { border-color: var(--bw-brand-dark); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bw-brand) 30%, transparent); }
+.itour-bw--card .itour-bw__field .itour-bw__icon { grid-row: span 2; }
+.itour-bw--card .itour-bw__field input, .itour-bw--card .itour-bw__field select { min-height: 0; padding: 0; border: 0; background: transparent; font-weight: 600; }
+.itour-bw--card .itour-bw__field input:focus-visible, .itour-bw--card .itour-bw__field select:focus-visible { outline: none; }
+.itour-bw--card .itour-bw__submit { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+	.itour-bw * { transition: none !important; }
+}

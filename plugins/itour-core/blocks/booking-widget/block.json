@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/booking-widget",
+	"version": "0.1.0",
+	"title": "Booking widget",
+	"category": "widgets",
+	"icon": "search",
+	"description": "Search box for tour packages, excursions and transfers, in three designs: tabs, search bar or card.",
+	"keywords": [ "search", "booking", "tours", "transfers", "excursions" ],
+	"textdomain": "itour-core",
+	"supports": { "align": [ "wide", "full" ], "html": false, "spacing": { "margin": true } },
+	"attributes": {
+		"model": { "type": "string", "default": "auto" },
+		"tabs": { "type": "array", "default": [] },
+		"title": { "type": "string", "default": "" }
+	},
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}
