@@ -87,6 +87,20 @@
 .wpit-subhead .wpit-help { margin: 0; }
 .wpit-field[hidden], .wpit-subhead[hidden] { display: none; }
 
+/* Design presets: a mini page drawn in each design's own colours */
+.wpit-presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.wpit-preset { display: flex; flex-direction: column; gap: 6px; padding: 10px; border: 1px solid var(--wpit-border); border-radius: 12px; background: var(--wpit-bg); text-align: start; font: inherit; color: var(--wpit-fg); cursor: pointer; transition: border-color .15s ease, box-shadow .15s ease; }
+.wpit-preset:hover { border-color: #b9c0cd; }
+.wpit-preset.is-active { border-color: var(--wpit-primary); box-shadow: 0 0 0 2px var(--wpit-primary); }
+.wpit-preset-art { display: grid; grid-template-rows: 12px 1fr 14px; height: 96px; overflow: hidden; border-radius: 8px; border: 1px solid rgb(0 0 0 / 0.06); background: var(--p-surface); }
+.wpit-preset-head { background: var(--p-head); border-block-end: 1px solid rgb(0 0 0 / 0.06); }
+.wpit-preset-hero { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 12px; }
+.wpit-preset-h { font-size: 22px; font-weight: 700; line-height: 1; color: var(--p-ink); }
+.wpit-preset-btn { width: 54px; height: 14px; border-radius: var(--p-r); background: var(--p-brand); }
+.wpit-preset-foot { background: var(--p-foot); }
+.wpit-preset-name { font-weight: 600; }
+.wpit-preset-note { color: var(--wpit-muted-fg); font-size: 12px; line-height: 1.4; }
+
 /* Image (logo) fields */
 .wpit-image { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .wpit-image-preview { display: grid; place-items: center; min-width: 120px; max-width: 260px; height: 72px; padding: 8px 12px; border: 1px solid var(--wpit-border); border-radius: var(--wpit-radius); background: repeating-conic-gradient(#f1f3f6 0% 25%, #fff 0% 50%) 0 0 / 14px 14px; }

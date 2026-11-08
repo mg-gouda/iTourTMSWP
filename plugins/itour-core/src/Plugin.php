@@ -101,6 +101,7 @@ final class Plugin {
 		( new Admin\Skin() )->hooks();
 		( new Media() )->hooks();
 		( new BookingWidget() )->hooks();
+		( new Manual() )->hooks();
 		add_action(
 			'admin_enqueue_scripts',
 			static function ( string $hook ): void {

@@ -107,6 +107,7 @@ function wp_itourtms_assets(): void {
 }
 add_action( 'wp_enqueue_scripts', 'wp_itourtms_assets' );
 
+require get_template_directory() . '/inc/designs.php';
 require get_template_directory() . '/inc/options.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/rest.php';

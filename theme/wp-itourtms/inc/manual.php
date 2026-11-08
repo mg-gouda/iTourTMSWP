@@ -97,12 +97,14 @@ function wp_itourtms_manual(): array {
 						array(
 							'list',
 							array(
+								__( 'Design: six complete looks (Nile Classic, Desert Dusk, Red Sea, Midnight Gold, Oasis, iTourTMS). Clicking one fills in colours, fonts, shapes, header, top bar, footer and booking-widget style; change anything, then save.', 'wp-itourtms' ),
 								__( 'Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read.', 'wp-itourtms' ),
+								__( 'Logo: site logo, retina logo (twice the size, for sharp high-resolution screens), mobile logo and a light logo for dark headers, plus display heights. SVG, WebP, PNG and JPG are accepted; SVG files are cleaned of scripts when uploaded.', 'wp-itourtms' ),
 								__( 'Fonts: pick any Google Font for body text and headings (type to search), the base text size and heading weight. The preview shows the result before you save. Leave empty for the fast system font.', 'wp-itourtms' ),
 								__( 'Layout: text column width, wide width (header, footer, wide blocks) and corner rounding.', 'wp-itourtms' ),
 								__( 'Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses.', 'wp-itourtms' ),
-								__( 'Header: keep the header fixed while scrolling; show the site title next to the logo.', 'wp-itourtms' ),
-								__( 'Header → Top bar: switch on “Show top bar” to reveal its settings: a short message, whether to show the contact details and social links, its colours, and whether it shows on phones (as icons).', 'wp-itourtms' ),
+								__( 'Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the site title next to the logo.', 'wp-itourtms' ),
+								__( 'Top bar: switch on “Show top bar” to reveal its settings: four designs (split, centred, minimal, announcement), a short message and link, whether to show contact details and social links, its colours, and whether it shows on phones (as icons).', 'wp-itourtms' ),
 								__( 'Contact & social: phone, email, WhatsApp, address and social links (Facebook, Instagram, X, TikTok, YouTube, LinkedIn), entered once and used by the top bar and the footer. Empty fields are left out.', 'wp-itourtms' ),
 								__( 'Footer → Layout: no columns, 3 columns or 4 columns. For each column choose what it shows: About (logo and text), a Menu, Contact details, Social links, your own Text, Widgets, or nothing, and give it a title. Only the settings for the chosen type appear. Footer colours and the bottom line ({year} and {site} are filled in for you) are at the end.', 'wp-itourtms' ),
 								__( 'Blog: show dates, show the featured image on posts, and the length of summaries in lists.', 'wp-itourtms' ),

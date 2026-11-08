@@ -5,8 +5,12 @@ Each iTourTMS module becomes one plugin. Every plugin needs `itour-core`. Some n
 | Plugin | iTourTMS source (routers / models / screens) | Requires | Notes |
 |---|---|---|---|
 | `itour-core` | `shared` routers; Company, Branch, User/Role/Permission, Country, Currency(+Rate), Language, PartnerTitle, Partner, Sequence, InstalledModule, ApiKey, Notification | — | Installed first. Holds the module registry, schema migrator, REST base, admin UI kit and money maths. Users and roles map onto WordPress users and capabilities. |
-| `itour-crm` | `crm` (21 routers, 29 models, 31 screens) | core | **First module.** Excursions/tours, programmes, pricing, bookings, customers, suppliers, leads, opportunities, activities, mailings, dispatch. |
-| `itour-traffic` | `traffic` (18 routers, 22 models incl. Airport, 32 screens) | core | Transfers: zones, vehicles, drivers, reps, prices, jobs, flights, dispatch, guest bookings. |
+| `itour-tours` | Built from scratch (owner rule D-019); iTourTMS tour-ops packages as reference | core | **Tour packages**: itineraries, departures, prices, availability, booking. Booking-widget tab + Theme Options pages tab in place; functionality waits for the owner's rules |
+| `itour-excursions` | Built from scratch; iTourTMS `crm` excursion models as reference | core | **Excursions / day trips**: programmes, pick-up, prices, availability, booking. Booking-widget tab + pages tab in place |
+| `itour-transfers` | Built from scratch; iTourTMS `traffic` as reference | core | **Transfers**: zones, vehicles, prices, booking, later dispatch, drivers, fleet. Booking-widget tab + pages tab in place |
+| `itour-crm` | `crm` (leads, opportunities, customers, activities, mailings) | core | Sales CRM only; excursions moved to `itour-excursions` |
+| `itour-slider` | — | core | Image slider block (owner rule D-017) ✅ |
+| `itour-forms` | — | core | Contact form block, spam traps, Enquiries screen, email (replaces Contact Form 7, D-018) ✅ |
 | `itour-contracting` | `contracting` (28 routers, 43 models incl. tour operators, markup, tariffs, API integrations, 40 screens) | core | Hotels and hotel contracts. |
 | `itour-reservations` | `reservations` (10 routers, 14 models + hotel credit notes, 15 screens) | core, contracting | Hotel bookings, vouchers, cancellations. |
 | `itour-nile-cruises` | `nile-cruises` (34 routers, 38 models, 36 screens) | core | Boats, cabins, itineraries, cruise contracts and bookings. |

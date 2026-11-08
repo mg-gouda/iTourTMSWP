@@ -49,6 +49,28 @@ function wp_itourtms_option_fields(): array {
  */
 function wp_itourtms_theme_option_fields(): array {
 	return array(
+		'design'  => array(
+			'title'       => __( 'Design', 'wp-itourtms' ),
+			'description' => __( 'Six complete looks. Choosing one fills in the colours, fonts, shapes, header, top bar, footer and booking widget below; adjust anything you like, then save.', 'wp-itourtms' ),
+			'fields'      => array(
+				'design_preset'        => array(
+					'label'   => __( 'Design', 'wp-itourtms' ),
+					'type'    => 'preset',
+					'default' => 'nile',
+				),
+				'booking_widget_model' => array(
+					'label'   => __( 'Booking widget', 'wp-itourtms' ),
+					'type'    => 'select',
+					'default' => 'tabs',
+					'options' => array(
+						'tabs' => __( 'Tabs: pill tabs above a panel', 'wp-itourtms' ),
+						'bar'  => __( 'Search bar: one rounded bar', 'wp-itourtms' ),
+						'card' => __( 'Card: stacked, for heroes and sidebars', 'wp-itourtms' ),
+					),
+					'help'    => __( 'Used by every “Booking widget” block set to “Site default”.', 'wp-itourtms' ),
+				),
+			),
+		),
 		'colors'  => array(
 			'title'  => __( 'Colours', 'wp-itourtms' ),
 			'fields' => array(
@@ -113,7 +135,7 @@ function wp_itourtms_theme_option_fields(): array {
 					'label'   => __( 'Light logo', 'wp-itourtms' ),
 					'type'    => 'image',
 					'default' => 0,
-					'help'    => __( 'A white or light version, used by the “Over the hero” header on the home page. Same size as the site logo; SVG recommended.', 'wp-itourtms' ),
+					'help'    => __( 'A white or light version, used on dark headers and by the “Over the hero” header. Same size as the site logo; SVG recommended.', 'wp-itourtms' ),
 				),
 				'logo_height'        => array(
 					'label'   => __( 'Logo height', 'wp-itourtms' ),
@@ -590,6 +612,8 @@ function wp_itourtms_sanitize_value( array $f, $v ) {
 		case 'menu':
 			$id = absint( $v );
 			return $id && is_nav_menu( $id ) ? $id : 0;
+		case 'preset':
+			return array_key_exists( (string) $v, wp_itourtms_design_presets() ) ? (string) $v : $f['default'];
 		case 'image':
 			$id = absint( $v );
 			return $id && 0 === strpos( (string) get_post_mime_type( $id ), 'image/' ) ? $id : 0;

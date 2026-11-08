@@ -151,6 +151,43 @@
 		} );
 	} );
 
+	// Design presets: fill every related field; nothing is saved until "Save options".
+	var presets = Array.prototype.slice.call( root.querySelectorAll( '.wpit-preset' ) );
+	presets.forEach( function ( btn, i ) {
+		btn.addEventListener( 'click', function () {
+			var values = JSON.parse( btn.getAttribute( 'data-values' ) );
+			presets.forEach( function ( b ) {
+				b.classList.toggle( 'is-active', b === btn );
+				b.setAttribute( 'aria-checked', b === btn ? 'true' : 'false' );
+				b.tabIndex = b === btn ? 0 : -1;
+			} );
+			document.getElementById( 'wpit-design_preset' ).value = btn.getAttribute( 'data-preset' );
+			Object.keys( values ).forEach( function ( key ) {
+				var el = root.querySelector( '[data-key="' + key + '"]' );
+				if ( ! el ) {
+					return;
+				}
+				el.value = values[ key ];
+				el.dispatchEvent( new Event( 'input', { bubbles: true } ) );
+				el.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+			} );
+			root.querySelectorAll( '[data-sync]' ).forEach( function ( src ) {
+				src.value = document.getElementById( src.getAttribute( 'data-sync' ) ).value;
+			} );
+			toast( btn.querySelector( '.wpit-preset-name' ).textContent + ': ' + t.presetApplied, 'ok' );
+		} );
+		btn.addEventListener( 'keydown', function ( e ) {
+			var d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[ e.key ];
+			if ( d ) {
+				e.preventDefault();
+				var next = presets[ ( i + d + presets.length ) % presets.length ];
+				next.focus();
+				next.click();
+			}
+		} );
+		btn.tabIndex = btn.classList.contains( 'is-active' ) ? 0 : -1;
+	} );
+
 	// Options form.
 	var form = root.querySelector( '[data-wpit-options]' );
 	// Values are grouped by the option ("store") each section saves to: the theme's or a module's.

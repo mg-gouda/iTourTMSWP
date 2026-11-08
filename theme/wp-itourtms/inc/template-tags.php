@@ -51,6 +51,10 @@ function wp_itourtms_logo(): string {
 	if ( ! $main ) {
 		return has_custom_logo() ? get_custom_logo() : '';
 	}
+	// A dark header background shows the light logo everywhere (the transparent header swaps it in CSS).
+	if ( $o['logo_light'] && 'transparent' !== $o['header_layout'] && wp_itourtms_contrast( (string) $o['header_bg'], '#ffffff' ) >= 4.5 ) {
+		$main = (int) $o['logo_light'];
+	}
 	$url    = (string) wp_get_attachment_image_url( $main, 'full' );
 	$retina = $o['logo_retina'] ? (string) wp_get_attachment_image_url( (int) $o['logo_retina'], 'full' ) : '';
 	$mobile = $o['logo_mobile'] ? (string) wp_get_attachment_image_url( (int) $o['logo_mobile'], 'full' ) : '';

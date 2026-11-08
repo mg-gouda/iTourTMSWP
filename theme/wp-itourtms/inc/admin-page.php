@@ -50,6 +50,7 @@ function wp_itourtms_admin_menu(): void {
 						'checked'       => __( 'License checked with the server.', 'wp-itourtms' ),
 						'confirmRemove' => __( 'Remove the license from this site?', 'wp-itourtms' ),
 						'search'        => __( 'Search…', 'wp-itourtms' ),
+						'presetApplied' => __( 'applied below. Review, then click Save options.', 'wp-itourtms' ),
 						'chooseImage'   => __( 'Choose image', 'wp-itourtms' ),
 						'replaceImage'  => __( 'Replace image', 'wp-itourtms' ),
 						'noMatch'       => __( 'No matches', 'wp-itourtms' ),
@@ -198,6 +199,26 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 	}
 	echo '<div class="wpit-field"' . $cond . '><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cond built with esc_attr.
 	switch ( $f['type'] ) {
+		case 'preset':
+			echo '<input type="hidden" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '" value="' . esc_attr( (string) $value ) . '">';
+			echo '<div class="wpit-presets" role="radiogroup" aria-label="' . esc_attr( $f['label'] ) . '">';
+			foreach ( wp_itourtms_design_presets() as $slug => $p ) {
+				$v = $p['values'];
+				printf(
+					'<button type="button" class="wpit-preset%1$s" role="radio" aria-checked="%2$s" data-preset="%3$s" data-values="%4$s" style="%5$s">'
+					. '<span class="wpit-preset-art" aria-hidden="true"><span class="wpit-preset-head"></span><span class="wpit-preset-hero"><span class="wpit-preset-h">Aa</span><span class="wpit-preset-btn"></span></span><span class="wpit-preset-foot"></span></span>'
+					. '<span class="wpit-preset-name">%6$s</span><span class="wpit-preset-note">%7$s</span></button>',
+					$slug === $value ? ' is-active' : '',
+					$slug === $value ? 'true' : 'false',
+					esc_attr( $slug ),
+					esc_attr( (string) wp_json_encode( $v ) ),
+					esc_attr( "--p-brand:{$v['color_brand']};--p-ink:{$v['color_ink']};--p-surface:{$v['color_surface']};--p-head:{$v['header_bg']};--p-headfg:{$v['header_fg']};--p-foot:{$v['footer_bg']};--p-r:" . min( 12, (int) $v['radius'] ) . 'px' ),
+					esc_html( $p['name'] ),
+					esc_html( $p['note'] )
+				);
+			}
+			echo '</div>';
+			break;
 		case 'image':
 			$src = $value ? wp_get_attachment_image_url( (int) $value, 'medium' ) : '';
 			echo '<div class="wpit-image" data-wpit-image>';

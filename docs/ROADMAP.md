@@ -10,16 +10,21 @@ Source of truth for features: the iTourTMS repo (`mg-gouda/iTourTMS`, Next.js + 
 | 1 | Foundations | Repo, coding standards (WPCS + PHPStan), CI lint, staging deploy script, plugin and theme skeletons, module registry | Lint passes in CI ✅ (this commit) |
 | 2 | `itour-core` | ✅ Company settings, branches, countries, currencies and daily rates, unified Partner, sequences, admin UI kit (`Admin\Crud` + `Admin\Fields`), seeding. Added when a module first needs them: roles beyond `itour_manage_{module}`, REST `itour/v1`, audit log, email templates, exact-decimal money | Two modules can install, migrate and share partners and currencies |
 | 3 | **WP iTourTMS** theme (`wp-itourtms`) | 🟡 Started: theme.json tokens, header/footer with phone menu, patterns, built-in manual, child theme, WordPress.org Theme Check PASS, release packages. Still to do: home with search, listing and single-product templates, account pages, RTL (Arabic), WCAG 2.2 AA, performance budget (LCP < 2.5 s on 4G, CSS < 40 KB, no jQuery on the front end) | Lighthouse ≥ 95 on the home, listing and product pages |
-| 4 | `itour-crm` (first module) | Excursions and tours catalogue, programmes, age groups, add-ons, pickup locations and times, cost sheets, selling prices, availability and departures, B2C booking, bookings and booking items, customers; later leads, opportunities, activities, mailings, dispatch | A guest can find and book an excursion end to end on staging |
+| 4 | `itour-tours` + `itour-excursions` (built from scratch) | Excursions and tours catalogue, programmes, age groups, add-ons, pickup locations and times, cost sheets, selling prices, availability and departures, B2C booking, bookings and booking items, customers; later leads, opportunities, activities, mailings, dispatch | A guest can find and book an excursion end to end on staging |
 | 5 | Checkout and payments | Cart, checkout, payment gateways, vouchers, booking emails (see decision D-005) | Paid test booking with voucher and emails |
 | 6 | Traveler importer | WP-CLI importer: `st_tours`, `st_activity`, their meta, taxonomies, the `st_*_availability` tables and images into `itour-crm`; old URLs 301 to the new ones | Rehlla staging fully imported, with no broken URLs |
-| 7 | `itour-traffic` | Zones, vehicle types, airports, price items, partner price overrides, B2C transfer booking (replaces `rehlla-transfers`), then jobs, flights, dispatch, drivers, reps, fleet and costs | Transfer booking parity with `rehlla-transfers` |
+| 7 | `itour-transfers` (built from scratch) | Zones, vehicle types, airports, price items, partner price overrides, B2C transfer booking (replaces `rehlla-transfers`), then jobs, flights, dispatch, drivers, reps, fleet and costs | Transfer booking parity with `rehlla-transfers` |
 | 8 | `itour-b2b` | Partner portal: onboarding, partner users, markup rules, credit, rate sheets, product bookings, reports (replaces `travel-b2b`) | Partner agent books at their net rate on credit |
 | 9 | Rehlla cutover | Staging parity checklist, AI Mode ported as `itour-ai`, languages, SEO, launch on live, rollback plan | Rehlla.com runs on `itour` with Traveler, WPBakery and Elementor removed |
 | 10 | `itour-contracting` + `itour-reservations` | Hotels, contracts, seasons, rates, supplements, offers, allotments, stop sales, markets, tariffs; hotel bookings, rooming, vouchers, cancellations | Hotel booking priced from a contract |
 | 11 | `itour-nile-cruises`, `itour-tour-ops` | Boats, cabins, itineraries, departures, cruise bookings; ops files, packages, quotations, P&L | Cruise and package bookings |
 | 12 | `itour-finance` | Chart of accounts, journals, moves, payments, reconciliation, taxes, reports; other modules post to it through hooks | Bookings post balanced entries |
 | 13 | Productisation | Setup wizard, licensing, update server, Arabic translation, user docs, demo data | First outside DMC installs it |
+
+## Done since the roadmap was written (8 Nov 2026)
+- Owner rules D-016 to D-022 recorded: no page builder, own slider and form plugins, products built from scratch, 3 booking-widget models, 6 designs, React where it helps.
+- `itour-slider`, `itour-forms`, booking widget (3 models), 6 design presets, Logo / Header / Top bar / product page tabs, safe SVG + WebP uploads.
+- **Waiting on the owner:** the rules for Tour Packages, Excursions and Transfers (questions sent).
 
 ## Rules that apply in every phase
 - Each module plugin works with only `itour-core` (plus any modules it declares as required) and adds nothing to the front end unless it is used.
