@@ -8,3 +8,4 @@ node_modules/
 .shots/
 dist/
 theme/wp-itourtms/inc/license-pubkey.pem
+.impeccable/hook.cache.json

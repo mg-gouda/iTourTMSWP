@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-08T22:31:55.582Z",
+        "reason": "Project decision: Inter is the incumbent iTourTMS admin face (theme admin.css, itour-core admin-skin.css); owner asked to match the old iTourTMS design"
+      }
+    ]
+  }
+}
