@@ -25,6 +25,7 @@
 		<properties>
 			<property name="custom_capabilities" type="array">
 				<element value="itour_manage_core"/>
+				<element value="itour_manage_forms"/>
 			</property>
 		</properties>
 	</rule>
@@ -32,6 +33,8 @@
 	<!-- Classes live in PSR-4 paths (src/Foo/Bar.php), not class-foo-bar.php. -->
 	<rule ref="WordPress.Files.FileName">
 		<exclude-pattern>*/src/*</exclude-pattern>
+		<!-- Block asset files follow WordPress's own naming (editor.asset.php). -->
+		<exclude-pattern>*/blocks/*</exclude-pattern>
 	</rule>
 
 	<!-- Hook names use a slash namespace: itour/{module}/{event}. -->
@@ -48,7 +51,11 @@
 				<element value="wp-itourtms-child"/>
 				<element value="itour-core"/>
 				<element value="itour-crm"/>
-				<element value="itour-traffic"/>
+				<element value="itour-transfers"/>
+				<element value="itour-tours"/>
+				<element value="itour-excursions"/>
+				<element value="itour-slider"/>
+				<element value="itour-forms"/>
 				<element value="itour-contracting"/>
 				<element value="itour-reservations"/>
 				<element value="itour-nile-cruises"/>

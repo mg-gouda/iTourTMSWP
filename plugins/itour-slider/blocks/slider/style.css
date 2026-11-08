@@ -1,0 +1,35 @@
+/* iTour Slider. Inherits the theme's colours and radius when present. */
+.itour-slider { position: relative; --itour-slider-radius: var(--wp-itourtms-radius, 12px); }
+.itour-slider__viewport { overflow: hidden; border-radius: var(--itour-slider-radius); background: #0b0b10; aspect-ratio: var(--itour-slider-ratio, 16/9); }
+.itour-slider.alignfull .itour-slider__viewport { border-radius: 0; }
+.itour-slider__track { display: flex; height: 100%; transition: transform .5s cubic-bezier(.22, .61, .36, 1); touch-action: pan-y; }
+.itour-slider__slide { position: relative; flex: 0 0 100%; height: 100%; margin: 0; }
+.itour-slider__img { display: block; width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.itour-slider__caption { position: absolute; inset-inline: 0; bottom: 0; padding: 48px 24px 20px; background: linear-gradient(to top, rgb(0 0 0 / 0.65), transparent); color: #fff; font-size: 0.95rem; line-height: 1.45; }
+
+/* Fade: slides stacked */
+.itour-slider.is-fade .itour-slider__track { display: grid; }
+.itour-slider.is-fade .itour-slider__slide { grid-area: 1 / 1; opacity: 0; transition: opacity .6s ease; }
+.itour-slider.is-fade .itour-slider__slide.is-current,
+.itour-slider.is-fade:not(.is-ready) .itour-slider__slide:first-child { opacity: 1; }
+
+/* Controls */
+.itour-slider__controls { position: absolute; inset-inline: 0; bottom: 14px; display: flex; align-items: center; justify-content: center; gap: 10px; pointer-events: none; }
+.itour-slider__controls > * { pointer-events: auto; }
+.itour-slider__arrow, .itour-slider__pause { position: relative; display: inline-grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.92); color: #17141a; cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / 0.2); }
+.itour-slider__arrow span { width: 9px; height: 9px; border-block-start: 2px solid currentColor; border-inline-end: 2px solid currentColor; }
+.itour-slider__arrow.is-prev span { transform: translateX(2px) rotate(-135deg); }
+.itour-slider__arrow.is-next span { transform: translateX(-2px) rotate(45deg); }
+[dir="rtl"] .itour-slider__arrow.is-prev span { transform: translateX(-2px) rotate(45deg); }
+[dir="rtl"] .itour-slider__arrow.is-next span { transform: translateX(2px) rotate(-135deg); }
+.itour-slider__pause span { width: 10px; height: 12px; border-inline: 3px solid currentColor; }
+.itour-slider__pause[aria-pressed="true"] span { width: 0; height: 0; border: 0; border-block: 7px solid transparent; border-inline-start: 11px solid currentColor; margin-inline-start: 3px; }
+.itour-slider__dots { display: flex; gap: 6px; padding: 8px 10px; border-radius: 999px; background: rgb(0 0 0 / 0.35); }
+.itour-slider__dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.55); cursor: pointer; transition: width .2s ease, background-color .2s ease; }
+.itour-slider__dot[aria-current="true"] { width: 22px; border-radius: 5px; background: #fff; }
+.itour-slider button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px rgb(0 0 0 / 0.5); }
+.itour-slider:has(.itour-slider__caption) .itour-slider__controls { bottom: auto; top: 14px; justify-content: flex-end; padding-inline: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+	.itour-slider__track, .itour-slider__slide, .itour-slider__dot { transition: none !important; }
+}

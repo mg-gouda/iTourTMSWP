@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/slider",
+	"version": "0.1.0",
+	"title": "Image slider",
+	"category": "media",
+	"icon": "images-alt2",
+	"description": "Accessible image slider with swipe, keyboard, autoplay with pause, and captions.",
+	"keywords": [ "slider", "carousel", "gallery", "slideshow" ],
+	"textdomain": "itour-slider",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"spacing": { "margin": true }
+	},
+	"attributes": {
+		"images": { "type": "array", "default": [] },
+		"ratio": { "type": "string", "default": "16/9" },
+		"effect": { "type": "string", "default": "slide" },
+		"autoplay": { "type": "boolean", "default": false },
+		"interval": { "type": "number", "default": 5 },
+		"arrows": { "type": "boolean", "default": true },
+		"dots": { "type": "boolean", "default": true },
+		"captions": { "type": "boolean", "default": true },
+		"label": { "type": "string", "default": "" }
+	},
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

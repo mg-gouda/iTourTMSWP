@@ -40,10 +40,13 @@ final class Crud {
 	 */
 	public function __construct( array $config ) {
 		$this->c = $config + array(
-			'key'      => 'id',
-			'search'   => array(),
-			'unique'   => array(),
-			'auto_key' => true,
+			'key'        => 'id',
+			'search'     => array(),
+			'unique'     => array(),
+			'auto_key'   => true,
+			'can_add'    => true,  // False hides "Add new" (e.g. form submissions).
+			'readonly'   => false, // True shows rows without a Save button.
+			'order_desc' => false,
 		);
 	}
 
@@ -82,7 +85,7 @@ final class Crud {
 			exit;
 		}
 		// phpcs:enable
-		if ( empty( $_POST['itour_save'] ) ) {
+		if ( empty( $_POST['itour_save'] ) || $this->c['readonly'] ) {
 			return;
 		}
 		check_admin_referer( 'itour_save_' . $this->c['table'] );
@@ -131,6 +134,9 @@ final class Crud {
 		$done   = isset( $_GET['done'] ) ? sanitize_key( wp_unslash( $_GET['done'] ) ) : '';
 		// phpcs:enable
 		echo '<div class="wrap itour">';
+		if ( 'new' === $action && ! $this->c['can_add'] ) {
+			$action = '';
+		}
 		if ( $this->failed || in_array( $action, array( 'new', 'edit' ), true ) ) {
 			$this->form( $this->failed ? ( isset( $_POST['itour_id'] ) ? sanitize_text_field( wp_unslash( $_POST['itour_id'] ) ) : '' ) : $id ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce checked in load().
 		} else {
@@ -153,6 +159,9 @@ final class Crud {
 				echo '<h1>' . esc_html__( 'Not found', 'itour-core' ) . '</h1><p><a href="' . esc_url( $this->url() ) . '">' . esc_html__( 'Back to the list', 'itour-core' ) . '</a></p>';
 				return;
 			}
+			if ( isset( $this->c['on_view'] ) ) {
+				( $this->c['on_view'] )( $id );
+			}
 			if ( isset( $this->c['load_extra'] ) ) {
 				$values = ( $this->c['load_extra'] )( $id, $values );
 			}
@@ -162,7 +171,7 @@ final class Crud {
 			list( $values, $errors ) = $this->failed;
 		}
 		/* translators: %s: item type, e.g. "branch". */
-		$title = '' === $id ? sprintf( __( 'Add %s', 'itour-core' ), $this->c['singular'] ) : sprintf( __( 'Edit %s', 'itour-core' ), $this->c['singular'] );
+		$title = '' === $id ? sprintf( __( 'Add %s', 'itour-core' ), $this->c['singular'] ) : sprintf( $this->c['readonly'] ? __( 'View %s', 'itour-core' ) : __( 'Edit %s', 'itour-core' ), $this->c['singular'] );
 		echo '<h1>' . esc_html( $title ) . '</h1>';
 		echo '<p><a href="' . esc_url( $this->url() ) . '">&larr; ' . esc_html( $this->c['plural'] ) . '</a></p>';
 		if ( $errors ) {
@@ -177,8 +186,13 @@ final class Crud {
 			$pk     = $this->c['key'];
 			$fields = array_map( static fn( $f ) => $f['key'] === $pk ? array( 'readonly' => true ) + $f : $f, $fields );
 		}
+		if ( $this->c['readonly'] ) {
+			$fields = array_map( static fn( $f ) => array( 'readonly' => true ) + $f, $fields );
+		}
 		Fields::table( $fields, $values, $errors );
-		submit_button( __( 'Save', 'itour-core' ), 'primary', 'itour_save' );
+		if ( ! $this->c['readonly'] ) {
+			submit_button( __( 'Save', 'itour-core' ), 'primary', 'itour_save' );
+		}
 		echo '</form>';
 	}
 
@@ -204,11 +218,14 @@ final class Crud {
 		}
 		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders -- $where only holds placeholders.
 		$total = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i WHERE {$where}", ...$args ) );
-		$rows  = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE {$where} ORDER BY %i LIMIT %d OFFSET %d", ...array_merge( $args, array( $this->c['order'] ?? $this->c['key'], $per, ( $page - 1 ) * $per ) ) ), ARRAY_A );
+		$rows  = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE {$where} ORDER BY %i" . ( $this->c['order_desc'] ? ' DESC' : '' ) . ' LIMIT %d OFFSET %d', ...array_merge( $args, array( $this->c['order'] ?? $this->c['key'], $per, ( $page - 1 ) * $per ) ) ), ARRAY_A );
 		// phpcs:enable
 
 		echo '<h1 class="wp-heading-inline">' . esc_html( $this->c['plural'] ) . '</h1> ';
-		echo '<a class="page-title-action" href="' . esc_url( $this->url( array( 'action' => 'new' ) ) ) . '">' . esc_html__( 'Add new', 'itour-core' ) . '</a><hr class="wp-header-end">';
+		if ( $this->c['can_add'] ) {
+			echo '<a class="page-title-action" href="' . esc_url( $this->url( array( 'action' => 'new' ) ) ) . '">' . esc_html__( 'Add new', 'itour-core' ) . '</a>';
+		}
+		echo '<hr class="wp-header-end">';
 		if ( 'saved' === $done ) {
 			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Saved.', 'itour-core' ) . '</p></div>';
 		} elseif ( 'deleted' === $done ) {

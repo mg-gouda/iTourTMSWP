@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/contact-form",
+	"version": "0.1.2",
+	"title": "Contact form",
+	"category": "widgets",
+	"icon": "email-alt",
+	"description": "Enquiry form: messages are saved under iTour → Enquiries and emailed to you.",
+	"keywords": [ "contact", "form", "enquiry", "email" ],
+	"textdomain": "itour-forms",
+	"supports": { "align": [ "wide" ], "html": false, "spacing": { "margin": true } },
+	"attributes": {
+		"formName": { "type": "string", "default": "contact" },
+		"recipient": { "type": "string", "default": "" },
+		"showPhone": { "type": "boolean", "default": true },
+		"requirePhone": { "type": "boolean", "default": false },
+		"showSubject": { "type": "boolean", "default": false },
+		"showTravelDate": { "type": "boolean", "default": true },
+		"showTravellers": { "type": "boolean", "default": true },
+		"buttonText": { "type": "string", "default": "" },
+		"successMessage": { "type": "string", "default": "" }
+	},
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

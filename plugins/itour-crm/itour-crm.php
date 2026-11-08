@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       iTour CRM
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
- * Description:       Tours and excursions: catalogue, programmes, pricing, availability, bookings and customers, plus leads, opportunities and dispatch.
+ * Description:       Sales CRM: leads, opportunities, customers and activities.
  * Version:           0.1.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
@@ -17,6 +17,8 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+define( 'ITOUR_CRM_FILE', __FILE__ );
 
 add_action(
 	'itour/register_modules',

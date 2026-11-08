@@ -1,16 +1,16 @@
 <?php
 /**
- * iTour Traffic module.
+ * iTour Transfers module.
  *
- * @package ITour\Traffic
+ * @package ITour\Transfers
  */
 
-namespace ITour\Traffic;
+namespace ITour\Transfers;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Registers the Traffic module with iTour Core.
+ * Registers the Transfers module with iTour Core.
  */
 final class Module extends \ITour\Core\Module {
 
@@ -18,14 +18,14 @@ final class Module extends \ITour\Core\Module {
 	 * Module slug.
 	 */
 	public function slug(): string {
-		return 'traffic';
+		return 'transfers';
 	}
 
 	/**
 	 * Module name.
 	 */
 	public function name(): string {
-		return __( 'Traffic', 'itour-traffic' );
+		return __( 'Transfers', 'itour-transfers' );
 	}
 
 	/**
