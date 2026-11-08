@@ -161,6 +161,8 @@ img, video { max-width: 100%; height: auto; }
 .screen-reader-text:focus { z-index: 100000; top: 8px; inset-inline-start: 8px; width: auto; height: auto; padding: 12px 16px; margin: 0; clip-path: none; background: var(--wp--preset--color--base); color: var(--wp--preset--color--ink); font-weight: 600; text-decoration: none; box-shadow: 0 2px 8px rgb(0 0 0 / 0.2); }
 .alignleft { float: inline-start; margin-inline-end: 1.5em; }
 .alignright { float: inline-end; margin-inline-start: 1.5em; }
+/* Phone numbers and emails always read left to right, also on Arabic (RTL) pages. */
+a[href^="tel:"], a[href^="mailto:"] { unicode-bidi: isolate; direction: ltr; }
 .aligncenter { display: block; margin-inline: auto; }
 .wp-caption { max-width: 100%; }
 .wp-caption-text, .gallery-caption { color: var(--wp--preset--color--muted); font-size: var(--wp--preset--font-size--small); }

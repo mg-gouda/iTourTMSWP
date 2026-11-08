@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-forms\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-forms\n"
+
+#. Plugin Name of the plugin
+#: itour-forms.php
+msgid "iTour Forms"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-forms.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-forms.php
+msgid "Contact and enquiry forms: form block, spam protection, submissions in the dashboard, email notifications."
+msgstr ""
+
+#. Author of the plugin
+#: itour-forms.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-forms.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: blocks/contact-form/render.php:16
+#: src/Submit.php:35
+#: blocks/contact-form/editor.js:58
+msgid "Thank you! We’ll reply within one working day."
+msgstr "شكرًا لك! سنرد عليك خلال يوم عمل واحد."
+
+#: blocks/contact-form/render.php:37
+msgid "Leave this empty"
+msgstr "اترك هذا الحقل فارغًا"
+
+#: blocks/contact-form/render.php:41
+msgid "Your message could not be sent. Please check the fields and try again."
+msgstr "تعذّر إرسال رسالتك. يُرجى مراجعة الحقول والمحاولة مرة أخرى."
+
+#: blocks/contact-form/render.php:46
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#: blocks/contact-form/render.php:47
+#: src/Module.php:112
+#: src/Module.php:134
+#: src/Submit.php:123
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: blocks/contact-form/render.php:49
+#: blocks/contact-form/editor.js:47
+msgid "Phone / WhatsApp"
+msgstr "الهاتف / واتساب"
+
+#: blocks/contact-form/render.php:52
+#: src/Module.php:113
+#: src/Module.php:144
+#: src/Submit.php:125
+#: blocks/contact-form/editor.js:49
+msgid "Subject"
+msgstr "الموضوع"
+
+#: blocks/contact-form/render.php:55
+#: src/Module.php:149
+#: src/Submit.php:126
+#: blocks/contact-form/editor.js:50
+msgid "Travel date"
+msgstr "تاريخ السفر"
+
+#: blocks/contact-form/render.php:60
+#: src/Module.php:154
+#: src/Submit.php:127
+msgid "Travellers"
+msgstr "عدد المسافرين"
+
+#: blocks/contact-form/render.php:71
+#: src/Module.php:159
+msgid "Message"
+msgstr "الرسالة"
+
+#: blocks/contact-form/render.php:75
+#: blocks/contact-form/editor.js:57
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+#: src/Module.php:30
+msgid "Forms"
+msgstr ""
+
+#: src/Module.php:89
+msgid "enquiry"
+msgstr ""
+
+#: src/Module.php:90
+#: src/Module.php:172
+msgid "Enquiries"
+msgstr ""
+
+#: src/Module.php:97
+msgid "No enquiries yet. Add the “Contact form” block to a page to start receiving them."
+msgstr ""
+
+#: src/Module.php:111
+msgid "From"
+msgstr ""
+
+#: src/Module.php:114
+msgid "Received"
+msgstr ""
+
+#: src/Module.php:115
+msgid "Status"
+msgstr ""
+
+#: src/Module.php:122
+msgid "New"
+msgstr ""
+
+#: src/Module.php:122
+msgid "Read"
+msgstr ""
+
+#: src/Module.php:129
+#: src/Submit.php:122
+msgid "Name"
+msgstr "الاسم"
+
+#: src/Module.php:139
+#: src/Submit.php:124
+msgid "Phone"
+msgstr "الهاتف"
+
+#: src/Module.php:164
+#: src/Submit.php:128
+msgid "Sent from"
+msgstr "أُرسلت من"
+
+#: src/Submit.php:57
+msgid "This form has expired. Please reload the page and try again."
+msgstr "انتهت صلاحية هذا النموذج. يُرجى إعادة تحميل الصفحة والمحاولة مرة أخرى."
+
+#: src/Submit.php:66
+msgid "Too many messages from your connection. Please try again later."
+msgstr "أُرسلت رسائل كثيرة من اتصالك. يُرجى المحاولة لاحقًا."
+
+#: src/Submit.php:88
+msgid "Please enter your name."
+msgstr "يُرجى إدخال اسمك."
+
+#: src/Submit.php:91
+msgid "Please enter a valid email address."
+msgstr "يُرجى إدخال بريد إلكتروني صحيح."
+
+#: src/Submit.php:94
+msgid "Please enter your phone number."
+msgstr "يُرجى إدخال رقم هاتفك."
+
+#: src/Submit.php:97
+msgid "Please write a message."
+msgstr "يُرجى كتابة رسالتك."
+
+#: src/Submit.php:100
+msgid "Please check the highlighted fields."
+msgstr "يُرجى مراجعة الحقول المحددة."
+
+#. translators: 1: site name, 2: sender name.
+#: src/Submit.php:138
+#, php-format
+msgid "[%1$s] New enquiry from %2$s"
+msgstr "[%1$s] استفسار جديد من %2$s"
+
+#: blocks/contact-form/editor.js:45
+msgid "Fields"
+msgstr ""
+
+#: blocks/contact-form/editor.js:46
+msgid "Name, email and message are always included."
+msgstr ""
+
+#: blocks/contact-form/editor.js:48
+msgid "Phone is required"
+msgstr ""
+
+#: blocks/contact-form/editor.js:51
+msgid "Number of travellers"
+msgstr ""
+
+#: blocks/contact-form/editor.js:55
+msgid "After sending"
+msgstr ""
+
+#: blocks/contact-form/editor.js:56
+msgid "Send to"
+msgstr ""
+
+#: blocks/contact-form/editor.js:56
+msgid "Leave empty to use the company email (iTour → Company)."
+msgstr ""
+
+#: blocks/contact-form/editor.js:57
+msgid "Button text"
+msgstr ""
+
+#: blocks/contact-form/editor.js:58
+msgid "Thank-you message"
+msgstr ""
+
+#: blocks/contact-form/editor.js:59
+msgid "Form name"
+msgstr ""
+
+#: blocks/contact-form/editor.js:59
+msgid "Shown in Enquiries, e.g. “contact” or “group-quote”."
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block title"
+msgid "Contact form"
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block description"
+msgid "Enquiry form: messages are saved under iTour → Enquiries and emailed to you."
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block keyword"
+msgid "enquiry"
+msgstr ""
+
+#: blocks/contact-form/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr ""

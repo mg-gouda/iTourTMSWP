@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-excursions\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-excursions\n"
+
+#. Plugin Name of the plugin
+#: itour-excursions.php
+msgid "iTour Excursions"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-excursions.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-excursions.php
+msgid "Day trips and excursions: programmes, pick-up, prices, availability and booking."
+msgstr ""
+
+#. Author of the plugin
+#: itour-excursions.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-excursions.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Module.php:33
+#: src/Module.php:71
+#: src/Module.php:109
+msgid "Excursions"
+msgstr "الرحلات اليومية"
+
+#: src/Module.php:72
+msgid "Find excursions"
+msgstr "ابحث عن رحلة"
+
+#: src/Module.php:77
+msgid "Staying in"
+msgstr "مكان الإقامة"
+
+#: src/Module.php:79
+msgid "Hurghada, Sharm, Luxor…"
+msgstr "الغردقة، شرم الشيخ، الأقصر…"
+
+#: src/Module.php:84
+msgid "Date"
+msgstr "التاريخ"
+
+#: src/Module.php:90
+msgid "Travellers"
+msgstr "عدد المسافرين"
+
+#: src/Module.php:110
+msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
+msgstr "الصفحات التي تستخدمها الرحلات اليومية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
+
+#: src/Module.php:114
+msgid "Excursions page"
+msgstr "صفحة الرحلات اليومية"
+
+#: src/Module.php:117
+msgid "The page that lists all excursions and day trips."
+msgstr "الصفحة التي تعرض جميع الرحلات والجولات اليومية."
+
+#: src/Module.php:120
+msgid "Search results page"
+msgstr "صفحة نتائج البحث"
+
+#: src/Module.php:123
+msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
+msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."

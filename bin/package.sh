@@ -28,12 +28,7 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         z.write(s, d)' "$folder" "$out" "$@")
 }
 
-echo "→ translation template"
-bin/dev.sh wp i18n make-pot wp-content/themes/wp-itourtms /var/www/html/wp-itourtms.pot --domain=wp-itourtms \
-	--package-name="WP iTourTMS" --headers='{"Report-Msgid-Bugs-To":"https://github.com/mg-gouda/iTourTMSWP/issues"}' >/dev/null
-mkdir -p theme/wp-itourtms/languages
-docker cp itourwp-wp:/var/www/html/wp-itourtms.pot theme/wp-itourtms/languages/wp-itourtms.pot >/dev/null
-docker exec itourwp-wp rm -f /var/www/html/wp-itourtms.pot
+bin/i18n.sh mo
 
 echo "→ documentation"
 docker cp tools/build-docs.php itourwp-wp:/var/www/html/build-docs.php >/dev/null

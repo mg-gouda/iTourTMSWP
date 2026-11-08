@@ -1,0 +1,94 @@
+# Copyright (C) 2026 Mohamed Gouda
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: iTour Transfers 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-08T22:42:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: itour-transfers\n"
+
+#. Plugin Name of the plugin
+#: itour-transfers.php
+msgid "iTour Transfers"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-transfers.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-transfers.php
+msgid "Private airport and city transfers: zones, vehicles, prices and booking, then dispatch, drivers and fleet."
+msgstr ""
+
+#. Author of the plugin
+#: itour-transfers.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-transfers.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Module.php:33
+#: src/Module.php:71
+#: src/Module.php:116
+msgid "Transfers"
+msgstr ""
+
+#: src/Module.php:72
+msgid "See prices"
+msgstr ""
+
+#: src/Module.php:77
+msgid "From"
+msgstr ""
+
+#: src/Module.php:79
+msgid "Airport, hotel or city"
+msgstr ""
+
+#: src/Module.php:84
+msgid "To"
+msgstr ""
+
+#: src/Module.php:86
+msgid "Hotel or address"
+msgstr ""
+
+#: src/Module.php:91
+msgid "Pick-up date"
+msgstr ""
+
+#: src/Module.php:97
+msgid "Passengers"
+msgstr ""
+
+#: src/Module.php:117
+msgid "Pages used by Transfers. Layout and booking settings appear here as the module is built."
+msgstr ""
+
+#: src/Module.php:121
+msgid "Transfers page"
+msgstr ""
+
+#: src/Module.php:124
+msgid "The page that explains and books transfers."
+msgstr ""
+
+#: src/Module.php:127
+msgid "Search results page"
+msgstr ""
+
+#: src/Module.php:130
+msgid "Where the booking widget sends transfer searches (vehicles and prices). Leave empty to use the transfers page."
+msgstr ""

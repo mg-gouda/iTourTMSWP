@@ -1,0 +1,538 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-core\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-core\n"
+
+#. Plugin Name of the plugin
+#: itour-core.php
+msgid "iTour Core"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-core.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-core.php
+msgid "Foundation for the iTourTMS modules: company settings, module registry, database migrations and shared services. Install this first, then add the modules you need."
+msgstr ""
+
+#. Author of the plugin
+#: itour-core.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-core.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: blocks/booking-widget/render.php:21
+msgid "Booking widget: activate iTour Tour Packages, Excursions or Transfers to add their searches here."
+msgstr "أداة الحجز: فعّل إضافة الباقات السياحية أو الرحلات اليومية أو التنقلات لتظهر خانات البحث الخاصة بها هنا."
+
+#: blocks/booking-widget/render.php:59
+#: blocks/booking-widget/editor.js:62
+msgid "Where to next?"
+msgstr "إلى أين وجهتك القادمة؟"
+
+#: blocks/booking-widget/render.php:63
+msgid "What are you looking for?"
+msgstr "ما الذي تبحث عنه؟"
+
+#: blocks/booking-widget/render.php:75
+msgid "Looking for"
+msgstr "أبحث عن"
+
+#: blocks/booking-widget/render.php:92
+#: src/Admin/Crud.php:236
+#: src/Admin/Crud.php:237
+msgid "Search"
+msgstr "بحث"
+
+#. translators: %s: field value.
+#: src/Admin/Crud.php:105
+#, php-format
+msgid "“%s” is already used."
+msgstr ""
+
+#: src/Admin/Crud.php:159
+msgid "Not found"
+msgstr ""
+
+#: src/Admin/Crud.php:159
+msgid "Back to the list"
+msgstr ""
+
+#. translators: %s: item type, e.g. "branch".
+#: src/Admin/Crud.php:174
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#. translators: %s: item type, e.g. "branch".
+#: src/Admin/Crud.php:174
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#. translators: %s: item type, e.g. "branch".
+#: src/Admin/Crud.php:174
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: src/Admin/Crud.php:178
+#: src/Company.php:170
+msgid "Please fix the highlighted fields."
+msgstr ""
+
+#: src/Admin/Crud.php:194
+#: src/Company.php:176
+msgid "Save"
+msgstr ""
+
+#: src/Admin/Crud.php:226
+msgid "Add new"
+msgstr ""
+
+#: src/Admin/Crud.php:230
+#: src/Company.php:167
+msgid "Saved."
+msgstr ""
+
+#: src/Admin/Crud.php:232
+msgid "Deleted."
+msgstr ""
+
+#: src/Admin/Crud.php:246
+msgid "Nothing matches that search."
+msgstr ""
+
+#: src/Admin/Crud.php:246
+msgid "Nothing here yet. Use “Add new” to create the first one."
+msgstr ""
+
+#: src/Admin/Crud.php:272
+msgid "Edit"
+msgstr ""
+
+#: src/Admin/Crud.php:273
+msgid "Delete this permanently?"
+msgstr ""
+
+#: src/Admin/Crud.php:273
+msgid "Delete"
+msgstr ""
+
+#: src/Admin/Crud.php:316
+#: src/Admin/Fields.php:79
+msgid "Yes"
+msgstr ""
+
+#: src/Admin/Fields.php:71
+msgid "— None —"
+msgstr ""
+
+#. translators: %s: field label.
+#: src/Admin/Fields.php:160
+#, php-format
+msgid "%s has an invalid value."
+msgstr ""
+
+#. translators: %s: field label.
+#: src/Admin/Fields.php:164
+#, php-format
+msgid "%s is required."
+msgstr ""
+
+#: src/Admin/Menu.php:40
+msgid "Overview"
+msgstr ""
+
+#: src/Admin/Menu.php:55
+msgid "iTour"
+msgstr ""
+
+#: src/Admin/Menu.php:58
+msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
+msgstr ""
+
+#: src/Admin/Menu.php:61
+msgid "Module"
+msgstr ""
+
+#: src/Admin/Menu.php:61
+msgid "Version"
+msgstr ""
+
+#: src/Company.php:30
+msgid "Company name"
+msgstr ""
+
+#: src/Company.php:36
+msgid "Legal name"
+msgstr ""
+
+#: src/Company.php:38
+msgid "As it appears on invoices and vouchers."
+msgstr ""
+
+#: src/Company.php:42
+#: src/CoreModule.php:244
+msgid "Tax ID"
+msgstr ""
+
+#: src/Company.php:47
+msgid "Tourism licence no."
+msgstr ""
+
+#: src/Company.php:52
+#: src/CoreModule.php:192
+#: src/CoreModule.php:224
+msgid "Email"
+msgstr ""
+
+#: src/Company.php:57
+#: src/CoreModule.php:193
+#: src/CoreModule.php:229
+msgid "Phone"
+msgstr ""
+
+#: src/Company.php:62
+#: src/CoreModule.php:239
+msgid "Website"
+msgstr ""
+
+#: src/Company.php:67
+msgid "Address"
+msgstr ""
+
+#: src/Company.php:72
+#: src/CoreModule.php:194
+#: src/CoreModule.php:249
+msgid "Country"
+msgstr ""
+
+#: src/Company.php:78
+#: src/CoreModule.php:320
+msgid "Base currency"
+msgstr ""
+
+#: src/Company.php:82
+msgid "Prices and accounts are kept in this currency; others convert from it using the daily rates."
+msgstr ""
+
+#: src/Company.php:86
+msgid "Financial year starts"
+msgstr ""
+
+#: src/Company.php:100
+msgid "Admin look"
+msgstr ""
+
+#: src/Company.php:103
+msgid "Use the iTourTMS look for the dashboard and login page"
+msgstr ""
+
+#: src/Company.php:165
+#: src/CoreModule.php:377
+msgid "Company"
+msgstr ""
+
+#: src/Company.php:172
+msgid "Your company details appear on vouchers, invoices and emails from every iTour module."
+msgstr ""
+
+#: src/CoreModule.php:30
+msgid "Core"
+msgstr ""
+
+#: src/CoreModule.php:138
+msgid "branch"
+msgstr ""
+
+#: src/CoreModule.php:139
+#: src/CoreModule.php:382
+msgid "Branches"
+msgstr ""
+
+#: src/CoreModule.php:143
+msgid "No branches yet. Add your head office first; offices such as Hurghada or Luxor can follow."
+msgstr ""
+
+#: src/CoreModule.php:145
+msgid "Branch"
+msgstr ""
+
+#: src/CoreModule.php:146
+#: src/CoreModule.php:159
+#: src/CoreModule.php:308
+msgid "Code"
+msgstr ""
+
+#: src/CoreModule.php:147
+#: src/CoreModule.php:167
+msgid "Head office"
+msgstr ""
+
+#: src/CoreModule.php:148
+#: src/CoreModule.php:173
+#: src/CoreModule.php:289
+#: src/CoreModule.php:312
+#: src/CoreModule.php:368
+msgid "Active"
+msgstr ""
+
+#: src/CoreModule.php:153
+#: src/CoreModule.php:190
+#: src/CoreModule.php:199
+#: src/CoreModule.php:309
+#: src/CoreModule.php:342
+msgid "Name"
+msgstr ""
+
+#: src/CoreModule.php:163
+msgid "Short code used in document numbers, e.g. HRG."
+msgstr ""
+
+#: src/CoreModule.php:169
+msgid "This is the head office"
+msgstr ""
+
+#: src/CoreModule.php:183
+msgid "partner"
+msgstr ""
+
+#: src/CoreModule.php:184
+#: src/CoreModule.php:387
+msgid "Partners"
+msgstr ""
+
+#: src/CoreModule.php:188
+msgid "No partners yet. Partners are your customers, suppliers, tour operators and corporate clients, shared by every module."
+msgstr ""
+
+#: src/CoreModule.php:191
+#: src/CoreModule.php:205
+msgid "Type"
+msgstr ""
+
+#: src/CoreModule.php:209
+msgid "Customer"
+msgstr ""
+
+#: src/CoreModule.php:210
+msgid "Supplier"
+msgstr ""
+
+#: src/CoreModule.php:211
+msgid "Tour operator"
+msgstr ""
+
+#: src/CoreModule.php:212
+msgid "Travel agent"
+msgstr ""
+
+#: src/CoreModule.php:213
+msgid "Corporate"
+msgstr ""
+
+#: src/CoreModule.php:218
+msgid "Organisation"
+msgstr ""
+
+#: src/CoreModule.php:220
+msgid "This is a company, not a person"
+msgstr ""
+
+#: src/CoreModule.php:234
+msgid "Mobile / WhatsApp"
+msgstr ""
+
+#: src/CoreModule.php:255
+msgid "City"
+msgstr ""
+
+#: src/CoreModule.php:260
+msgid "Street"
+msgstr ""
+
+#: src/CoreModule.php:265
+msgid "Postcode"
+msgstr ""
+
+#: src/CoreModule.php:271
+msgid "Credit limit"
+msgstr ""
+
+#: src/CoreModule.php:274
+msgid "How much this partner may owe before new bookings are blocked. 0 = pay before travel."
+msgstr ""
+
+#: src/CoreModule.php:278
+msgid "Credit currency"
+msgstr ""
+
+#: src/CoreModule.php:284
+msgid "Notes"
+msgstr ""
+
+#: src/CoreModule.php:301
+msgid "currency"
+msgstr ""
+
+#: src/CoreModule.php:302
+#: src/CoreModule.php:392
+msgid "Currencies"
+msgstr ""
+
+#: src/CoreModule.php:310
+#: src/CoreModule.php:348
+msgid "Symbol"
+msgstr ""
+
+#: src/CoreModule.php:311
+#: src/CoreModule.php:361
+msgid "Rate today"
+msgstr ""
+
+#. translators: 1: rate, 2: base currency code.
+#: src/CoreModule.php:324
+msgid "No rate yet"
+msgstr ""
+
+#. translators: 1: rate, 2: base currency code.
+#: src/CoreModule.php:324
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: src/CoreModule.php:335
+msgid "ISO code"
+msgstr ""
+
+#: src/CoreModule.php:355
+msgid "Decimals"
+msgstr ""
+
+#. translators: %s: base currency code.
+#: src/CoreModule.php:364
+#, php-format
+msgid "How many %s one unit of this currency is worth today. Leave empty to keep the last rate."
+msgstr ""
+
+#: src/Manual.php:31
+msgid "Booking widget: the search box for tour packages, excursions and transfers. Pick a design in the block settings, or leave “Site default” to follow Theme Options → Design. Searches go to the results pages chosen in each product’s Theme Options tab."
+msgstr ""
+
+#: src/Manual.php:33
+msgid "Image slider: choose photos, then set the shape, slide or fade, autoplay (visitors can always pause it), arrows, dots and captions. Captions come from each image’s caption in the media library."
+msgstr ""
+
+#: src/Manual.php:36
+msgid "Contact form: choose which fields show, who receives the email and the thank-you message. Messages are kept under iTour → Enquiries and protected against spam automatically."
+msgstr ""
+
+#: src/Manual.php:40
+msgid "iTour blocks"
+msgstr ""
+
+#: src/Manual.php:42
+msgid "In the block editor, click + and search for these blocks:"
+msgstr ""
+
+#: src/Media.php:80
+msgid "This SVG file could not be read safely, so it was not uploaded."
+msgstr ""
+
+#. translators: 1: module name, 2: comma-separated module slugs.
+#: src/Modules.php:95
+#, php-format
+msgid "iTour: %1$s is not running because it needs these modules: %2$s."
+msgstr ""
+
+#: blocks/booking-widget/editor.js:8
+msgid "Tour packages"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:9
+msgid "Excursions"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:10
+msgid "Transfers"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:25
+msgid "Booking widget"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:27
+msgid "Design"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:30
+msgid "Site default (Theme Options → Design)"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:31
+msgid "Tabs: pill tabs above a panel"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:32
+msgid "Search bar: one rounded bar"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:33
+msgid "Card: stacked, for heroes and sidebars"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:39
+msgid "Show these searches"
+msgstr ""
+
+#: blocks/booking-widget/editor.js:60
+msgid "Heading (card design)"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block title"
+msgid "Booking widget"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block description"
+msgid "Search box for tour packages, excursions and transfers, in three designs: tabs, search bar or card."
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block keyword"
+msgid "search"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block keyword"
+msgid "tours"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block keyword"
+msgid "transfers"
+msgstr ""
+
+#: blocks/booking-widget/block.json
+msgctxt "block keyword"
+msgid "excursions"
+msgstr ""

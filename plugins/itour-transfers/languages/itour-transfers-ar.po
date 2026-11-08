@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-transfers\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-transfers\n"
+
+#. Plugin Name of the plugin
+#: itour-transfers.php
+msgid "iTour Transfers"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-transfers.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-transfers.php
+msgid "Private airport and city transfers: zones, vehicles, prices and booking, then dispatch, drivers and fleet."
+msgstr ""
+
+#. Author of the plugin
+#: itour-transfers.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-transfers.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Module.php:33
+#: src/Module.php:71
+#: src/Module.php:116
+msgid "Transfers"
+msgstr "التنقلات"
+
+#: src/Module.php:72
+msgid "See prices"
+msgstr "اعرض الأسعار"
+
+#: src/Module.php:77
+msgid "From"
+msgstr "من"
+
+#: src/Module.php:79
+msgid "Airport, hotel or city"
+msgstr "مطار أو فندق أو مدينة"
+
+#: src/Module.php:84
+msgid "To"
+msgstr "إلى"
+
+#: src/Module.php:86
+msgid "Hotel or address"
+msgstr "فندق أو عنوان"
+
+#: src/Module.php:91
+msgid "Pick-up date"
+msgstr "تاريخ الاستقبال"
+
+#: src/Module.php:97
+msgid "Passengers"
+msgstr "عدد الركاب"
+
+#: src/Module.php:117
+msgid "Pages used by Transfers. Layout and booking settings appear here as the module is built."
+msgstr "الصفحات التي تستخدمها التنقلات. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
+
+#: src/Module.php:121
+msgid "Transfers page"
+msgstr "صفحة التنقلات"
+
+#: src/Module.php:124
+msgid "The page that explains and books transfers."
+msgstr "الصفحة التي تشرح خدمة التنقلات وتتيح حجزها."
+
+#: src/Module.php:127
+msgid "Search results page"
+msgstr "صفحة نتائج البحث"
+
+#: src/Module.php:130
+msgid "Where the booking widget sends transfer searches (vehicles and prices). Leave empty to use the transfers page."
+msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن التنقلات (المركبات والأسعار). اتركها فارغة لاستخدام صفحة التنقلات."

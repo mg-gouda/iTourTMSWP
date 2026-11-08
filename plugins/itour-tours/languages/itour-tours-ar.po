@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-tours\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-tours\n"
+
+#. Plugin Name of the plugin
+#: itour-tours.php
+msgid "iTour Tour Packages"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-tours.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-tours.php
+msgid "Multi-day tour packages: itineraries, departures, prices, availability and booking."
+msgstr ""
+
+#. Author of the plugin
+#: itour-tours.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-tours.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Module.php:33
+#: src/Module.php:109
+msgid "Tour Packages"
+msgstr "الباقات السياحية"
+
+#: src/Module.php:71
+msgid "Tour packages"
+msgstr "الباقات السياحية"
+
+#: src/Module.php:72
+msgid "Find tours"
+msgstr "ابحث عن باقة"
+
+#: src/Module.php:77
+msgid "Destination"
+msgstr "الوجهة"
+
+#: src/Module.php:79
+msgid "Cairo, Luxor, Nile cruise…"
+msgstr "القاهرة، الأقصر، رحلة نيلية…"
+
+#: src/Module.php:84
+msgid "Start date"
+msgstr "تاريخ البدء"
+
+#: src/Module.php:90
+msgid "Travellers"
+msgstr "عدد المسافرين"
+
+#: src/Module.php:110
+msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
+msgstr "الصفحات التي تستخدمها الباقات السياحية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
+
+#: src/Module.php:114
+msgid "Tour packages page"
+msgstr "صفحة الباقات السياحية"
+
+#: src/Module.php:117
+msgid "The page that lists all tour packages."
+msgstr "الصفحة التي تعرض جميع الباقات السياحية."
+
+#: src/Module.php:120
+msgid "Search results page"
+msgstr "صفحة نتائج البحث"
+
+#: src/Module.php:123
+msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
+msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الباقات. اتركها فارغة لاستخدام صفحة الباقات السياحية."

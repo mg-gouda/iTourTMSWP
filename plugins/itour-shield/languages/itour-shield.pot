@@ -1,0 +1,1156 @@
+# Copyright (C) 2026 Mohamed Gouda
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: iTour Shield 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-08T22:42:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: itour-shield\n"
+
+#. Plugin Name of the plugin
+#: itour-shield.php
+msgid "iTour Shield"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-shield.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-shield.php
+msgid "Speed and security in one plugin: page cache and front-end tweaks, hidden login and masked WordPress paths, firewall, login protection with two-factor codes, malware and file scan, hardening and an activity log. Works on any WordPress site."
+msgstr ""
+
+#. Author of the plugin
+#: itour-shield.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-shield.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Admin.php:29
+msgid "Settings"
+msgstr ""
+
+#: src/Admin.php:47
+#: src/Admin.php:48
+#: src/Admin.php:340
+#: src/Admin.php:347
+msgid "Shield"
+msgstr ""
+
+#. translators: 1: files checked so far, 2: total files.
+#: src/Admin.php:78
+#, php-format
+msgid "Checking files… %1$s of %2$s"
+msgstr ""
+
+#: src/Admin.php:79
+msgid "The scan stopped with an error. Reload the page and try again."
+msgstr ""
+
+#: src/Admin.php:80
+msgid "Permanently delete these items? This cannot be undone."
+msgstr ""
+
+#: src/Admin.php:97
+msgid "Page cache"
+msgstr ""
+
+#: src/Admin.php:98
+msgid "Cache pages for visitors"
+msgstr ""
+
+#: src/Admin.php:98
+msgid "Saves each page as a file the first time a guest opens it, then serves that file without running WordPress. Signed-in users always get a fresh page."
+msgstr ""
+
+#: src/Admin.php:102
+msgid "Keep pages for"
+msgstr ""
+
+#: src/Admin.php:103
+msgid "The cache also clears itself whenever you publish, edit a menu or change a setting."
+msgstr ""
+
+#: src/Admin.php:105
+msgid "hours"
+msgstr ""
+
+#: src/Admin.php:111
+msgid "Refill after clearing"
+msgstr ""
+
+#: src/Admin.php:111
+msgid "Visits the home page and your newest pages a minute after the cache clears, so real visitors get the fast copy."
+msgstr ""
+
+#: src/Admin.php:112
+msgid "Never cache"
+msgstr ""
+
+#: src/Admin.php:112
+msgid "One address part per line. Any page whose address contains it is skipped. Booking, cart and account pages belong here."
+msgstr ""
+
+#: src/Admin.php:114
+msgid "Lighter pages"
+msgstr ""
+
+#: src/Admin.php:115
+msgid "Defer scripts"
+msgstr ""
+
+#: src/Admin.php:115
+msgid "Scripts load after the page is drawn. WordPress keeps a script blocking when other code needs it early. Test your booking forms after turning this on."
+msgstr ""
+
+#: src/Admin.php:116
+msgid "Remove the emoji script"
+msgstr ""
+
+#: src/Admin.php:116
+msgid "Browsers draw emoji themselves; the extra script is not needed."
+msgstr ""
+
+#: src/Admin.php:117
+msgid "Remove the embed script"
+msgstr ""
+
+#: src/Admin.php:117
+msgid "Stops loading the script that lets other sites embed your posts."
+msgstr ""
+
+#: src/Admin.php:118
+msgid "Connect early to Google Fonts"
+msgstr ""
+
+#: src/Admin.php:118
+msgid "Only added when the page uses a Google Font."
+msgstr ""
+
+#: src/Admin.php:122
+msgid "Editor heartbeat every"
+msgstr ""
+
+#: src/Admin.php:123
+msgid "How often the editor checks in with the server. 60 halves the load of the default; 0 leaves the WordPress default."
+msgstr ""
+
+#: src/Admin.php:125
+msgid "seconds"
+msgstr ""
+
+#: src/Admin.php:133
+#: src/Admin.php:419
+msgid "Login page"
+msgstr ""
+
+#: src/Admin.php:137
+msgid "Login address"
+msgstr ""
+
+#: src/Admin.php:138
+msgid "Leave empty to keep wp-login.php. When set, wp-login.php and wp-admin show “not found” to anyone not signed in. Bookmark the new address: the old one stops working at once."
+msgstr ""
+
+#: src/Admin.php:145
+#: src/Admin.php:416
+msgid "Public folder names"
+msgstr ""
+
+#: src/Admin.php:146
+msgid "Rename WordPress folders in public links"
+msgstr ""
+
+#: src/Admin.php:146
+msgid "Scanners spot WordPress sites by the wp-content and wp-includes folders in the page source. Files stay where they are; only the public links change, so turning this off undoes it completely."
+msgstr ""
+
+#: src/Admin.php:200
+msgid "REST API address"
+msgstr ""
+
+#: src/Admin.php:201
+msgid "Leave empty to keep wp-json. Plugins that hard-code /wp-json/ stop working when this changes."
+msgstr ""
+
+#: src/Admin.php:210
+#: src/Admin.php:322
+msgid "Firewall"
+msgstr ""
+
+#: src/Admin.php:211
+msgid "Check every request"
+msgstr ""
+
+#: src/Admin.php:211
+msgid "Blocks SQL injection, path traversal, code injection and script injection in addresses, and the same in forms sent by visitors who are not signed in. Runs before other plugins load."
+msgstr ""
+
+#: src/Admin.php:212
+msgid "Block scanner tools"
+msgstr ""
+
+#: src/Admin.php:212
+msgid "Turns away sqlmap, WPScan, Nikto, Nuclei and similar tools by their signature."
+msgstr ""
+
+#: src/Admin.php:216
+msgid "Requests per visitor"
+msgstr ""
+
+#: src/Admin.php:217
+msgid "Per minute, per IP, for visitors who are not signed in. Cached pages don’t count. 0 turns the limit off."
+msgstr ""
+
+#: src/Admin.php:219
+msgid "a minute"
+msgstr ""
+
+#: src/Admin.php:226
+msgid "IP addresses"
+msgstr ""
+
+#: src/Admin.php:227
+msgid "Always block"
+msgstr ""
+
+#: src/Admin.php:227
+msgid "One per line. Single addresses or ranges such as 203.0.113.0/24."
+msgstr ""
+
+#: src/Admin.php:231
+msgid "Never block"
+msgstr ""
+
+#: src/Admin.php:232
+msgid "Your office and your own connection. These skip the firewall and login lockouts."
+msgstr ""
+
+#: src/Admin.php:241
+#: src/Admin.php:641
+msgid "Failed logins"
+msgstr ""
+
+#: src/Admin.php:242
+msgid "Lock out after failed attempts"
+msgstr ""
+
+#: src/Admin.php:242
+msgid "Stops password guessing. Works for the login page, XML-RPC and the REST API."
+msgstr ""
+
+#: src/Admin.php:246
+msgid "Attempts allowed"
+msgstr ""
+
+#: src/Admin.php:249
+msgid "per hour"
+msgstr ""
+
+#: src/Admin.php:258
+msgid "Lockout lasts"
+msgstr ""
+
+#: src/Admin.php:261
+msgid "minutes"
+msgstr ""
+
+#: src/Admin.php:267
+msgid "Don’t reveal which usernames exist"
+msgstr ""
+
+#: src/Admin.php:267
+msgid "Login and lost-password screens give the same answer for real and made-up accounts."
+msgstr ""
+
+#: src/Admin.php:269
+#: src/Admin.php:578
+#: src/TwoFactor.php:281
+msgid "Two-factor login"
+msgstr ""
+
+#: src/Admin.php:270
+msgid "Allow two-factor login"
+msgstr ""
+
+#: src/Admin.php:270
+msgid "Each user turns it on in their profile with an authenticator app and gets ten backup codes."
+msgstr ""
+
+#: src/Admin.php:271
+msgid "Require it for administrators"
+msgstr ""
+
+#: src/Admin.php:271
+msgid "Administrators without it are sent to their profile to set it up before they can use the dashboard."
+msgstr ""
+
+#: src/Admin.php:273
+msgid "Email alerts"
+msgstr ""
+
+#: src/Admin.php:274
+msgid "Send alerts to"
+msgstr ""
+
+#: src/Admin.php:274
+msgid "Empty uses the site’s admin email."
+msgstr ""
+
+#: src/Admin.php:275
+msgid "When an IP is locked out"
+msgstr ""
+
+#: src/Admin.php:276
+msgid "When an administrator signs in from a new IP"
+msgstr ""
+
+#: src/Admin.php:277
+msgid "When the daily scan finds something new"
+msgstr ""
+
+#: src/Admin.php:281
+msgid "Keep the activity log for"
+msgstr ""
+
+#: src/Admin.php:284
+msgid "days"
+msgstr ""
+
+#: src/Admin.php:292
+msgid "WordPress"
+msgstr ""
+
+#: src/Admin.php:293
+msgid "Turn off XML-RPC"
+msgstr ""
+
+#: src/Admin.php:293
+msgid "An old remote-publishing interface that allows hundreds of password guesses in one request. The mobile app and Jetpack need it."
+msgstr ""
+
+#: src/Admin.php:294
+msgid "Hide usernames"
+msgstr ""
+
+#: src/Admin.php:294
+msgid "Blocks ?author=1 lookups, the public REST users list and the users sitemap."
+msgstr ""
+
+#: src/Admin.php:295
+msgid "Turn off the theme and plugin file editor"
+msgstr ""
+
+#: src/Admin.php:295
+msgid "A stolen admin login can no longer write PHP from the dashboard."
+msgstr ""
+
+#: src/Admin.php:296
+msgid "Hide the WordPress version"
+msgstr ""
+
+#: src/Admin.php:296
+msgid "Removes it from the page source and from file links."
+msgstr ""
+
+#: src/Admin.php:297
+msgid "Turn off application passwords"
+msgstr ""
+
+#: src/Admin.php:297
+msgid "Leave on only if no app or service signs in to this site."
+msgstr ""
+
+#: src/Admin.php:299
+msgid "Browser"
+msgstr ""
+
+#: src/Admin.php:300
+msgid "Send security headers"
+msgstr ""
+
+#: src/Admin.php:300
+msgid "Stops other sites framing yours, MIME sniffing and full-address referrers; denies camera, microphone and location access."
+msgstr ""
+
+#: src/Admin.php:301
+msgid "Force HTTPS for a year (HSTS)"
+msgstr ""
+
+#: src/Admin.php:301
+msgid "Browsers will refuse plain http:// for this domain and its subdomains for a year. Only turn on when every subdomain has a working certificate."
+msgstr ""
+
+#: src/Admin.php:303
+msgid "Server"
+msgstr ""
+
+#: src/Admin.php:304
+msgid "Block sensitive files"
+msgstr ""
+
+#: src/Admin.php:304
+msgid "wp-config.php, readme.html, license.txt, debug.log, backups (.sql, .bak), .git and .env answer “forbidden”, and PHP inside wp-includes can’t be called directly."
+msgstr ""
+
+#: src/Admin.php:305
+msgid "Stop PHP running in uploads"
+msgstr ""
+
+#: src/Admin.php:305
+msgid "An uploaded script can’t run even if an attacker slips one in."
+msgstr ""
+
+#: src/Admin.php:306
+msgid "Hide folder listings"
+msgstr ""
+
+#: src/Admin.php:306
+msgid "Folders without an index file answer “forbidden” instead of listing their files."
+msgstr ""
+
+#: src/Admin.php:319
+msgid "Overview"
+msgstr ""
+
+#: src/Admin.php:320
+msgid "Speed"
+msgstr ""
+
+#: src/Admin.php:321
+msgid "Login & paths"
+msgstr ""
+
+#: src/Admin.php:323
+msgid "Login protection"
+msgstr ""
+
+#: src/Admin.php:324
+msgid "Hardening"
+msgstr ""
+
+#: src/Admin.php:325
+#: src/Admin.php:603
+msgid "File scan"
+msgstr ""
+
+#: src/Admin.php:326
+#: src/Admin.php:650
+msgid "Activity"
+msgstr ""
+
+#: src/Admin.php:350
+msgid "Save changes"
+msgstr ""
+
+#: src/Admin.php:354
+msgid "Shield sections"
+msgstr ""
+
+#. translators: %d: checks.
+#: src/Admin.php:394
+#, php-format
+msgid "<strong>%d check</strong> needs attention"
+msgid_plural "<strong>%d checks</strong> need attention"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin.php:395
+msgid "All checks pass"
+msgstr ""
+
+#. translators: 1: blocked requests, 2: lockouts.
+#: src/Admin.php:397
+#, php-format
+msgid "%1$s blocked and %2$s locked out in the last 24 hours"
+msgstr ""
+
+#: src/Admin.php:399
+msgid "page cache off"
+msgstr ""
+
+#. translators: %s: cached pages.
+#: src/Admin.php:401
+#, php-format
+msgid "%s page cached"
+msgid_plural "%s pages cached"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin.php:417
+msgid "Folder renaming needs an Apache server and WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off."
+msgstr ""
+
+#: src/Admin.php:420
+msgid "Your login page is now"
+msgstr ""
+
+#: src/Admin.php:420
+msgid "Locked out? Add"
+msgstr ""
+
+#: src/Admin.php:420
+msgid "to wp-config.php."
+msgstr ""
+
+#. translators: %s: IP address.
+#: src/Admin.php:453
+#, php-format
+msgid "Add my IP (%s)"
+msgstr ""
+
+#: src/Admin.php:490
+msgid "Fix"
+msgstr ""
+
+#: src/Admin.php:491
+msgid "Should fix"
+msgstr ""
+
+#: src/Admin.php:492
+msgid "Optional"
+msgstr ""
+
+#: src/Admin.php:494
+msgid "Site checks"
+msgstr ""
+
+#: src/Admin.php:503
+msgid "OK"
+msgstr ""
+
+#: src/Admin.php:505
+msgid "Set up"
+msgstr ""
+
+#: src/Admin.php:514
+msgid "Last file scan"
+msgstr ""
+
+#. translators: 1: time ago, 2: files, 3: problems.
+#: src/Admin.php:517
+#, php-format
+msgid "%1$s ago: %2$s files checked, %3$s need a look"
+msgstr ""
+
+#: src/Admin.php:519
+msgid "No scan yet. The first daily scan runs within 24 hours, or start one now."
+msgstr ""
+
+#: src/Admin.php:521
+msgid "Open file scan"
+msgstr ""
+
+#: src/Admin.php:532
+msgid "Cache state"
+msgstr ""
+
+#: src/Admin.php:534
+msgid "Cached pages"
+msgstr ""
+
+#: src/Admin.php:535
+msgid "Cache loader"
+msgstr ""
+
+#: src/Admin.php:536
+msgid "Not installed"
+msgstr ""
+
+#: src/Admin.php:537
+msgid "Installed"
+msgstr ""
+
+#: src/Admin.php:538
+msgid "Another caching plugin owns wp-content/advanced-cache.php. Turn that plugin off first."
+msgstr ""
+
+#. translators: %d: backup codes left.
+#: src/Admin.php:540
+#: src/Admin.php:581
+#: src/TwoFactor.php:288
+msgid "On"
+msgstr ""
+
+#: src/Admin.php:540
+msgid "Off: wp-config.php is not writable. Add define( 'WP_CACHE', true ); to it."
+msgstr ""
+
+#: src/Admin.php:540
+#: src/Admin.php:581
+msgid "Off"
+msgstr ""
+
+#: src/Admin.php:545
+msgid "Clear cache now"
+msgstr ""
+
+#: src/Admin.php:548
+msgid "Post revisions"
+msgstr ""
+
+#: src/Admin.php:549
+msgid "Auto-drafts"
+msgstr ""
+
+#: src/Admin.php:550
+msgid "Posts in the trash"
+msgstr ""
+
+#: src/Admin.php:551
+msgid "Spam and trashed comments"
+msgstr ""
+
+#: src/Admin.php:552
+msgid "Expired temporary data"
+msgstr ""
+
+#: src/Admin.php:554
+msgid "Database clean-up"
+msgstr ""
+
+#. translators: %s: items.
+#: src/Admin.php:561
+#, php-format
+msgid "Delete %s item"
+msgid_plural "Delete %s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: items.
+#: src/Admin.php:561
+msgid "Permanent. Take a backup first if you might need old revisions."
+msgstr ""
+
+#: src/Admin.php:563
+msgid "Nothing to clean."
+msgstr ""
+
+#: src/Admin.php:578
+msgid "Administrators"
+msgstr ""
+
+#: src/Admin.php:578
+#: src/Admin.php:659
+msgid "User"
+msgstr ""
+
+#: src/Admin.php:583
+msgid "Set up yours"
+msgstr ""
+
+#: src/Admin.php:596
+msgid "WordPress core"
+msgstr ""
+
+#: src/Admin.php:597
+msgid "Plugin"
+msgstr ""
+
+#: src/Admin.php:598
+msgid "Uploads"
+msgstr ""
+
+#: src/Admin.php:599
+msgid "Malware pattern"
+msgstr ""
+
+#: src/Admin.php:604
+msgid "Compare WordPress and plugins with the official copies and look for malware"
+msgstr ""
+
+#. translators: 1: time ago, 2: files.
+#: src/Admin.php:607
+#, php-format
+msgid "Last run %1$s ago on %2$s files. Runs by itself once a day."
+msgstr ""
+
+#: src/Admin.php:609
+msgid "Not run yet. Takes a minute or two on most sites."
+msgstr ""
+
+#: src/Admin.php:611
+msgid "Scan now"
+msgstr ""
+
+#: src/Admin.php:613
+msgid "Nothing suspicious found."
+msgstr ""
+
+#: src/Admin.php:616
+msgid "File"
+msgstr ""
+
+#: src/Admin.php:616
+msgid "Problem"
+msgstr ""
+
+#: src/Admin.php:616
+msgid "Action"
+msgstr ""
+
+#: src/Admin.php:620
+msgid "Ignore"
+msgstr ""
+
+#: src/Admin.php:624
+msgid "Not sure about a file? Compare it with a fresh download of the plugin or theme, or ask your developer before deleting anything."
+msgstr ""
+
+#. translators: %d: ignored findings.
+#: src/Admin.php:628
+#, php-format
+msgid "%d ignored finding is hidden. It shows again if the file changes."
+msgid_plural "%d ignored findings are hidden. They show again if the files change."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin.php:638
+msgid "Everything"
+msgstr ""
+
+#: src/Admin.php:639
+msgid "Blocked requests"
+msgstr ""
+
+#: src/Admin.php:640
+msgid "Sign-ins"
+msgstr ""
+
+#: src/Admin.php:642
+msgid "Lockouts"
+msgstr ""
+
+#: src/Admin.php:643
+msgid "Two-factor changes"
+msgstr ""
+
+#: src/Admin.php:644
+msgid "Wrong two-factor codes"
+msgstr ""
+
+#: src/Admin.php:645
+msgid "Scans"
+msgstr ""
+
+#: src/Admin.php:646
+msgid "Setting changes"
+msgstr ""
+
+#: src/Admin.php:650
+msgid "Show"
+msgstr ""
+
+#: src/Admin.php:656
+msgid "Nothing recorded yet."
+msgstr ""
+
+#: src/Admin.php:659
+msgid "When"
+msgstr ""
+
+#: src/Admin.php:659
+msgid "Event"
+msgstr ""
+
+#: src/Admin.php:659
+msgid "Details"
+msgstr ""
+
+#: src/Admin.php:674
+msgid "Settings saved."
+msgstr ""
+
+#. translators: %s: login URL.
+#: src/Admin.php:678
+#, php-format
+msgid "Your login page moved to %s. Bookmark it now; a copy was emailed to the site admin."
+msgstr ""
+
+#: src/Admin.php:681
+msgid "Cache cleared."
+msgstr ""
+
+#. translators: %s: items.
+#: src/Admin.php:685
+#, php-format
+msgid "%s items deleted from the database."
+msgstr ""
+
+#: src/Admin.php:690
+msgid "The .htaccess file is not writable, so server rules (blocked files, folder names, browser caching) were not applied. Ask your host to make it writable by WordPress."
+msgstr ""
+
+#: src/Admin.php:692
+msgid "The server rejected the new .htaccess rules, so the previous file was put back. Your host may not allow “Options” overrides: turn off “Hide folder listings” and save again."
+msgstr ""
+
+#: src/Admin.php:706
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#. translators: %s: site name.
+#: src/Admin.php:731
+#, php-format
+msgid "[%s] New login address"
+msgstr ""
+
+#. translators: %s: login URL.
+#: src/Admin.php:733
+#, php-format
+msgid ""
+"The login page of this site is now:\n"
+"\n"
+"%s\n"
+"\n"
+"Keep this email. If you are ever locked out, add define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); to wp-config.php."
+msgstr ""
+
+#: src/Cache.php:263
+msgid "Clear cache"
+msgstr ""
+
+#: src/Hardening.php:93
+msgid "Sorry, you are not allowed to list users."
+msgstr ""
+
+#: src/Hardening.php:125
+msgid "No user is called “admin”"
+msgstr ""
+
+#: src/Hardening.php:125
+msgid "“admin” is the first username attackers try. Create a new administrator and delete this one."
+msgstr ""
+
+#: src/Hardening.php:126
+msgid "Secret keys (salts) are set"
+msgstr ""
+
+#: src/Hardening.php:126
+msgid "Add unique keys to wp-config.php from api.wordpress.org/secret-key/1.1/salt/."
+msgstr ""
+
+#: src/Hardening.php:127
+msgid "Site uses HTTPS"
+msgstr ""
+
+#: src/Hardening.php:127
+msgid "Install an SSL certificate and change the site address to https://."
+msgstr ""
+
+#: src/Hardening.php:128
+msgid "Errors are not shown to visitors"
+msgstr ""
+
+#: src/Hardening.php:128
+msgid "Set WP_DEBUG_DISPLAY to false in wp-config.php on live sites."
+msgstr ""
+
+#: src/Hardening.php:129
+msgid "debug.log is not in a public folder"
+msgstr ""
+
+#: src/Hardening.php:129
+msgid "Turn on “Block sensitive files” or move the log outside the web root."
+msgstr ""
+
+#: src/Hardening.php:130
+msgid "WordPress is up to date"
+msgstr ""
+
+#: src/Hardening.php:130
+msgid "Update WordPress from Dashboard → Updates."
+msgstr ""
+
+#. translators: %d: plugins with updates.
+#: src/Hardening.php:132
+msgid "Plugins are up to date"
+msgstr ""
+
+#. translators: %d: plugins with updates.
+#: src/Hardening.php:132
+#, php-format
+msgid "%d plugin has an update waiting."
+msgid_plural "%d plugins have updates waiting."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: inactive plugins.
+#: src/Hardening.php:134
+msgid "No unused plugins installed"
+msgstr ""
+
+#. translators: %d: inactive plugins.
+#: src/Hardening.php:134
+#, php-format
+msgid "%d inactive plugins. Inactive plugin code can still be attacked: delete what you don’t use."
+msgstr ""
+
+#: src/Hardening.php:135
+msgid "New users don’t get extra powers"
+msgstr ""
+
+#: src/Hardening.php:135
+msgid "Anyone can register and gets a role above Subscriber. Change it in Settings → General."
+msgstr ""
+
+#: src/Hardening.php:136
+msgid "PHP version is supported"
+msgstr ""
+
+#: src/Hardening.php:136
+msgid "Ask your host for PHP 8.2 or newer; older versions no longer get security fixes."
+msgstr ""
+
+#: src/Hardening.php:137
+msgid "Database prefix is not the default"
+msgstr ""
+
+#: src/Hardening.php:137
+msgid "The default wp_ prefix makes some automated SQL attacks easier. It is safest to change it only on a fresh install."
+msgstr ""
+
+#: src/Hardening.php:138
+msgid "wp-config.php is not writable by everyone"
+msgstr ""
+
+#: src/Hardening.php:138
+msgid "Set the file permissions of wp-config.php to 640 or 600."
+msgstr ""
+
+#: src/Hardening.php:139
+msgid "Firewall loads before other plugins"
+msgstr ""
+
+#: src/Hardening.php:139
+msgid "The mu-plugins folder is not writable, so the firewall can’t load early."
+msgstr ""
+
+#: src/Hardening.php:140
+msgid "Two-factor login is on for you"
+msgstr ""
+
+#: src/Hardening.php:140
+msgid "Turn it on in your profile. A stolen password is then not enough."
+msgstr ""
+
+#: src/Hardening.php:141
+msgid "Login page has a private address"
+msgstr ""
+
+#: src/Hardening.php:141
+msgid "Bots hammer wp-login.php all day. Give the login page its own address."
+msgstr ""
+
+#: src/Hardening.php:142
+msgid "XML-RPC is off"
+msgstr ""
+
+#: src/Hardening.php:142
+msgid "XML-RPC allows many password guesses per request."
+msgstr ""
+
+#. translators: 1: site name, 2: alert subject.
+#: src/Log.php:114
+#, php-format
+msgid "[%1$s] Shield: %2$s"
+msgstr ""
+
+#. translators: %d: minutes.
+#: src/Login.php:54
+#, php-format
+msgid "Too many failed attempts. Try again in %d minutes."
+msgstr ""
+
+#. translators: %d: failed attempts.
+#: src/Login.php:79
+#, php-format
+msgid "%d failed attempts"
+msgstr ""
+
+#: src/Login.php:82
+msgid "login lockout"
+msgstr ""
+
+#. translators: 1: IP, 2: username, 3: minutes.
+#: src/Login.php:84
+#, php-format
+msgid "IP %1$s was locked out after repeated failed logins (last username tried: %2$s). The lockout lasts %3$d minutes."
+msgstr ""
+
+#: src/Login.php:97
+msgid "<strong>Error:</strong> The username or password is not right."
+msgstr ""
+
+#: src/Login.php:124
+msgid "Password accepted, waiting for the two-factor code"
+msgstr ""
+
+#: src/Login.php:124
+msgid "Signed in"
+msgstr ""
+
+#: src/Login.php:137
+msgid "administrator signed in from a new IP"
+msgstr ""
+
+#. translators: 1: username, 2: IP.
+#: src/Login.php:139
+#, php-format
+msgid "The administrator %1$s signed in with the right password from IP %2$s, which has not been seen for this account before. If this was not you, change the password now."
+msgstr ""
+
+#: src/Scan.php:92
+msgid "scan found new problems"
+msgstr ""
+
+#: src/Scan.php:93
+msgid "The daily file scan found files that need a look:"
+msgstr ""
+
+#: src/Scan.php:109
+msgid "Could not download the official WordPress checksums, so core files were not compared."
+msgstr ""
+
+#: src/Scan.php:184
+msgid "Core file differs from the official copy. Reinstall WordPress from Dashboard → Updates."
+msgstr ""
+
+#: src/Scan.php:189
+msgid "Unknown file inside a WordPress core folder."
+msgstr ""
+
+#: src/Scan.php:193
+msgid "Plugin file differs from the copy on WordPress.org. Reinstall the plugin."
+msgstr ""
+
+#: src/Scan.php:200
+msgid "PHP file in the uploads folder. Uploads should only hold media."
+msgstr ""
+
+#: src/Scan.php:208
+msgid "Image file with PHP code inside."
+msgstr ""
+
+#. translators: 1: files, 2: problems.
+#: src/Scan.php:235
+#, php-format
+msgid "%1$d files checked, %2$d need a look"
+msgstr ""
+
+#: src/TwoFactor.php:137
+msgid "Backup code used"
+msgstr ""
+
+#: src/TwoFactor.php:202
+msgid "Two-factor code"
+msgstr ""
+
+#: src/TwoFactor.php:205
+msgid "Open your authenticator app and type the 6-digit code for this site. Lost your phone? Use one of your backup codes."
+msgstr ""
+
+#: src/TwoFactor.php:207
+msgid "Code"
+msgstr ""
+
+#: src/TwoFactor.php:214
+msgid "Sign in"
+msgstr ""
+
+#: src/TwoFactor.php:248
+msgid "That code is not right. Try the newest code in your app."
+msgstr ""
+
+#: src/TwoFactor.php:253
+msgid "Signed in with two-factor code"
+msgstr ""
+
+#: src/TwoFactor.php:266
+msgid "Two-factor login is on for this account."
+msgstr ""
+
+#: src/TwoFactor.php:281
+msgid "Status"
+msgstr ""
+
+#: src/TwoFactor.php:283
+msgid "Save these backup codes now. Each works once, and they will not be shown again."
+msgstr ""
+
+#. translators: %d: backup codes left.
+#: src/TwoFactor.php:288
+#, php-format
+msgid "%d backup code left"
+msgid_plural "%d backup codes left"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/TwoFactor.php:290
+msgid "To turn it off or get new backup codes, type a current code:"
+msgstr ""
+
+#: src/TwoFactor.php:291
+msgid "Make new backup codes"
+msgstr ""
+
+#: src/TwoFactor.php:291
+msgid "Turn two-factor login off"
+msgstr ""
+
+#: src/TwoFactor.php:293
+msgid "Turn off for this user (for a lost phone). They can set it up again."
+msgstr ""
+
+#: src/TwoFactor.php:303
+msgid "Off. Scan the code with an authenticator app (Google Authenticator, Microsoft Authenticator, 1Password, Authy…), then type the 6-digit code it shows."
+msgstr ""
+
+#: src/TwoFactor.php:304
+msgid "Can’t scan? Enter this key:"
+msgstr ""
+
+#: src/TwoFactor.php:305
+msgid "Code from the app"
+msgstr ""
+
+#: src/TwoFactor.php:307
+msgid "Off. Only the user can turn it on, from their own profile."
+msgstr ""
+
+#: src/TwoFactor.php:328
+msgid "Turned off by an administrator"
+msgstr ""
+
+#: src/TwoFactor.php:338
+msgid "Two-factor login was not turned on: the code did not match. Check the time on your phone and try the newest code."
+msgstr ""
+
+#: src/TwoFactor.php:345
+msgid "Turned on"
+msgstr ""
+
+#: src/TwoFactor.php:349
+msgid "Nothing changed: the two-factor code did not match."
+msgstr ""
+
+#: src/TwoFactor.php:354
+msgid "Turned off"
+msgstr ""
+
+#: src/TwoFactor.php:394
+msgid "This site requires two-factor login for administrators. Set it up below to continue."
+msgstr ""

@@ -33,6 +33,12 @@ final class Plugin {
 		}
 		add_action( 'itour_shield_daily', array( Log::class, 'prune' ) );
 		add_action( 'itour_shield_daily', array( Scan::class, 'cron' ) );
+		add_action(
+			'init',
+			static function (): void {
+				load_plugin_textdomain( 'itour-shield', false, dirname( plugin_basename( ITOUR_SHIELD_FILE ) ) . '/languages' );
+			}
+		);
 	}
 
 	/**

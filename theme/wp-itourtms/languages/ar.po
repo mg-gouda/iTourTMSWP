@@ -1,0 +1,1558 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-itourtms\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: wp-itourtms\n"
+
+#. Theme Name of the theme
+#: style.css
+#: functions.php:83
+msgid "WP iTourTMS"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "A clean, fast theme for tour operators, destination management companies and travel agencies. Pages are built with the WordPress block editor; colours, type and spacing come from theme.json, so the editor and the site always match. No page builder, no jQuery on the front end, right-to-left ready. Works on its own and pairs with the iTourTMS plugins for tours, transfers, hotels and bookings."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: 404.php:13
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+#: 404.php:14
+msgid "The page you were looking for has moved or no longer exists."
+msgstr "الصفحة التي تبحث عنها نُقلت أو لم تعد موجودة."
+
+#: 404.php:16
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+#. translators: %s: number of comments.
+#: comments.php:19
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "لا تعليقات (%s)"
+msgstr[1] "تعليق واحد (%s)"
+msgstr[2] "تعليقان (%s)"
+msgstr[3] "%s تعليقات"
+msgstr[4] "%s تعليقًا"
+msgstr[5] "%s تعليق"
+
+#: comments.php:36
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: footer.php:26
+#: functions.php:43
+msgid "Footer menu"
+msgstr "قائمة التذييل"
+
+#: functions.php:42
+#: header.php:38
+msgid "Main menu"
+msgstr "القائمة الرئيسية"
+
+#. translators: %d: column number.
+#: functions.php:45
+#: functions.php:47
+#: functions.php:49
+#: functions.php:51
+#: functions.php:65
+#, php-format
+msgid "Footer column %d"
+msgstr ""
+
+#. translators: %d: column number.
+#: functions.php:68
+#, php-format
+msgid "Shown when footer column %d is set to “Widgets” in Appearance → Theme Options → Footer."
+msgstr ""
+
+#: functions.php:88
+msgid "Rounded"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+#: header.php:40
+#: inc/options.php:452
+#: inc/options.php:501
+msgid "Menu"
+msgstr "القائمة"
+
+#: inc/admin-page.php:16
+msgid "WP iTourTMS Theme Options"
+msgstr ""
+
+#: inc/admin-page.php:17
+#: inc/admin-page.php:96
+#: inc/manual.php:94
+msgid "Theme Options"
+msgstr ""
+
+#: inc/admin-page.php:44
+msgid "Theme options saved."
+msgstr ""
+
+#: inc/admin-page.php:45
+msgid "Theme options were reset to their defaults."
+msgstr ""
+
+#: inc/admin-page.php:46
+msgid "Reset all theme options to their defaults?"
+msgstr ""
+
+#: inc/admin-page.php:47
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: inc/admin-page.php:48
+msgid "License activated."
+msgstr ""
+
+#: inc/admin-page.php:49
+msgid "License removed from this site."
+msgstr ""
+
+#: inc/admin-page.php:50
+msgid "License checked with the server."
+msgstr ""
+
+#: inc/admin-page.php:51
+msgid "Remove the license from this site?"
+msgstr ""
+
+#: inc/admin-page.php:52
+msgid "Search…"
+msgstr ""
+
+#: inc/admin-page.php:53
+msgid "applied below. Review, then click Save options."
+msgstr ""
+
+#: inc/admin-page.php:54
+#: inc/admin-page.php:227
+msgid "Choose image"
+msgstr ""
+
+#: inc/admin-page.php:55
+#: inc/admin-page.php:227
+msgid "Replace image"
+msgstr ""
+
+#: inc/admin-page.php:56
+msgid "No matches"
+msgstr ""
+
+#: inc/admin-page.php:57
+msgid "Keep typing to see more"
+msgstr ""
+
+#: inc/admin-page.php:74
+msgid "License"
+msgstr ""
+
+#: inc/admin-page.php:76
+msgid "Options"
+msgstr ""
+
+#. translators: %s: theme version.
+#: inc/admin-page.php:97
+#, php-format
+msgid "WP iTourTMS %s · settings, license and help for your theme"
+msgstr ""
+
+#: inc/admin-page.php:99
+msgid "Theme Options sections"
+msgstr ""
+
+#: inc/admin-page.php:130
+msgid "Option groups"
+msgstr ""
+
+#: inc/admin-page.php:145
+msgid "Your brand colours. They apply to the site and the block editor."
+msgstr ""
+
+#: inc/admin-page.php:146
+msgid "How wide content runs and how rounded corners are."
+msgstr ""
+
+#: inc/admin-page.php:147
+msgid "How the site header behaves."
+msgstr ""
+
+#: inc/admin-page.php:148
+msgid "The line at the bottom of every page."
+msgstr ""
+
+#: inc/admin-page.php:149
+msgid "What posts show in lists and on their own page."
+msgstr ""
+
+#: inc/admin-page.php:164
+msgid "Preview"
+msgstr ""
+
+#: inc/admin-page.php:165
+msgid "Nile cruise from Luxor to Aswan"
+msgstr ""
+
+#: inc/admin-page.php:166
+msgid "Four nights on the river with guided visits to Karnak, Edfu and Kom Ombo. Breakfast, lunch and dinner included."
+msgstr ""
+
+#: inc/admin-page.php:170
+msgid "Save options"
+msgstr ""
+
+#: inc/admin-page.php:171
+msgid "Reset to defaults"
+msgstr ""
+
+#: inc/admin-page.php:172
+msgid "Changes under Appearance → Design → Styles take priority over these colours and widths."
+msgstr ""
+
+#: inc/admin-page.php:228
+msgid "Remove"
+msgstr ""
+
+#: inc/admin-page.php:234
+msgid "— Choose a menu —"
+msgstr ""
+
+#. translators: %s: colour name.
+#: inc/admin-page.php:264
+#, php-format
+msgid "Pick %s colour"
+msgstr ""
+
+#: inc/admin-page.php:273
+msgid "Same as body"
+msgstr ""
+
+#: inc/admin-page.php:273
+msgid "System font (fastest)"
+msgstr ""
+
+#: inc/admin-page.php:287
+msgid "— Choose a page —"
+msgstr ""
+
+#: inc/admin-page.php:303
+msgid "words"
+msgstr ""
+
+#: inc/admin-page.php:316
+msgid "License Information"
+msgstr ""
+
+#: inc/admin-page.php:317
+msgid "Activate your license to receive theme updates and support. Your site keeps working either way."
+msgstr ""
+
+#: inc/admin-page.php:319
+msgid "The license server is not set up on this site yet. Add WP_ITOURTMS_LICENSE_SERVER and WP_ITOURTMS_LICENSE_PUBKEY to wp-config.php (see Documentation → License)."
+msgstr ""
+
+#: inc/admin-page.php:325
+msgid "Replace license key"
+msgstr ""
+
+#: inc/admin-page.php:325
+msgid "License key"
+msgstr ""
+
+#: inc/admin-page.php:326
+msgid "Paste the license key from your purchase email"
+msgstr ""
+
+#: inc/admin-page.php:327
+msgid "Activate"
+msgstr ""
+
+#: inc/admin-page.php:329
+msgid "Check now"
+msgstr ""
+
+#: inc/admin-page.php:330
+msgid "Remove license"
+msgstr ""
+
+#: inc/admin-page.php:342
+msgid "Not activated"
+msgstr ""
+
+#: inc/admin-page.php:343
+msgid "Active"
+msgstr ""
+
+#: inc/admin-page.php:344
+msgid "Active (needs attention)"
+msgstr ""
+
+#: inc/admin-page.php:345
+msgid "Expired"
+msgstr ""
+
+#: inc/admin-page.php:346
+msgid "Revoked"
+msgstr ""
+
+#: inc/admin-page.php:347
+msgid "Invalid key"
+msgstr ""
+
+#: inc/admin-page.php:348
+msgid "Not licensed for this domain"
+msgstr ""
+
+#: inc/admin-page.php:349
+msgid "Install limit reached"
+msgstr ""
+
+#: inc/admin-page.php:350
+msgid "Server IP not allowed"
+msgstr ""
+
+#: inc/admin-page.php:351
+msgid "Could not reach the license server"
+msgstr ""
+
+#. translators: %d: days.
+#: inc/admin-page.php:356
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: inc/admin-page.php:358
+#: inc/admin-page.php:373
+msgid "License Key"
+msgstr ""
+
+#: inc/admin-page.php:359
+#: inc/admin-page.php:370
+msgid "Status"
+msgstr ""
+
+#: inc/admin-page.php:360
+msgid "Licensed to"
+msgstr ""
+
+#: inc/admin-page.php:361
+msgid "Plan"
+msgstr ""
+
+#: inc/admin-page.php:362
+msgid "Expires On"
+msgstr ""
+
+#: inc/admin-page.php:363
+msgid "Days Remaining"
+msgstr ""
+
+#: inc/admin-page.php:364
+msgid "Domains"
+msgstr ""
+
+#: inc/admin-page.php:365
+msgid "Last checked"
+msgstr ""
+
+#: inc/admin-page.php:387
+msgid "On this page"
+msgstr ""
+
+#: inc/designs.php:19
+msgid "Nile Classic"
+msgstr ""
+
+#: inc/designs.php:20
+msgid "Navy and sunset orange, system type, tabbed search. Calm and familiar."
+msgstr ""
+
+#: inc/designs.php:44
+msgid "Desert Dusk"
+msgstr ""
+
+#: inc/designs.php:45
+msgid "Terracotta and espresso, Fraunces headings, centred header, search bar. Warm and editorial."
+msgstr ""
+
+#: inc/designs.php:69
+msgid "Red Sea"
+msgstr ""
+
+#: inc/designs.php:70
+msgid "Lagoon teal on deep water, Manrope, header over the hero, search card. Fresh and open."
+msgstr ""
+
+#: inc/designs.php:94
+msgid "Midnight Gold"
+msgstr ""
+
+#: inc/designs.php:95
+msgid "Near-black and antique gold, Cormorant headings, square corners. Luxury cruises and private tours."
+msgstr ""
+
+#: inc/designs.php:119
+msgid "Oasis"
+msgstr ""
+
+#: inc/designs.php:120
+msgid "Palm green, Nunito, soft round shapes, floating header, search bar. Friendly for families."
+msgstr ""
+
+#: inc/designs.php:144
+msgid "iTourTMS"
+msgstr ""
+
+#: inc/designs.php:145
+msgid "Aubergine and orchid, Inter, dark header, search card. Matches the iTourTMS dashboard."
+msgstr ""
+
+#: inc/license.php:330
+msgid "Activate your license"
+msgstr ""
+
+#: inc/license.php:335
+msgid "Open Appearance → Theme Options → License."
+msgstr ""
+
+#: inc/license.php:336
+msgid "Paste the license key from your purchase email and click Activate."
+msgstr ""
+
+#: inc/license.php:337
+msgid "The status turns Active once the license server confirms it. The license is checked again about once a day."
+msgstr ""
+
+#: inc/license.php:340
+msgid "Your site keeps working without a license; the license unlocks updates and support. A key works only on the domains it was issued for."
+msgstr ""
+
+#: inc/license.php:345
+msgid "License server"
+msgstr ""
+
+#: inc/license.php:347
+msgid "License keys are Ed25519-signed tokens from the MG License Server. They are verified on the site (signature, product, domain, expiry) and confirmed online about once a day; if the server cannot be reached the license keeps working for 7 days. Set the server and its public key in wp-config.php, or ship the key as inc/license-pubkey.pem:"
+msgstr ""
+
+#: inc/license.php:349
+msgid "Other code can read the status with wp_itourtms_license_check() — it returns ok, status, plan and expiry."
+msgstr ""
+
+#: inc/manual.php:22
+msgid "Getting started"
+msgstr ""
+
+#: inc/manual.php:26
+msgid "Requirements"
+msgstr ""
+
+#: inc/manual.php:28
+msgid "WordPress 6.5 or newer (tested up to 7.1)."
+msgstr ""
+
+#: inc/manual.php:28
+msgid "PHP 8.1 or newer."
+msgstr ""
+
+#: inc/manual.php:28
+msgid "No other plugins are required. The theme works on its own."
+msgstr ""
+
+#: inc/manual.php:33
+msgid "Install and activate"
+msgstr ""
+
+#: inc/manual.php:38
+msgid "In the dashboard go to Appearance → Themes → Add New Theme → Upload Theme."
+msgstr ""
+
+#: inc/manual.php:39
+msgid "Choose wp-itourtms.zip and click Install Now."
+msgstr ""
+
+#: inc/manual.php:40
+msgid "Click Activate."
+msgstr ""
+
+#: inc/manual.php:41
+msgid "To change templates or styles safely, also install wp-itourtms-child.zip and activate the child theme instead (see “Child theme” below)."
+msgstr ""
+
+#: inc/manual.php:48
+msgid "First setup (10 minutes)"
+msgstr ""
+
+#: inc/manual.php:53
+msgid "Logo: Appearance → Customize → Site Identity → Select logo. A transparent PNG or SVG about 200 × 48 px works best."
+msgstr ""
+
+#: inc/manual.php:54
+msgid "Menus: Appearance → Menus. Create a menu, add pages, then tick “Main menu” (header) or “Footer menu” under Menu Settings."
+msgstr ""
+
+#: inc/manual.php:55
+msgid "Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page."
+msgstr ""
+
+#: inc/manual.php:56
+msgid "Pretty links: Settings → Permalinks → “Post name” → Save."
+msgstr ""
+
+#: inc/manual.php:57
+msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
+msgstr ""
+
+#: inc/manual.php:58
+msgid "Your brand: Appearance → Theme Options → Options. Set your colours, widths, header and footer (see “Theme Options” in the User manual)."
+msgstr ""
+
+#: inc/manual.php:65
+msgid "Child theme"
+msgstr ""
+
+#: inc/manual.php:67
+msgid "Updates replace the theme’s files. Put your own changes in the WP iTourTMS Child theme (included in the package) so they survive updates. Activate the child theme; it loads the parent automatically."
+msgstr ""
+
+#: inc/manual.php:73
+msgid "User manual"
+msgstr ""
+
+#: inc/manual.php:77
+msgid "Create and edit pages"
+msgstr ""
+
+#: inc/manual.php:79
+msgid "Pages are built with the WordPress block editor. No page builder is needed. Ready-made sections (hero banner, reasons to book, call to action) are under + → Patterns → “WP iTourTMS”."
+msgstr ""
+
+#: inc/manual.php:83
+msgid "Go to Pages → Add New Page and type a title."
+msgstr ""
+
+#: inc/manual.php:84
+msgid "Click + (top left) to add a block: Paragraph, Heading, Image, Columns, Buttons, Cover and so on. Type / in an empty line to search blocks quickly."
+msgstr ""
+
+#: inc/manual.php:85
+msgid "Select a block to change its colour, spacing or width in the right-hand panel. The theme’s colours appear as swatches."
+msgstr ""
+
+#: inc/manual.php:86
+msgid "Use “Wide width” or “Full width” on Image, Cover and Group blocks for banners and galleries."
+msgstr ""
+
+#: inc/manual.php:87
+msgid "Click Publish (or Update). Use Preview first to check it on the site."
+msgstr ""
+
+#: inc/manual.php:96
+msgid "Appearance → Theme Options → Options holds every theme setting. Click “Save options” to apply them to the site and the block editor together."
+msgstr ""
+
+#: inc/manual.php:100
+msgid "Design: six complete looks (Nile Classic, Desert Dusk, Red Sea, Midnight Gold, Oasis, iTourTMS). Clicking one fills in colours, fonts, shapes, header, top bar, footer and booking-widget style; change anything, then save."
+msgstr ""
+
+#: inc/manual.php:101
+msgid "Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read."
+msgstr ""
+
+#: inc/manual.php:102
+msgid "Logo: site logo, retina logo (twice the size, for sharp high-resolution screens), mobile logo and a light logo for dark headers, plus display heights. SVG, WebP, PNG and JPG are accepted; SVG files are cleaned of scripts when uploaded."
+msgstr ""
+
+#: inc/manual.php:103
+msgid "Fonts: pick any Google Font for body text and headings (type to search), the base text size and heading weight. The preview shows the result before you save. Leave empty for the fast system font."
+msgstr ""
+
+#: inc/manual.php:104
+msgid "Layout: text column width, wide width (header, footer, wide blocks) and corner rounding."
+msgstr ""
+
+#: inc/manual.php:105
+msgid "Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses."
+msgstr ""
+
+#: inc/manual.php:106
+msgid "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the site title next to the logo."
+msgstr ""
+
+#: inc/manual.php:107
+msgid "Top bar: switch on “Show top bar” to reveal its settings: four designs (split, centred, minimal, announcement), a short message and link, whether to show contact details and social links, its colours, and whether it shows on phones (as icons)."
+msgstr ""
+
+#: inc/manual.php:108
+msgid "Contact & social: phone, email, WhatsApp, address and social links (Facebook, Instagram, X, TikTok, YouTube, LinkedIn), entered once and used by the top bar and the footer. Empty fields are left out."
+msgstr ""
+
+#: inc/manual.php:109
+msgid "Footer → Layout: no columns, 3 columns or 4 columns. For each column choose what it shows: About (logo and text), a Menu, Contact details, Social links, your own Text, Widgets, or nothing, and give it a title. Only the settings for the chosen type appear. Footer colours and the bottom line ({year} and {site} are filled in for you) are at the end."
+msgstr ""
+
+#: inc/manual.php:110
+msgid "Blog: show dates, show the featured image on posts, and the length of summaries in lists."
+msgstr ""
+
+#: inc/manual.php:113
+msgid "“Reset to defaults” puts every option back to the theme’s original values."
+msgstr ""
+
+#: inc/manual.php:118
+msgid "Colours and fonts for the whole site"
+msgstr ""
+
+#: inc/manual.php:120
+msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
+msgstr ""
+
+#: inc/manual.php:121
+msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
+msgstr ""
+
+#: inc/manual.php:126
+msgid "Images"
+msgstr ""
+
+#: inc/manual.php:128
+msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
+msgstr ""
+
+#: inc/manual.php:128
+msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
+msgstr ""
+
+#: inc/manual.php:128
+msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
+msgstr ""
+
+#: inc/manual.php:133
+msgid "Blog posts"
+msgstr ""
+
+#: inc/manual.php:135
+msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
+msgstr ""
+
+#: inc/manual.php:140
+msgid "Menus"
+msgstr ""
+
+#: inc/manual.php:142
+msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
+msgstr ""
+
+#: inc/manual.php:147
+msgid "Comments"
+msgstr ""
+
+#: inc/manual.php:149
+msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
+msgstr ""
+
+#: inc/manual.php:154
+msgid "Getting help"
+msgstr ""
+
+#: inc/manual.php:156
+msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
+msgstr ""
+
+#: inc/manual.php:162
+msgid "Documentation"
+msgstr ""
+
+#: inc/manual.php:166
+msgid "Theme files"
+msgstr ""
+
+#: inc/manual.php:173
+msgid "Colours, fonts and spacing"
+msgstr ""
+
+#: inc/manual.php:175
+msgid "All design values live in theme.json and become CSS custom properties such as --wp--preset--color--brand. Change them in a child theme’s theme.json and both the editor and the site update; you don’t need to edit CSS."
+msgstr ""
+
+#: inc/manual.php:177
+msgid "Keep at least 4.5:1 contrast between text and its background. The default palette meets WCAG 2.2 AA."
+msgstr ""
+
+#: inc/manual.php:182
+msgid "Overriding templates"
+msgstr ""
+
+#: inc/manual.php:184
+msgid "Copy any template or template part into the child theme at the same path and edit the copy. For example, to change how posts look in lists, copy template-parts/content-summary.php."
+msgstr ""
+
+#: inc/manual.php:189
+msgid "Hooks for developers"
+msgstr ""
+
+#: inc/manual.php:191
+msgid "wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin."
+msgstr ""
+
+#: inc/manual.php:191
+msgid "wp_itourtms_option_sections (filter): add a vertical tab to Theme Options → Options. Give the section its own “store” option name so its settings stay with your plugin. Field types: color, px, number, checkbox, text, select, font, page."
+msgstr ""
+
+#: inc/manual.php:191
+msgid "wp_itourtms_options( $store ) returns the saved values with defaults."
+msgstr ""
+
+#: inc/manual.php:191
+msgid "Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content."
+msgstr ""
+
+#: inc/manual.php:198
+msgid "Translation and right-to-left"
+msgstr ""
+
+#: inc/manual.php:200
+msgid "Every string uses the wp-itourtms text domain. Translate languages/wp-itourtms.pot with Poedit or Loco Translate and save wp-itourtms-{locale}.mo in wp-content/languages/themes/. Layout uses CSS logical properties, so right-to-left languages need no extra stylesheet."
+msgstr ""
+
+#: inc/manual.php:205
+msgid "Accessibility"
+msgstr ""
+
+#: inc/manual.php:207
+msgid "Skip link to the main content as the first focusable element."
+msgstr ""
+
+#: inc/manual.php:207
+msgid "Visible focus outline on every link, button and form field."
+msgstr ""
+
+#: inc/manual.php:207
+msgid "Menus work with the keyboard; drop-downs open on focus."
+msgstr ""
+
+#: inc/manual.php:207
+msgid "Animations are switched off when the visitor prefers reduced motion."
+msgstr ""
+
+#: inc/manual.php:212
+msgid "Privacy"
+msgstr ""
+
+#: inc/manual.php:214
+msgid "The theme stores no personal data, sets no cookies and does no tracking. With the default system font it loads nothing from other servers. If you choose a Google Font, visitors’ browsers load it from Google’s servers (fonts.googleapis.com and fonts.gstatic.com); mention this in your privacy policy."
+msgstr ""
+
+#: inc/manual.php:219
+msgid "Credits and license"
+msgstr ""
+
+#: inc/manual.php:221
+msgid "WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used."
+msgstr ""
+
+#: inc/manual.php:226
+msgid "Changelog"
+msgstr ""
+
+#: inc/manual.php:228
+msgid "0.1.0: first release."
+msgstr ""
+
+#: inc/manual.php:264
+msgid "Note:"
+msgstr ""
+
+#: inc/options.php:53
+#: inc/options.php:57
+msgid "Design"
+msgstr ""
+
+#: inc/options.php:54
+msgid "Six complete looks. Choosing one fills in the colours, fonts, shapes, header, top bar, footer and booking widget below; adjust anything you like, then save."
+msgstr ""
+
+#: inc/options.php:62
+msgid "Booking widget"
+msgstr ""
+
+#: inc/options.php:66
+msgid "Tabs: pill tabs above a panel"
+msgstr ""
+
+#: inc/options.php:67
+msgid "Search bar: one rounded bar"
+msgstr ""
+
+#: inc/options.php:68
+msgid "Card: stacked, for heroes and sidebars"
+msgstr ""
+
+#: inc/options.php:70
+msgid "Used by every “Booking widget” block set to “Site default”."
+msgstr ""
+
+#: inc/options.php:75
+msgid "Colours"
+msgstr ""
+
+#: inc/options.php:78
+#: inc/options.php:823
+msgid "Brand"
+msgstr ""
+
+#: inc/options.php:81
+msgid "Buttons, highlights and call-to-action bands."
+msgstr ""
+
+#: inc/options.php:84
+msgid "Brand (hover)"
+msgstr ""
+
+#: inc/options.php:87
+msgid "Buttons and links on hover, focus outlines. White text sits on it, so keep it dark."
+msgstr ""
+
+#: inc/options.php:90
+#: inc/options.php:455
+#: inc/options.php:509
+msgid "Text"
+msgstr ""
+
+#: inc/options.php:93
+msgid "Body text, headings and the footer background."
+msgstr ""
+
+#: inc/options.php:96
+msgid "Secondary text"
+msgstr ""
+
+#: inc/options.php:101
+msgid "Soft background"
+msgstr ""
+
+#: inc/options.php:106
+msgid "Page background"
+msgstr ""
+
+#: inc/options.php:113
+msgid "Logo"
+msgstr ""
+
+#: inc/options.php:114
+msgid "SVG gives the sharpest result at any size. PNG and WebP work too."
+msgstr ""
+
+#: inc/options.php:117
+msgid "Site logo"
+msgstr ""
+
+#: inc/options.php:120
+msgid "Best: SVG, or PNG/WebP 200 × 48 px with a transparent background. Wide logos up to 300 × 48 px are fine."
+msgstr ""
+
+#: inc/options.php:123
+msgid "Retina logo"
+msgstr ""
+
+#: inc/options.php:126
+msgid "Exactly twice the site logo, e.g. 400 × 96 px, so it stays crisp on high-resolution screens. Not needed for SVG."
+msgstr ""
+
+#: inc/options.php:129
+msgid "Mobile logo"
+msgstr ""
+
+#: inc/options.php:132
+msgid "Shown on phones. Best: a compact mark or short logo, 120 × 36 px (240 × 72 px for retina), or SVG. Leave empty to use the site logo."
+msgstr ""
+
+#: inc/options.php:135
+msgid "Light logo"
+msgstr ""
+
+#: inc/options.php:138
+msgid "A white or light version, used on dark headers and by the “Over the hero” header. Same size as the site logo; SVG recommended."
+msgstr ""
+
+#: inc/options.php:141
+msgid "Logo height"
+msgstr ""
+
+#: inc/options.php:146
+msgid "Display height in the header on larger screens; the width follows."
+msgstr ""
+
+#: inc/options.php:149
+msgid "Mobile logo height"
+msgstr ""
+
+#: inc/options.php:158
+msgid "Fonts"
+msgstr ""
+
+#: inc/options.php:159
+msgid "Choose from every Google Font, or keep the fast system font. Google Fonts load from Google’s servers."
+msgstr ""
+
+#: inc/options.php:162
+msgid "Body font"
+msgstr ""
+
+#: inc/options.php:165
+msgid "Paragraphs, menus, buttons and forms."
+msgstr ""
+
+#: inc/options.php:168
+msgid "Heading font"
+msgstr ""
+
+#: inc/options.php:171
+msgid "Titles and headings. Leave on “Same as body” for one family."
+msgstr ""
+
+#: inc/options.php:174
+msgid "Base text size"
+msgstr ""
+
+#: inc/options.php:181
+msgid "Heading weight"
+msgstr ""
+
+#: inc/options.php:185
+msgid "Regular (400)"
+msgstr ""
+
+#: inc/options.php:186
+msgid "Medium (500)"
+msgstr ""
+
+#: inc/options.php:187
+msgid "Semibold (600)"
+msgstr ""
+
+#: inc/options.php:188
+msgid "Bold (700)"
+msgstr ""
+
+#: inc/options.php:189
+msgid "Extra bold (800)"
+msgstr ""
+
+#: inc/options.php:190
+msgid "Black (900)"
+msgstr ""
+
+#: inc/options.php:196
+#: inc/options.php:467
+msgid "Layout"
+msgstr ""
+
+#: inc/options.php:199
+msgid "Text column width"
+msgstr ""
+
+#: inc/options.php:204
+msgid "Width of paragraphs and normal blocks. 680–800 px reads best."
+msgstr ""
+
+#: inc/options.php:207
+msgid "Wide width"
+msgstr ""
+
+#: inc/options.php:212
+msgid "Width of the header, footer and “Wide width” blocks."
+msgstr ""
+
+#: inc/options.php:215
+msgid "Corner rounding"
+msgstr ""
+
+#: inc/options.php:220
+msgid "Buttons, images in lists and menus. 0 gives square corners."
+msgstr ""
+
+#: inc/options.php:225
+msgid "Header"
+msgstr ""
+
+#: inc/options.php:226
+msgid "Choose the header design, its colours and an optional button."
+msgstr ""
+
+#: inc/options.php:229
+msgid "Header design"
+msgstr ""
+
+#: inc/options.php:233
+msgid "Classic: logo left, menu right"
+msgstr ""
+
+#: inc/options.php:234
+msgid "Centred: logo above a centred menu"
+msgstr ""
+
+#: inc/options.php:235
+msgid "Over the hero: transparent on the home page, solid on scroll"
+msgstr ""
+
+#: inc/options.php:236
+msgid "Floating: a rounded bar with space around it"
+msgstr ""
+
+#: inc/options.php:240
+msgid "Header background"
+msgstr ""
+
+#: inc/options.php:245
+msgid "Header text"
+msgstr ""
+
+#: inc/options.php:250
+msgid "Button text"
+msgstr ""
+
+#: inc/options.php:253
+msgid "Optional button at the end of the header, e.g. “Book now”. Leave empty for no button."
+msgstr ""
+
+#: inc/options.php:256
+msgid "Button link"
+msgstr ""
+
+#: inc/options.php:261
+msgid "Sticky header"
+msgstr ""
+
+#: inc/options.php:264
+msgid "Keep the header at the top of the screen while scrolling"
+msgstr ""
+
+#: inc/options.php:267
+msgid "Site title with logo"
+msgstr ""
+
+#: inc/options.php:270
+msgid "Show the site title next to the logo"
+msgstr ""
+
+#: inc/options.php:275
+msgid "Top bar"
+msgstr ""
+
+#: inc/options.php:276
+msgid "A thin bar above the header for contact details, a short message and social links."
+msgstr ""
+
+#: inc/options.php:279
+msgid "Show top bar"
+msgstr ""
+
+#: inc/options.php:282
+msgid "Display the top bar above the header"
+msgstr ""
+
+#: inc/options.php:285
+msgid "Top bar design"
+msgstr ""
+
+#: inc/options.php:290
+msgid "Split: contacts left, message centre, social right"
+msgstr ""
+
+#: inc/options.php:291
+msgid "Centred: message only, with social links beside it"
+msgstr ""
+
+#: inc/options.php:292
+msgid "Minimal: contacts left, social right, no message"
+msgstr ""
+
+#: inc/options.php:293
+msgid "Announcement: brand-coloured bar with the message and a link"
+msgstr ""
+
+#: inc/options.php:297
+msgid "Message"
+msgstr ""
+
+#: inc/options.php:301
+msgid "Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed."
+msgstr ""
+
+#: inc/options.php:304
+msgid "Link text"
+msgstr ""
+
+#: inc/options.php:310
+msgid "Link"
+msgstr ""
+
+#: inc/options.php:316
+#: inc/options.php:453
+msgid "Contact details"
+msgstr ""
+
+#: inc/options.php:320
+msgid "Show phone, email and WhatsApp from the Contact & social tab"
+msgstr ""
+
+#: inc/options.php:323
+#: inc/options.php:376
+#: inc/options.php:454
+msgid "Social links"
+msgstr ""
+
+#: inc/options.php:327
+msgid "Show the social icons from the Contact & social tab"
+msgstr ""
+
+#: inc/options.php:330
+msgid "Top bar background"
+msgstr ""
+
+#: inc/options.php:336
+msgid "Top bar text"
+msgstr ""
+
+#: inc/options.php:342
+msgid "On phones"
+msgstr ""
+
+#: inc/options.php:346
+msgid "Also show the top bar on small screens"
+msgstr ""
+
+#: inc/options.php:351
+msgid "Contact & social"
+msgstr ""
+
+#: inc/options.php:352
+msgid "Entered once, used by the top bar and the footer. Leave a field empty to hide it."
+msgstr ""
+
+#: inc/options.php:355
+msgid "Phone"
+msgstr ""
+
+#: inc/options.php:360
+msgid "Email"
+msgstr ""
+
+#: inc/options.php:365
+#: inc/template-tags.php:93
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#: inc/options.php:368
+msgid "International format, e.g. +20 100 000 0000. Opens a WhatsApp chat."
+msgstr ""
+
+#: inc/options.php:371
+msgid "Address"
+msgstr ""
+
+#: inc/options.php:412
+msgid "Footer"
+msgstr ""
+
+#: inc/options.php:413
+msgid "Columns at the top of the footer, its colours and the bottom line."
+msgstr ""
+
+#: inc/options.php:417
+msgid "Blog"
+msgstr ""
+
+#: inc/options.php:420
+msgid "Post dates"
+msgstr ""
+
+#: inc/options.php:423
+msgid "Show the date on posts and in lists"
+msgstr ""
+
+#: inc/options.php:426
+msgid "Featured image on posts"
+msgstr ""
+
+#: inc/options.php:429
+msgid "Show the featured image at the top of each post"
+msgstr ""
+
+#: inc/options.php:432
+msgid "Summary length"
+msgstr ""
+
+#: inc/options.php:437
+msgid "Words shown for each post in lists when the post has no manual excerpt."
+msgstr ""
+
+#: inc/options.php:451
+msgid "About (logo and text)"
+msgstr ""
+
+#: inc/options.php:456
+msgid "Widgets (Appearance → Widgets)"
+msgstr ""
+
+#: inc/options.php:457
+msgid "Empty"
+msgstr ""
+
+#: inc/options.php:461
+msgid "Explore"
+msgstr ""
+
+#: inc/options.php:462
+msgid "Contact"
+msgstr ""
+
+#: inc/options.php:463
+msgid "Follow us"
+msgstr ""
+
+#: inc/options.php:471
+msgid "No columns (bottom line only)"
+msgstr ""
+
+#: inc/options.php:472
+msgid "3 columns"
+msgstr ""
+
+#: inc/options.php:473
+msgid "4 columns"
+msgstr ""
+
+#. translators: %d: column number.
+#: inc/options.php:483
+#, php-format
+msgid "Column %d"
+msgstr ""
+
+#: inc/options.php:488
+msgid "Shows"
+msgstr ""
+
+#: inc/options.php:495
+msgid "Title"
+msgstr ""
+
+#: inc/options.php:506
+msgid "Create menus under Appearance → Menus. This sets the “Footer column” menu location."
+msgstr ""
+
+#: inc/options.php:513
+msgid "Basic links, bold and line breaks are allowed. For “About”, leave empty to use the site tagline."
+msgstr ""
+
+#. translators: %d: column number.
+#: inc/options.php:517
+#, php-format
+msgid "Add blocks to “Footer column %d” under Appearance → Widgets."
+msgstr ""
+
+#: inc/options.php:524
+msgid "Colours and bottom line"
+msgstr ""
+
+#: inc/options.php:528
+msgid "Footer background"
+msgstr ""
+
+#: inc/options.php:533
+msgid "Footer text"
+msgstr ""
+
+#: inc/options.php:538
+msgid "Bottom line"
+msgstr ""
+
+#: inc/options.php:541
+msgid "{year} becomes the current year and {site} the site title. Basic links and bold are allowed. Leave empty to hide it."
+msgstr ""
+
+#: inc/options.php:782
+msgid "Text on the page background"
+msgstr ""
+
+#: inc/options.php:783
+msgid "Text on brand buttons"
+msgstr ""
+
+#: inc/options.php:784
+msgid "White text on the hover colour"
+msgstr ""
+
+#: inc/options.php:787
+msgid "Top bar text on its background"
+msgstr ""
+
+#: inc/options.php:789
+msgid "Footer text on its background"
+msgstr ""
+
+#: inc/options.php:790
+msgid "Header text on its background"
+msgstr ""
+
+#. translators: 1: colour pair, 2: contrast ratio.
+#: inc/options.php:796
+#, php-format
+msgid "%1$s is hard to read (%2$s:1). Aim for at least 4.5:1."
+msgstr ""
+
+#: inc/options.php:824
+msgid "Brand dark"
+msgstr ""
+
+#: inc/options.php:825
+msgid "Ink"
+msgstr ""
+
+#: inc/options.php:826
+msgid "Muted"
+msgstr ""
+
+#: inc/options.php:827
+msgid "Line"
+msgstr ""
+
+#: inc/options.php:828
+msgid "Surface"
+msgstr ""
+
+#: inc/options.php:829
+msgid "Base"
+msgstr ""
+
+#: inc/options.php:851
+msgid "System"
+msgstr ""
+
+#: inc/options.php:856
+msgid "Headings"
+msgstr ""
+
+#. translators: %s: search query.
+#: index.php:29
+#, php-format
+msgid "Search results for “%s”"
+msgstr "نتائج البحث عن «%s»"
+
+#: patterns/call-to-action.php
+msgctxt "Pattern title"
+msgid "Call to action"
+msgstr "دعوة إلى التواصل"
+
+#: patterns/call-to-action.php
+msgctxt "Pattern description"
+msgid "A brand-coloured band with a short question and a contact button."
+msgstr "شريط بلون العلامة التجارية مع سؤال قصير وزر للتواصل."
+
+#: patterns/call-to-action.php:17
+msgid "Not sure where to start?"
+msgstr "لا تعرف من أين تبدأ؟"
+
+#: patterns/call-to-action.php:22
+msgid "Plan my trip"
+msgstr "خطّط رحلتي"
+
+#: patterns/hero.php
+msgctxt "Pattern title"
+msgid "Hero banner"
+msgstr "لافتة رئيسية"
+
+#: patterns/hero.php
+msgctxt "Pattern description"
+msgid "A full-width banner with a headline, short intro and two buttons. Add a photo with “Replace” on the Cover block."
+msgstr "لافتة بعرض الصفحة مع عنوان ومقدمة قصيرة وزرّين. أضف صورة من «استبدال» في مكوّن الغلاف."
+
+#: patterns/hero.php:18
+msgid "Egypt, planned by people who live here"
+msgstr "مصر، بتخطيط أهلها"
+
+#: patterns/hero.php:22
+msgid "Day trips, Nile cruises and private transfers with local guides, clear prices and free cancellation on most bookings."
+msgstr "رحلات يومية ورحلات نيلية وتنقلات خاصة مع مرشدين محليين، بأسعار واضحة وإلغاء مجاني لمعظم الحجوزات."
+
+#: patterns/hero.php:27
+msgid "Find a trip"
+msgstr "ابحث عن رحلة"
+
+#: patterns/hero.php:31
+msgid "Talk to us"
+msgstr "تحدّث إلينا"
+
+#: patterns/why-book.php
+msgctxt "Pattern title"
+msgid "Why book with us"
+msgstr "لماذا تحجز معنا"
+
+#: patterns/why-book.php
+msgctxt "Pattern description"
+msgid "A heading beside three short reasons to book, as a plain list."
+msgstr "عنوان بجانب ثلاثة أسباب قصيرة للحجز في قائمة بسيطة."
+
+#: patterns/why-book.php:18
+msgid "Why travellers book with us"
+msgstr "لماذا يحجز المسافرون معنا"
+
+#: patterns/why-book.php:25
+msgid "Local team."
+msgstr "فريق محلي."
+
+#: patterns/why-book.php:25
+msgid "Offices in the cities you visit, reachable on WhatsApp day and night."
+msgstr "مكاتب في المدن التي تزورها، وتواصل معنا عبر واتساب ليلًا ونهارًا."
+
+#: patterns/why-book.php:29
+msgid "Clear prices."
+msgstr "أسعار واضحة."
+
+#: patterns/why-book.php:29
+msgid "The price you see is the price you pay, with taxes included."
+msgstr "السعر الذي تراه هو ما تدفعه، شاملًا الضرائب."
+
+#: patterns/why-book.php:33
+msgid "Flexible plans."
+msgstr "خطط مرنة."
+
+#: patterns/why-book.php:33
+msgid "Free cancellation up to 24 hours before most trips."
+msgstr "إلغاء مجاني حتى 24 ساعة قبل معظم الرحلات."
+
+#: template-parts/content-none.php:11
+msgid "Nothing found"
+msgstr "لا توجد نتائج"
+
+#: template-parts/content-none.php:12
+msgid "Nothing matches yet. Try a different search, or head back to the home page."
+msgstr "لا توجد نتائج مطابقة. جرّب بحثًا مختلفًا، أو عُد إلى الصفحة الرئيسية."
+
+#: template-parts/content-single.php:27
+msgid "Page"
+msgstr "صفحة"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand dark"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Muted"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Line"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "System"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XS"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "S"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "M"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "L"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XL"
+msgstr ""

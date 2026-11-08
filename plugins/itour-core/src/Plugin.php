@@ -114,9 +114,15 @@ final class Plugin {
 	}
 
 	/**
-	 * Load translations.
+	 * Load the translations bundled in each active iTour plugin's languages folder
+	 * (text domain = folder name). Files in wp-content/languages/plugins still win.
 	 */
 	public function load_textdomain(): void {
-		load_plugin_textdomain( 'itour-core', false, dirname( plugin_basename( ITOUR_CORE_FILE ) ) . '/languages' );
+		foreach ( (array) get_option( 'active_plugins', array() ) as $file ) {
+			$slug = dirname( (string) $file );
+			if ( 0 === strpos( $slug, 'itour-' ) ) {
+				load_plugin_textdomain( $slug, false, $slug . '/languages' ); // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain -- each plugin's own domain.
+			}
+		}
 	}
 }
