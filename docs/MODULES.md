@@ -11,6 +11,7 @@ Each iTourTMS module becomes one plugin. Every plugin needs `itour-core`. Some n
 | `itour-crm` | `crm` (leads, opportunities, customers, activities, mailings) | core | Sales CRM only; excursions moved to `itour-excursions` |
 | `itour-slider` | — | core | Image slider block (owner rule D-017) ✅ |
 | `itour-forms` | — | core | Contact form block, spam traps, Enquiries screen, email (replaces Contact Form 7, D-018) ✅ |
+| `itour-shield` | — | none (standalone) | Page cache, speed trims, hidden login, masked paths, firewall, login lockouts, 2FA, file scan, hardening, activity log (D-023) ✅ |
 | `itour-contracting` | `contracting` (28 routers, 43 models incl. tour operators, markup, tariffs, API integrations, 40 screens) | core | Hotels and hotel contracts. |
 | `itour-reservations` | `reservations` (10 routers, 14 models + hotel credit notes, 15 screens) | core, contracting | Hotel bookings, vouchers, cancellations. |
 | `itour-nile-cruises` | `nile-cruises` (34 routers, 38 models, 36 screens) | core | Boats, cabins, itineraries, cruise contracts and bookings. |

@@ -24,6 +24,7 @@ Source of truth for features: the iTourTMS repo (`mg-gouda/iTourTMS`, Next.js + 
 ## Done since the roadmap was written (8 Nov 2026)
 - Owner rules D-016 to D-022 recorded: no page builder, own slider and form plugins, products built from scratch, 3 booking-widget models, 6 designs, React where it helps.
 - `itour-slider`, `itour-forms`, booking widget (3 models), 6 design presets, Logo / Header / Top bar / product page tabs, safe SVG + WebP uploads.
+- `itour-shield` (D-023): WP Rocket + Wordfence-style speed and security in one standalone plugin.
 - **Waiting on the owner:** the rules for Tour Packages, Excursions and Transfers (questions sent).
 
 ## Rules that apply in every phase
