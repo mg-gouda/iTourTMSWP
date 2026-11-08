@@ -42,6 +42,35 @@ function wp_itourtms_icon( string $service ): string {
 }
 
 /**
+ * The site logo from Theme Options → Logo: retina srcset, separate phone logo, SVG friendly.
+ * Falls back to the Customizer logo, then to the site title. Returns '' when no image logo is set.
+ */
+function wp_itourtms_logo(): string {
+	$o    = wp_itourtms_options();
+	$main = (int) $o['logo_image'];
+	if ( ! $main ) {
+		return has_custom_logo() ? get_custom_logo() : '';
+	}
+	$url    = (string) wp_get_attachment_image_url( $main, 'full' );
+	$retina = $o['logo_retina'] ? (string) wp_get_attachment_image_url( (int) $o['logo_retina'], 'full' ) : '';
+	$mobile = $o['logo_mobile'] ? (string) wp_get_attachment_image_url( (int) $o['logo_mobile'], 'full' ) : '';
+	$meta   = wp_get_attachment_metadata( $main );
+	$height = (int) $o['logo_height'];
+	$width  = ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ? (int) round( $height * $meta['width'] / $meta['height'] ) : 0;
+	$html   = '<a class="site-logo" href="' . esc_url( home_url( '/' ) ) . '" rel="home"><picture>';
+	if ( $mobile ) {
+		$html .= '<source media="(max-width: 781px)" srcset="' . esc_url( $mobile ) . '">';
+	}
+	$html .= '<img class="site-logo__img" src="' . esc_url( $url ) . '"' . ( $retina ? ' srcset="' . esc_url( $url ) . ' 1x, ' . esc_url( $retina ) . ' 2x"' : '' )
+		. ' alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="' . $height . '"' . ( $width ? ' width="' . $width . '"' : '' ) . ' decoding="async">';
+	$html .= '</picture>';
+	if ( $o['logo_light'] && 'transparent' === $o['header_layout'] ) {
+		$html .= '<img class="site-logo__img site-logo__img--light" src="' . esc_url( (string) wp_get_attachment_image_url( (int) $o['logo_light'], 'full' ) ) . '" alt="" height="' . $height . '"' . ( $width ? ' width="' . $width . '"' : '' ) . ' decoding="async">';
+	}
+	return $html . '</a>';
+}
+
+/**
  * Contact links from Theme Options → Contact & social: [ href, icon, label ] (empty fields skipped).
  *
  * @param bool $with_address Include the address (no link).

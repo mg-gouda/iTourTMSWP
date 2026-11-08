@@ -87,6 +87,14 @@
 .wpit-subhead .wpit-help { margin: 0; }
 .wpit-field[hidden], .wpit-subhead[hidden] { display: none; }
 
+/* Image (logo) fields */
+.wpit-image { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.wpit-image-preview { display: grid; place-items: center; min-width: 120px; max-width: 260px; height: 72px; padding: 8px 12px; border: 1px solid var(--wpit-border); border-radius: var(--wpit-radius); background: repeating-conic-gradient(#f1f3f6 0% 25%, #fff 0% 50%) 0 0 / 14px 14px; }
+.wpit-image-preview[hidden] { display: none; }
+.wpit-image-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.wpit-image-actions { display: flex; gap: 8px; }
+.wpit-image-actions [hidden] { display: none; }
+
 /* Font preview */
 .wpit-font-preview { padding: 16px 18px; border: 1px dashed var(--wpit-border); border-radius: var(--wpit-radius); background: #fafbfc; }
 .wpit-font-preview .wpit-label { margin: 0 0 8px; font-size: 12px; color: var(--wpit-muted-fg); }

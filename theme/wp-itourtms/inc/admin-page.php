@@ -31,6 +31,7 @@ function wp_itourtms_admin_menu(): void {
 			$uri = get_template_directory_uri() . '/assets';
 			$dir = get_template_directory() . '/assets';
 			$dev = 'theme' === wp_get_development_mode();
+			wp_enqueue_media(); // Logo pickers.
 			wp_enqueue_style( 'wp-itourtms-admin', $uri . '/css/admin.css', array(), $dev ? (string) filemtime( $dir . '/css/admin.css' ) : WP_ITOURTMS_VERSION );
 			wp_enqueue_script( 'wp-itourtms-admin', $uri . '/js/admin.js', array(), $dev ? (string) filemtime( $dir . '/js/admin.js' ) : WP_ITOURTMS_VERSION, true );
 			wp_localize_script(
@@ -49,6 +50,8 @@ function wp_itourtms_admin_menu(): void {
 						'checked'       => __( 'License checked with the server.', 'wp-itourtms' ),
 						'confirmRemove' => __( 'Remove the license from this site?', 'wp-itourtms' ),
 						'search'        => __( 'Search…', 'wp-itourtms' ),
+						'chooseImage'   => __( 'Choose image', 'wp-itourtms' ),
+						'replaceImage'  => __( 'Replace image', 'wp-itourtms' ),
 						'noMatch'       => __( 'No matches', 'wp-itourtms' ),
 						'keepTyping'    => __( 'Keep typing to see more', 'wp-itourtms' ),
 					),
@@ -195,6 +198,14 @@ function wp_itourtms_render_option_field( string $key, array $f, $value ): void 
 	}
 	echo '<div class="wpit-field"' . $cond . '><label class="wpit-label" for="' . esc_attr( $id ) . '">' . esc_html( $f['label'] ) . '</label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cond built with esc_attr.
 	switch ( $f['type'] ) {
+		case 'image':
+			$src = $value ? wp_get_attachment_image_url( (int) $value, 'medium' ) : '';
+			echo '<div class="wpit-image" data-wpit-image>';
+			echo '<div class="wpit-image-preview"' . ( $src ? '' : ' hidden' ) . '><img src="' . esc_url( (string) $src ) . '" alt=""></div>';
+			echo '<input type="hidden" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '" value="' . (int) $value . '">';
+			echo '<div class="wpit-image-actions"><button type="button" class="wpit-btn wpit-btn-outline" data-wpit-image-pick aria-describedby="' . esc_attr( $id ) . '-help">' . esc_html( $value ? __( 'Replace image', 'wp-itourtms' ) : __( 'Choose image', 'wp-itourtms' ) ) . '</button>';
+			echo '<button type="button" class="wpit-btn wpit-btn-ghost-danger" data-wpit-image-remove' . ( $value ? '' : ' hidden' ) . '>' . esc_html__( 'Remove', 'wp-itourtms' ) . '</button></div></div>';
+			break;
 		case 'textarea':
 			echo '<textarea class="wpit-input" id="' . esc_attr( $id ) . '" data-key="' . esc_attr( $key ) . '" rows="3"' . $desc . '>' . esc_textarea( (string) $value ) . '</textarea>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $desc built with esc_attr.
 			break;

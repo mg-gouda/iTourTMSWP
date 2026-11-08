@@ -87,6 +87,51 @@ function wp_itourtms_theme_option_fields(): array {
 				),
 			),
 		),
+		'logo'    => array(
+			'title'       => __( 'Logo', 'wp-itourtms' ),
+			'description' => __( 'SVG gives the sharpest result at any size. PNG and WebP work too.', 'wp-itourtms' ),
+			'fields'      => array(
+				'logo_image'         => array(
+					'label'   => __( 'Site logo', 'wp-itourtms' ),
+					'type'    => 'image',
+					'default' => 0,
+					'help'    => __( 'Best: SVG, or PNG/WebP 200 × 48 px with a transparent background. Wide logos up to 300 × 48 px are fine.', 'wp-itourtms' ),
+				),
+				'logo_retina'        => array(
+					'label'   => __( 'Retina logo', 'wp-itourtms' ),
+					'type'    => 'image',
+					'default' => 0,
+					'help'    => __( 'Exactly twice the site logo, e.g. 400 × 96 px, so it stays crisp on high-resolution screens. Not needed for SVG.', 'wp-itourtms' ),
+				),
+				'logo_mobile'        => array(
+					'label'   => __( 'Mobile logo', 'wp-itourtms' ),
+					'type'    => 'image',
+					'default' => 0,
+					'help'    => __( 'Shown on phones. Best: a compact mark or short logo, 120 × 36 px (240 × 72 px for retina), or SVG. Leave empty to use the site logo.', 'wp-itourtms' ),
+				),
+				'logo_light'         => array(
+					'label'   => __( 'Light logo', 'wp-itourtms' ),
+					'type'    => 'image',
+					'default' => 0,
+					'help'    => __( 'A white or light version, used by the “Over the hero” header on the home page. Same size as the site logo; SVG recommended.', 'wp-itourtms' ),
+				),
+				'logo_height'        => array(
+					'label'   => __( 'Logo height', 'wp-itourtms' ),
+					'type'    => 'px',
+					'default' => 48,
+					'min'     => 24,
+					'max'     => 120,
+					'help'    => __( 'Display height in the header on larger screens; the width follows.', 'wp-itourtms' ),
+				),
+				'logo_mobile_height' => array(
+					'label'   => __( 'Mobile logo height', 'wp-itourtms' ),
+					'type'    => 'px',
+					'default' => 36,
+					'min'     => 20,
+					'max'     => 80,
+				),
+			),
+		),
 		'fonts'   => array(
 			'title'       => __( 'Fonts', 'wp-itourtms' ),
 			'description' => __( 'Choose from every Google Font, or keep the fast system font. Google Fonts load from Google’s servers.', 'wp-itourtms' ),
@@ -155,37 +200,95 @@ function wp_itourtms_theme_option_fields(): array {
 			),
 		),
 		'header'  => array(
-			'title'  => __( 'Header', 'wp-itourtms' ),
-			'fields' => array(
-				'header_sticky'        => array(
+			'title'       => __( 'Header', 'wp-itourtms' ),
+			'description' => __( 'Choose the header design, its colours and an optional button.', 'wp-itourtms' ),
+			'fields'      => array(
+				'header_layout'     => array(
+					'label'   => __( 'Header design', 'wp-itourtms' ),
+					'type'    => 'select',
+					'default' => 'classic',
+					'options' => array(
+						'classic'     => __( 'Classic: logo left, menu right', 'wp-itourtms' ),
+						'centered'    => __( 'Centred: logo above a centred menu', 'wp-itourtms' ),
+						'transparent' => __( 'Over the hero: transparent on the home page, solid on scroll', 'wp-itourtms' ),
+						'floating'    => __( 'Floating: a rounded bar with space around it', 'wp-itourtms' ),
+					),
+				),
+				'header_bg'         => array(
+					'label'   => __( 'Header background', 'wp-itourtms' ),
+					'type'    => 'color',
+					'default' => '#ffffff',
+				),
+				'header_fg'         => array(
+					'label'   => __( 'Header text', 'wp-itourtms' ),
+					'type'    => 'color',
+					'default' => '#1a2b48',
+				),
+				'header_cta_text'   => array(
+					'label'   => __( 'Button text', 'wp-itourtms' ),
+					'type'    => 'text',
+					'default' => '',
+					'help'    => __( 'Optional button at the end of the header, e.g. “Book now”. Leave empty for no button.', 'wp-itourtms' ),
+				),
+				'header_cta_url'    => array(
+					'label'   => __( 'Button link', 'wp-itourtms' ),
+					'type'    => 'url',
+					'default' => '',
+				),
+				'header_sticky'     => array(
 					'label'   => __( 'Sticky header', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Keep the header at the top of the screen while scrolling', 'wp-itourtms' ),
 				),
-				'header_show_title'    => array(
+				'header_show_title' => array(
 					'label'   => __( 'Site title with logo', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Show the site title next to the logo', 'wp-itourtms' ),
 				),
-				'topbar_heading'       => array(
-					'label' => __( 'Top bar', 'wp-itourtms' ),
-					'type'  => 'heading',
-					'help'  => __( 'A thin bar above the header for contact details, a short message and social links.', 'wp-itourtms' ),
-				),
+			),
+		),
+		'topbar'  => array(
+			'title'       => __( 'Top bar', 'wp-itourtms' ),
+			'description' => __( 'A thin bar above the header for contact details, a short message and social links.', 'wp-itourtms' ),
+			'fields'      => array(
 				'topbar_enabled'       => array(
 					'label'   => __( 'Show top bar', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Display the top bar above the header', 'wp-itourtms' ),
 				),
+				'topbar_style'         => array(
+					'label'   => __( 'Top bar design', 'wp-itourtms' ),
+					'type'    => 'select',
+					'default' => 'split',
+					'show_if' => 'topbar_enabled',
+					'options' => array(
+						'split'    => __( 'Split: contacts left, message centre, social right', 'wp-itourtms' ),
+						'centered' => __( 'Centred: message only, with social links beside it', 'wp-itourtms' ),
+						'minimal'  => __( 'Minimal: contacts left, social right, no message', 'wp-itourtms' ),
+						'announce' => __( 'Announcement: brand-coloured bar with the message and a link', 'wp-itourtms' ),
+					),
+				),
 				'topbar_text'          => array(
 					'label'   => __( 'Message', 'wp-itourtms' ),
 					'type'    => 'text',
 					'default' => '',
-					'show_if' => 'topbar_enabled',
+					'show_if' => array( 'topbar_enabled', 'topbar_style=split|centered|announce' ),
 					'help'    => __( 'Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed.', 'wp-itourtms' ),
+				),
+				'topbar_link_text'     => array(
+					'label'   => __( 'Link text', 'wp-itourtms' ),
+					'type'    => 'text',
+					'default' => '',
+					'show_if' => array( 'topbar_enabled', 'topbar_style=announce' ),
+				),
+				'topbar_link_url'      => array(
+					'label'   => __( 'Link', 'wp-itourtms' ),
+					'type'    => 'url',
+					'default' => '',
+					'show_if' => array( 'topbar_enabled', 'topbar_style=announce' ),
 				),
 				'topbar_show_contacts' => array(
 					'label'   => __( 'Contact details', 'wp-itourtms' ),
@@ -487,6 +590,9 @@ function wp_itourtms_sanitize_value( array $f, $v ) {
 		case 'menu':
 			$id = absint( $v );
 			return $id && is_nav_menu( $id ) ? $id : 0;
+		case 'image':
+			$id = absint( $v );
+			return $id && 0 === strpos( (string) get_post_mime_type( $id ), 'image/' ) ? $id : 0;
 		case 'email':
 			return sanitize_email( (string) $v );
 		case 'url':
@@ -657,6 +763,7 @@ function wp_itourtms_contrast_warnings( array $o ): array {
 		$pairs[] = array( 'topbar_fg', 'topbar_bg', __( 'Top bar text on its background', 'wp-itourtms' ) );
 	}
 	$pairs[] = array( 'footer_fg', 'footer_bg', __( 'Footer text on its background', 'wp-itourtms' ) );
+	$pairs[] = array( 'header_fg', 'header_bg', __( 'Header text on its background', 'wp-itourtms' ) );
 	$out     = array();
 	foreach ( $pairs as $p ) {
 		$ratio = wp_itourtms_contrast( (string) $o[ $p[0] ], (string) $o[ $p[1] ] );

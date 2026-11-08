@@ -99,6 +99,7 @@ final class Plugin {
 		add_action( 'admin_menu', array( new Admin\Menu( $this->modules ), 'register' ) );
 		add_action( 'admin_notices', array( $this->modules, 'render_notices' ) );
 		( new Admin\Skin() )->hooks();
+		( new Media() )->hooks();
 		add_action(
 			'admin_enqueue_scripts',
 			static function ( string $hook ): void {

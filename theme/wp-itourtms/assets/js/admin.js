@@ -120,6 +120,37 @@
 		} );
 	} );
 
+	// Image fields: WordPress media library picker (SVG, WebP, PNG, JPG).
+	root.querySelectorAll( '[data-wpit-image]' ).forEach( function ( box ) {
+		var input = box.querySelector( 'input[type="hidden"]' );
+		var preview = box.querySelector( '.wpit-image-preview' );
+		var pickBtn = box.querySelector( '[data-wpit-image-pick]' );
+		var removeBtn = box.querySelector( '[data-wpit-image-remove]' );
+		var frame = null;
+		function show( id, url ) {
+			input.value = id || 0;
+			preview.hidden = ! url;
+			preview.querySelector( 'img' ).src = url || '';
+			removeBtn.hidden = ! id;
+			pickBtn.textContent = id ? t.replaceImage : t.chooseImage;
+		}
+		box.showImage = show;
+		pickBtn.addEventListener( 'click', function () {
+			if ( ! window.wp || ! wp.media ) {
+				return;
+			}
+			frame = frame || wp.media( { title: t.chooseImage, library: { type: 'image' }, multiple: false } );
+			frame.off( 'select' ).on( 'select', function () {
+				var a = frame.state().get( 'selection' ).first().toJSON();
+				show( a.id, ( a.sizes && a.sizes.medium && a.sizes.medium.url ) || a.url );
+			} );
+			frame.open();
+		} );
+		removeBtn.addEventListener( 'click', function () {
+			show( 0, '' );
+		} );
+	} );
+
 	// Options form.
 	var form = root.querySelector( '[data-wpit-options]' );
 	// Values are grouped by the option ("store") each section saves to: the theme's or a module's.
@@ -142,6 +173,11 @@
 				return;
 			}
 			var val = values[ el.getAttribute( 'data-key' ) ];
+			var imageBox = el.closest( '[data-wpit-image]' );
+			if ( imageBox && ! parseInt( val, 10 ) ) {
+				imageBox.showImage( 0, '' );
+				return;
+			}
 			if ( 'switch' === el.getAttribute( 'role' ) ) {
 				el.setAttribute( 'aria-checked', val ? 'true' : 'false' );
 				return;
