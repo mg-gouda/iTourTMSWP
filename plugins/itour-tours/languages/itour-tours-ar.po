@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-tours.php
 msgid "Multi-day tour packages: itineraries, departures, prices, availability and booking."
-msgstr ""
+msgstr "باقات سياحية متعددة الأيام: البرامج ومواعيد الانطلاق والأسعار والإتاحة والحجز."
 
 #. Author of the plugin
 #: itour-tours.php

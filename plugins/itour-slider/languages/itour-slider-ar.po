@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-slider.php
 msgid "Image slider block: accessible, touch-friendly, no jQuery."
-msgstr ""
+msgstr "مكوّن عارض الصور: سهل الوصول ومناسب للمس وبدون jQuery."
 
 #. Author of the plugin
 #: itour-slider.php
@@ -81,106 +81,106 @@ msgstr "الشريحة %d"
 #: src/Module.php:28
 #: blocks/slider/editor.js:29
 msgid "Slider"
-msgstr ""
+msgstr "عارض الصور"
 
 #: blocks/slider/editor.js:31
 msgid "Shape"
-msgstr ""
+msgstr "الشكل"
 
 #: blocks/slider/editor.js:34
 msgid "Wide (16:9)"
-msgstr ""
+msgstr "عريض (16:9)"
 
 #: blocks/slider/editor.js:35
 msgid "Panorama (21:9)"
-msgstr ""
+msgstr "بانورامي (21:9)"
 
 #: blocks/slider/editor.js:36
 msgid "Classic (4:3)"
-msgstr ""
+msgstr "كلاسيكي (4:3)"
 
 #: blocks/slider/editor.js:37
 msgid "Square (1:1)"
-msgstr ""
+msgstr "مربع (1:1)"
 
 #: blocks/slider/editor.js:44
 msgid "Transition"
-msgstr ""
+msgstr "الانتقال"
 
 #: blocks/slider/editor.js:47
 msgid "Slide"
-msgstr ""
+msgstr "انزلاق"
 
 #: blocks/slider/editor.js:48
 msgid "Fade"
-msgstr ""
+msgstr "تلاشٍ"
 
 #: blocks/slider/editor.js:55
 msgid "Play automatically"
-msgstr ""
+msgstr "تشغيل تلقائي"
 
 #: blocks/slider/editor.js:56
 msgid "Visitors can always pause it."
-msgstr ""
+msgstr "يمكن للزوار إيقافه مؤقتًا دائمًا."
 
 #: blocks/slider/editor.js:64
 msgid "Seconds per slide"
-msgstr ""
+msgstr "ثوانٍ لكل شريحة"
 
 #: blocks/slider/editor.js:73
 msgid "Arrows"
-msgstr ""
+msgstr "الأسهم"
 
 #: blocks/slider/editor.js:80
 msgid "Dots"
-msgstr ""
+msgstr "النقاط"
 
 #: blocks/slider/editor.js:87
 msgid "Show captions"
-msgstr ""
+msgstr "إظهار التعليقات"
 
 #: blocks/slider/editor.js:94
 msgid "Name for screen readers"
-msgstr ""
+msgstr "اسم لقارئات الشاشة"
 
 #: blocks/slider/editor.js:95
 msgid "E.g. “Nile cruise photos”."
-msgstr ""
+msgstr "مثل «صور الرحلة النيلية»."
 
 #: blocks/slider/editor.js:111
 msgid "Choose or upload the photos for this slider."
-msgstr ""
+msgstr "اختر صور هذا العارض أو ارفعها."
 
 #: blocks/slider/editor.js:137
 msgid "Edit images"
-msgstr ""
+msgstr "تعديل الصور"
 
 #: blocks/slider/block.json
 msgctxt "block title"
 msgid "Image slider"
-msgstr ""
+msgstr "عارض الصور"
 
 #: blocks/slider/block.json
 msgctxt "block description"
 msgid "Accessible image slider with swipe, keyboard, autoplay with pause, and captions."
-msgstr ""
+msgstr "عارض صور سهل الوصول يدعم السحب ولوحة المفاتيح والتشغيل التلقائي مع الإيقاف والتعليقات."
 
 #: blocks/slider/block.json
 msgctxt "block keyword"
 msgid "slider"
-msgstr ""
+msgstr "عارض"
 
 #: blocks/slider/block.json
 msgctxt "block keyword"
 msgid "carousel"
-msgstr ""
+msgstr "عرض متتابع"
 
 #: blocks/slider/block.json
 msgctxt "block keyword"
 msgid "gallery"
-msgstr ""
+msgstr "معرض"
 
 #: blocks/slider/block.json
 msgctxt "block keyword"
 msgid "slideshow"
-msgstr ""
+msgstr "عرض شرائح"

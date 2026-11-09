@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-forms.php
 msgid "Contact and enquiry forms: form block, spam protection, submissions in the dashboard, email notifications."
-msgstr ""
+msgstr "نماذج التواصل والاستفسار: مكوّن النموذج والحماية من الرسائل المزعجة وحفظ الرسائل في لوحة التحكم وإشعارات البريد."
 
 #. Author of the plugin
 #: itour-forms.php
@@ -96,40 +96,40 @@ msgstr "إرسال الرسالة"
 
 #: src/Module.php:30
 msgid "Forms"
-msgstr ""
+msgstr "النماذج"
 
 #: src/Module.php:89
 msgid "enquiry"
-msgstr ""
+msgstr "استفسار"
 
 #: src/Module.php:90
 #: src/Module.php:172
 msgid "Enquiries"
-msgstr ""
+msgstr "الاستفسارات"
 
 #: src/Module.php:97
 msgid "No enquiries yet. Add the “Contact form” block to a page to start receiving them."
-msgstr ""
+msgstr "لا توجد استفسارات بعد. أضف مكوّن «نموذج التواصل» إلى صفحة لتبدأ في استقبالها."
 
 #: src/Module.php:111
 msgid "From"
-msgstr ""
+msgstr "من"
 
 #: src/Module.php:114
 msgid "Received"
-msgstr ""
+msgstr "تاريخ الاستلام"
 
 #: src/Module.php:115
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: src/Module.php:122
 msgid "New"
-msgstr ""
+msgstr "جديد"
 
 #: src/Module.php:122
 msgid "Read"
-msgstr ""
+msgstr "مقروء"
 
 #: src/Module.php:129
 #: src/Submit.php:122
@@ -182,74 +182,74 @@ msgstr "[%1$s] استفسار جديد من %2$s"
 
 #: blocks/contact-form/editor.js:45
 msgid "Fields"
-msgstr ""
+msgstr "الحقول"
 
 #: blocks/contact-form/editor.js:46
 msgid "Name, email and message are always included."
-msgstr ""
+msgstr "الاسم والبريد الإلكتروني والرسالة مضمّنة دائمًا."
 
 #: blocks/contact-form/editor.js:48
 msgid "Phone is required"
-msgstr ""
+msgstr "الهاتف مطلوب"
 
 #: blocks/contact-form/editor.js:51
 msgid "Number of travellers"
-msgstr ""
+msgstr "عدد المسافرين"
 
 #: blocks/contact-form/editor.js:55
 msgid "After sending"
-msgstr ""
+msgstr "بعد الإرسال"
 
 #: blocks/contact-form/editor.js:56
 msgid "Send to"
-msgstr ""
+msgstr "إرسال إلى"
 
 #: blocks/contact-form/editor.js:56
 msgid "Leave empty to use the company email (iTour → Company)."
-msgstr ""
+msgstr "اتركه فارغًا لاستخدام بريد الشركة (iTour ← الشركة)."
 
 #: blocks/contact-form/editor.js:57
 msgid "Button text"
-msgstr ""
+msgstr "نص الزر"
 
 #: blocks/contact-form/editor.js:58
 msgid "Thank-you message"
-msgstr ""
+msgstr "رسالة الشكر"
 
 #: blocks/contact-form/editor.js:59
 msgid "Form name"
-msgstr ""
+msgstr "اسم النموذج"
 
 #: blocks/contact-form/editor.js:59
 msgid "Shown in Enquiries, e.g. “contact” or “group-quote”."
-msgstr ""
+msgstr "يظهر في الاستفسارات، مثل «contact» أو «group-quote»."
 
 #: blocks/contact-form/block.json
 msgctxt "block title"
 msgid "Contact form"
-msgstr ""
+msgstr "نموذج التواصل"
 
 #: blocks/contact-form/block.json
 msgctxt "block description"
 msgid "Enquiry form: messages are saved under iTour → Enquiries and emailed to you."
-msgstr ""
+msgstr "نموذج استفسار: تُحفظ الرسائل في iTour ← الاستفسارات وتصلك بالبريد."
 
 #: blocks/contact-form/block.json
 msgctxt "block keyword"
 msgid "contact"
-msgstr ""
+msgstr "تواصل"
 
 #: blocks/contact-form/block.json
 msgctxt "block keyword"
 msgid "form"
-msgstr ""
+msgstr "نموذج"
 
 #: blocks/contact-form/block.json
 msgctxt "block keyword"
 msgid "enquiry"
-msgstr ""
+msgstr "استفسار"
 
 #: blocks/contact-form/block.json
 msgctxt "block keyword"
 msgid "email"
-msgstr ""
+msgstr "بريد"

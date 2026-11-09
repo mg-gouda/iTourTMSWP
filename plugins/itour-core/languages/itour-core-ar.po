@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-core.php
 msgid "Foundation for the iTourTMS modules: company settings, module registry, database migrations and shared services. Install this first, then add the modules you need."
-msgstr ""
+msgstr "أساس وحدات iTourTMS: إعدادات الشركة وسجل الوحدات وتحديثات قاعدة البيانات والخدمات المشتركة. ثبّت هذه الإضافة أولًا، ثم أضف الوحدات التي تحتاجها."
 
 #. Author of the plugin
 #: itour-core.php
@@ -60,101 +60,101 @@ msgstr "بحث"
 #: src/Admin/Crud.php:105
 #, php-format
 msgid "“%s” is already used."
-msgstr ""
+msgstr "«%s» مستخدم بالفعل."
 
 #: src/Admin/Crud.php:159
 msgid "Not found"
-msgstr ""
+msgstr "غير موجود"
 
 #: src/Admin/Crud.php:159
 msgid "Back to the list"
-msgstr ""
+msgstr "العودة إلى القائمة"
 
 #. translators: %s: item type, e.g. "branch".
 #: src/Admin/Crud.php:174
 #, php-format
 msgid "Add %s"
-msgstr ""
+msgstr "إضافة %s"
 
 #. translators: %s: item type, e.g. "branch".
 #: src/Admin/Crud.php:174
 #, php-format
 msgid "View %s"
-msgstr ""
+msgstr "عرض %s"
 
 #. translators: %s: item type, e.g. "branch".
 #: src/Admin/Crud.php:174
 #, php-format
 msgid "Edit %s"
-msgstr ""
+msgstr "تعديل %s"
 
 #: src/Admin/Crud.php:178
 #: src/Company.php:170
 msgid "Please fix the highlighted fields."
-msgstr ""
+msgstr "يُرجى تصحيح الحقول المحددة."
 
 #: src/Admin/Crud.php:194
 #: src/Company.php:176
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #: src/Admin/Crud.php:226
 msgid "Add new"
-msgstr ""
+msgstr "إضافة جديد"
 
 #: src/Admin/Crud.php:230
 #: src/Company.php:167
 msgid "Saved."
-msgstr ""
+msgstr "تم الحفظ."
 
 #: src/Admin/Crud.php:232
 msgid "Deleted."
-msgstr ""
+msgstr "تم الحذف."
 
 #: src/Admin/Crud.php:246
 msgid "Nothing matches that search."
-msgstr ""
+msgstr "لا توجد نتائج مطابقة لهذا البحث."
 
 #: src/Admin/Crud.php:246
 msgid "Nothing here yet. Use “Add new” to create the first one."
-msgstr ""
+msgstr "لا يوجد شيء هنا بعد. استخدم «إضافة جديد» لإنشاء أول عنصر."
 
 #: src/Admin/Crud.php:272
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 #: src/Admin/Crud.php:273
 msgid "Delete this permanently?"
-msgstr ""
+msgstr "حذف هذا نهائيًا؟"
 
 #: src/Admin/Crud.php:273
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: src/Admin/Crud.php:316
 #: src/Admin/Fields.php:79
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: src/Admin/Fields.php:71
 msgid "— None —"
-msgstr ""
+msgstr "— لا شيء —"
 
 #. translators: %s: field label.
 #: src/Admin/Fields.php:160
 #, php-format
 msgid "%s has an invalid value."
-msgstr ""
+msgstr "قيمة «%s» غير صحيحة."
 
 #. translators: %s: field label.
 #: src/Admin/Fields.php:164
 #, php-format
 msgid "%s is required."
-msgstr ""
+msgstr "«%s» مطلوب."
 
 #: src/Admin/Menu.php:40
 msgid "Overview"
-msgstr ""
+msgstr "نظرة عامة"
 
 #: src/Admin/Menu.php:55
 msgid "iTour"
@@ -162,125 +162,125 @@ msgstr ""
 
 #: src/Admin/Menu.php:58
 msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
-msgstr ""
+msgstr "لم تُثبَّت أي وحدة بعد. أضف إضافة وحدة، مثل iTour CRM، للبدء."
 
 #: src/Admin/Menu.php:61
 msgid "Module"
-msgstr ""
+msgstr "الوحدة"
 
 #: src/Admin/Menu.php:61
 msgid "Version"
-msgstr ""
+msgstr "الإصدار"
 
 #: src/Company.php:30
 msgid "Company name"
-msgstr ""
+msgstr "اسم الشركة"
 
 #: src/Company.php:36
 msgid "Legal name"
-msgstr ""
+msgstr "الاسم القانوني"
 
 #: src/Company.php:38
 msgid "As it appears on invoices and vouchers."
-msgstr ""
+msgstr "كما يظهر على الفواتير والقسائم."
 
 #: src/Company.php:42
 #: src/CoreModule.php:244
 msgid "Tax ID"
-msgstr ""
+msgstr "الرقم الضريبي"
 
 #: src/Company.php:47
 msgid "Tourism licence no."
-msgstr ""
+msgstr "رقم الترخيص السياحي"
 
 #: src/Company.php:52
 #: src/CoreModule.php:192
 #: src/CoreModule.php:224
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: src/Company.php:57
 #: src/CoreModule.php:193
 #: src/CoreModule.php:229
 msgid "Phone"
-msgstr ""
+msgstr "الهاتف"
 
 #: src/Company.php:62
 #: src/CoreModule.php:239
 msgid "Website"
-msgstr ""
+msgstr "الموقع الإلكتروني"
 
 #: src/Company.php:67
 msgid "Address"
-msgstr ""
+msgstr "العنوان"
 
 #: src/Company.php:72
 #: src/CoreModule.php:194
 #: src/CoreModule.php:249
 msgid "Country"
-msgstr ""
+msgstr "الدولة"
 
 #: src/Company.php:78
 #: src/CoreModule.php:320
 msgid "Base currency"
-msgstr ""
+msgstr "العملة الأساسية"
 
 #: src/Company.php:82
 msgid "Prices and accounts are kept in this currency; others convert from it using the daily rates."
-msgstr ""
+msgstr "تُحفظ الأسعار والحسابات بهذه العملة، وتُحوَّل العملات الأخرى منها حسب أسعار الصرف اليومية."
 
 #: src/Company.php:86
 msgid "Financial year starts"
-msgstr ""
+msgstr "بداية السنة المالية"
 
 #: src/Company.php:100
 msgid "Admin look"
-msgstr ""
+msgstr "مظهر لوحة التحكم"
 
 #: src/Company.php:103
 msgid "Use the iTourTMS look for the dashboard and login page"
-msgstr ""
+msgstr "استخدام مظهر iTourTMS للوحة التحكم وصفحة تسجيل الدخول"
 
 #: src/Company.php:165
 #: src/CoreModule.php:377
 msgid "Company"
-msgstr ""
+msgstr "الشركة"
 
 #: src/Company.php:172
 msgid "Your company details appear on vouchers, invoices and emails from every iTour module."
-msgstr ""
+msgstr "تظهر بيانات شركتك على القسائم والفواتير والرسائل من جميع وحدات iTour."
 
 #: src/CoreModule.php:30
 msgid "Core"
-msgstr ""
+msgstr "الأساس"
 
 #: src/CoreModule.php:138
 msgid "branch"
-msgstr ""
+msgstr "فرع"
 
 #: src/CoreModule.php:139
 #: src/CoreModule.php:382
 msgid "Branches"
-msgstr ""
+msgstr "الفروع"
 
 #: src/CoreModule.php:143
 msgid "No branches yet. Add your head office first; offices such as Hurghada or Luxor can follow."
-msgstr ""
+msgstr "لا توجد فروع بعد. أضف المقر الرئيسي أولًا، ثم المكاتب الأخرى مثل الغردقة أو الأقصر."
 
 #: src/CoreModule.php:145
 msgid "Branch"
-msgstr ""
+msgstr "الفرع"
 
 #: src/CoreModule.php:146
 #: src/CoreModule.php:159
 #: src/CoreModule.php:308
 msgid "Code"
-msgstr ""
+msgstr "الرمز"
 
 #: src/CoreModule.php:147
 #: src/CoreModule.php:167
 msgid "Head office"
-msgstr ""
+msgstr "المقر الرئيسي"
 
 #: src/CoreModule.php:148
 #: src/CoreModule.php:173
@@ -288,7 +288,7 @@ msgstr ""
 #: src/CoreModule.php:312
 #: src/CoreModule.php:368
 msgid "Active"
-msgstr ""
+msgstr "نشط"
 
 #: src/CoreModule.php:153
 #: src/CoreModule.php:190
@@ -296,243 +296,243 @@ msgstr ""
 #: src/CoreModule.php:309
 #: src/CoreModule.php:342
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: src/CoreModule.php:163
 msgid "Short code used in document numbers, e.g. HRG."
-msgstr ""
+msgstr "رمز قصير يُستخدم في أرقام المستندات، مثل HRG."
 
 #: src/CoreModule.php:169
 msgid "This is the head office"
-msgstr ""
+msgstr "هذا هو المقر الرئيسي"
 
 #: src/CoreModule.php:183
 msgid "partner"
-msgstr ""
+msgstr "شريك"
 
 #: src/CoreModule.php:184
 #: src/CoreModule.php:387
 msgid "Partners"
-msgstr ""
+msgstr "الشركاء"
 
 #: src/CoreModule.php:188
 msgid "No partners yet. Partners are your customers, suppliers, tour operators and corporate clients, shared by every module."
-msgstr ""
+msgstr "لا يوجد شركاء بعد. الشركاء هم عملاؤك ومورّدوك ومنظمو الرحلات وعملاء الشركات، وتتشاركهم جميع الوحدات."
 
 #: src/CoreModule.php:191
 #: src/CoreModule.php:205
 msgid "Type"
-msgstr ""
+msgstr "النوع"
 
 #: src/CoreModule.php:209
 msgid "Customer"
-msgstr ""
+msgstr "عميل"
 
 #: src/CoreModule.php:210
 msgid "Supplier"
-msgstr ""
+msgstr "مورّد"
 
 #: src/CoreModule.php:211
 msgid "Tour operator"
-msgstr ""
+msgstr "منظم رحلات"
 
 #: src/CoreModule.php:212
 msgid "Travel agent"
-msgstr ""
+msgstr "وكيل سفر"
 
 #: src/CoreModule.php:213
 msgid "Corporate"
-msgstr ""
+msgstr "شركة"
 
 #: src/CoreModule.php:218
 msgid "Organisation"
-msgstr ""
+msgstr "جهة"
 
 #: src/CoreModule.php:220
 msgid "This is a company, not a person"
-msgstr ""
+msgstr "هذه شركة وليست شخصًا"
 
 #: src/CoreModule.php:234
 msgid "Mobile / WhatsApp"
-msgstr ""
+msgstr "الجوال / واتساب"
 
 #: src/CoreModule.php:255
 msgid "City"
-msgstr ""
+msgstr "المدينة"
 
 #: src/CoreModule.php:260
 msgid "Street"
-msgstr ""
+msgstr "الشارع"
 
 #: src/CoreModule.php:265
 msgid "Postcode"
-msgstr ""
+msgstr "الرمز البريدي"
 
 #: src/CoreModule.php:271
 msgid "Credit limit"
-msgstr ""
+msgstr "حد الائتمان"
 
 #: src/CoreModule.php:274
 msgid "How much this partner may owe before new bookings are blocked. 0 = pay before travel."
-msgstr ""
+msgstr "أقصى مبلغ مستحق على هذا الشريك قبل إيقاف الحجوزات الجديدة. 0 = الدفع قبل السفر."
 
 #: src/CoreModule.php:278
 msgid "Credit currency"
-msgstr ""
+msgstr "عملة الائتمان"
 
 #: src/CoreModule.php:284
 msgid "Notes"
-msgstr ""
+msgstr "ملاحظات"
 
 #: src/CoreModule.php:301
 msgid "currency"
-msgstr ""
+msgstr "عملة"
 
 #: src/CoreModule.php:302
 #: src/CoreModule.php:392
 msgid "Currencies"
-msgstr ""
+msgstr "العملات"
 
 #: src/CoreModule.php:310
 #: src/CoreModule.php:348
 msgid "Symbol"
-msgstr ""
+msgstr "الرمز"
 
 #: src/CoreModule.php:311
 #: src/CoreModule.php:361
 msgid "Rate today"
-msgstr ""
+msgstr "سعر اليوم"
 
 #. translators: 1: rate, 2: base currency code.
 #: src/CoreModule.php:324
 msgid "No rate yet"
-msgstr ""
+msgstr "لا يوجد سعر بعد"
 
 #. translators: 1: rate, 2: base currency code.
 #: src/CoreModule.php:324
 #, php-format
 msgid "%1$s %2$s"
-msgstr ""
+msgstr "%1$s %2$s"
 
 #: src/CoreModule.php:335
 msgid "ISO code"
-msgstr ""
+msgstr "رمز ISO"
 
 #: src/CoreModule.php:355
 msgid "Decimals"
-msgstr ""
+msgstr "المنازل العشرية"
 
 #. translators: %s: base currency code.
 #: src/CoreModule.php:364
 #, php-format
 msgid "How many %s one unit of this currency is worth today. Leave empty to keep the last rate."
-msgstr ""
+msgstr "كم تساوي وحدة واحدة من هذه العملة بـ %s اليوم. اتركه فارغًا للإبقاء على آخر سعر."
 
 #: src/Manual.php:31
 msgid "Booking widget: the search box for tour packages, excursions and transfers. Pick a design in the block settings, or leave “Site default” to follow Theme Options → Design. Searches go to the results pages chosen in each product’s Theme Options tab."
-msgstr ""
+msgstr "أداة الحجز: خانة البحث عن الباقات السياحية والرحلات اليومية والتنقلات. اختر تصميمًا من إعدادات المكوّن، أو اترك «افتراضي الموقع» لاتباع خيارات القالب ← التصميم. تُرسل عمليات البحث إلى صفحات النتائج المختارة في تبويب كل منتج ضمن خيارات القالب."
 
 #: src/Manual.php:33
 msgid "Image slider: choose photos, then set the shape, slide or fade, autoplay (visitors can always pause it), arrows, dots and captions. Captions come from each image’s caption in the media library."
-msgstr ""
+msgstr "عارض الصور: اختر الصور، ثم حدد الشكل والانتقال بالانزلاق أو التلاشي والتشغيل التلقائي (يمكن للزوار إيقافه دائمًا) والأسهم والنقاط والتعليقات. تأتي التعليقات من تعليق كل صورة في مكتبة الوسائط."
 
 #: src/Manual.php:36
 msgid "Contact form: choose which fields show, who receives the email and the thank-you message. Messages are kept under iTour → Enquiries and protected against spam automatically."
-msgstr ""
+msgstr "نموذج التواصل: اختر الحقول الظاهرة ومستلم البريد ورسالة الشكر. تُحفظ الرسائل في iTour ← الاستفسارات، وتُحمى من الرسائل المزعجة تلقائيًا."
 
 #: src/Manual.php:40
 msgid "iTour blocks"
-msgstr ""
+msgstr "مكوّنات iTour"
 
 #: src/Manual.php:42
 msgid "In the block editor, click + and search for these blocks:"
-msgstr ""
+msgstr "في محرر المكوّنات، اضغط + وابحث عن هذه المكوّنات:"
 
 #: src/Media.php:80
 msgid "This SVG file could not be read safely, so it was not uploaded."
-msgstr ""
+msgstr "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم يُرفع."
 
 #. translators: 1: module name, 2: comma-separated module slugs.
 #: src/Modules.php:95
 #, php-format
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
-msgstr ""
+msgstr "iTour: الوحدة %1$s لا تعمل لأنها تحتاج إلى هذه الوحدات: %2$s."
 
 #: blocks/booking-widget/editor.js:8
 msgid "Tour packages"
-msgstr ""
+msgstr "الباقات السياحية"
 
 #: blocks/booking-widget/editor.js:9
 msgid "Excursions"
-msgstr ""
+msgstr "الرحلات اليومية"
 
 #: blocks/booking-widget/editor.js:10
 msgid "Transfers"
-msgstr ""
+msgstr "التنقلات"
 
 #: blocks/booking-widget/editor.js:25
 msgid "Booking widget"
-msgstr ""
+msgstr "أداة الحجز"
 
 #: blocks/booking-widget/editor.js:27
 msgid "Design"
-msgstr ""
+msgstr "التصميم"
 
 #: blocks/booking-widget/editor.js:30
 msgid "Site default (Theme Options → Design)"
-msgstr ""
+msgstr "افتراضي الموقع (خيارات القالب ← التصميم)"
 
 #: blocks/booking-widget/editor.js:31
 msgid "Tabs: pill tabs above a panel"
-msgstr ""
+msgstr "تبويبات: تبويبات فوق لوحة"
 
 #: blocks/booking-widget/editor.js:32
 msgid "Search bar: one rounded bar"
-msgstr ""
+msgstr "شريط بحث: شريط واحد مستدير"
 
 #: blocks/booking-widget/editor.js:33
 msgid "Card: stacked, for heroes and sidebars"
-msgstr ""
+msgstr "بطاقة: حقول متراصة، للافتات والأشرطة الجانبية"
 
 #: blocks/booking-widget/editor.js:39
 msgid "Show these searches"
-msgstr ""
+msgstr "إظهار عمليات البحث هذه"
 
 #: blocks/booking-widget/editor.js:60
 msgid "Heading (card design)"
-msgstr ""
+msgstr "العنوان (تصميم البطاقة)"
 
 #: blocks/booking-widget/block.json
 msgctxt "block title"
 msgid "Booking widget"
-msgstr ""
+msgstr "أداة الحجز"
 
 #: blocks/booking-widget/block.json
 msgctxt "block description"
 msgid "Search box for tour packages, excursions and transfers, in three designs: tabs, search bar or card."
-msgstr ""
+msgstr "خانة بحث عن الباقات السياحية والرحلات اليومية والتنقلات بثلاثة تصاميم: تبويبات أو شريط بحث أو بطاقة."
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
 msgid "search"
-msgstr ""
+msgstr "بحث"
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
 msgid "booking"
-msgstr ""
+msgstr "حجز"
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
 msgid "tours"
-msgstr ""
+msgstr "باقات"
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
 msgid "transfers"
-msgstr ""
+msgstr "تنقلات"
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
 msgid "excursions"
-msgstr ""
+msgstr "رحلات"

@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-excursions.php
 msgid "Day trips and excursions: programmes, pick-up, prices, availability and booking."
-msgstr ""
+msgstr "رحلات يومية: البرامج ونقاط الاستقبال والأسعار والإتاحة والحجز."
 
 #. Author of the plugin
 #: itour-excursions.php

@@ -21,7 +21,7 @@ msgstr ""
 #. Description of the plugin
 #: itour-transfers.php
 msgid "Private airport and city transfers: zones, vehicles, prices and booking, then dispatch, drivers and fleet."
-msgstr ""
+msgstr "تنقلات خاصة من المطار وداخل المدن: المناطق والمركبات والأسعار والحجز، ثم التشغيل والسائقون والأسطول."
 
 #. Author of the plugin
 #: itour-transfers.php
