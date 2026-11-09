@@ -125,7 +125,7 @@ msgstr "لا يوجد شيء هنا بعد. استخدم «إضافة جديد»
 
 #: src/Admin/Crud.php:293
 msgid "View"
-msgstr ""
+msgstr "عرض"
 
 #: src/Admin/Crud.php:293
 msgid "Edit"

@@ -547,7 +547,8 @@
   "Latitude": "خط العرض",
   "Longitude": "خط الطول",
   "Optional. Used for maps; copy from Google Maps (right-click the place).": "اختياري. يُستخدم للخرائط؛ انسخه من خرائط Google (انقر بزر الفأرة الأيمن على المكان).",
-  "Not deleted: move or delete the items under it first.": "لم يُحذف: انقل العناصر التي تحته أو احذفها أولًا."
+  "Not deleted: move or delete the items under it first.": "لم يُحذف: انقل العناصر التي تحته أو احذفها أولًا.",
+  "View": "عرض"
  },
  "itour-forms": {
   "Thank you! We’ll reply within one working day.": "شكرًا لك! سنرد عليك خلال يوم عمل واحد.",
