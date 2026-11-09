@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"ink","textColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-ink-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Plan my trip', 'wp-itourtms' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-ink-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Plan my trip', 'wp-itourtms' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

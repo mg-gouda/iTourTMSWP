@@ -24,12 +24,15 @@
 [dir="rtl"] .itour-slider__arrow.is-next span { transform: translateX(2px) rotate(-135deg); }
 .itour-slider__pause span { width: 10px; height: 12px; border-inline: 3px solid currentColor; }
 .itour-slider__pause[aria-pressed="true"] span { width: 0; height: 0; border: 0; border-block: 7px solid transparent; border-inline-start: 11px solid currentColor; margin-inline-start: 3px; }
-.itour-slider__dots { display: flex; gap: 6px; padding: 8px 10px; border-radius: 999px; background: rgb(0 0 0 / 0.35); }
-.itour-slider__dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.55); cursor: pointer; transition: width .2s ease, background-color .2s ease; }
-.itour-slider__dot[aria-current="true"] { width: 22px; border-radius: 5px; background: #fff; }
+.itour-slider__dots { display: flex; gap: 0; padding: 2px 6px; border-radius: 999px; background: rgb(0 0 0 / 0.35); }
+/* 24 × 24 px tap area (WCAG 2.5.8); the visible dot is drawn inside it. */
+.itour-slider__dot { position: relative; display: grid; place-items: center; min-width: 24px; height: 24px; padding: 0 2px; border: 0; border-radius: 12px; background: transparent; cursor: pointer; }
+.itour-slider__dot::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / 0.55); transition: width .2s ease, background-color .2s ease; }
+.itour-slider__dot[aria-current="true"]::before { width: 22px; border-radius: 5px; background: #fff; }
+.itour-slider__dot:hover::before { background: #fff; }
 .itour-slider button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px rgb(0 0 0 / 0.5); }
 .itour-slider:has(.itour-slider__caption) .itour-slider__controls { bottom: auto; top: 14px; justify-content: flex-end; padding-inline: 14px; }
 
 @media (prefers-reduced-motion: reduce) {
-	.itour-slider__track, .itour-slider__slide, .itour-slider__dot { transition: none !important; }
+	.itour-slider__track, .itour-slider__slide, .itour-slider__dot::before { transition: none !important; }
 }

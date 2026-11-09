@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Slider
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Image slider block: accessible, touch-friendly, no jQuery.
- * Version:           0.1.0
+ * Version:           0.1.1
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  itour-core
