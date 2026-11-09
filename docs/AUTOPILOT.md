@@ -6,7 +6,7 @@ Never on autopilot (owner decides): Tour Package / Excursion / Transfer function
 
 ## Queue
 - [ ] **First-run setup wizard (theme).** After activation, a short Appearance → Theme Options "Get started" panel: pick a design preset, upload logo, contact details, create the main menu from existing pages. Skippable, shown once.
-- [ ] **ThemeForest package check.** Run `bin/package.sh`, check both zips install on a clean site, demo content imports, docs open offline, Theme Check passes. Fix what fails.
+- [ ] **Demo content file.** ThemeForest buyers expect a one-click or WXR import. Export the demo pages, menus, Theme Options and booking-widget/slider/form examples (from `tools/demo-content.php`) as `demo/wp-itourtms-demo.xml` + an options JSON, add them to the ThemeForest bundle, and test the import on a clean site.
 
 ## Done
 - (autopilot adds items here with the commit hash)
@@ -15,3 +15,4 @@ Never on autopilot (owner decides): Tour Package / Excursion / Transfer function
 - Shield manual chapter + readme.txt (commit "docs(shield): manual chapter + readme")
 - Arabic, admin side: theme 362/366, core 111/116, forms, slider, Shield 275/279 (untranslated = brand names, URLs, author). RTL margin fix in Theme Options and Shield (commits 066ae1e, d721067 and "feat(i18n): Arabic theme options + manual")
 - Accessibility pass (WCAG 2.2 AA): keyboard walk of header, booking widget, slider, form, mobile menu, Theme Options, Shield. Fixed: slider dots 9 px → 24 px tap area (2.5.8), hero/call-to-action buttons had no link (unreachable by keyboard), top-bar contacts min 24 px. Verified: visible focus everywhere, skip link, menu Escape, form errors (aria-invalid + described), combobox ARIA, RTL. Lighthouse/axe not run (npx blocked) (commit "fix(a11y): …")
+- ThemeForest package check: both zips build; clean WordPress install of theme + child + 7 plugins activates with zero PHP errors; docs open offline; Theme Check PASS. Fixed: 8 empty placeholder plugins were shipped in the bundle, now skipped (commit "build: skip placeholder plugins in release")

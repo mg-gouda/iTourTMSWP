@@ -53,6 +53,8 @@ cp dist/themeforest/wp-itourtms.zip dist/stage/
 echo "→ plugins"
 mkdir -p dist/stage/plugins
 for p in plugins/*/; do
+	# Module placeholders (plugin header + empty Module class) aren't shipped until they do something.
+	[ "$(find "$p" -name '*.php' | wc -l)" -gt 2 ] || { echo "  skip $(basename "$p") (placeholder)"; continue; }
 	zipdir plugins "$(basename "$p")" "$root/dist/stage/plugins/$(basename "$p").zip"
 done
 
