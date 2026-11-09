@@ -59,6 +59,21 @@
 		} )
 	);
 
+	// Copy a snippet (falls back to selecting it when the clipboard isn't available).
+	root.querySelectorAll( '[data-copy]' ).forEach( ( btn ) =>
+		btn.addEventListener( 'click', async () => {
+			const ta = document.getElementById( btn.dataset.copy );
+			const label = btn.textContent;
+			try {
+				await navigator.clipboard.writeText( ta.value );
+				btn.textContent = cfg.i18n.copied;
+				setTimeout( () => ( btn.textContent = label ), 2000 );
+			} catch ( err ) {
+				ta.select();
+			}
+		} )
+	);
+
 	// Confirm destructive links.
 	root.querySelectorAll( '[data-confirm]' ).forEach( ( a ) =>
 		a.addEventListener( 'click', ( e ) => {

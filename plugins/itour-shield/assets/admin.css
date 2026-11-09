@@ -88,6 +88,7 @@
 .itsh-help { margin-top: 3px !important; color: var(--itsh-muted-fg); font-size: 13px; line-height: 1.5; }
 .itsh-callout { margin: 6px 0 4px !important; padding: 10px 12px; border-radius: 8px; background: var(--itsh-page); color: var(--itsh-muted-fg); font-size: 13px; }
 .itsh-callout code { background: var(--itsh-bg); white-space: nowrap; }
+.itsh .itsh-callout .itsh-snippet { display: block; width: 100%; margin: 8px 0 4px; padding: 10px 12px; font-size: 12px; line-height: 1.6; white-space: pre; overflow: auto; resize: vertical; }
 .itsh-empty { padding: 18px 0 4px; color: var(--itsh-muted-fg); }
 .itsh-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid var(--itsh-line); }
 .itsh-actions .itsh-help { margin: 0 !important; }

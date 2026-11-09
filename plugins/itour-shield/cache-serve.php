@@ -36,6 +36,12 @@ defined( 'ABSPATH' ) || exit;
 			return;
 		}
 	}
+	if ( '' !== ( $cfg['blocked'] ?? '' ) ) {
+		require_once __DIR__ . '/src/Firewall.php';
+		if ( \ITour\Shield\Firewall::ip_in( (string) ( $_SERVER['REMOTE_ADDR'] ?? '' ), (string) $cfg['blocked'] ) ) {
+			return; // WordPress loads and the firewall refuses the request.
+		}
+	}
 	$https = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== strtolower( (string) $_SERVER['HTTPS'] ) ) || 'https' === ( $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '' );
 	$file  = $dir . '/pages/' . md5( ( $https ? 'https://' : 'http://' ) . strtolower( (string) ( $_SERVER['HTTP_HOST'] ?? '' ) ) . $uri ) . '.html';
 

@@ -83,11 +83,54 @@ final class Htaccess {
 	}
 
 	/**
+	 * The same protections as Nginx lines, for hosts without .htaccess. Shown for copying;
+	 * Shield can't write Nginx config itself.
+	 */
+	public static function nginx(): string {
+		$s    = Settings::all();
+		$base = trailingslashit( (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH ) );
+		$r    = array( '# iTour Shield: paste inside this site\'s server { } block, then reload Nginx.' );
+		if ( $s['no_indexes'] ) {
+			$r[] = 'autoindex off;';
+		}
+		if ( $s['protect_files'] ) {
+			array_push(
+				$r,
+				'location ~* /(wp-config\.php|wp-config-sample\.php|readme\.html|license\.txt|debug\.log|error_log|\.user\.ini|php\.ini)$ { deny all; }',
+				'location ~* \.(sql|sql\.gz|bak|old|orig|save|swp|log|env)$ { deny all; }',
+				'location ~ /\.(?!well-known/) { deny all; }',
+				'location ~* ^' . $base . 'wp-admin/includes/ { deny all; }',
+				'location ~* ^' . $base . 'wp-includes/[^/]+\.php$ { deny all; }',
+				'location ~* ^' . $base . 'wp-includes/theme-compat/ { deny all; }'
+			);
+		}
+		if ( $s['uploads_no_php'] ) {
+			$r[] = 'location ~* ^' . $base . 'wp-content/uploads/.*\.(php\d?|phtml|phar|pht|shtml)$ { deny all; }';
+		}
+		if ( $s['no_xmlrpc'] ) {
+			$r[] = 'location = ' . $base . 'xmlrpc.php { deny all; }';
+		}
+		$mask = Paths::rewrite_rules( 'nginx' );
+		if ( $mask ) {
+			$r[] = "# Folder names. After adding these, put define( 'ITOUR_SHIELD_NGINX', true ); in wp-config.php.";
+			$r   = array_merge( $r, $mask );
+		}
+		return implode( "\n", $r ) . "\n";
+	}
+
+	/**
+	 * Apache (or LiteSpeed). WP-CLI never looks like Apache, so there an existing .htaccess counts.
+	 */
+	public static function apache(): bool {
+		global $is_apache;
+		return $is_apache || ( defined( 'WP_CLI' ) && WP_CLI && is_file( self::root() ) );
+	}
+
+	/**
 	 * Write current rules (Apache only).
 	 */
 	public static function sync(): void {
-		global $is_apache;
-		if ( ! $is_apache && ! ( defined( 'WP_CLI' ) && is_file( self::root() ) ) ) {
+		if ( ! self::apache() ) {
 			return;
 		}
 		$ok = self::write( self::root(), self::rules() );

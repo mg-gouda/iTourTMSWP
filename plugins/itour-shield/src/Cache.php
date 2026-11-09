@@ -87,6 +87,8 @@ final class Cache {
 				array(
 					'ttl'     => max( 1, (int) $s['cache_ttl'] ) * HOUR_IN_SECONDS,
 					'exclude' => array_values( $exclude ),
+					// Blocked IPs skip the cache, so the firewall answers them (403) instead of a saved page.
+					'blocked' => $s['firewall'] ? (string) $s['blocked_ips'] : '',
 				),
 				true
 			) . ";\n"

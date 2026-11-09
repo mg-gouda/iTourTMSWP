@@ -122,11 +122,20 @@ final class Paths {
 	}
 
 	/**
-	 * Masking needs Apache rewrites and the standard layout (WordPress in the site root, wp-content inside it).
+	 * Masking needs server rewrites and the standard layout (WordPress in the site root, wp-content inside it).
+	 * Apache gets its rules written automatically; on Nginx the owner pastes the rules shown in the
+	 * Hardening tab and then confirms with define( 'ITOUR_SHIELD_NGINX', true ); in wp-config.php.
 	 */
 	public static function can_mask(): bool {
-		global $is_apache;
-		return $is_apache && home_url() === site_url() && 0 === strpos( content_url(), home_url() ) && WP_CONTENT_DIR === untrailingslashit( ABSPATH ) . '/wp-content';
+		$server = Htaccess::apache() || ( defined( 'ITOUR_SHIELD_NGINX' ) && ITOUR_SHIELD_NGINX );
+		return $server && self::standard_layout();
+	}
+
+	/**
+	 * WordPress in the site root with the usual wp-content folder.
+	 */
+	public static function standard_layout(): bool {
+		return home_url() === site_url() && 0 === strpos( content_url(), home_url() ) && WP_CONTENT_DIR === untrailingslashit( ABSPATH ) . '/wp-content';
 	}
 
 	/**
@@ -145,17 +154,19 @@ final class Paths {
 	}
 
 	/**
-	 * .htaccess lines that map the public names back to the real folders (static files only, never PHP).
+	 * Server lines that map the public names back to the real folders (static files only, never PHP).
 	 *
+	 * @param string $server apache (.htaccess) or nginx (server block, shown for copying).
 	 * @return array<int,string>
 	 */
-	public static function rewrite_rules(): array {
+	public static function rewrite_rules( string $server = 'apache' ): array {
 		$s = Settings::all();
-		if ( ! $s['mask_paths'] || ! self::can_mask() ) {
+		if ( ! $s['mask_paths'] || ! self::standard_layout() || ( 'apache' === $server && ! self::can_mask() ) ) {
 			return array();
 		}
 		$file  = '(.+\.(?!php\d?$|phtml$|phar$)[A-Za-z0-9]+)$';
-		$lines = array( 'RewriteEngine On', 'RewriteBase ' . trailingslashit( (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH ) ) );
+		$base  = trailingslashit( (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH ) );
+		$lines = 'apache' === $server ? array( 'RewriteEngine On', 'RewriteBase ' . $base ) : array();
 		foreach (
 			array(
 				$s['mask_plugins']  => 'wp-content/plugins/',
@@ -165,7 +176,9 @@ final class Paths {
 				$s['mask_includes'] => 'wp-includes/',
 			) as $public => $real
 		) {
-			$lines[] = 'RewriteRule ^' . preg_quote( (string) $public, '#' ) . '/' . $file . ' ' . $real . '$1 [L]';
+			$lines[] = 'apache' === $server
+				? 'RewriteRule ^' . preg_quote( (string) $public, '#' ) . '/' . $file . ' ' . $real . '$1 [L]'
+				: 'rewrite ^' . $base . preg_quote( (string) $public, '#' ) . '/' . $file . ' ' . $base . $real . '$1 last;';
 		}
 		return $lines;
 	}

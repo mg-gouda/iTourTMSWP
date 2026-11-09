@@ -78,6 +78,7 @@ final class Admin {
 					'scanning' => __( 'Checking files… %1$s of %2$s', 'itour-shield' ),
 					'failed'   => __( 'The scan stopped with an error. Reload the page and try again.', 'itour-shield' ),
 					'clean'    => __( 'Permanently delete these items? This cannot be undone.', 'itour-shield' ),
+					'copied'   => __( 'Copied', 'itour-shield' ),
 				),
 			)
 		);
@@ -143,7 +144,7 @@ final class Admin {
 					),
 				),
 				__( 'Public folder names', 'itour-shield' ) => array(
-					$f( 'mask_paths', 'switch', __( 'Rename WordPress folders in public links', 'itour-shield' ), __( 'Scanners spot WordPress sites by the wp-content and wp-includes folders in the page source. Files stay where they are; only the public links change, so turning this off undoes it completely.', 'itour-shield' ), array( 'disabled' => ! Paths::can_mask() ) ),
+					$f( 'mask_paths', 'switch', __( 'Rename WordPress folders in public links', 'itour-shield' ), __( 'Scanners spot WordPress sites by the wp-content and wp-includes folders in the page source. Files stay where they are; only the public links change, so turning this off undoes it completely.', 'itour-shield' ), array( 'disabled' => ! Paths::standard_layout() ) ),
 					$f(
 						'mask_content',
 						'text',
@@ -413,8 +414,15 @@ final class Admin {
 	 */
 	private static function group( string $title, array $rows, array $s, string $tab ): void {
 		echo '<div class="itsh-group"><h2 class="itsh-group-title">' . esc_html( $title ) . '</h2>';
-		if ( 'paths' === $tab && __( 'Public folder names', 'itour-shield' ) === $title && ! Paths::can_mask() ) {
-			echo '<p class="itsh-callout">' . esc_html__( 'Folder renaming needs an Apache server and WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off.', 'itour-shield' ) . '</p>';
+		if ( 'paths' === $tab && __( 'Public folder names', 'itour-shield' ) === $title ) {
+			if ( ! Paths::standard_layout() ) {
+				echo '<p class="itsh-callout">' . esc_html__( 'Folder renaming needs WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off.', 'itour-shield' ) . '</p>';
+			} elseif ( ! Paths::can_mask() ) {
+				echo '<p class="itsh-callout">' . esc_html__( 'This server isn’t Apache, so Shield can’t add the folder rules itself. Turn the option on and save, copy the rules from Hardening → Server into your Nginx config, then add', 'itour-shield' ) . " <code>define( 'ITOUR_SHIELD_NGINX', true );</code> " . esc_html__( 'to wp-config.php.', 'itour-shield' ) . '</p>';
+			}
+		}
+		if ( 'hardening' === $tab && __( 'Server', 'itour-shield' ) === $title && ! Htaccess::apache() ) {
+			echo '<div class="itsh-callout"><p>' . esc_html__( 'This server isn’t Apache, so these switches don’t apply by themselves. Copy these rules into the site’s Nginx config (or send them to your host) and reload Nginx. They update when you change the settings.', 'itour-shield' ) . '</p><textarea class="itsh-input is-mono itsh-snippet" id="itsh-nginx" rows="10" wrap="off" readonly spellcheck="false">' . esc_textarea( Htaccess::nginx() ) . '</textarea><button type="button" class="itsh-btn itsh-btn--quiet" data-copy="itsh-nginx">' . esc_html__( 'Copy rules', 'itour-shield' ) . '</button></div>';
 		}
 		if ( 'paths' === $tab && __( 'Login page', 'itour-shield' ) === $title ) {
 			echo '<p class="itsh-callout">' . esc_html__( 'Your login page is now', 'itour-shield' ) . ' <a href="' . esc_url( wp_login_url() ) . '"><code>' . esc_html( wp_login_url() ) . '</code></a>. ' . esc_html__( 'Locked out? Add', 'itour-shield' ) . " <code>define( 'ITOUR_SHIELD_DISABLE_PATHS', true );</code> " . esc_html__( 'to wp-config.php.', 'itour-shield' ) . '</p>';
