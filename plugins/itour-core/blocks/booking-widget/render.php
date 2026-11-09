@@ -40,15 +40,23 @@ $itour_field = static function ( array $f, string $form_id ): void {
 		}
 		echo '</select>';
 	} else {
+		if ( ! empty( $f['list'] ) ) { // Suggestions (e.g. hotels from the Location Tree); typing anything else is still allowed.
+			echo '<datalist id="' . esc_attr( $id ) . '-list">';
+			foreach ( (array) $f['list'] as $itour_opt ) {
+				echo '<option value="' . esc_attr( (string) $itour_opt ) . '"></option>';
+			}
+			echo '</datalist>';
+		}
 		printf(
-			'<input type="%1$s" id="%2$s" name="%3$s" value="%4$s"%5$s%6$s%7$s>',
+			'<input type="%1$s" id="%2$s" name="%3$s" value="%4$s"%5$s%6$s%7$s%8$s>',
 			esc_attr( $type ),
 			esc_attr( $id ),
 			esc_attr( (string) $f['name'] ),
-			esc_attr( (string) ( $f['default'] ?? '' ) ),
+			esc_attr( isset( $_GET[ $f['name'] ] ) ? sanitize_text_field( wp_unslash( (string) $_GET[ $f['name'] ] ) ) : (string) ( $f['default'] ?? '' ) ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- keeps the visitor's search on the results page.
 			isset( $f['placeholder'] ) ? ' placeholder="' . esc_attr( (string) $f['placeholder'] ) . '"' : '',
 			'date' === $type ? ' min="' . esc_attr( wp_date( 'Y-m-d' ) ) . '"' : '',
-			'number' === $type ? ' min="' . (int) ( $f['min'] ?? 1 ) . '" max="' . (int) ( $f['max'] ?? 99 ) . '" inputmode="numeric"' : ''
+			'number' === $type ? ' min="' . (int) ( $f['min'] ?? 1 ) . '" max="' . (int) ( $f['max'] ?? 99 ) . '" inputmode="numeric"' : '',
+			empty( $f['list'] ) ? '' : ' list="' . esc_attr( $id . '-list' ) . '" autocomplete="off"'
 		);
 	}
 	echo '</div>';

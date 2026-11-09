@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/transfer-results",
+	"version": "0.2.0",
+	"title": "Transfer results",
+	"category": "widgets",
+	"icon": "car",
+	"description": "Vehicles and prices for the transfer searched in the booking widget. Put it on the transfer search results page.",
+	"keywords": [ "transfer", "airport", "vehicle", "prices" ],
+	"textdomain": "itour-transfers",
+	"supports": { "align": [ "wide" ], "html": false, "spacing": { "margin": true } },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

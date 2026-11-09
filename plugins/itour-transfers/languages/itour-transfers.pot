@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: iTour Transfers 0.1.0\n"
+"Project-Id-Version: iTour Transfers 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T22:42:45+00:00\n"
+"POT-Creation-Date: 2026-11-09T10:54:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-transfers\n"
@@ -39,56 +39,294 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
-#: src/Module.php:33
-#: src/Module.php:71
-#: src/Module.php:116
+#. translators: %s: place name(s) as typed.
+#: blocks/transfer-results/render.php:35
+#, php-format
+msgid "We couldn’t find “%s” in our list. Pick one of the suggestions while typing, or contact us for a price."
+msgstr ""
+
+#: blocks/transfer-results/render.php:37
+msgid "We don’t have a fixed price for this route and group size yet. Contact us and we’ll quote it."
+msgstr ""
+
+#. translators: 1: from place, 2: to place, 3: number of passengers.
+#: blocks/transfer-results/render.php:45
+#, php-format
+msgid "%1$s → %2$s, %3$d passenger"
+msgid_plural "%1$s → %2$s, %3$d passengers"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: passengers, 2: bags.
+#: blocks/transfer-results/render.php:52
+#, php-format
+msgid "Up to %1$d passengers · %2$d bags"
+msgstr ""
+
+#: blocks/transfer-results/render.php:53
+msgid "One way"
+msgstr ""
+
+#: blocks/transfer-results/render.php:54
+msgid "Return"
+msgstr ""
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:58
+#, php-format
+msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
+msgstr ""
+
+#: src/Module.php:37
+#: src/Module.php:293
+#: src/Module.php:340
 msgid "Transfers"
 msgstr ""
 
-#: src/Module.php:72
-msgid "See prices"
+#: src/Module.php:94
+#: src/Module.php:126
+msgid "Transfer vehicles"
 msgstr ""
 
-#: src/Module.php:77
-msgid "From"
+#: src/Module.php:94
+#: src/Module.php:183
+msgid "Transfer prices"
 msgstr ""
 
-#: src/Module.php:79
-msgid "Airport, hotel or city"
+#: src/Module.php:100
+#: src/Settings.php:129
+msgid "Transfer rules"
 msgstr ""
 
-#: src/Module.php:84
-msgid "To"
+#: src/Module.php:125
+msgid "vehicle"
 msgstr ""
 
-#: src/Module.php:86
-msgid "Hotel or address"
+#: src/Module.php:129
+msgid "No vehicles yet. Add the cars you sell, e.g. Sedan (3 passengers), Van (7), Minibus (14), Bus (28)."
 msgstr ""
 
-#: src/Module.php:91
-msgid "Pick-up date"
+#: src/Module.php:131
+#: src/Module.php:190
+#: src/Module.php:215
+msgid "Vehicle"
 msgstr ""
 
-#: src/Module.php:97
+#: src/Module.php:132
+#: src/Module.php:321
 msgid "Passengers"
 msgstr ""
 
-#: src/Module.php:117
-msgid "Pages used by Transfers. Layout and booking settings appear here as the module is built."
+#: src/Module.php:133
+msgid "Bags"
 msgstr ""
 
-#: src/Module.php:121
+#: src/Module.php:134
+#: src/Module.php:166
+msgid "Active"
+msgstr ""
+
+#: src/Module.php:139
+msgid "Name"
+msgstr ""
+
+#: src/Module.php:145
+msgid "Maximum passengers"
+msgstr ""
+
+#: src/Module.php:152
+msgid "Bags included"
+msgstr ""
+
+#: src/Module.php:155
+msgid "Bags above this pay the extra luggage fee (Transfer rules)."
+msgstr ""
+
+#: src/Module.php:159
+msgid "Order"
+msgstr ""
+
+#: src/Module.php:162
+msgid "Lower numbers show first."
+msgstr ""
+
+#: src/Module.php:182
+msgid "price"
+msgstr ""
+
+#: src/Module.php:186
+msgid "No prices yet. Set up zones under Location Tree and vehicles under Transfer vehicles, then add a price per route and vehicle. A price works both ways unless you add the return route separately."
+msgstr ""
+
+#: src/Module.php:188
+#: src/Module.php:201
+msgid "From zone"
+msgstr ""
+
+#: src/Module.php:189
+#: src/Module.php:208
+msgid "To zone"
+msgstr ""
+
+#: src/Module.php:191
+#: src/Module.php:222
+msgid "Price per vehicle"
+msgstr ""
+
+#: src/Module.php:196
+msgid "This route already has a price for this vehicle."
+msgstr ""
+
+#: src/Module.php:225
+msgid "One way, in your base currency (iTour → Company)."
+msgstr ""
+
+#: src/Module.php:294
+msgid "See prices"
+msgstr ""
+
+#: src/Module.php:299
+msgid "From"
+msgstr ""
+
+#: src/Module.php:301
+msgid "Airport, hotel or city"
+msgstr ""
+
+#: src/Module.php:307
+msgid "To"
+msgstr ""
+
+#: src/Module.php:309
+msgid "Hotel or address"
+msgstr ""
+
+#: src/Module.php:315
+msgid "Pick-up date"
+msgstr ""
+
+#: src/Module.php:341
+msgid "Pages used by Transfers. Prices, vehicles and booking rules are under the iTour menu."
+msgstr ""
+
+#: src/Module.php:345
 msgid "Transfers page"
 msgstr ""
 
-#: src/Module.php:124
+#: src/Module.php:348
 msgid "The page that explains and books transfers."
 msgstr ""
 
-#: src/Module.php:127
+#: src/Module.php:351
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:130
-msgid "Where the booking widget sends transfer searches (vehicles and prices). Leave empty to use the transfers page."
+#: src/Module.php:354
+msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
+msgstr ""
+
+#: src/Settings.php:33
+msgid "Book at least (hours before pick-up)"
+msgstr ""
+
+#: src/Settings.php:39
+msgid "Flight number"
+msgstr ""
+
+#: src/Settings.php:41
+msgid "Required for airport pick-ups"
+msgstr ""
+
+#: src/Settings.php:46
+msgid "Free waiting at airports (minutes)"
+msgstr ""
+
+#: src/Settings.php:49
+msgid "Shown to the customer."
+msgstr ""
+
+#: src/Settings.php:53
+msgid "Free waiting at hotels (minutes)"
+msgstr ""
+
+#: src/Settings.php:59
+msgid "Child seat, each"
+msgstr ""
+
+#: src/Settings.php:62
+msgid "0 = free. Per seat, per trip, in your base currency."
+msgstr ""
+
+#: src/Settings.php:66
+msgid "Extra bag, each"
+msgstr ""
+
+#: src/Settings.php:69
+msgid "For bags above the vehicle’s limit. Per bag, per trip."
+msgstr ""
+
+#: src/Settings.php:73
+msgid "Return trip discount (%)"
+msgstr ""
+
+#: src/Settings.php:76
+msgid "Taken off the return leg when both ways are booked together."
+msgstr ""
+
+#: src/Settings.php:111
+msgid "Can’t be negative."
+msgstr ""
+
+#: src/Settings.php:115
+msgid "At most 100%."
+msgstr ""
+
+#: src/Settings.php:131
+msgid "Saved."
+msgstr ""
+
+#: src/Settings.php:134
+msgid "Please fix the highlighted fields."
+msgstr ""
+
+#: src/Settings.php:143
+msgid "Save"
+msgstr ""
+
+#: blocks/transfer-results/editor.js:10
+msgid "Transfer results"
+msgstr ""
+
+#: blocks/transfer-results/editor.js:11
+msgid "Visitors see the vehicles and prices for their search here."
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block title"
+msgid "Transfer results"
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block description"
+msgid "Vehicles and prices for the transfer searched in the booking widget. Put it on the transfer search results page."
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block keyword"
+msgid "transfer"
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block keyword"
+msgid "airport"
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block keyword"
+msgid "vehicle"
+msgstr ""
+
+#: blocks/transfer-results/block.json
+msgctxt "block keyword"
+msgid "prices"
 msgstr ""

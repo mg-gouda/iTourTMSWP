@@ -62,6 +62,50 @@ final class Locations {
 	}
 
 	/**
+	 * Zones only, labelled "Destination › Zone" (for price tables).
+	 *
+	 * @return array<string,string>
+	 */
+	public static function zone_options(): array {
+		global $wpdb;
+		$zones = array_flip( (array) $wpdb->get_col( $wpdb->prepare( "SELECT id FROM %i WHERE type = 'zone'", $wpdb->prefix . 'itour_locations' ) ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		return array_intersect_key( self::parent_options(), $zones );
+	}
+
+	/**
+	 * Names of active zones and places, for search suggestions.
+	 *
+	 * @return string[]
+	 */
+	public static function names(): array {
+		global $wpdb;
+		return array_values( array_unique( (array) $wpdb->get_col( $wpdb->prepare( "SELECT name FROM %i WHERE active = 1 AND type <> 'destination' ORDER BY name", $wpdb->prefix . 'itour_locations' ) ) ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	}
+
+	/**
+	 * Active location by exact name (case-insensitive), or null.
+	 *
+	 * @param string $name Name as typed.
+	 */
+	public static function find( string $name ): ?object {
+		global $wpdb;
+		$row = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %i WHERE active = 1 AND name = %s ORDER BY id LIMIT 1', $wpdb->prefix . 'itour_locations', trim( $name ) ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		return $row ? $row : null;
+	}
+
+	/**
+	 * The zone a location belongs to: itself for a zone, its parent for a place, 0 otherwise.
+	 *
+	 * @param object $loc Location row.
+	 */
+	public static function zone_of( object $loc ): int {
+		if ( 'zone' === $loc->type ) {
+			return (int) $loc->id;
+		}
+		return 'destination' === $loc->type ? 0 : (int) $loc->parent_id;
+	}
+
+	/**
 	 * Add the "Location Tree" menu.
 	 */
 	public function menu(): void {

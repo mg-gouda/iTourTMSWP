@@ -37,20 +37,20 @@ msgstr ""
 msgid "Booking widget: activate iTour Tour Packages, Excursions or Transfers to add their searches here."
 msgstr "أداة الحجز: فعّل إضافة الباقات السياحية أو الرحلات اليومية أو التنقلات لتظهر خانات البحث الخاصة بها هنا."
 
-#: blocks/booking-widget/render.php:59
+#: blocks/booking-widget/render.php:67
 #: blocks/booking-widget/editor.js:62
 msgid "Where to next?"
 msgstr "إلى أين وجهتك القادمة؟"
 
-#: blocks/booking-widget/render.php:63
+#: blocks/booking-widget/render.php:71
 msgid "What are you looking for?"
 msgstr "ما الذي تبحث عنه؟"
 
-#: blocks/booking-widget/render.php:75
+#: blocks/booking-widget/render.php:83
 msgid "Looking for"
 msgstr "أبحث عن"
 
-#: blocks/booking-widget/render.php:92
+#: blocks/booking-widget/render.php:100
 #: src/Admin/Crud.php:256
 #: src/Admin/Crud.php:257
 msgid "Search"
@@ -215,14 +215,14 @@ msgid "Website"
 msgstr "الموقع الإلكتروني"
 
 #: src/Company.php:67
-#: src/Locations.php:146
+#: src/Locations.php:190
 msgid "Address"
 msgstr "العنوان"
 
 #: src/Company.php:72
 #: src/CoreModule.php:208
 #: src/CoreModule.php:263
-#: src/Locations.php:139
+#: src/Locations.php:183
 msgid "Country"
 msgstr "الدولة"
 
@@ -280,8 +280,8 @@ msgstr "الفرع"
 #: src/CoreModule.php:160
 #: src/CoreModule.php:173
 #: src/CoreModule.php:322
-#: src/Locations.php:91
-#: src/Locations.php:132
+#: src/Locations.php:135
+#: src/Locations.php:176
 msgid "Code"
 msgstr "الرمز"
 
@@ -295,8 +295,8 @@ msgstr "المقر الرئيسي"
 #: src/CoreModule.php:303
 #: src/CoreModule.php:326
 #: src/CoreModule.php:382
-#: src/Locations.php:92
-#: src/Locations.php:162
+#: src/Locations.php:136
+#: src/Locations.php:206
 msgid "Active"
 msgstr "نشط"
 
@@ -305,8 +305,8 @@ msgstr "نشط"
 #: src/CoreModule.php:213
 #: src/CoreModule.php:323
 #: src/CoreModule.php:356
-#: src/Locations.php:89
-#: src/Locations.php:119
+#: src/Locations.php:133
+#: src/Locations.php:163
 msgid "Name"
 msgstr "الاسم"
 
@@ -333,8 +333,8 @@ msgstr "لا يوجد شركاء بعد. الشركاء هم عملاؤك ومو
 
 #: src/CoreModule.php:205
 #: src/CoreModule.php:219
-#: src/Locations.php:90
-#: src/Locations.php:112
+#: src/Locations.php:134
+#: src/Locations.php:156
 msgid "Type"
 msgstr "النوع"
 
@@ -579,54 +579,54 @@ msgstr "ميناء"
 msgid "Meeting point"
 msgstr "نقطة التقاء"
 
-#: src/Locations.php:69
-#: src/Locations.php:83
+#: src/Locations.php:113
+#: src/Locations.php:127
 msgid "Location Tree"
 msgstr "شجرة المواقع"
 
-#: src/Locations.php:82
+#: src/Locations.php:126
 msgid "location"
 msgstr "موقع"
 
-#: src/Locations.php:87
+#: src/Locations.php:131
 msgid "No locations yet. Add a destination (e.g. Hurghada), then its zones (e.g. Sahl Hasheesh, El Gouna), then the hotels and airports in each zone. Excursions, transfers and tours all use this list."
 msgstr "لا توجد مواقع بعد. أضف وجهة (مثل الغردقة)، ثم مناطقها (مثل سهل حشيش والجونة)، ثم الفنادق والمطارات في كل منطقة. تستخدم الرحلات والتنقلات والجولات هذه القائمة."
 
-#: src/Locations.php:99
+#: src/Locations.php:143
 msgid "A destination is top level: leave “Inside” empty."
 msgstr "الوجهة في المستوى الأعلى: اترك «داخل» فارغًا."
 
 #. translators: 1: location type, e.g. "Hotel"; 2: parent type, e.g. "zone".
-#: src/Locations.php:104
+#: src/Locations.php:148
 #, php-format
 msgid "A %1$s must be inside a %2$s."
 msgstr "يجب أن يكون %1$s داخل %2$s."
 
-#: src/Locations.php:125
+#: src/Locations.php:169
 msgid "Inside"
 msgstr "داخل"
 
-#: src/Locations.php:128
+#: src/Locations.php:172
 msgid "Zones go inside a destination; hotels, airports, ports and meeting points go inside a zone."
 msgstr "المناطق داخل وجهة؛ والفنادق والمطارات والموانئ ونقاط الالتقاء داخل منطقة."
 
-#: src/Locations.php:135
+#: src/Locations.php:179
 msgid "Optional short code, e.g. the airport code HRG."
 msgstr "رمز قصير اختياري، مثل رمز المطار HRG."
 
-#: src/Locations.php:142
+#: src/Locations.php:186
 msgid "For destinations."
 msgstr "للوجهات."
 
-#: src/Locations.php:151
+#: src/Locations.php:195
 msgid "Latitude"
 msgstr "خط العرض"
 
-#: src/Locations.php:153
+#: src/Locations.php:197
 msgid "Optional. Used for maps; copy from Google Maps (right-click the place)."
 msgstr "اختياري. يُستخدم للخرائط؛ انسخه من خرائط Google (انقر بزر الفأرة الأيمن على المكان)."
 
-#: src/Locations.php:157
+#: src/Locations.php:201
 msgid "Longitude"
 msgstr "خط الطول"
 

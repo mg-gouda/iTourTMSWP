@@ -47,6 +47,8 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Add-ons:** each excursion lists its own paid extras (lunch, tickets, guide language, photos), priced per person or per booking.
 
 ## Transfers (`itour-transfers`)
+Status: **stage 1 built (0.2.0)**. Vehicles, the zone-to-zone price table (a price works both ways unless the reverse route has its own; the return leg uses the reverse price less the return discount), Transfer rules screen, From/To suggestions from the Location Tree, and the "Transfer results" block. **Stage 2 is next:** booking form (time, flight number, names, child seats, bags, return), the cut-off check and WooCommerce checkout.
+
 - **Pricing:**
   - Zone to zone, per vehicle.
   - Pick-up and drop-off are chosen from the hotel and airport list, or with Google Places; the place maps to its zone.

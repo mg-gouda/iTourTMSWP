@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T10:42:37+00:00\n"
+"POT-Creation-Date: 2026-11-09T10:54:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -43,20 +43,20 @@ msgstr ""
 msgid "Booking widget: activate iTour Tour Packages, Excursions or Transfers to add their searches here."
 msgstr ""
 
-#: blocks/booking-widget/render.php:59
+#: blocks/booking-widget/render.php:67
 #: blocks/booking-widget/editor.js:62
 msgid "Where to next?"
 msgstr ""
 
-#: blocks/booking-widget/render.php:63
+#: blocks/booking-widget/render.php:71
 msgid "What are you looking for?"
 msgstr ""
 
-#: blocks/booking-widget/render.php:75
+#: blocks/booking-widget/render.php:83
 msgid "Looking for"
 msgstr ""
 
-#: blocks/booking-widget/render.php:92
+#: blocks/booking-widget/render.php:100
 #: src/Admin/Crud.php:256
 #: src/Admin/Crud.php:257
 msgid "Search"
@@ -221,14 +221,14 @@ msgid "Website"
 msgstr ""
 
 #: src/Company.php:67
-#: src/Locations.php:146
+#: src/Locations.php:190
 msgid "Address"
 msgstr ""
 
 #: src/Company.php:72
 #: src/CoreModule.php:208
 #: src/CoreModule.php:263
-#: src/Locations.php:139
+#: src/Locations.php:183
 msgid "Country"
 msgstr ""
 
@@ -286,8 +286,8 @@ msgstr ""
 #: src/CoreModule.php:160
 #: src/CoreModule.php:173
 #: src/CoreModule.php:322
-#: src/Locations.php:91
-#: src/Locations.php:132
+#: src/Locations.php:135
+#: src/Locations.php:176
 msgid "Code"
 msgstr ""
 
@@ -301,8 +301,8 @@ msgstr ""
 #: src/CoreModule.php:303
 #: src/CoreModule.php:326
 #: src/CoreModule.php:382
-#: src/Locations.php:92
-#: src/Locations.php:162
+#: src/Locations.php:136
+#: src/Locations.php:206
 msgid "Active"
 msgstr ""
 
@@ -311,8 +311,8 @@ msgstr ""
 #: src/CoreModule.php:213
 #: src/CoreModule.php:323
 #: src/CoreModule.php:356
-#: src/Locations.php:89
-#: src/Locations.php:119
+#: src/Locations.php:133
+#: src/Locations.php:163
 msgid "Name"
 msgstr ""
 
@@ -339,8 +339,8 @@ msgstr ""
 
 #: src/CoreModule.php:205
 #: src/CoreModule.php:219
-#: src/Locations.php:90
-#: src/Locations.php:112
+#: src/Locations.php:134
+#: src/Locations.php:156
 msgid "Type"
 msgstr ""
 
@@ -585,54 +585,54 @@ msgstr ""
 msgid "Meeting point"
 msgstr ""
 
-#: src/Locations.php:69
-#: src/Locations.php:83
+#: src/Locations.php:113
+#: src/Locations.php:127
 msgid "Location Tree"
 msgstr ""
 
-#: src/Locations.php:82
+#: src/Locations.php:126
 msgid "location"
 msgstr ""
 
-#: src/Locations.php:87
+#: src/Locations.php:131
 msgid "No locations yet. Add a destination (e.g. Hurghada), then its zones (e.g. Sahl Hasheesh, El Gouna), then the hotels and airports in each zone. Excursions, transfers and tours all use this list."
 msgstr ""
 
-#: src/Locations.php:99
+#: src/Locations.php:143
 msgid "A destination is top level: leave “Inside” empty."
 msgstr ""
 
 #. translators: 1: location type, e.g. "Hotel"; 2: parent type, e.g. "zone".
-#: src/Locations.php:104
+#: src/Locations.php:148
 #, php-format
 msgid "A %1$s must be inside a %2$s."
 msgstr ""
 
-#: src/Locations.php:125
+#: src/Locations.php:169
 msgid "Inside"
 msgstr ""
 
-#: src/Locations.php:128
+#: src/Locations.php:172
 msgid "Zones go inside a destination; hotels, airports, ports and meeting points go inside a zone."
 msgstr ""
 
-#: src/Locations.php:135
+#: src/Locations.php:179
 msgid "Optional short code, e.g. the airport code HRG."
 msgstr ""
 
-#: src/Locations.php:142
+#: src/Locations.php:186
 msgid "For destinations."
 msgstr ""
 
-#: src/Locations.php:151
+#: src/Locations.php:195
 msgid "Latitude"
 msgstr ""
 
-#: src/Locations.php:153
+#: src/Locations.php:197
 msgid "Optional. Used for maps; copy from Google Maps (right-click the place)."
 msgstr ""
 
-#: src/Locations.php:157
+#: src/Locations.php:201
 msgid "Longitude"
 msgstr ""
 

@@ -1,0 +1,21 @@
+/* iTour Transfer results. Uses the theme's tokens when available. */
+.itour-tr { --itour-tr-line: var(--wp--preset--color--line, #d5dae3); --itour-tr-radius: var(--wp-itourtms-radius, 10px); }
+.itour-tr--placeholder { padding: 20px; border: 1px dashed var(--itour-tr-line); border-radius: var(--itour-tr-radius); }
+.itour-tr__title { margin-block: 32px 16px; font-size: 1.375rem; }
+.itour-tr__list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.itour-tr__item {
+	display: grid; grid-template-columns: 1fr auto auto; gap: 8px 32px; align-items: center;
+	padding: 16px 20px; border: 1px solid var(--itour-tr-line); border-radius: var(--itour-tr-radius); background: var(--wp--preset--color--base, #fff);
+}
+.itour-tr__vehicle, .itour-tr__price { display: flex; flex-direction: column; gap: 2px; }
+.itour-tr__vehicle strong { font-size: 1.0625rem; }
+.itour-tr__vehicle span, .itour-tr__price span, .itour-tr__small { font-size: 0.875rem; color: var(--wp--preset--color--muted, #5b6472); }
+.itour-tr__price { text-align: end; }
+.itour-tr__price strong { font-size: 1.125rem; font-variant-numeric: tabular-nums; }
+.itour-tr__note { margin-block: 24px 0; padding: 12px 16px; border: 1px solid var(--itour-tr-line); border-radius: var(--itour-tr-radius); }
+.itour-tr__small { margin-block: 12px 0; }
+@media (max-width: 560px) {
+	.itour-tr__item { grid-template-columns: 1fr 1fr; }
+	.itour-tr__vehicle { grid-column: 1 / -1; }
+	.itour-tr__price { text-align: start; }
+}

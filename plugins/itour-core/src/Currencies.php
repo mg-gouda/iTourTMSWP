@@ -25,6 +25,20 @@ final class Currencies {
 	}
 
 	/**
+	 * A price for display, e.g. "€45" or "45.00 EGP" (base currency unless another is given).
+	 *
+	 * @param float       $amount Amount.
+	 * @param string|null $code   ISO code.
+	 */
+	public function format( float $amount, ?string $code = null ): string {
+		global $wpdb;
+		$code = $code ?? $this->base();
+		$cur  = $wpdb->get_row( $wpdb->prepare( 'SELECT symbol, decimals FROM %i WHERE code = %s', $wpdb->prefix . 'itour_currencies', $code ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$num  = number_format_i18n( $amount, $cur ? (int) $cur->decimals : 2 );
+		return $cur && '' !== $cur->symbol && $cur->symbol !== $code ? $cur->symbol . $num : $num . ' ' . $code;
+	}
+
+	/**
 	 * Active currencies: code => "CODE — Name".
 	 *
 	 * @return array<string,string>
