@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Shield
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Speed and security in one plugin: page cache and front-end tweaks, hidden login and masked WordPress paths, firewall, login protection with two-factor codes, malware and file scan, hardening and an activity log. Works on any WordPress site.
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Author:            Mohamed Gouda

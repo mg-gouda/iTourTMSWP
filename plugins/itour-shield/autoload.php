@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'ITOUR_SHIELD_DIR' ) ) {
-	define( 'ITOUR_SHIELD_VERSION', '0.1.1' );
+	define( 'ITOUR_SHIELD_VERSION', '0.1.2' );
 	define( 'ITOUR_SHIELD_DIR', __DIR__ );
 	define( 'ITOUR_SHIELD_FILE', __DIR__ . '/itour-shield.php' );
 	spl_autoload_register(

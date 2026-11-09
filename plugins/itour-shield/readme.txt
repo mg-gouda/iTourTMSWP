@@ -4,7 +4,7 @@ Tags: security, cache, firewall, two-factor, performance
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ Add `define( 'ITOUR_SHIELD_TRUSTED_PROXY', true );` to wp-config.php so Shield r
 Use only one page cache. If another plugin owns wp-content/advanced-cache.php, Shield leaves it alone and says so on the Speed tab.
 
 == Changelog ==
+
+= 0.1.2 =
+* Arabic translation.
+* Fix: admin screen scrolled sideways in right-to-left languages.
 
 = 0.1.1 =
 * Nginx rules on the Hardening tab; folder renaming on Nginx.

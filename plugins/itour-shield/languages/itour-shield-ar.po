@@ -1,0 +1,1231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-shield\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-shield\n"
+
+#. Plugin Name of the plugin
+#: itour-shield.php
+msgid "iTour Shield"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-shield.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-shield.php
+msgid "Speed and security in one plugin: page cache and front-end tweaks, hidden login and masked WordPress paths, firewall, login protection with two-factor codes, malware and file scan, hardening and an activity log. Works on any WordPress site."
+msgstr "السرعة والحماية في إضافة واحدة: تخزين الصفحات مؤقتًا وتحسينات الواجهة، وإخفاء صفحة الدخول ومسارات ووردبريس، وجدار حماية، وحماية الدخول برموز التحقق بخطوتين، وفحص الملفات والبرمجيات الخبيثة، وتقوية الإعدادات، وسجل النشاط. تعمل على أي موقع ووردبريس."
+
+#. Author of the plugin
+#: itour-shield.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-shield.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Admin.php:29
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/Admin.php:47
+#: src/Admin.php:48
+#: src/Admin.php:341
+#: src/Admin.php:348
+msgid "Shield"
+msgstr "الحماية"
+
+#. translators: 1: files checked so far, 2: total files.
+#: src/Admin.php:78
+#, php-format
+msgid "Checking files… %1$s of %2$s"
+msgstr "جارٍ فحص الملفات… %1$s من %2$s"
+
+#: src/Admin.php:79
+msgid "The scan stopped with an error. Reload the page and try again."
+msgstr "توقف الفحص بسبب خطأ. أعد تحميل الصفحة وحاول مرة أخرى."
+
+#: src/Admin.php:80
+msgid "Permanently delete these items? This cannot be undone."
+msgstr "حذف هذه العناصر نهائيًا؟ لا يمكن التراجع عن ذلك."
+
+#: src/Admin.php:81
+msgid "Copied"
+msgstr "تم النسخ"
+
+#: src/Admin.php:98
+msgid "Page cache"
+msgstr "التخزين المؤقت للصفحات"
+
+#: src/Admin.php:99
+msgid "Cache pages for visitors"
+msgstr "تخزين الصفحات مؤقتًا للزوار"
+
+#: src/Admin.php:99
+msgid "Saves each page as a file the first time a guest opens it, then serves that file without running WordPress. Signed-in users always get a fresh page."
+msgstr "يحفظ كل صفحة كملف عند أول زيارة لها، ثم يعرض هذا الملف دون تشغيل ووردبريس. المستخدمون المسجلون يحصلون دائمًا على صفحة محدّثة."
+
+#: src/Admin.php:103
+msgid "Keep pages for"
+msgstr "الاحتفاظ بالصفحات لمدة"
+
+#: src/Admin.php:104
+msgid "The cache also clears itself whenever you publish, edit a menu or change a setting."
+msgstr "يُمسح التخزين المؤقت تلقائيًا أيضًا عند النشر أو تعديل قائمة أو تغيير إعداد."
+
+#: src/Admin.php:106
+msgid "hours"
+msgstr "ساعة"
+
+#: src/Admin.php:112
+msgid "Refill after clearing"
+msgstr "إعادة التعبئة بعد المسح"
+
+#: src/Admin.php:112
+msgid "Visits the home page and your newest pages a minute after the cache clears, so real visitors get the fast copy."
+msgstr "يزور الصفحة الرئيسية وأحدث صفحاتك بعد دقيقة من مسح التخزين المؤقت، ليحصل الزوار على النسخة السريعة."
+
+#: src/Admin.php:113
+msgid "Never cache"
+msgstr "عدم التخزين المؤقت أبدًا"
+
+#: src/Admin.php:113
+msgid "One address part per line. Any page whose address contains it is skipped. Booking, cart and account pages belong here."
+msgstr "جزء من العنوان في كل سطر. تُستثنى أي صفحة يحتوي عنوانها عليه. مكان صفحات الحجز والسلة والحساب هنا."
+
+#: src/Admin.php:115
+msgid "Lighter pages"
+msgstr "صفحات أخف"
+
+#: src/Admin.php:116
+msgid "Defer scripts"
+msgstr "تأجيل السكربتات"
+
+#: src/Admin.php:116
+msgid "Scripts load after the page is drawn. WordPress keeps a script blocking when other code needs it early. Test your booking forms after turning this on."
+msgstr "تُحمّل السكربتات بعد عرض الصفحة. يُبقي ووردبريس السكربت في مكانه عندما تحتاجه شيفرة أخرى مبكرًا. اختبر نماذج الحجز بعد تفعيل هذا الخيار."
+
+#: src/Admin.php:117
+msgid "Remove the emoji script"
+msgstr "إزالة سكربت الرموز التعبيرية"
+
+#: src/Admin.php:117
+msgid "Browsers draw emoji themselves; the extra script is not needed."
+msgstr "المتصفحات تعرض الرموز التعبيرية بنفسها، فلا حاجة للسكربت الإضافي."
+
+#: src/Admin.php:118
+msgid "Remove the embed script"
+msgstr "إزالة سكربت التضمين"
+
+#: src/Admin.php:118
+msgid "Stops loading the script that lets other sites embed your posts."
+msgstr "يوقف تحميل السكربت الذي يتيح للمواقع الأخرى تضمين مقالاتك."
+
+#: src/Admin.php:119
+msgid "Connect early to Google Fonts"
+msgstr "الاتصال المبكر بخطوط Google"
+
+#: src/Admin.php:119
+msgid "Only added when the page uses a Google Font."
+msgstr "يُضاف فقط عندما تستخدم الصفحة خطًا من Google."
+
+#: src/Admin.php:123
+msgid "Editor heartbeat every"
+msgstr "نبض المحرر كل"
+
+#: src/Admin.php:124
+msgid "How often the editor checks in with the server. 60 halves the load of the default; 0 leaves the WordPress default."
+msgstr "عدد مرات تواصل المحرر مع الخادم. القيمة 60 تخفض الحمل إلى النصف، و0 تُبقي إعداد ووردبريس الافتراضي."
+
+#: src/Admin.php:126
+msgid "seconds"
+msgstr "ثانية"
+
+#: src/Admin.php:134
+#: src/Admin.php:427
+msgid "Login page"
+msgstr "صفحة الدخول"
+
+#: src/Admin.php:138
+msgid "Login address"
+msgstr "عنوان صفحة الدخول"
+
+#: src/Admin.php:139
+msgid "Leave empty to keep wp-login.php. When set, wp-login.php and wp-admin show “not found” to anyone not signed in. Bookmark the new address: the old one stops working at once."
+msgstr "اتركه فارغًا للإبقاء على wp-login.php. عند تعيينه، تظهر wp-login.php وwp-admin بعبارة «غير موجود» لغير المسجلين. احفظ العنوان الجديد في المفضلة، فالعنوان القديم يتوقف فورًا."
+
+#: src/Admin.php:146
+#: src/Admin.php:417
+msgid "Public folder names"
+msgstr "أسماء المجلدات العامة"
+
+#: src/Admin.php:147
+msgid "Rename WordPress folders in public links"
+msgstr "تغيير أسماء مجلدات ووردبريس في الروابط العامة"
+
+#: src/Admin.php:147
+msgid "Scanners spot WordPress sites by the wp-content and wp-includes folders in the page source. Files stay where they are; only the public links change, so turning this off undoes it completely."
+msgstr "تتعرف أدوات الفحص على مواقع ووردبريس من مجلدي wp-content وwp-includes في مصدر الصفحة. تبقى الملفات في مكانها وتتغير الروابط العامة فقط، لذا يُلغى كل شيء بإيقاف هذا الخيار."
+
+#: src/Admin.php:201
+msgid "REST API address"
+msgstr "عنوان REST API"
+
+#: src/Admin.php:202
+msgid "Leave empty to keep wp-json. Plugins that hard-code /wp-json/ stop working when this changes."
+msgstr "اتركه فارغًا للإبقاء على wp-json. الإضافات التي تستخدم ‎/wp-json/‎ مباشرة تتوقف عن العمل عند تغييره."
+
+#: src/Admin.php:211
+#: src/Admin.php:323
+msgid "Firewall"
+msgstr "جدار الحماية"
+
+#: src/Admin.php:212
+msgid "Check every request"
+msgstr "فحص كل طلب"
+
+#: src/Admin.php:212
+msgid "Blocks SQL injection, path traversal, code injection and script injection in addresses, and the same in forms sent by visitors who are not signed in. Runs before other plugins load."
+msgstr "يحظر حقن SQL وتجاوز المسارات وحقن الشيفرة والسكربتات في العناوين، وكذلك في النماذج التي يرسلها زوار غير مسجلين. يعمل قبل تحميل الإضافات الأخرى."
+
+#: src/Admin.php:213
+msgid "Block scanner tools"
+msgstr "حظر أدوات الفحص"
+
+#: src/Admin.php:213
+msgid "Turns away sqlmap, WPScan, Nikto, Nuclei and similar tools by their signature."
+msgstr "يرفض sqlmap وWPScan وNikto وNuclei والأدوات المشابهة من خلال بصمتها."
+
+#: src/Admin.php:217
+msgid "Requests per visitor"
+msgstr "الطلبات لكل زائر"
+
+#: src/Admin.php:218
+msgid "Per minute, per IP, for visitors who are not signed in. Cached pages don’t count. 0 turns the limit off."
+msgstr "في الدقيقة، لكل عنوان IP، للزوار غير المسجلين. الصفحات المخزنة مؤقتًا لا تُحتسب. القيمة 0 توقف الحد."
+
+#: src/Admin.php:220
+msgid "a minute"
+msgstr "في الدقيقة"
+
+#: src/Admin.php:227
+msgid "IP addresses"
+msgstr "عناوين IP"
+
+#: src/Admin.php:228
+msgid "Always block"
+msgstr "الحظر دائمًا"
+
+#: src/Admin.php:228
+msgid "One per line. Single addresses or ranges such as 203.0.113.0/24."
+msgstr "عنوان في كل سطر. عناوين مفردة أو نطاقات مثل 203.0.113.0/24."
+
+#: src/Admin.php:232
+msgid "Never block"
+msgstr "عدم الحظر أبدًا"
+
+#: src/Admin.php:233
+msgid "Your office and your own connection. These skip the firewall and login lockouts."
+msgstr "مكتبك واتصالك الخاص. هذه العناوين تتجاوز جدار الحماية وحظر الدخول."
+
+#: src/Admin.php:242
+#: src/Admin.php:649
+msgid "Failed logins"
+msgstr "محاولات الدخول الفاشلة"
+
+#: src/Admin.php:243
+msgid "Lock out after failed attempts"
+msgstr "الحظر بعد المحاولات الفاشلة"
+
+#: src/Admin.php:243
+msgid "Stops password guessing. Works for the login page, XML-RPC and the REST API."
+msgstr "يوقف تخمين كلمات المرور. يعمل على صفحة الدخول وXML-RPC وREST API."
+
+#: src/Admin.php:247
+msgid "Attempts allowed"
+msgstr "المحاولات المسموح بها"
+
+#: src/Admin.php:250
+msgid "per hour"
+msgstr "في الساعة"
+
+#: src/Admin.php:259
+msgid "Lockout lasts"
+msgstr "مدة الحظر"
+
+#: src/Admin.php:262
+msgid "minutes"
+msgstr "دقيقة"
+
+#: src/Admin.php:268
+msgid "Don’t reveal which usernames exist"
+msgstr "عدم كشف أسماء المستخدمين الموجودة"
+
+#: src/Admin.php:268
+msgid "Login and lost-password screens give the same answer for real and made-up accounts."
+msgstr "تعطي شاشتا الدخول واستعادة كلمة المرور الرد نفسه للحسابات الحقيقية والوهمية."
+
+#: src/Admin.php:270
+#: src/Admin.php:586
+#: src/TwoFactor.php:281
+msgid "Two-factor login"
+msgstr "التحقق بخطوتين"
+
+#: src/Admin.php:271
+msgid "Allow two-factor login"
+msgstr "السماح بالتحقق بخطوتين"
+
+#: src/Admin.php:271
+msgid "Each user turns it on in their profile with an authenticator app and gets ten backup codes."
+msgstr "يفعّله كل مستخدم من ملفه الشخصي بتطبيق مصادقة ويحصل على عشرة رموز احتياطية."
+
+#: src/Admin.php:272
+msgid "Require it for administrators"
+msgstr "إلزامه للمديرين"
+
+#: src/Admin.php:272
+msgid "Administrators without it are sent to their profile to set it up before they can use the dashboard."
+msgstr "يُحوَّل المديرون الذين لم يفعّلوه إلى ملفهم الشخصي لإعداده قبل استخدام لوحة التحكم."
+
+#: src/Admin.php:274
+msgid "Email alerts"
+msgstr "تنبيهات البريد"
+
+#: src/Admin.php:275
+msgid "Send alerts to"
+msgstr "إرسال التنبيهات إلى"
+
+#: src/Admin.php:275
+msgid "Empty uses the site’s admin email."
+msgstr "إذا تُرك فارغًا يُستخدم بريد مدير الموقع."
+
+#: src/Admin.php:276
+msgid "When an IP is locked out"
+msgstr "عند حظر عنوان IP"
+
+#: src/Admin.php:277
+msgid "When an administrator signs in from a new IP"
+msgstr "عند دخول مدير من عنوان IP جديد"
+
+#: src/Admin.php:278
+msgid "When the daily scan finds something new"
+msgstr "عندما يجد الفحص اليومي شيئًا جديدًا"
+
+#: src/Admin.php:282
+msgid "Keep the activity log for"
+msgstr "الاحتفاظ بسجل النشاط لمدة"
+
+#: src/Admin.php:285
+msgid "days"
+msgstr "يوم"
+
+#: src/Admin.php:293
+msgid "WordPress"
+msgstr "ووردبريس"
+
+#: src/Admin.php:294
+msgid "Turn off XML-RPC"
+msgstr "إيقاف XML-RPC"
+
+#: src/Admin.php:294
+msgid "An old remote-publishing interface that allows hundreds of password guesses in one request. The mobile app and Jetpack need it."
+msgstr "واجهة نشر عن بُعد قديمة تسمح بمئات محاولات تخمين كلمة المرور في طلب واحد. يحتاجها تطبيق الجوال وJetpack."
+
+#: src/Admin.php:295
+msgid "Hide usernames"
+msgstr "إخفاء أسماء المستخدمين"
+
+#: src/Admin.php:295
+msgid "Blocks ?author=1 lookups, the public REST users list and the users sitemap."
+msgstr "يحظر الاستعلام ‎?author=1‎ وقائمة المستخدمين العامة في REST وخريطة موقع المستخدمين."
+
+#: src/Admin.php:296
+msgid "Turn off the theme and plugin file editor"
+msgstr "إيقاف محرر ملفات القوالب والإضافات"
+
+#: src/Admin.php:296
+msgid "A stolen admin login can no longer write PHP from the dashboard."
+msgstr "لن يتمكن من سرق بيانات دخول مدير من كتابة شيفرة PHP من لوحة التحكم."
+
+#: src/Admin.php:297
+msgid "Hide the WordPress version"
+msgstr "إخفاء إصدار ووردبريس"
+
+#: src/Admin.php:297
+msgid "Removes it from the page source and from file links."
+msgstr "يزيله من مصدر الصفحة ومن روابط الملفات."
+
+#: src/Admin.php:298
+msgid "Turn off application passwords"
+msgstr "إيقاف كلمات مرور التطبيقات"
+
+#: src/Admin.php:298
+msgid "Leave on only if no app or service signs in to this site."
+msgstr "فعّله فقط إذا لم يكن هناك تطبيق أو خدمة تسجل الدخول إلى هذا الموقع."
+
+#: src/Admin.php:300
+msgid "Browser"
+msgstr "المتصفح"
+
+#: src/Admin.php:301
+msgid "Send security headers"
+msgstr "إرسال ترويسات الأمان"
+
+#: src/Admin.php:301
+msgid "Stops other sites framing yours, MIME sniffing and full-address referrers; denies camera, microphone and location access."
+msgstr "يمنع المواقع الأخرى من تضمين موقعك في إطار، ويمنع تخمين نوع المحتوى وإرسال العنوان الكامل للمُحيل، ويرفض الوصول إلى الكاميرا والميكروفون والموقع الجغرافي."
+
+#: src/Admin.php:302
+msgid "Force HTTPS for a year (HSTS)"
+msgstr "فرض HTTPS لمدة سنة (HSTS)"
+
+#: src/Admin.php:302
+msgid "Browsers will refuse plain http:// for this domain and its subdomains for a year. Only turn on when every subdomain has a working certificate."
+msgstr "سترفض المتصفحات ‎http://‎ لهذا النطاق ونطاقاته الفرعية لمدة سنة. فعّله فقط إذا كان لكل نطاق فرعي شهادة تعمل."
+
+#: src/Admin.php:304
+#: src/Admin.php:424
+msgid "Server"
+msgstr "الخادم"
+
+#: src/Admin.php:305
+msgid "Block sensitive files"
+msgstr "حظر الملفات الحساسة"
+
+#: src/Admin.php:305
+msgid "wp-config.php, readme.html, license.txt, debug.log, backups (.sql, .bak), .git and .env answer “forbidden”, and PHP inside wp-includes can’t be called directly."
+msgstr "ترد ملفات wp-config.php وreadme.html وlicense.txt وdebug.log والنسخ الاحتياطية (.sql و.bak) و.git و.env بعبارة «ممنوع»، ولا يمكن استدعاء ملفات PHP داخل wp-includes مباشرة."
+
+#: src/Admin.php:306
+msgid "Stop PHP running in uploads"
+msgstr "منع تشغيل PHP في مجلد الرفع"
+
+#: src/Admin.php:306
+msgid "An uploaded script can’t run even if an attacker slips one in."
+msgstr "لا يمكن تشغيل سكربت مرفوع حتى لو تمكن مهاجم من رفعه."
+
+#: src/Admin.php:307
+msgid "Hide folder listings"
+msgstr "إخفاء قوائم المجلدات"
+
+#: src/Admin.php:307
+msgid "Folders without an index file answer “forbidden” instead of listing their files."
+msgstr "المجلدات التي لا تحتوي على ملف فهرس ترد بعبارة «ممنوع» بدلًا من عرض ملفاتها."
+
+#: src/Admin.php:320
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#: src/Admin.php:321
+msgid "Speed"
+msgstr "السرعة"
+
+#: src/Admin.php:322
+msgid "Login & paths"
+msgstr "الدخول والمسارات"
+
+#: src/Admin.php:324
+msgid "Login protection"
+msgstr "حماية الدخول"
+
+#: src/Admin.php:325
+msgid "Hardening"
+msgstr "التقوية"
+
+#: src/Admin.php:326
+#: src/Admin.php:611
+msgid "File scan"
+msgstr "فحص الملفات"
+
+#: src/Admin.php:327
+#: src/Admin.php:658
+msgid "Activity"
+msgstr "النشاط"
+
+#: src/Admin.php:351
+msgid "Save changes"
+msgstr "حفظ التغييرات"
+
+#: src/Admin.php:355
+msgid "Shield sections"
+msgstr "أقسام الحماية"
+
+#. translators: %d: checks.
+#: src/Admin.php:395
+#, php-format
+msgid "<strong>%d check</strong> needs attention"
+msgid_plural "<strong>%d checks</strong> need attention"
+msgstr[0] "<strong>لا فحوص</strong> تحتاج إلى انتباه"
+msgstr[1] "<strong>فحص واحد</strong> يحتاج إلى انتباه"
+msgstr[2] "<strong>فحصان</strong> يحتاجان إلى انتباه"
+msgstr[3] "<strong>%d فحوص</strong> تحتاج إلى انتباه"
+msgstr[4] "<strong>%d فحصًا</strong> تحتاج إلى انتباه"
+msgstr[5] "<strong>%d فحص</strong> تحتاج إلى انتباه"
+
+#: src/Admin.php:396
+msgid "All checks pass"
+msgstr "جميع الفحوص سليمة"
+
+#. translators: 1: blocked requests, 2: lockouts.
+#: src/Admin.php:398
+#, php-format
+msgid "%1$s blocked and %2$s locked out in the last 24 hours"
+msgstr "%1$s طلبًا محظورًا و%2$s حظر دخول خلال آخر 24 ساعة"
+
+#: src/Admin.php:400
+msgid "page cache off"
+msgstr "التخزين المؤقت متوقف"
+
+#. translators: %s: cached pages.
+#: src/Admin.php:402
+#, php-format
+msgid "%s page cached"
+msgid_plural "%s pages cached"
+msgstr[0] "لا صفحات مخزنة (%s)"
+msgstr[1] "صفحة واحدة مخزنة"
+msgstr[2] "صفحتان مخزنتان"
+msgstr[3] "%s صفحات مخزنة"
+msgstr[4] "%s صفحة مخزنة"
+msgstr[5] "%s صفحة مخزنة"
+
+#: src/Admin.php:419
+msgid "Folder renaming needs WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off."
+msgstr "يتطلب تغيير أسماء المجلدات تثبيت ووردبريس في جذر الموقع مع مجلد wp-content القياسي. هذا الموقع لا يطابق ذلك، لذا الخيار متوقف."
+
+#: src/Admin.php:421
+msgid "This server isn’t Apache, so Shield can’t add the folder rules itself. Turn the option on and save, copy the rules from Hardening → Server into your Nginx config, then add"
+msgstr "هذا الخادم ليس Apache، لذا لا تستطيع الحماية إضافة قواعد المجلدات بنفسها. فعّل الخيار واحفظ، وانسخ القواعد من التقوية ← الخادم إلى إعدادات Nginx، ثم أضف"
+
+#: src/Admin.php:421
+#: src/Admin.php:428
+msgid "to wp-config.php."
+msgstr "إلى wp-config.php."
+
+#: src/Admin.php:425
+msgid "This server isn’t Apache, so these switches don’t apply by themselves. Copy these rules into the site’s Nginx config (or send them to your host) and reload Nginx. They update when you change the settings."
+msgstr "هذا الخادم ليس Apache، لذا لا تُطبَّق هذه الخيارات تلقائيًا. انسخ هذه القواعد إلى إعدادات Nginx للموقع (أو أرسلها إلى مزوّد الاستضافة) وأعد تحميل Nginx. تتحدّث القواعد عند تغيير الإعدادات."
+
+#: src/Admin.php:425
+msgid "Copy rules"
+msgstr "نسخ القواعد"
+
+#: src/Admin.php:428
+msgid "Your login page is now"
+msgstr "صفحة الدخول الآن هي"
+
+#: src/Admin.php:428
+msgid "Locked out? Add"
+msgstr "لا تستطيع الدخول؟ أضف"
+
+#. translators: %s: IP address.
+#: src/Admin.php:461
+#, php-format
+msgid "Add my IP (%s)"
+msgstr "إضافة عنوان IP الخاص بي (%s)"
+
+#: src/Admin.php:498
+msgid "Fix"
+msgstr "إصلاح"
+
+#: src/Admin.php:499
+msgid "Should fix"
+msgstr "يُستحسن إصلاحه"
+
+#: src/Admin.php:500
+msgid "Optional"
+msgstr "اختياري"
+
+#: src/Admin.php:502
+msgid "Site checks"
+msgstr "فحوص الموقع"
+
+#: src/Admin.php:511
+msgid "OK"
+msgstr "سليم"
+
+#: src/Admin.php:513
+msgid "Set up"
+msgstr "إعداد"
+
+#: src/Admin.php:522
+msgid "Last file scan"
+msgstr "آخر فحص للملفات"
+
+#. translators: 1: time ago, 2: files, 3: problems.
+#: src/Admin.php:525
+#, php-format
+msgid "%1$s ago: %2$s files checked, %3$s need a look"
+msgstr "قبل %1$s: فُحص %2$s ملفًا، و%3$s تحتاج إلى مراجعة"
+
+#: src/Admin.php:527
+msgid "No scan yet. The first daily scan runs within 24 hours, or start one now."
+msgstr "لا يوجد فحص بعد. يُجرى أول فحص يومي خلال 24 ساعة، أو ابدأ فحصًا الآن."
+
+#: src/Admin.php:529
+msgid "Open file scan"
+msgstr "فتح فحص الملفات"
+
+#: src/Admin.php:540
+msgid "Cache state"
+msgstr "حالة التخزين المؤقت"
+
+#: src/Admin.php:542
+msgid "Cached pages"
+msgstr "الصفحات المخزنة"
+
+#: src/Admin.php:543
+msgid "Cache loader"
+msgstr "مُحمِّل التخزين المؤقت"
+
+#: src/Admin.php:544
+msgid "Not installed"
+msgstr "غير مثبت"
+
+#: src/Admin.php:545
+msgid "Installed"
+msgstr "مثبت"
+
+#: src/Admin.php:546
+msgid "Another caching plugin owns wp-content/advanced-cache.php. Turn that plugin off first."
+msgstr "إضافة تخزين مؤقت أخرى تستخدم wp-content/advanced-cache.php. أوقف تلك الإضافة أولًا."
+
+#. translators: %d: backup codes left.
+#: src/Admin.php:548
+#: src/Admin.php:589
+#: src/TwoFactor.php:288
+msgid "On"
+msgstr "مفعّل"
+
+#: src/Admin.php:548
+msgid "Off: wp-config.php is not writable. Add define( 'WP_CACHE', true ); to it."
+msgstr "متوقف: لا يمكن الكتابة في wp-config.php. أضف إليه define( 'WP_CACHE', true );"
+
+#: src/Admin.php:548
+#: src/Admin.php:589
+msgid "Off"
+msgstr "متوقف"
+
+#: src/Admin.php:553
+msgid "Clear cache now"
+msgstr "مسح التخزين المؤقت الآن"
+
+#: src/Admin.php:556
+msgid "Post revisions"
+msgstr "مراجعات المقالات"
+
+#: src/Admin.php:557
+msgid "Auto-drafts"
+msgstr "المسودات التلقائية"
+
+#: src/Admin.php:558
+msgid "Posts in the trash"
+msgstr "مقالات في سلة المهملات"
+
+#: src/Admin.php:559
+msgid "Spam and trashed comments"
+msgstr "التعليقات المزعجة والمحذوفة"
+
+#: src/Admin.php:560
+msgid "Expired temporary data"
+msgstr "البيانات المؤقتة المنتهية"
+
+#: src/Admin.php:562
+msgid "Database clean-up"
+msgstr "تنظيف قاعدة البيانات"
+
+#. translators: %s: items.
+#: src/Admin.php:569
+#, php-format
+msgid "Delete %s item"
+msgid_plural "Delete %s items"
+msgstr[0] "حذف %s عنصر"
+msgstr[1] "حذف عنصر واحد"
+msgstr[2] "حذف عنصرين"
+msgstr[3] "حذف %s عناصر"
+msgstr[4] "حذف %s عنصرًا"
+msgstr[5] "حذف %s عنصر"
+
+#. translators: %s: items.
+#: src/Admin.php:569
+msgid "Permanent. Take a backup first if you might need old revisions."
+msgstr "حذف نهائي. خذ نسخة احتياطية أولًا إذا كنت قد تحتاج إلى المراجعات القديمة."
+
+#: src/Admin.php:571
+msgid "Nothing to clean."
+msgstr "لا يوجد ما يحتاج إلى تنظيف."
+
+#: src/Admin.php:586
+msgid "Administrators"
+msgstr "المديرون"
+
+#: src/Admin.php:586
+#: src/Admin.php:667
+msgid "User"
+msgstr "المستخدم"
+
+#: src/Admin.php:591
+msgid "Set up yours"
+msgstr "أعدّه لحسابك"
+
+#: src/Admin.php:604
+msgid "WordPress core"
+msgstr "نواة ووردبريس"
+
+#: src/Admin.php:605
+msgid "Plugin"
+msgstr "إضافة"
+
+#: src/Admin.php:606
+msgid "Uploads"
+msgstr "ملفات مرفوعة"
+
+#: src/Admin.php:607
+msgid "Malware pattern"
+msgstr "نمط برمجية خبيثة"
+
+#: src/Admin.php:612
+msgid "Compare WordPress and plugins with the official copies and look for malware"
+msgstr "مقارنة ووردبريس والإضافات بالنسخ الرسمية والبحث عن البرمجيات الخبيثة"
+
+#. translators: 1: time ago, 2: files.
+#: src/Admin.php:615
+#, php-format
+msgid "Last run %1$s ago on %2$s files. Runs by itself once a day."
+msgstr "آخر تشغيل قبل %1$s على %2$s ملفًا. يعمل تلقائيًا مرة يوميًا."
+
+#: src/Admin.php:617
+msgid "Not run yet. Takes a minute or two on most sites."
+msgstr "لم يُشغَّل بعد. يستغرق دقيقة أو دقيقتين في معظم المواقع."
+
+#: src/Admin.php:619
+msgid "Scan now"
+msgstr "افحص الآن"
+
+#: src/Admin.php:621
+msgid "Nothing suspicious found."
+msgstr "لم يُعثر على شيء مريب."
+
+#: src/Admin.php:624
+msgid "File"
+msgstr "الملف"
+
+#: src/Admin.php:624
+msgid "Problem"
+msgstr "المشكلة"
+
+#: src/Admin.php:624
+msgid "Action"
+msgstr "الإجراء"
+
+#: src/Admin.php:628
+msgid "Ignore"
+msgstr "تجاهل"
+
+#: src/Admin.php:632
+msgid "Not sure about a file? Compare it with a fresh download of the plugin or theme, or ask your developer before deleting anything."
+msgstr "غير متأكد من ملف؟ قارنه بنسخة جديدة من الإضافة أو القالب، أو اسأل مطوّرك قبل حذف أي شيء."
+
+#. translators: %d: ignored findings.
+#: src/Admin.php:636
+#, php-format
+msgid "%d ignored finding is hidden. It shows again if the file changes."
+msgid_plural "%d ignored findings are hidden. They show again if the files change."
+msgstr[0] "لا توجد نتائج متجاهلة مخفية (%d)."
+msgstr[1] "نتيجة متجاهلة واحدة مخفية، وتظهر مجددًا إذا تغير الملف."
+msgstr[2] "نتيجتان متجاهلتان مخفيتان، وتظهران مجددًا إذا تغيرت الملفات."
+msgstr[3] "%d نتائج متجاهلة مخفية، وتظهر مجددًا إذا تغيرت الملفات."
+msgstr[4] "%d نتيجة متجاهلة مخفية، وتظهر مجددًا إذا تغيرت الملفات."
+msgstr[5] "%d نتيجة متجاهلة مخفية، وتظهر مجددًا إذا تغيرت الملفات."
+
+#: src/Admin.php:646
+msgid "Everything"
+msgstr "الكل"
+
+#: src/Admin.php:647
+msgid "Blocked requests"
+msgstr "الطلبات المحظورة"
+
+#: src/Admin.php:648
+msgid "Sign-ins"
+msgstr "عمليات الدخول"
+
+#: src/Admin.php:650
+msgid "Lockouts"
+msgstr "حالات الحظر"
+
+#: src/Admin.php:651
+msgid "Two-factor changes"
+msgstr "تغييرات التحقق بخطوتين"
+
+#: src/Admin.php:652
+msgid "Wrong two-factor codes"
+msgstr "رموز تحقق خاطئة"
+
+#: src/Admin.php:653
+msgid "Scans"
+msgstr "الفحوص"
+
+#: src/Admin.php:654
+msgid "Setting changes"
+msgstr "تغييرات الإعدادات"
+
+#: src/Admin.php:658
+msgid "Show"
+msgstr "عرض"
+
+#: src/Admin.php:664
+msgid "Nothing recorded yet."
+msgstr "لم يُسجَّل شيء بعد."
+
+#: src/Admin.php:667
+msgid "When"
+msgstr "الوقت"
+
+#: src/Admin.php:667
+msgid "Event"
+msgstr "الحدث"
+
+#: src/Admin.php:667
+msgid "Details"
+msgstr "التفاصيل"
+
+#: src/Admin.php:682
+msgid "Settings saved."
+msgstr "تم حفظ الإعدادات."
+
+#. translators: %s: login URL.
+#: src/Admin.php:686
+#, php-format
+msgid "Your login page moved to %s. Bookmark it now; a copy was emailed to the site admin."
+msgstr "انتقلت صفحة الدخول إلى %s. احفظها في المفضلة الآن، وقد أُرسلت نسخة إلى بريد مدير الموقع."
+
+#: src/Admin.php:689
+msgid "Cache cleared."
+msgstr "تم مسح التخزين المؤقت."
+
+#. translators: %s: items.
+#: src/Admin.php:693
+#, php-format
+msgid "%s items deleted from the database."
+msgstr "حُذف %s عنصرًا من قاعدة البيانات."
+
+#: src/Admin.php:698
+msgid "The .htaccess file is not writable, so server rules (blocked files, folder names, browser caching) were not applied. Ask your host to make it writable by WordPress."
+msgstr "لا يمكن الكتابة في ملف ‎.htaccess‎، لذلك لم تُطبَّق قواعد الخادم (الملفات المحظورة وأسماء المجلدات وتخزين المتصفح). اطلب من مزوّد الاستضافة جعله قابلًا للكتابة من ووردبريس."
+
+#: src/Admin.php:700
+msgid "The server rejected the new .htaccess rules, so the previous file was put back. Your host may not allow “Options” overrides: turn off “Hide folder listings” and save again."
+msgstr "رفض الخادم قواعد ‎.htaccess‎ الجديدة، فأُعيد الملف السابق. قد لا تسمح الاستضافة بتعديل «Options»: أوقف «إخفاء قوائم المجلدات» واحفظ مرة أخرى."
+
+#: src/Admin.php:714
+msgid "Sorry, you are not allowed to do that."
+msgstr "عذرًا، غير مسموح لك بذلك."
+
+#. translators: %s: site name.
+#: src/Admin.php:739
+#, php-format
+msgid "[%s] New login address"
+msgstr "[%s] عنوان دخول جديد"
+
+#. translators: %s: login URL.
+#: src/Admin.php:741
+#, php-format
+msgid "The login page of this site is now:\n\n%s\n\nKeep this email. If you are ever locked out, add define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); to wp-config.php."
+msgstr "صفحة الدخول لهذا الموقع الآن:\n\n%s\n\nاحتفظ بهذه الرسالة. إذا لم تستطع الدخول يومًا، أضف define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); إلى wp-config.php."
+
+#: src/Cache.php:265
+msgid "Clear cache"
+msgstr "مسح التخزين المؤقت"
+
+#: src/Hardening.php:93
+msgid "Sorry, you are not allowed to list users."
+msgstr "عذرًا، غير مسموح لك بعرض المستخدمين."
+
+#: src/Hardening.php:125
+msgid "No user is called “admin”"
+msgstr "لا يوجد مستخدم باسم «admin»"
+
+#: src/Hardening.php:125
+msgid "“admin” is the first username attackers try. Create a new administrator and delete this one."
+msgstr "«admin» أول اسم مستخدم يجربه المهاجمون. أنشئ مديرًا جديدًا واحذف هذا الحساب."
+
+#: src/Hardening.php:126
+msgid "Secret keys (salts) are set"
+msgstr "المفاتيح السرية (salts) مضبوطة"
+
+#: src/Hardening.php:126
+msgid "Add unique keys to wp-config.php from api.wordpress.org/secret-key/1.1/salt/."
+msgstr "أضف مفاتيح فريدة إلى wp-config.php من api.wordpress.org/secret-key/1.1/salt/."
+
+#: src/Hardening.php:127
+msgid "Site uses HTTPS"
+msgstr "الموقع يستخدم HTTPS"
+
+#: src/Hardening.php:127
+msgid "Install an SSL certificate and change the site address to https://."
+msgstr "ثبّت شهادة SSL وغيّر عنوان الموقع إلى ‎https://‎."
+
+#: src/Hardening.php:128
+msgid "Errors are not shown to visitors"
+msgstr "الأخطاء لا تظهر للزوار"
+
+#: src/Hardening.php:128
+msgid "Set WP_DEBUG_DISPLAY to false in wp-config.php on live sites."
+msgstr "اضبط WP_DEBUG_DISPLAY على false في wp-config.php في المواقع المنشورة."
+
+#: src/Hardening.php:129
+msgid "debug.log is not in a public folder"
+msgstr "ملف debug.log ليس في مجلد عام"
+
+#: src/Hardening.php:129
+msgid "Turn on “Block sensitive files” or move the log outside the web root."
+msgstr "فعّل «حظر الملفات الحساسة» أو انقل السجل خارج جذر الموقع."
+
+#: src/Hardening.php:130
+msgid "WordPress is up to date"
+msgstr "ووردبريس محدّث"
+
+#: src/Hardening.php:130
+msgid "Update WordPress from Dashboard → Updates."
+msgstr "حدّث ووردبريس من الرئيسية ← التحديثات."
+
+#. translators: %d: plugins with updates.
+#: src/Hardening.php:132
+msgid "Plugins are up to date"
+msgstr "الإضافات محدّثة"
+
+#. translators: %d: plugins with updates.
+#: src/Hardening.php:132
+#, php-format
+msgid "%d plugin has an update waiting."
+msgid_plural "%d plugins have updates waiting."
+msgstr[0] "لا توجد تحديثات للإضافات (%d)."
+msgstr[1] "إضافة واحدة لها تحديث بانتظارك."
+msgstr[2] "إضافتان لهما تحديثات بانتظارك."
+msgstr[3] "%d إضافات لها تحديثات بانتظارك."
+msgstr[4] "%d إضافة لها تحديثات بانتظارك."
+msgstr[5] "%d إضافة لها تحديثات بانتظارك."
+
+#. translators: %d: inactive plugins.
+#: src/Hardening.php:134
+msgid "No unused plugins installed"
+msgstr "لا توجد إضافات غير مستخدمة"
+
+#. translators: %d: inactive plugins.
+#: src/Hardening.php:134
+#, php-format
+msgid "%d inactive plugins. Inactive plugin code can still be attacked: delete what you don’t use."
+msgstr "%d إضافات غير مفعّلة. يمكن مهاجمة شيفرة الإضافات غير المفعّلة أيضًا، فاحذف ما لا تستخدمه."
+
+#: src/Hardening.php:135
+msgid "New users don’t get extra powers"
+msgstr "المستخدمون الجدد لا يحصلون على صلاحيات إضافية"
+
+#: src/Hardening.php:135
+msgid "Anyone can register and gets a role above Subscriber. Change it in Settings → General."
+msgstr "يمكن لأي شخص التسجيل والحصول على دور أعلى من مشترك. غيّر ذلك من الإعدادات ← عام."
+
+#: src/Hardening.php:136
+msgid "PHP version is supported"
+msgstr "إصدار PHP مدعوم"
+
+#: src/Hardening.php:136
+msgid "Ask your host for PHP 8.2 or newer; older versions no longer get security fixes."
+msgstr "اطلب من مزوّد الاستضافة PHP 8.2 أو أحدث، فالإصدارات الأقدم لم تعد تتلقى إصلاحات أمنية."
+
+#: src/Hardening.php:137
+msgid "Database prefix is not the default"
+msgstr "بادئة قاعدة البيانات ليست الافتراضية"
+
+#: src/Hardening.php:137
+msgid "The default wp_ prefix makes some automated SQL attacks easier. It is safest to change it only on a fresh install."
+msgstr "البادئة الافتراضية wp_ تسهّل بعض هجمات SQL الآلية. الأكثر أمانًا تغييرها فقط في تثبيت جديد."
+
+#: src/Hardening.php:138
+msgid "wp-config.php is not writable by everyone"
+msgstr "ملف wp-config.php غير قابل للكتابة من الجميع"
+
+#: src/Hardening.php:138
+msgid "Set the file permissions of wp-config.php to 640 or 600."
+msgstr "اضبط صلاحيات ملف wp-config.php على 640 أو 600."
+
+#: src/Hardening.php:139
+msgid "Firewall loads before other plugins"
+msgstr "جدار الحماية يعمل قبل الإضافات الأخرى"
+
+#: src/Hardening.php:139
+msgid "The mu-plugins folder is not writable, so the firewall can’t load early."
+msgstr "لا يمكن الكتابة في مجلد mu-plugins، لذا لا يستطيع جدار الحماية العمل مبكرًا."
+
+#: src/Hardening.php:140
+msgid "Two-factor login is on for you"
+msgstr "التحقق بخطوتين مفعّل لحسابك"
+
+#: src/Hardening.php:140
+msgid "Turn it on in your profile. A stolen password is then not enough."
+msgstr "فعّله من ملفك الشخصي، فلن تكفي كلمة مرور مسروقة للدخول."
+
+#: src/Hardening.php:141
+msgid "Login page has a private address"
+msgstr "لصفحة الدخول عنوان خاص"
+
+#: src/Hardening.php:141
+msgid "Bots hammer wp-login.php all day. Give the login page its own address."
+msgstr "تهاجم الروبوتات wp-login.php طوال اليوم. اجعل لصفحة الدخول عنوانًا خاصًا."
+
+#: src/Hardening.php:142
+msgid "XML-RPC is off"
+msgstr "XML-RPC متوقف"
+
+#: src/Hardening.php:142
+msgid "XML-RPC allows many password guesses per request."
+msgstr "يسمح XML-RPC بتخمين كلمات مرور كثيرة في الطلب الواحد."
+
+#. translators: 1: site name, 2: alert subject.
+#: src/Log.php:114
+#, php-format
+msgid "[%1$s] Shield: %2$s"
+msgstr "[%1$s] الحماية: %2$s"
+
+#. translators: %d: minutes.
+#: src/Login.php:54
+#, php-format
+msgid "Too many failed attempts. Try again in %d minutes."
+msgstr "محاولات فاشلة كثيرة. حاول مرة أخرى بعد %d دقيقة."
+
+#. translators: %d: failed attempts.
+#: src/Login.php:79
+#, php-format
+msgid "%d failed attempts"
+msgstr "%d محاولات فاشلة"
+
+#: src/Login.php:82
+msgid "login lockout"
+msgstr "حظر دخول"
+
+#. translators: 1: IP, 2: username, 3: minutes.
+#: src/Login.php:84
+#, php-format
+msgid "IP %1$s was locked out after repeated failed logins (last username tried: %2$s). The lockout lasts %3$d minutes."
+msgstr "حُظر عنوان IP ‏%1$s بعد محاولات دخول فاشلة متكررة (آخر اسم مستخدم مُجرَّب: %2$s). يستمر الحظر %3$d دقيقة."
+
+#: src/Login.php:97
+msgid "<strong>Error:</strong> The username or password is not right."
+msgstr "<strong>خطأ:</strong> اسم المستخدم أو كلمة المرور غير صحيحة."
+
+#: src/Login.php:124
+msgid "Password accepted, waiting for the two-factor code"
+msgstr "قُبلت كلمة المرور، بانتظار رمز التحقق"
+
+#: src/Login.php:124
+msgid "Signed in"
+msgstr "تم الدخول"
+
+#: src/Login.php:137
+msgid "administrator signed in from a new IP"
+msgstr "دخول مدير من عنوان IP جديد"
+
+#. translators: 1: username, 2: IP.
+#: src/Login.php:139
+#, php-format
+msgid "The administrator %1$s signed in with the right password from IP %2$s, which has not been seen for this account before. If this was not you, change the password now."
+msgstr "سجّل المدير %1$s الدخول بكلمة المرور الصحيحة من عنوان IP ‏%2$s، ولم يُستخدم هذا العنوان مع الحساب من قبل. إن لم تكن أنت، غيّر كلمة المرور الآن."
+
+#: src/Manual.php:33
+msgid "Speed and security (Shield)"
+msgstr "السرعة والحماية (Shield)"
+
+#: src/Manual.php:35
+msgid "Everything is under Shield in the admin menu. Start with Overview: it lists what needs attention, and each line links to the setting that fixes it."
+msgstr "كل شيء تحت «الحماية» في قائمة لوحة التحكم. ابدأ بنظرة عامة: تعرض ما يحتاج إلى انتباه، وكل سطر يقودك إلى الإعداد الذي يصلحه."
+
+#: src/Manual.php:39
+msgid "Speed: turn on the page cache. Pages are saved for visitors and cleared automatically when you publish, edit a menu or change a setting. Add booking and account pages to “Never cache”."
+msgstr "السرعة: فعّل التخزين المؤقت للصفحات. تُحفظ الصفحات للزوار وتُمسح تلقائيًا عند النشر أو تعديل قائمة أو تغيير إعداد. أضف صفحات الحجز والحساب إلى «عدم التخزين المؤقت أبدًا»."
+
+#: src/Manual.php:40
+msgid "Login & paths: give the login page its own address. The old wp-login.php and wp-admin then show “not found” to anyone not signed in. Bookmark the new address; it is also emailed to the site admin."
+msgstr "الدخول والمسارات: اجعل لصفحة الدخول عنوانًا خاصًا. تظهر wp-login.php وwp-admin القديمتان بعبارة «غير موجود» لغير المسجلين. احفظ العنوان الجديد في المفضلة، كما يُرسل إلى بريد مدير الموقع."
+
+#: src/Manual.php:41
+msgid "Firewall: on by default. Add your office IP under “Never block” so you are never locked out."
+msgstr "جدار الحماية: مفعّل افتراضيًا. أضف عنوان IP لمكتبك في «عدم الحظر أبدًا» حتى لا تُحظر."
+
+#: src/Manual.php:42
+msgid "Login protection: lockouts after failed logins, and two-factor login. Each user turns two-factor on in their own profile with an authenticator app and keeps the ten backup codes somewhere safe."
+msgstr "حماية الدخول: حظر بعد محاولات الدخول الفاشلة، والتحقق بخطوتين. يفعّل كل مستخدم التحقق من ملفه الشخصي بتطبيق مصادقة ويحفظ الرموز الاحتياطية العشرة في مكان آمن."
+
+#: src/Manual.php:43
+msgid "Hardening: safe switches for headers, XML-RPC, usernames and sensitive files."
+msgstr "التقوية: خيارات آمنة للترويسات وXML-RPC وأسماء المستخدمين والملفات الحساسة."
+
+#: src/Manual.php:44
+msgid "File scan: runs every day and emails you when something new turns up. “Ignore” hides a finding until the file changes."
+msgstr "فحص الملفات: يعمل يوميًا ويراسلك عند ظهور شيء جديد. «تجاهل» يخفي النتيجة حتى يتغير الملف."
+
+#: src/Manual.php:45
+msgid "Activity: every sign-in, lockout, blocked request and setting change."
+msgstr "النشاط: كل عملية دخول وحظر وطلب محظور وتغيير في الإعدادات."
+
+#: src/Manual.php:48
+msgid "Locked out after changing the login address? Add define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); to wp-config.php, sign in at wp-login.php, fix the setting, then remove the line. Lost your phone? Use a backup code, or ask another administrator to turn two-factor off in your profile."
+msgstr "لا تستطيع الدخول بعد تغيير عنوان صفحة الدخول؟ أضف define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); إلى wp-config.php، وادخل من wp-login.php، وصحّح الإعداد، ثم احذف السطر. فقدت هاتفك؟ استخدم رمزًا احتياطيًا، أو اطلب من مدير آخر إيقاف التحقق بخطوتين في ملفك الشخصي."
+
+#: src/Manual.php:49
+msgid "On Nginx servers Shield can’t write server rules itself. Copy the rules shown under Hardening → Server into the site’s Nginx config (or send them to your host). Deactivating Shield removes every file change it made."
+msgstr "على خوادم Nginx لا تستطيع الحماية كتابة قواعد الخادم بنفسها. انسخ القواعد المعروضة في التقوية ← الخادم إلى إعدادات Nginx للموقع (أو أرسلها إلى مزوّد الاستضافة). إيقاف الإضافة يزيل كل تغيير أجرته على الملفات."
+
+#: src/Scan.php:92
+msgid "scan found new problems"
+msgstr "الفحص وجد مشكلات جديدة"
+
+#: src/Scan.php:93
+msgid "The daily file scan found files that need a look:"
+msgstr "وجد الفحص اليومي ملفات تحتاج إلى مراجعة:"
+
+#: src/Scan.php:109
+msgid "Could not download the official WordPress checksums, so core files were not compared."
+msgstr "تعذّر تنزيل البصمات الرسمية لووردبريس، لذا لم تُقارن ملفات النواة."
+
+#: src/Scan.php:184
+msgid "Core file differs from the official copy. Reinstall WordPress from Dashboard → Updates."
+msgstr "ملف النواة يختلف عن النسخة الرسمية. أعد تثبيت ووردبريس من الرئيسية ← التحديثات."
+
+#: src/Scan.php:189
+msgid "Unknown file inside a WordPress core folder."
+msgstr "ملف غير معروف داخل مجلد من مجلدات نواة ووردبريس."
+
+#: src/Scan.php:193
+msgid "Plugin file differs from the copy on WordPress.org. Reinstall the plugin."
+msgstr "ملف الإضافة يختلف عن النسخة الموجودة على WordPress.org. أعد تثبيت الإضافة."
+
+#: src/Scan.php:200
+msgid "PHP file in the uploads folder. Uploads should only hold media."
+msgstr "ملف PHP في مجلد الرفع. يجب أن يحتوي مجلد الرفع على الوسائط فقط."
+
+#: src/Scan.php:208
+msgid "Image file with PHP code inside."
+msgstr "ملف صورة بداخله شيفرة PHP."
+
+#. translators: 1: files, 2: problems.
+#: src/Scan.php:235
+#, php-format
+msgid "%1$d files checked, %2$d need a look"
+msgstr "فُحص %1$d ملفًا، و%2$d تحتاج إلى مراجعة"
+
+#: src/TwoFactor.php:137
+msgid "Backup code used"
+msgstr "استُخدم رمز احتياطي"
+
+#: src/TwoFactor.php:202
+msgid "Two-factor code"
+msgstr "رمز التحقق"
+
+#: src/TwoFactor.php:205
+msgid "Open your authenticator app and type the 6-digit code for this site. Lost your phone? Use one of your backup codes."
+msgstr "افتح تطبيق المصادقة واكتب الرمز المكوّن من 6 أرقام لهذا الموقع. فقدت هاتفك؟ استخدم أحد رموزك الاحتياطية."
+
+#: src/TwoFactor.php:207
+msgid "Code"
+msgstr "الرمز"
+
+#: src/TwoFactor.php:214
+msgid "Sign in"
+msgstr "دخول"
+
+#: src/TwoFactor.php:248
+msgid "That code is not right. Try the newest code in your app."
+msgstr "الرمز غير صحيح. جرّب أحدث رمز في التطبيق."
+
+#: src/TwoFactor.php:253
+msgid "Signed in with two-factor code"
+msgstr "تم الدخول برمز التحقق"
+
+#: src/TwoFactor.php:266
+msgid "Two-factor login is on for this account."
+msgstr "التحقق بخطوتين مفعّل لهذا الحساب."
+
+#: src/TwoFactor.php:281
+msgid "Status"
+msgstr "الحالة"
+
+#: src/TwoFactor.php:283
+msgid "Save these backup codes now. Each works once, and they will not be shown again."
+msgstr "احفظ هذه الرموز الاحتياطية الآن. كل رمز يعمل مرة واحدة، ولن تظهر مرة أخرى."
+
+#. translators: %d: backup codes left.
+#: src/TwoFactor.php:288
+#, php-format
+msgid "%d backup code left"
+msgid_plural "%d backup codes left"
+msgstr[0] "لا رموز احتياطية متبقية (%d)"
+msgstr[1] "رمز احتياطي واحد متبقٍ"
+msgstr[2] "رمزان احتياطيان متبقيان"
+msgstr[3] "%d رموز احتياطية متبقية"
+msgstr[4] "%d رمزًا احتياطيًا متبقيًا"
+msgstr[5] "%d رمز احتياطي متبقٍ"
+
+#: src/TwoFactor.php:290
+msgid "To turn it off or get new backup codes, type a current code:"
+msgstr "لإيقافه أو الحصول على رموز احتياطية جديدة، اكتب رمزًا حاليًا:"
+
+#: src/TwoFactor.php:291
+msgid "Make new backup codes"
+msgstr "إنشاء رموز احتياطية جديدة"
+
+#: src/TwoFactor.php:291
+msgid "Turn two-factor login off"
+msgstr "إيقاف التحقق بخطوتين"
+
+#: src/TwoFactor.php:293
+msgid "Turn off for this user (for a lost phone). They can set it up again."
+msgstr "إيقافه لهذا المستخدم (عند فقدان الهاتف). يمكنه إعداده مرة أخرى."
+
+#: src/TwoFactor.php:303
+msgid "Off. Scan the code with an authenticator app (Google Authenticator, Microsoft Authenticator, 1Password, Authy…), then type the 6-digit code it shows."
+msgstr "متوقف. امسح الرمز بتطبيق مصادقة (Google Authenticator أو Microsoft Authenticator أو 1Password أو Authy…)، ثم اكتب الرمز المكوّن من 6 أرقام الذي يظهر."
+
+#: src/TwoFactor.php:304
+msgid "Can’t scan? Enter this key:"
+msgstr "لا تستطيع المسح؟ أدخل هذا المفتاح:"
+
+#: src/TwoFactor.php:305
+msgid "Code from the app"
+msgstr "الرمز من التطبيق"
+
+#: src/TwoFactor.php:307
+msgid "Off. Only the user can turn it on, from their own profile."
+msgstr "متوقف. يستطيع المستخدم وحده تفعيله من ملفه الشخصي."
+
+#: src/TwoFactor.php:328
+msgid "Turned off by an administrator"
+msgstr "أوقفه أحد المديرين"
+
+#: src/TwoFactor.php:338
+msgid "Two-factor login was not turned on: the code did not match. Check the time on your phone and try the newest code."
+msgstr "لم يُفعَّل التحقق بخطوتين: الرمز غير مطابق. تحقق من الوقت في هاتفك وجرّب أحدث رمز."
+
+#: src/TwoFactor.php:345
+msgid "Turned on"
+msgstr "تم التفعيل"
+
+#: src/TwoFactor.php:349
+msgid "Nothing changed: the two-factor code did not match."
+msgstr "لم يتغير شيء: رمز التحقق غير مطابق."
+
+#: src/TwoFactor.php:354
+msgid "Turned off"
+msgstr "تم الإيقاف"
+
+#: src/TwoFactor.php:394
+msgid "This site requires two-factor login for administrators. Set it up below to continue."
+msgstr "يتطلب هذا الموقع التحقق بخطوتين للمديرين. أعدّه أدناه للمتابعة."
