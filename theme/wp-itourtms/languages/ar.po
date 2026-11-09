@@ -22,7 +22,7 @@ msgstr ""
 #. Description of the theme
 #: style.css
 msgid "A clean, fast theme for tour operators, destination management companies and travel agencies. Pages are built with the WordPress block editor; colours, type and spacing come from theme.json, so the editor and the site always match. No page builder, no jQuery on the front end, right-to-left ready. Works on its own and pairs with the iTourTMS plugins for tours, transfers, hotels and bookings."
-msgstr ""
+msgstr "قالب سريع وبسيط لمنظمي الرحلات وشركات إدارة الوجهات ووكالات السفر. تُبنى الصفحات بمحرر مكوّنات ووردبريس، وتأتي الألوان والخطوط والمسافات من theme.json فيتطابق المحرر والموقع دائمًا. بدون أداة بناء صفحات، وبدون jQuery في الواجهة، وجاهز للغات من اليمين إلى اليسار. يعمل وحده ويتكامل مع إضافات iTourTMS للرحلات والتنقلات والفنادق والحجوزات."
 
 #. Author of the theme
 #: style.css
@@ -80,17 +80,17 @@ msgstr "القائمة الرئيسية"
 #: functions.php:65
 #, php-format
 msgid "Footer column %d"
-msgstr ""
+msgstr "عمود التذييل %d"
 
 #. translators: %d: column number.
 #: functions.php:68
 #, php-format
 msgid "Shown when footer column %d is set to “Widgets” in Appearance → Theme Options → Footer."
-msgstr ""
+msgstr "يظهر عند ضبط عمود التذييل %d على «ودجات» في المظهر ← خيارات القالب ← التذييل."
 
 #: functions.php:88
 msgid "Rounded"
-msgstr ""
+msgstr "مستدير"
 
 #: header.php:23
 msgid "Skip to content"
@@ -104,1073 +104,1073 @@ msgstr "القائمة"
 
 #: inc/admin-page.php:16
 msgid "WP iTourTMS Theme Options"
-msgstr ""
+msgstr "خيارات قالب WP iTourTMS"
 
 #: inc/admin-page.php:17
 #: inc/admin-page.php:96
 #: inc/manual.php:94
 msgid "Theme Options"
-msgstr ""
+msgstr "خيارات القالب"
 
 #: inc/admin-page.php:44
 msgid "Theme options saved."
-msgstr ""
+msgstr "تم حفظ خيارات القالب."
 
 #: inc/admin-page.php:45
 msgid "Theme options were reset to their defaults."
-msgstr ""
+msgstr "أُعيدت خيارات القالب إلى قيمها الافتراضية."
 
 #: inc/admin-page.php:46
 msgid "Reset all theme options to their defaults?"
-msgstr ""
+msgstr "إعادة جميع خيارات القالب إلى قيمها الافتراضية؟"
 
 #: inc/admin-page.php:47
 msgid "Something went wrong. Please try again."
-msgstr ""
+msgstr "حدث خطأ ما. يُرجى المحاولة مرة أخرى."
 
 #: inc/admin-page.php:48
 msgid "License activated."
-msgstr ""
+msgstr "تم تفعيل الترخيص."
 
 #: inc/admin-page.php:49
 msgid "License removed from this site."
-msgstr ""
+msgstr "أُزيل الترخيص من هذا الموقع."
 
 #: inc/admin-page.php:50
 msgid "License checked with the server."
-msgstr ""
+msgstr "تم التحقق من الترخيص مع الخادم."
 
 #: inc/admin-page.php:51
 msgid "Remove the license from this site?"
-msgstr ""
+msgstr "إزالة الترخيص من هذا الموقع؟"
 
 #: inc/admin-page.php:52
 msgid "Search…"
-msgstr ""
+msgstr "بحث…"
 
 #: inc/admin-page.php:53
 msgid "applied below. Review, then click Save options."
-msgstr ""
+msgstr "طُبّق أدناه. راجع الخيارات، ثم اضغط «حفظ الخيارات»."
 
 #: inc/admin-page.php:54
 #: inc/admin-page.php:227
 msgid "Choose image"
-msgstr ""
+msgstr "اختيار صورة"
 
 #: inc/admin-page.php:55
 #: inc/admin-page.php:227
 msgid "Replace image"
-msgstr ""
+msgstr "استبدال الصورة"
 
 #: inc/admin-page.php:56
 msgid "No matches"
-msgstr ""
+msgstr "لا توجد نتائج"
 
 #: inc/admin-page.php:57
 msgid "Keep typing to see more"
-msgstr ""
+msgstr "تابع الكتابة لرؤية المزيد"
 
 #: inc/admin-page.php:74
 msgid "License"
-msgstr ""
+msgstr "الترخيص"
 
 #: inc/admin-page.php:76
 msgid "Options"
-msgstr ""
+msgstr "الخيارات"
 
 #. translators: %s: theme version.
 #: inc/admin-page.php:97
 #, php-format
 msgid "WP iTourTMS %s · settings, license and help for your theme"
-msgstr ""
+msgstr "WP iTourTMS %s · الإعدادات والترخيص والمساعدة لقالبك"
 
 #: inc/admin-page.php:99
 msgid "Theme Options sections"
-msgstr ""
+msgstr "أقسام خيارات القالب"
 
 #: inc/admin-page.php:130
 msgid "Option groups"
-msgstr ""
+msgstr "مجموعات الخيارات"
 
 #: inc/admin-page.php:145
 msgid "Your brand colours. They apply to the site and the block editor."
-msgstr ""
+msgstr "ألوان علامتك التجارية. تُطبَّق على الموقع ومحرر المكوّنات."
 
 #: inc/admin-page.php:146
 msgid "How wide content runs and how rounded corners are."
-msgstr ""
+msgstr "عرض المحتوى ومدى استدارة الزوايا."
 
 #: inc/admin-page.php:147
 msgid "How the site header behaves."
-msgstr ""
+msgstr "سلوك رأس الموقع."
 
 #: inc/admin-page.php:148
 msgid "The line at the bottom of every page."
-msgstr ""
+msgstr "السطر في أسفل كل صفحة."
 
 #: inc/admin-page.php:149
 msgid "What posts show in lists and on their own page."
-msgstr ""
+msgstr "ما تعرضه المقالات في القوائم وفي صفحتها الخاصة."
 
 #: inc/admin-page.php:164
 msgid "Preview"
-msgstr ""
+msgstr "معاينة"
 
 #: inc/admin-page.php:165
 msgid "Nile cruise from Luxor to Aswan"
-msgstr ""
+msgstr "رحلة نيلية من الأقصر إلى أسوان"
 
 #: inc/admin-page.php:166
 msgid "Four nights on the river with guided visits to Karnak, Edfu and Kom Ombo. Breakfast, lunch and dinner included."
-msgstr ""
+msgstr "أربع ليالٍ على النيل مع زيارات بصحبة مرشد إلى الكرنك وإدفو وكوم أمبو. الإفطار والغداء والعشاء مشمولة."
 
 #: inc/admin-page.php:170
 msgid "Save options"
-msgstr ""
+msgstr "حفظ الخيارات"
 
 #: inc/admin-page.php:171
 msgid "Reset to defaults"
-msgstr ""
+msgstr "إعادة القيم الافتراضية"
 
 #: inc/admin-page.php:172
 msgid "Changes under Appearance → Design → Styles take priority over these colours and widths."
-msgstr ""
+msgstr "التغييرات في المظهر ← التصميم ← الأنماط لها الأولوية على هذه الألوان والعروض."
 
 #: inc/admin-page.php:228
 msgid "Remove"
-msgstr ""
+msgstr "إزالة"
 
 #: inc/admin-page.php:234
 msgid "— Choose a menu —"
-msgstr ""
+msgstr "— اختر قائمة —"
 
 #. translators: %s: colour name.
 #: inc/admin-page.php:264
 #, php-format
 msgid "Pick %s colour"
-msgstr ""
+msgstr "اختر لون %s"
 
 #: inc/admin-page.php:273
 msgid "Same as body"
-msgstr ""
+msgstr "مثل النص الأساسي"
 
 #: inc/admin-page.php:273
 msgid "System font (fastest)"
-msgstr ""
+msgstr "خط النظام (الأسرع)"
 
 #: inc/admin-page.php:287
 msgid "— Choose a page —"
-msgstr ""
+msgstr "— اختر صفحة —"
 
 #: inc/admin-page.php:303
 msgid "words"
-msgstr ""
+msgstr "كلمة"
 
 #: inc/admin-page.php:316
 msgid "License Information"
-msgstr ""
+msgstr "معلومات الترخيص"
 
 #: inc/admin-page.php:317
 msgid "Activate your license to receive theme updates and support. Your site keeps working either way."
-msgstr ""
+msgstr "فعّل ترخيصك لتحصل على تحديثات القالب والدعم. يستمر موقعك في العمل في الحالتين."
 
 #: inc/admin-page.php:319
 msgid "The license server is not set up on this site yet. Add WP_ITOURTMS_LICENSE_SERVER and WP_ITOURTMS_LICENSE_PUBKEY to wp-config.php (see Documentation → License)."
-msgstr ""
+msgstr "لم يُعدّ خادم التراخيص على هذا الموقع بعد. أضف WP_ITOURTMS_LICENSE_SERVER وWP_ITOURTMS_LICENSE_PUBKEY إلى wp-config.php (راجع الوثائق ← الترخيص)."
 
 #: inc/admin-page.php:325
 msgid "Replace license key"
-msgstr ""
+msgstr "استبدال مفتاح الترخيص"
 
 #: inc/admin-page.php:325
 msgid "License key"
-msgstr ""
+msgstr "مفتاح الترخيص"
 
 #: inc/admin-page.php:326
 msgid "Paste the license key from your purchase email"
-msgstr ""
+msgstr "الصق مفتاح الترخيص من رسالة الشراء"
 
 #: inc/admin-page.php:327
 msgid "Activate"
-msgstr ""
+msgstr "تفعيل"
 
 #: inc/admin-page.php:329
 msgid "Check now"
-msgstr ""
+msgstr "تحقق الآن"
 
 #: inc/admin-page.php:330
 msgid "Remove license"
-msgstr ""
+msgstr "إزالة الترخيص"
 
 #: inc/admin-page.php:342
 msgid "Not activated"
-msgstr ""
+msgstr "غير مفعّل"
 
 #: inc/admin-page.php:343
 msgid "Active"
-msgstr ""
+msgstr "مفعّل"
 
 #: inc/admin-page.php:344
 msgid "Active (needs attention)"
-msgstr ""
+msgstr "مفعّل (يحتاج إلى انتباه)"
 
 #: inc/admin-page.php:345
 msgid "Expired"
-msgstr ""
+msgstr "منتهي"
 
 #: inc/admin-page.php:346
 msgid "Revoked"
-msgstr ""
+msgstr "ملغى"
 
 #: inc/admin-page.php:347
 msgid "Invalid key"
-msgstr ""
+msgstr "مفتاح غير صالح"
 
 #: inc/admin-page.php:348
 msgid "Not licensed for this domain"
-msgstr ""
+msgstr "غير مرخّص لهذا النطاق"
 
 #: inc/admin-page.php:349
 msgid "Install limit reached"
-msgstr ""
+msgstr "تم بلوغ حد التثبيت"
 
 #: inc/admin-page.php:350
 msgid "Server IP not allowed"
-msgstr ""
+msgstr "عنوان IP الخادم غير مسموح"
 
 #: inc/admin-page.php:351
 msgid "Could not reach the license server"
-msgstr ""
+msgstr "تعذّر الوصول إلى خادم التراخيص"
 
 #. translators: %d: days.
 #: inc/admin-page.php:356
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%d يوم"
+msgstr[1] "يوم واحد"
+msgstr[2] "يومان"
+msgstr[3] "%d أيام"
+msgstr[4] "%d يومًا"
+msgstr[5] "%d يوم"
 
 #: inc/admin-page.php:358
 #: inc/admin-page.php:373
 msgid "License Key"
-msgstr ""
+msgstr "مفتاح الترخيص"
 
 #: inc/admin-page.php:359
 #: inc/admin-page.php:370
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: inc/admin-page.php:360
 msgid "Licensed to"
-msgstr ""
+msgstr "مرخّص لـ"
 
 #: inc/admin-page.php:361
 msgid "Plan"
-msgstr ""
+msgstr "الخطة"
 
 #: inc/admin-page.php:362
 msgid "Expires On"
-msgstr ""
+msgstr "تاريخ الانتهاء"
 
 #: inc/admin-page.php:363
 msgid "Days Remaining"
-msgstr ""
+msgstr "الأيام المتبقية"
 
 #: inc/admin-page.php:364
 msgid "Domains"
-msgstr ""
+msgstr "النطاقات"
 
 #: inc/admin-page.php:365
 msgid "Last checked"
-msgstr ""
+msgstr "آخر تحقق"
 
 #: inc/admin-page.php:387
 msgid "On this page"
-msgstr ""
+msgstr "في هذه الصفحة"
 
 #: inc/designs.php:19
 msgid "Nile Classic"
-msgstr ""
+msgstr "النيل الكلاسيكي"
 
 #: inc/designs.php:20
 msgid "Navy and sunset orange, system type, tabbed search. Calm and familiar."
-msgstr ""
+msgstr "كحلي وبرتقالي الغروب، وخط النظام، وبحث بتبويبات. هادئ ومألوف."
 
 #: inc/designs.php:44
 msgid "Desert Dusk"
-msgstr ""
+msgstr "غسق الصحراء"
 
 #: inc/designs.php:45
 msgid "Terracotta and espresso, Fraunces headings, centred header, search bar. Warm and editorial."
-msgstr ""
+msgstr "تيراكوتا وإسبريسو، وعناوين بخط Fraunces، ورأس متوسط، وشريط بحث. دافئ وبطابع مجلات."
 
 #: inc/designs.php:69
 msgid "Red Sea"
-msgstr ""
+msgstr "البحر الأحمر"
 
 #: inc/designs.php:70
 msgid "Lagoon teal on deep water, Manrope, header over the hero, search card. Fresh and open."
-msgstr ""
+msgstr "أزرق البحيرة على أزرق الأعماق، وخط Manrope، ورأس فوق اللافتة، وبطاقة بحث. منعش ومنفتح."
 
 #: inc/designs.php:94
 msgid "Midnight Gold"
-msgstr ""
+msgstr "ذهب منتصف الليل"
 
 #: inc/designs.php:95
 msgid "Near-black and antique gold, Cormorant headings, square corners. Luxury cruises and private tours."
-msgstr ""
+msgstr "أسود داكن وذهبي عتيق، وعناوين بخط Cormorant، وزوايا مربعة. للرحلات النيلية الفاخرة والجولات الخاصة."
 
 #: inc/designs.php:119
 msgid "Oasis"
-msgstr ""
+msgstr "الواحة"
 
 #: inc/designs.php:120
 msgid "Palm green, Nunito, soft round shapes, floating header, search bar. Friendly for families."
-msgstr ""
+msgstr "أخضر النخيل، وخط Nunito، وأشكال مستديرة ناعمة، ورأس عائم، وشريط بحث. ودود ومناسب للعائلات."
 
 #: inc/designs.php:144
 msgid "iTourTMS"
-msgstr ""
+msgstr "iTourTMS"
 
 #: inc/designs.php:145
 msgid "Aubergine and orchid, Inter, dark header, search card. Matches the iTourTMS dashboard."
-msgstr ""
+msgstr "باذنجاني وأرجواني، وخط Inter، ورأس داكن، وبطاقة بحث. يطابق لوحة تحكم iTourTMS."
 
 #: inc/license.php:330
 msgid "Activate your license"
-msgstr ""
+msgstr "فعّل ترخيصك"
 
 #: inc/license.php:335
 msgid "Open Appearance → Theme Options → License."
-msgstr ""
+msgstr "افتح المظهر ← خيارات القالب ← الترخيص."
 
 #: inc/license.php:336
 msgid "Paste the license key from your purchase email and click Activate."
-msgstr ""
+msgstr "الصق مفتاح الترخيص من رسالة الشراء واضغط «تفعيل»."
 
 #: inc/license.php:337
 msgid "The status turns Active once the license server confirms it. The license is checked again about once a day."
-msgstr ""
+msgstr "تتحول الحالة إلى «مفعّل» بعد تأكيد خادم التراخيص. يُتحقق من الترخيص مرة أخرى يوميًا تقريبًا."
 
 #: inc/license.php:340
 msgid "Your site keeps working without a license; the license unlocks updates and support. A key works only on the domains it was issued for."
-msgstr ""
+msgstr "يستمر موقعك في العمل بدون ترخيص، والترخيص يتيح التحديثات والدعم. يعمل المفتاح فقط على النطاقات التي صدر لها."
 
 #: inc/license.php:345
 msgid "License server"
-msgstr ""
+msgstr "خادم التراخيص"
 
 #: inc/license.php:347
 msgid "License keys are Ed25519-signed tokens from the MG License Server. They are verified on the site (signature, product, domain, expiry) and confirmed online about once a day; if the server cannot be reached the license keeps working for 7 days. Set the server and its public key in wp-config.php, or ship the key as inc/license-pubkey.pem:"
-msgstr ""
+msgstr "مفاتيح الترخيص رموز موقّعة بـ Ed25519 من MG License Server. يُتحقق منها على الموقع (التوقيع والمنتج والنطاق والانتهاء) وتُؤكد عبر الإنترنت يوميًا تقريبًا، وإذا تعذّر الوصول إلى الخادم يستمر الترخيص 7 أيام. اضبط الخادم ومفتاحه العام في wp-config.php، أو ضع المفتاح في inc/license-pubkey.pem:"
 
 #: inc/license.php:349
 msgid "Other code can read the status with wp_itourtms_license_check() — it returns ok, status, plan and expiry."
-msgstr ""
+msgstr "يمكن للشيفرات الأخرى قراءة الحالة عبر wp_itourtms_license_check()، وهي تُرجع ok وstatus وplan وexpiry."
 
 #: inc/manual.php:22
 msgid "Getting started"
-msgstr ""
+msgstr "البدء"
 
 #: inc/manual.php:26
 msgid "Requirements"
-msgstr ""
+msgstr "المتطلبات"
 
 #: inc/manual.php:28
 msgid "WordPress 6.5 or newer (tested up to 7.1)."
-msgstr ""
+msgstr "ووردبريس 6.5 أو أحدث (مُختبر حتى 7.1)."
 
 #: inc/manual.php:28
 msgid "PHP 8.1 or newer."
-msgstr ""
+msgstr "PHP 8.1 أو أحدث."
 
 #: inc/manual.php:28
 msgid "No other plugins are required. The theme works on its own."
-msgstr ""
+msgstr "لا حاجة إلى إضافات أخرى. القالب يعمل وحده."
 
 #: inc/manual.php:33
 msgid "Install and activate"
-msgstr ""
+msgstr "التثبيت والتفعيل"
 
 #: inc/manual.php:38
 msgid "In the dashboard go to Appearance → Themes → Add New Theme → Upload Theme."
-msgstr ""
+msgstr "من لوحة التحكم اذهب إلى المظهر ← القوالب ← إضافة قالب جديد ← رفع قالب."
 
 #: inc/manual.php:39
 msgid "Choose wp-itourtms.zip and click Install Now."
-msgstr ""
+msgstr "اختر wp-itourtms.zip واضغط «التنصيب الآن»."
 
 #: inc/manual.php:40
 msgid "Click Activate."
-msgstr ""
+msgstr "اضغط «تفعيل»."
 
 #: inc/manual.php:41
 msgid "To change templates or styles safely, also install wp-itourtms-child.zip and activate the child theme instead (see “Child theme” below)."
-msgstr ""
+msgstr "لتعديل القوالب أو الأنماط بأمان، ثبّت أيضًا wp-itourtms-child.zip وفعّل القالب الفرعي بدلًا منه (راجع «القالب الفرعي» أدناه)."
 
 #: inc/manual.php:48
 msgid "First setup (10 minutes)"
-msgstr ""
+msgstr "الإعداد الأول (10 دقائق)"
 
 #: inc/manual.php:53
 msgid "Logo: Appearance → Customize → Site Identity → Select logo. A transparent PNG or SVG about 200 × 48 px works best."
-msgstr ""
+msgstr "الشعار: المظهر ← تخصيص ← هوية الموقع ← اختيار شعار. الأفضل صورة PNG شفافة أو SVG بحجم 200 × 48 بكسل تقريبًا."
 
 #: inc/manual.php:54
 msgid "Menus: Appearance → Menus. Create a menu, add pages, then tick “Main menu” (header) or “Footer menu” under Menu Settings."
-msgstr ""
+msgstr "القوائم: المظهر ← القوائم. أنشئ قائمة وأضف الصفحات، ثم حدد «القائمة الرئيسية» (الرأس) أو «قائمة التذييل» في إعدادات القائمة."
 
 #: inc/manual.php:55
 msgid "Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page."
-msgstr ""
+msgstr "الصفحة الرئيسية: الإعدادات ← القراءة ← «صفحة ثابتة»، ثم اختر الصفحة الرئيسية وصفحة المقالات."
 
 #: inc/manual.php:56
 msgid "Pretty links: Settings → Permalinks → “Post name” → Save."
-msgstr ""
+msgstr "الروابط الجميلة: الإعدادات ← الروابط الدائمة ← «اسم المقالة» ← حفظ."
 
 #: inc/manual.php:57
 msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
-msgstr ""
+msgstr "اللغة: الإعدادات ← عام ← لغة الموقع. العربية واللغات الأخرى من اليمين إلى اليسار تعكس التخطيط تلقائيًا."
 
 #: inc/manual.php:58
 msgid "Your brand: Appearance → Theme Options → Options. Set your colours, widths, header and footer (see “Theme Options” in the User manual)."
-msgstr ""
+msgstr "علامتك التجارية: المظهر ← خيارات القالب ← الخيارات. اضبط الألوان والعروض والرأس والتذييل (راجع «خيارات القالب» في دليل المستخدم)."
 
 #: inc/manual.php:65
 msgid "Child theme"
-msgstr ""
+msgstr "القالب الفرعي"
 
 #: inc/manual.php:67
 msgid "Updates replace the theme’s files. Put your own changes in the WP iTourTMS Child theme (included in the package) so they survive updates. Activate the child theme; it loads the parent automatically."
-msgstr ""
+msgstr "التحديثات تستبدل ملفات القالب. ضع تعديلاتك في قالب WP iTourTMS Child (المرفق في الحزمة) لتبقى بعد التحديثات. فعّل القالب الفرعي، وهو يحمّل القالب الأصلي تلقائيًا."
 
 #: inc/manual.php:73
 msgid "User manual"
-msgstr ""
+msgstr "دليل المستخدم"
 
 #: inc/manual.php:77
 msgid "Create and edit pages"
-msgstr ""
+msgstr "إنشاء الصفحات وتعديلها"
 
 #: inc/manual.php:79
 msgid "Pages are built with the WordPress block editor. No page builder is needed. Ready-made sections (hero banner, reasons to book, call to action) are under + → Patterns → “WP iTourTMS”."
-msgstr ""
+msgstr "تُبنى الصفحات بمحرر مكوّنات ووردبريس دون الحاجة إلى أداة بناء صفحات. الأقسام الجاهزة (اللافتة الرئيسية وأسباب الحجز ودعوة إلى التواصل) موجودة في + ← الأنماط ← «WP iTourTMS»."
 
 #: inc/manual.php:83
 msgid "Go to Pages → Add New Page and type a title."
-msgstr ""
+msgstr "اذهب إلى الصفحات ← إضافة صفحة جديدة واكتب عنوانًا."
 
 #: inc/manual.php:84
 msgid "Click + (top left) to add a block: Paragraph, Heading, Image, Columns, Buttons, Cover and so on. Type / in an empty line to search blocks quickly."
-msgstr ""
+msgstr "اضغط + (أعلى الشاشة) لإضافة مكوّن: فقرة أو عنوان أو صورة أو أعمدة أو أزرار أو غلاف وغيرها. اكتب / في سطر فارغ للبحث عن المكوّنات بسرعة."
 
 #: inc/manual.php:85
 msgid "Select a block to change its colour, spacing or width in the right-hand panel. The theme’s colours appear as swatches."
-msgstr ""
+msgstr "حدد مكوّنًا لتغيير لونه أو مسافاته أو عرضه من اللوحة الجانبية. تظهر ألوان القالب كعينات جاهزة."
 
 #: inc/manual.php:86
 msgid "Use “Wide width” or “Full width” on Image, Cover and Group blocks for banners and galleries."
-msgstr ""
+msgstr "استخدم «عرض واسع» أو «عرض كامل» في مكوّنات الصورة والغلاف والمجموعة للافتات والمعارض."
 
 #: inc/manual.php:87
 msgid "Click Publish (or Update). Use Preview first to check it on the site."
-msgstr ""
+msgstr "اضغط «نشر» (أو «تحديث»). استخدم «معاينة» أولًا للتحقق منها على الموقع."
 
 #: inc/manual.php:96
 msgid "Appearance → Theme Options → Options holds every theme setting. Click “Save options” to apply them to the site and the block editor together."
-msgstr ""
+msgstr "المظهر ← خيارات القالب ← الخيارات يضم كل إعدادات القالب. اضغط «حفظ الخيارات» لتطبيقها على الموقع ومحرر المكوّنات معًا."
 
 #: inc/manual.php:100
 msgid "Design: six complete looks (Nile Classic, Desert Dusk, Red Sea, Midnight Gold, Oasis, iTourTMS). Clicking one fills in colours, fonts, shapes, header, top bar, footer and booking-widget style; change anything, then save."
-msgstr ""
+msgstr "التصميم: ستة مظاهر كاملة (النيل الكلاسيكي، غسق الصحراء، البحر الأحمر، ذهب منتصف الليل، الواحة، iTourTMS). الضغط على أحدها يملأ الألوان والخطوط والأشكال والرأس والشريط العلوي والتذييل ونمط أداة الحجز، غيّر ما تريد ثم احفظ."
 
 #: inc/manual.php:101
 msgid "Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read."
-msgstr ""
+msgstr "الألوان: لون العلامة ولون التمرير والنص والنص الثانوي والخلفية الناعمة وخلفية الصفحة. يظهر تحذير إذا كان زوج من الألوان صعب القراءة."
 
 #: inc/manual.php:102
 msgid "Logo: site logo, retina logo (twice the size, for sharp high-resolution screens), mobile logo and a light logo for dark headers, plus display heights. SVG, WebP, PNG and JPG are accepted; SVG files are cleaned of scripts when uploaded."
-msgstr ""
+msgstr "الشعار: شعار الموقع وشعار ريتينا (بضعف الحجم للشاشات عالية الدقة) وشعار الجوال وشعار فاتح للرؤوس الداكنة، مع ارتفاعات العرض. تُقبل ملفات SVG وWebP وPNG وJPG، وتُنظَّف ملفات SVG من السكربتات عند الرفع."
 
 #: inc/manual.php:103
 msgid "Fonts: pick any Google Font for body text and headings (type to search), the base text size and heading weight. The preview shows the result before you save. Leave empty for the fast system font."
-msgstr ""
+msgstr "الخطوط: اختر أي خط من Google للنص والعناوين (اكتب للبحث)، وحجم النص الأساسي وسماكة العناوين. تعرض المعاينة النتيجة قبل الحفظ. اتركه فارغًا لاستخدام خط النظام السريع."
 
 #: inc/manual.php:104
 msgid "Layout: text column width, wide width (header, footer, wide blocks) and corner rounding."
-msgstr ""
+msgstr "التخطيط: عرض عمود النص والعرض الواسع (الرأس والتذييل والمكوّنات الواسعة) واستدارة الزوايا."
 
 #: inc/manual.php:105
 msgid "Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses."
-msgstr ""
+msgstr "تبويبات الوحدات: كل إضافة iTourTMS تثبّتها تضيف تبويبها هنا، مثلًا لاختيار الصفحات التي تستخدمها."
 
 #: inc/manual.php:106
 msgid "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the site title next to the logo."
-msgstr ""
+msgstr "الرأس: أربعة تصاميم (كلاسيكي، متوسط، فوق اللافتة، عائم)، والألوان، وزر اختياري، ورأس ثابت، واسم الموقع بجانب الشعار."
 
 #: inc/manual.php:107
 msgid "Top bar: switch on “Show top bar” to reveal its settings: four designs (split, centred, minimal, announcement), a short message and link, whether to show contact details and social links, its colours, and whether it shows on phones (as icons)."
-msgstr ""
+msgstr "الشريط العلوي: فعّل «إظهار الشريط العلوي» لتظهر إعداداته: أربعة تصاميم (مقسوم، متوسط، بسيط، إعلان)، ورسالة قصيرة ورابط، وإظهار بيانات التواصل والروابط الاجتماعية، وألوانه، وظهوره على الهواتف (كأيقونات)."
 
 #: inc/manual.php:108
 msgid "Contact & social: phone, email, WhatsApp, address and social links (Facebook, Instagram, X, TikTok, YouTube, LinkedIn), entered once and used by the top bar and the footer. Empty fields are left out."
-msgstr ""
+msgstr "التواصل والشبكات الاجتماعية: الهاتف والبريد وواتساب والعنوان والروابط الاجتماعية (فيسبوك، إنستغرام، X، تيك توك، يوتيوب، لينكدإن)، تُدخل مرة واحدة ويستخدمها الشريط العلوي والتذييل. الحقول الفارغة لا تظهر."
 
 #: inc/manual.php:109
 msgid "Footer → Layout: no columns, 3 columns or 4 columns. For each column choose what it shows: About (logo and text), a Menu, Contact details, Social links, your own Text, Widgets, or nothing, and give it a title. Only the settings for the chosen type appear. Footer colours and the bottom line ({year} and {site} are filled in for you) are at the end."
-msgstr ""
+msgstr "التذييل ← التخطيط: بدون أعمدة أو 3 أعمدة أو 4 أعمدة. اختر لكل عمود ما يعرضه: نبذة (شعار ونص)، أو قائمة، أو بيانات التواصل، أو الروابط الاجتماعية، أو نصك الخاص، أو ودجات، أو لا شيء، وامنحه عنوانًا. تظهر فقط إعدادات النوع المختار. ألوان التذييل والسطر الأخير (يُملأ {year} و{site} تلقائيًا) في النهاية."
 
 #: inc/manual.php:110
 msgid "Blog: show dates, show the featured image on posts, and the length of summaries in lists."
-msgstr ""
+msgstr "المدونة: إظهار التواريخ، وإظهار الصورة البارزة في المقالات، وطول الملخصات في القوائم."
 
 #: inc/manual.php:113
 msgid "“Reset to defaults” puts every option back to the theme’s original values."
-msgstr ""
+msgstr "«إعادة القيم الافتراضية» تُرجع كل خيار إلى قيمته الأصلية في القالب."
 
 #: inc/manual.php:118
 msgid "Colours and fonts for the whole site"
-msgstr ""
+msgstr "الألوان والخطوط للموقع كله"
 
 #: inc/manual.php:120
 msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
-msgstr ""
+msgstr "المظهر ← التصميم ← الأنماط يغيّر الألوان والخطوط ونمط الأزرار في كل مكان دفعة واحدة، ويظهر التغيير في المحرر أيضًا. المظهر ← الخطوط يضيف عائلات الخطوط أو يزيلها. للتراجع افتح الأنماط ← ⋮ ← إعادة تعيين."
 
 #: inc/manual.php:121
 msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
-msgstr ""
+msgstr "اجعل النص مقروءًا: نص داكن على خلفية فاتحة (أو العكس) بتباين قوي."
 
 #: inc/manual.php:126
 msgid "Images"
-msgstr ""
+msgstr "الصور"
 
 #: inc/manual.php:128
 msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
-msgstr ""
+msgstr "ارفع صورًا بعرض 1600 بكسل على الأقل للافتات بعرض كامل، وسيُنشئ ووردبريس الأحجام الأصغر تلقائيًا."
 
 #: inc/manual.php:128
 msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
-msgstr ""
+msgstr "املأ دائمًا «النص البديل» لوصف الصورة لقارئات الشاشة ومحركات البحث."
 
 #: inc/manual.php:128
 msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
-msgstr ""
+msgstr "الصورة البارزة (في اللوحة الجانبية للمقالات والصفحات) هي الصورة التي تظهر في قوائم المدونة وعند مشاركة الصفحة."
 
 #: inc/manual.php:133
 msgid "Blog posts"
-msgstr ""
+msgstr "مقالات المدونة"
 
 #: inc/manual.php:135
 msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
-msgstr ""
+msgstr "المقالات ← إضافة مقالة جديدة. امنح كل مقالة صورة بارزة وتصنيفًا. تظهر المقالات في الصفحة المختارة «صفحة المقالات» في الإعدادات ← القراءة. لتثبيت مقالة في الأعلى، حدد «تثبيت في أعلى المدونة» في إعدادات المقالة."
 
 #: inc/manual.php:140
 msgid "Menus"
-msgstr ""
+msgstr "القوائم"
 
 #: inc/manual.php:142
 msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
-msgstr ""
+msgstr "المظهر ← القوائم. اسحب العناصر لإعادة ترتيبها، واسحب عنصرًا قليلًا إلى الداخل لجعله قائمة منسدلة تحت العنصر الذي فوقه. يعرض الرأس مستويين، والتذييل مستوى واحدًا."
 
 #: inc/manual.php:147
 msgid "Comments"
-msgstr ""
+msgstr "التعليقات"
 
 #: inc/manual.php:149
 msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
-msgstr ""
+msgstr "فعّل التعليقات أو أوقفها للموقع كله من الإعدادات ← المناقشة، أو لكل مقالة من إعداداتها. وافق عليها أو احذفها من قسم التعليقات."
 
 #: inc/manual.php:154
 msgid "Getting help"
-msgstr ""
+msgstr "الحصول على المساعدة"
 
 #: inc/manual.php:156
 msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
-msgstr ""
+msgstr "راجع هذا الدليل وتبويب الوثائق أولًا. للدعم، تواصل مع المطوّر عبر رابط المطوّر في تفاصيل القالب (المظهر ← القوالب ← WP iTourTMS ← تفاصيل القالب)."
 
 #: inc/manual.php:162
 msgid "Documentation"
-msgstr ""
+msgstr "الوثائق"
 
 #: inc/manual.php:166
 msgid "Theme files"
-msgstr ""
+msgstr "ملفات القالب"
 
 #: inc/manual.php:173
 msgid "Colours, fonts and spacing"
-msgstr ""
+msgstr "الألوان والخطوط والمسافات"
 
 #: inc/manual.php:175
 msgid "All design values live in theme.json and become CSS custom properties such as --wp--preset--color--brand. Change them in a child theme’s theme.json and both the editor and the site update; you don’t need to edit CSS."
-msgstr ""
+msgstr "كل قيم التصميم موجودة في theme.json وتتحول إلى متغيرات CSS مثل ‎--wp--preset--color--brand‎. غيّرها في theme.json الخاص بالقالب الفرعي فيتحدث المحرر والموقع معًا دون الحاجة إلى تعديل CSS."
 
 #: inc/manual.php:177
 msgid "Keep at least 4.5:1 contrast between text and its background. The default palette meets WCAG 2.2 AA."
-msgstr ""
+msgstr "حافظ على تباين لا يقل عن 4.5:1 بين النص وخلفيته. لوحة الألوان الافتراضية تستوفي WCAG 2.2 AA."
 
 #: inc/manual.php:182
 msgid "Overriding templates"
-msgstr ""
+msgstr "استبدال القوالب"
 
 #: inc/manual.php:184
 msgid "Copy any template or template part into the child theme at the same path and edit the copy. For example, to change how posts look in lists, copy template-parts/content-summary.php."
-msgstr ""
+msgstr "انسخ أي قالب أو جزء قالب إلى القالب الفرعي في المسار نفسه وعدّل النسخة. مثلًا، لتغيير شكل المقالات في القوائم انسخ template-parts/content-summary.php."
 
 #: inc/manual.php:189
 msgid "Hooks for developers"
-msgstr ""
+msgstr "خطافات للمطوّرين"
 
 #: inc/manual.php:191
 msgid "wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin."
-msgstr ""
+msgstr "wp_itourtms_manual (فلتر): لإضافة تبويبات أو أقسام إلى هذا الدليل، مثلًا من إضافة."
 
 #: inc/manual.php:191
 msgid "wp_itourtms_option_sections (filter): add a vertical tab to Theme Options → Options. Give the section its own “store” option name so its settings stay with your plugin. Field types: color, px, number, checkbox, text, select, font, page."
-msgstr ""
+msgstr "wp_itourtms_option_sections (فلتر): لإضافة تبويب عمودي إلى خيارات القالب ← الخيارات. امنح القسم اسم خيار «store» خاصًا به لتبقى إعداداته مع إضافتك. أنواع الحقول: color وpx وnumber وcheckbox وtext وselect وfont وpage."
 
 #: inc/manual.php:191
 msgid "wp_itourtms_options( $store ) returns the saved values with defaults."
-msgstr ""
+msgstr "wp_itourtms_options( $store ) تُرجع القيم المحفوظة مع القيم الافتراضية."
 
 #: inc/manual.php:191
 msgid "Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content."
-msgstr ""
+msgstr "خطافات ووردبريس القياسية: wp_head وwp_body_open وwp_footer وthe_content."
 
 #: inc/manual.php:198
 msgid "Translation and right-to-left"
-msgstr ""
+msgstr "الترجمة واللغات من اليمين إلى اليسار"
 
 #: inc/manual.php:200
 msgid "Every string uses the wp-itourtms text domain. Translate languages/wp-itourtms.pot with Poedit or Loco Translate and save wp-itourtms-{locale}.mo in wp-content/languages/themes/. Layout uses CSS logical properties, so right-to-left languages need no extra stylesheet."
-msgstr ""
+msgstr "كل النصوص تستخدم نطاق الترجمة wp-itourtms. ترجم languages/wp-itourtms.pot باستخدام Poedit أو Loco Translate واحفظ wp-itourtms-{locale}.mo في wp-content/languages/themes/. يستخدم التخطيط خصائص CSS المنطقية، فلا تحتاج اللغات من اليمين إلى اليسار إلى ملف أنماط إضافي."
 
 #: inc/manual.php:205
 msgid "Accessibility"
-msgstr ""
+msgstr "سهولة الوصول"
 
 #: inc/manual.php:207
 msgid "Skip link to the main content as the first focusable element."
-msgstr ""
+msgstr "رابط تخطٍّ إلى المحتوى الرئيسي كأول عنصر يمكن التركيز عليه."
 
 #: inc/manual.php:207
 msgid "Visible focus outline on every link, button and form field."
-msgstr ""
+msgstr "إطار تركيز ظاهر لكل رابط وزر وحقل في النماذج."
 
 #: inc/manual.php:207
 msgid "Menus work with the keyboard; drop-downs open on focus."
-msgstr ""
+msgstr "القوائم تعمل بلوحة المفاتيح، والقوائم المنسدلة تفتح عند التركيز."
 
 #: inc/manual.php:207
 msgid "Animations are switched off when the visitor prefers reduced motion."
-msgstr ""
+msgstr "تتوقف الحركات عندما يفضّل الزائر تقليل الحركة."
 
 #: inc/manual.php:212
 msgid "Privacy"
-msgstr ""
+msgstr "الخصوصية"
 
 #: inc/manual.php:214
 msgid "The theme stores no personal data, sets no cookies and does no tracking. With the default system font it loads nothing from other servers. If you choose a Google Font, visitors’ browsers load it from Google’s servers (fonts.googleapis.com and fonts.gstatic.com); mention this in your privacy policy."
-msgstr ""
+msgstr "لا يخزّن القالب أي بيانات شخصية، ولا يضع ملفات تعريف ارتباط، ولا يتتبع الزوار. مع خط النظام الافتراضي لا يحمّل شيئًا من خوادم أخرى. إذا اخترت خطًا من Google، تحمّله متصفحات الزوار من خوادم Google ‏(fonts.googleapis.com وfonts.gstatic.com)، فاذكر ذلك في سياسة الخصوصية."
 
 #: inc/manual.php:219
 msgid "Credits and license"
-msgstr ""
+msgstr "الحقوق والترخيص"
 
 #: inc/manual.php:221
 msgid "WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used."
-msgstr ""
+msgstr "WP iTourTMS © 2026 محمد جودة، مرخّص بموجب GNU GPL الإصدار 2 أو أحدث. لا يستخدم القالب أي شيفرة أو خطوط أو صور من أطراف أخرى، ويستخدم خطوط النظام."
 
 #: inc/manual.php:226
 msgid "Changelog"
-msgstr ""
+msgstr "سجل التغييرات"
 
 #: inc/manual.php:228
 msgid "0.1.0: first release."
-msgstr ""
+msgstr "0.1.0: الإصدار الأول."
 
 #: inc/manual.php:264
 msgid "Note:"
-msgstr ""
+msgstr "ملاحظة:"
 
 #: inc/options.php:53
 #: inc/options.php:57
 msgid "Design"
-msgstr ""
+msgstr "التصميم"
 
 #: inc/options.php:54
 msgid "Six complete looks. Choosing one fills in the colours, fonts, shapes, header, top bar, footer and booking widget below; adjust anything you like, then save."
-msgstr ""
+msgstr "ستة مظاهر كاملة. اختيار أحدها يملأ الألوان والخطوط والأشكال والرأس والشريط العلوي والتذييل وأداة الحجز أدناه، عدّل ما تشاء ثم احفظ."
 
 #: inc/options.php:62
 msgid "Booking widget"
-msgstr ""
+msgstr "أداة الحجز"
 
 #: inc/options.php:66
 msgid "Tabs: pill tabs above a panel"
-msgstr ""
+msgstr "تبويبات: تبويبات فوق لوحة"
 
 #: inc/options.php:67
 msgid "Search bar: one rounded bar"
-msgstr ""
+msgstr "شريط بحث: شريط واحد مستدير"
 
 #: inc/options.php:68
 msgid "Card: stacked, for heroes and sidebars"
-msgstr ""
+msgstr "بطاقة: حقول متراصة، للافتات والأشرطة الجانبية"
 
 #: inc/options.php:70
 msgid "Used by every “Booking widget” block set to “Site default”."
-msgstr ""
+msgstr "تستخدمه كل مكوّنات «أداة الحجز» المضبوطة على «افتراضي الموقع»."
 
 #: inc/options.php:75
 msgid "Colours"
-msgstr ""
+msgstr "الألوان"
 
 #: inc/options.php:78
 #: inc/options.php:823
 msgid "Brand"
-msgstr ""
+msgstr "لون العلامة"
 
 #: inc/options.php:81
 msgid "Buttons, highlights and call-to-action bands."
-msgstr ""
+msgstr "الأزرار والعناصر المميزة وأشرطة الدعوة إلى التواصل."
 
 #: inc/options.php:84
 msgid "Brand (hover)"
-msgstr ""
+msgstr "لون العلامة (عند التمرير)"
 
 #: inc/options.php:87
 msgid "Buttons and links on hover, focus outlines. White text sits on it, so keep it dark."
-msgstr ""
+msgstr "الأزرار والروابط عند التمرير وإطارات التركيز. يوضع عليه نص أبيض، فاجعله داكنًا."
 
 #: inc/options.php:90
 #: inc/options.php:455
 #: inc/options.php:509
 msgid "Text"
-msgstr ""
+msgstr "النص"
 
 #: inc/options.php:93
 msgid "Body text, headings and the footer background."
-msgstr ""
+msgstr "النص الأساسي والعناوين وخلفية التذييل."
 
 #: inc/options.php:96
 msgid "Secondary text"
-msgstr ""
+msgstr "النص الثانوي"
 
 #: inc/options.php:101
 msgid "Soft background"
-msgstr ""
+msgstr "خلفية ناعمة"
 
 #: inc/options.php:106
 msgid "Page background"
-msgstr ""
+msgstr "خلفية الصفحة"
 
 #: inc/options.php:113
 msgid "Logo"
-msgstr ""
+msgstr "الشعار"
 
 #: inc/options.php:114
 msgid "SVG gives the sharpest result at any size. PNG and WebP work too."
-msgstr ""
+msgstr "يعطي SVG أوضح نتيجة بأي حجم. يعمل PNG وWebP أيضًا."
 
 #: inc/options.php:117
 msgid "Site logo"
-msgstr ""
+msgstr "شعار الموقع"
 
 #: inc/options.php:120
 msgid "Best: SVG, or PNG/WebP 200 × 48 px with a transparent background. Wide logos up to 300 × 48 px are fine."
-msgstr ""
+msgstr "الأفضل: SVG، أو PNG/WebP بحجم 200 × 48 بكسل بخلفية شفافة. الشعارات العريضة حتى 300 × 48 بكسل مناسبة."
 
 #: inc/options.php:123
 msgid "Retina logo"
-msgstr ""
+msgstr "شعار ريتينا"
 
 #: inc/options.php:126
 msgid "Exactly twice the site logo, e.g. 400 × 96 px, so it stays crisp on high-resolution screens. Not needed for SVG."
-msgstr ""
+msgstr "ضعف حجم شعار الموقع تمامًا، مثل 400 × 96 بكسل، ليبقى واضحًا على الشاشات عالية الدقة. غير مطلوب مع SVG."
 
 #: inc/options.php:129
 msgid "Mobile logo"
-msgstr ""
+msgstr "شعار الجوال"
 
 #: inc/options.php:132
 msgid "Shown on phones. Best: a compact mark or short logo, 120 × 36 px (240 × 72 px for retina), or SVG. Leave empty to use the site logo."
-msgstr ""
+msgstr "يظهر على الهواتف. الأفضل: رمز مختصر أو شعار قصير بحجم 120 × 36 بكسل (240 × 72 بكسل لريتينا)، أو SVG. اتركه فارغًا لاستخدام شعار الموقع."
 
 #: inc/options.php:135
 msgid "Light logo"
-msgstr ""
+msgstr "الشعار الفاتح"
 
 #: inc/options.php:138
 msgid "A white or light version, used on dark headers and by the “Over the hero” header. Same size as the site logo; SVG recommended."
-msgstr ""
+msgstr "نسخة بيضاء أو فاتحة تُستخدم على الرؤوس الداكنة وفي رأس «فوق اللافتة». بحجم شعار الموقع نفسه، ويُفضَّل SVG."
 
 #: inc/options.php:141
 msgid "Logo height"
-msgstr ""
+msgstr "ارتفاع الشعار"
 
 #: inc/options.php:146
 msgid "Display height in the header on larger screens; the width follows."
-msgstr ""
+msgstr "ارتفاع العرض في الرأس على الشاشات الكبيرة، ويتبعه العرض تلقائيًا."
 
 #: inc/options.php:149
 msgid "Mobile logo height"
-msgstr ""
+msgstr "ارتفاع شعار الجوال"
 
 #: inc/options.php:158
 msgid "Fonts"
-msgstr ""
+msgstr "الخطوط"
 
 #: inc/options.php:159
 msgid "Choose from every Google Font, or keep the fast system font. Google Fonts load from Google’s servers."
-msgstr ""
+msgstr "اختر من جميع خطوط Google، أو أبقِ خط النظام السريع. تُحمَّل خطوط Google من خوادم Google."
 
 #: inc/options.php:162
 msgid "Body font"
-msgstr ""
+msgstr "خط النص"
 
 #: inc/options.php:165
 msgid "Paragraphs, menus, buttons and forms."
-msgstr ""
+msgstr "الفقرات والقوائم والأزرار والنماذج."
 
 #: inc/options.php:168
 msgid "Heading font"
-msgstr ""
+msgstr "خط العناوين"
 
 #: inc/options.php:171
 msgid "Titles and headings. Leave on “Same as body” for one family."
-msgstr ""
+msgstr "العناوين الرئيسية والفرعية. اتركه على «مثل النص الأساسي» لاستخدام عائلة واحدة."
 
 #: inc/options.php:174
 msgid "Base text size"
-msgstr ""
+msgstr "حجم النص الأساسي"
 
 #: inc/options.php:181
 msgid "Heading weight"
-msgstr ""
+msgstr "سماكة العناوين"
 
 #: inc/options.php:185
 msgid "Regular (400)"
-msgstr ""
+msgstr "عادي (400)"
 
 #: inc/options.php:186
 msgid "Medium (500)"
-msgstr ""
+msgstr "متوسط (500)"
 
 #: inc/options.php:187
 msgid "Semibold (600)"
-msgstr ""
+msgstr "شبه عريض (600)"
 
 #: inc/options.php:188
 msgid "Bold (700)"
-msgstr ""
+msgstr "عريض (700)"
 
 #: inc/options.php:189
 msgid "Extra bold (800)"
-msgstr ""
+msgstr "عريض جدًا (800)"
 
 #: inc/options.php:190
 msgid "Black (900)"
-msgstr ""
+msgstr "أسود (900)"
 
 #: inc/options.php:196
 #: inc/options.php:467
 msgid "Layout"
-msgstr ""
+msgstr "التخطيط"
 
 #: inc/options.php:199
 msgid "Text column width"
-msgstr ""
+msgstr "عرض عمود النص"
 
 #: inc/options.php:204
 msgid "Width of paragraphs and normal blocks. 680–800 px reads best."
-msgstr ""
+msgstr "عرض الفقرات والمكوّنات العادية. الأفضل للقراءة 680–800 بكسل."
 
 #: inc/options.php:207
 msgid "Wide width"
-msgstr ""
+msgstr "العرض الواسع"
 
 #: inc/options.php:212
 msgid "Width of the header, footer and “Wide width” blocks."
-msgstr ""
+msgstr "عرض الرأس والتذييل ومكوّنات «العرض الواسع»."
 
 #: inc/options.php:215
 msgid "Corner rounding"
-msgstr ""
+msgstr "استدارة الزوايا"
 
 #: inc/options.php:220
 msgid "Buttons, images in lists and menus. 0 gives square corners."
-msgstr ""
+msgstr "الأزرار والصور في القوائم والقوائم المنسدلة. القيمة 0 تعطي زوايا مربعة."
 
 #: inc/options.php:225
 msgid "Header"
-msgstr ""
+msgstr "الرأس"
 
 #: inc/options.php:226
 msgid "Choose the header design, its colours and an optional button."
-msgstr ""
+msgstr "اختر تصميم الرأس وألوانه وزرًا اختياريًا."
 
 #: inc/options.php:229
 msgid "Header design"
-msgstr ""
+msgstr "تصميم الرأس"
 
 #: inc/options.php:233
 msgid "Classic: logo left, menu right"
-msgstr ""
+msgstr "كلاسيكي: الشعار في البداية والقائمة في النهاية"
 
 #: inc/options.php:234
 msgid "Centred: logo above a centred menu"
-msgstr ""
+msgstr "متوسط: الشعار فوق قائمة في المنتصف"
 
 #: inc/options.php:235
 msgid "Over the hero: transparent on the home page, solid on scroll"
-msgstr ""
+msgstr "فوق اللافتة: شفاف في الصفحة الرئيسية وثابت اللون عند التمرير"
 
 #: inc/options.php:236
 msgid "Floating: a rounded bar with space around it"
-msgstr ""
+msgstr "عائم: شريط مستدير بمسافة حوله"
 
 #: inc/options.php:240
 msgid "Header background"
-msgstr ""
+msgstr "خلفية الرأس"
 
 #: inc/options.php:245
 msgid "Header text"
-msgstr ""
+msgstr "نص الرأس"
 
 #: inc/options.php:250
 msgid "Button text"
-msgstr ""
+msgstr "نص الزر"
 
 #: inc/options.php:253
 msgid "Optional button at the end of the header, e.g. “Book now”. Leave empty for no button."
-msgstr ""
+msgstr "زر اختياري في نهاية الرأس، مثل «احجز الآن». اتركه فارغًا لعدم إظهار زر."
 
 #: inc/options.php:256
 msgid "Button link"
-msgstr ""
+msgstr "رابط الزر"
 
 #: inc/options.php:261
 msgid "Sticky header"
-msgstr ""
+msgstr "رأس ثابت"
 
 #: inc/options.php:264
 msgid "Keep the header at the top of the screen while scrolling"
-msgstr ""
+msgstr "إبقاء الرأس أعلى الشاشة أثناء التمرير"
 
 #: inc/options.php:267
 msgid "Site title with logo"
-msgstr ""
+msgstr "اسم الموقع مع الشعار"
 
 #: inc/options.php:270
 msgid "Show the site title next to the logo"
-msgstr ""
+msgstr "إظهار اسم الموقع بجانب الشعار"
 
 #: inc/options.php:275
 msgid "Top bar"
-msgstr ""
+msgstr "الشريط العلوي"
 
 #: inc/options.php:276
 msgid "A thin bar above the header for contact details, a short message and social links."
-msgstr ""
+msgstr "شريط رفيع فوق الرأس لبيانات التواصل ورسالة قصيرة والروابط الاجتماعية."
 
 #: inc/options.php:279
 msgid "Show top bar"
-msgstr ""
+msgstr "إظهار الشريط العلوي"
 
 #: inc/options.php:282
 msgid "Display the top bar above the header"
-msgstr ""
+msgstr "عرض الشريط العلوي فوق الرأس"
 
 #: inc/options.php:285
 msgid "Top bar design"
-msgstr ""
+msgstr "تصميم الشريط العلوي"
 
 #: inc/options.php:290
 msgid "Split: contacts left, message centre, social right"
-msgstr ""
+msgstr "مقسوم: التواصل في البداية والرسالة في المنتصف والروابط الاجتماعية في النهاية"
 
 #: inc/options.php:291
 msgid "Centred: message only, with social links beside it"
-msgstr ""
+msgstr "متوسط: الرسالة فقط مع الروابط الاجتماعية بجانبها"
 
 #: inc/options.php:292
 msgid "Minimal: contacts left, social right, no message"
-msgstr ""
+msgstr "بسيط: التواصل في البداية والروابط الاجتماعية في النهاية بدون رسالة"
 
 #: inc/options.php:293
 msgid "Announcement: brand-coloured bar with the message and a link"
-msgstr ""
+msgstr "إعلان: شريط بلون العلامة مع الرسالة ورابط"
 
 #: inc/options.php:297
 msgid "Message"
-msgstr ""
+msgstr "الرسالة"
 
 #: inc/options.php:301
 msgid "Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed."
-msgstr ""
+msgstr "سطر قصير مثل «إلغاء مجاني حتى 24 ساعة قبل معظم الرحلات». يُسمح بالروابط البسيطة والخط العريض."
 
 #: inc/options.php:304
 msgid "Link text"
-msgstr ""
+msgstr "نص الرابط"
 
 #: inc/options.php:310
 msgid "Link"
-msgstr ""
+msgstr "الرابط"
 
 #: inc/options.php:316
 #: inc/options.php:453
 msgid "Contact details"
-msgstr ""
+msgstr "بيانات التواصل"
 
 #: inc/options.php:320
 msgid "Show phone, email and WhatsApp from the Contact & social tab"
-msgstr ""
+msgstr "إظهار الهاتف والبريد وواتساب من تبويب التواصل والشبكات الاجتماعية"
 
 #: inc/options.php:323
 #: inc/options.php:376
 #: inc/options.php:454
 msgid "Social links"
-msgstr ""
+msgstr "الروابط الاجتماعية"
 
 #: inc/options.php:327
 msgid "Show the social icons from the Contact & social tab"
-msgstr ""
+msgstr "إظهار أيقونات الشبكات الاجتماعية من تبويب التواصل والشبكات الاجتماعية"
 
 #: inc/options.php:330
 msgid "Top bar background"
-msgstr ""
+msgstr "خلفية الشريط العلوي"
 
 #: inc/options.php:336
 msgid "Top bar text"
-msgstr ""
+msgstr "نص الشريط العلوي"
 
 #: inc/options.php:342
 msgid "On phones"
-msgstr ""
+msgstr "على الهواتف"
 
 #: inc/options.php:346
 msgid "Also show the top bar on small screens"
-msgstr ""
+msgstr "إظهار الشريط العلوي على الشاشات الصغيرة أيضًا"
 
 #: inc/options.php:351
 msgid "Contact & social"
-msgstr ""
+msgstr "التواصل والشبكات الاجتماعية"
 
 #: inc/options.php:352
 msgid "Entered once, used by the top bar and the footer. Leave a field empty to hide it."
-msgstr ""
+msgstr "تُدخل مرة واحدة ويستخدمها الشريط العلوي والتذييل. اترك الحقل فارغًا لإخفائه."
 
 #: inc/options.php:355
 msgid "Phone"
-msgstr ""
+msgstr "الهاتف"
 
 #: inc/options.php:360
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: inc/options.php:365
 #: inc/template-tags.php:93
@@ -1179,193 +1179,193 @@ msgstr "واتساب"
 
 #: inc/options.php:368
 msgid "International format, e.g. +20 100 000 0000. Opens a WhatsApp chat."
-msgstr ""
+msgstr "بالصيغة الدولية، مثل ‎+20 100 000 0000‎. يفتح محادثة واتساب."
 
 #: inc/options.php:371
 msgid "Address"
-msgstr ""
+msgstr "العنوان"
 
 #: inc/options.php:412
 msgid "Footer"
-msgstr ""
+msgstr "التذييل"
 
 #: inc/options.php:413
 msgid "Columns at the top of the footer, its colours and the bottom line."
-msgstr ""
+msgstr "الأعمدة في أعلى التذييل وألوانه والسطر الأخير."
 
 #: inc/options.php:417
 msgid "Blog"
-msgstr ""
+msgstr "المدونة"
 
 #: inc/options.php:420
 msgid "Post dates"
-msgstr ""
+msgstr "تواريخ المقالات"
 
 #: inc/options.php:423
 msgid "Show the date on posts and in lists"
-msgstr ""
+msgstr "إظهار التاريخ في المقالات والقوائم"
 
 #: inc/options.php:426
 msgid "Featured image on posts"
-msgstr ""
+msgstr "الصورة البارزة في المقالات"
 
 #: inc/options.php:429
 msgid "Show the featured image at the top of each post"
-msgstr ""
+msgstr "إظهار الصورة البارزة أعلى كل مقالة"
 
 #: inc/options.php:432
 msgid "Summary length"
-msgstr ""
+msgstr "طول الملخص"
 
 #: inc/options.php:437
 msgid "Words shown for each post in lists when the post has no manual excerpt."
-msgstr ""
+msgstr "عدد الكلمات المعروضة لكل مقالة في القوائم عندما لا يوجد مقتطف يدوي."
 
 #: inc/options.php:451
 msgid "About (logo and text)"
-msgstr ""
+msgstr "نبذة (شعار ونص)"
 
 #: inc/options.php:456
 msgid "Widgets (Appearance → Widgets)"
-msgstr ""
+msgstr "ودجات (المظهر ← الودجات)"
 
 #: inc/options.php:457
 msgid "Empty"
-msgstr ""
+msgstr "فارغ"
 
 #: inc/options.php:461
 msgid "Explore"
-msgstr ""
+msgstr "استكشف"
 
 #: inc/options.php:462
 msgid "Contact"
-msgstr ""
+msgstr "تواصل معنا"
 
 #: inc/options.php:463
 msgid "Follow us"
-msgstr ""
+msgstr "تابعنا"
 
 #: inc/options.php:471
 msgid "No columns (bottom line only)"
-msgstr ""
+msgstr "بدون أعمدة (السطر الأخير فقط)"
 
 #: inc/options.php:472
 msgid "3 columns"
-msgstr ""
+msgstr "3 أعمدة"
 
 #: inc/options.php:473
 msgid "4 columns"
-msgstr ""
+msgstr "4 أعمدة"
 
 #. translators: %d: column number.
 #: inc/options.php:483
 #, php-format
 msgid "Column %d"
-msgstr ""
+msgstr "العمود %d"
 
 #: inc/options.php:488
 msgid "Shows"
-msgstr ""
+msgstr "يعرض"
 
 #: inc/options.php:495
 msgid "Title"
-msgstr ""
+msgstr "العنوان"
 
 #: inc/options.php:506
 msgid "Create menus under Appearance → Menus. This sets the “Footer column” menu location."
-msgstr ""
+msgstr "أنشئ القوائم من المظهر ← القوائم. هذا يضبط موقع قائمة «عمود التذييل»."
 
 #: inc/options.php:513
 msgid "Basic links, bold and line breaks are allowed. For “About”, leave empty to use the site tagline."
-msgstr ""
+msgstr "يُسمح بالروابط البسيطة والخط العريض وفواصل الأسطر. في «نبذة» اتركه فارغًا لاستخدام وصف الموقع."
 
 #. translators: %d: column number.
 #: inc/options.php:517
 #, php-format
 msgid "Add blocks to “Footer column %d” under Appearance → Widgets."
-msgstr ""
+msgstr "أضف مكوّنات إلى «عمود التذييل %d» من المظهر ← الودجات."
 
 #: inc/options.php:524
 msgid "Colours and bottom line"
-msgstr ""
+msgstr "الألوان والسطر الأخير"
 
 #: inc/options.php:528
 msgid "Footer background"
-msgstr ""
+msgstr "خلفية التذييل"
 
 #: inc/options.php:533
 msgid "Footer text"
-msgstr ""
+msgstr "نص التذييل"
 
 #: inc/options.php:538
 msgid "Bottom line"
-msgstr ""
+msgstr "السطر الأخير"
 
 #: inc/options.php:541
 msgid "{year} becomes the current year and {site} the site title. Basic links and bold are allowed. Leave empty to hide it."
-msgstr ""
+msgstr "يتحول {year} إلى السنة الحالية و{site} إلى اسم الموقع. يُسمح بالروابط البسيطة والخط العريض. اتركه فارغًا لإخفائه."
 
 #: inc/options.php:782
 msgid "Text on the page background"
-msgstr ""
+msgstr "النص على خلفية الصفحة"
 
 #: inc/options.php:783
 msgid "Text on brand buttons"
-msgstr ""
+msgstr "النص على أزرار العلامة"
 
 #: inc/options.php:784
 msgid "White text on the hover colour"
-msgstr ""
+msgstr "النص الأبيض على لون التمرير"
 
 #: inc/options.php:787
 msgid "Top bar text on its background"
-msgstr ""
+msgstr "نص الشريط العلوي على خلفيته"
 
 #: inc/options.php:789
 msgid "Footer text on its background"
-msgstr ""
+msgstr "نص التذييل على خلفيته"
 
 #: inc/options.php:790
 msgid "Header text on its background"
-msgstr ""
+msgstr "نص الرأس على خلفيته"
 
 #. translators: 1: colour pair, 2: contrast ratio.
 #: inc/options.php:796
 #, php-format
 msgid "%1$s is hard to read (%2$s:1). Aim for at least 4.5:1."
-msgstr ""
+msgstr "%1$s صعب القراءة (%2$s:1). استهدف 4.5:1 على الأقل."
 
 #: inc/options.php:824
 msgid "Brand dark"
-msgstr ""
+msgstr "لون العلامة الداكن"
 
 #: inc/options.php:825
 msgid "Ink"
-msgstr ""
+msgstr "الحبر"
 
 #: inc/options.php:826
 msgid "Muted"
-msgstr ""
+msgstr "خافت"
 
 #: inc/options.php:827
 msgid "Line"
-msgstr ""
+msgstr "الخطوط الفاصلة"
 
 #: inc/options.php:828
 msgid "Surface"
-msgstr ""
+msgstr "السطح"
 
 #: inc/options.php:829
 msgid "Base"
-msgstr ""
+msgstr "الأساس"
 
 #: inc/options.php:851
 msgid "System"
-msgstr ""
+msgstr "النظام"
 
 #: inc/options.php:856
 msgid "Headings"
-msgstr ""
+msgstr "العناوين"
 
 #. translators: %s: search query.
 #: index.php:29
@@ -1470,89 +1470,89 @@ msgstr "صفحة"
 #: theme.json
 msgctxt "Color name"
 msgid "Brand"
-msgstr ""
+msgstr "لون العلامة"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Brand dark"
-msgstr ""
+msgstr "لون العلامة الداكن"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Ink"
-msgstr ""
+msgstr "الحبر"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Muted"
-msgstr ""
+msgstr "خافت"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Line"
-msgstr ""
+msgstr "الخطوط الفاصلة"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Surface"
-msgstr ""
+msgstr "السطح"
 
 #: theme.json
 msgctxt "Color name"
 msgid "Base"
-msgstr ""
+msgstr "الأساس"
 
 #: theme.json
 msgctxt "Font family name"
 msgid "System"
-msgstr ""
+msgstr "النظام"
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Small"
-msgstr ""
+msgstr "صغير"
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Medium"
-msgstr ""
+msgstr "متوسط"
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Large"
-msgstr ""
+msgstr "كبير"
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra large"
-msgstr ""
+msgstr "كبير جدًا"
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Huge"
-msgstr ""
+msgstr "ضخم"
 
 #: theme.json
 msgctxt "Space size name"
 msgid "XS"
-msgstr ""
+msgstr "XS"
 
 #: theme.json
 msgctxt "Space size name"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: theme.json
 msgctxt "Space size name"
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: theme.json
 msgctxt "Space size name"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: theme.json
 msgctxt "Space size name"
 msgid "XL"
-msgstr ""
+msgstr "XL"
