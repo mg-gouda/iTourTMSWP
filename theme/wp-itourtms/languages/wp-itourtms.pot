@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T22:42:35+00:00\n"
+"POT-Creation-Date: 2026-11-09T03:20:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-itourtms\n"
@@ -71,6 +71,8 @@ msgstr ""
 
 #: functions.php:42
 #: header.php:38
+#: inc/admin-page.php:202
+#: inc/rest.php:111
 msgid "Main menu"
 msgstr ""
 
@@ -109,8 +111,8 @@ msgid "WP iTourTMS Theme Options"
 msgstr ""
 
 #: inc/admin-page.php:17
-#: inc/admin-page.php:96
-#: inc/manual.php:94
+#: inc/admin-page.php:99
+#: inc/manual.php:95
 msgid "Theme Options"
 msgstr ""
 
@@ -155,12 +157,12 @@ msgid "applied below. Review, then click Save options."
 msgstr ""
 
 #: inc/admin-page.php:54
-#: inc/admin-page.php:227
+#: inc/admin-page.php:286
 msgid "Choose image"
 msgstr ""
 
 #: inc/admin-page.php:55
-#: inc/admin-page.php:227
+#: inc/admin-page.php:286
 msgid "Replace image"
 msgstr ""
 
@@ -173,220 +175,268 @@ msgid "Keep typing to see more"
 msgstr ""
 
 #: inc/admin-page.php:74
+#: inc/admin-page.php:193
+#: inc/admin-page.php:229
+msgid "Quick setup"
+msgstr ""
+
+#: inc/admin-page.php:77
 msgid "License"
 msgstr ""
 
-#: inc/admin-page.php:76
+#: inc/admin-page.php:79
 msgid "Options"
 msgstr ""
 
 #. translators: %s: theme version.
-#: inc/admin-page.php:97
+#: inc/admin-page.php:100
 #, php-format
 msgid "WP iTourTMS %s · settings, license and help for your theme"
 msgstr ""
 
-#: inc/admin-page.php:99
+#: inc/admin-page.php:102
 msgid "Theme Options sections"
 msgstr ""
 
-#: inc/admin-page.php:130
+#: inc/admin-page.php:135
 msgid "Option groups"
 msgstr ""
 
-#: inc/admin-page.php:145
+#: inc/admin-page.php:150
 msgid "Your brand colours. They apply to the site and the block editor."
 msgstr ""
 
-#: inc/admin-page.php:146
+#: inc/admin-page.php:151
 msgid "How wide content runs and how rounded corners are."
 msgstr ""
 
-#: inc/admin-page.php:147
+#: inc/admin-page.php:152
 msgid "How the site header behaves."
 msgstr ""
 
-#: inc/admin-page.php:148
+#: inc/admin-page.php:153
 msgid "The line at the bottom of every page."
 msgstr ""
 
-#: inc/admin-page.php:149
+#: inc/admin-page.php:154
 msgid "What posts show in lists and on their own page."
 msgstr ""
 
-#: inc/admin-page.php:164
+#: inc/admin-page.php:169
 msgid "Preview"
 msgstr ""
 
-#: inc/admin-page.php:165
+#: inc/admin-page.php:170
 msgid "Nile cruise from Luxor to Aswan"
 msgstr ""
 
-#: inc/admin-page.php:166
+#: inc/admin-page.php:171
 msgid "Four nights on the river with guided visits to Karnak, Edfu and Kom Ombo. Breakfast, lunch and dinner included."
 msgstr ""
 
-#: inc/admin-page.php:170
+#: inc/admin-page.php:175
 msgid "Save options"
 msgstr ""
 
-#: inc/admin-page.php:171
+#: inc/admin-page.php:176
 msgid "Reset to defaults"
 msgstr ""
 
-#: inc/admin-page.php:172
+#: inc/admin-page.php:177
 msgid "Changes under Appearance → Design → Styles take priority over these colours and widths."
 msgstr ""
 
-#: inc/admin-page.php:228
+#: inc/admin-page.php:188
+msgid "Pick a design"
+msgstr ""
+
+#: inc/admin-page.php:189
+msgid "Add your logo"
+msgstr ""
+
+#: inc/admin-page.php:190
+#: inc/options.php:316
+#: inc/options.php:453
+msgid "Contact details"
+msgstr ""
+
+#: inc/admin-page.php:194
+msgid "Four quick steps. Everything here can be changed later under Options."
+msgstr ""
+
+#: inc/admin-page.php:204
+msgid "A main menu is already set. Edit it under Appearance → Menus."
+msgstr ""
+
+#: inc/admin-page.php:206
+msgid "Create the main menu"
+msgstr ""
+
+#: inc/admin-page.php:207
+msgid "Adds your published top-level pages to a new menu in the header."
+msgstr ""
+
+#: inc/admin-page.php:210
+msgid "Save and finish"
+msgstr ""
+
+#: inc/admin-page.php:211
+msgid "Skip setup"
+msgstr ""
+
+#: inc/admin-page.php:227
+msgid "WP iTourTMS is active. Pick a design, add your logo and create the main menu in a minute."
+msgstr ""
+
+#: inc/admin-page.php:287
 msgid "Remove"
 msgstr ""
 
-#: inc/admin-page.php:234
+#: inc/admin-page.php:293
 msgid "— Choose a menu —"
 msgstr ""
 
 #. translators: %s: colour name.
-#: inc/admin-page.php:264
+#: inc/admin-page.php:323
 #, php-format
 msgid "Pick %s colour"
 msgstr ""
 
-#: inc/admin-page.php:273
+#: inc/admin-page.php:332
 msgid "Same as body"
 msgstr ""
 
-#: inc/admin-page.php:273
+#: inc/admin-page.php:332
 msgid "System font (fastest)"
 msgstr ""
 
-#: inc/admin-page.php:287
+#: inc/admin-page.php:346
 msgid "— Choose a page —"
 msgstr ""
 
-#: inc/admin-page.php:303
+#: inc/admin-page.php:362
 msgid "words"
 msgstr ""
 
-#: inc/admin-page.php:316
+#: inc/admin-page.php:375
 msgid "License Information"
 msgstr ""
 
-#: inc/admin-page.php:317
+#: inc/admin-page.php:376
 msgid "Activate your license to receive theme updates and support. Your site keeps working either way."
 msgstr ""
 
-#: inc/admin-page.php:319
+#: inc/admin-page.php:378
 msgid "The license server is not set up on this site yet. Add WP_ITOURTMS_LICENSE_SERVER and WP_ITOURTMS_LICENSE_PUBKEY to wp-config.php (see Documentation → License)."
 msgstr ""
 
-#: inc/admin-page.php:325
+#: inc/admin-page.php:384
 msgid "Replace license key"
 msgstr ""
 
-#: inc/admin-page.php:325
+#: inc/admin-page.php:384
 msgid "License key"
 msgstr ""
 
-#: inc/admin-page.php:326
+#: inc/admin-page.php:385
 msgid "Paste the license key from your purchase email"
 msgstr ""
 
-#: inc/admin-page.php:327
+#: inc/admin-page.php:386
 msgid "Activate"
 msgstr ""
 
-#: inc/admin-page.php:329
+#: inc/admin-page.php:388
 msgid "Check now"
 msgstr ""
 
-#: inc/admin-page.php:330
+#: inc/admin-page.php:389
 msgid "Remove license"
 msgstr ""
 
-#: inc/admin-page.php:342
+#: inc/admin-page.php:401
 msgid "Not activated"
 msgstr ""
 
-#: inc/admin-page.php:343
+#: inc/admin-page.php:402
 msgid "Active"
 msgstr ""
 
-#: inc/admin-page.php:344
+#: inc/admin-page.php:403
 msgid "Active (needs attention)"
 msgstr ""
 
-#: inc/admin-page.php:345
+#: inc/admin-page.php:404
 msgid "Expired"
 msgstr ""
 
-#: inc/admin-page.php:346
+#: inc/admin-page.php:405
 msgid "Revoked"
 msgstr ""
 
-#: inc/admin-page.php:347
+#: inc/admin-page.php:406
 msgid "Invalid key"
 msgstr ""
 
-#: inc/admin-page.php:348
+#: inc/admin-page.php:407
 msgid "Not licensed for this domain"
 msgstr ""
 
-#: inc/admin-page.php:349
+#: inc/admin-page.php:408
 msgid "Install limit reached"
 msgstr ""
 
-#: inc/admin-page.php:350
+#: inc/admin-page.php:409
 msgid "Server IP not allowed"
 msgstr ""
 
-#: inc/admin-page.php:351
+#: inc/admin-page.php:410
 msgid "Could not reach the license server"
 msgstr ""
 
 #. translators: %d: days.
-#: inc/admin-page.php:356
+#: inc/admin-page.php:415
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/admin-page.php:358
-#: inc/admin-page.php:373
+#: inc/admin-page.php:417
+#: inc/admin-page.php:432
 msgid "License Key"
 msgstr ""
 
-#: inc/admin-page.php:359
-#: inc/admin-page.php:370
+#: inc/admin-page.php:418
+#: inc/admin-page.php:429
 msgid "Status"
 msgstr ""
 
-#: inc/admin-page.php:360
+#: inc/admin-page.php:419
 msgid "Licensed to"
 msgstr ""
 
-#: inc/admin-page.php:361
+#: inc/admin-page.php:420
 msgid "Plan"
 msgstr ""
 
-#: inc/admin-page.php:362
+#: inc/admin-page.php:421
 msgid "Expires On"
 msgstr ""
 
-#: inc/admin-page.php:363
+#: inc/admin-page.php:422
 msgid "Days Remaining"
 msgstr ""
 
-#: inc/admin-page.php:364
+#: inc/admin-page.php:423
 msgid "Domains"
 msgstr ""
 
-#: inc/admin-page.php:365
+#: inc/admin-page.php:424
 msgid "Last checked"
 msgstr ""
 
-#: inc/admin-page.php:387
+#: inc/admin-page.php:446
 msgid "On this page"
 msgstr ""
 
@@ -514,283 +564,287 @@ msgstr ""
 msgid "First setup (10 minutes)"
 msgstr ""
 
-#: inc/manual.php:53
-msgid "Logo: Appearance → Customize → Site Identity → Select logo. A transparent PNG or SVG about 200 × 48 px works best."
+#: inc/manual.php:50
+msgid "Right after activation, Appearance → Theme Options opens on “Quick setup”: pick a design, add your logo and contact details, and create the main menu from your pages. It shows until you finish or skip it. The steps below do the rest by hand."
 msgstr ""
 
 #: inc/manual.php:54
-msgid "Menus: Appearance → Menus. Create a menu, add pages, then tick “Main menu” (header) or “Footer menu” under Menu Settings."
+msgid "Logo: Appearance → Customize → Site Identity → Select logo. A transparent PNG or SVG about 200 × 48 px works best."
 msgstr ""
 
 #: inc/manual.php:55
-msgid "Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page."
+msgid "Menus: Appearance → Menus. Create a menu, add pages, then tick “Main menu” (header) or “Footer menu” under Menu Settings."
 msgstr ""
 
 #: inc/manual.php:56
-msgid "Pretty links: Settings → Permalinks → “Post name” → Save."
+msgid "Home page: Settings → Reading → “A static page”, then choose your Homepage and Posts page."
 msgstr ""
 
 #: inc/manual.php:57
-msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
+msgid "Pretty links: Settings → Permalinks → “Post name” → Save."
 msgstr ""
 
 #: inc/manual.php:58
+msgid "Language: Settings → General → Site Language. Arabic and other right-to-left languages flip the layout automatically."
+msgstr ""
+
+#: inc/manual.php:59
 msgid "Your brand: Appearance → Theme Options → Options. Set your colours, widths, header and footer (see “Theme Options” in the User manual)."
 msgstr ""
 
-#: inc/manual.php:65
+#: inc/manual.php:66
 msgid "Child theme"
 msgstr ""
 
-#: inc/manual.php:67
+#: inc/manual.php:68
 msgid "Updates replace the theme’s files. Put your own changes in the WP iTourTMS Child theme (included in the package) so they survive updates. Activate the child theme; it loads the parent automatically."
 msgstr ""
 
-#: inc/manual.php:73
+#: inc/manual.php:74
 msgid "User manual"
 msgstr ""
 
-#: inc/manual.php:77
+#: inc/manual.php:78
 msgid "Create and edit pages"
 msgstr ""
 
-#: inc/manual.php:79
+#: inc/manual.php:80
 msgid "Pages are built with the WordPress block editor. No page builder is needed. Ready-made sections (hero banner, reasons to book, call to action) are under + → Patterns → “WP iTourTMS”."
 msgstr ""
 
-#: inc/manual.php:83
+#: inc/manual.php:84
 msgid "Go to Pages → Add New Page and type a title."
 msgstr ""
 
-#: inc/manual.php:84
+#: inc/manual.php:85
 msgid "Click + (top left) to add a block: Paragraph, Heading, Image, Columns, Buttons, Cover and so on. Type / in an empty line to search blocks quickly."
 msgstr ""
 
-#: inc/manual.php:85
+#: inc/manual.php:86
 msgid "Select a block to change its colour, spacing or width in the right-hand panel. The theme’s colours appear as swatches."
 msgstr ""
 
-#: inc/manual.php:86
+#: inc/manual.php:87
 msgid "Use “Wide width” or “Full width” on Image, Cover and Group blocks for banners and galleries."
 msgstr ""
 
-#: inc/manual.php:87
+#: inc/manual.php:88
 msgid "Click Publish (or Update). Use Preview first to check it on the site."
 msgstr ""
 
-#: inc/manual.php:96
+#: inc/manual.php:97
 msgid "Appearance → Theme Options → Options holds every theme setting. Click “Save options” to apply them to the site and the block editor together."
 msgstr ""
 
-#: inc/manual.php:100
+#: inc/manual.php:101
 msgid "Design: six complete looks (Nile Classic, Desert Dusk, Red Sea, Midnight Gold, Oasis, iTourTMS). Clicking one fills in colours, fonts, shapes, header, top bar, footer and booking-widget style; change anything, then save."
 msgstr ""
 
-#: inc/manual.php:101
+#: inc/manual.php:102
 msgid "Colours: brand, hover, text, secondary text, soft background and page background. A warning appears if a pair is hard to read."
 msgstr ""
 
-#: inc/manual.php:102
+#: inc/manual.php:103
 msgid "Logo: site logo, retina logo (twice the size, for sharp high-resolution screens), mobile logo and a light logo for dark headers, plus display heights. SVG, WebP, PNG and JPG are accepted; SVG files are cleaned of scripts when uploaded."
 msgstr ""
 
-#: inc/manual.php:103
+#: inc/manual.php:104
 msgid "Fonts: pick any Google Font for body text and headings (type to search), the base text size and heading weight. The preview shows the result before you save. Leave empty for the fast system font."
 msgstr ""
 
-#: inc/manual.php:104
+#: inc/manual.php:105
 msgid "Layout: text column width, wide width (header, footer, wide blocks) and corner rounding."
 msgstr ""
 
-#: inc/manual.php:105
+#: inc/manual.php:106
 msgid "Module tabs: each iTourTMS plugin you install adds its own tab here, for example to choose the pages it uses."
 msgstr ""
 
-#: inc/manual.php:106
+#: inc/manual.php:107
 msgid "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the site title next to the logo."
 msgstr ""
 
-#: inc/manual.php:107
+#: inc/manual.php:108
 msgid "Top bar: switch on “Show top bar” to reveal its settings: four designs (split, centred, minimal, announcement), a short message and link, whether to show contact details and social links, its colours, and whether it shows on phones (as icons)."
 msgstr ""
 
-#: inc/manual.php:108
+#: inc/manual.php:109
 msgid "Contact & social: phone, email, WhatsApp, address and social links (Facebook, Instagram, X, TikTok, YouTube, LinkedIn), entered once and used by the top bar and the footer. Empty fields are left out."
 msgstr ""
 
-#: inc/manual.php:109
+#: inc/manual.php:110
 msgid "Footer → Layout: no columns, 3 columns or 4 columns. For each column choose what it shows: About (logo and text), a Menu, Contact details, Social links, your own Text, Widgets, or nothing, and give it a title. Only the settings for the chosen type appear. Footer colours and the bottom line ({year} and {site} are filled in for you) are at the end."
 msgstr ""
 
-#: inc/manual.php:110
+#: inc/manual.php:111
 msgid "Blog: show dates, show the featured image on posts, and the length of summaries in lists."
 msgstr ""
 
-#: inc/manual.php:113
+#: inc/manual.php:114
 msgid "“Reset to defaults” puts every option back to the theme’s original values."
 msgstr ""
 
-#: inc/manual.php:118
+#: inc/manual.php:119
 msgid "Colours and fonts for the whole site"
 msgstr ""
 
-#: inc/manual.php:120
+#: inc/manual.php:121
 msgid "Appearance → Design → Styles changes the colours, fonts and button style everywhere at once, and the change shows in the editor too. Appearance → Fonts adds or removes font families. To undo, open Styles → ⋮ → Reset."
 msgstr ""
 
-#: inc/manual.php:121
+#: inc/manual.php:122
 msgid "Keep text readable: dark text on light backgrounds (or the reverse) with strong contrast."
 msgstr ""
 
-#: inc/manual.php:126
+#: inc/manual.php:127
 msgid "Images"
 msgstr ""
 
-#: inc/manual.php:128
+#: inc/manual.php:129
 msgid "Upload photos at least 1600 px wide for full-width banners; WordPress makes the smaller sizes for you."
 msgstr ""
 
-#: inc/manual.php:128
+#: inc/manual.php:129
 msgid "Always fill in “Alternative text” to describe the photo for screen readers and search engines."
 msgstr ""
 
-#: inc/manual.php:128
+#: inc/manual.php:129
 msgid "Featured image (right-hand panel on posts and pages) is the picture shown in blog lists and when the page is shared."
 msgstr ""
 
-#: inc/manual.php:133
+#: inc/manual.php:134
 msgid "Blog posts"
 msgstr ""
 
-#: inc/manual.php:135
+#: inc/manual.php:136
 msgid "Posts → Add New Post. Give each post a featured image and a category. Posts appear on the page chosen as “Posts page” under Settings → Reading. To keep one post at the top, tick “Stick to the top of the blog” in the post settings."
 msgstr ""
 
-#: inc/manual.php:140
+#: inc/manual.php:141
 msgid "Menus"
 msgstr ""
 
-#: inc/manual.php:142
+#: inc/manual.php:143
 msgid "Appearance → Menus. Drag items to reorder them; drag an item slightly right to make it a drop-down under the item above. The header shows two levels; the footer shows one."
 msgstr ""
 
-#: inc/manual.php:147
+#: inc/manual.php:148
 msgid "Comments"
 msgstr ""
 
-#: inc/manual.php:149
+#: inc/manual.php:150
 msgid "Turn comments on or off for the whole site under Settings → Discussion, or per post in the post settings. Approve or delete them under Comments."
 msgstr ""
 
-#: inc/manual.php:154
+#: inc/manual.php:155
 msgid "Getting help"
 msgstr ""
 
-#: inc/manual.php:156
+#: inc/manual.php:157
 msgid "Check this manual and the Documentation tab first. For support, contact the author through the Author URI in the theme details (Appearance → Themes → WP iTourTMS → Theme Details)."
 msgstr ""
 
-#: inc/manual.php:162
+#: inc/manual.php:163
 msgid "Documentation"
 msgstr ""
 
-#: inc/manual.php:166
+#: inc/manual.php:167
 msgid "Theme files"
 msgstr ""
 
-#: inc/manual.php:173
+#: inc/manual.php:174
 msgid "Colours, fonts and spacing"
 msgstr ""
 
-#: inc/manual.php:175
+#: inc/manual.php:176
 msgid "All design values live in theme.json and become CSS custom properties such as --wp--preset--color--brand. Change them in a child theme’s theme.json and both the editor and the site update; you don’t need to edit CSS."
 msgstr ""
 
-#: inc/manual.php:177
+#: inc/manual.php:178
 msgid "Keep at least 4.5:1 contrast between text and its background. The default palette meets WCAG 2.2 AA."
 msgstr ""
 
-#: inc/manual.php:182
+#: inc/manual.php:183
 msgid "Overriding templates"
 msgstr ""
 
-#: inc/manual.php:184
+#: inc/manual.php:185
 msgid "Copy any template or template part into the child theme at the same path and edit the copy. For example, to change how posts look in lists, copy template-parts/content-summary.php."
 msgstr ""
 
-#: inc/manual.php:189
+#: inc/manual.php:190
 msgid "Hooks for developers"
 msgstr ""
 
-#: inc/manual.php:191
+#: inc/manual.php:192
 msgid "wp_itourtms_manual (filter): add tabs or sections to this manual, e.g. from a plugin."
 msgstr ""
 
-#: inc/manual.php:191
+#: inc/manual.php:192
 msgid "wp_itourtms_option_sections (filter): add a vertical tab to Theme Options → Options. Give the section its own “store” option name so its settings stay with your plugin. Field types: color, px, number, checkbox, text, select, font, page."
 msgstr ""
 
-#: inc/manual.php:191
+#: inc/manual.php:192
 msgid "wp_itourtms_options( $store ) returns the saved values with defaults."
 msgstr ""
 
-#: inc/manual.php:191
+#: inc/manual.php:192
 msgid "Standard WordPress hooks: wp_head, wp_body_open, wp_footer, and the_content."
 msgstr ""
 
-#: inc/manual.php:198
+#: inc/manual.php:199
 msgid "Translation and right-to-left"
 msgstr ""
 
-#: inc/manual.php:200
+#: inc/manual.php:201
 msgid "Every string uses the wp-itourtms text domain. Translate languages/wp-itourtms.pot with Poedit or Loco Translate and save wp-itourtms-{locale}.mo in wp-content/languages/themes/. Layout uses CSS logical properties, so right-to-left languages need no extra stylesheet."
 msgstr ""
 
-#: inc/manual.php:205
+#: inc/manual.php:206
 msgid "Accessibility"
 msgstr ""
 
-#: inc/manual.php:207
+#: inc/manual.php:208
 msgid "Skip link to the main content as the first focusable element."
 msgstr ""
 
-#: inc/manual.php:207
+#: inc/manual.php:208
 msgid "Visible focus outline on every link, button and form field."
 msgstr ""
 
-#: inc/manual.php:207
+#: inc/manual.php:208
 msgid "Menus work with the keyboard; drop-downs open on focus."
 msgstr ""
 
-#: inc/manual.php:207
+#: inc/manual.php:208
 msgid "Animations are switched off when the visitor prefers reduced motion."
 msgstr ""
 
-#: inc/manual.php:212
+#: inc/manual.php:213
 msgid "Privacy"
 msgstr ""
 
-#: inc/manual.php:214
+#: inc/manual.php:215
 msgid "The theme stores no personal data, sets no cookies and does no tracking. With the default system font it loads nothing from other servers. If you choose a Google Font, visitors’ browsers load it from Google’s servers (fonts.googleapis.com and fonts.gstatic.com); mention this in your privacy policy."
 msgstr ""
 
-#: inc/manual.php:219
+#: inc/manual.php:220
 msgid "Credits and license"
 msgstr ""
 
-#: inc/manual.php:221
+#: inc/manual.php:222
 msgid "WP iTourTMS © 2026 Mohamed Gouda, licensed under the GNU GPL v2 or later. The theme uses no third-party code, fonts or images; the system font stack is used."
 msgstr ""
 
-#: inc/manual.php:226
+#: inc/manual.php:227
 msgid "Changelog"
 msgstr ""
 
-#: inc/manual.php:228
+#: inc/manual.php:229
 msgid "0.1.0: first release."
 msgstr ""
 
-#: inc/manual.php:264
+#: inc/manual.php:265
 msgid "Note:"
 msgstr ""
 
@@ -1117,11 +1171,6 @@ msgstr ""
 
 #: inc/options.php:310
 msgid "Link"
-msgstr ""
-
-#: inc/options.php:316
-#: inc/options.php:453
-msgid "Contact details"
 msgstr ""
 
 #: inc/options.php:320

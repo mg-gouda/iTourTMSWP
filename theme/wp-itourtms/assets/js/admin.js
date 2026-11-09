@@ -174,7 +174,9 @@
 			root.querySelectorAll( '[data-sync]' ).forEach( function ( src ) {
 				src.value = document.getElementById( src.getAttribute( 'data-sync' ) ).value;
 			} );
-			toast( btn.querySelector( '.wpit-preset-name' ).textContent + ': ' + t.presetApplied, 'ok' );
+			if ( ! btn.closest( '[data-wpit-setup]' ) ) {
+				toast( btn.querySelector( '.wpit-preset-name' ).textContent + ': ' + t.presetApplied, 'ok' );
+			}
 		} );
 		btn.addEventListener( 'keydown', function ( e ) {
 			var d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[ e.key ];
@@ -504,6 +506,38 @@
 				.finally( function () {
 					busy( e.target, false );
 				} );
+		} );
+	}
+
+	// Quick setup: save (with the chosen design's full values) or skip, then go to Options.
+	var setup = root.querySelector( '[data-wpit-setup]' );
+	function finish( body, btn ) {
+		busy( btn, true );
+		api( 'setup', 'POST', body )
+			.then( function ( res ) {
+				window.location.href = res.redirect;
+			} )
+			.catch( function ( err ) {
+				toast( err.message, 'bad' );
+				busy( btn, false );
+			} );
+	}
+	if ( setup ) {
+		setup.addEventListener( 'submit', function ( e ) {
+			e.preventDefault();
+			var values = {};
+			setup.querySelectorAll( '[data-key]' ).forEach( function ( el ) {
+				values[ el.getAttribute( 'data-key' ) ] = el.value;
+			} );
+			var preset = setup.querySelector( '.wpit-preset.is-active' );
+			if ( preset && preset.getAttribute( 'data-preset' ) !== setup.getAttribute( 'data-preset' ) ) {
+				Object.assign( values, JSON.parse( preset.getAttribute( 'data-values' ) ) );
+			}
+			var menu = setup.querySelector( '[data-wpit-menu]' );
+			finish( { stores: { wp_itourtms_options: values }, menu: !! menu && 'true' === menu.getAttribute( 'aria-checked' ) }, setup.querySelector( '.wpit-btn-primary' ) );
+		} );
+		setup.querySelector( '[data-wpit-skip]' ).addEventListener( 'click', function ( e ) {
+			finish( { skip: true }, e.currentTarget );
 		} );
 	}
 

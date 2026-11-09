@@ -70,6 +70,9 @@ add_action( 'admin_menu', 'wp_itourtms_admin_menu' );
  */
 function wp_itourtms_admin_tabs(): array {
 	$tabs = array();
+	if ( ! get_theme_mod( 'wp_itourtms_setup_done' ) ) {
+		$tabs['setup'] = __( 'Quick setup', 'wp-itourtms' ); // Until finished or skipped.
+	}
 	if ( function_exists( 'wp_itourtms_license_check' ) ) {
 		$tabs['license'] = __( 'License', 'wp-itourtms' );
 	}
@@ -109,7 +112,9 @@ function wp_itourtms_admin_render(): void {
 	}
 	echo '</nav>';
 
-	if ( 'license' === $tab ) {
+	if ( 'setup' === $tab ) {
+		wp_itourtms_render_setup_tab();
+	} elseif ( 'license' === $tab ) {
 		wp_itourtms_render_license_tab();
 	} elseif ( 'options' === $tab ) {
 		wp_itourtms_render_options_tab();
@@ -172,6 +177,64 @@ function wp_itourtms_render_options_tab(): void {
 	echo '<p class="wpit-note">' . esc_html__( 'Changes under Appearance → Design → Styles take priority over these colours and widths.', 'wp-itourtms' ) . '</p></div>';
 	echo '</div></div></form>';
 }
+
+/**
+ * Quick setup: design, logo, contact details and main menu on one card. Shown until finished or skipped.
+ */
+function wp_itourtms_render_setup_tab(): void {
+	$fields = wp_itourtms_theme_option_fields();
+	$values = wp_itourtms_options();
+	$steps  = array(
+		array( __( 'Pick a design', 'wp-itourtms' ), 'design', array( 'design_preset' ) ),
+		array( __( 'Add your logo', 'wp-itourtms' ), 'logo', array( 'logo_image' ) ),
+		array( __( 'Contact details', 'wp-itourtms' ), 'contact', array( 'contact_phone', 'contact_email', 'contact_whatsapp' ) ),
+	);
+	printf( '<form class="wpit-card wpit-setup" data-wpit-setup data-preset="%s" novalidate>', esc_attr( (string) $values['design_preset'] ) );
+	echo '<div class="wpit-card-head"><h2 class="wpit-card-title">' . esc_html__( 'Quick setup', 'wp-itourtms' ) . '</h2>';
+	echo '<p class="wpit-card-desc">' . esc_html__( 'Four quick steps. Everything here can be changed later under Options.', 'wp-itourtms' ) . '</p></div><div class="wpit-card-body">';
+	foreach ( $steps as $i => list( $title, $section, $keys ) ) {
+		echo '<div class="wpit-subhead"><h3>' . esc_html( ( $i + 1 ) . '. ' . $title ) . '</h3></div>';
+		foreach ( $keys as $key ) {
+			wp_itourtms_render_option_field( $key, $fields[ $section ]['fields'][ $key ], $values[ $key ] );
+		}
+	}
+	echo '<div class="wpit-subhead"><h3>' . esc_html( '4. ' . __( 'Main menu', 'wp-itourtms' ) ) . '</h3></div>';
+	if ( has_nav_menu( 'primary' ) ) {
+		echo '<p class="wpit-help">' . esc_html__( 'A main menu is already set. Edit it under Appearance → Menus.', 'wp-itourtms' ) . '</p>';
+	} else {
+		echo '<div class="wpit-field wpit-field-row"><div><label class="wpit-label" for="wpit-setup-menu">' . esc_html__( 'Create the main menu', 'wp-itourtms' ) . '</label>';
+		echo '<p class="wpit-help">' . esc_html__( 'Adds your published top-level pages to a new menu in the header.', 'wp-itourtms' ) . '</p></div>';
+		echo '<button type="button" role="switch" class="wpit-switch" id="wpit-setup-menu" data-wpit-menu aria-checked="true"><span class="wpit-switch-thumb"></span></button></div>';
+	}
+	echo '</div><div class="wpit-actions"><button type="submit" class="wpit-btn wpit-btn-primary">' . esc_html__( 'Save and finish', 'wp-itourtms' ) . '</button>';
+	echo '<button type="button" class="wpit-btn wpit-btn-outline" data-wpit-skip>' . esc_html__( 'Skip setup', 'wp-itourtms' ) . '</button></div></form>';
+}
+
+/**
+ * One-time notice on the Themes screen right after activation, pointing to Quick setup.
+ */
+function wp_itourtms_setup_notice(): void {
+	if ( 'themes' !== get_current_screen()?->id || ! get_transient( 'wp_itourtms_activated' ) || ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+	delete_transient( 'wp_itourtms_activated' );
+	if ( get_theme_mod( 'wp_itourtms_setup_done' ) ) {
+		return;
+	}
+	printf(
+		'<div class="notice notice-success is-dismissible"><p>%1$s <a href="%2$s">%3$s</a></p></div>',
+		esc_html__( 'WP iTourTMS is active. Pick a design, add your logo and create the main menu in a minute.', 'wp-itourtms' ),
+		esc_url( admin_url( 'themes.php?page=wp-itourtms&tab=setup' ) ),
+		esc_html__( 'Quick setup', 'wp-itourtms' )
+	);
+}
+add_action( 'admin_notices', 'wp_itourtms_setup_notice' );
+add_action(
+	'after_switch_theme',
+	static function (): void {
+		set_transient( 'wp_itourtms_activated', 1, HOUR_IN_SECONDS );
+	}
+);
 
 /**
  * One option control.

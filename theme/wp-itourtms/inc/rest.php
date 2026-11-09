@@ -78,3 +78,63 @@ function wp_itourtms_options_routes(): void {
 	);
 }
 add_action( 'rest_api_init', 'wp_itourtms_options_routes' );
+
+/**
+ * Quick setup: POST { stores, menu } saves and finishes; { skip: true } only marks it done.
+ */
+function wp_itourtms_setup_route(): void {
+	register_rest_route(
+		'wp-itourtms/v1',
+		'/setup',
+		array(
+			'methods'             => 'POST',
+			'permission_callback' => static fn() => current_user_can( 'edit_theme_options' ),
+			'callback'            => static function ( WP_REST_Request $r ) {
+				if ( ! $r->get_param( 'skip' ) ) {
+					wp_itourtms_save_stores( (array) $r->get_param( 'stores' ) );
+					if ( $r->get_param( 'menu' ) && ! has_nav_menu( 'primary' ) ) {
+						wp_itourtms_create_main_menu();
+					}
+				}
+				set_theme_mod( 'wp_itourtms_setup_done', 1 );
+				return rest_ensure_response( array( 'redirect' => admin_url( 'themes.php?page=wp-itourtms&tab=options' ) ) );
+			},
+		)
+	);
+}
+add_action( 'rest_api_init', 'wp_itourtms_setup_route' );
+
+/**
+ * Build a menu from the published top-level pages and put it in the header.
+ */
+function wp_itourtms_create_main_menu(): void {
+	$name = __( 'Main menu', 'wp-itourtms' );
+	$menu = wp_get_nav_menu_object( $name );
+	$id   = $menu ? (int) $menu->term_id : wp_create_nav_menu( $name );
+	if ( is_wp_error( $id ) ) {
+		return;
+	}
+	if ( ! $menu ) {
+		$pages = get_pages(
+			array(
+				'parent'      => 0,
+				'sort_column' => 'menu_order,post_title',
+			)
+		);
+		foreach ( $pages as $page ) {
+			wp_update_nav_menu_item(
+				$id,
+				0,
+				array(
+					'menu-item-object-id' => $page->ID,
+					'menu-item-object'    => 'page',
+					'menu-item-type'      => 'post_type',
+					'menu-item-status'    => 'publish',
+				)
+			);
+		}
+	}
+	$locations            = (array) get_theme_mod( 'nav_menu_locations', array() );
+	$locations['primary'] = $id;
+	set_theme_mod( 'nav_menu_locations', $locations );
+}

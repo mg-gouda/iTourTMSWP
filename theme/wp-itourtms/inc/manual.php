@@ -47,6 +47,7 @@ function wp_itourtms_manual(): array {
 					'id'     => 'first-setup',
 					'title'  => __( 'First setup (10 minutes)', 'wp-itourtms' ),
 					'blocks' => array(
+						array( 'p', __( 'Right after activation, Appearance → Theme Options opens on “Quick setup”: pick a design, add your logo and contact details, and create the main menu from your pages. It shows until you finish or skip it. The steps below do the rest by hand.', 'wp-itourtms' ) ),
 						array(
 							'steps',
 							array(
