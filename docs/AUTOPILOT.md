@@ -6,6 +6,11 @@ Never on autopilot (owner decides): Tour Package / Excursion / Transfer function
 
 ## Queue
 - [ ] **Demo content file.** ThemeForest buyers expect a one-click or WXR import. Export the demo pages, menus, Theme Options and booking-widget/slider/form examples (from `tools/demo-content.php`) as `demo/wp-itourtms-demo.xml` + an options JSON, add them to the ThemeForest bundle, and test the import on a clean site.
+  - **Owner question (autopilot, 2026-11-09): demo images.** Repo bundles no images ("no third-party images" in licensing/README.txt). The slider example (and any hero/why-book photo) needs images, and a WXR import downloads attachments from a public URL (the dev site is localhost). Pick one:
+    - **A (recommended):** ship the demo without slider/photos now (pages, menus, booking widget, contact form, Theme Options JSON); add the slider example later.
+    - **B:** self-made placeholder images (flat plum shapes + caption) hosted in this public GitHub repo (`demo/images/`, raw.githubusercontent.com URLs in the WXR). Works offline-free for buyers only while the repo stays public.
+    - **C:** you supply licensed travel photos (Unsplash-licence or own) and a public host for them.
+  - Tech notes found (no decision needed): slider block stores attachment IDs, which the WordPress Importer does not remap, so B/C also need a small `import_end` remap of `itour/slider` image IDs. Theme Options `page`/`menu`/`image` fields hold IDs too, so the options JSON must store slugs and map them back on import.
 
 ## Done
 - (autopilot adds items here with the commit hash)
