@@ -27,7 +27,7 @@ Source of truth for features: the iTourTMS repo (`mg-gouda/iTourTMS`, Next.js + 
 - Theme first-run "Quick setup" (phase 13 setup wizard, theme part): design, logo, contacts, main menu.
 - `itour-shield` (D-023): WP Rocket + Wordfence-style speed and security in one standalone plugin.
 - Translations: `bin/i18n.sh` makes a `.pot` per package; `tools/translations/<locale>.json` + `tools/build-po.py` + `bin/i18n.sh mo` build the bundled language files. Arabic covers all visitor-facing strings (106).
-- **Waiting on the owner:** the rules for Tour Packages, Excursions and Transfers (questions sent).
+- Product rules answered (D-024, [PRODUCTS.md](PRODUCTS.md)): Tour Packages, Excursions and Transfers can be built.
 
 ## Rules that apply in every phase
 - Each module plugin works with only `itour-core` (plus any modules it declares as required) and adds nothing to the front end unless it is used.
