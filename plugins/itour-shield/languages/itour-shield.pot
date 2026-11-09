@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: iTour Shield 0.1.0\n"
+"Project-Id-Version: iTour Shield 0.1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T22:42:41+00:00\n"
+"POT-Creation-Date: 2026-11-09T02:15:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-shield\n"
@@ -45,8 +45,8 @@ msgstr ""
 
 #: src/Admin.php:47
 #: src/Admin.php:48
-#: src/Admin.php:340
-#: src/Admin.php:347
+#: src/Admin.php:341
+#: src/Admin.php:348
 msgid "Shield"
 msgstr ""
 
@@ -64,566 +64,584 @@ msgstr ""
 msgid "Permanently delete these items? This cannot be undone."
 msgstr ""
 
-#: src/Admin.php:97
+#: src/Admin.php:81
+msgid "Copied"
+msgstr ""
+
+#: src/Admin.php:98
 msgid "Page cache"
 msgstr ""
 
-#: src/Admin.php:98
+#: src/Admin.php:99
 msgid "Cache pages for visitors"
 msgstr ""
 
-#: src/Admin.php:98
+#: src/Admin.php:99
 msgid "Saves each page as a file the first time a guest opens it, then serves that file without running WordPress. Signed-in users always get a fresh page."
 msgstr ""
 
-#: src/Admin.php:102
+#: src/Admin.php:103
 msgid "Keep pages for"
 msgstr ""
 
-#: src/Admin.php:103
+#: src/Admin.php:104
 msgid "The cache also clears itself whenever you publish, edit a menu or change a setting."
 msgstr ""
 
-#: src/Admin.php:105
+#: src/Admin.php:106
 msgid "hours"
 msgstr ""
 
-#: src/Admin.php:111
+#: src/Admin.php:112
 msgid "Refill after clearing"
 msgstr ""
 
-#: src/Admin.php:111
+#: src/Admin.php:112
 msgid "Visits the home page and your newest pages a minute after the cache clears, so real visitors get the fast copy."
 msgstr ""
 
-#: src/Admin.php:112
+#: src/Admin.php:113
 msgid "Never cache"
 msgstr ""
 
-#: src/Admin.php:112
+#: src/Admin.php:113
 msgid "One address part per line. Any page whose address contains it is skipped. Booking, cart and account pages belong here."
 msgstr ""
 
-#: src/Admin.php:114
+#: src/Admin.php:115
 msgid "Lighter pages"
 msgstr ""
 
-#: src/Admin.php:115
+#: src/Admin.php:116
 msgid "Defer scripts"
 msgstr ""
 
-#: src/Admin.php:115
+#: src/Admin.php:116
 msgid "Scripts load after the page is drawn. WordPress keeps a script blocking when other code needs it early. Test your booking forms after turning this on."
 msgstr ""
 
-#: src/Admin.php:116
+#: src/Admin.php:117
 msgid "Remove the emoji script"
 msgstr ""
 
-#: src/Admin.php:116
+#: src/Admin.php:117
 msgid "Browsers draw emoji themselves; the extra script is not needed."
 msgstr ""
 
-#: src/Admin.php:117
+#: src/Admin.php:118
 msgid "Remove the embed script"
 msgstr ""
 
-#: src/Admin.php:117
+#: src/Admin.php:118
 msgid "Stops loading the script that lets other sites embed your posts."
 msgstr ""
 
-#: src/Admin.php:118
+#: src/Admin.php:119
 msgid "Connect early to Google Fonts"
 msgstr ""
 
-#: src/Admin.php:118
+#: src/Admin.php:119
 msgid "Only added when the page uses a Google Font."
 msgstr ""
 
-#: src/Admin.php:122
+#: src/Admin.php:123
 msgid "Editor heartbeat every"
 msgstr ""
 
-#: src/Admin.php:123
+#: src/Admin.php:124
 msgid "How often the editor checks in with the server. 60 halves the load of the default; 0 leaves the WordPress default."
 msgstr ""
 
-#: src/Admin.php:125
+#: src/Admin.php:126
 msgid "seconds"
 msgstr ""
 
-#: src/Admin.php:133
-#: src/Admin.php:419
+#: src/Admin.php:134
+#: src/Admin.php:427
 msgid "Login page"
 msgstr ""
 
-#: src/Admin.php:137
+#: src/Admin.php:138
 msgid "Login address"
 msgstr ""
 
-#: src/Admin.php:138
+#: src/Admin.php:139
 msgid "Leave empty to keep wp-login.php. When set, wp-login.php and wp-admin show “not found” to anyone not signed in. Bookmark the new address: the old one stops working at once."
 msgstr ""
 
-#: src/Admin.php:145
-#: src/Admin.php:416
+#: src/Admin.php:146
+#: src/Admin.php:417
 msgid "Public folder names"
 msgstr ""
 
-#: src/Admin.php:146
+#: src/Admin.php:147
 msgid "Rename WordPress folders in public links"
 msgstr ""
 
-#: src/Admin.php:146
+#: src/Admin.php:147
 msgid "Scanners spot WordPress sites by the wp-content and wp-includes folders in the page source. Files stay where they are; only the public links change, so turning this off undoes it completely."
 msgstr ""
 
-#: src/Admin.php:200
+#: src/Admin.php:201
 msgid "REST API address"
 msgstr ""
 
-#: src/Admin.php:201
+#: src/Admin.php:202
 msgid "Leave empty to keep wp-json. Plugins that hard-code /wp-json/ stop working when this changes."
 msgstr ""
 
-#: src/Admin.php:210
-#: src/Admin.php:322
+#: src/Admin.php:211
+#: src/Admin.php:323
 msgid "Firewall"
 msgstr ""
 
-#: src/Admin.php:211
+#: src/Admin.php:212
 msgid "Check every request"
 msgstr ""
 
-#: src/Admin.php:211
+#: src/Admin.php:212
 msgid "Blocks SQL injection, path traversal, code injection and script injection in addresses, and the same in forms sent by visitors who are not signed in. Runs before other plugins load."
 msgstr ""
 
-#: src/Admin.php:212
+#: src/Admin.php:213
 msgid "Block scanner tools"
 msgstr ""
 
-#: src/Admin.php:212
+#: src/Admin.php:213
 msgid "Turns away sqlmap, WPScan, Nikto, Nuclei and similar tools by their signature."
 msgstr ""
 
-#: src/Admin.php:216
+#: src/Admin.php:217
 msgid "Requests per visitor"
 msgstr ""
 
-#: src/Admin.php:217
+#: src/Admin.php:218
 msgid "Per minute, per IP, for visitors who are not signed in. Cached pages don’t count. 0 turns the limit off."
 msgstr ""
 
-#: src/Admin.php:219
+#: src/Admin.php:220
 msgid "a minute"
 msgstr ""
 
-#: src/Admin.php:226
+#: src/Admin.php:227
 msgid "IP addresses"
 msgstr ""
 
-#: src/Admin.php:227
+#: src/Admin.php:228
 msgid "Always block"
 msgstr ""
 
-#: src/Admin.php:227
+#: src/Admin.php:228
 msgid "One per line. Single addresses or ranges such as 203.0.113.0/24."
 msgstr ""
 
-#: src/Admin.php:231
+#: src/Admin.php:232
 msgid "Never block"
 msgstr ""
 
-#: src/Admin.php:232
+#: src/Admin.php:233
 msgid "Your office and your own connection. These skip the firewall and login lockouts."
 msgstr ""
 
-#: src/Admin.php:241
-#: src/Admin.php:641
+#: src/Admin.php:242
+#: src/Admin.php:649
 msgid "Failed logins"
 msgstr ""
 
-#: src/Admin.php:242
+#: src/Admin.php:243
 msgid "Lock out after failed attempts"
 msgstr ""
 
-#: src/Admin.php:242
+#: src/Admin.php:243
 msgid "Stops password guessing. Works for the login page, XML-RPC and the REST API."
 msgstr ""
 
-#: src/Admin.php:246
+#: src/Admin.php:247
 msgid "Attempts allowed"
 msgstr ""
 
-#: src/Admin.php:249
+#: src/Admin.php:250
 msgid "per hour"
 msgstr ""
 
-#: src/Admin.php:258
+#: src/Admin.php:259
 msgid "Lockout lasts"
 msgstr ""
 
-#: src/Admin.php:261
+#: src/Admin.php:262
 msgid "minutes"
 msgstr ""
 
-#: src/Admin.php:267
+#: src/Admin.php:268
 msgid "Don’t reveal which usernames exist"
 msgstr ""
 
-#: src/Admin.php:267
+#: src/Admin.php:268
 msgid "Login and lost-password screens give the same answer for real and made-up accounts."
 msgstr ""
 
-#: src/Admin.php:269
-#: src/Admin.php:578
+#: src/Admin.php:270
+#: src/Admin.php:586
 #: src/TwoFactor.php:281
 msgid "Two-factor login"
 msgstr ""
 
-#: src/Admin.php:270
+#: src/Admin.php:271
 msgid "Allow two-factor login"
 msgstr ""
 
-#: src/Admin.php:270
+#: src/Admin.php:271
 msgid "Each user turns it on in their profile with an authenticator app and gets ten backup codes."
 msgstr ""
 
-#: src/Admin.php:271
+#: src/Admin.php:272
 msgid "Require it for administrators"
 msgstr ""
 
-#: src/Admin.php:271
+#: src/Admin.php:272
 msgid "Administrators without it are sent to their profile to set it up before they can use the dashboard."
 msgstr ""
 
-#: src/Admin.php:273
+#: src/Admin.php:274
 msgid "Email alerts"
 msgstr ""
 
-#: src/Admin.php:274
+#: src/Admin.php:275
 msgid "Send alerts to"
 msgstr ""
 
-#: src/Admin.php:274
+#: src/Admin.php:275
 msgid "Empty uses the site’s admin email."
 msgstr ""
 
-#: src/Admin.php:275
+#: src/Admin.php:276
 msgid "When an IP is locked out"
 msgstr ""
 
-#: src/Admin.php:276
+#: src/Admin.php:277
 msgid "When an administrator signs in from a new IP"
 msgstr ""
 
-#: src/Admin.php:277
+#: src/Admin.php:278
 msgid "When the daily scan finds something new"
 msgstr ""
 
-#: src/Admin.php:281
+#: src/Admin.php:282
 msgid "Keep the activity log for"
 msgstr ""
 
-#: src/Admin.php:284
+#: src/Admin.php:285
 msgid "days"
 msgstr ""
 
-#: src/Admin.php:292
+#: src/Admin.php:293
 msgid "WordPress"
 msgstr ""
 
-#: src/Admin.php:293
+#: src/Admin.php:294
 msgid "Turn off XML-RPC"
 msgstr ""
 
-#: src/Admin.php:293
+#: src/Admin.php:294
 msgid "An old remote-publishing interface that allows hundreds of password guesses in one request. The mobile app and Jetpack need it."
 msgstr ""
 
-#: src/Admin.php:294
+#: src/Admin.php:295
 msgid "Hide usernames"
 msgstr ""
 
-#: src/Admin.php:294
+#: src/Admin.php:295
 msgid "Blocks ?author=1 lookups, the public REST users list and the users sitemap."
 msgstr ""
 
-#: src/Admin.php:295
+#: src/Admin.php:296
 msgid "Turn off the theme and plugin file editor"
 msgstr ""
 
-#: src/Admin.php:295
+#: src/Admin.php:296
 msgid "A stolen admin login can no longer write PHP from the dashboard."
 msgstr ""
 
-#: src/Admin.php:296
+#: src/Admin.php:297
 msgid "Hide the WordPress version"
 msgstr ""
 
-#: src/Admin.php:296
+#: src/Admin.php:297
 msgid "Removes it from the page source and from file links."
 msgstr ""
 
-#: src/Admin.php:297
+#: src/Admin.php:298
 msgid "Turn off application passwords"
 msgstr ""
 
-#: src/Admin.php:297
+#: src/Admin.php:298
 msgid "Leave on only if no app or service signs in to this site."
 msgstr ""
 
-#: src/Admin.php:299
+#: src/Admin.php:300
 msgid "Browser"
 msgstr ""
 
-#: src/Admin.php:300
+#: src/Admin.php:301
 msgid "Send security headers"
 msgstr ""
 
-#: src/Admin.php:300
+#: src/Admin.php:301
 msgid "Stops other sites framing yours, MIME sniffing and full-address referrers; denies camera, microphone and location access."
 msgstr ""
 
-#: src/Admin.php:301
+#: src/Admin.php:302
 msgid "Force HTTPS for a year (HSTS)"
 msgstr ""
 
-#: src/Admin.php:301
+#: src/Admin.php:302
 msgid "Browsers will refuse plain http:// for this domain and its subdomains for a year. Only turn on when every subdomain has a working certificate."
 msgstr ""
 
-#: src/Admin.php:303
+#: src/Admin.php:304
+#: src/Admin.php:424
 msgid "Server"
 msgstr ""
 
-#: src/Admin.php:304
+#: src/Admin.php:305
 msgid "Block sensitive files"
 msgstr ""
 
-#: src/Admin.php:304
+#: src/Admin.php:305
 msgid "wp-config.php, readme.html, license.txt, debug.log, backups (.sql, .bak), .git and .env answer “forbidden”, and PHP inside wp-includes can’t be called directly."
 msgstr ""
 
-#: src/Admin.php:305
+#: src/Admin.php:306
 msgid "Stop PHP running in uploads"
 msgstr ""
 
-#: src/Admin.php:305
+#: src/Admin.php:306
 msgid "An uploaded script can’t run even if an attacker slips one in."
 msgstr ""
 
-#: src/Admin.php:306
+#: src/Admin.php:307
 msgid "Hide folder listings"
 msgstr ""
 
-#: src/Admin.php:306
+#: src/Admin.php:307
 msgid "Folders without an index file answer “forbidden” instead of listing their files."
 msgstr ""
 
-#: src/Admin.php:319
+#: src/Admin.php:320
 msgid "Overview"
 msgstr ""
 
-#: src/Admin.php:320
+#: src/Admin.php:321
 msgid "Speed"
 msgstr ""
 
-#: src/Admin.php:321
+#: src/Admin.php:322
 msgid "Login & paths"
 msgstr ""
 
-#: src/Admin.php:323
+#: src/Admin.php:324
 msgid "Login protection"
 msgstr ""
 
-#: src/Admin.php:324
+#: src/Admin.php:325
 msgid "Hardening"
 msgstr ""
 
-#: src/Admin.php:325
-#: src/Admin.php:603
+#: src/Admin.php:326
+#: src/Admin.php:611
 msgid "File scan"
 msgstr ""
 
-#: src/Admin.php:326
-#: src/Admin.php:650
+#: src/Admin.php:327
+#: src/Admin.php:658
 msgid "Activity"
 msgstr ""
 
-#: src/Admin.php:350
+#: src/Admin.php:351
 msgid "Save changes"
 msgstr ""
 
-#: src/Admin.php:354
+#: src/Admin.php:355
 msgid "Shield sections"
 msgstr ""
 
 #. translators: %d: checks.
-#: src/Admin.php:394
+#: src/Admin.php:395
 #, php-format
 msgid "<strong>%d check</strong> needs attention"
 msgid_plural "<strong>%d checks</strong> need attention"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Admin.php:395
+#: src/Admin.php:396
 msgid "All checks pass"
 msgstr ""
 
 #. translators: 1: blocked requests, 2: lockouts.
-#: src/Admin.php:397
+#: src/Admin.php:398
 #, php-format
 msgid "%1$s blocked and %2$s locked out in the last 24 hours"
 msgstr ""
 
-#: src/Admin.php:399
+#: src/Admin.php:400
 msgid "page cache off"
 msgstr ""
 
 #. translators: %s: cached pages.
-#: src/Admin.php:401
+#: src/Admin.php:402
 #, php-format
 msgid "%s page cached"
 msgid_plural "%s pages cached"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Admin.php:417
-msgid "Folder renaming needs an Apache server and WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off."
+#: src/Admin.php:419
+msgid "Folder renaming needs WordPress installed in the site root with the standard wp-content folder. This site doesn’t match, so the option is off."
 msgstr ""
 
-#: src/Admin.php:420
-msgid "Your login page is now"
+#: src/Admin.php:421
+msgid "This server isn’t Apache, so Shield can’t add the folder rules itself. Turn the option on and save, copy the rules from Hardening → Server into your Nginx config, then add"
 msgstr ""
 
-#: src/Admin.php:420
-msgid "Locked out? Add"
-msgstr ""
-
-#: src/Admin.php:420
+#: src/Admin.php:421
+#: src/Admin.php:428
 msgid "to wp-config.php."
 msgstr ""
 
+#: src/Admin.php:425
+msgid "This server isn’t Apache, so these switches don’t apply by themselves. Copy these rules into the site’s Nginx config (or send them to your host) and reload Nginx. They update when you change the settings."
+msgstr ""
+
+#: src/Admin.php:425
+msgid "Copy rules"
+msgstr ""
+
+#: src/Admin.php:428
+msgid "Your login page is now"
+msgstr ""
+
+#: src/Admin.php:428
+msgid "Locked out? Add"
+msgstr ""
+
 #. translators: %s: IP address.
-#: src/Admin.php:453
+#: src/Admin.php:461
 #, php-format
 msgid "Add my IP (%s)"
 msgstr ""
 
-#: src/Admin.php:490
+#: src/Admin.php:498
 msgid "Fix"
 msgstr ""
 
-#: src/Admin.php:491
+#: src/Admin.php:499
 msgid "Should fix"
 msgstr ""
 
-#: src/Admin.php:492
+#: src/Admin.php:500
 msgid "Optional"
 msgstr ""
 
-#: src/Admin.php:494
+#: src/Admin.php:502
 msgid "Site checks"
 msgstr ""
 
-#: src/Admin.php:503
+#: src/Admin.php:511
 msgid "OK"
 msgstr ""
 
-#: src/Admin.php:505
+#: src/Admin.php:513
 msgid "Set up"
 msgstr ""
 
-#: src/Admin.php:514
+#: src/Admin.php:522
 msgid "Last file scan"
 msgstr ""
 
 #. translators: 1: time ago, 2: files, 3: problems.
-#: src/Admin.php:517
+#: src/Admin.php:525
 #, php-format
 msgid "%1$s ago: %2$s files checked, %3$s need a look"
 msgstr ""
 
-#: src/Admin.php:519
+#: src/Admin.php:527
 msgid "No scan yet. The first daily scan runs within 24 hours, or start one now."
 msgstr ""
 
-#: src/Admin.php:521
+#: src/Admin.php:529
 msgid "Open file scan"
 msgstr ""
 
-#: src/Admin.php:532
+#: src/Admin.php:540
 msgid "Cache state"
 msgstr ""
 
-#: src/Admin.php:534
+#: src/Admin.php:542
 msgid "Cached pages"
 msgstr ""
 
-#: src/Admin.php:535
+#: src/Admin.php:543
 msgid "Cache loader"
 msgstr ""
 
-#: src/Admin.php:536
+#: src/Admin.php:544
 msgid "Not installed"
 msgstr ""
 
-#: src/Admin.php:537
+#: src/Admin.php:545
 msgid "Installed"
 msgstr ""
 
-#: src/Admin.php:538
+#: src/Admin.php:546
 msgid "Another caching plugin owns wp-content/advanced-cache.php. Turn that plugin off first."
 msgstr ""
 
 #. translators: %d: backup codes left.
-#: src/Admin.php:540
-#: src/Admin.php:581
+#: src/Admin.php:548
+#: src/Admin.php:589
 #: src/TwoFactor.php:288
 msgid "On"
 msgstr ""
 
-#: src/Admin.php:540
+#: src/Admin.php:548
 msgid "Off: wp-config.php is not writable. Add define( 'WP_CACHE', true ); to it."
 msgstr ""
 
-#: src/Admin.php:540
-#: src/Admin.php:581
+#: src/Admin.php:548
+#: src/Admin.php:589
 msgid "Off"
 msgstr ""
 
-#: src/Admin.php:545
+#: src/Admin.php:553
 msgid "Clear cache now"
 msgstr ""
 
-#: src/Admin.php:548
+#: src/Admin.php:556
 msgid "Post revisions"
 msgstr ""
 
-#: src/Admin.php:549
+#: src/Admin.php:557
 msgid "Auto-drafts"
 msgstr ""
 
-#: src/Admin.php:550
+#: src/Admin.php:558
 msgid "Posts in the trash"
 msgstr ""
 
-#: src/Admin.php:551
+#: src/Admin.php:559
 msgid "Spam and trashed comments"
 msgstr ""
 
-#: src/Admin.php:552
+#: src/Admin.php:560
 msgid "Expired temporary data"
 msgstr ""
 
-#: src/Admin.php:554
+#: src/Admin.php:562
 msgid "Database clean-up"
 msgstr ""
 
 #. translators: %s: items.
-#: src/Admin.php:561
+#: src/Admin.php:569
 #, php-format
 msgid "Delete %s item"
 msgid_plural "Delete %s items"
@@ -631,185 +649,185 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: items.
-#: src/Admin.php:561
+#: src/Admin.php:569
 msgid "Permanent. Take a backup first if you might need old revisions."
 msgstr ""
 
-#: src/Admin.php:563
+#: src/Admin.php:571
 msgid "Nothing to clean."
 msgstr ""
 
-#: src/Admin.php:578
+#: src/Admin.php:586
 msgid "Administrators"
 msgstr ""
 
-#: src/Admin.php:578
-#: src/Admin.php:659
+#: src/Admin.php:586
+#: src/Admin.php:667
 msgid "User"
 msgstr ""
 
-#: src/Admin.php:583
+#: src/Admin.php:591
 msgid "Set up yours"
 msgstr ""
 
-#: src/Admin.php:596
+#: src/Admin.php:604
 msgid "WordPress core"
 msgstr ""
 
-#: src/Admin.php:597
+#: src/Admin.php:605
 msgid "Plugin"
 msgstr ""
 
-#: src/Admin.php:598
+#: src/Admin.php:606
 msgid "Uploads"
 msgstr ""
 
-#: src/Admin.php:599
+#: src/Admin.php:607
 msgid "Malware pattern"
 msgstr ""
 
-#: src/Admin.php:604
+#: src/Admin.php:612
 msgid "Compare WordPress and plugins with the official copies and look for malware"
 msgstr ""
 
 #. translators: 1: time ago, 2: files.
-#: src/Admin.php:607
+#: src/Admin.php:615
 #, php-format
 msgid "Last run %1$s ago on %2$s files. Runs by itself once a day."
 msgstr ""
 
-#: src/Admin.php:609
+#: src/Admin.php:617
 msgid "Not run yet. Takes a minute or two on most sites."
 msgstr ""
 
-#: src/Admin.php:611
+#: src/Admin.php:619
 msgid "Scan now"
 msgstr ""
 
-#: src/Admin.php:613
+#: src/Admin.php:621
 msgid "Nothing suspicious found."
 msgstr ""
 
-#: src/Admin.php:616
+#: src/Admin.php:624
 msgid "File"
 msgstr ""
 
-#: src/Admin.php:616
+#: src/Admin.php:624
 msgid "Problem"
 msgstr ""
 
-#: src/Admin.php:616
+#: src/Admin.php:624
 msgid "Action"
 msgstr ""
 
-#: src/Admin.php:620
+#: src/Admin.php:628
 msgid "Ignore"
 msgstr ""
 
-#: src/Admin.php:624
+#: src/Admin.php:632
 msgid "Not sure about a file? Compare it with a fresh download of the plugin or theme, or ask your developer before deleting anything."
 msgstr ""
 
 #. translators: %d: ignored findings.
-#: src/Admin.php:628
+#: src/Admin.php:636
 #, php-format
 msgid "%d ignored finding is hidden. It shows again if the file changes."
 msgid_plural "%d ignored findings are hidden. They show again if the files change."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Admin.php:638
+#: src/Admin.php:646
 msgid "Everything"
 msgstr ""
 
-#: src/Admin.php:639
+#: src/Admin.php:647
 msgid "Blocked requests"
 msgstr ""
 
-#: src/Admin.php:640
+#: src/Admin.php:648
 msgid "Sign-ins"
 msgstr ""
 
-#: src/Admin.php:642
+#: src/Admin.php:650
 msgid "Lockouts"
 msgstr ""
 
-#: src/Admin.php:643
+#: src/Admin.php:651
 msgid "Two-factor changes"
 msgstr ""
 
-#: src/Admin.php:644
+#: src/Admin.php:652
 msgid "Wrong two-factor codes"
 msgstr ""
 
-#: src/Admin.php:645
+#: src/Admin.php:653
 msgid "Scans"
 msgstr ""
 
-#: src/Admin.php:646
+#: src/Admin.php:654
 msgid "Setting changes"
 msgstr ""
 
-#: src/Admin.php:650
+#: src/Admin.php:658
 msgid "Show"
 msgstr ""
 
-#: src/Admin.php:656
+#: src/Admin.php:664
 msgid "Nothing recorded yet."
 msgstr ""
 
-#: src/Admin.php:659
+#: src/Admin.php:667
 msgid "When"
 msgstr ""
 
-#: src/Admin.php:659
+#: src/Admin.php:667
 msgid "Event"
 msgstr ""
 
-#: src/Admin.php:659
+#: src/Admin.php:667
 msgid "Details"
 msgstr ""
 
-#: src/Admin.php:674
+#: src/Admin.php:682
 msgid "Settings saved."
 msgstr ""
 
 #. translators: %s: login URL.
-#: src/Admin.php:678
+#: src/Admin.php:686
 #, php-format
 msgid "Your login page moved to %s. Bookmark it now; a copy was emailed to the site admin."
 msgstr ""
 
-#: src/Admin.php:681
+#: src/Admin.php:689
 msgid "Cache cleared."
 msgstr ""
 
 #. translators: %s: items.
-#: src/Admin.php:685
+#: src/Admin.php:693
 #, php-format
 msgid "%s items deleted from the database."
 msgstr ""
 
-#: src/Admin.php:690
+#: src/Admin.php:698
 msgid "The .htaccess file is not writable, so server rules (blocked files, folder names, browser caching) were not applied. Ask your host to make it writable by WordPress."
 msgstr ""
 
-#: src/Admin.php:692
+#: src/Admin.php:700
 msgid "The server rejected the new .htaccess rules, so the previous file was put back. Your host may not allow “Options” overrides: turn off “Hide folder listings” and save again."
 msgstr ""
 
-#: src/Admin.php:706
+#: src/Admin.php:714
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
 #. translators: %s: site name.
-#: src/Admin.php:731
+#: src/Admin.php:739
 #, php-format
 msgid "[%s] New login address"
 msgstr ""
 
 #. translators: %s: login URL.
-#: src/Admin.php:733
+#: src/Admin.php:741
 #, php-format
 msgid ""
 "The login page of this site is now:\n"
@@ -819,7 +837,7 @@ msgid ""
 "Keep this email. If you are ever locked out, add define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); to wp-config.php."
 msgstr ""
 
-#: src/Cache.php:263
+#: src/Cache.php:265
 msgid "Clear cache"
 msgstr ""
 
@@ -1011,6 +1029,50 @@ msgstr ""
 #: src/Login.php:139
 #, php-format
 msgid "The administrator %1$s signed in with the right password from IP %2$s, which has not been seen for this account before. If this was not you, change the password now."
+msgstr ""
+
+#: src/Manual.php:33
+msgid "Speed and security (Shield)"
+msgstr ""
+
+#: src/Manual.php:35
+msgid "Everything is under Shield in the admin menu. Start with Overview: it lists what needs attention, and each line links to the setting that fixes it."
+msgstr ""
+
+#: src/Manual.php:39
+msgid "Speed: turn on the page cache. Pages are saved for visitors and cleared automatically when you publish, edit a menu or change a setting. Add booking and account pages to “Never cache”."
+msgstr ""
+
+#: src/Manual.php:40
+msgid "Login & paths: give the login page its own address. The old wp-login.php and wp-admin then show “not found” to anyone not signed in. Bookmark the new address; it is also emailed to the site admin."
+msgstr ""
+
+#: src/Manual.php:41
+msgid "Firewall: on by default. Add your office IP under “Never block” so you are never locked out."
+msgstr ""
+
+#: src/Manual.php:42
+msgid "Login protection: lockouts after failed logins, and two-factor login. Each user turns two-factor on in their own profile with an authenticator app and keeps the ten backup codes somewhere safe."
+msgstr ""
+
+#: src/Manual.php:43
+msgid "Hardening: safe switches for headers, XML-RPC, usernames and sensitive files."
+msgstr ""
+
+#: src/Manual.php:44
+msgid "File scan: runs every day and emails you when something new turns up. “Ignore” hides a finding until the file changes."
+msgstr ""
+
+#: src/Manual.php:45
+msgid "Activity: every sign-in, lockout, blocked request and setting change."
+msgstr ""
+
+#: src/Manual.php:48
+msgid "Locked out after changing the login address? Add define( 'ITOUR_SHIELD_DISABLE_PATHS', true ); to wp-config.php, sign in at wp-login.php, fix the setting, then remove the line. Lost your phone? Use a backup code, or ask another administrator to turn two-factor off in your profile."
+msgstr ""
+
+#: src/Manual.php:49
+msgid "On Nginx servers Shield can’t write server rules itself. Copy the rules shown under Hardening → Server into the site’s Nginx config (or send them to your host). Deactivating Shield removes every file change it made."
 msgstr ""
 
 #: src/Scan.php:92

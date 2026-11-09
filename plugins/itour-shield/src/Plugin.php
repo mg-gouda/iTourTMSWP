@@ -28,6 +28,7 @@ final class Plugin {
 		Speed::hooks();
 		Cache::hooks();
 		Scan::hooks();
+		Manual::hooks();
 		if ( is_admin() ) {
 			Admin::hooks();
 		}
