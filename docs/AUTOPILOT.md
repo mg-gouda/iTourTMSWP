@@ -5,7 +5,11 @@ Work that needs **no decision from the owner**. The scheduled task "iTourTMS aut
 Never on autopilot (owner decides): Tour Package / Excursion / Transfer functionality, payments and checkout, cancellation rules, B2B, Traveler importer, anything on staging or the live site, licence server URL/key.
 
 ## Queue
-- [ ] **Demo content file.** ThemeForest buyers expect a one-click or WXR import. Export the demo pages, menus, Theme Options and booking-widget/slider/form examples (from `tools/demo-content.php`) as `demo/wp-itourtms-demo.xml` + an options JSON, add them to the ThemeForest bundle, and test the import on a clean site.
+- (empty: next work needs the owner's 14 product answers)
+
+## Superseded
+- **Demo content file** (done another way, see Done). Original note kept for the image question:
+- **Demo content file.** ThemeForest buyers expect a one-click or WXR import. Export the demo pages, menus, Theme Options and booking-widget/slider/form examples (from `tools/demo-content.php`) as `demo/wp-itourtms-demo.xml` + an options JSON, add them to the ThemeForest bundle, and test the import on a clean site.
   - **Owner question (autopilot, 2026-11-09): demo images.** Repo bundles no images ("no third-party images" in licensing/README.txt). The slider example (and any hero/why-book photo) needs images, and a WXR import downloads attachments from a public URL (the dev site is localhost). Pick one:
     - **A (recommended):** ship the demo without slider/photos now (pages, menus, booking widget, contact form, Theme Options JSON); add the slider example later.
     - **B:** self-made placeholder images (flat plum shapes + caption) hosted in this public GitHub repo (`demo/images/`, raw.githubusercontent.com URLs in the WXR). Works offline-free for buyers only while the repo stays public.
@@ -14,6 +18,7 @@ Never on autopilot (owner decides): Tour Package / Excursion / Transfer function
 
 ## Done
 - (autopilot adds items here with the commit hash)
+- Demo content: one click under iTour → Overview instead of a WXR file (no WordPress Importer, no options JSON, no ID remapping, works offline). Home (hero, booking widget, why-book, call to action), Tours, Day trips, Transfers, About, Contact (contact form), main menu, front page. Remove trashes only `_itour_demo` pages and restores the previous front page and header menu. No images (option A); slider example waits for licensed photos. Tested on a clean install of the ThemeForest bundle (commit "feat(core): one-click demo content")
 - First-run setup (theme): "Quick setup" tab first in Theme Options until finished or skipped (design preset, logo, phone/email/WhatsApp, main menu built from published top-level pages); one-time notice on Themes after activation; Arabic strings. Named "Quick setup", not "Get started", because the manual already has a "Getting started" tab (commit "feat(theme): quick setup wizard")
 - Shield on Nginx: copyable rules on the Hardening tab, masking via ITOUR_SHIELD_NGINX (dbdd57f)
 - Shield: blocked IPs skip cached pages (dbdd57f)

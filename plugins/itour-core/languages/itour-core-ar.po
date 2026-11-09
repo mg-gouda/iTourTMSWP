@@ -164,11 +164,11 @@ msgstr ""
 msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
 msgstr "لم تُثبَّت أي وحدة بعد. أضف إضافة وحدة، مثل iTour CRM، للبدء."
 
-#: src/Admin/Menu.php:61
+#: src/Admin/Menu.php:60
 msgid "Module"
 msgstr "الوحدة"
 
-#: src/Admin/Menu.php:61
+#: src/Admin/Menu.php:60
 msgid "Version"
 msgstr "الإصدار"
 
@@ -428,6 +428,119 @@ msgstr "المنازل العشرية"
 msgid "How many %s one unit of this currency is worth today. Leave empty to keep the last rate."
 msgstr "كم تساوي وحدة واحدة من هذه العملة بـ %s اليوم. اتركه فارغًا للإبقاء على آخر سعر."
 
+#: src/Demo.php:36
+msgid "Sorry, you are not allowed to do that."
+msgstr "عذرًا، غير مسموح لك بذلك."
+
+#: src/Demo.php:58
+msgid "Demo content added."
+msgstr "تمت إضافة المحتوى التجريبي."
+
+#: src/Demo.php:58
+msgid "View site"
+msgstr "عرض الموقع"
+
+#: src/Demo.php:60
+msgid "Demo content moved to the trash."
+msgstr "نُقل المحتوى التجريبي إلى سلة المهملات."
+
+#: src/Demo.php:63
+msgid "Demo content"
+msgstr "المحتوى التجريبي"
+
+#: src/Demo.php:66
+msgid "The demo pages are on your site. Remove them when your own pages are ready: they go to the trash, and your other pages and menus stay as they are."
+msgstr "الصفحات التجريبية موجودة على موقعك. احذفها عندما تجهز صفحاتك: ستنتقل إلى سلة المهملات، وتبقى صفحاتك وقوائمك الأخرى كما هي."
+
+#: src/Demo.php:67
+msgid "Adds a home page with the booking widget, Tours, Day trips, Transfers, About and Contact pages, and a main menu, so you can see the design with content. Your existing pages are not changed."
+msgstr "يضيف صفحة رئيسية فيها أداة الحجز، وصفحات الجولات والرحلات اليومية والتنقلات ومن نحن واتصل بنا، وقائمة رئيسية، لترى التصميم مع محتوى. صفحاتك الحالية لا تتغير."
+
+#: src/Demo.php:72
+msgid "Remove demo content"
+msgstr "حذف المحتوى التجريبي"
+
+#: src/Demo.php:72
+msgid "Add demo content"
+msgstr "إضافة المحتوى التجريبي"
+
+#: src/Demo.php:104
+msgid "Demo menu"
+msgstr "القائمة التجريبية"
+
+#: src/Demo.php:170
+msgid "Home"
+msgstr "الرئيسية"
+
+#: src/Demo.php:171
+msgid "Tours"
+msgstr "الجولات"
+
+#: src/Demo.php:171
+msgid "Multi-day packages with hotels, guides and transfers included. Nile cruises, Cairo and the pyramids, Luxor and Aswan, the Red Sea coast."
+msgstr "برامج لعدة أيام تشمل الفنادق والمرشدين والتنقلات. رحلات نيلية، القاهرة والأهرامات، الأقصر وأسوان، ساحل البحر الأحمر."
+
+#: src/Demo.php:173
+msgid "Classic Egypt, 8 days: Cairo, Nile cruise, Luxor"
+msgstr "مصر الكلاسيكية، 8 أيام: القاهرة، رحلة نيلية، الأقصر"
+
+#: src/Demo.php:173
+msgid "Red Sea and Cairo, 7 days"
+msgstr "البحر الأحمر والقاهرة، 7 أيام"
+
+#: src/Demo.php:173
+msgid "Desert and oases, 5 days"
+msgstr "الصحراء والواحات، 5 أيام"
+
+#: src/Demo.php:174
+msgid "Day trips"
+msgstr "رحلات يومية"
+
+#: src/Demo.php:174
+msgid "Excursions from your hotel, with pick-up and drop-off."
+msgstr "رحلات من فندقك، مع التوصيل ذهابًا وإيابًا."
+
+#: src/Demo.php:175
+msgid "Pyramids of Giza and the Egyptian Museum"
+msgstr "أهرامات الجيزة والمتحف المصري"
+
+#: src/Demo.php:175
+msgid "Luxor from Hurghada"
+msgstr "الأقصر من الغردقة"
+
+#: src/Demo.php:175
+msgid "Snorkelling trip to Giftun Island"
+msgstr "رحلة غطس إلى جزيرة الجفتون"
+
+#: src/Demo.php:176
+#: blocks/booking-widget/editor.js:10
+msgid "Transfers"
+msgstr "التنقلات"
+
+#: src/Demo.php:176
+msgid "Private airport and hotel transfers with a fixed price per car, not per person. Your driver waits at arrivals with your name."
+msgstr "تنقلات خاصة من المطار والفندق بسعر ثابت للسيارة، لا للفرد. ينتظرك السائق في صالة الوصول باسمك."
+
+#: src/Demo.php:178
+msgid "About"
+msgstr "من نحن"
+
+#: src/Demo.php:178
+msgid "A local travel company"
+msgstr "شركة سياحة محلية"
+
+#: src/Demo.php:179
+msgid "We are a destination management company: we plan, book and run every part of the trip ourselves, from the airport pick-up to the last excursion. Replace this text with your own story."
+msgstr "نحن شركة إدارة وجهات سياحية: نخطط ونحجز وننفذ كل جزء من الرحلة بأنفسنا، من الاستقبال في المطار حتى آخر رحلة. استبدل هذا النص بقصتك."
+
+#: src/Demo.php:180
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: src/Demo.php:180
+msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
+msgstr "أخبرنا متى تريد السفر وما الذي تود رؤيته. نرد خلال يوم عمل واحد."
+
 #: src/Manual.php:31
 msgid "Booking widget: the search box for tour packages, excursions and transfers. Pick a design in the block settings, or leave “Site default” to follow Theme Options → Design. Searches go to the results pages chosen in each product’s Theme Options tab."
 msgstr "أداة الحجز: خانة البحث عن الباقات السياحية والرحلات اليومية والتنقلات. اختر تصميمًا من إعدادات المكوّن، أو اترك «افتراضي الموقع» لاتباع خيارات القالب ← التصميم. تُرسل عمليات البحث إلى صفحات النتائج المختارة في تبويب كل منتج ضمن خيارات القالب."
@@ -448,6 +561,10 @@ msgstr "مكوّنات iTour"
 msgid "In the block editor, click + and search for these blocks:"
 msgstr "في محرر المكوّنات، اضغط + وابحث عن هذه المكوّنات:"
 
+#: src/Manual.php:44
+msgid "To see the blocks on real pages first, use iTour → Overview → Add demo content. Remove demo content puts those pages in the trash and gives you back your old home page and menu."
+msgstr "لترى الكتل على صفحات حقيقية أولًا، استخدم iTour ← نظرة عامة ← إضافة المحتوى التجريبي. زر حذف المحتوى التجريبي ينقل تلك الصفحات إلى سلة المهملات ويعيد صفحتك الرئيسية وقائمتك السابقتين."
+
 #: src/Media.php:80
 msgid "This SVG file could not be read safely, so it was not uploaded."
 msgstr "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم يُرفع."
@@ -465,10 +582,6 @@ msgstr "الباقات السياحية"
 #: blocks/booking-widget/editor.js:9
 msgid "Excursions"
 msgstr "الرحلات اليومية"
-
-#: blocks/booking-widget/editor.js:10
-msgid "Transfers"
-msgstr "التنقلات"
 
 #: blocks/booking-widget/editor.js:25
 msgid "Booking widget"

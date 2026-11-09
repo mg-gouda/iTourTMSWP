@@ -41,6 +41,7 @@ final class Manual {
 			'blocks' => array(
 				array( 'p', __( 'In the block editor, click + and search for these blocks:', 'itour-core' ) ),
 				array( 'list', $items ),
+				array( 'p', __( 'To see the blocks on real pages first, use iTour → Overview → Add demo content. Remove demo content puts those pages in the trash and gives you back your old home page and menu.', 'itour-core' ) ),
 			),
 		);
 		return $manual;

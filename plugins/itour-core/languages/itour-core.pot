@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T22:42:37+00:00\n"
+"POT-Creation-Date: 2026-11-09T09:36:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -170,11 +170,11 @@ msgstr ""
 msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
 msgstr ""
 
-#: src/Admin/Menu.php:61
+#: src/Admin/Menu.php:60
 msgid "Module"
 msgstr ""
 
-#: src/Admin/Menu.php:61
+#: src/Admin/Menu.php:60
 msgid "Version"
 msgstr ""
 
@@ -434,6 +434,119 @@ msgstr ""
 msgid "How many %s one unit of this currency is worth today. Leave empty to keep the last rate."
 msgstr ""
 
+#: src/Demo.php:36
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: src/Demo.php:58
+msgid "Demo content added."
+msgstr ""
+
+#: src/Demo.php:58
+msgid "View site"
+msgstr ""
+
+#: src/Demo.php:60
+msgid "Demo content moved to the trash."
+msgstr ""
+
+#: src/Demo.php:63
+msgid "Demo content"
+msgstr ""
+
+#: src/Demo.php:66
+msgid "The demo pages are on your site. Remove them when your own pages are ready: they go to the trash, and your other pages and menus stay as they are."
+msgstr ""
+
+#: src/Demo.php:67
+msgid "Adds a home page with the booking widget, Tours, Day trips, Transfers, About and Contact pages, and a main menu, so you can see the design with content. Your existing pages are not changed."
+msgstr ""
+
+#: src/Demo.php:72
+msgid "Remove demo content"
+msgstr ""
+
+#: src/Demo.php:72
+msgid "Add demo content"
+msgstr ""
+
+#: src/Demo.php:104
+msgid "Demo menu"
+msgstr ""
+
+#: src/Demo.php:170
+msgid "Home"
+msgstr ""
+
+#: src/Demo.php:171
+msgid "Tours"
+msgstr ""
+
+#: src/Demo.php:171
+msgid "Multi-day packages with hotels, guides and transfers included. Nile cruises, Cairo and the pyramids, Luxor and Aswan, the Red Sea coast."
+msgstr ""
+
+#: src/Demo.php:173
+msgid "Classic Egypt, 8 days: Cairo, Nile cruise, Luxor"
+msgstr ""
+
+#: src/Demo.php:173
+msgid "Red Sea and Cairo, 7 days"
+msgstr ""
+
+#: src/Demo.php:173
+msgid "Desert and oases, 5 days"
+msgstr ""
+
+#: src/Demo.php:174
+msgid "Day trips"
+msgstr ""
+
+#: src/Demo.php:174
+msgid "Excursions from your hotel, with pick-up and drop-off."
+msgstr ""
+
+#: src/Demo.php:175
+msgid "Pyramids of Giza and the Egyptian Museum"
+msgstr ""
+
+#: src/Demo.php:175
+msgid "Luxor from Hurghada"
+msgstr ""
+
+#: src/Demo.php:175
+msgid "Snorkelling trip to Giftun Island"
+msgstr ""
+
+#: src/Demo.php:176
+#: blocks/booking-widget/editor.js:10
+msgid "Transfers"
+msgstr ""
+
+#: src/Demo.php:176
+msgid "Private airport and hotel transfers with a fixed price per car, not per person. Your driver waits at arrivals with your name."
+msgstr ""
+
+#: src/Demo.php:178
+msgid "About"
+msgstr ""
+
+#: src/Demo.php:178
+msgid "A local travel company"
+msgstr ""
+
+#: src/Demo.php:179
+msgid "We are a destination management company: we plan, book and run every part of the trip ourselves, from the airport pick-up to the last excursion. Replace this text with your own story."
+msgstr ""
+
+#: src/Demo.php:180
+msgid "Contact"
+msgstr ""
+
+#: src/Demo.php:180
+msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
+msgstr ""
+
 #: src/Manual.php:31
 msgid "Booking widget: the search box for tour packages, excursions and transfers. Pick a design in the block settings, or leave “Site default” to follow Theme Options → Design. Searches go to the results pages chosen in each product’s Theme Options tab."
 msgstr ""
@@ -454,6 +567,10 @@ msgstr ""
 msgid "In the block editor, click + and search for these blocks:"
 msgstr ""
 
+#: src/Manual.php:44
+msgid "To see the blocks on real pages first, use iTour → Overview → Add demo content. Remove demo content puts those pages in the trash and gives you back your old home page and menu."
+msgstr ""
+
 #: src/Media.php:80
 msgid "This SVG file could not be read safely, so it was not uploaded."
 msgstr ""
@@ -470,10 +587,6 @@ msgstr ""
 
 #: blocks/booking-widget/editor.js:9
 msgid "Excursions"
-msgstr ""
-
-#: blocks/booking-widget/editor.js:10
-msgid "Transfers"
 msgstr ""
 
 #: blocks/booking-widget/editor.js:25

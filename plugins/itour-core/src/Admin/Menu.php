@@ -55,13 +55,15 @@ final class Menu {
 		echo '<div class="wrap"><h1>' . esc_html__( 'iTour', 'itour-core' ) . '</h1>';
 		$modules = array_diff_key( $this->modules->all(), array( 'core' => 1 ) );
 		if ( ! $modules ) {
-			echo '<p>' . esc_html__( 'No modules are installed yet. Add a module plugin, such as iTour CRM, to get started.', 'itour-core' ) . '</p></div>';
-			return;
+			echo '<p>' . esc_html__( 'No modules are installed yet. Add a module plugin, such as iTour CRM, to get started.', 'itour-core' ) . '</p>';
+		} else {
+			echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( 'Module', 'itour-core' ) . '</th><th>' . esc_html__( 'Version', 'itour-core' ) . '</th></tr></thead><tbody>';
+			foreach ( $modules as $module ) {
+				echo '<tr><td>' . esc_html( $module->name() ) . '</td><td>' . esc_html( $module->version() ) . '</td></tr>';
+			}
+			echo '</tbody></table>';
 		}
-		echo '<table class="widefat striped"><thead><tr><th>' . esc_html__( 'Module', 'itour-core' ) . '</th><th>' . esc_html__( 'Version', 'itour-core' ) . '</th></tr></thead><tbody>';
-		foreach ( $modules as $module ) {
-			echo '<tr><td>' . esc_html( $module->name() ) . '</td><td>' . esc_html( $module->version() ) . '</td></tr>';
-		}
-		echo '</tbody></table></div>';
+		\ITour\Core\Demo::render_box();
+		echo '</div>';
 	}
 }
