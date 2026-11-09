@@ -7,7 +7,8 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Pax brackets (tours + excursions):** price per person is set per bracket of travellers in the booking (e.g. 1, 2–3, 4–6, 7–10, 11+). The more travellers, the lower the price per person, because fixed costs (guide, vehicle) are shared. The bracket comes from the booking's total travellers.
 - **Seasons (tours + excursions):** prices can change by date range.
 - **Supplements (tours + excursions):** per-person charges added automatically when the travel dates include a set date, e.g. Christmas Gala Meal, New Year's Gala Meal, Gosto Gala. Each one has a name, date or date range, and adult / child / infant price.
-- **Hotel and airport list (excursions + transfers):** one shared list of hotels and airports, each placed in a zone. Google Places autocomplete can find addresses that aren't on the list (owner supplies the API key).
+- **Location Tree (built, `itour-core`, own admin menu):** destination → zone → hotel / airport / port / meeting point, set up once and used by every product. Table `itour_locations` (`parent_id` tree, `lat`/`lng`/`place_id` ready for maps and Google Places).
+- **Hotel and airport list (excursions + transfers):** comes from the Location Tree; every hotel and airport sits in a zone. Google Places autocomplete can find addresses that aren't on the list (owner supplies the API key).
 - **Payments (WooCommerce, D-005):** card online, cash on arrival / pay the driver, bank transfer, deposit now and the rest later.
 - **Cancellation:** one site-wide table of tiers that applies to all products. Each tier has a travel date range, days before travel, and fee %. Example: 1 Dec–10 Jan, 30+ days 0%, 15–29 days 50%, under 15 days 100%.
 - **B2B:** comes later, after B2C launches. Partner net prices go in a later phase; the data model leaves room for them now.

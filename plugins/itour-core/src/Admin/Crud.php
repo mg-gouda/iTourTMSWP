@@ -5,7 +5,9 @@
  * Config keys: table (without prefix), key (primary key column, default id), singular, plural,
  * fields (see Fields), columns (list columns: key => label), search (columns), order (ORDER BY column),
  * capability, unique (columns that must be unique), auto_key (bool, default true),
- * after_save (callable receiving the row id and clean values).
+ * after_save (callable receiving the row id and clean values), validate (callable( row, id ) returning
+ * extra field errors), tree (parent-id column: list shows the hierarchy indented, rows with children
+ * can't be deleted).
  *
  * @package ITour\Core
  */
@@ -80,6 +82,10 @@ final class Crud {
 		if ( isset( $_GET['action'], $_GET['id'] ) && 'delete' === $_GET['action'] ) {
 			$id = sanitize_text_field( wp_unslash( $_GET['id'] ) );
 			check_admin_referer( 'itour_delete_' . $this->c['table'] . '_' . $id );
+			if ( isset( $this->c['tree'] ) && $wpdb->get_var( $wpdb->prepare( 'SELECT 1 FROM %i WHERE %i = %s LIMIT 1', $this->table(), $this->c['tree'], $id ) ) ) { // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+				wp_safe_redirect( $this->url( array( 'done' => 'has_children' ) ) );
+				exit;
+			}
 			$wpdb->delete( $this->table(), array( $this->c['key'] => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			wp_safe_redirect( $this->url( array( 'done' => 'deleted' ) ) );
 			exit;
@@ -93,6 +99,9 @@ final class Crud {
 		$raw = isset( $_POST['itour'] ) && is_array( $_POST['itour'] ) ? wp_unslash( $_POST['itour'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized by Fields::clean().
 
 		list( $row, $errors ) = Fields::clean( $this->c['fields'], $raw );
+		if ( isset( $this->c['validate'] ) ) {
+			$errors += (array) ( $this->c['validate'] )( $row, $id );
+		}
 		foreach ( $this->c['unique'] as $col ) {
 			if ( '' === $row[ $col ] || isset( $errors[ $col ] ) ) {
 				continue;
@@ -216,9 +225,18 @@ final class Crud {
 				array_push( $args, $col, $like );
 			}
 		}
+		$depth = array();
 		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders -- $where only holds placeholders.
-		$total = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i WHERE {$where}", ...$args ) );
-		$rows  = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE {$where} ORDER BY %i" . ( $this->c['order_desc'] ? ' DESC' : '' ) . ' LIMIT %d OFFSET %d', ...array_merge( $args, array( $this->c['order'] ?? $this->c['key'], $per, ( $page - 1 ) * $per ) ) ), ARRAY_A );
+		if ( isset( $this->c['tree'] ) && '' === $q ) {
+			// ponytail: whole tree in depth-first order, then one page of it; fine up to a few thousand rows.
+			$all   = (array) $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %i ORDER BY %i', $this->table(), $this->c['order'] ?? $this->c['key'] ), ARRAY_A );
+			$rows  = $this->tree_order( $all, $depth );
+			$total = count( $rows );
+			$rows  = array_slice( $rows, ( $page - 1 ) * $per, $per );
+		} else {
+			$total = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %i WHERE {$where}", ...$args ) );
+			$rows  = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE {$where} ORDER BY %i" . ( $this->c['order_desc'] ? ' DESC' : '' ) . ' LIMIT %d OFFSET %d', ...array_merge( $args, array( $this->c['order'] ?? $this->c['key'], $per, ( $page - 1 ) * $per ) ) ), ARRAY_A );
+		}
 		// phpcs:enable
 
 		echo '<h1 class="wp-heading-inline">' . esc_html( $this->c['plural'] ) . '</h1> ';
@@ -230,6 +248,8 @@ final class Crud {
 			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Saved.', 'itour-core' ) . '</p></div>';
 		} elseif ( 'deleted' === $done ) {
 			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Deleted.', 'itour-core' ) . '</p></div>';
+		} elseif ( 'has_children' === $done ) {
+			echo '<div class="notice notice-error is-dismissible"><p>' . esc_html__( 'Not deleted: move or delete the items under it first.', 'itour-core' ) . '</p></div>';
 		}
 		if ( $this->c['search'] ) {
 			echo '<form method="get" class="search-form"><input type="hidden" name="page" value="' . esc_attr( isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '' ) . '">'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -268,7 +288,7 @@ final class Crud {
 						),
 						'itour_delete_' . $this->c['table'] . '_' . $id
 					);
-					echo '<td class="column-primary"><strong><a class="row-title" href="' . esc_url( $edit ) . '">' . esc_html( $cell ) . '</a></strong>';
+					echo '<td class="column-primary"><strong>' . esc_html( str_repeat( '— ', $depth[ $id ] ?? 0 ) ) . '<a class="row-title" href="' . esc_url( $edit ) . '">' . esc_html( $cell ) . '</a></strong>';
 					echo '<div class="row-actions"><span class="edit"><a href="' . esc_url( $edit ) . '">' . esc_html__( 'Edit', 'itour-core' ) . '</a> | </span>';
 					echo '<span class="trash"><a href="' . esc_url( $del ) . '" onclick="return confirm(this.dataset.confirm)" data-confirm="' . esc_attr__( 'Delete this permanently?', 'itour-core' ) . '">' . esc_html__( 'Delete', 'itour-core' ) . '</a></span></div></td>';
 					$first = false;
@@ -292,6 +312,34 @@ final class Crud {
 				)
 			) . '</div></div>';
 		}
+	}
+
+	/**
+	 * Rows in depth-first order (children right after their parent). Orphans are treated as roots.
+	 *
+	 * @param array<int,array<string,mixed>> $rows  All rows.
+	 * @param array<string,int>              $depth Filled with row id => depth.
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function tree_order( array $rows, array &$depth ): array {
+		$key  = $this->c['key'];
+		$ids  = array_flip( array_map( static fn( $r ) => (string) $r[ $key ], $rows ) );
+		$kids = array();
+		foreach ( $rows as $r ) {
+			$p                                       = (string) $r[ $this->c['tree'] ];
+			$kids[ isset( $ids[ $p ] ) ? $p : '' ][] = $r;
+		}
+		$out  = array();
+		$walk = static function ( string $pid, int $d ) use ( &$walk, &$out, &$depth, $kids, $key ): void {
+			foreach ( $kids[ $pid ] ?? array() as $r ) {
+				$id           = (string) $r[ $key ];
+				$depth[ $id ] = $d;
+				$out[]        = $r;
+				$walk( $id, $d + 1 );
+			}
+		};
+		$walk( '', 0 );
+		return $out;
 	}
 
 	/**

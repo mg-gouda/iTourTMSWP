@@ -34,7 +34,7 @@ final class CoreModule extends Module {
 	 * Schema version.
 	 */
 	public function version(): string {
-		return '0.2.0';
+		return '0.3.0';
 	}
 
 	/**
@@ -97,6 +97,20 @@ final class CoreModule extends Module {
   PRIMARY KEY  (id),
   KEY type (type),
   KEY name (name)",
+			'locations'      => 'id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  parent_id bigint(20) unsigned NULL,
+  type varchar(20) NOT NULL,
+  name varchar(190) NOT NULL,
+  code varchar(8) NULL,
+  country char(2) NULL,
+  address varchar(255) NULL,
+  lat decimal(10,7) NULL,
+  lng decimal(10,7) NULL,
+  place_id varchar(255) NULL,
+  active tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY  (id),
+  KEY parent_id (parent_id),
+  KEY type (type)',
 			'sequences'      => "code varchar(40) NOT NULL,
   prefix varchar(12) NOT NULL,
   separator_char varchar(3) NOT NULL DEFAULT '-',

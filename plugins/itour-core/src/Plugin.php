@@ -103,6 +103,7 @@ final class Plugin {
 		( new BookingWidget() )->hooks();
 		( new Manual() )->hooks();
 		( new Demo() )->hooks();
+		( new Locations() )->hooks();
 		add_action(
 			'admin_enqueue_scripts',
 			static function ( string $hook ): void {

@@ -51,87 +51,91 @@ msgid "Looking for"
 msgstr "أبحث عن"
 
 #: blocks/booking-widget/render.php:92
-#: src/Admin/Crud.php:236
-#: src/Admin/Crud.php:237
+#: src/Admin/Crud.php:256
+#: src/Admin/Crud.php:257
 msgid "Search"
 msgstr "بحث"
 
 #. translators: %s: field value.
-#: src/Admin/Crud.php:105
+#: src/Admin/Crud.php:114
 #, php-format
 msgid "“%s” is already used."
 msgstr "«%s» مستخدم بالفعل."
 
-#: src/Admin/Crud.php:159
+#: src/Admin/Crud.php:168
 msgid "Not found"
 msgstr "غير موجود"
 
-#: src/Admin/Crud.php:159
+#: src/Admin/Crud.php:168
 msgid "Back to the list"
 msgstr "العودة إلى القائمة"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:174
+#: src/Admin/Crud.php:183
 #, php-format
 msgid "Add %s"
 msgstr "إضافة %s"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:174
+#: src/Admin/Crud.php:183
 #, php-format
 msgid "View %s"
 msgstr "عرض %s"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:174
+#: src/Admin/Crud.php:183
 #, php-format
 msgid "Edit %s"
 msgstr "تعديل %s"
 
-#: src/Admin/Crud.php:178
+#: src/Admin/Crud.php:187
 #: src/Company.php:170
 msgid "Please fix the highlighted fields."
 msgstr "يُرجى تصحيح الحقول المحددة."
 
-#: src/Admin/Crud.php:194
+#: src/Admin/Crud.php:203
 #: src/Company.php:176
 msgid "Save"
 msgstr "حفظ"
 
-#: src/Admin/Crud.php:226
+#: src/Admin/Crud.php:244
 msgid "Add new"
 msgstr "إضافة جديد"
 
-#: src/Admin/Crud.php:230
+#: src/Admin/Crud.php:248
 #: src/Company.php:167
 msgid "Saved."
 msgstr "تم الحفظ."
 
-#: src/Admin/Crud.php:232
+#: src/Admin/Crud.php:250
 msgid "Deleted."
 msgstr "تم الحذف."
 
-#: src/Admin/Crud.php:246
+#: src/Admin/Crud.php:252
+msgid "Not deleted: move or delete the items under it first."
+msgstr "لم يُحذف: انقل العناصر التي تحته أو احذفها أولًا."
+
+#: src/Admin/Crud.php:266
 msgid "Nothing matches that search."
 msgstr "لا توجد نتائج مطابقة لهذا البحث."
 
-#: src/Admin/Crud.php:246
+#: src/Admin/Crud.php:266
 msgid "Nothing here yet. Use “Add new” to create the first one."
 msgstr "لا يوجد شيء هنا بعد. استخدم «إضافة جديد» لإنشاء أول عنصر."
 
-#: src/Admin/Crud.php:272
+#: src/Admin/Crud.php:292
 msgid "Edit"
 msgstr "تعديل"
 
-#: src/Admin/Crud.php:273
+#: src/Admin/Crud.php:293
 msgid "Delete this permanently?"
 msgstr "حذف هذا نهائيًا؟"
 
-#: src/Admin/Crud.php:273
+#: src/Admin/Crud.php:293
 msgid "Delete"
 msgstr "حذف"
 
-#: src/Admin/Crud.php:316
+#: src/Admin/Crud.php:364
 #: src/Admin/Fields.php:79
 msgid "Yes"
 msgstr "نعم"
@@ -185,7 +189,7 @@ msgid "As it appears on invoices and vouchers."
 msgstr "كما يظهر على الفواتير والقسائم."
 
 #: src/Company.php:42
-#: src/CoreModule.php:244
+#: src/CoreModule.php:258
 msgid "Tax ID"
 msgstr "الرقم الضريبي"
 
@@ -194,34 +198,36 @@ msgid "Tourism licence no."
 msgstr "رقم الترخيص السياحي"
 
 #: src/Company.php:52
-#: src/CoreModule.php:192
-#: src/CoreModule.php:224
+#: src/CoreModule.php:206
+#: src/CoreModule.php:238
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
 #: src/Company.php:57
-#: src/CoreModule.php:193
-#: src/CoreModule.php:229
+#: src/CoreModule.php:207
+#: src/CoreModule.php:243
 msgid "Phone"
 msgstr "الهاتف"
 
 #: src/Company.php:62
-#: src/CoreModule.php:239
+#: src/CoreModule.php:253
 msgid "Website"
 msgstr "الموقع الإلكتروني"
 
 #: src/Company.php:67
+#: src/Locations.php:146
 msgid "Address"
 msgstr "العنوان"
 
 #: src/Company.php:72
-#: src/CoreModule.php:194
-#: src/CoreModule.php:249
+#: src/CoreModule.php:208
+#: src/CoreModule.php:263
+#: src/Locations.php:139
 msgid "Country"
 msgstr "الدولة"
 
 #: src/Company.php:78
-#: src/CoreModule.php:320
+#: src/CoreModule.php:334
 msgid "Base currency"
 msgstr "العملة الأساسية"
 
@@ -242,7 +248,7 @@ msgid "Use the iTourTMS look for the dashboard and login page"
 msgstr "استخدام مظهر iTourTMS للوحة التحكم وصفحة تسجيل الدخول"
 
 #: src/Company.php:165
-#: src/CoreModule.php:377
+#: src/CoreModule.php:391
 msgid "Company"
 msgstr "الشركة"
 
@@ -254,176 +260,184 @@ msgstr "تظهر بيانات شركتك على القسائم والفواتي�
 msgid "Core"
 msgstr "الأساس"
 
-#: src/CoreModule.php:138
+#: src/CoreModule.php:152
 msgid "branch"
 msgstr "فرع"
 
-#: src/CoreModule.php:139
-#: src/CoreModule.php:382
+#: src/CoreModule.php:153
+#: src/CoreModule.php:396
 msgid "Branches"
 msgstr "الفروع"
 
-#: src/CoreModule.php:143
+#: src/CoreModule.php:157
 msgid "No branches yet. Add your head office first; offices such as Hurghada or Luxor can follow."
 msgstr "لا توجد فروع بعد. أضف المقر الرئيسي أولًا، ثم المكاتب الأخرى مثل الغردقة أو الأقصر."
 
-#: src/CoreModule.php:145
+#: src/CoreModule.php:159
 msgid "Branch"
 msgstr "الفرع"
 
-#: src/CoreModule.php:146
-#: src/CoreModule.php:159
-#: src/CoreModule.php:308
+#: src/CoreModule.php:160
+#: src/CoreModule.php:173
+#: src/CoreModule.php:322
+#: src/Locations.php:91
+#: src/Locations.php:132
 msgid "Code"
 msgstr "الرمز"
 
-#: src/CoreModule.php:147
-#: src/CoreModule.php:167
+#: src/CoreModule.php:161
+#: src/CoreModule.php:181
 msgid "Head office"
 msgstr "المقر الرئيسي"
 
-#: src/CoreModule.php:148
-#: src/CoreModule.php:173
-#: src/CoreModule.php:289
-#: src/CoreModule.php:312
-#: src/CoreModule.php:368
+#: src/CoreModule.php:162
+#: src/CoreModule.php:187
+#: src/CoreModule.php:303
+#: src/CoreModule.php:326
+#: src/CoreModule.php:382
+#: src/Locations.php:92
+#: src/Locations.php:162
 msgid "Active"
 msgstr "نشط"
 
-#: src/CoreModule.php:153
-#: src/CoreModule.php:190
-#: src/CoreModule.php:199
-#: src/CoreModule.php:309
-#: src/CoreModule.php:342
+#: src/CoreModule.php:167
+#: src/CoreModule.php:204
+#: src/CoreModule.php:213
+#: src/CoreModule.php:323
+#: src/CoreModule.php:356
+#: src/Locations.php:89
+#: src/Locations.php:119
 msgid "Name"
 msgstr "الاسم"
 
-#: src/CoreModule.php:163
+#: src/CoreModule.php:177
 msgid "Short code used in document numbers, e.g. HRG."
 msgstr "رمز قصير يُستخدم في أرقام المستندات، مثل HRG."
 
-#: src/CoreModule.php:169
+#: src/CoreModule.php:183
 msgid "This is the head office"
 msgstr "هذا هو المقر الرئيسي"
 
-#: src/CoreModule.php:183
+#: src/CoreModule.php:197
 msgid "partner"
 msgstr "شريك"
 
-#: src/CoreModule.php:184
-#: src/CoreModule.php:387
+#: src/CoreModule.php:198
+#: src/CoreModule.php:401
 msgid "Partners"
 msgstr "الشركاء"
 
-#: src/CoreModule.php:188
+#: src/CoreModule.php:202
 msgid "No partners yet. Partners are your customers, suppliers, tour operators and corporate clients, shared by every module."
 msgstr "لا يوجد شركاء بعد. الشركاء هم عملاؤك ومورّدوك ومنظمو الرحلات وعملاء الشركات، وتتشاركهم جميع الوحدات."
 
-#: src/CoreModule.php:191
 #: src/CoreModule.php:205
+#: src/CoreModule.php:219
+#: src/Locations.php:90
+#: src/Locations.php:112
 msgid "Type"
 msgstr "النوع"
 
-#: src/CoreModule.php:209
+#: src/CoreModule.php:223
 msgid "Customer"
 msgstr "عميل"
 
-#: src/CoreModule.php:210
+#: src/CoreModule.php:224
 msgid "Supplier"
 msgstr "مورّد"
 
-#: src/CoreModule.php:211
+#: src/CoreModule.php:225
 msgid "Tour operator"
 msgstr "منظم رحلات"
 
-#: src/CoreModule.php:212
+#: src/CoreModule.php:226
 msgid "Travel agent"
 msgstr "وكيل سفر"
 
-#: src/CoreModule.php:213
+#: src/CoreModule.php:227
 msgid "Corporate"
 msgstr "شركة"
 
-#: src/CoreModule.php:218
+#: src/CoreModule.php:232
 msgid "Organisation"
 msgstr "جهة"
 
-#: src/CoreModule.php:220
+#: src/CoreModule.php:234
 msgid "This is a company, not a person"
 msgstr "هذه شركة وليست شخصًا"
 
-#: src/CoreModule.php:234
+#: src/CoreModule.php:248
 msgid "Mobile / WhatsApp"
 msgstr "الجوال / واتساب"
 
-#: src/CoreModule.php:255
+#: src/CoreModule.php:269
 msgid "City"
 msgstr "المدينة"
 
-#: src/CoreModule.php:260
+#: src/CoreModule.php:274
 msgid "Street"
 msgstr "الشارع"
 
-#: src/CoreModule.php:265
+#: src/CoreModule.php:279
 msgid "Postcode"
 msgstr "الرمز البريدي"
 
-#: src/CoreModule.php:271
+#: src/CoreModule.php:285
 msgid "Credit limit"
 msgstr "حد الائتمان"
 
-#: src/CoreModule.php:274
+#: src/CoreModule.php:288
 msgid "How much this partner may owe before new bookings are blocked. 0 = pay before travel."
 msgstr "أقصى مبلغ مستحق على هذا الشريك قبل إيقاف الحجوزات الجديدة. 0 = الدفع قبل السفر."
 
-#: src/CoreModule.php:278
+#: src/CoreModule.php:292
 msgid "Credit currency"
 msgstr "عملة الائتمان"
 
-#: src/CoreModule.php:284
+#: src/CoreModule.php:298
 msgid "Notes"
 msgstr "ملاحظات"
 
-#: src/CoreModule.php:301
+#: src/CoreModule.php:315
 msgid "currency"
 msgstr "عملة"
 
-#: src/CoreModule.php:302
-#: src/CoreModule.php:392
+#: src/CoreModule.php:316
+#: src/CoreModule.php:406
 msgid "Currencies"
 msgstr "العملات"
 
-#: src/CoreModule.php:310
-#: src/CoreModule.php:348
+#: src/CoreModule.php:324
+#: src/CoreModule.php:362
 msgid "Symbol"
 msgstr "الرمز"
 
-#: src/CoreModule.php:311
-#: src/CoreModule.php:361
+#: src/CoreModule.php:325
+#: src/CoreModule.php:375
 msgid "Rate today"
 msgstr "سعر اليوم"
 
 #. translators: 1: rate, 2: base currency code.
-#: src/CoreModule.php:324
+#: src/CoreModule.php:338
 msgid "No rate yet"
 msgstr "لا يوجد سعر بعد"
 
 #. translators: 1: rate, 2: base currency code.
-#: src/CoreModule.php:324
+#: src/CoreModule.php:338
 #, php-format
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
-#: src/CoreModule.php:335
+#: src/CoreModule.php:349
 msgid "ISO code"
 msgstr "رمز ISO"
 
-#: src/CoreModule.php:355
+#: src/CoreModule.php:369
 msgid "Decimals"
 msgstr "المنازل العشرية"
 
 #. translators: %s: base currency code.
-#: src/CoreModule.php:364
+#: src/CoreModule.php:378
 #, php-format
 msgid "How many %s one unit of this currency is worth today. Leave empty to keep the last rate."
 msgstr "كم تساوي وحدة واحدة من هذه العملة بـ %s اليوم. اتركه فارغًا للإبقاء على آخر سعر."
@@ -540,6 +554,81 @@ msgstr "اتصل بنا"
 #: src/Demo.php:180
 msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
 msgstr "أخبرنا متى تريد السفر وما الذي تود رؤيته. نرد خلال يوم عمل واحد."
+
+#: src/Locations.php:39
+msgid "Destination"
+msgstr "وجهة"
+
+#: src/Locations.php:40
+msgid "Zone"
+msgstr "منطقة"
+
+#: src/Locations.php:41
+msgid "Hotel"
+msgstr "فندق"
+
+#: src/Locations.php:42
+msgid "Airport"
+msgstr "مطار"
+
+#: src/Locations.php:43
+msgid "Port"
+msgstr "ميناء"
+
+#: src/Locations.php:44
+msgid "Meeting point"
+msgstr "نقطة التقاء"
+
+#: src/Locations.php:69
+#: src/Locations.php:83
+msgid "Location Tree"
+msgstr "شجرة المواقع"
+
+#: src/Locations.php:82
+msgid "location"
+msgstr "موقع"
+
+#: src/Locations.php:87
+msgid "No locations yet. Add a destination (e.g. Hurghada), then its zones (e.g. Sahl Hasheesh, El Gouna), then the hotels and airports in each zone. Excursions, transfers and tours all use this list."
+msgstr "لا توجد مواقع بعد. أضف وجهة (مثل الغردقة)، ثم مناطقها (مثل سهل حشيش والجونة)، ثم الفنادق والمطارات في كل منطقة. تستخدم الرحلات والتنقلات والجولات هذه القائمة."
+
+#: src/Locations.php:99
+msgid "A destination is top level: leave “Inside” empty."
+msgstr "الوجهة في المستوى الأعلى: اترك «داخل» فارغًا."
+
+#. translators: 1: location type, e.g. "Hotel"; 2: parent type, e.g. "zone".
+#: src/Locations.php:104
+#, php-format
+msgid "A %1$s must be inside a %2$s."
+msgstr "يجب أن يكون %1$s داخل %2$s."
+
+#: src/Locations.php:125
+msgid "Inside"
+msgstr "داخل"
+
+#: src/Locations.php:128
+msgid "Zones go inside a destination; hotels, airports, ports and meeting points go inside a zone."
+msgstr "المناطق داخل وجهة؛ والفنادق والمطارات والموانئ ونقاط الالتقاء داخل منطقة."
+
+#: src/Locations.php:135
+msgid "Optional short code, e.g. the airport code HRG."
+msgstr "رمز قصير اختياري، مثل رمز المطار HRG."
+
+#: src/Locations.php:142
+msgid "For destinations."
+msgstr "للوجهات."
+
+#: src/Locations.php:151
+msgid "Latitude"
+msgstr "خط العرض"
+
+#: src/Locations.php:153
+msgid "Optional. Used for maps; copy from Google Maps (right-click the place)."
+msgstr "اختياري. يُستخدم للخرائط؛ انسخه من خرائط Google (انقر بزر الفأرة الأيمن على المكان)."
+
+#: src/Locations.php:157
+msgid "Longitude"
+msgstr "خط الطول"
 
 #: src/Manual.php:31
 msgid "Booking widget: the search box for tour packages, excursions and transfers. Pick a design in the block settings, or leave “Site default” to follow Theme Options → Design. Searches go to the results pages chosen in each product’s Theme Options tab."
