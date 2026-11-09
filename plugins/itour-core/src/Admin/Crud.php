@@ -47,6 +47,7 @@ final class Crud {
 			'unique'     => array(),
 			'auto_key'   => true,
 			'can_add'    => true,  // False hides "Add new" (e.g. form submissions).
+			'can_delete' => true,  // False hides and refuses Delete (e.g. bookings tied to orders).
 			'readonly'   => false, // True shows rows without a Save button.
 			'order_desc' => false,
 		);
@@ -79,7 +80,7 @@ final class Crud {
 		}
 		global $wpdb;
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- nonces checked below.
-		if ( isset( $_GET['action'], $_GET['id'] ) && 'delete' === $_GET['action'] ) {
+		if ( isset( $_GET['action'], $_GET['id'] ) && 'delete' === $_GET['action'] && $this->c['can_delete'] ) {
 			$id = sanitize_text_field( wp_unslash( $_GET['id'] ) );
 			check_admin_referer( 'itour_delete_' . $this->c['table'] . '_' . $id );
 			if ( isset( $this->c['tree'] ) && $wpdb->get_var( $wpdb->prepare( 'SELECT 1 FROM %i WHERE %i = %s LIMIT 1', $this->table(), $this->c['tree'], $id ) ) ) { // phpcs:ignore WordPress.DB.DirectDatabaseQuery
@@ -289,8 +290,11 @@ final class Crud {
 						'itour_delete_' . $this->c['table'] . '_' . $id
 					);
 					echo '<td class="column-primary"><strong>' . esc_html( str_repeat( '— ', $depth[ $id ] ?? 0 ) ) . '<a class="row-title" href="' . esc_url( $edit ) . '">' . esc_html( $cell ) . '</a></strong>';
-					echo '<div class="row-actions"><span class="edit"><a href="' . esc_url( $edit ) . '">' . esc_html__( 'Edit', 'itour-core' ) . '</a> | </span>';
-					echo '<span class="trash"><a href="' . esc_url( $del ) . '" onclick="return confirm(this.dataset.confirm)" data-confirm="' . esc_attr__( 'Delete this permanently?', 'itour-core' ) . '">' . esc_html__( 'Delete', 'itour-core' ) . '</a></span></div></td>';
+					echo '<div class="row-actions"><span class="edit"><a href="' . esc_url( $edit ) . '">' . esc_html( $this->c['readonly'] ? __( 'View', 'itour-core' ) : __( 'Edit', 'itour-core' ) ) . '</a></span>';
+					if ( $this->c['can_delete'] ) {
+						echo ' | <span class="trash"><a href="' . esc_url( $del ) . '" onclick="return confirm(this.dataset.confirm)" data-confirm="' . esc_attr__( 'Delete this permanently?', 'itour-core' ) . '">' . esc_html__( 'Delete', 'itour-core' ) . '</a></span>';
+					}
+					echo '</div></td>';
 					$first = false;
 				} else {
 					echo '<td>' . esc_html( $cell ) . '</td>';

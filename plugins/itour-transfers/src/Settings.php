@@ -75,6 +75,13 @@ final class Settings {
 				'default' => '0',
 				'help'    => __( 'Taken off the return leg when both ways are booked together.', 'itour-transfers' ),
 			),
+			array(
+				'key'     => 'deposit_percent',
+				'label'   => __( 'Deposit (%)', 'itour-transfers' ),
+				'type'    => 'decimal',
+				'default' => '0',
+				'help'    => __( '0 = customers pay the full price at checkout. Otherwise they can choose to pay this share now and the rest on the day. Payment methods (card, bank transfer, cash on arrival) are set in WooCommerce → Settings → Payments.', 'itour-transfers' ),
+			),
 		);
 	}
 
@@ -106,13 +113,15 @@ final class Settings {
 		$raw = isset( $_POST['itour'] ) && is_array( $_POST['itour'] ) ? wp_unslash( $_POST['itour'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Fields::clean().
 
 		list( $row, self::$errors ) = Fields::clean( self::fields(), $raw );
-		foreach ( array( 'min_hours', 'wait_airport', 'wait_hotel', 'child_seat_price', 'extra_bag_price', 'return_discount' ) as $k ) {
+		foreach ( array( 'min_hours', 'wait_airport', 'wait_hotel', 'child_seat_price', 'extra_bag_price', 'return_discount', 'deposit_percent' ) as $k ) {
 			if ( '' !== $row[ $k ] && (float) $row[ $k ] < 0 ) {
 				self::$errors[ $k ] = __( 'Can’t be negative.', 'itour-transfers' );
 			}
 		}
-		if ( (float) $row['return_discount'] > 100 ) {
-			self::$errors['return_discount'] = __( 'At most 100%.', 'itour-transfers' );
+		foreach ( array( 'return_discount', 'deposit_percent' ) as $k ) {
+			if ( (float) $row[ $k ] > 100 ) {
+				self::$errors[ $k ] = __( 'At most 100%.', 'itour-transfers' );
+			}
 		}
 		if ( self::$errors ) {
 			return;

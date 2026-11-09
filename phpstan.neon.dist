@@ -6,5 +6,7 @@ parameters:
 	excludePaths:
 		- */vendor/*
 		- */languages/*
+	scanFiles:
+		- vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
 	bootstrapFiles:
 		- tools/phpstan-bootstrap.php

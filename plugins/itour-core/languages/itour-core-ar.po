@@ -51,91 +51,95 @@ msgid "Looking for"
 msgstr "أبحث عن"
 
 #: blocks/booking-widget/render.php:100
-#: src/Admin/Crud.php:256
 #: src/Admin/Crud.php:257
+#: src/Admin/Crud.php:258
 msgid "Search"
 msgstr "بحث"
 
 #. translators: %s: field value.
-#: src/Admin/Crud.php:114
+#: src/Admin/Crud.php:115
 #, php-format
 msgid "“%s” is already used."
 msgstr "«%s» مستخدم بالفعل."
 
-#: src/Admin/Crud.php:168
+#: src/Admin/Crud.php:169
 msgid "Not found"
 msgstr "غير موجود"
 
-#: src/Admin/Crud.php:168
+#: src/Admin/Crud.php:169
 msgid "Back to the list"
 msgstr "العودة إلى القائمة"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "Add %s"
 msgstr "إضافة %s"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "View %s"
 msgstr "عرض %s"
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "Edit %s"
 msgstr "تعديل %s"
 
-#: src/Admin/Crud.php:187
+#: src/Admin/Crud.php:188
 #: src/Company.php:170
 msgid "Please fix the highlighted fields."
 msgstr "يُرجى تصحيح الحقول المحددة."
 
-#: src/Admin/Crud.php:203
+#: src/Admin/Crud.php:204
 #: src/Company.php:176
 msgid "Save"
 msgstr "حفظ"
 
-#: src/Admin/Crud.php:244
+#: src/Admin/Crud.php:245
 msgid "Add new"
 msgstr "إضافة جديد"
 
-#: src/Admin/Crud.php:248
+#: src/Admin/Crud.php:249
 #: src/Company.php:167
 msgid "Saved."
 msgstr "تم الحفظ."
 
-#: src/Admin/Crud.php:250
+#: src/Admin/Crud.php:251
 msgid "Deleted."
 msgstr "تم الحذف."
 
-#: src/Admin/Crud.php:252
+#: src/Admin/Crud.php:253
 msgid "Not deleted: move or delete the items under it first."
 msgstr "لم يُحذف: انقل العناصر التي تحته أو احذفها أولًا."
 
-#: src/Admin/Crud.php:266
+#: src/Admin/Crud.php:267
 msgid "Nothing matches that search."
 msgstr "لا توجد نتائج مطابقة لهذا البحث."
 
-#: src/Admin/Crud.php:266
+#: src/Admin/Crud.php:267
 msgid "Nothing here yet. Use “Add new” to create the first one."
 msgstr "لا يوجد شيء هنا بعد. استخدم «إضافة جديد» لإنشاء أول عنصر."
 
-#: src/Admin/Crud.php:292
+#: src/Admin/Crud.php:293
+msgid "View"
+msgstr ""
+
+#: src/Admin/Crud.php:293
 msgid "Edit"
 msgstr "تعديل"
 
-#: src/Admin/Crud.php:293
+#: src/Admin/Crud.php:295
 msgid "Delete this permanently?"
 msgstr "حذف هذا نهائيًا؟"
 
-#: src/Admin/Crud.php:293
+#: src/Admin/Crud.php:295
 msgid "Delete"
 msgstr "حذف"
 
-#: src/Admin/Crud.php:364
+#: src/Admin/Crud.php:368
 #: src/Admin/Fields.php:79
 msgid "Yes"
 msgstr "نعم"

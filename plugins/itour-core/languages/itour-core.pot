@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T10:54:25+00:00\n"
+"POT-Creation-Date: 2026-11-09T11:42:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -57,91 +57,95 @@ msgid "Looking for"
 msgstr ""
 
 #: blocks/booking-widget/render.php:100
-#: src/Admin/Crud.php:256
 #: src/Admin/Crud.php:257
+#: src/Admin/Crud.php:258
 msgid "Search"
 msgstr ""
 
 #. translators: %s: field value.
-#: src/Admin/Crud.php:114
+#: src/Admin/Crud.php:115
 #, php-format
 msgid "“%s” is already used."
 msgstr ""
 
-#: src/Admin/Crud.php:168
+#: src/Admin/Crud.php:169
 msgid "Not found"
 msgstr ""
 
-#: src/Admin/Crud.php:168
+#: src/Admin/Crud.php:169
 msgid "Back to the list"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "Add %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "View %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
-#: src/Admin/Crud.php:183
+#: src/Admin/Crud.php:184
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: src/Admin/Crud.php:187
+#: src/Admin/Crud.php:188
 #: src/Company.php:170
 msgid "Please fix the highlighted fields."
 msgstr ""
 
-#: src/Admin/Crud.php:203
+#: src/Admin/Crud.php:204
 #: src/Company.php:176
 msgid "Save"
 msgstr ""
 
-#: src/Admin/Crud.php:244
+#: src/Admin/Crud.php:245
 msgid "Add new"
 msgstr ""
 
-#: src/Admin/Crud.php:248
+#: src/Admin/Crud.php:249
 #: src/Company.php:167
 msgid "Saved."
 msgstr ""
 
-#: src/Admin/Crud.php:250
+#: src/Admin/Crud.php:251
 msgid "Deleted."
 msgstr ""
 
-#: src/Admin/Crud.php:252
+#: src/Admin/Crud.php:253
 msgid "Not deleted: move or delete the items under it first."
 msgstr ""
 
-#: src/Admin/Crud.php:266
+#: src/Admin/Crud.php:267
 msgid "Nothing matches that search."
 msgstr ""
 
-#: src/Admin/Crud.php:266
+#: src/Admin/Crud.php:267
 msgid "Nothing here yet. Use “Add new” to create the first one."
 msgstr ""
 
-#: src/Admin/Crud.php:292
+#: src/Admin/Crud.php:293
+msgid "View"
+msgstr ""
+
+#: src/Admin/Crud.php:293
 msgid "Edit"
 msgstr ""
 
-#: src/Admin/Crud.php:293
+#: src/Admin/Crud.php:295
 msgid "Delete this permanently?"
 msgstr ""
 
-#: src/Admin/Crud.php:293
+#: src/Admin/Crud.php:295
 msgid "Delete"
 msgstr ""
 
-#: src/Admin/Crud.php:364
+#: src/Admin/Crud.php:368
 #: src/Admin/Fields.php:79
 msgid "Yes"
 msgstr ""

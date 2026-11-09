@@ -47,7 +47,11 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Add-ons:** each excursion lists its own paid extras (lunch, tickets, guide language, photos), priced per person or per booking.
 
 ## Transfers (`itour-transfers`)
-Status: **stage 1 built (0.2.0)**. Vehicles, the zone-to-zone price table (a price works both ways unless the reverse route has its own; the return leg uses the reverse price less the return discount), Transfer rules screen, From/To suggestions from the Location Tree, and the "Transfer results" block. **Stage 2 is next:** booking form (time, flight number, names, child seats, bags, return), the cut-off check and WooCommerce checkout.
+Status: **bookable (0.3.0)**.
+- Stage 1: vehicles, the zone-to-zone price table (a price works both ways unless the reverse route has its own; the return leg uses the reverse price less the return discount), Transfer rules screen, From/To suggestions from the Location Tree, and the "Transfer results" block.
+- Stage 2: "Book" opens a form under the vehicle (one way / return, date, time, flight numbers for airport legs, child seats, bags, notes, full price or deposit). The server re-checks everything (cut-off hours, flight number, return after pick-up, seats ≤ passengers) and re-prices, then adds it to the WooCommerce cart on one hidden "Transfer" product and opens checkout. Extras are charged per leg. The order line carries the trip details (shown in the admin and order emails); on order creation a row goes to iTour → Transfer bookings with a TR-YYYY-NNNNN reference.
+- Payment methods are WooCommerce's: card (any gateway), Cash on delivery (= pay the driver), Direct bank transfer. The WooCommerce store currency must match the iTour base currency.
+- Later: dispatch (drivers, vehicles per booking), Google Places addresses, admin booking edits, customer cancellation by the D-024 tier table.
 
 - **Pricing:**
   - Zone to zone, per vehicle.

@@ -10,11 +10,12 @@
 		"php": ">=8.1"
 	},
 	"require-dev": {
-		"wp-coding-standards/wpcs": "^3.1",
+		"php-stubs/woocommerce-stubs": "^11.2",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"phpstan/extension-installer": "^1.4",
 		"phpstan/phpstan": "^2.1",
 		"szepeviktor/phpstan-wordpress": "^2.0",
-		"phpstan/extension-installer": "^1.4"
+		"wp-coding-standards/wpcs": "^3.1"
 	},
 	"config": {
 		"allow-plugins": {

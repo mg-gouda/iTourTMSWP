@@ -8,6 +8,7 @@
  */
 
 use ITour\Core\Locations;
+use ITour\Transfers\Booking;
 use ITour\Transfers\Module;
 use ITour\Transfers\Settings;
 
@@ -36,22 +37,30 @@ if ( '' !== $itour_q['from'] && '' !== $itour_q['to'] ) {
 	} elseif ( ! $itour_list ) {
 		$itour_out .= '<p class="itour-tr__note" role="status">' . esc_html__( 'We don’t have a fixed price for this route and group size yet. Contact us and we’ll quote it.', 'itour-transfers' ) . '</p>';
 	} else {
-		$itour_disc = (float) $itour_rules['return_discount'];
-		$itour_back = array();
-		foreach ( Module::quote( Locations::zone_of( $itour_to ), Locations::zone_of( $itour_from ), $itour_q['pax'] ) as $itour_row ) {
-			$itour_back[ $itour_row['vehicle']->id ] = $itour_row['price'];
-		}
+		// phpcs:disable WordPress.Security.NonceVerification -- which vehicle's form to open (GET link, or a POST that failed checks).
+		$itour_pick = absint( $_POST['itour_transfer']['vehicle'] ?? ( $_GET['vehicle'] ?? 0 ) );
+		// phpcs:enable
+		$itour_zf = Locations::zone_of( $itour_from );
+		$itour_zt = Locations::zone_of( $itour_to );
 		/* translators: 1: from place, 2: to place, 3: number of passengers. */
 		$itour_out .= '<h2 class="itour-tr__title">' . esc_html( sprintf( _n( '%1$s → %2$s, %3$d passenger', '%1$s → %2$s, %3$d passengers', $itour_q['pax'], 'itour-transfers' ), $itour_from->name, $itour_to->name, $itour_q['pax'] ) ) . '</h2>';
 		$itour_out .= '<ul class="itour-tr__list">';
 		foreach ( $itour_list as $itour_row ) {
 			$itour_v      = $itour_row['vehicle'];
-			$itour_return = $itour_row['price'] + ( $itour_back[ $itour_v->id ] ?? $itour_row['price'] ) * ( 1 - $itour_disc / 100 ); // Return leg at the reverse route's price.
-			$itour_out   .= '<li class="itour-tr__item"><div class="itour-tr__vehicle"><strong>' . esc_html( $itour_v->name ) . '</strong><span>'
+			$itour_return = Module::price( (int) $itour_v->id, $itour_zf, $itour_zt, $itour_q['pax'], true )['total'] ?? 0;
+			$itour_open   = (int) $itour_v->id === $itour_pick;
+			$itour_out   .= '<li class="itour-tr__item' . ( $itour_open ? ' is-open' : '' ) . '"><div class="itour-tr__vehicle"><strong>' . esc_html( $itour_v->name ) . '</strong><span>'
 				/* translators: 1: passengers, 2: bags. */
 				. esc_html( sprintf( __( 'Up to %1$d passengers · %2$d bags', 'itour-transfers' ), $itour_v->max_pax, $itour_v->max_bags ) ) . '</span></div>'
 				. '<div class="itour-tr__price"><span>' . esc_html__( 'One way', 'itour-transfers' ) . '</span><strong>' . esc_html( itour()->currencies()->format( $itour_row['price'] ) ) . '</strong></div>'
-				. '<div class="itour-tr__price"><span>' . esc_html__( 'Return', 'itour-transfers' ) . '</span><strong>' . esc_html( itour()->currencies()->format( $itour_return ) ) . '</strong></div></li>';
+				. '<div class="itour-tr__price"><span>' . esc_html__( 'Return', 'itour-transfers' ) . '</span><strong>' . esc_html( itour()->currencies()->format( (float) $itour_return ) ) . '</strong></div>';
+			if ( Booking::available() && ! $itour_open ) {
+				$itour_out .= '<a class="itour-tr__book wp-element-button" href="' . esc_url( add_query_arg( 'vehicle', (int) $itour_v->id ) . '#itour-tb' ) . '">' . esc_html__( 'Book', 'itour-transfers' ) . '</a>';
+			}
+			if ( Booking::available() && $itour_open ) {
+				$itour_out .= '<div class="itour-tr__form" id="itour-tb">' . Booking::form( $itour_q, $itour_from, $itour_to, $itour_v ) . '</div>';
+			}
+			$itour_out .= '</li>';
 		}
 		$itour_out .= '</ul>';
 		/* translators: 1: minutes at airports, 2: minutes at hotels. */

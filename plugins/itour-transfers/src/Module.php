@@ -41,7 +41,7 @@ final class Module extends \ITour\Core\Module {
 	 * Module version.
 	 */
 	public function version(): string {
-		return '0.2.0';
+		return '0.3.0';
 	}
 
 	/**
@@ -56,6 +56,7 @@ final class Module extends \ITour\Core\Module {
 				register_block_type( dirname( ITOUR_TRANSFERS_FILE ) . '/blocks/transfer-results' );
 			}
 		);
+		( new Booking() )->hooks();
 	}
 
 	/**
@@ -79,6 +80,29 @@ final class Module extends \ITour\Core\Module {
   price decimal(12,2) NOT NULL,
   PRIMARY KEY  (id),
   UNIQUE KEY route (from_zone,to_zone,vehicle_id)',
+			'transfer_bookings' => 'id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  ref varchar(20) NOT NULL,
+  order_id bigint(20) unsigned NOT NULL,
+  vehicle_id bigint(20) unsigned NOT NULL,
+  vehicle varchar(100) NOT NULL,
+  from_place varchar(190) NOT NULL,
+  to_place varchar(190) NOT NULL,
+  pax smallint(5) unsigned NOT NULL,
+  pickup_at datetime NOT NULL,
+  flight varchar(20) NULL,
+  return_at datetime NULL,
+  return_flight varchar(20) NULL,
+  child_seats smallint(5) unsigned NOT NULL DEFAULT 0,
+  bags smallint(5) unsigned NOT NULL DEFAULT 0,
+  notes text NULL,
+  total decimal(12,2) NOT NULL,
+  paid_now decimal(12,2) NOT NULL,
+  currency char(3) NOT NULL,
+  created_at datetime NOT NULL,
+  PRIMARY KEY  (id),
+  UNIQUE KEY ref (ref),
+  KEY order_id (order_id),
+  KEY pickup_at (pickup_at)',
 		);
 	}
 
@@ -88,7 +112,14 @@ final class Module extends \ITour\Core\Module {
 	 * @return array<string,array{title:string,callback:callable,load?:callable}>
 	 */
 	public function admin_pages(): array {
-		$pages = array();
+		$bookings = $this->bookings_screen();
+		$pages    = array(
+			'bookings' => array(
+				'title'    => __( 'Transfer bookings', 'itour-transfers' ),
+				'callback' => array( $bookings, 'render' ),
+				'load'     => array( $bookings, 'load' ),
+			),
+		);
 		foreach ( array( 'vehicles' => $this->vehicles_screen(), 'prices' => $this->prices_screen() ) as $slug => $crud ) { // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing
 			$pages[ $slug ] = array(
 				'title'    => 'vehicles' === $slug ? __( 'Transfer vehicles', 'itour-transfers' ) : __( 'Transfer prices', 'itour-transfers' ),
@@ -113,6 +144,79 @@ final class Module extends \ITour\Core\Module {
 		global $wpdb;
 		$rows = (array) $wpdb->get_results( $wpdb->prepare( 'SELECT id, name FROM %i ORDER BY sort, name', $wpdb->prefix . 'itour_transfer_vehicles' ), OBJECT_K ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 		return array_map( static fn( $r ) => $r->name, $rows );
+	}
+
+	/**
+	 * Bookings (read-only; created at checkout, changed through the WooCommerce order).
+	 */
+	private function bookings_screen(): Crud {
+		$text = static fn( string $key, string $label ): array => array(
+			'key'   => $key,
+			'label' => $label,
+			'type'  => 'text',
+		);
+		return new Crud(
+			array(
+				'table'      => 'transfer_bookings',
+				'singular'   => __( 'transfer booking', 'itour-transfers' ),
+				'plural'     => __( 'Transfer bookings', 'itour-transfers' ),
+				'capability' => $this->capability(),
+				'order'      => 'pickup_at',
+				'order_desc' => true,
+				'readonly'   => true,
+				'can_add'    => false,
+				'can_delete' => false,
+				'search'     => array( 'ref', 'from_place', 'to_place', 'flight' ),
+				'empty'      => __( 'No transfer bookings yet. They appear here when a customer checks out.', 'itour-transfers' ),
+				'columns'    => array(
+					'ref'       => __( 'Booking', 'itour-transfers' ),
+					'pickup_at' => __( 'Pick-up', 'itour-transfers' ),
+					'route'     => __( 'Route', 'itour-transfers' ),
+					'vehicle'   => __( 'Vehicle', 'itour-transfers' ),
+					'pax'       => __( 'Passengers', 'itour-transfers' ),
+					'status'    => __( 'Order status', 'itour-transfers' ),
+				),
+				'cell'       => static function ( string $col, array $row ): ?string {
+					if ( 'route' === $col ) {
+						return $row['from_place'] . ' → ' . $row['to_place'] . ( $row['return_at'] ? ' ⇄' : '' );
+					}
+					if ( 'status' === $col ) {
+						$order = function_exists( 'wc_get_order' ) ? wc_get_order( (int) $row['order_id'] ) : null;
+						return $order ? wc_get_order_status_name( $order->get_status() ) . ' (#' . $order->get_order_number() . ')' : '—';
+					}
+					return null;
+				},
+				'on_view'    => static function ( string $id ): void {
+					global $wpdb;
+					$order_id = (int) $wpdb->get_var( $wpdb->prepare( 'SELECT order_id FROM %i WHERE id = %d', $wpdb->prefix . 'itour_transfer_bookings', $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+					$order    = function_exists( 'wc_get_order' ) ? wc_get_order( $order_id ) : null;
+					if ( $order ) {
+						echo '<p><a class="button" href="' . esc_url( $order->get_edit_order_url() ) . '">' . esc_html__( 'Open the order (customer, payment, status)', 'itour-transfers' ) . '</a></p>';
+					}
+				},
+				'fields'     => array(
+					$text( 'ref', __( 'Booking', 'itour-transfers' ) ),
+					$text( 'from_place', __( 'From', 'itour-transfers' ) ),
+					$text( 'to_place', __( 'To', 'itour-transfers' ) ),
+					$text( 'pickup_at', __( 'Pick-up', 'itour-transfers' ) ),
+					$text( 'flight', __( 'Flight number', 'itour-transfers' ) ),
+					$text( 'return_at', __( 'Return pick-up', 'itour-transfers' ) ),
+					$text( 'return_flight', __( 'Return flight number', 'itour-transfers' ) ),
+					$text( 'vehicle', __( 'Vehicle', 'itour-transfers' ) ),
+					$text( 'pax', __( 'Passengers', 'itour-transfers' ) ),
+					$text( 'child_seats', __( 'Child seats', 'itour-transfers' ) ),
+					$text( 'bags', __( 'Bags', 'itour-transfers' ) ),
+					array(
+						'key'   => 'notes',
+						'label' => __( 'Notes', 'itour-transfers' ),
+						'type'  => 'textarea',
+					),
+					$text( 'total', __( 'Total', 'itour-transfers' ) ),
+					$text( 'paid_now', __( 'Paid at checkout', 'itour-transfers' ) ),
+					$text( 'currency', __( 'Currency', 'itour-transfers' ) ),
+				),
+			)
+		);
 	}
 
 	/**
@@ -267,6 +371,51 @@ final class Module extends \ITour\Core\Module {
 		}
 		usort( $out, static fn( $a, $b ) => $a['price'] <=> $b['price'] );
 		return $out;
+	}
+
+	/**
+	 * Full price of one booking. Extras (child seats, bags above the vehicle's limit) are charged per leg;
+	 * the return leg uses the reverse route's price less the return discount. Null if the vehicle
+	 * doesn't serve this route for this many passengers.
+	 *
+	 * @param int  $vehicle Vehicle id.
+	 * @param int  $from    Zone id.
+	 * @param int  $to      Zone id.
+	 * @param int  $pax     Passengers.
+	 * @param bool $back    Return trip too.
+	 * @param int  $seats   Child seats.
+	 * @param int  $bags    Bags.
+	 * @return array{vehicle:object,outbound:float,return:float,extras:float,total:float}|null
+	 */
+	public static function price( int $vehicle, int $from, int $to, int $pax, bool $back = false, int $seats = 0, int $bags = 0 ): ?array {
+		$pick = static function ( array $quotes ) use ( $vehicle ): ?array {
+			foreach ( $quotes as $q ) {
+				if ( (int) $q['vehicle']->id === $vehicle ) {
+					return $q;
+				}
+			}
+			return null;
+		};
+
+		$out = $pick( self::quote( $from, $to, $pax ) );
+		if ( ! $out ) {
+			return null;
+		}
+		$rules  = Settings::get();
+		$legs   = $back ? 2 : 1;
+		$extras = $legs * ( $seats * (float) $rules['child_seat_price'] + max( 0, $bags - (int) $out['vehicle']->max_bags ) * (float) $rules['extra_bag_price'] );
+		$ret    = 0.0;
+		if ( $back ) {
+			$rev = $pick( self::quote( $to, $from, $pax ) );
+			$ret = round( ( $rev ? $rev['price'] : $out['price'] ) * ( 1 - (float) $rules['return_discount'] / 100 ), 2 );
+		}
+		return array(
+			'vehicle'  => $out['vehicle'],
+			'outbound' => $out['price'],
+			'return'   => $ret,
+			'extras'   => round( $extras, 2 ),
+			'total'    => round( $out['price'] + $ret + $extras, 2 ),
+		);
 	}
 
 	/**
