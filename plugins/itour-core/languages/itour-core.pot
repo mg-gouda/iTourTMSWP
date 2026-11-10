@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T11:43:53+00:00\n"
+"POT-Creation-Date: 2026-11-10T17:48:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -77,19 +77,25 @@ msgid "Back to the list"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
+#: src/Products.php:37
 #, php-format
 msgid "Add %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type.
 #: src/Admin/Crud.php:184
+#: src/Products.php:41
 #, php-format
 msgid "View %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type.
 #: src/Admin/Crud.php:184
+#: src/Products.php:39
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -170,20 +176,29 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: src/Admin/Menu.php:55
+#: src/Admin/Menu.php:64
 msgid "iTour"
 msgstr ""
 
-#: src/Admin/Menu.php:58
+#: src/Admin/Menu.php:67
 msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
 msgstr ""
 
-#: src/Admin/Menu.php:60
+#: src/Admin/Menu.php:69
 msgid "Module"
 msgstr ""
 
-#: src/Admin/Menu.php:60
+#: src/Admin/Menu.php:69
 msgid "Version"
+msgstr ""
+
+#: src/Admin/Rows.php:34
+#: src/Admin/Rows.php:76
+msgid "Remove"
+msgstr ""
+
+#: src/Admin/Rows.php:41
+msgid "Add row"
 msgstr ""
 
 #: src/Company.php:30

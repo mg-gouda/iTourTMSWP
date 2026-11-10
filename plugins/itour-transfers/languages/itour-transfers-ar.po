@@ -96,7 +96,7 @@ msgid "Trip"
 msgstr "الرحلة"
 
 #: src/Booking.php:96
-#: src/Module.php:464
+#: src/Module.php:477
 msgid "Pick-up date"
 msgstr "تاريخ الاستقبال"
 
@@ -126,14 +126,14 @@ msgstr "رقم رحلة المغادرة"
 
 #: src/Booking.php:108
 #: src/Booking.php:365
-#: src/Module.php:207
+#: src/Module.php:220
 msgid "Child seats"
 msgstr "مقاعد الأطفال"
 
 #: src/Booking.php:109
 #: src/Booking.php:367
-#: src/Module.php:208
-#: src/Module.php:237
+#: src/Module.php:221
+#: src/Module.php:250
 msgid "Bags"
 msgstr "الحقائب"
 
@@ -232,46 +232,46 @@ msgid "Transfer: %1$s → %2$s"
 msgstr "تنقل: %1$s ← %2$s"
 
 #: src/Booking.php:351
-#: src/Module.php:175
-#: src/Module.php:205
-#: src/Module.php:235
-#: src/Module.php:294
-#: src/Module.php:319
+#: src/Module.php:188
+#: src/Module.php:218
+#: src/Module.php:248
+#: src/Module.php:307
+#: src/Module.php:332
 msgid "Vehicle"
 msgstr "المركبة"
 
 #: src/Booking.php:352
-#: src/Module.php:176
-#: src/Module.php:206
-#: src/Module.php:236
-#: src/Module.php:470
+#: src/Module.php:189
+#: src/Module.php:219
+#: src/Module.php:249
+#: src/Module.php:483
 msgid "Passengers"
 msgstr "عدد الركاب"
 
 #: src/Booking.php:353
-#: src/Module.php:173
-#: src/Module.php:201
+#: src/Module.php:186
+#: src/Module.php:214
 msgid "Pick-up"
 msgstr "الاستقبال"
 
 #: src/Booking.php:356
-#: src/Module.php:202
+#: src/Module.php:215
 #: src/Settings.php:39
 msgid "Flight number"
 msgstr "رقم الرحلة"
 
 #: src/Booking.php:359
-#: src/Module.php:203
+#: src/Module.php:216
 msgid "Return pick-up"
 msgstr "استقبال العودة"
 
 #: src/Booking.php:361
-#: src/Module.php:204
+#: src/Module.php:217
 msgid "Return flight number"
 msgstr "رقم رحلة العودة"
 
 #: src/Booking.php:369
-#: src/Module.php:211
+#: src/Module.php:224
 msgid "Notes"
 msgstr "ملاحظات"
 
@@ -284,175 +284,184 @@ msgid "Pay on the day"
 msgstr "يُدفع يوم الرحلة"
 
 #: src/Module.php:37
-#: src/Module.php:442
-#: src/Module.php:489
+#: src/Module.php:116
+#: src/Module.php:455
+#: src/Module.php:502
 msgid "Transfers"
 msgstr "التنقلات"
 
-#: src/Module.php:118
-#: src/Module.php:162
-msgid "Transfer bookings"
-msgstr "حجوزات التنقلات"
-
-#: src/Module.php:125
-#: src/Module.php:230
-msgid "Transfer vehicles"
-msgstr "مركبات التنقل"
-
-#: src/Module.php:125
-#: src/Module.php:287
-msgid "Transfer prices"
-msgstr "أسعار التنقلات"
-
 #: src/Module.php:131
-#: src/Settings.php:138
-msgid "Transfer rules"
-msgstr "قواعد التنقلات"
+msgid "Bookings"
+msgstr "الحجوزات"
 
-#: src/Module.php:161
+#: src/Module.php:138
+msgid "Vehicles"
+msgstr "المركبات"
+
+#: src/Module.php:138
+msgid "Prices"
+msgstr "الأسعار"
+
+#: src/Module.php:144
+msgid "Rules"
+msgstr "القواعد"
+
+#: src/Module.php:174
 msgid "transfer booking"
 msgstr "حجز تنقل"
 
-#: src/Module.php:170
+#: src/Module.php:175
+msgid "Transfer bookings"
+msgstr "حجوزات التنقلات"
+
+#: src/Module.php:183
 msgid "No transfer bookings yet. They appear here when a customer checks out."
 msgstr "لا توجد حجوزات تنقل بعد. تظهر هنا عندما يُتم العميل الدفع."
 
-#: src/Module.php:172
-#: src/Module.php:198
+#: src/Module.php:185
+#: src/Module.php:211
 msgid "Booking"
 msgstr "الحجز"
 
-#: src/Module.php:174
+#: src/Module.php:187
 msgid "Route"
 msgstr "المسار"
 
-#: src/Module.php:177
+#: src/Module.php:190
 msgid "Order status"
 msgstr "حالة الطلب"
 
-#: src/Module.php:194
+#: src/Module.php:207
 msgid "Open the order (customer, payment, status)"
 msgstr "افتح الطلب (العميل، الدفع، الحالة)"
 
-#: src/Module.php:199
-#: src/Module.php:448
+#: src/Module.php:212
+#: src/Module.php:461
 msgid "From"
 msgstr "من"
 
-#: src/Module.php:200
-#: src/Module.php:456
+#: src/Module.php:213
+#: src/Module.php:469
 msgid "To"
 msgstr "إلى"
 
-#: src/Module.php:214
+#: src/Module.php:227
 msgid "Total"
 msgstr "الإجمالي"
 
-#: src/Module.php:215
+#: src/Module.php:228
 msgid "Paid at checkout"
 msgstr "المدفوع عند الدفع"
 
-#: src/Module.php:216
+#: src/Module.php:229
 msgid "Currency"
 msgstr "العملة"
 
-#: src/Module.php:229
+#: src/Module.php:242
 msgid "vehicle"
 msgstr "مركبة"
 
-#: src/Module.php:233
+#: src/Module.php:243
+msgid "Transfer vehicles"
+msgstr "مركبات التنقل"
+
+#: src/Module.php:246
 msgid "No vehicles yet. Add the cars you sell, e.g. Sedan (3 passengers), Van (7), Minibus (14), Bus (28)."
 msgstr "لا توجد مركبات بعد. أضف السيارات التي تبيعها، مثل سيدان (3 ركاب)، فان (7)، ميني باص (14)، باص (28)."
 
-#: src/Module.php:238
-#: src/Module.php:270
+#: src/Module.php:251
+#: src/Module.php:283
 msgid "Active"
 msgstr "نشط"
 
-#: src/Module.php:243
+#: src/Module.php:256
 msgid "Name"
 msgstr "الاسم"
 
-#: src/Module.php:249
+#: src/Module.php:262
 msgid "Maximum passengers"
 msgstr "أقصى عدد للركاب"
 
-#: src/Module.php:256
+#: src/Module.php:269
 msgid "Bags included"
 msgstr "الحقائب المشمولة"
 
-#: src/Module.php:259
+#: src/Module.php:272
 msgid "Bags above this pay the extra luggage fee (Transfer rules)."
 msgstr "الحقائب الزائدة عن هذا العدد تدفع رسوم الأمتعة الإضافية (قواعد التنقلات)."
 
-#: src/Module.php:263
+#: src/Module.php:276
 msgid "Order"
 msgstr "الترتيب"
 
-#: src/Module.php:266
+#: src/Module.php:279
 msgid "Lower numbers show first."
 msgstr "الأرقام الأصغر تظهر أولًا."
 
-#: src/Module.php:286
+#: src/Module.php:299
 msgid "price"
 msgstr "سعر"
 
-#: src/Module.php:290
+#: src/Module.php:300
+msgid "Transfer prices"
+msgstr "أسعار التنقلات"
+
+#: src/Module.php:303
 msgid "No prices yet. Set up zones under Location Tree and vehicles under Transfer vehicles, then add a price per route and vehicle. A price works both ways unless you add the return route separately."
 msgstr "لا توجد أسعار بعد. جهّز المناطق في شجرة المواقع والمركبات في مركبات التنقل، ثم أضف سعرًا لكل مسار ومركبة. السعر يسري في الاتجاهين ما لم تضف مسار العودة بشكل منفصل."
 
-#: src/Module.php:292
 #: src/Module.php:305
+#: src/Module.php:318
 msgid "From zone"
 msgstr "من منطقة"
 
-#: src/Module.php:293
-#: src/Module.php:312
+#: src/Module.php:306
+#: src/Module.php:325
 msgid "To zone"
 msgstr "إلى منطقة"
 
-#: src/Module.php:295
-#: src/Module.php:326
+#: src/Module.php:308
+#: src/Module.php:339
 msgid "Price per vehicle"
 msgstr "السعر لكل مركبة"
 
-#: src/Module.php:300
+#: src/Module.php:313
 msgid "This route already has a price for this vehicle."
 msgstr "هذا المسار له سعر بالفعل لهذه المركبة."
 
-#: src/Module.php:329
+#: src/Module.php:342
 msgid "One way, in your base currency (iTour → Company)."
 msgstr "اتجاه واحد، بعملتك الأساسية (iTour ← الشركة)."
 
-#: src/Module.php:443
+#: src/Module.php:456
 msgid "See prices"
 msgstr "اعرض الأسعار"
 
-#: src/Module.php:450
+#: src/Module.php:463
 msgid "Airport, hotel or city"
 msgstr "مطار أو فندق أو مدينة"
 
-#: src/Module.php:458
+#: src/Module.php:471
 msgid "Hotel or address"
 msgstr "فندق أو عنوان"
 
-#: src/Module.php:490
+#: src/Module.php:503
 msgid "Pages used by Transfers. Prices, vehicles and booking rules are under the iTour menu."
 msgstr "الصفحات التي تستخدمها التنقلات. الأسعار والمركبات وقواعد الحجز في قائمة iTour."
 
-#: src/Module.php:494
+#: src/Module.php:507
 msgid "Transfers page"
 msgstr "صفحة التنقلات"
 
-#: src/Module.php:497
+#: src/Module.php:510
 msgid "The page that explains and books transfers."
 msgstr "الصفحة التي تشرح خدمة التنقلات وتتيح حجزها."
 
-#: src/Module.php:500
+#: src/Module.php:513
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:503
+#: src/Module.php:516
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr "الصفحة التي ترسل إليها أداة الحجز عمليات البحث عن التنقلات. ضع عليها كتلة «نتائج التنقلات». اتركها فارغة لاستخدام صفحة التنقلات."
 
@@ -515,6 +524,10 @@ msgstr "لا يمكن أن تكون سالبة."
 #: src/Settings.php:123
 msgid "At most 100%."
 msgstr "100% كحد أقصى."
+
+#: src/Settings.php:138
+msgid "Transfer rules"
+msgstr "قواعد التنقلات"
 
 #: src/Settings.php:140
 msgid "Saved."

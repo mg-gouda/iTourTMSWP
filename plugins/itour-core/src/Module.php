@@ -71,6 +71,16 @@ abstract class Module {
 	}
 
 	/**
+	 * Where the admin screens go: [] = under iTour; [ 'title', 'icon', 'position' ] = own top-level
+	 * menu; [ 'parent' => 'edit.php?post_type=…' ] = under an existing menu (e.g. the product's post type).
+	 *
+	 * @return array<string,mixed>
+	 */
+	public function menu(): array {
+		return array();
+	}
+
+	/**
 	 * Capability that manages this module.
 	 */
 	public function capability(): string {

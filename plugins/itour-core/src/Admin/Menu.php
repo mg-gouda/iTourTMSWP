@@ -39,8 +39,17 @@ final class Menu {
 		add_menu_page( 'iTour', 'iTour', 'manage_options', 'itour', array( $this, 'render_overview' ), 'dashicons-palmtree', 3 );
 		add_submenu_page( 'itour', __( 'Overview', 'itour-core' ), __( 'Overview', 'itour-core' ), 'manage_options', 'itour', array( $this, 'render_overview' ) );
 		foreach ( $this->modules->all() as $slug => $module ) {
-			foreach ( $module->admin_pages() as $page => $screen ) {
-				$hook = add_submenu_page( 'itour', $screen['title'], $screen['title'], $module->capability(), "itour-{$slug}-{$page}", $screen['callback'] );
+			$pages  = $module->admin_pages();
+			$m      = $module->menu();
+			$parent = (string) ( $m['parent'] ?? 'itour' );
+			if ( isset( $m['title'] ) && $pages ) {
+				// Own top-level menu; it opens the first screen.
+				$first  = (string) array_key_first( $pages );
+				$parent = "itour-{$slug}-{$first}";
+				add_menu_page( $m['title'], $m['title'], $module->capability(), $parent, $pages[ $first ]['callback'], $m['icon'] ?? 'dashicons-admin-generic', $m['position'] ?? null );
+			}
+			foreach ( $pages as $page => $screen ) {
+				$hook = add_submenu_page( $parent, $screen['title'], $screen['title'], $module->capability(), "itour-{$slug}-{$page}", $screen['callback'] );
 				if ( $hook && isset( $screen['load'] ) ) {
 					add_action( "load-{$hook}", $screen['load'] );
 				}

@@ -33,48 +33,389 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
-#: src/Module.php:33
-#: src/Module.php:71
-#: src/Module.php:109
-msgid "Excursions"
-msgstr "الرحلات اليومية"
+#: src/Editor.php:32
+#: src/Page.php:54
+msgid "Trip details"
+msgstr "تفاصيل الرحلة"
 
-#: src/Module.php:72
-msgid "Find excursions"
-msgstr "ابحث عن رحلة"
+#: src/Editor.php:49
+msgid "Type"
+msgstr "النوع"
 
-#: src/Module.php:77
-msgid "Staying in"
-msgstr "مكان الإقامة"
+#: src/Editor.php:55
+msgid "Season from"
+msgstr "الموسم من"
 
-#: src/Module.php:79
-msgid "Hurghada, Sharm, Luxor…"
-msgstr "الغردقة، شرم الشيخ، الأقصر…"
+#: src/Editor.php:59
+msgid "Season to"
+msgstr "الموسم إلى"
 
-#: src/Module.php:84
+#: src/Editor.php:63
+msgid "From travellers"
+msgstr "من عدد مسافرين"
+
+#: src/Editor.php:69
+msgid "To travellers"
+msgstr "إلى عدد مسافرين"
+
+#: src/Editor.php:73
+#: src/Editor.php:134
+#: src/Page.php:72
+msgid "Adult"
+msgstr "بالغ"
+
+#: src/Editor.php:74
+#: src/Editor.php:135
+#: src/Page.php:72
+msgid "Child"
+msgstr "طفل"
+
+#: src/Editor.php:75
+#: src/Editor.php:136
+#: src/Page.php:72
+msgid "Infant"
+msgstr "رضيع"
+
+#: src/Editor.php:79
+msgid "Start time"
+msgstr "وقت البدء"
+
+#: src/Editor.php:85
+msgid "Closed from"
+msgstr "مغلق من"
+
+#: src/Editor.php:89
+msgid "Closed to"
+msgstr "مغلق إلى"
+
+#: src/Editor.php:95
+msgid "Zone"
+msgstr "المنطقة"
+
+#: src/Editor.php:100
+msgid "Pick-up time"
+msgstr "وقت الاستقبال"
+
+#: src/Editor.php:103
+msgid "Extra per person"
+msgstr "إضافي للفرد"
+
+#: src/Editor.php:107
+msgid "Add-on"
+msgstr "إضافة"
+
+#: src/Editor.php:110
+msgid "Price"
+msgstr "السعر"
+
+#: src/Editor.php:112
+msgid "Charged"
+msgstr "يُحتسب"
+
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Editor.php:115
+#: src/Page.php:88
+msgid "per person"
+msgstr "للفرد"
+
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Editor.php:116
+#: src/Page.php:88
+msgid "per booking"
+msgstr "للحجز"
+
+#: src/Editor.php:123
+msgid "Supplement"
+msgstr "مكمل"
+
+#: src/Editor.php:127
+#: src/Module.php:140
 msgid "Date"
 msgstr "التاريخ"
 
-#: src/Module.php:90
+#: src/Editor.php:131
+msgid "Until (optional)"
+msgstr "حتى (اختياري)"
+
+#: src/Editor.php:154
+msgid "Basics"
+msgstr "الأساسيات"
+
+#: src/Editor.php:156
+msgid "Destination"
+msgstr "الوجهة"
+
+#: src/Editor.php:156
+msgid "— Choose —"
+msgstr "— اختر —"
+
+#: src/Editor.php:160
+msgid "From Location Tree. Searches by destination use it."
+msgstr "من شجرة المواقع. يُستخدم في البحث حسب الوجهة."
+
+#: src/Editor.php:161
+#: src/Page.php:37
+msgid "Duration"
+msgstr "المدة"
+
+#: src/Editor.php:161
+msgid "e.g. 12 hours, or Half day"
+msgstr "مثل 12 ساعة، أو نصف يوم"
+
+#: src/Editor.php:163
+msgid "Schedule"
+msgstr "المواعيد"
+
+#: src/Editor.php:164
+msgid "Runs on"
+msgstr "تعمل أيام"
+
+#: src/Editor.php:169
+msgid "Add start time"
+msgstr "إضافة وقت بدء"
+
+#: src/Editor.php:170
+msgid "Booking closes (hours before start)"
+msgstr "يُغلق الحجز (ساعات قبل البدء)"
+
+#: src/Editor.php:171
+msgid "Seats per day"
+msgstr "المقاعد في اليوم"
+
+#: src/Editor.php:171
+msgid "0 = no limit"
+msgstr "0 = بلا حد"
+
+#: src/Editor.php:172
+msgid "Closed dates (holidays, weather):"
+msgstr "أيام الإغلاق (عطلات، طقس):"
+
+#: src/Editor.php:173
+msgid "Add closed dates"
+msgstr "إضافة أيام إغلاق"
+
+#: src/Editor.php:175
+#: src/Page.php:52
+msgid "Pick-up"
+msgstr "الاستقبال"
+
+#: src/Editor.php:177
+msgid "From hotels in the zones below"
+msgstr "من الفنادق في المناطق أدناه"
+
+#: src/Editor.php:178
+msgid "Customer types their hotel or address"
+msgstr "يكتب العميل فندقه أو عنوانه"
+
+#: src/Editor.php:179
+#: src/Editor.php:194
+msgid "Meeting point"
+msgstr "نقطة الالتقاء"
+
+#: src/Editor.php:193
+msgid "Add zone"
+msgstr "إضافة منطقة"
+
+#: src/Editor.php:194
+msgid "e.g. Marina Boulevard, in front of the pharmacy, 07:30"
+msgstr "مثل ممشى المارينا، أمام الصيدلية، 07:30"
+
+#: src/Editor.php:196
+msgid "Prices"
+msgstr "الأسعار"
+
+#: src/Editor.php:196
+msgid "Price per person. Add one row per group size: the more travellers in the booking, the lower the price. \"To travellers\" empty = no upper limit. Rows with season dates override all-year rows on those dates. Infants count towards the group size."
+msgstr "السعر للفرد. أضف صفًا لكل حجم مجموعة: كلما زاد عدد المسافرين في الحجز قل السعر. «إلى عدد مسافرين» فارغ = بلا حد أعلى. الصفوف ذات تواريخ الموسم تتقدم على صفوف العام كله في تلك التواريخ. الرضّع يُحسبون ضمن حجم المجموعة."
+
+#: src/Editor.php:197
+msgid "Add price row"
+msgstr "إضافة صف سعر"
+
+#: src/Editor.php:199
+msgid "Add-ons"
+msgstr "الإضافات"
+
+#: src/Editor.php:199
+msgid "Paid extras the customer can tick: lunch, entry tickets, a guide in their language, photos."
+msgstr "إضافات مدفوعة يختارها العميل: غداء، تذاكر دخول، مرشد بلغته، صور."
+
+#: src/Editor.php:200
+msgid "Add add-on"
+msgstr "إضافة خيار"
+
+#: src/Editor.php:202
+msgid "Supplements"
+msgstr "المكملات"
+
+#: src/Editor.php:202
+msgid "Charged automatically on these dates, per person, e.g. a Christmas Gala Meal."
+msgstr "تُحتسب تلقائيًا في هذه التواريخ للفرد، مثل عشاء حفل الكريسماس."
+
+#: src/Editor.php:203
+msgid "Add supplement"
+msgstr "إضافة مكمل"
+
+#: src/Excursion.php:84
+msgid "Shared (group)"
+msgstr "مشتركة (مجموعة)"
+
+#: src/Excursion.php:85
+msgid "Private"
+msgstr "خاصة"
+
+#. translators: %d: number of adults.
+#: src/Excursion.php:142
+#, php-format
+msgid "%d adult"
+msgid_plural "%d adults"
+msgstr[0] "%d بالغ"
+msgstr[1] "بالغ واحد"
+msgstr[2] "بالغان"
+msgstr[3] "%d بالغين"
+msgstr[4] "%d بالغًا"
+msgstr[5] "%d بالغ"
+
+#. translators: %d: number of children.
+#: src/Excursion.php:144
+#, php-format
+msgid "%d child"
+msgid_plural "%d children"
+msgstr[0] "%d طفل"
+msgstr[1] "طفل واحد"
+msgstr[2] "طفلان"
+msgstr[3] "%d أطفال"
+msgstr[4] "%d طفلًا"
+msgstr[5] "%d طفل"
+
+#. translators: %d: number of infants.
+#: src/Excursion.php:146
+#, php-format
+msgid "%d infant"
+msgid_plural "%d infants"
+msgstr[0] "%d رضيع"
+msgstr[1] "رضيع واحد"
+msgstr[2] "رضيعان"
+msgstr[3] "%d رضع"
+msgstr[4] "%d رضيعًا"
+msgstr[5] "%d رضيع"
+
+#: src/Excursion.php:149
+msgid "Pick-up from your area"
+msgstr "الاستقبال من منطقتك"
+
+#: src/Module.php:33
+#: src/Module.php:51
+#: src/Module.php:127
+#: src/Module.php:165
+msgid "Excursions"
+msgstr "الرحلات اليومية"
+
+#: src/Module.php:51
+msgid "excursion"
+msgstr "رحلة"
+
+#: src/Module.php:128
+msgid "Find excursions"
+msgstr "ابحث عن رحلة"
+
+#: src/Module.php:133
+msgid "Staying in"
+msgstr "مكان الإقامة"
+
+#: src/Module.php:135
+msgid "Hurghada, Sharm, Luxor…"
+msgstr "الغردقة، شرم الشيخ، الأقصر…"
+
+#: src/Module.php:146
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Module.php:110
+#: src/Module.php:166
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الرحلات اليومية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:114
+#: src/Module.php:170
 msgid "Excursions page"
 msgstr "صفحة الرحلات اليومية"
 
-#: src/Module.php:117
+#: src/Module.php:173
 msgid "The page that lists all excursions and day trips."
 msgstr "الصفحة التي تعرض جميع الرحلات والجولات اليومية."
 
-#: src/Module.php:120
+#: src/Module.php:176
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:123
+#: src/Module.php:179
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."
+
+#: src/Page.php:39
+msgid "Runs"
+msgstr "التشغيل"
+
+#: src/Page.php:39
+msgid "Every day"
+msgstr "يوميًا"
+
+#: src/Page.php:41
+msgid "Starts"
+msgstr "يبدأ"
+
+#: src/Page.php:45
+msgid "Pick-up from your hotel"
+msgstr "الاستقبال من فندقك"
+
+#. translators: %s: meeting point.
+#: src/Page.php:49
+#, php-format
+msgid "or meet us at %s"
+msgstr "أو قابلنا عند %s"
+
+#. translators: 1: start date, 2: end date.
+#: src/Page.php:65
+#, php-format
+msgid "%1$s – %2$s"
+msgstr "%1$s – %2$s"
+
+#: src/Page.php:70
+msgid "Prices per person"
+msgstr "الأسعار للفرد"
+
+#: src/Page.php:72
+msgid "Group size"
+msgstr "حجم المجموعة"
+
+#. translators: %s: group size, e.g. "2–3" or "11+".
+#: src/Page.php:78
+#, php-format
+msgid "%s travellers"
+msgstr "%s مسافرين"
+
+#. translators: %s: group size, e.g. "2–3" or "11+".
+#: src/Page.php:78
+msgid "Free"
+msgstr "مجانًا"
+
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Page.php:88
+#, php-format
+msgid "%1$s: %2$s %3$s"
+msgstr "%1$s: %2$s %3$s"
+
+#. translators: 1: supplement name, 2: date(s), 3: adult price.
+#: src/Page.php:93
+#, php-format
+msgid "%1$s (%2$s): %3$s per adult, added automatically"
+msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
+
+#. translators: 1: zone, 2: price.
+#: src/Page.php:99
+#, php-format
+msgid "Pick-up from %1$s: %2$s per person"
+msgstr "الاستقبال من %1$s: %2$s للفرد"
+
+#: src/Page.php:103
+msgid "Extras"
+msgstr "الإضافات"

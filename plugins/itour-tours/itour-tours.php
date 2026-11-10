@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Tour Packages
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Multi-day tour packages: itineraries, departures, prices, availability and booking.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  itour-core

@@ -37,15 +37,71 @@ final class Module extends \ITour\Core\Module {
 	 * Module version.
 	 */
 	public function version(): string {
-		return '0.1.0';
+		return '0.2.0';
 	}
 
 	/**
-	 * Hook the booking-widget tab and the Theme Options tab.
+	 * Hook the post type (own "Excursions" menu), its details box, the page display, the booking-widget
+	 * tab and the Theme Options tab.
 	 */
 	public function boot(): void {
+		add_action(
+			'init',
+			static function (): void {
+				\ITour\Core\Products::register( Excursion::TYPE, 'excursion', __( 'Excursions', 'itour-excursions' ), __( 'excursion', 'itour-excursions' ), 'dashicons-tickets-alt', 7 );
+			}
+		);
+		( new Editor() )->hooks();
+		add_filter( 'the_content', array( Page::class, 'append' ) );
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
+	}
+
+	/**
+	 * Module screens go under the Excursions menu.
+	 *
+	 * @return array<string,mixed>
+	 */
+	public function menu(): array {
+		return array( 'parent' => 'edit.php?post_type=' . Excursion::TYPE );
+	}
+
+	/**
+	 * Price rows and pick-up zones per excursion.
+	 *
+	 * @return array<string,string>
+	 */
+	public function tables(): array {
+		return array(
+			'excursion_rates'   => "id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  post_id bigint(20) unsigned NOT NULL,
+  variant varchar(10) NOT NULL DEFAULT 'shared',
+  season_from date NULL,
+  season_to date NULL,
+  pax_min smallint(5) unsigned NOT NULL DEFAULT 1,
+  pax_max smallint(5) unsigned NOT NULL DEFAULT 0,
+  adult decimal(12,2) NOT NULL,
+  child decimal(12,2) NOT NULL DEFAULT 0,
+  infant decimal(12,2) NOT NULL DEFAULT 0,
+  PRIMARY KEY  (id),
+  KEY post_id (post_id)",
+			'excursion_pickups' => 'id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  post_id bigint(20) unsigned NOT NULL,
+  zone_id bigint(20) unsigned NOT NULL,
+  pickup_time time NOT NULL,
+  extra decimal(12,2) NOT NULL DEFAULT 0,
+  PRIMARY KEY  (id),
+  KEY post_id (post_id)',
+		);
+	}
+
+	/**
+	 * New post type → refresh permalinks once.
+	 *
+	 * @param string $from Previous version.
+	 */
+	public function installed( string $from ): void {
+		flush_rewrite_rules( false );
 	}
 
 	/**

@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Transfers
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Private airport and city transfers: zones, vehicles, prices and booking, then dispatch, drivers and fleet.
- * Version:           0.3.0
+ * Version:           0.3.1
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  itour-core

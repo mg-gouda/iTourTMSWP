@@ -71,19 +71,25 @@ msgid "Back to the list"
 msgstr "العودة إلى القائمة"
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
+#: src/Products.php:37
 #, php-format
 msgid "Add %s"
 msgstr "إضافة %s"
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type.
 #: src/Admin/Crud.php:184
+#: src/Products.php:41
 #, php-format
 msgid "View %s"
 msgstr "عرض %s"
 
 #. translators: %s: item type, e.g. "branch".
+#. translators: %s: product type.
 #: src/Admin/Crud.php:184
+#: src/Products.php:39
 #, php-format
 msgid "Edit %s"
 msgstr "تعديل %s"
@@ -164,21 +170,30 @@ msgstr "«%s» مطلوب."
 msgid "Overview"
 msgstr "نظرة عامة"
 
-#: src/Admin/Menu.php:55
+#: src/Admin/Menu.php:64
 msgid "iTour"
 msgstr ""
 
-#: src/Admin/Menu.php:58
+#: src/Admin/Menu.php:67
 msgid "No modules are installed yet. Add a module plugin, such as iTour CRM, to get started."
 msgstr "لم تُثبَّت أي وحدة بعد. أضف إضافة وحدة، مثل iTour CRM، للبدء."
 
-#: src/Admin/Menu.php:60
+#: src/Admin/Menu.php:69
 msgid "Module"
 msgstr "الوحدة"
 
-#: src/Admin/Menu.php:60
+#: src/Admin/Menu.php:69
 msgid "Version"
 msgstr "الإصدار"
+
+#: src/Admin/Rows.php:34
+#: src/Admin/Rows.php:76
+msgid "Remove"
+msgstr "إزالة"
+
+#: src/Admin/Rows.php:41
+msgid "Add row"
+msgstr "إضافة صف"
 
 #: src/Company.php:30
 msgid "Company name"

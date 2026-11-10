@@ -34,50 +34,55 @@ msgid "https://wa.me/+201002805139"
 msgstr ""
 
 #: src/Module.php:33
-#: src/Module.php:109
+#: src/Module.php:50
+#: src/Module.php:124
 msgid "Tour Packages"
 msgstr "الباقات السياحية"
 
-#: src/Module.php:71
+#: src/Module.php:50
+msgid "tour package"
+msgstr "برنامج سياحي"
+
+#: src/Module.php:86
 msgid "Tour packages"
 msgstr "الباقات السياحية"
 
-#: src/Module.php:72
+#: src/Module.php:87
 msgid "Find tours"
 msgstr "ابحث عن باقة"
 
-#: src/Module.php:77
+#: src/Module.php:92
 msgid "Destination"
 msgstr "الوجهة"
 
-#: src/Module.php:79
+#: src/Module.php:94
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr "القاهرة، الأقصر، رحلة نيلية…"
 
-#: src/Module.php:84
+#: src/Module.php:99
 msgid "Start date"
 msgstr "تاريخ البدء"
 
-#: src/Module.php:90
+#: src/Module.php:105
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Module.php:110
+#: src/Module.php:125
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الباقات السياحية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:114
+#: src/Module.php:129
 msgid "Tour packages page"
 msgstr "صفحة الباقات السياحية"
 
-#: src/Module.php:117
+#: src/Module.php:132
 msgid "The page that lists all tour packages."
 msgstr "الصفحة التي تعرض جميع الباقات السياحية."
 
-#: src/Module.php:120
+#: src/Module.php:135
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:123
+#: src/Module.php:138
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الباقات. اتركها فارغة لاستخدام صفحة الباقات السياحية."

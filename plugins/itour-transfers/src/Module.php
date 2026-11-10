@@ -107,7 +107,20 @@ final class Module extends \ITour\Core\Module {
 	}
 
 	/**
-	 * Admin screens under iTour.
+	 * Own "Transfers" menu in the admin.
+	 *
+	 * @return array<string,mixed>
+	 */
+	public function menu(): array {
+		return array(
+			'title'    => __( 'Transfers', 'itour-transfers' ),
+			'icon'     => 'dashicons-car',
+			'position' => 8,
+		);
+	}
+
+	/**
+	 * Admin screens (Transfers menu).
 	 *
 	 * @return array<string,array{title:string,callback:callable,load?:callable}>
 	 */
@@ -115,20 +128,20 @@ final class Module extends \ITour\Core\Module {
 		$bookings = $this->bookings_screen();
 		$pages    = array(
 			'bookings' => array(
-				'title'    => __( 'Transfer bookings', 'itour-transfers' ),
+				'title'    => __( 'Bookings', 'itour-transfers' ),
 				'callback' => array( $bookings, 'render' ),
 				'load'     => array( $bookings, 'load' ),
 			),
 		);
 		foreach ( array( 'vehicles' => $this->vehicles_screen(), 'prices' => $this->prices_screen() ) as $slug => $crud ) { // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing
 			$pages[ $slug ] = array(
-				'title'    => 'vehicles' === $slug ? __( 'Transfer vehicles', 'itour-transfers' ) : __( 'Transfer prices', 'itour-transfers' ),
+				'title'    => 'vehicles' === $slug ? __( 'Vehicles', 'itour-transfers' ) : __( 'Prices', 'itour-transfers' ),
 				'callback' => array( $crud, 'render' ),
 				'load'     => array( $crud, 'load' ),
 			);
 		}
 		$pages['settings'] = array(
-			'title'    => __( 'Transfer rules', 'itour-transfers' ),
+			'title'    => __( 'Rules', 'itour-transfers' ),
 			'callback' => array( Settings::class, 'render' ),
 			'load'     => array( Settings::class, 'load' ),
 		);

@@ -37,15 +37,30 @@ final class Module extends \ITour\Core\Module {
 	 * Module version.
 	 */
 	public function version(): string {
-		return '0.1.0';
+		return '0.2.0';
 	}
 
 	/**
-	 * Hook the booking-widget tab and the Theme Options tab.
+	 * Hook the post type (own "Tour Packages" menu), the booking-widget tab and the Theme Options tab.
 	 */
 	public function boot(): void {
+		add_action(
+			'init',
+			static function (): void {
+				\ITour\Core\Products::register( 'itour_tour', 'tour', __( 'Tour Packages', 'itour-tours' ), __( 'tour package', 'itour-tours' ), 'dashicons-admin-site-alt3', 6 );
+			}
+		);
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
+	}
+
+	/**
+	 * New post type → refresh permalinks once.
+	 *
+	 * @param string $from Previous version.
+	 */
+	public function installed( string $from ): void {
+		flush_rewrite_rules( false );
 	}
 
 	/**

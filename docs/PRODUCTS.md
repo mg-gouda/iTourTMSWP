@@ -32,6 +32,8 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Booking:** set per package. Options are instant booking with full payment, instant booking with a deposit, or an enquiry.
 
 ## Excursions (`itour-excursions`)
+Status: **stage 1 built (0.2.0)**. Post type with its own "Excursions" admin menu (page text and photos in the block editor) plus a "Trip details" box: destination, duration, weekdays, start times, cut-off hours, seats per day, closed dates, pick-up modes, pick-up zones with time and extra per person, meeting point, price rows (shared/private × season × group size, adult/child/infant), add-ons (per person or per booking) and dated supplements. Price engine `Excursion::price()`; the excursion page shows facts, price tables and extras. **Stage 2 is next:** booking form with availability (weekday, closed dates, cut-off, seats left), pick-up choice and WooCommerce checkout.
+
 - **Pricing:**
   - Adult, child and infant prices.
   - Shared and private versions.
