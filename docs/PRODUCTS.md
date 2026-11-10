@@ -21,6 +21,7 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Dates:** set per package:
   - Fixed departures with a seat limit (sells out automatically), or
   - Any date on request.
+- **Start days (owner, 10 Nov 2026):** each package chooses the weekdays it can start on, e.g. only Saturday, or Monday and Thursday, or any day of the week. The date picker only offers allowed start days.
 - **Page content:**
   - Day-by-day itinerary: title, places, meals and hotel for each day.
   - Includes and excludes lists.
