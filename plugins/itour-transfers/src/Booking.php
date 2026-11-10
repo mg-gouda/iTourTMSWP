@@ -1,32 +1,27 @@
 <?php
 /**
- * Transfer booking: the form under a chosen vehicle, server-side checks and price, then WooCommerce
- * (D-005) for cart, checkout, payment and the order. One hidden "Transfer" product carries every
- * booking; its price and details ride in the cart item. A booking row is written when the order is placed.
+ * Transfer booking: the form under a chosen vehicle, server-side checks and price, then the shared
+ * iTour Checkout (WooCommerce, D-005). A booking row is written when the order is placed.
  *
  * @package ITour\Transfers
  */
 
 namespace ITour\Transfers;
 
+use ITour\Core\Checkout;
 use ITour\Core\Locations;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Booking form + WooCommerce glue.
+ * Booking form + record.
  */
 final class Booking {
 
 	/**
-	 * Cart item key holding the booking.
+	 * Form field prefix.
 	 */
 	private const KEY = 'itour_transfer';
-
-	/**
-	 * Option holding the hidden product's id.
-	 */
-	private const PRODUCT = 'itour_transfers_product';
 
 	/**
 	 * Field errors from the last submit (shown by the form).
@@ -40,18 +35,14 @@ final class Booking {
 	 */
 	public function hooks(): void {
 		add_action( 'template_redirect', array( $this, 'submit' ) );
-		add_action( 'woocommerce_before_calculate_totals', array( $this, 'cart_prices' ) );
-		add_filter( 'woocommerce_get_item_data', array( $this, 'cart_details' ), 10, 2 );
-		add_action( 'woocommerce_checkout_create_order_line_item', array( $this, 'order_item' ), 10, 3 );
-		add_action( 'woocommerce_checkout_order_created', array( $this, 'record' ) );
-		add_action( 'woocommerce_store_api_checkout_order_processed', array( $this, 'record' ) );
+		add_filter( 'itour/checkout/record_transfer', array( $this, 'record' ), 10, 3 );
 	}
 
 	/**
 	 * Whether online booking is possible (WooCommerce active).
 	 */
 	public static function available(): bool {
-		return function_exists( 'WC' );
+		return Checkout::available();
 	}
 
 	/**
@@ -187,9 +178,9 @@ final class Booking {
 			return;
 		}
 
-		$deposit = (float) $rules['deposit_percent'] > 0 && 'deposit' === ( $p['pay'] ?? 'full' );
-		$now     = $deposit ? round( $price['total'] * (float) $rules['deposit_percent'] / 100, 2 ) : $price['total'];
-		$data    = array(
+		$deposit       = (float) $rules['deposit_percent'] > 0 && 'deposit' === ( $p['pay'] ?? 'full' );
+		$now           = $deposit ? round( $price['total'] * (float) $rules['deposit_percent'] / 100, 2 ) : $price['total'];
+		$data          = array(
 			'uid'           => wp_generate_uuid4(), // Keeps two identical bookings as two cart lines.
 			'vehicle_id'    => (int) $price['vehicle']->id,
 			'vehicle'       => $price['vehicle']->name,
@@ -206,126 +197,46 @@ final class Booking {
 			'total'         => $price['total'],
 			'now'           => $now,
 		);
-		WC()->cart->add_to_cart( self::product_id(), 1, 0, array(), array( self::KEY => $data ) );
-		wp_safe_redirect( wc_get_checkout_url() );
-		exit;
+		$data['type']  = 'transfer';
+		$data['title'] = self::title( $data );
+		$data['lines'] = self::lines( $data );
+		Checkout::add( $data );
 	}
 
 	/**
-	 * The hidden product every transfer booking uses (created on first use).
-	 */
-	public static function product_id(): int {
-		$id = (int) get_option( self::PRODUCT );
-		if ( $id && 'product' === get_post_type( $id ) && 'trash' !== get_post_status( $id ) ) {
-			return $id;
-		}
-		$product = new \WC_Product_Simple();
-		$product->set_name( __( 'Transfer', 'itour-transfers' ) );
-		$product->set_status( 'publish' );
-		$product->set_catalog_visibility( 'hidden' );
-		$product->set_virtual( true );
-		$product->set_regular_price( '0' );
-		$product->set_sold_individually( false );
-		$id = $product->save();
-		update_option( self::PRODUCT, $id, false );
-		return $id;
-	}
-
-	/**
-	 * Charge what the booking says (full price or deposit), never the product's own price.
+	 * Write the booking row once the order exists (via Checkout).
 	 *
-	 * @param \WC_Cart $cart Cart.
+	 * @param string              $ref   Reference so far.
+	 * @param array<string,mixed> $b     Booking.
+	 * @param \WC_Order           $order Order.
 	 */
-	public function cart_prices( $cart ): void {
-		foreach ( $cart->get_cart() as $item ) {
-			if ( isset( $item[ self::KEY ] ) ) {
-				$item['data']->set_price( (float) $item[ self::KEY ]['now'] );
-				$item['data']->set_name( self::title( $item[ self::KEY ] ) ); // Each cart line has its own product object.
-			}
-		}
-	}
-
-	/**
-	 * Trip details under the cart line (cart, checkout, also the block checkout).
-	 *
-	 * @param array<int,array<string,string>> $data Shown details.
-	 * @param array<string,mixed>             $item Cart item.
-	 * @return array<int,array<string,string>>
-	 */
-	public function cart_details( $data, $item ): array {
-		if ( isset( $item[ self::KEY ] ) ) {
-			foreach ( self::lines( $item[ self::KEY ] ) as $label => $value ) {
-				$data[] = array(
-					'key'   => $label,
-					'value' => $value,
-				);
-			}
-		}
-		return (array) $data;
-	}
-
-	/**
-	 * Copy the booking onto the order line (shown in the admin order and in order emails).
-	 *
-	 * @param \WC_Order_Item_Product $item   Order line.
-	 * @param string                 $key    Cart item key.
-	 * @param array<string,mixed>    $values Cart item.
-	 */
-	public function order_item( $item, $key, $values ): void {
-		if ( ! isset( $values[ self::KEY ] ) ) {
-			return;
-		}
-		$item->set_name( self::title( $values[ self::KEY ] ) );
-		foreach ( self::lines( $values[ self::KEY ] ) as $label => $value ) {
-			$item->add_meta_data( $label, $value );
-		}
-		$item->add_meta_data( '_' . self::KEY, $values[ self::KEY ] );
-	}
-
-	/**
-	 * Write a booking row per transfer line once the order exists. Runs once per order.
-	 *
-	 * @param \WC_Order $order Order.
-	 */
-	public function record( $order ): void {
+	public function record( $ref, $b, $order ): string {
 		global $wpdb;
-		if ( $order->get_meta( '_itour_transfers_recorded' ) ) {
-			return;
-		}
-		foreach ( $order->get_items() as $item ) {
-			$b = $item->get_meta( '_' . self::KEY );
-			if ( ! is_array( $b ) ) {
-				continue;
-			}
-			$ref = itour()->sequences()->next( 'transfer', 'TR' );
-			$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-				$wpdb->prefix . 'itour_transfer_bookings',
-				array(
-					'ref'           => $ref,
-					'order_id'      => $order->get_id(),
-					'vehicle_id'    => $b['vehicle_id'],
-					'vehicle'       => $b['vehicle'],
-					'from_place'    => $b['from'],
-					'to_place'      => $b['to'],
-					'pax'           => $b['pax'],
-					'pickup_at'     => $b['pickup_at'],
-					'flight'        => $b['flight'],
-					'return_at'     => '' !== $b['return_at'] ? $b['return_at'] : null,
-					'return_flight' => $b['return_flight'],
-					'child_seats'   => $b['seats'],
-					'bags'          => $b['bags'],
-					'notes'         => $b['notes'],
-					'total'         => $b['total'],
-					'paid_now'      => $b['now'],
-					'currency'      => $order->get_currency(),
-					'created_at'    => current_time( 'mysql' ),
-				)
-			);
-			$item->add_meta_data( __( 'Booking reference', 'itour-transfers' ), $ref, true );
-			$item->save();
-		}
-		$order->update_meta_data( '_itour_transfers_recorded', '1' );
-		$order->save();
+		$ref = itour()->sequences()->next( 'transfer', 'TR' );
+		$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->prefix . 'itour_transfer_bookings',
+			array(
+				'ref'           => $ref,
+				'order_id'      => $order->get_id(),
+				'vehicle_id'    => $b['vehicle_id'],
+				'vehicle'       => $b['vehicle'],
+				'from_place'    => $b['from'],
+				'to_place'      => $b['to'],
+				'pax'           => $b['pax'],
+				'pickup_at'     => $b['pickup_at'],
+				'flight'        => $b['flight'],
+				'return_at'     => '' !== $b['return_at'] ? $b['return_at'] : null,
+				'return_flight' => $b['return_flight'],
+				'child_seats'   => $b['seats'],
+				'bags'          => $b['bags'],
+				'notes'         => $b['notes'],
+				'total'         => $b['total'],
+				'paid_now'      => $b['now'],
+				'currency'      => $order->get_currency(),
+				'created_at'    => current_time( 'mysql' ),
+			)
+		);
+		return $ref;
 	}
 
 	/**
@@ -345,9 +256,8 @@ final class Booking {
 	 * @return array<string,string>
 	 */
 	private static function lines( array $b ): array {
-		$when  = static fn( string $at ): string => wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( $at . ' ' . wp_timezone_string() ) );
-		$money = static fn( float $v ): string => html_entity_decode( wp_strip_all_tags( wc_price( $v ) ) );
-		$out   = array(
+		$when = static fn( string $at ): string => wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( $at . ' ' . wp_timezone_string() ) );
+		$out  = array(
 			__( 'Vehicle', 'itour-transfers' )    => $b['vehicle'],
 			__( 'Passengers', 'itour-transfers' ) => (string) $b['pax'],
 			__( 'Pick-up', 'itour-transfers' )    => $when( $b['pickup_at'] ),
@@ -368,10 +278,6 @@ final class Booking {
 		if ( '' !== $b['notes'] ) {
 			$out[ __( 'Notes', 'itour-transfers' ) ] = $b['notes'];
 		}
-		if ( (float) $b['now'] < (float) $b['total'] ) {
-			$out[ __( 'Total price', 'itour-transfers' ) ]    = $money( (float) $b['total'] );
-			$out[ __( 'Pay on the day', 'itour-transfers' ) ] = $money( (float) $b['total'] - (float) $b['now'] );
-		}
-		return $out;
+		return $out; // Checkout adds total + balance for deposits.
 	}
 }

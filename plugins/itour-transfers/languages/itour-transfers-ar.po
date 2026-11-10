@@ -62,12 +62,12 @@ msgid "Up to %1$d passengers · %2$d bags"
 msgstr "حتى %1$d ركاب · %2$d حقائب"
 
 #: blocks/transfer-results/render.php:55
-#: src/Booking.php:92
+#: src/Booking.php:83
 msgid "One way"
 msgstr "اتجاه واحد"
 
 #: blocks/transfer-results/render.php:56
-#: src/Booking.php:93
+#: src/Booking.php:84
 msgid "Return"
 msgstr "ذهاب وعودة"
 
@@ -82,103 +82,103 @@ msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports
 msgstr "السعر لكل مركبة لا لكل شخص. الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق."
 
 #. translators: %s: vehicle name.
-#: src/Booking.php:87
+#: src/Booking.php:78
 #, php-format
 msgid "Book the %s"
 msgstr "احجز %s"
 
-#: src/Booking.php:89
+#: src/Booking.php:80
 msgid "Please check the highlighted fields."
 msgstr "يرجى مراجعة الحقول المحددة."
 
-#: src/Booking.php:91
+#: src/Booking.php:82
 msgid "Trip"
 msgstr "الرحلة"
 
-#: src/Booking.php:96
+#: src/Booking.php:87
 #: src/Module.php:477
 msgid "Pick-up date"
 msgstr "تاريخ الاستقبال"
 
-#: src/Booking.php:97
+#: src/Booking.php:88
 msgid "Flight landing time"
 msgstr "وقت هبوط الطائرة"
 
-#: src/Booking.php:97
+#: src/Booking.php:88
 msgid "Pick-up time"
 msgstr "وقت الاستقبال"
 
-#: src/Booking.php:99
+#: src/Booking.php:90
 msgid "Arrival flight number"
 msgstr "رقم رحلة الوصول"
 
-#: src/Booking.php:102
+#: src/Booking.php:93
 msgid "Return date"
 msgstr "تاريخ العودة"
 
-#: src/Booking.php:103
+#: src/Booking.php:94
 msgid "Return pick-up time"
 msgstr "وقت استقبال العودة"
 
-#: src/Booking.php:105
+#: src/Booking.php:96
 msgid "Departure flight number"
 msgstr "رقم رحلة المغادرة"
 
-#: src/Booking.php:108
-#: src/Booking.php:365
+#: src/Booking.php:99
+#: src/Booking.php:275
 #: src/Module.php:220
 msgid "Child seats"
 msgstr "مقاعد الأطفال"
 
-#: src/Booking.php:109
-#: src/Booking.php:367
+#: src/Booking.php:100
+#: src/Booking.php:277
 #: src/Module.php:221
 #: src/Module.php:250
 msgid "Bags"
 msgstr "الحقائب"
 
-#: src/Booking.php:110
+#: src/Booking.php:101
 msgid "Notes for the driver"
 msgstr "ملاحظات للسائق"
 
-#: src/Booking.php:110
+#: src/Booking.php:101
 msgid "Room number, exact address, wheelchair…"
 msgstr "رقم الغرفة، العنوان بالتفصيل، كرسي متحرك…"
 
-#: src/Booking.php:115
+#: src/Booking.php:106
 msgid "Pay now"
 msgstr "ادفع الآن"
 
-#: src/Booking.php:116
+#: src/Booking.php:107
 msgid "Full price"
 msgstr "السعر كاملًا"
 
 #. translators: %s: deposit percentage.
-#: src/Booking.php:118
+#: src/Booking.php:109
 #, php-format
 msgid "Deposit (%s%%), the rest on the day"
 msgstr "عربون (%s%%)، والباقي يوم الرحلة"
 
-#: src/Booking.php:120
+#: src/Booking.php:111
 msgid "Continue to checkout"
 msgstr "متابعة إلى الدفع"
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: src/Booking.php:122
+#: src/Booking.php:113
 #, php-format
 msgid "The final price, with extras, is shown at checkout. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr "يظهر السعر النهائي مع الإضافات عند الدفع. الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق."
 
-#: src/Booking.php:135
+#: src/Booking.php:126
 msgid "This page expired. Please try again."
 msgstr "انتهت صلاحية الصفحة. يرجى المحاولة مرة أخرى."
 
-#: src/Booking.php:151
+#: src/Booking.php:142
 msgid "Enter the pick-up date and time."
 msgstr "أدخل تاريخ ووقت الاستقبال."
 
 #. translators: %d: hours.
-#: src/Booking.php:154
+#: src/Booking.php:145
 #, php-format
 msgid "Book at least %d hour before pick-up. For sooner, please call us."
 msgid_plural "Book at least %d hours before pick-up. For sooner, please call us."
@@ -189,49 +189,41 @@ msgstr[3] "احجز قبل الاستقبال بـ %d ساعات على الأق
 msgstr[4] "احجز قبل الاستقبال بـ %d ساعة على الأقل. للأقرب، اتصل بنا."
 msgstr[5] "احجز قبل الاستقبال بـ %d ساعة على الأقل. للأقرب، اتصل بنا."
 
-#: src/Booking.php:158
+#: src/Booking.php:149
 msgid "Enter your flight number so the driver can follow delays."
 msgstr "أدخل رقم رحلتك ليتابع السائق أي تأخير."
 
-#: src/Booking.php:165
+#: src/Booking.php:156
 msgid "Enter the return date and time."
 msgstr "أدخل تاريخ ووقت العودة."
 
-#: src/Booking.php:167
+#: src/Booking.php:158
 msgid "The return must be after the first pick-up."
 msgstr "يجب أن تكون العودة بعد الاستقبال الأول."
 
-#: src/Booking.php:170
+#: src/Booking.php:161
 msgid "Enter your departure flight number."
 msgstr "أدخل رقم رحلة المغادرة."
 
-#: src/Booking.php:176
+#: src/Booking.php:167
 msgid "At most one child seat per passenger."
 msgstr "مقعد طفل واحد لكل راكب كحد أقصى."
 
-#: src/Booking.php:179
+#: src/Booking.php:170
 msgid "Enter the number of bags."
 msgstr "أدخل عدد الحقائب."
 
-#: src/Booking.php:183
+#: src/Booking.php:174
 msgid "This vehicle is no longer available for this route. Please search again."
 msgstr "هذه المركبة لم تعد متاحة لهذا المسار. يرجى البحث مرة أخرى."
 
-#: src/Booking.php:223
-msgid "Transfer"
-msgstr "تنقل"
-
-#: src/Booking.php:324
-msgid "Booking reference"
-msgstr "رقم الحجز"
-
 #. translators: 1: from place, 2: to place.
-#: src/Booking.php:338
+#: src/Booking.php:249
 #, php-format
 msgid "Transfer: %1$s → %2$s"
 msgstr "تنقل: %1$s ← %2$s"
 
-#: src/Booking.php:351
+#: src/Booking.php:261
 #: src/Module.php:188
 #: src/Module.php:218
 #: src/Module.php:248
@@ -240,7 +232,7 @@ msgstr "تنقل: %1$s ← %2$s"
 msgid "Vehicle"
 msgstr "المركبة"
 
-#: src/Booking.php:352
+#: src/Booking.php:262
 #: src/Module.php:189
 #: src/Module.php:219
 #: src/Module.php:249
@@ -248,40 +240,32 @@ msgstr "المركبة"
 msgid "Passengers"
 msgstr "عدد الركاب"
 
-#: src/Booking.php:353
+#: src/Booking.php:263
 #: src/Module.php:186
 #: src/Module.php:214
 msgid "Pick-up"
 msgstr "الاستقبال"
 
-#: src/Booking.php:356
+#: src/Booking.php:266
 #: src/Module.php:215
 #: src/Settings.php:39
 msgid "Flight number"
 msgstr "رقم الرحلة"
 
-#: src/Booking.php:359
+#: src/Booking.php:269
 #: src/Module.php:216
 msgid "Return pick-up"
 msgstr "استقبال العودة"
 
-#: src/Booking.php:361
+#: src/Booking.php:271
 #: src/Module.php:217
 msgid "Return flight number"
 msgstr "رقم رحلة العودة"
 
-#: src/Booking.php:369
+#: src/Booking.php:279
 #: src/Module.php:224
 msgid "Notes"
 msgstr "ملاحظات"
-
-#: src/Booking.php:372
-msgid "Total price"
-msgstr "السعر الإجمالي"
-
-#: src/Booking.php:373
-msgid "Pay on the day"
-msgstr "يُدفع يوم الرحلة"
 
 #: src/Module.php:37
 #: src/Module.php:116

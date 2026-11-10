@@ -11,4 +11,30 @@
 .itour-exc__prices small { font-weight: 400; }
 .itour-exc__extras { padding-inline-start: 1.2em; }
 .itour-exc__extras li + li { margin-block-start: 6px; }
+.itour-exc__note { padding: 12px 16px; border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); }
 @media (max-width: 560px) { .itour-exc__prices th, .itour-exc__prices td { padding: 8px 6px; font-size: 0.9375rem; } }
+
+/* Booking form (same look as the transfer booking form). */
+.itour-exc .itour-tb { padding: 20px; border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); }
+.itour-tb__trip { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 16px; padding: 0; border: 0; }
+.itour-tb__trip legend { padding: 0; margin-block-end: 6px; font-size: 0.875rem; font-weight: 600; }
+.itour-tb__trip label { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; }
+.itour-eb__addons { flex-direction: column; gap: 4px; }
+.itour-tb__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px 16px; margin-block-end: 16px; }
+.itour-tb__field { display: flex; flex-direction: column; gap: 6px; }
+.itour-tb__field--wide { grid-column: 1 / -1; }
+.itour-tb__field label { font-size: 0.875rem; font-weight: 600; }
+.itour-tb input:not([type="radio"]):not([type="checkbox"]), .itour-tb select, .itour-tb textarea {
+	width: 100%; min-height: 44px; padding: 10px 12px; font: inherit; color: inherit;
+	border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); background: var(--wp--preset--color--base, #fff);
+}
+.itour-tb :is(input, select, textarea):focus-visible { outline: 3px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: 1px; }
+.itour-tb [aria-invalid="true"] { border-color: #b42318; }
+.itour-tb__error { color: #b42318; font-size: 0.8125rem; font-weight: 500; }
+.itour-tb__alert { margin: 0 0 16px; padding: 10px 14px; border: 1px solid #fecaca; border-radius: var(--itour-exc-radius); background: #fef2f2; color: #991b1b; font-weight: 500; }
+.itour-tb__submit { min-height: 44px; }
+.itour-tb__small { margin: 12px 0 0; font-size: 0.875rem; color: var(--wp--preset--color--muted, #5b6472); }
+/* Show only the pick-up field that matches the chosen option. */
+.itour-eb__hotel, .itour-eb__typed { display: none; }
+.itour-tb:has(input[value="hotel"]:checked) .itour-eb__hotel,
+.itour-tb:has(input[value="typed"]:checked) .itour-eb__typed { display: flex; }

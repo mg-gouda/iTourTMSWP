@@ -195,6 +195,22 @@ msgstr "إزالة"
 msgid "Add row"
 msgstr "إضافة صف"
 
+#: src/Checkout.php:72
+msgid "Booking"
+msgstr "حجز"
+
+#: src/Checkout.php:156
+msgid "Booking reference"
+msgstr "رقم الحجز"
+
+#: src/Checkout.php:174
+msgid "Total price"
+msgstr "السعر الإجمالي"
+
+#: src/Checkout.php:175
+msgid "Pay on the day"
+msgstr "يُدفع يوم الرحلة"
+
 #: src/Company.php:30
 msgid "Company name"
 msgstr "اسم الشركة"

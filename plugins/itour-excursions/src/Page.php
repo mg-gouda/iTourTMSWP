@@ -25,7 +25,7 @@ final class Page {
 		if ( ! is_singular( Excursion::TYPE ) || ! in_the_loop() || ! is_main_query() ) {
 			return (string) $content;
 		}
-		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array(), '0.2.0' );
+		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array(), '0.3.0' );
 		$id  = (int) get_the_ID();
 		$c   = Excursion::config( $id );
 		$fmt = static fn( $v ): string => itour()->currencies()->format( (float) $v );
@@ -102,6 +102,6 @@ final class Page {
 		if ( $extra ) {
 			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Extras', 'itour-excursions' ) . '</h2><ul class="itour-exc__extras"><li>' . implode( '</li><li>', array_map( 'esc_html', $extra ) ) . '</li></ul>';
 		}
-		return $content . $h . '</section>';
+		return $content . $h . Booking::form( $id ) . '</section>';
 	}
 }

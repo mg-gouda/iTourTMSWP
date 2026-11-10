@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T17:48:39+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:03:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-transfers\n"
@@ -64,12 +64,12 @@ msgid "Up to %1$d passengers · %2$d bags"
 msgstr ""
 
 #: blocks/transfer-results/render.php:55
-#: src/Booking.php:92
+#: src/Booking.php:83
 msgid "One way"
 msgstr ""
 
 #: blocks/transfer-results/render.php:56
-#: src/Booking.php:93
+#: src/Booking.php:84
 msgid "Return"
 msgstr ""
 
@@ -84,152 +84,144 @@ msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports
 msgstr ""
 
 #. translators: %s: vehicle name.
-#: src/Booking.php:87
+#: src/Booking.php:78
 #, php-format
 msgid "Book the %s"
 msgstr ""
 
-#: src/Booking.php:89
+#: src/Booking.php:80
 msgid "Please check the highlighted fields."
 msgstr ""
 
-#: src/Booking.php:91
+#: src/Booking.php:82
 msgid "Trip"
 msgstr ""
 
-#: src/Booking.php:96
+#: src/Booking.php:87
 #: src/Module.php:477
 msgid "Pick-up date"
 msgstr ""
 
-#: src/Booking.php:97
+#: src/Booking.php:88
 msgid "Flight landing time"
 msgstr ""
 
-#: src/Booking.php:97
+#: src/Booking.php:88
 msgid "Pick-up time"
 msgstr ""
 
-#: src/Booking.php:99
+#: src/Booking.php:90
 msgid "Arrival flight number"
 msgstr ""
 
-#: src/Booking.php:102
+#: src/Booking.php:93
 msgid "Return date"
 msgstr ""
 
-#: src/Booking.php:103
+#: src/Booking.php:94
 msgid "Return pick-up time"
 msgstr ""
 
-#: src/Booking.php:105
+#: src/Booking.php:96
 msgid "Departure flight number"
 msgstr ""
 
-#: src/Booking.php:108
-#: src/Booking.php:365
+#: src/Booking.php:99
+#: src/Booking.php:275
 #: src/Module.php:220
 msgid "Child seats"
 msgstr ""
 
-#: src/Booking.php:109
-#: src/Booking.php:367
+#: src/Booking.php:100
+#: src/Booking.php:277
 #: src/Module.php:221
 #: src/Module.php:250
 msgid "Bags"
 msgstr ""
 
-#: src/Booking.php:110
+#: src/Booking.php:101
 msgid "Notes for the driver"
 msgstr ""
 
-#: src/Booking.php:110
+#: src/Booking.php:101
 msgid "Room number, exact address, wheelchair…"
 msgstr ""
 
-#: src/Booking.php:115
+#: src/Booking.php:106
 msgid "Pay now"
 msgstr ""
 
-#: src/Booking.php:116
+#: src/Booking.php:107
 msgid "Full price"
 msgstr ""
 
 #. translators: %s: deposit percentage.
-#: src/Booking.php:118
+#: src/Booking.php:109
 #, php-format
 msgid "Deposit (%s%%), the rest on the day"
 msgstr ""
 
-#: src/Booking.php:120
+#: src/Booking.php:111
 msgid "Continue to checkout"
 msgstr ""
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: src/Booking.php:122
+#: src/Booking.php:113
 #, php-format
 msgid "The final price, with extras, is shown at checkout. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr ""
 
-#: src/Booking.php:135
+#: src/Booking.php:126
 msgid "This page expired. Please try again."
 msgstr ""
 
-#: src/Booking.php:151
+#: src/Booking.php:142
 msgid "Enter the pick-up date and time."
 msgstr ""
 
 #. translators: %d: hours.
-#: src/Booking.php:154
+#: src/Booking.php:145
 #, php-format
 msgid "Book at least %d hour before pick-up. For sooner, please call us."
 msgid_plural "Book at least %d hours before pick-up. For sooner, please call us."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Booking.php:158
+#: src/Booking.php:149
 msgid "Enter your flight number so the driver can follow delays."
 msgstr ""
 
-#: src/Booking.php:165
+#: src/Booking.php:156
 msgid "Enter the return date and time."
 msgstr ""
 
-#: src/Booking.php:167
+#: src/Booking.php:158
 msgid "The return must be after the first pick-up."
 msgstr ""
 
-#: src/Booking.php:170
+#: src/Booking.php:161
 msgid "Enter your departure flight number."
 msgstr ""
 
-#: src/Booking.php:176
+#: src/Booking.php:167
 msgid "At most one child seat per passenger."
 msgstr ""
 
-#: src/Booking.php:179
+#: src/Booking.php:170
 msgid "Enter the number of bags."
 msgstr ""
 
-#: src/Booking.php:183
+#: src/Booking.php:174
 msgid "This vehicle is no longer available for this route. Please search again."
 msgstr ""
 
-#: src/Booking.php:223
-msgid "Transfer"
-msgstr ""
-
-#: src/Booking.php:324
-msgid "Booking reference"
-msgstr ""
-
 #. translators: 1: from place, 2: to place.
-#: src/Booking.php:338
+#: src/Booking.php:249
 #, php-format
 msgid "Transfer: %1$s → %2$s"
 msgstr ""
 
-#: src/Booking.php:351
+#: src/Booking.php:261
 #: src/Module.php:188
 #: src/Module.php:218
 #: src/Module.php:248
@@ -238,7 +230,7 @@ msgstr ""
 msgid "Vehicle"
 msgstr ""
 
-#: src/Booking.php:352
+#: src/Booking.php:262
 #: src/Module.php:189
 #: src/Module.php:219
 #: src/Module.php:249
@@ -246,39 +238,31 @@ msgstr ""
 msgid "Passengers"
 msgstr ""
 
-#: src/Booking.php:353
+#: src/Booking.php:263
 #: src/Module.php:186
 #: src/Module.php:214
 msgid "Pick-up"
 msgstr ""
 
-#: src/Booking.php:356
+#: src/Booking.php:266
 #: src/Module.php:215
 #: src/Settings.php:39
 msgid "Flight number"
 msgstr ""
 
-#: src/Booking.php:359
+#: src/Booking.php:269
 #: src/Module.php:216
 msgid "Return pick-up"
 msgstr ""
 
-#: src/Booking.php:361
+#: src/Booking.php:271
 #: src/Module.php:217
 msgid "Return flight number"
 msgstr ""
 
-#: src/Booking.php:369
+#: src/Booking.php:279
 #: src/Module.php:224
 msgid "Notes"
-msgstr ""
-
-#: src/Booking.php:372
-msgid "Total price"
-msgstr ""
-
-#: src/Booking.php:373
-msgid "Pay on the day"
 msgstr ""
 
 #: src/Module.php:37

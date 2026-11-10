@@ -104,6 +104,7 @@ final class Plugin {
 		( new Manual() )->hooks();
 		( new Demo() )->hooks();
 		( new Locations() )->hooks();
+		( new Checkout() )->hooks();
 		add_action(
 			'admin_enqueue_scripts',
 			static function ( string $hook ): void {

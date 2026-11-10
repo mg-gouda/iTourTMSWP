@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: iTour Excursions 0.2.0\n"
+"Project-Id-Version: iTour Excursions 0.3.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T17:48:30+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:03:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-excursions\n"
@@ -37,6 +37,248 @@ msgstr ""
 #. Author URI of the plugin
 #: itour-excursions.php
 msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#. translators: %d: seats left.
+#: src/Booking.php:96
+#, php-format
+msgid "%d seat left"
+msgid_plural "%d seats left"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Booking.php:141
+msgid "Book this trip"
+msgstr ""
+
+#: src/Booking.php:143
+msgid "Online booking needs WooCommerce."
+msgstr ""
+
+#: src/Booking.php:146
+msgid "No dates are open for booking right now. Contact us and we’ll find one."
+msgstr ""
+
+#: src/Booking.php:157
+msgid "Please check the highlighted fields."
+msgstr ""
+
+#: src/Booking.php:160
+#: src/Booking.php:317
+#: src/Booking.php:451
+msgid "Trip type"
+msgstr ""
+
+#: src/Booking.php:169
+#: src/Booking.php:318
+#: src/Booking.php:425
+#: src/Booking.php:452
+#: src/Editor.php:127
+#: src/Module.php:180
+msgid "Date"
+msgstr ""
+
+#: src/Booking.php:175
+#: src/Booking.php:453
+msgid "Adults"
+msgstr ""
+
+#: src/Booking.php:176
+#: src/Booking.php:454
+msgid "Children (2–11)"
+msgstr ""
+
+#: src/Booking.php:177
+#: src/Booking.php:455
+msgid "Infants (0–1)"
+msgstr ""
+
+#: src/Booking.php:189
+#: src/Booking.php:192
+msgid "Pick me up from my hotel"
+msgstr ""
+
+#: src/Booking.php:192
+msgid "My hotel isn’t listed"
+msgstr ""
+
+#. translators: %s: meeting point.
+#: src/Booking.php:196
+#, php-format
+msgid "I’ll meet you at %s"
+msgstr ""
+
+#: src/Booking.php:200
+#: src/Booking.php:324
+#: src/Booking.php:428
+#: src/Booking.php:456
+#: src/Editor.php:176
+#: src/Page.php:52
+msgid "Pick-up"
+msgstr ""
+
+#: src/Booking.php:206
+msgid "Hotel"
+msgstr ""
+
+#: src/Booking.php:206
+msgid "— Choose your hotel —"
+msgstr ""
+
+#: src/Booking.php:213
+msgid "Hotel name or address"
+msgstr ""
+
+#: src/Booking.php:219
+#: src/Booking.php:458
+#: src/Editor.php:200
+msgid "Add-ons"
+msgstr ""
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#: src/Booking.php:223
+#, php-format
+msgid "%1$s (+%2$s %3$s)"
+msgstr ""
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Booking.php:223
+#: src/Editor.php:116
+#: src/Page.php:88
+msgid "per booking"
+msgstr ""
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Booking.php:223
+#: src/Editor.php:115
+#: src/Page.php:88
+msgid "per person"
+msgstr ""
+
+#: src/Booking.php:228
+#: src/Booking.php:328
+#: src/Booking.php:461
+msgid "Notes"
+msgstr ""
+
+#: src/Booking.php:228
+msgid "Room number, language, dietary needs…"
+msgstr ""
+
+#: src/Booking.php:231
+msgid "Pay now"
+msgstr ""
+
+#: src/Booking.php:232
+msgid "Full price"
+msgstr ""
+
+#. translators: %d: deposit percentage.
+#: src/Booking.php:234
+#, php-format
+msgid "Deposit (%d%%), the rest on the day"
+msgstr ""
+
+#: src/Booking.php:236
+msgid "Continue to checkout"
+msgstr ""
+
+#: src/Booking.php:237
+msgid "The price for your group, with pick-up, add-ons and any supplements, is shown at checkout."
+msgstr ""
+
+#: src/Booking.php:249
+msgid "This page expired. Please try again."
+msgstr ""
+
+#: src/Booking.php:267
+msgid "This date is no longer available. Please pick another."
+msgstr ""
+
+#. translators: %d: seats left.
+#: src/Booking.php:270
+#, php-format
+msgid "Only %d seat is left on this date."
+msgid_plural "Only %d seats are left on this date."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Booking.php:273
+msgid "At least one adult must travel."
+msgstr ""
+
+#: src/Booking.php:276
+msgid "For groups this large, please contact us."
+msgstr ""
+
+#: src/Booking.php:290
+msgid "Choose your hotel."
+msgstr ""
+
+#: src/Booking.php:298
+msgid "Enter your hotel name or address."
+msgstr ""
+
+#: src/Booking.php:304
+msgid "Choose how we pick you up."
+msgstr ""
+
+#: src/Booking.php:310
+msgid "We have no price for this group size and type. Contact us for a quote."
+msgstr ""
+
+#: src/Booking.php:413
+msgid "excursion booking"
+msgstr ""
+
+#: src/Booking.php:414
+msgid "Excursion bookings"
+msgstr ""
+
+#: src/Booking.php:422
+msgid "No excursion bookings yet. They appear here when a customer checks out."
+msgstr ""
+
+#: src/Booking.php:424
+#: src/Booking.php:449
+msgid "Booking"
+msgstr ""
+
+#: src/Booking.php:426
+#: src/Booking.php:450
+msgid "Excursion"
+msgstr ""
+
+#: src/Booking.php:427
+#: src/Module.php:186
+msgid "Travellers"
+msgstr ""
+
+#: src/Booking.php:429
+msgid "Order status"
+msgstr ""
+
+#: src/Booking.php:445
+msgid "Open the order (customer, payment, status)"
+msgstr ""
+
+#: src/Booking.php:457
+#: src/Editor.php:100
+msgid "Pick-up time"
+msgstr ""
+
+#: src/Booking.php:464
+msgid "Total"
+msgstr ""
+
+#: src/Booking.php:465
+msgid "Paid at checkout"
+msgstr ""
+
+#: src/Booking.php:466
+msgid "Seats"
 msgstr ""
 
 #: src/Editor.php:32
@@ -98,10 +340,6 @@ msgstr ""
 msgid "Zone"
 msgstr ""
 
-#: src/Editor.php:100
-msgid "Pick-up time"
-msgstr ""
-
 #: src/Editor.php:103
 msgid "Extra per person"
 msgstr ""
@@ -118,25 +356,8 @@ msgstr ""
 msgid "Charged"
 msgstr ""
 
-#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Editor.php:115
-#: src/Page.php:88
-msgid "per person"
-msgstr ""
-
-#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Editor.php:116
-#: src/Page.php:88
-msgid "per booking"
-msgstr ""
-
 #: src/Editor.php:123
 msgid "Supplement"
-msgstr ""
-
-#: src/Editor.php:127
-#: src/Module.php:140
-msgid "Date"
 msgstr ""
 
 #: src/Editor.php:131
@@ -193,85 +414,84 @@ msgid "0 = no limit"
 msgstr ""
 
 #: src/Editor.php:172
-msgid "Closed dates (holidays, weather):"
+msgid "Deposit (%)"
+msgstr ""
+
+#: src/Editor.php:172
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day."
 msgstr ""
 
 #: src/Editor.php:173
+msgid "Closed dates (holidays, weather):"
+msgstr ""
+
+#: src/Editor.php:174
 msgid "Add closed dates"
 msgstr ""
 
-#: src/Editor.php:175
-#: src/Page.php:52
-msgid "Pick-up"
-msgstr ""
-
-#: src/Editor.php:177
+#: src/Editor.php:178
 msgid "From hotels in the zones below"
 msgstr ""
 
-#: src/Editor.php:178
+#: src/Editor.php:179
 msgid "Customer types their hotel or address"
 msgstr ""
 
-#: src/Editor.php:179
-#: src/Editor.php:194
+#: src/Editor.php:180
+#: src/Editor.php:195
 msgid "Meeting point"
 msgstr ""
 
-#: src/Editor.php:193
+#: src/Editor.php:194
 msgid "Add zone"
 msgstr ""
 
-#: src/Editor.php:194
+#: src/Editor.php:195
 msgid "e.g. Marina Boulevard, in front of the pharmacy, 07:30"
 msgstr ""
 
-#: src/Editor.php:196
+#: src/Editor.php:197
 msgid "Prices"
 msgstr ""
 
-#: src/Editor.php:196
+#: src/Editor.php:197
 msgid "Price per person. Add one row per group size: the more travellers in the booking, the lower the price. \"To travellers\" empty = no upper limit. Rows with season dates override all-year rows on those dates. Infants count towards the group size."
 msgstr ""
 
-#: src/Editor.php:197
+#: src/Editor.php:198
 msgid "Add price row"
 msgstr ""
 
-#: src/Editor.php:199
-msgid "Add-ons"
-msgstr ""
-
-#: src/Editor.php:199
+#: src/Editor.php:200
 msgid "Paid extras the customer can tick: lunch, entry tickets, a guide in their language, photos."
 msgstr ""
 
-#: src/Editor.php:200
+#: src/Editor.php:201
 msgid "Add add-on"
 msgstr ""
 
-#: src/Editor.php:202
+#: src/Editor.php:203
 msgid "Supplements"
 msgstr ""
 
-#: src/Editor.php:202
+#: src/Editor.php:203
 msgid "Charged automatically on these dates, per person, e.g. a Christmas Gala Meal."
 msgstr ""
 
-#: src/Editor.php:203
+#: src/Editor.php:204
 msgid "Add supplement"
 msgstr ""
 
-#: src/Excursion.php:84
+#: src/Excursion.php:85
 msgid "Shared (group)"
 msgstr ""
 
-#: src/Excursion.php:85
+#: src/Excursion.php:86
 msgid "Private"
 msgstr ""
 
 #. translators: %d: number of adults.
-#: src/Excursion.php:142
+#: src/Excursion.php:143
 #, php-format
 msgid "%d adult"
 msgid_plural "%d adults"
@@ -279,7 +499,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: number of children.
-#: src/Excursion.php:144
+#: src/Excursion.php:145
 #, php-format
 msgid "%d child"
 msgid_plural "%d children"
@@ -287,21 +507,21 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: number of infants.
-#: src/Excursion.php:146
+#: src/Excursion.php:147
 #, php-format
 msgid "%d infant"
 msgid_plural "%d infants"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Excursion.php:149
+#: src/Excursion.php:150
 msgid "Pick-up from your area"
 msgstr ""
 
 #: src/Module.php:33
 #: src/Module.php:51
-#: src/Module.php:127
-#: src/Module.php:165
+#: src/Module.php:167
+#: src/Module.php:205
 msgid "Excursions"
 msgstr ""
 
@@ -309,39 +529,39 @@ msgstr ""
 msgid "excursion"
 msgstr ""
 
-#: src/Module.php:128
+#: src/Module.php:131
+msgid "Bookings"
+msgstr ""
+
+#: src/Module.php:168
 msgid "Find excursions"
 msgstr ""
 
-#: src/Module.php:133
+#: src/Module.php:173
 msgid "Staying in"
 msgstr ""
 
-#: src/Module.php:135
+#: src/Module.php:175
 msgid "Hurghada, Sharm, Luxor…"
 msgstr ""
 
-#: src/Module.php:146
-msgid "Travellers"
-msgstr ""
-
-#: src/Module.php:166
+#: src/Module.php:206
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr ""
 
-#: src/Module.php:170
+#: src/Module.php:210
 msgid "Excursions page"
 msgstr ""
 
-#: src/Module.php:173
+#: src/Module.php:213
 msgid "The page that lists all excursions and day trips."
 msgstr ""
 
-#: src/Module.php:176
+#: src/Module.php:216
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:179
+#: src/Module.php:219
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr ""
 

@@ -33,6 +33,256 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
+#. translators: %d: seats left.
+#: src/Booking.php:96
+#, php-format
+msgid "%d seat left"
+msgid_plural "%d seats left"
+msgstr[0] "%d مقعد متبقٍ"
+msgstr[1] "مقعد واحد متبقٍ"
+msgstr[2] "مقعدان متبقيان"
+msgstr[3] "%d مقاعد متبقية"
+msgstr[4] "%d مقعدًا متبقيًا"
+msgstr[5] "%d مقعد متبقٍ"
+
+#: src/Booking.php:141
+msgid "Book this trip"
+msgstr "احجز هذه الرحلة"
+
+#: src/Booking.php:143
+msgid "Online booking needs WooCommerce."
+msgstr "الحجز عبر الإنترنت يحتاج إلى WooCommerce."
+
+#: src/Booking.php:146
+msgid "No dates are open for booking right now. Contact us and we’ll find one."
+msgstr "لا توجد تواريخ متاحة للحجز الآن. تواصل معنا وسنجد لك موعدًا."
+
+#: src/Booking.php:157
+msgid "Please check the highlighted fields."
+msgstr "يرجى مراجعة الحقول المحددة."
+
+#: src/Booking.php:160
+#: src/Booking.php:317
+#: src/Booking.php:451
+msgid "Trip type"
+msgstr "نوع الرحلة"
+
+#: src/Booking.php:169
+#: src/Booking.php:318
+#: src/Booking.php:425
+#: src/Booking.php:452
+#: src/Editor.php:127
+#: src/Module.php:180
+msgid "Date"
+msgstr "التاريخ"
+
+#: src/Booking.php:175
+#: src/Booking.php:453
+msgid "Adults"
+msgstr "البالغون"
+
+#: src/Booking.php:176
+#: src/Booking.php:454
+msgid "Children (2–11)"
+msgstr "الأطفال (2–11)"
+
+#: src/Booking.php:177
+#: src/Booking.php:455
+msgid "Infants (0–1)"
+msgstr "الرضّع (0–1)"
+
+#: src/Booking.php:189
+#: src/Booking.php:192
+msgid "Pick me up from my hotel"
+msgstr "استقبلني من فندقي"
+
+#: src/Booking.php:192
+msgid "My hotel isn’t listed"
+msgstr "فندقي غير موجود في القائمة"
+
+#. translators: %s: meeting point.
+#: src/Booking.php:196
+#, php-format
+msgid "I’ll meet you at %s"
+msgstr "سأقابلكم عند %s"
+
+#: src/Booking.php:200
+#: src/Booking.php:324
+#: src/Booking.php:428
+#: src/Booking.php:456
+#: src/Editor.php:176
+#: src/Page.php:52
+msgid "Pick-up"
+msgstr "الاستقبال"
+
+#: src/Booking.php:206
+msgid "Hotel"
+msgstr "الفندق"
+
+#: src/Booking.php:206
+msgid "— Choose your hotel —"
+msgstr "— اختر فندقك —"
+
+#: src/Booking.php:213
+msgid "Hotel name or address"
+msgstr "اسم الفندق أو العنوان"
+
+#: src/Booking.php:219
+#: src/Booking.php:458
+#: src/Editor.php:200
+msgid "Add-ons"
+msgstr "الإضافات"
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#: src/Booking.php:223
+#, php-format
+msgid "%1$s (+%2$s %3$s)"
+msgstr "%1$s (+%2$s %3$s)"
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Booking.php:223
+#: src/Editor.php:116
+#: src/Page.php:88
+msgid "per booking"
+msgstr "للحجز"
+
+#. translators: 1: add-on, 2: price, 3: per person / per booking.
+#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
+#: src/Booking.php:223
+#: src/Editor.php:115
+#: src/Page.php:88
+msgid "per person"
+msgstr "للفرد"
+
+#: src/Booking.php:228
+#: src/Booking.php:328
+#: src/Booking.php:461
+msgid "Notes"
+msgstr "ملاحظات"
+
+#: src/Booking.php:228
+msgid "Room number, language, dietary needs…"
+msgstr "رقم الغرفة، اللغة، احتياجات غذائية…"
+
+#: src/Booking.php:231
+msgid "Pay now"
+msgstr "ادفع الآن"
+
+#: src/Booking.php:232
+msgid "Full price"
+msgstr "السعر كاملًا"
+
+#. translators: %d: deposit percentage.
+#: src/Booking.php:234
+#, php-format
+msgid "Deposit (%d%%), the rest on the day"
+msgstr "عربون (%d%%)، والباقي يوم الرحلة"
+
+#: src/Booking.php:236
+msgid "Continue to checkout"
+msgstr "متابعة إلى الدفع"
+
+#: src/Booking.php:237
+msgid "The price for your group, with pick-up, add-ons and any supplements, is shown at checkout."
+msgstr "يظهر سعر مجموعتك مع الاستقبال والإضافات وأي مكملات عند الدفع."
+
+#: src/Booking.php:249
+msgid "This page expired. Please try again."
+msgstr "انتهت صلاحية الصفحة. يرجى المحاولة مرة أخرى."
+
+#: src/Booking.php:267
+msgid "This date is no longer available. Please pick another."
+msgstr "هذا التاريخ لم يعد متاحًا. يرجى اختيار تاريخ آخر."
+
+#. translators: %d: seats left.
+#: src/Booking.php:270
+#, php-format
+msgid "Only %d seat is left on this date."
+msgid_plural "Only %d seats are left on this date."
+msgstr[0] "لم يتبقَّ سوى %d مقعد في هذا التاريخ."
+msgstr[1] "لم يتبقَّ سوى مقعد واحد في هذا التاريخ."
+msgstr[2] "لم يتبقَّ سوى مقعدين في هذا التاريخ."
+msgstr[3] "لم يتبقَّ سوى %d مقاعد في هذا التاريخ."
+msgstr[4] "لم يتبقَّ سوى %d مقعدًا في هذا التاريخ."
+msgstr[5] "لم يتبقَّ سوى %d مقعد في هذا التاريخ."
+
+#: src/Booking.php:273
+msgid "At least one adult must travel."
+msgstr "يجب أن يسافر بالغ واحد على الأقل."
+
+#: src/Booking.php:276
+msgid "For groups this large, please contact us."
+msgstr "للمجموعات بهذا الحجم، يرجى التواصل معنا."
+
+#: src/Booking.php:290
+msgid "Choose your hotel."
+msgstr "اختر فندقك."
+
+#: src/Booking.php:298
+msgid "Enter your hotel name or address."
+msgstr "أدخل اسم فندقك أو عنوانك."
+
+#: src/Booking.php:304
+msgid "Choose how we pick you up."
+msgstr "اختر طريقة الاستقبال."
+
+#: src/Booking.php:310
+msgid "We have no price for this group size and type. Contact us for a quote."
+msgstr "ليس لدينا سعر لهذا الحجم والنوع من المجموعات. تواصل معنا لعرض سعر."
+
+#: src/Booking.php:413
+msgid "excursion booking"
+msgstr "حجز رحلة"
+
+#: src/Booking.php:414
+msgid "Excursion bookings"
+msgstr "حجوزات الرحلات"
+
+#: src/Booking.php:422
+msgid "No excursion bookings yet. They appear here when a customer checks out."
+msgstr "لا توجد حجوزات رحلات بعد. تظهر هنا عندما يُتم العميل الدفع."
+
+#: src/Booking.php:424
+#: src/Booking.php:449
+msgid "Booking"
+msgstr "الحجز"
+
+#: src/Booking.php:426
+#: src/Booking.php:450
+msgid "Excursion"
+msgstr "الرحلة"
+
+#: src/Booking.php:427
+#: src/Module.php:186
+msgid "Travellers"
+msgstr "عدد المسافرين"
+
+#: src/Booking.php:429
+msgid "Order status"
+msgstr "حالة الطلب"
+
+#: src/Booking.php:445
+msgid "Open the order (customer, payment, status)"
+msgstr "افتح الطلب (العميل، الدفع، الحالة)"
+
+#: src/Booking.php:457
+#: src/Editor.php:100
+msgid "Pick-up time"
+msgstr "وقت الاستقبال"
+
+#: src/Booking.php:464
+msgid "Total"
+msgstr "الإجمالي"
+
+#: src/Booking.php:465
+msgid "Paid at checkout"
+msgstr "المدفوع عند الدفع"
+
+#: src/Booking.php:466
+msgid "Seats"
+msgstr "المقاعد"
+
 #: src/Editor.php:32
 #: src/Page.php:54
 msgid "Trip details"
@@ -92,10 +342,6 @@ msgstr "مغلق إلى"
 msgid "Zone"
 msgstr "المنطقة"
 
-#: src/Editor.php:100
-msgid "Pick-up time"
-msgstr "وقت الاستقبال"
-
 #: src/Editor.php:103
 msgid "Extra per person"
 msgstr "إضافي للفرد"
@@ -112,26 +358,9 @@ msgstr "السعر"
 msgid "Charged"
 msgstr "يُحتسب"
 
-#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Editor.php:115
-#: src/Page.php:88
-msgid "per person"
-msgstr "للفرد"
-
-#. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Editor.php:116
-#: src/Page.php:88
-msgid "per booking"
-msgstr "للحجز"
-
 #: src/Editor.php:123
 msgid "Supplement"
 msgstr "مكمل"
-
-#: src/Editor.php:127
-#: src/Module.php:140
-msgid "Date"
-msgstr "التاريخ"
 
 #: src/Editor.php:131
 msgid "Until (optional)"
@@ -187,85 +416,84 @@ msgid "0 = no limit"
 msgstr "0 = بلا حد"
 
 #: src/Editor.php:172
+msgid "Deposit (%)"
+msgstr "العربون (%)"
+
+#: src/Editor.php:172
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day."
+msgstr "0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي يوم الرحلة."
+
+#: src/Editor.php:173
 msgid "Closed dates (holidays, weather):"
 msgstr "أيام الإغلاق (عطلات، طقس):"
 
-#: src/Editor.php:173
+#: src/Editor.php:174
 msgid "Add closed dates"
 msgstr "إضافة أيام إغلاق"
 
-#: src/Editor.php:175
-#: src/Page.php:52
-msgid "Pick-up"
-msgstr "الاستقبال"
-
-#: src/Editor.php:177
+#: src/Editor.php:178
 msgid "From hotels in the zones below"
 msgstr "من الفنادق في المناطق أدناه"
 
-#: src/Editor.php:178
+#: src/Editor.php:179
 msgid "Customer types their hotel or address"
 msgstr "يكتب العميل فندقه أو عنوانه"
 
-#: src/Editor.php:179
-#: src/Editor.php:194
+#: src/Editor.php:180
+#: src/Editor.php:195
 msgid "Meeting point"
 msgstr "نقطة الالتقاء"
 
-#: src/Editor.php:193
+#: src/Editor.php:194
 msgid "Add zone"
 msgstr "إضافة منطقة"
 
-#: src/Editor.php:194
+#: src/Editor.php:195
 msgid "e.g. Marina Boulevard, in front of the pharmacy, 07:30"
 msgstr "مثل ممشى المارينا، أمام الصيدلية، 07:30"
 
-#: src/Editor.php:196
+#: src/Editor.php:197
 msgid "Prices"
 msgstr "الأسعار"
 
-#: src/Editor.php:196
+#: src/Editor.php:197
 msgid "Price per person. Add one row per group size: the more travellers in the booking, the lower the price. \"To travellers\" empty = no upper limit. Rows with season dates override all-year rows on those dates. Infants count towards the group size."
 msgstr "السعر للفرد. أضف صفًا لكل حجم مجموعة: كلما زاد عدد المسافرين في الحجز قل السعر. «إلى عدد مسافرين» فارغ = بلا حد أعلى. الصفوف ذات تواريخ الموسم تتقدم على صفوف العام كله في تلك التواريخ. الرضّع يُحسبون ضمن حجم المجموعة."
 
-#: src/Editor.php:197
+#: src/Editor.php:198
 msgid "Add price row"
 msgstr "إضافة صف سعر"
 
-#: src/Editor.php:199
-msgid "Add-ons"
-msgstr "الإضافات"
-
-#: src/Editor.php:199
+#: src/Editor.php:200
 msgid "Paid extras the customer can tick: lunch, entry tickets, a guide in their language, photos."
 msgstr "إضافات مدفوعة يختارها العميل: غداء، تذاكر دخول، مرشد بلغته، صور."
 
-#: src/Editor.php:200
+#: src/Editor.php:201
 msgid "Add add-on"
 msgstr "إضافة خيار"
 
-#: src/Editor.php:202
+#: src/Editor.php:203
 msgid "Supplements"
 msgstr "المكملات"
 
-#: src/Editor.php:202
+#: src/Editor.php:203
 msgid "Charged automatically on these dates, per person, e.g. a Christmas Gala Meal."
 msgstr "تُحتسب تلقائيًا في هذه التواريخ للفرد، مثل عشاء حفل الكريسماس."
 
-#: src/Editor.php:203
+#: src/Editor.php:204
 msgid "Add supplement"
 msgstr "إضافة مكمل"
 
-#: src/Excursion.php:84
+#: src/Excursion.php:85
 msgid "Shared (group)"
 msgstr "مشتركة (مجموعة)"
 
-#: src/Excursion.php:85
+#: src/Excursion.php:86
 msgid "Private"
 msgstr "خاصة"
 
 #. translators: %d: number of adults.
-#: src/Excursion.php:142
+#: src/Excursion.php:143
 #, php-format
 msgid "%d adult"
 msgid_plural "%d adults"
@@ -277,7 +505,7 @@ msgstr[4] "%d بالغًا"
 msgstr[5] "%d بالغ"
 
 #. translators: %d: number of children.
-#: src/Excursion.php:144
+#: src/Excursion.php:145
 #, php-format
 msgid "%d child"
 msgid_plural "%d children"
@@ -289,7 +517,7 @@ msgstr[4] "%d طفلًا"
 msgstr[5] "%d طفل"
 
 #. translators: %d: number of infants.
-#: src/Excursion.php:146
+#: src/Excursion.php:147
 #, php-format
 msgid "%d infant"
 msgid_plural "%d infants"
@@ -300,14 +528,14 @@ msgstr[3] "%d رضع"
 msgstr[4] "%d رضيعًا"
 msgstr[5] "%d رضيع"
 
-#: src/Excursion.php:149
+#: src/Excursion.php:150
 msgid "Pick-up from your area"
 msgstr "الاستقبال من منطقتك"
 
 #: src/Module.php:33
 #: src/Module.php:51
-#: src/Module.php:127
-#: src/Module.php:165
+#: src/Module.php:167
+#: src/Module.php:205
 msgid "Excursions"
 msgstr "الرحلات اليومية"
 
@@ -315,39 +543,39 @@ msgstr "الرحلات اليومية"
 msgid "excursion"
 msgstr "رحلة"
 
-#: src/Module.php:128
+#: src/Module.php:131
+msgid "Bookings"
+msgstr "الحجوزات"
+
+#: src/Module.php:168
 msgid "Find excursions"
 msgstr "ابحث عن رحلة"
 
-#: src/Module.php:133
+#: src/Module.php:173
 msgid "Staying in"
 msgstr "مكان الإقامة"
 
-#: src/Module.php:135
+#: src/Module.php:175
 msgid "Hurghada, Sharm, Luxor…"
 msgstr "الغردقة، شرم الشيخ، الأقصر…"
 
-#: src/Module.php:146
-msgid "Travellers"
-msgstr "عدد المسافرين"
-
-#: src/Module.php:166
+#: src/Module.php:206
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الرحلات اليومية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:170
+#: src/Module.php:210
 msgid "Excursions page"
 msgstr "صفحة الرحلات اليومية"
 
-#: src/Module.php:173
+#: src/Module.php:213
 msgid "The page that lists all excursions and day trips."
 msgstr "الصفحة التي تعرض جميع الرحلات والجولات اليومية."
 
-#: src/Module.php:176
+#: src/Module.php:216
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:179
+#: src/Module.php:219
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."
 

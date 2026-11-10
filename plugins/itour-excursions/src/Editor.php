@@ -169,6 +169,7 @@ final class Editor {
 		Rows::render( 'itour_exc[times]', $cols['times'], array_map( static fn( $t ) => array( 'time' => $t ), (array) $c['times'] ), __( 'Add start time', 'itour-excursions' ) );
 		echo '<p><label>' . esc_html__( 'Booking closes (hours before start)', 'itour-excursions' ) . ' <input type="number" min="0" class="small-text" name="itour_exc[cutoff]" value="' . (int) $c['cutoff'] . '"></label>';
 		echo ' &nbsp; <label>' . esc_html__( 'Seats per day', 'itour-excursions' ) . ' <input type="number" min="0" class="small-text" name="itour_exc[seats]" value="' . (int) $c['seats'] . '"></label> <span class="description">' . esc_html__( '0 = no limit', 'itour-excursions' ) . '</span></p>';
+		echo '<p><label>' . esc_html__( 'Deposit (%)', 'itour-excursions' ) . ' <input type="number" min="0" max="100" class="small-text" name="itour_exc[deposit]" value="' . (int) $c['deposit'] . '"></label> <span class="description">' . esc_html__( '0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day.', 'itour-excursions' ) . '</span></p>';
 		echo '<p class="description">' . esc_html__( 'Closed dates (holidays, weather):', 'itour-excursions' ) . '</p>';
 		Rows::render( 'itour_exc[blocked]', $cols['blocked'], (array) $c['blocked'], __( 'Add closed dates', 'itour-excursions' ) );
 
@@ -226,6 +227,7 @@ final class Editor {
 			'times'         => array_values( array_unique( array_column( Rows::clean( $cols['times'], $in['times'] ?? array(), array( 'time' ) ), 'time' ) ) ),
 			'cutoff'        => absint( $in['cutoff'] ?? 24 ),
 			'seats'         => absint( $in['seats'] ?? 0 ),
+			'deposit'       => min( 100, absint( $in['deposit'] ?? 0 ) ),
 			'blocked'       => Rows::clean( $cols['blocked'], $in['blocked'] ?? array(), array( 'from' ) ),
 			'pickup_modes'  => array_values( array_intersect( array( 'hotel', 'typed', 'meeting' ), (array) ( $in['pickup_modes'] ?? array() ) ) ),
 			'meeting_point' => sanitize_text_field( (string) ( $in['meeting_point'] ?? '' ) ),

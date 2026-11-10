@@ -37,7 +37,7 @@ final class Module extends \ITour\Core\Module {
 	 * Module version.
 	 */
 	public function version(): string {
-		return '0.2.0';
+		return '0.3.0';
 	}
 
 	/**
@@ -52,6 +52,7 @@ final class Module extends \ITour\Core\Module {
 			}
 		);
 		( new Editor() )->hooks();
+		( new Booking() )->hooks();
 		add_filter( 'the_content', array( Page::class, 'append' ) );
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
@@ -73,7 +74,7 @@ final class Module extends \ITour\Core\Module {
 	 */
 	public function tables(): array {
 		return array(
-			'excursion_rates'   => "id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			'excursion_rates'    => "id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   post_id bigint(20) unsigned NOT NULL,
   variant varchar(10) NOT NULL DEFAULT 'shared',
   season_from date NULL,
@@ -85,13 +86,52 @@ final class Module extends \ITour\Core\Module {
   infant decimal(12,2) NOT NULL DEFAULT 0,
   PRIMARY KEY  (id),
   KEY post_id (post_id)",
-			'excursion_pickups' => 'id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			'excursion_pickups'  => 'id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   post_id bigint(20) unsigned NOT NULL,
   zone_id bigint(20) unsigned NOT NULL,
   pickup_time time NOT NULL,
   extra decimal(12,2) NOT NULL DEFAULT 0,
   PRIMARY KEY  (id),
   KEY post_id (post_id)',
+			'excursion_bookings' => "id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  ref varchar(20) NOT NULL,
+  order_id bigint(20) unsigned NOT NULL,
+  post_id bigint(20) unsigned NOT NULL,
+  title varchar(190) NOT NULL,
+  variant varchar(10) NOT NULL,
+  start_at datetime NOT NULL,
+  adults smallint(5) unsigned NOT NULL,
+  children smallint(5) unsigned NOT NULL DEFAULT 0,
+  infants smallint(5) unsigned NOT NULL DEFAULT 0,
+  pickup varchar(255) NULL,
+  pickup_time time NULL,
+  addons varchar(255) NULL,
+  notes text NULL,
+  total decimal(12,2) NOT NULL,
+  paid_now decimal(12,2) NOT NULL,
+  currency char(3) NOT NULL,
+  status varchar(20) NOT NULL DEFAULT 'active',
+  created_at datetime NOT NULL,
+  PRIMARY KEY  (id),
+  UNIQUE KEY ref (ref),
+  KEY order_id (order_id),
+  KEY slot (post_id,start_at)",
+		);
+	}
+
+	/**
+	 * Screens under the Excursions menu.
+	 *
+	 * @return array<string,array{title:string,callback:callable,load?:callable}>
+	 */
+	public function admin_pages(): array {
+		$crud = Booking::screen( $this->capability() );
+		return array(
+			'bookings' => array(
+				'title'    => __( 'Bookings', 'itour-excursions' ),
+				'callback' => array( $crud, 'render' ),
+				'load'     => array( $crud, 'load' ),
+			),
 		);
 	}
 

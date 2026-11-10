@@ -5,7 +5,7 @@ Work that needs **no decision from the owner**. The scheduled task "iTourTMS aut
 Never on autopilot (owner decides): Tour Package / Excursion / Transfer functionality, payments and checkout, cancellation rules, B2B, Traveler importer, anything on staging or the live site, licence server URL/key.
 
 ## Queue
-- (empty: next work needs the owner's 14 product answers)
+- (empty) Owner-led work in progress: Excursions stage 2 (booking), then the Rehlla plugins of D-025 (need the live server's SSH host/user from the owner).
 
 ## Superseded
 - **Demo content file** (done another way, see Done). Original note kept for the image question:

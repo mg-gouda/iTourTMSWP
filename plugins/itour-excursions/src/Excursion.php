@@ -41,6 +41,7 @@ final class Excursion {
 				'days'          => array( 1, 2, 3, 4, 5, 6, 7 ), // ISO weekdays, 1 = Monday.
 				'times'         => array(),
 				'cutoff'        => 24,
+				'deposit'       => 0, // % payable at checkout; 0 = full price only.
 				'seats'         => 0,
 				'blocked'       => array(),
 				'pickup_modes'  => array( 'hotel' ),
