@@ -186,27 +186,28 @@ msgstr "الوحدة"
 msgid "Version"
 msgstr "الإصدار"
 
-#: src/Admin/Panel.php:83
+#: src/Admin/Panel.php:140
 msgid "Saving…"
 msgstr "جارٍ الحفظ…"
 
-#: src/Admin/Panel.php:84
+#: src/Admin/Panel.php:141
 msgid "All changes saved"
 msgstr "تم حفظ كل التغييرات"
 
-#: src/Admin/Panel.php:85
+#: src/Admin/Panel.php:142
 msgid "Couldn’t save. Check your connection."
 msgstr "تعذر الحفظ. تحقق من الاتصال."
 
-#: src/Admin/Panel.php:86
+#: src/Admin/Panel.php:143
 msgid "Retry"
 msgstr "إعادة المحاولة"
 
-#: src/Admin/Panel.php:92
+#: src/Admin/Panel.php:149
 msgid "Changes save as you go."
 msgstr "تُحفظ التغييرات تلقائيًا أثناء العمل."
 
-#: src/Admin/Panel.php:203
+#: src/Admin/Panel.php:261
+#: src/Admin/Panel.php:270
 msgid "You can’t edit this item, or the page expired. Reload it."
 msgstr "لا يمكنك تعديل هذا العنصر، أو انتهت صلاحية الصفحة. أعد تحميلها."
 
@@ -722,6 +723,125 @@ msgstr "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم ي�
 #, php-format
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
 msgstr "iTour: الوحدة %1$s لا تعمل لأنها تحتاج إلى هذه الوحدات: %2$s."
+
+#: src/Policies.php:40
+msgid "Vehicle"
+msgstr "المركبة"
+
+#: src/Policies.php:42
+msgid "All vehicles"
+msgstr "كل المركبات"
+
+#: src/Policies.php:48
+msgid "Travel from (optional)"
+msgstr "السفر من (اختياري)"
+
+#: src/Policies.php:53
+msgid "Travel to (optional)"
+msgstr "السفر إلى (اختياري)"
+
+#: src/Policies.php:58
+msgid "Days before arrival"
+msgstr "أيام قبل الوصول"
+
+#: src/Policies.php:63
+msgid "Fee (% of price)"
+msgstr "الرسوم (% من السعر)"
+
+#: src/Policies.php:137
+msgid "free cancellation"
+msgstr "إلغاء مجاني"
+
+#. translators: %s: fee percentage.
+#: src/Policies.php:140
+msgid "no refund"
+msgstr "بلا استرداد"
+
+#. translators: %s: fee percentage.
+#: src/Policies.php:140
+#, php-format
+msgid "%s%% fee"
+msgstr "رسوم %s%%"
+
+#: src/Policies.php:152
+#: src/Policies.php:166
+msgid "Non-refundable"
+msgstr "غير قابل للاسترداد"
+
+#. translators: 1: "free cancellation" / "50% fee", 2: date.
+#: src/Policies.php:163
+#, php-format
+msgid "%1$s until %2$s"
+msgstr "%1$s حتى %2$s"
+
+#: src/Policies.php:168
+msgid "then no refund"
+msgstr "ثم بلا استرداد"
+
+#: src/Policies.php:186
+#: src/Policies.php:235
+msgid "Cancellation"
+msgstr "الإلغاء"
+
+#: src/Policies.php:191
+msgid "All other travel dates"
+msgstr "باقي تواريخ السفر"
+
+#. translators: 1: from date, 2: to date.
+#: src/Policies.php:193
+#, php-format
+msgid "Travel %1$s – %2$s"
+msgstr "السفر %1$s – %2$s"
+
+#. translators: %d: days.
+#: src/Policies.php:202
+#, php-format
+msgid "%d day or more before arrival"
+msgid_plural "%d days or more before arrival"
+msgstr[0] "%d يوم أو أكثر قبل الوصول"
+msgstr[1] "يوم أو أكثر قبل الوصول"
+msgstr[2] "يومان أو أكثر قبل الوصول"
+msgstr[3] "%d أيام أو أكثر قبل الوصول"
+msgstr[4] "%d يومًا أو أكثر قبل الوصول"
+msgstr[5] "%d يوم أو أكثر قبل الوصول"
+
+#. translators: 1: fewest days, 2: most days.
+#: src/Policies.php:204
+#, php-format
+msgid "%1$d–%2$d days before arrival"
+msgstr "%1$d–%2$d يومًا قبل الوصول"
+
+#. translators: 1: fewest days, 2: most days.
+#: src/Policies.php:204
+#, php-format
+msgid "%d day before arrival"
+msgid_plural "%d days before arrival"
+msgstr[0] "%d يوم قبل الوصول"
+msgstr[1] "يوم قبل الوصول"
+msgstr[2] "يومان قبل الوصول"
+msgstr[3] "%d أيام قبل الوصول"
+msgstr[4] "%d يومًا قبل الوصول"
+msgstr[5] "%d يوم قبل الوصول"
+
+#. translators: %d: days.
+#: src/Policies.php:210
+#, php-format
+msgid "Less than %d day before arrival"
+msgid_plural "Less than %d days before arrival"
+msgstr[0] "أقل من %d يوم قبل الوصول"
+msgstr[1] "أقل من يوم قبل الوصول"
+msgstr[2] "أقل من يومين قبل الوصول"
+msgstr[3] "أقل من %d أيام قبل الوصول"
+msgstr[4] "أقل من %d يومًا قبل الوصول"
+msgstr[5] "أقل من %d يوم قبل الوصول"
+
+#: src/Policies.php:238
+msgid "One row per tier: cancelling this many days or more before arrival costs this share of the price. Example: 30 days → 0% (free), 14 days → 50%, 0 days → 100%. Closer than every tier = no refund. Add travel dates to make a season tier: on those dates its tiers replace the all-year ones. No rows = non-refundable."
+msgstr "صف لكل شريحة: الإلغاء قبل الوصول بهذا العدد من الأيام أو أكثر يكلف هذه النسبة من السعر. مثال: 30 يومًا ← 0% (مجاني)، 14 يومًا ← 50%، 0 يوم ← 100%. أقرب من كل الشرائح = بلا استرداد. أضف تواريخ سفر لإنشاء شريحة موسمية: في تلك التواريخ تحل شرائحها محل شرائح العام كله. بلا صفوف = غير قابل للاسترداد."
+
+#: src/Policies.php:239
+msgid "Add tier"
+msgstr "إضافة شريحة"
 
 #: src/Products.php:67
 msgid "Categories"

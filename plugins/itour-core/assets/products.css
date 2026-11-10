@@ -20,6 +20,12 @@
 @media (max-width: 560px) { .itour-exc__prices th, .itour-exc__prices td { padding: 8px 6px; font-size: 0.9375rem; } }
 
 .itour-info { margin-block-start: 32px; }
+
+/* Cancellation tiers */
+.itour-cancel h3 { margin: 16px 0 6px; font-size: 1rem; }
+.itour-cancel ul { margin: 0; padding: 0; list-style: none; max-width: 640px; }
+.itour-cancel li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-block-end: 1px solid var(--itour-exc-line); }
+.itour-cancel li strong { font-weight: 600; white-space: nowrap; }
 .itour-info__terms { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 0 0 24px; }
 .itour-info__terms dt { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--wp--preset--color--muted, #5b6472); }
 .itour-info__terms dd { margin: 4px 0 0; }

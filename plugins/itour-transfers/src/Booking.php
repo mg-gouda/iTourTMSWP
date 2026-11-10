@@ -278,6 +278,7 @@ final class Booking {
 		if ( '' !== $b['notes'] ) {
 			$out[ __( 'Notes', 'itour-transfers' ) ] = $b['notes'];
 		}
+		$out[ __( 'Cancellation', 'itour-transfers' ) ] = \ITour\Core\Policies::summary( Settings::cancel_tiers( (int) $b['vehicle_id'] ), substr( (string) $b['pickup_at'], 0, 10 ) );
 		return $out; // Checkout adds total + balance for deposits.
 	}
 }

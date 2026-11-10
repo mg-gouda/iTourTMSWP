@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:03:45+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:42:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-transfers\n"
@@ -63,22 +63,22 @@ msgstr[1] ""
 msgid "Up to %1$d passengers · %2$d bags"
 msgstr ""
 
-#: blocks/transfer-results/render.php:55
+#: blocks/transfer-results/render.php:56
 #: src/Booking.php:83
 msgid "One way"
 msgstr ""
 
-#: blocks/transfer-results/render.php:56
+#: blocks/transfer-results/render.php:57
 #: src/Booking.php:84
 msgid "Return"
 msgstr ""
 
-#: blocks/transfer-results/render.php:58
+#: blocks/transfer-results/render.php:59
 msgid "Book"
 msgstr ""
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: blocks/transfer-results/render.php:67
+#: blocks/transfer-results/render.php:68
 #, php-format
 msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr ""
@@ -246,7 +246,6 @@ msgstr ""
 
 #: src/Booking.php:266
 #: src/Module.php:215
-#: src/Settings.php:39
 msgid "Flight number"
 msgstr ""
 
@@ -265,26 +264,31 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
+#: src/Booking.php:281
+#: src/Settings.php:143
+msgid "Cancellation"
+msgstr ""
+
 #: src/Module.php:37
-#: src/Module.php:116
+#: src/Module.php:117
 #: src/Module.php:455
 #: src/Module.php:502
 msgid "Transfers"
 msgstr ""
 
-#: src/Module.php:131
+#: src/Module.php:132
 msgid "Bookings"
 msgstr ""
 
-#: src/Module.php:138
+#: src/Module.php:139
 msgid "Vehicles"
 msgstr ""
 
-#: src/Module.php:138
+#: src/Module.php:139
 msgid "Prices"
 msgstr ""
 
-#: src/Module.php:144
+#: src/Module.php:145
 msgid "Rules"
 msgstr ""
 
@@ -447,80 +451,97 @@ msgstr ""
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr ""
 
-#: src/Settings.php:33
-msgid "Book at least (hours before pick-up)"
-msgstr ""
-
-#: src/Settings.php:41
-msgid "Required for airport pick-ups"
-msgstr ""
-
-#: src/Settings.php:46
-msgid "Free waiting at airports (minutes)"
-msgstr ""
-
-#: src/Settings.php:49
-msgid "Shown to the customer."
-msgstr ""
-
-#: src/Settings.php:53
-msgid "Free waiting at hotels (minutes)"
-msgstr ""
-
-#: src/Settings.php:59
-msgid "Child seat, each"
-msgstr ""
-
-#: src/Settings.php:62
-msgid "0 = free. Per seat, per trip, in your base currency."
-msgstr ""
-
-#: src/Settings.php:66
-msgid "Extra bag, each"
-msgstr ""
-
-#: src/Settings.php:69
-msgid "For bags above the vehicle’s limit. Per bag, per trip."
-msgstr ""
-
-#: src/Settings.php:73
-msgid "Return trip discount (%)"
-msgstr ""
-
-#: src/Settings.php:76
-msgid "Taken off the return leg when both ways are booked together."
-msgstr ""
-
 #: src/Settings.php:80
-msgid "Deposit (%)"
-msgstr ""
-
-#: src/Settings.php:83
-msgid "0 = customers pay the full price at checkout. Otherwise they can choose to pay this share now and the rest on the day. Payment methods (card, bank transfer, cash on arrival) are set in WooCommerce → Settings → Payments."
-msgstr ""
-
-#: src/Settings.php:118
-msgid "Can’t be negative."
-msgstr ""
-
-#: src/Settings.php:123
-msgid "At most 100%."
-msgstr ""
-
-#: src/Settings.php:138
 msgid "Transfer rules"
 msgstr ""
 
-#: src/Settings.php:140
-msgid "Saved."
+#: src/Settings.php:84
+msgid "Booking rules"
 msgstr ""
 
-#: src/Settings.php:143
-msgid "Please fix the highlighted fields."
+#: src/Settings.php:100
+msgid "Book at least"
 msgstr ""
 
-#: src/Settings.php:152
-msgid "Save"
+#: src/Settings.php:100
+msgid "hours before pick-up"
+msgstr ""
+
+#: src/Settings.php:100
+msgid "Closer bookings are refused with a “please call us” message."
+msgstr ""
+
+#: src/Settings.php:102
+msgid "Flight number for airport pick-ups"
+msgstr ""
+
+#: src/Settings.php:107
+msgid "Required"
+msgstr ""
+
+#: src/Settings.php:108
+msgid "Optional"
+msgstr ""
+
+#: src/Settings.php:113
+msgid "Lets the driver follow delays."
+msgstr ""
+
+#: src/Settings.php:115
+msgid "Free waiting at airports"
+msgstr ""
+
+#: src/Settings.php:115
+#: src/Settings.php:116
+msgid "minutes"
+msgstr ""
+
+#: src/Settings.php:115
+msgid "Shown to the customer."
+msgstr ""
+
+#: src/Settings.php:116
+msgid "Free waiting at hotels"
+msgstr ""
+
+#: src/Settings.php:117
+msgid "Child seat"
+msgstr ""
+
+#: src/Settings.php:117
+msgid "Per seat, per trip. 0 = free."
+msgstr ""
+
+#: src/Settings.php:118
+msgid "Extra bag"
+msgstr ""
+
+#: src/Settings.php:118
+msgid "Per bag above the vehicle’s limit, per trip."
+msgstr ""
+
+#: src/Settings.php:119
+msgid "Return trip discount"
+msgstr ""
+
+#: src/Settings.php:119
+msgid "Taken off the return leg when both ways are booked together."
+msgstr ""
+
+#: src/Settings.php:120
+msgid "Deposit"
+msgstr ""
+
+#: src/Settings.php:120
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day. Payment methods are set in WooCommerce → Settings → Payments."
+msgstr ""
+
+#: src/Settings.php:146
+msgid "One row per tier: cancelling this many days or more before the pick-up costs this share of the price. \"All vehicles\" rows apply to every vehicle without rows of its own. Add travel dates for a season tier. No rows = non-refundable."
+msgstr ""
+
+#: src/Settings.php:147
+msgid "Add tier"
 msgstr ""
 
 #: blocks/transfer-results/editor.js:10

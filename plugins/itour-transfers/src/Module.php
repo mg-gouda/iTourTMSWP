@@ -57,6 +57,7 @@ final class Module extends \ITour\Core\Module {
 			}
 		);
 		( new Booking() )->hooks();
+		add_action( 'init', array( Settings::class, 'register' ), 20 );
 	}
 
 	/**
@@ -143,7 +144,6 @@ final class Module extends \ITour\Core\Module {
 		$pages['settings'] = array(
 			'title'    => __( 'Rules', 'itour-transfers' ),
 			'callback' => array( Settings::class, 'render' ),
-			'load'     => array( Settings::class, 'load' ),
 		);
 		return $pages;
 	}

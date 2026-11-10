@@ -31,7 +31,7 @@ final class Page {
 		$id  = (int) get_the_ID();
 		$c   = Tour::config( $id );
 		$fmt = static fn( $v ): string => itour()->currencies()->format( (float) $v );
-		return (string) $content . '<section class="itour-tour">' . self::facts( $c ) . self::itinerary( $c ) . self::prices( $id, $fmt ) . self::extras( $c, $fmt ) . Products::render_info( $id ) . '</section>';
+		return (string) $content . '<section class="itour-tour">' . self::facts( $c ) . self::itinerary( $c ) . self::prices( $id, $fmt ) . self::extras( $c, $fmt ) . \ITour\Core\Policies::html( \ITour\Core\Policies::of( $id ) ) . Products::render_info( $id ) . '</section>';
 	}
 
 	/**

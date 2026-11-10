@@ -9,7 +9,7 @@
 		var tabs = Array.prototype.slice.call( root.querySelectorAll( '[data-itp-tab]' ) );
 		var state = {}; // section → { busy, again, row }
 		var failed = {};
-		var key = 'itp-tab-' + ( document.body.className.match( /post-type-([\w-]+)/ ) || [ '', '' ] )[ 1 ];
+		var key = 'itp-tab-' + ( root.dataset.screen || ( document.body.className.match( /post-type-([\w-]+)/ ) || [ '', '' ] )[ 1 ] );
 
 		/* Tabs */
 		function show( tab, focus ) {
@@ -77,7 +77,8 @@
 			var pane = root.querySelector( '[data-itp-section="' + section + '"]' );
 			var data = new FormData();
 			data.append( 'action', 'itour_panel_save' );
-			data.append( 'post', post );
+			data.append( 'post', post || '' );
+			data.append( 'screen', root.dataset.screen || '' );
 			data.append( 'section', section );
 			data.append( '_itour_panel_nonce', nonce ? nonce.value : '' );
 			pane.querySelectorAll( '[name^="itp["]' ).forEach( function ( el ) {

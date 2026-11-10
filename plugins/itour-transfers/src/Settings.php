@@ -1,155 +1,164 @@
 <?php
 /**
- * Transfer rules: booking cut-off, flight number, free waiting time, extras and return discount.
+ * Transfers → Rules: a tabbed screen (same panel as the product editors, saves as you go).
+ * Tabs: Booking rules (cut-off, flight number, waiting time, extras, return discount, deposit) and
+ * Cancellation (tiers per vehicle or for all vehicles, core Policies).
  *
  * @package ITour\Transfers
  */
 
 namespace ITour\Transfers;
 
-use ITour\Core\Admin\Fields;
+use ITour\Core\Admin\Panel;
+use ITour\Core\Admin\Rows;
+use ITour\Core\Policies;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * One option, one form (iTour → Transfer rules).
+ * Rules + cancellation tiers.
  */
 final class Settings {
 
 	/**
-	 * Option name.
+	 * Option with the booking rules.
 	 */
 	public const OPTION = 'itour_transfers_settings';
 
 	/**
-	 * Field definitions.
-	 *
-	 * @return array<int,array<string,mixed>>
+	 * Option with the cancellation tiers.
 	 */
-	public static function fields(): array {
+	public const CANCEL = 'itour_transfers_cancel';
+
+	/**
+	 * Defaults.
+	 *
+	 * @return array<string,mixed>
+	 */
+	private static function defaults(): array {
 		return array(
-			array(
-				'key'     => 'min_hours',
-				'label'   => __( 'Book at least (hours before pick-up)', 'itour-transfers' ),
-				'type'    => 'number',
-				'default' => 12,
-			),
-			array(
-				'key'            => 'flight_required',
-				'label'          => __( 'Flight number', 'itour-transfers' ),
-				'type'           => 'checkbox',
-				'checkbox_label' => __( 'Required for airport pick-ups', 'itour-transfers' ),
-				'default'        => 1,
-			),
-			array(
-				'key'     => 'wait_airport',
-				'label'   => __( 'Free waiting at airports (minutes)', 'itour-transfers' ),
-				'type'    => 'number',
-				'default' => 60,
-				'help'    => __( 'Shown to the customer.', 'itour-transfers' ),
-			),
-			array(
-				'key'     => 'wait_hotel',
-				'label'   => __( 'Free waiting at hotels (minutes)', 'itour-transfers' ),
-				'type'    => 'number',
-				'default' => 15,
-			),
-			array(
-				'key'     => 'child_seat_price',
-				'label'   => __( 'Child seat, each', 'itour-transfers' ),
-				'type'    => 'decimal',
-				'default' => '0',
-				'help'    => __( '0 = free. Per seat, per trip, in your base currency.', 'itour-transfers' ),
-			),
-			array(
-				'key'     => 'extra_bag_price',
-				'label'   => __( 'Extra bag, each', 'itour-transfers' ),
-				'type'    => 'decimal',
-				'default' => '0',
-				'help'    => __( 'For bags above the vehicle’s limit. Per bag, per trip.', 'itour-transfers' ),
-			),
-			array(
-				'key'     => 'return_discount',
-				'label'   => __( 'Return trip discount (%)', 'itour-transfers' ),
-				'type'    => 'decimal',
-				'default' => '0',
-				'help'    => __( 'Taken off the return leg when both ways are booked together.', 'itour-transfers' ),
-			),
-			array(
-				'key'     => 'deposit_percent',
-				'label'   => __( 'Deposit (%)', 'itour-transfers' ),
-				'type'    => 'decimal',
-				'default' => '0',
-				'help'    => __( '0 = customers pay the full price at checkout. Otherwise they can choose to pay this share now and the rest on the day. Payment methods (card, bank transfer, cash on arrival) are set in WooCommerce → Settings → Payments.', 'itour-transfers' ),
-			),
+			'min_hours'        => 12,
+			'flight_required'  => 1,
+			'wait_airport'     => 60,
+			'wait_hotel'       => 15,
+			'child_seat_price' => '0',
+			'extra_bag_price'  => '0',
+			'return_discount'  => '0',
+			'deposit_percent'  => '0',
 		);
 	}
 
 	/**
-	 * Saved values with defaults.
+	 * Saved rules with defaults.
 	 *
 	 * @return array<string,mixed>
 	 */
 	public static function get(): array {
-		$defaults = array_column( self::fields(), 'default', 'key' );
-		return array_merge( $defaults, (array) get_option( self::OPTION, array() ) );
+		return array_merge( self::defaults(), (array) get_option( self::OPTION, array() ) );
 	}
 
 	/**
-	 * Errors from the last save attempt.
+	 * Cancellation tiers that apply to a vehicle: its own rows, else the "all vehicles" rows.
 	 *
-	 * @var array<string,string>
+	 * @param int $vehicle Vehicle id.
+	 * @return array<int,array<string,mixed>>
 	 */
-	private static array $errors = array();
-
-	/**
-	 * Save before output.
-	 */
-	public static function load(): void {
-		if ( empty( $_POST['itour_save'] ) || ! current_user_can( ( new Module() )->capability() ) ) {
-			return;
-		}
-		check_admin_referer( 'itour_transfers_settings' );
-		$raw = isset( $_POST['itour'] ) && is_array( $_POST['itour'] ) ? wp_unslash( $_POST['itour'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Fields::clean().
-
-		list( $row, self::$errors ) = Fields::clean( self::fields(), $raw );
-		foreach ( array( 'min_hours', 'wait_airport', 'wait_hotel', 'child_seat_price', 'extra_bag_price', 'return_discount', 'deposit_percent' ) as $k ) {
-			if ( '' !== $row[ $k ] && (float) $row[ $k ] < 0 ) {
-				self::$errors[ $k ] = __( 'Can’t be negative.', 'itour-transfers' );
-			}
-		}
-		foreach ( array( 'return_discount', 'deposit_percent' ) as $k ) {
-			if ( (float) $row[ $k ] > 100 ) {
-				self::$errors[ $k ] = __( 'At most 100%.', 'itour-transfers' );
-			}
-		}
-		if ( self::$errors ) {
-			return;
-		}
-		update_option( self::OPTION, $row, false );
-		wp_safe_redirect( admin_url( 'admin.php?page=itour-transfers-settings&done=saved' ) );
-		exit;
+	public static function cancel_tiers( int $vehicle ): array {
+		$all  = (array) get_option( self::CANCEL, array() );
+		$own  = array_values( array_filter( $all, static fn( $r ) => (string) $vehicle === (string) $r['vehicle'] ) );
+		$base = array_values( array_filter( $all, static fn( $r ) => '' === (string) $r['vehicle'] ) );
+		return $own ? $own : $base;
 	}
 
 	/**
-	 * The form.
+	 * Register the screen (after modules are loaded).
+	 */
+	public static function register(): void {
+		$cols = static fn(): array => Policies::cols( Module::vehicle_options() );
+		Panel::register_screen(
+			'transfers-rules',
+			__( 'Transfer rules', 'itour-transfers' ),
+			( new Module() )->capability(),
+			array(
+				'booking'      => array(
+					'label'  => __( 'Booking rules', 'itour-transfers' ),
+					'render' => static function (): void {
+						$v   = self::get();
+						$num = static fn( string $k, string $min = '0' ): string => Panel::input( 'booking', $k, $v[ $k ], 'number', array( 'min' => $min ) );
+						$dec = static fn( string $k ): string => Panel::input(
+							'booking',
+							$k,
+							$v[ $k ],
+							'number',
+							array(
+								'min'  => '0',
+								'step' => 'any',
+							)
+						);
+						$cur = '<span class="itp-unit">' . esc_html( itour()->currencies()->base() ) . '</span>';
+						// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Panel helpers escape.
+						echo Panel::row( __( 'Book at least', 'itour-transfers' ), $num( 'min_hours' ) . '<span class="itp-unit">' . esc_html__( 'hours before pick-up', 'itour-transfers' ) . '</span>', __( 'Closer bookings are refused with a “please call us” message.', 'itour-transfers' ), 'itp-booking-min_hours' );
+						echo Panel::row(
+							__( 'Flight number for airport pick-ups', 'itour-transfers' ),
+							Panel::choices(
+								'booking',
+								'flight_required',
+								array(
+									'1' => __( 'Required', 'itour-transfers' ),
+									'0' => __( 'Optional', 'itour-transfers' ),
+								),
+								(string) (int) $v['flight_required'],
+								false
+							),
+							__( 'Lets the driver follow delays.', 'itour-transfers' )
+						);
+						echo Panel::row( __( 'Free waiting at airports', 'itour-transfers' ), $num( 'wait_airport' ) . '<span class="itp-unit">' . esc_html__( 'minutes', 'itour-transfers' ) . '</span>', __( 'Shown to the customer.', 'itour-transfers' ), 'itp-booking-wait_airport' );
+						echo Panel::row( __( 'Free waiting at hotels', 'itour-transfers' ), $num( 'wait_hotel' ) . '<span class="itp-unit">' . esc_html__( 'minutes', 'itour-transfers' ) . '</span>', '', 'itp-booking-wait_hotel' );
+						echo Panel::row( __( 'Child seat', 'itour-transfers' ), $dec( 'child_seat_price' ) . $cur, __( 'Per seat, per trip. 0 = free.', 'itour-transfers' ), 'itp-booking-child_seat_price' );
+						echo Panel::row( __( 'Extra bag', 'itour-transfers' ), $dec( 'extra_bag_price' ) . $cur, __( 'Per bag above the vehicle’s limit, per trip.', 'itour-transfers' ), 'itp-booking-extra_bag_price' );
+						echo Panel::row( __( 'Return trip discount', 'itour-transfers' ), $dec( 'return_discount' ) . '<span class="itp-unit">%</span>', __( 'Taken off the return leg when both ways are booked together.', 'itour-transfers' ), 'itp-booking-return_discount' );
+						echo Panel::row( __( 'Deposit', 'itour-transfers' ), $dec( 'deposit_percent' ) . '<span class="itp-unit">%</span>', __( '0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day. Payment methods are set in WooCommerce → Settings → Payments.', 'itour-transfers' ), 'itp-booking-deposit_percent' );
+						// phpcs:enable
+					},
+					'save'   => static function ( int $unused, array $in ): void {
+						$pct = static fn( $x ): string => (string) min( 100, max( 0, round( (float) $x, 2 ) ) );
+						$amt = static fn( $x ): string => (string) max( 0, round( (float) $x, 2 ) );
+						update_option(
+							self::OPTION,
+							array(
+								'min_hours'        => absint( $in['min_hours'] ?? 12 ),
+								'flight_required'  => '1' === (string) ( $in['flight_required'] ?? '1' ) ? 1 : 0,
+								'wait_airport'     => absint( $in['wait_airport'] ?? 60 ),
+								'wait_hotel'       => absint( $in['wait_hotel'] ?? 15 ),
+								'child_seat_price' => $amt( $in['child_seat_price'] ?? 0 ),
+								'extra_bag_price'  => $amt( $in['extra_bag_price'] ?? 0 ),
+								'return_discount'  => $pct( $in['return_discount'] ?? 0 ),
+								'deposit_percent'  => $pct( $in['deposit_percent'] ?? 0 ),
+							),
+							false
+						);
+					},
+				),
+				'cancellation' => array(
+					'label'  => __( 'Cancellation', 'itour-transfers' ),
+					'badge'  => static fn(): string => get_option( self::CANCEL ) ? (string) count( (array) get_option( self::CANCEL ) ) : '',
+					'render' => static function () use ( $cols ): void {
+						echo '<div class="itp-row itp-row--wide"><div class="itp-row-text"><p class="itp-help">' . esc_html__( 'One row per tier: cancelling this many days or more before the pick-up costs this share of the price. "All vehicles" rows apply to every vehicle without rows of its own. Add travel dates for a season tier. No rows = non-refundable.', 'itour-transfers' ) . '</p></div><div class="itp-table-wrap">';
+						Rows::render( Panel::name( 'cancellation', 'rows' ), $cols(), (array) get_option( self::CANCEL, array() ), __( 'Add tier', 'itour-transfers' ) );
+						echo '</div></div>';
+					},
+					'save'   => static function ( int $unused, array $in ) use ( $cols ): void {
+						update_option( self::CANCEL, Policies::clean( $cols(), $in['rows'] ?? array() ), false );
+					},
+				),
+			)
+		);
+	}
+
+	/**
+	 * The admin page.
 	 */
 	public static function render(): void {
-		echo '<div class="wrap itour"><h1>' . esc_html__( 'Transfer rules', 'itour-transfers' ) . '</h1>';
-		if ( isset( $_GET['done'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Saved.', 'itour-transfers' ) . '</p></div>';
-		}
-		if ( self::$errors ) {
-			echo '<div class="notice notice-error"><p>' . esc_html__( 'Please fix the highlighted fields.', 'itour-transfers' ) . '</p></div>';
-		}
-		echo '<form method="post" novalidate>';
-		wp_nonce_field( 'itour_transfers_settings' );
-		$values = self::get();
-		if ( self::$errors && isset( $_POST['itour'] ) && is_array( $_POST['itour'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- checked in load().
-			$values = array_merge( $values, array_map( 'sanitize_text_field', wp_unslash( $_POST['itour'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
-		}
-		Fields::table( self::fields(), $values, self::$errors );
-		submit_button( __( 'Save', 'itour-transfers' ), 'primary', 'itour_save' );
-		echo '</form></div>';
+		Panel::render_screen( 'transfers-rules' );
 	}
 }

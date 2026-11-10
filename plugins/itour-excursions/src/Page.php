@@ -103,6 +103,6 @@ final class Page {
 		if ( $extra ) {
 			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Extras', 'itour-excursions' ) . '</h2><ul class="itour-exc__extras"><li>' . implode( '</li><li>', array_map( 'esc_html', $extra ) ) . '</li></ul>';
 		}
-		return $content . $h . \ITour\Core\Products::render_info( $id ) . Booking::form( $id ) . '</section>';
+		return $content . $h . \ITour\Core\Policies::html( \ITour\Core\Policies::of( $id ) ) . \ITour\Core\Products::render_info( $id ) . Booking::form( $id ) . '</section>';
 	}
 }

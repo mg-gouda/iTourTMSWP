@@ -323,6 +323,7 @@ final class Booking {
 		if ( '' !== $pickup ) {
 			$lines[ __( 'Pick-up', 'itour-excursions' ) ] = $pickup . ( '' !== $p_time ? ' · ' . wp_date( get_option( 'time_format' ), strtotime( substr( $slot, 0, 10 ) . ' ' . $p_time . ' ' . wp_timezone_string() ) ) : '' );
 		}
+		$lines[ __( 'Cancellation', 'itour-excursions' ) ] = \ITour\Core\Policies::summary( \ITour\Core\Policies::of( $post ), substr( $slot, 0, 10 ) );
 		$notes = mb_substr( sanitize_textarea_field( (string) ( $p['notes'] ?? '' ) ), 0, 500 );
 		if ( '' !== $notes ) {
 			$lines[ __( 'Notes', 'itour-excursions' ) ] = $notes;

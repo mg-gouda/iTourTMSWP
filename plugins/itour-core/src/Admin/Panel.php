@@ -37,7 +37,9 @@ final class Panel {
 		if ( ! self::$panels ) {
 			add_action( 'add_meta_boxes', array( self::class, 'box' ) );
 			add_action( 'save_post', array( self::class, 'save_post' ) );
-			add_action( 'wp_ajax_itour_panel_save', array( self::class, 'ajax' ) );
+			if ( ! self::$screens ) {
+				add_action( 'wp_ajax_itour_panel_save', array( self::class, 'ajax' ) );
+			}
 		}
 		self::$panels[ $post_type ] = array(
 			'title'    => $title,
@@ -73,6 +75,61 @@ final class Panel {
 	 */
 	public static function render( \WP_Post $post ): void {
 		$panel = self::$panels[ $post->post_type ];
+		self::markup( $panel['title'], $panel['sections'], $post, 'itour_panel_' . $post->ID, ' data-post="' . (int) $post->ID . '"' );
+	}
+
+	/**
+	 * Settings screens (no post) that use the same tabs and save-as-you-go, e.g. Transfers → Rules.
+	 *
+	 * @var array<string,array{title:string,cap:string,sections:array<string,array<string,mixed>>}>
+	 */
+	private static array $screens = array();
+
+	/**
+	 * Add a settings screen panel. Its sections get `null` instead of a post and save with post id 0.
+	 *
+	 * @param string                            $id       Screen id.
+	 * @param string                            $title    Screen title.
+	 * @param string                            $cap      Capability needed to save.
+	 * @param array<string,array<string,mixed>> $sections Sections in tab order.
+	 */
+	public static function register_screen( string $id, string $title, string $cap, array $sections ): void {
+		if ( ! self::$panels && ! self::$screens ) {
+			add_action( 'wp_ajax_itour_panel_save', array( self::class, 'ajax' ) );
+		}
+		self::$screens[ $id ] = array(
+			'title'    => $title,
+			'cap'      => $cap,
+			'sections' => $sections,
+		);
+	}
+
+	/**
+	 * Print a settings screen panel (call from the admin page callback).
+	 *
+	 * @param string $id Screen id.
+	 */
+	public static function render_screen( string $id ): void {
+		$s = self::$screens[ $id ];
+		echo '<div class="wrap itp-screen"><h1>' . esc_html( $s['title'] ) . '</h1>';
+		self::markup( $s['title'], $s['sections'], null, 'itour_panel_screen_' . $id, ' data-screen="' . esc_attr( $id ) . '"' );
+		echo '</div>';
+	}
+
+	/**
+	 * Shared markup: bar, tab rail, panes.
+	 *
+	 * @param string                            $title    Accessible name of the tab list.
+	 * @param array<string,array<string,mixed>> $sections Sections.
+	 * @param \WP_Post|null                     $post     Post, or null on a settings screen.
+	 * @param string                            $nonce    Nonce action.
+	 * @param string                            $attrs    Data attributes for the root (escaped).
+	 */
+	private static function markup( string $title, array $sections, ?\WP_Post $post, string $nonce, string $attrs ): void {
+		$panel = array(
+			'title'    => $title,
+			'sections' => $sections,
+		);
 		wp_enqueue_style( 'itour-panel', plugins_url( 'assets/panel.css', ITOUR_CORE_FILE ), array(), ITOUR_CORE_VERSION );
 		wp_enqueue_script( 'itour-panel', plugins_url( 'assets/panel.js', ITOUR_CORE_FILE ), array(), ITOUR_CORE_VERSION, true );
 		wp_localize_script(
@@ -86,14 +143,14 @@ final class Panel {
 				'retry'  => __( 'Retry', 'itour-core' ),
 			)
 		);
-		wp_nonce_field( 'itour_panel_' . $post->ID, '_itour_panel_nonce' );
+		wp_nonce_field( $nonce, '_itour_panel_nonce' );
 		$first = (string) array_key_first( $panel['sections'] );
-		echo '<div class="itp" data-itp data-post="' . (int) $post->ID . '">';
+		echo '<div class="itp" data-itp' . $attrs . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by callers.
 		echo '<div class="itp-bar"><p class="itp-hint">' . esc_html__( 'Changes save as you go.', 'itour-core' ) . '</p>';
 		echo '<p class="itp-status" role="status" aria-live="polite" data-itp-status></p></div>';
 		echo '<div class="itp-split"><div class="itp-nav" role="tablist" aria-orientation="vertical" aria-label="' . esc_attr( $panel['title'] ) . '">';
 		foreach ( $panel['sections'] as $id => $s ) {
-			$badge = isset( $s['badge'] ) ? (string) ( $s['badge'] )( $post->ID ) : '';
+			$badge = isset( $s['badge'] ) ? (string) ( $s['badge'] )( $post ? $post->ID : 0 ) : '';
 			printf(
 				'<button type="button" role="tab" class="itp-tab" id="itp-tab-%1$s" aria-controls="itp-sec-%1$s" aria-selected="%2$s" tabindex="%3$s" data-itp-tab="%1$s"><span>%4$s</span><span class="itp-badge" data-itp-badge="%1$s"%5$s>%6$s</span></button>',
 				esc_attr( $id ),
@@ -196,8 +253,18 @@ final class Panel {
 	 * Save one section from the panel (admin-ajax). Answers with the section's new badge.
 	 */
 	public static function ajax(): void {
-		$post_id = absint( $_POST['post'] ?? 0 );
 		$section = sanitize_key( wp_unslash( $_POST['section'] ?? '' ) );
+		$screen  = sanitize_key( wp_unslash( $_POST['screen'] ?? '' ) );
+		if ( '' !== $screen ) {
+			$sc = self::$screens[ $screen ] ?? null;
+			if ( ! $sc || ! isset( $sc['sections'][ $section ] ) || ! current_user_can( $sc['cap'] ) || ! check_ajax_referer( 'itour_panel_screen_' . $screen, '_itour_panel_nonce', false ) ) {
+				wp_send_json_error( array( 'message' => __( 'You can’t edit this item, or the page expired. Reload it.', 'itour-core' ) ), 403 );
+			}
+			$s = $sc['sections'][ $section ];
+			( $s['save'] )( 0, self::input_for( $section ) );
+			wp_send_json_success( array( 'badge' => isset( $s['badge'] ) ? (string) ( $s['badge'] )( 0 ) : '' ) );
+		}
+		$post_id = absint( $_POST['post'] ?? 0 );
 		$panel   = self::$panels[ (string) get_post_type( $post_id ) ] ?? null;
 		if ( ! $panel || ! isset( $panel['sections'][ $section ] ) || ! current_user_can( 'edit_post', $post_id ) || ! check_ajax_referer( 'itour_panel_' . $post_id, '_itour_panel_nonce', false ) ) {
 			wp_send_json_error( array( 'message' => __( 'You can’t edit this item, or the page expired. Reload it.', 'itour-core' ) ), 403 );

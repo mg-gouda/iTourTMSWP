@@ -61,22 +61,22 @@ msgstr[5] "%1$s ← %2$s، %3$d راكب"
 msgid "Up to %1$d passengers · %2$d bags"
 msgstr "حتى %1$d ركاب · %2$d حقائب"
 
-#: blocks/transfer-results/render.php:55
+#: blocks/transfer-results/render.php:56
 #: src/Booking.php:83
 msgid "One way"
 msgstr "اتجاه واحد"
 
-#: blocks/transfer-results/render.php:56
+#: blocks/transfer-results/render.php:57
 #: src/Booking.php:84
 msgid "Return"
 msgstr "ذهاب وعودة"
 
-#: blocks/transfer-results/render.php:58
+#: blocks/transfer-results/render.php:59
 msgid "Book"
 msgstr "احجز"
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: blocks/transfer-results/render.php:67
+#: blocks/transfer-results/render.php:68
 #, php-format
 msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr "السعر لكل مركبة لا لكل شخص. الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق."
@@ -248,7 +248,6 @@ msgstr "الاستقبال"
 
 #: src/Booking.php:266
 #: src/Module.php:215
-#: src/Settings.php:39
 msgid "Flight number"
 msgstr "رقم الرحلة"
 
@@ -267,26 +266,31 @@ msgstr "رقم رحلة العودة"
 msgid "Notes"
 msgstr "ملاحظات"
 
+#: src/Booking.php:281
+#: src/Settings.php:143
+msgid "Cancellation"
+msgstr "الإلغاء"
+
 #: src/Module.php:37
-#: src/Module.php:116
+#: src/Module.php:117
 #: src/Module.php:455
 #: src/Module.php:502
 msgid "Transfers"
 msgstr "التنقلات"
 
-#: src/Module.php:131
+#: src/Module.php:132
 msgid "Bookings"
 msgstr "الحجوزات"
 
-#: src/Module.php:138
+#: src/Module.php:139
 msgid "Vehicles"
 msgstr "المركبات"
 
-#: src/Module.php:138
+#: src/Module.php:139
 msgid "Prices"
 msgstr "الأسعار"
 
-#: src/Module.php:144
+#: src/Module.php:145
 msgid "Rules"
 msgstr "القواعد"
 
@@ -449,81 +453,98 @@ msgstr "صفحة نتائج البحث"
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr "الصفحة التي ترسل إليها أداة الحجز عمليات البحث عن التنقلات. ضع عليها كتلة «نتائج التنقلات». اتركها فارغة لاستخدام صفحة التنقلات."
 
-#: src/Settings.php:33
-msgid "Book at least (hours before pick-up)"
-msgstr "الحجز قبل الاستقبال بـ (ساعات) على الأقل"
-
-#: src/Settings.php:41
-msgid "Required for airport pick-ups"
-msgstr "مطلوب للاستقبال من المطار"
-
-#: src/Settings.php:46
-msgid "Free waiting at airports (minutes)"
-msgstr "الانتظار المجاني في المطارات (دقائق)"
-
-#: src/Settings.php:49
-msgid "Shown to the customer."
-msgstr "يظهر للعميل."
-
-#: src/Settings.php:53
-msgid "Free waiting at hotels (minutes)"
-msgstr "الانتظار المجاني في الفنادق (دقائق)"
-
-#: src/Settings.php:59
-msgid "Child seat, each"
-msgstr "مقعد طفل، للواحد"
-
-#: src/Settings.php:62
-msgid "0 = free. Per seat, per trip, in your base currency."
-msgstr "0 = مجاني. لكل مقعد ولكل رحلة، بعملتك الأساسية."
-
-#: src/Settings.php:66
-msgid "Extra bag, each"
-msgstr "حقيبة إضافية، للواحدة"
-
-#: src/Settings.php:69
-msgid "For bags above the vehicle’s limit. Per bag, per trip."
-msgstr "للحقائب الزائدة عن حد المركبة. لكل حقيبة ولكل رحلة."
-
-#: src/Settings.php:73
-msgid "Return trip discount (%)"
-msgstr "خصم رحلة العودة (%)"
-
-#: src/Settings.php:76
-msgid "Taken off the return leg when both ways are booked together."
-msgstr "يُخصم من رحلة العودة عند حجز الاتجاهين معًا."
-
 #: src/Settings.php:80
-msgid "Deposit (%)"
-msgstr "العربون (%)"
-
-#: src/Settings.php:83
-msgid "0 = customers pay the full price at checkout. Otherwise they can choose to pay this share now and the rest on the day. Payment methods (card, bank transfer, cash on arrival) are set in WooCommerce → Settings → Payments."
-msgstr "0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي يوم الرحلة. طرق الدفع (البطاقة، التحويل البنكي، الدفع عند الوصول) تُضبط من WooCommerce ← الإعدادات ← المدفوعات."
-
-#: src/Settings.php:118
-msgid "Can’t be negative."
-msgstr "لا يمكن أن تكون سالبة."
-
-#: src/Settings.php:123
-msgid "At most 100%."
-msgstr "100% كحد أقصى."
-
-#: src/Settings.php:138
 msgid "Transfer rules"
 msgstr "قواعد التنقلات"
 
-#: src/Settings.php:140
-msgid "Saved."
-msgstr "تم الحفظ."
+#: src/Settings.php:84
+msgid "Booking rules"
+msgstr "قواعد الحجز"
 
-#: src/Settings.php:143
-msgid "Please fix the highlighted fields."
-msgstr "يرجى تصحيح الحقول المحددة."
+#: src/Settings.php:100
+msgid "Book at least"
+msgstr "الحجز قبل"
 
-#: src/Settings.php:152
-msgid "Save"
-msgstr "حفظ"
+#: src/Settings.php:100
+msgid "hours before pick-up"
+msgstr "ساعات من الاستقبال"
+
+#: src/Settings.php:100
+msgid "Closer bookings are refused with a “please call us” message."
+msgstr "الحجوزات الأقرب تُرفض برسالة «يرجى الاتصال بنا»."
+
+#: src/Settings.php:102
+msgid "Flight number for airport pick-ups"
+msgstr "رقم الرحلة للاستقبال من المطار"
+
+#: src/Settings.php:107
+msgid "Required"
+msgstr "مطلوب"
+
+#: src/Settings.php:108
+msgid "Optional"
+msgstr "اختياري"
+
+#: src/Settings.php:113
+msgid "Lets the driver follow delays."
+msgstr "ليتابع السائق أي تأخير."
+
+#: src/Settings.php:115
+msgid "Free waiting at airports"
+msgstr "الانتظار المجاني في المطارات"
+
+#: src/Settings.php:115
+#: src/Settings.php:116
+msgid "minutes"
+msgstr "دقيقة"
+
+#: src/Settings.php:115
+msgid "Shown to the customer."
+msgstr "يظهر للعميل."
+
+#: src/Settings.php:116
+msgid "Free waiting at hotels"
+msgstr "الانتظار المجاني في الفنادق"
+
+#: src/Settings.php:117
+msgid "Child seat"
+msgstr "مقعد طفل"
+
+#: src/Settings.php:117
+msgid "Per seat, per trip. 0 = free."
+msgstr "لكل مقعد ولكل رحلة. 0 = مجاني."
+
+#: src/Settings.php:118
+msgid "Extra bag"
+msgstr "حقيبة إضافية"
+
+#: src/Settings.php:118
+msgid "Per bag above the vehicle’s limit, per trip."
+msgstr "لكل حقيبة فوق حد المركبة ولكل رحلة."
+
+#: src/Settings.php:119
+msgid "Return trip discount"
+msgstr "خصم رحلة العودة"
+
+#: src/Settings.php:119
+msgid "Taken off the return leg when both ways are booked together."
+msgstr "يُخصم من رحلة العودة عند حجز الاتجاهين معًا."
+
+#: src/Settings.php:120
+msgid "Deposit"
+msgstr "العربون"
+
+#: src/Settings.php:120
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day. Payment methods are set in WooCommerce → Settings → Payments."
+msgstr "0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي يوم الرحلة. طرق الدفع تُضبط من WooCommerce ← الإعدادات ← المدفوعات."
+
+#: src/Settings.php:146
+msgid "One row per tier: cancelling this many days or more before the pick-up costs this share of the price. \"All vehicles\" rows apply to every vehicle without rows of its own. Add travel dates for a season tier. No rows = non-refundable."
+msgstr "صف لكل شريحة: الإلغاء قبل الاستقبال بهذا العدد من الأيام أو أكثر يكلف هذه النسبة من السعر. صفوف «كل المركبات» تنطبق على كل مركبة ليس لها صفوف خاصة. أضف تواريخ سفر لشريحة موسمية. بلا صفوف = غير قابل للاسترداد."
+
+#: src/Settings.php:147
+msgid "Add tier"
+msgstr "إضافة شريحة"
 
 #: blocks/transfer-results/editor.js:10
 msgid "Transfer results"

@@ -51,7 +51,8 @@ if ( '' !== $itour_q['from'] && '' !== $itour_q['to'] ) {
 			$itour_open   = (int) $itour_v->id === $itour_pick;
 			$itour_out   .= '<li class="itour-tr__item' . ( $itour_open ? ' is-open' : '' ) . '"><div class="itour-tr__vehicle"><strong>' . esc_html( $itour_v->name ) . '</strong><span>'
 				/* translators: 1: passengers, 2: bags. */
-				. esc_html( sprintf( __( 'Up to %1$d passengers · %2$d bags', 'itour-transfers' ), $itour_v->max_pax, $itour_v->max_bags ) ) . '</span></div>'
+				. esc_html( sprintf( __( 'Up to %1$d passengers · %2$d bags', 'itour-transfers' ), $itour_v->max_pax, $itour_v->max_bags ) ) . '</span>'
+				. ( '' !== $itour_q['date'] ? '<span class="itour-tr__cancel">' . esc_html( \ITour\Core\Policies::summary( \ITour\Transfers\Settings::cancel_tiers( (int) $itour_v->id ), $itour_q['date'] ) ) . '</span>' : '' ) . '</div>'
 				. '<div class="itour-tr__price"><span>' . esc_html__( 'One way', 'itour-transfers' ) . '</span><strong>' . esc_html( itour()->currencies()->format( $itour_row['price'] ) ) . '</strong></div>'
 				. '<div class="itour-tr__price"><span>' . esc_html__( 'Return', 'itour-transfers' ) . '</span><strong>' . esc_html( itour()->currencies()->format( (float) $itour_return ) ) . '</strong></div>';
 			if ( Booking::available() && ! $itour_open ) {

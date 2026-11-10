@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:30:48+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:42:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-excursions\n"
@@ -65,31 +65,31 @@ msgstr ""
 
 #: src/Booking.php:160
 #: src/Booking.php:317
-#: src/Booking.php:451
+#: src/Booking.php:452
 msgid "Trip type"
 msgstr ""
 
 #: src/Booking.php:169
 #: src/Booking.php:318
-#: src/Booking.php:425
-#: src/Booking.php:452
+#: src/Booking.php:426
+#: src/Booking.php:453
 #: src/Editor.php:132
 #: src/Module.php:180
 msgid "Date"
 msgstr ""
 
 #: src/Booking.php:175
-#: src/Booking.php:453
+#: src/Booking.php:454
 msgid "Adults"
 msgstr ""
 
 #: src/Booking.php:176
-#: src/Booking.php:454
+#: src/Booking.php:455
 msgid "Children (2–11)"
 msgstr ""
 
 #: src/Booking.php:177
-#: src/Booking.php:455
+#: src/Booking.php:456
 msgid "Infants (0–1)"
 msgstr ""
 
@@ -110,8 +110,8 @@ msgstr ""
 
 #: src/Booking.php:200
 #: src/Booking.php:324
-#: src/Booking.php:428
-#: src/Booking.php:456
+#: src/Booking.php:429
+#: src/Booking.php:457
 #: src/Editor.php:258
 #: src/Page.php:53
 msgid "Pick-up"
@@ -130,7 +130,7 @@ msgid "Hotel name or address"
 msgstr ""
 
 #: src/Booking.php:219
-#: src/Booking.php:458
+#: src/Booking.php:459
 #: src/Editor.php:315
 msgid "Add-ons"
 msgstr ""
@@ -158,8 +158,8 @@ msgid "per person"
 msgstr ""
 
 #: src/Booking.php:228
-#: src/Booking.php:328
-#: src/Booking.php:461
+#: src/Booking.php:329
+#: src/Booking.php:462
 msgid "Notes"
 msgstr ""
 
@@ -229,55 +229,59 @@ msgstr ""
 msgid "We have no price for this group size and type. Contact us for a quote."
 msgstr ""
 
-#: src/Booking.php:413
-msgid "excursion booking"
+#: src/Booking.php:326
+msgid "Cancellation"
 msgstr ""
 
 #: src/Booking.php:414
+msgid "excursion booking"
+msgstr ""
+
+#: src/Booking.php:415
 msgid "Excursion bookings"
 msgstr ""
 
-#: src/Booking.php:422
+#: src/Booking.php:423
 msgid "No excursion bookings yet. They appear here when a customer checks out."
 msgstr ""
 
-#: src/Booking.php:424
-#: src/Booking.php:449
+#: src/Booking.php:425
+#: src/Booking.php:450
 msgid "Booking"
 msgstr ""
 
-#: src/Booking.php:426
-#: src/Booking.php:450
+#: src/Booking.php:427
+#: src/Booking.php:451
 msgid "Excursion"
 msgstr ""
 
-#: src/Booking.php:427
+#: src/Booking.php:428
 #: src/Module.php:186
 msgid "Travellers"
 msgstr ""
 
-#: src/Booking.php:429
+#: src/Booking.php:430
 msgid "Order status"
 msgstr ""
 
-#: src/Booking.php:445
+#: src/Booking.php:446
 msgid "Open the order (customer, payment, status)"
 msgstr ""
 
-#: src/Booking.php:457
+#: src/Booking.php:458
 #: src/Editor.php:105
 msgid "Pick-up time"
 msgstr ""
 
-#: src/Booking.php:464
+#: src/Booking.php:465
 msgid "Total"
 msgstr ""
 
-#: src/Booking.php:465
+#: src/Booking.php:466
 msgid "Paid at checkout"
 msgstr ""
 
-#: src/Booking.php:466
+#: src/Booking.php:467
 msgid "Seats"
 msgstr ""
 

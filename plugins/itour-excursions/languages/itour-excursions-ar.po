@@ -63,31 +63,31 @@ msgstr "يرجى مراجعة الحقول المحددة."
 
 #: src/Booking.php:160
 #: src/Booking.php:317
-#: src/Booking.php:451
+#: src/Booking.php:452
 msgid "Trip type"
 msgstr "نوع الرحلة"
 
 #: src/Booking.php:169
 #: src/Booking.php:318
-#: src/Booking.php:425
-#: src/Booking.php:452
+#: src/Booking.php:426
+#: src/Booking.php:453
 #: src/Editor.php:132
 #: src/Module.php:180
 msgid "Date"
 msgstr "التاريخ"
 
 #: src/Booking.php:175
-#: src/Booking.php:453
+#: src/Booking.php:454
 msgid "Adults"
 msgstr "البالغون"
 
 #: src/Booking.php:176
-#: src/Booking.php:454
+#: src/Booking.php:455
 msgid "Children (2–11)"
 msgstr "الأطفال (2–11)"
 
 #: src/Booking.php:177
-#: src/Booking.php:455
+#: src/Booking.php:456
 msgid "Infants (0–1)"
 msgstr "الرضّع (0–1)"
 
@@ -108,8 +108,8 @@ msgstr "سأقابلكم عند %s"
 
 #: src/Booking.php:200
 #: src/Booking.php:324
-#: src/Booking.php:428
-#: src/Booking.php:456
+#: src/Booking.php:429
+#: src/Booking.php:457
 #: src/Editor.php:258
 #: src/Page.php:53
 msgid "Pick-up"
@@ -128,7 +128,7 @@ msgid "Hotel name or address"
 msgstr "اسم الفندق أو العنوان"
 
 #: src/Booking.php:219
-#: src/Booking.php:458
+#: src/Booking.php:459
 #: src/Editor.php:315
 msgid "Add-ons"
 msgstr "الإضافات"
@@ -156,8 +156,8 @@ msgid "per person"
 msgstr "للفرد"
 
 #: src/Booking.php:228
-#: src/Booking.php:328
-#: src/Booking.php:461
+#: src/Booking.php:329
+#: src/Booking.php:462
 msgid "Notes"
 msgstr "ملاحظات"
 
@@ -231,55 +231,59 @@ msgstr "اختر طريقة الاستقبال."
 msgid "We have no price for this group size and type. Contact us for a quote."
 msgstr "ليس لدينا سعر لهذا الحجم والنوع من المجموعات. تواصل معنا لعرض سعر."
 
-#: src/Booking.php:413
+#: src/Booking.php:326
+msgid "Cancellation"
+msgstr "الإلغاء"
+
+#: src/Booking.php:414
 msgid "excursion booking"
 msgstr "حجز رحلة"
 
-#: src/Booking.php:414
+#: src/Booking.php:415
 msgid "Excursion bookings"
 msgstr "حجوزات الرحلات"
 
-#: src/Booking.php:422
+#: src/Booking.php:423
 msgid "No excursion bookings yet. They appear here when a customer checks out."
 msgstr "لا توجد حجوزات رحلات بعد. تظهر هنا عندما يُتم العميل الدفع."
 
-#: src/Booking.php:424
-#: src/Booking.php:449
+#: src/Booking.php:425
+#: src/Booking.php:450
 msgid "Booking"
 msgstr "الحجز"
 
-#: src/Booking.php:426
-#: src/Booking.php:450
+#: src/Booking.php:427
+#: src/Booking.php:451
 msgid "Excursion"
 msgstr "الرحلة"
 
-#: src/Booking.php:427
+#: src/Booking.php:428
 #: src/Module.php:186
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Booking.php:429
+#: src/Booking.php:430
 msgid "Order status"
 msgstr "حالة الطلب"
 
-#: src/Booking.php:445
+#: src/Booking.php:446
 msgid "Open the order (customer, payment, status)"
 msgstr "افتح الطلب (العميل، الدفع، الحالة)"
 
-#: src/Booking.php:457
+#: src/Booking.php:458
 #: src/Editor.php:105
 msgid "Pick-up time"
 msgstr "وقت الاستقبال"
 
-#: src/Booking.php:464
+#: src/Booking.php:465
 msgid "Total"
 msgstr "الإجمالي"
 
-#: src/Booking.php:465
+#: src/Booking.php:466
 msgid "Paid at checkout"
 msgstr "المدفوع عند الدفع"
 
-#: src/Booking.php:466
+#: src/Booking.php:467
 msgid "Seats"
 msgstr "المقاعد"
 
