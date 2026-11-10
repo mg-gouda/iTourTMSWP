@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:42:31+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:57:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-transfers\n"
@@ -98,7 +98,7 @@ msgid "Trip"
 msgstr ""
 
 #: src/Booking.php:87
-#: src/Module.php:477
+#: src/Module.php:478
 msgid "Pick-up date"
 msgstr ""
 
@@ -128,14 +128,14 @@ msgstr ""
 
 #: src/Booking.php:99
 #: src/Booking.php:275
-#: src/Module.php:220
+#: src/Module.php:221
 msgid "Child seats"
 msgstr ""
 
 #: src/Booking.php:100
 #: src/Booking.php:277
-#: src/Module.php:221
-#: src/Module.php:250
+#: src/Module.php:222
+#: src/Module.php:251
 msgid "Bags"
 msgstr ""
 
@@ -222,45 +222,45 @@ msgid "Transfer: %1$s → %2$s"
 msgstr ""
 
 #: src/Booking.php:261
-#: src/Module.php:188
-#: src/Module.php:218
-#: src/Module.php:248
-#: src/Module.php:307
-#: src/Module.php:332
+#: src/Module.php:189
+#: src/Module.php:219
+#: src/Module.php:249
+#: src/Module.php:308
+#: src/Module.php:333
 msgid "Vehicle"
 msgstr ""
 
 #: src/Booking.php:262
-#: src/Module.php:189
-#: src/Module.php:219
-#: src/Module.php:249
-#: src/Module.php:483
+#: src/Module.php:190
+#: src/Module.php:220
+#: src/Module.php:250
+#: src/Module.php:484
 msgid "Passengers"
 msgstr ""
 
 #: src/Booking.php:263
-#: src/Module.php:186
-#: src/Module.php:214
+#: src/Module.php:187
+#: src/Module.php:215
 msgid "Pick-up"
 msgstr ""
 
 #: src/Booking.php:266
-#: src/Module.php:215
+#: src/Module.php:216
 msgid "Flight number"
 msgstr ""
 
 #: src/Booking.php:269
-#: src/Module.php:216
+#: src/Module.php:217
 msgid "Return pick-up"
 msgstr ""
 
 #: src/Booking.php:271
-#: src/Module.php:217
+#: src/Module.php:218
 msgid "Return flight number"
 msgstr ""
 
 #: src/Booking.php:279
-#: src/Module.php:224
+#: src/Module.php:225
 msgid "Notes"
 msgstr ""
 
@@ -271,8 +271,8 @@ msgstr ""
 
 #: src/Module.php:37
 #: src/Module.php:117
-#: src/Module.php:455
-#: src/Module.php:502
+#: src/Module.php:456
+#: src/Module.php:503
 msgid "Transfers"
 msgstr ""
 
@@ -292,162 +292,169 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: src/Module.php:174
-msgid "transfer booking"
+#: src/Module.php:148
+msgid "Import / export"
 msgstr ""
 
 #: src/Module.php:175
+msgid "transfer booking"
+msgstr ""
+
+#: src/Module.php:176
 msgid "Transfer bookings"
 msgstr ""
 
-#: src/Module.php:183
+#: src/Module.php:184
 msgid "No transfer bookings yet. They appear here when a customer checks out."
 msgstr ""
 
-#: src/Module.php:185
-#: src/Module.php:211
+#: src/Module.php:186
+#: src/Module.php:212
 msgid "Booking"
 msgstr ""
 
-#: src/Module.php:187
+#: src/Module.php:188
 msgid "Route"
 msgstr ""
 
-#: src/Module.php:190
+#: src/Module.php:191
 msgid "Order status"
 msgstr ""
 
-#: src/Module.php:207
+#: src/Module.php:208
 msgid "Open the order (customer, payment, status)"
 msgstr ""
 
-#: src/Module.php:212
-#: src/Module.php:461
+#: src/Module.php:213
+#: src/Module.php:462
 msgid "From"
 msgstr ""
 
-#: src/Module.php:213
-#: src/Module.php:469
+#: src/Module.php:214
+#: src/Module.php:470
 msgid "To"
 msgstr ""
 
-#: src/Module.php:227
+#: src/Module.php:228
 msgid "Total"
 msgstr ""
 
-#: src/Module.php:228
+#: src/Module.php:229
 msgid "Paid at checkout"
 msgstr ""
 
-#: src/Module.php:229
+#: src/Module.php:230
 msgid "Currency"
 msgstr ""
 
-#: src/Module.php:242
+#: src/Module.php:243
 msgid "vehicle"
 msgstr ""
 
-#: src/Module.php:243
+#: src/Module.php:244
 msgid "Transfer vehicles"
 msgstr ""
 
-#: src/Module.php:246
+#: src/Module.php:247
 msgid "No vehicles yet. Add the cars you sell, e.g. Sedan (3 passengers), Van (7), Minibus (14), Bus (28)."
 msgstr ""
 
-#: src/Module.php:251
-#: src/Module.php:283
+#: src/Module.php:252
+#: src/Module.php:284
 msgid "Active"
 msgstr ""
 
-#: src/Module.php:256
+#: src/Module.php:257
 msgid "Name"
 msgstr ""
 
-#: src/Module.php:262
+#: src/Module.php:263
 msgid "Maximum passengers"
 msgstr ""
 
-#: src/Module.php:269
+#: src/Module.php:270
 msgid "Bags included"
 msgstr ""
 
-#: src/Module.php:272
+#: src/Module.php:273
 msgid "Bags above this pay the extra luggage fee (Transfer rules)."
 msgstr ""
 
-#: src/Module.php:276
+#: src/Module.php:277
 msgid "Order"
 msgstr ""
 
-#: src/Module.php:279
+#: src/Module.php:280
 msgid "Lower numbers show first."
 msgstr ""
 
-#: src/Module.php:299
+#: src/Module.php:300
 msgid "price"
 msgstr ""
 
-#: src/Module.php:300
+#: src/Module.php:301
+#: src/Sheet.php:31
 msgid "Transfer prices"
 msgstr ""
 
-#: src/Module.php:303
+#: src/Module.php:304
 msgid "No prices yet. Set up zones under Location Tree and vehicles under Transfer vehicles, then add a price per route and vehicle. A price works both ways unless you add the return route separately."
 msgstr ""
 
-#: src/Module.php:305
-#: src/Module.php:318
+#: src/Module.php:306
+#: src/Module.php:319
+#: src/Sheet.php:48
 msgid "From zone"
 msgstr ""
 
-#: src/Module.php:306
-#: src/Module.php:325
+#: src/Module.php:307
+#: src/Module.php:326
+#: src/Sheet.php:49
 msgid "To zone"
 msgstr ""
 
-#: src/Module.php:308
-#: src/Module.php:339
+#: src/Module.php:309
+#: src/Module.php:340
 msgid "Price per vehicle"
 msgstr ""
 
-#: src/Module.php:313
+#: src/Module.php:314
 msgid "This route already has a price for this vehicle."
 msgstr ""
 
-#: src/Module.php:342
+#: src/Module.php:343
 msgid "One way, in your base currency (iTour → Company)."
 msgstr ""
 
-#: src/Module.php:456
+#: src/Module.php:457
 msgid "See prices"
 msgstr ""
 
-#: src/Module.php:463
+#: src/Module.php:464
 msgid "Airport, hotel or city"
 msgstr ""
 
-#: src/Module.php:471
+#: src/Module.php:472
 msgid "Hotel or address"
 msgstr ""
 
-#: src/Module.php:503
+#: src/Module.php:504
 msgid "Pages used by Transfers. Prices, vehicles and booking rules are under the iTour menu."
 msgstr ""
 
-#: src/Module.php:507
+#: src/Module.php:508
 msgid "Transfers page"
 msgstr ""
 
-#: src/Module.php:510
+#: src/Module.php:511
 msgid "The page that explains and books transfers."
 msgstr ""
 
-#: src/Module.php:513
+#: src/Module.php:514
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:516
+#: src/Module.php:517
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr ""
 
@@ -542,6 +549,38 @@ msgstr ""
 
 #: src/Settings.php:147
 msgid "Add tier"
+msgstr ""
+
+#: src/Sheet.php:33
+msgid "One route per row: the two zones, then the price per vehicle (one way, per vehicle, in your base currency). Vehicles and zones must exist first (Vehicles, Location Tree). A route priced one way also serves the way back unless the return route has its own row."
+msgstr ""
+
+#: src/Sheet.php:48
+#: src/Sheet.php:49
+msgid "A zone name from Location Tree."
+msgstr ""
+
+#. translators: %s: vehicle name.
+#: src/Sheet.php:55
+#, php-format
+msgid "Price: %s"
+msgstr ""
+
+#. translators: %s: vehicle name.
+#: src/Sheet.php:55
+msgid "One way, per vehicle. Empty = keep the saved price; - = no price for this vehicle."
+msgstr ""
+
+#. translators: 1: column, 2: value.
+#: src/Sheet.php:97
+#, php-format
+msgid "%1$s “%2$s” isn’t a zone in Location Tree."
+msgstr ""
+
+#. translators: 1: column, 2: value.
+#: src/Sheet.php:108
+#, php-format
+msgid "%1$s: “%2$s” isn’t a price."
 msgstr ""
 
 #: blocks/transfer-results/editor.js:10

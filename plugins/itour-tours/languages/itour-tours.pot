@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:42:29+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:56:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-tours\n"
@@ -168,6 +168,7 @@ msgid "— Choose —"
 msgstr ""
 
 #: src/Editor.php:207
+#: src/Sheet.php:49
 msgid "Main destination"
 msgstr ""
 
@@ -189,6 +190,7 @@ msgstr ""
 
 #: src/Editor.php:224
 #: src/Page.php:55
+#: src/Sheet.php:51
 msgid "Booking"
 msgstr ""
 
@@ -221,6 +223,7 @@ msgid "any"
 msgstr ""
 
 #: src/Editor.php:274
+#: src/Sheet.php:53
 msgid "How it starts"
 msgstr ""
 
@@ -237,6 +240,7 @@ msgid "Weekdays: the customer picks any date that falls on one of them. Fixed: o
 msgstr ""
 
 #: src/Editor.php:287
+#: src/Sheet.php:54
 msgid "Start days"
 msgstr ""
 
@@ -261,6 +265,7 @@ msgid "Add departure"
 msgstr ""
 
 #: src/Editor.php:306
+#: src/Sheet.php:57
 msgid "Itinerary"
 msgstr ""
 
@@ -273,6 +278,7 @@ msgid "Add day"
 msgstr ""
 
 #: src/Editor.php:316
+#: src/Sheet.php:58
 msgid "Prices"
 msgstr ""
 
@@ -298,6 +304,7 @@ msgid "Add extra"
 msgstr ""
 
 #: src/Editor.php:345
+#: src/Sheet.php:60
 msgid "Supplements"
 msgstr ""
 
@@ -311,7 +318,8 @@ msgstr ""
 
 #: src/Module.php:33
 #: src/Module.php:74
-#: src/Module.php:150
+#: src/Module.php:168
+#: src/Sheet.php:31
 msgid "Tour Packages"
 msgstr ""
 
@@ -319,47 +327,51 @@ msgstr ""
 msgid "tour package"
 msgstr ""
 
-#: src/Module.php:112
+#: src/Module.php:98
+msgid "Import / export"
+msgstr ""
+
+#: src/Module.php:130
 msgid "Tour packages"
 msgstr ""
 
-#: src/Module.php:113
+#: src/Module.php:131
 msgid "Find tours"
 msgstr ""
 
-#: src/Module.php:118
+#: src/Module.php:136
 msgid "Destination"
 msgstr ""
 
-#: src/Module.php:120
+#: src/Module.php:138
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr ""
 
-#: src/Module.php:125
+#: src/Module.php:143
 msgid "Start date"
 msgstr ""
 
-#: src/Module.php:131
+#: src/Module.php:149
 msgid "Travellers"
 msgstr ""
 
-#: src/Module.php:151
+#: src/Module.php:169
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr ""
 
-#: src/Module.php:155
+#: src/Module.php:173
 msgid "Tour packages page"
 msgstr ""
 
-#: src/Module.php:158
+#: src/Module.php:176
 msgid "The page that lists all tour packages."
 msgstr ""
 
-#: src/Module.php:161
+#: src/Module.php:179
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:164
+#: src/Module.php:182
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr ""
 
@@ -380,6 +392,7 @@ msgid "1 day"
 msgstr ""
 
 #: src/Page.php:50
+#: src/Sheet.php:56
 msgid "Departures"
 msgstr ""
 
@@ -465,6 +478,96 @@ msgstr ""
 #: src/Page.php:157
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
+msgstr ""
+
+#: src/Sheet.php:34
+msgid "One tour per row. Itinerary, prices and the other \"one per line\" cells take one entry per line (Alt+Enter in Excel), parts separated by |. The Instructions sheet explains every column. Photos are added on each tour afterwards."
+msgstr ""
+
+#: src/Sheet.php:49
+msgid "A destination name from Location Tree."
+msgstr ""
+
+#: src/Sheet.php:50
+msgid "Days"
+msgstr ""
+
+#: src/Sheet.php:50
+msgid "Number of days (nights = days minus one)."
+msgstr ""
+
+#: src/Sheet.php:51
+msgid "instant (pay online) or enquiry (you reply with a quote)."
+msgstr ""
+
+#: src/Sheet.php:52
+msgid "Deposit %"
+msgstr ""
+
+#: src/Sheet.php:52
+msgid "0 = full price at checkout."
+msgstr ""
+
+#: src/Sheet.php:53
+msgid "weekdays (any date on the start days) or fixed (only the departures)."
+msgstr ""
+
+#: src/Sheet.php:54
+msgid "Comma separated, e.g. Sat or Mon, Thu. \"any\" for every day."
+msgstr ""
+
+#: src/Sheet.php:55
+msgid "Booking closes (days)"
+msgstr ""
+
+#: src/Sheet.php:55
+msgid "Days before the start."
+msgstr ""
+
+#: src/Sheet.php:56
+msgid "Fixed departures, one per line: Date | Seats (0 = no limit)."
+msgstr ""
+
+#: src/Sheet.php:57
+msgid "One day per line: Title | Map place (Location Tree name) | Places visited | Meals (B, L, D, e.g. B,L or none) | Overnight | What happens."
+msgstr ""
+
+#: src/Sheet.php:58
+msgid "One price row per line: Hotels (standard, 3, 4 or 5) | Season from | Season to | From travellers | To travellers | Adult | Child | Infant | Single room + | Triple room −. Season dates empty = all year; To travellers empty = no limit."
+msgstr ""
+
+#: src/Sheet.php:59
+msgid "Optional extras"
+msgstr ""
+
+#: src/Sheet.php:59
+msgid "One per line: Name | Price | person or booking."
+msgstr ""
+
+#: src/Sheet.php:60
+msgid "One per line: Name | Date | Until (optional) | Adult | Child | Infant. Added when the tour dates include them."
+msgstr ""
+
+#. translators: %s: name.
+#: src/Sheet.php:214
+#, php-format
+msgid "Main destination “%s” isn’t in Location Tree."
+msgstr ""
+
+#: src/Sheet.php:218
+msgid "Start days: use day names like Mon, Sat, or any."
+msgstr ""
+
+#. translators: 1: column, 2: allowed values.
+#: src/Sheet.php:223
+#, php-format
+msgid "%1$s must be %2$s."
+msgstr ""
+
+#. translators: %s: column.
+#: src/Sheet.php:229
+#, php-format
+msgid "%s must be a whole number."
 msgstr ""
 
 #: src/Tour.php:63

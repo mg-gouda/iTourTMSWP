@@ -72,7 +72,7 @@ msgstr "نوع الرحلة"
 #: src/Booking.php:426
 #: src/Booking.php:453
 #: src/Editor.php:132
-#: src/Module.php:180
+#: src/Module.php:181
 msgid "Date"
 msgstr "التاريخ"
 
@@ -112,6 +112,7 @@ msgstr "سأقابلكم عند %s"
 #: src/Booking.php:457
 #: src/Editor.php:258
 #: src/Page.php:53
+#: src/Sheet.php:57
 msgid "Pick-up"
 msgstr "الاستقبال"
 
@@ -130,6 +131,7 @@ msgstr "اسم الفندق أو العنوان"
 #: src/Booking.php:219
 #: src/Booking.php:459
 #: src/Editor.php:315
+#: src/Sheet.php:61
 msgid "Add-ons"
 msgstr "الإضافات"
 
@@ -258,7 +260,7 @@ msgid "Excursion"
 msgstr "الرحلة"
 
 #: src/Booking.php:428
-#: src/Module.php:186
+#: src/Module.php:187
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
@@ -379,6 +381,7 @@ msgid "— Choose —"
 msgstr "— اختر —"
 
 #: src/Editor.php:199
+#: src/Sheet.php:49
 msgid "Destination"
 msgstr "الوجهة"
 
@@ -388,6 +391,7 @@ msgstr "من شجرة المواقع. يُستخدم في البحث حسب ال
 
 #: src/Editor.php:200
 #: src/Page.php:38
+#: src/Sheet.php:50
 msgid "Duration"
 msgstr "المدة"
 
@@ -416,6 +420,7 @@ msgid "daily"
 msgstr "يوميًا"
 
 #: src/Editor.php:236
+#: src/Sheet.php:52
 msgid "Runs on"
 msgstr "تعمل أيام"
 
@@ -424,6 +429,7 @@ msgid "Customers can only book these weekdays."
 msgstr "لا يمكن للعملاء الحجز إلا في هذه الأيام."
 
 #: src/Editor.php:237
+#: src/Sheet.php:53
 msgid "Start times"
 msgstr "أوقات البدء"
 
@@ -444,6 +450,7 @@ msgid "hours before the start"
 msgstr "ساعات قبل البدء"
 
 #: src/Editor.php:239
+#: src/Sheet.php:55
 msgid "Seats per day"
 msgstr "المقاعد في اليوم"
 
@@ -452,6 +459,7 @@ msgid "0 = no limit. Counts every booked traveller, infants included."
 msgstr "0 = بلا حد. يُحسب كل مسافر محجوز، بما فيهم الرضّع."
 
 #: src/Editor.php:240
+#: src/Sheet.php:56
 msgid "Closed dates"
 msgstr "أيام الإغلاق"
 
@@ -473,6 +481,7 @@ msgstr "يكتب العميل اسم الفندق"
 
 #: src/Editor.php:272
 #: src/Editor.php:276
+#: src/Sheet.php:59
 msgid "Meeting point"
 msgstr "نقطة الالتقاء"
 
@@ -485,6 +494,7 @@ msgid "Tick every way you offer. The customer chooses one when booking."
 msgstr "حدد كل طريقة تقدمها. يختار العميل واحدة عند الحجز."
 
 #: src/Editor.php:275
+#: src/Sheet.php:58
 msgid "Pick-up zones"
 msgstr "مناطق الاستقبال"
 
@@ -505,6 +515,7 @@ msgid "Shown to customers who choose the meeting point."
 msgstr "يظهر للعملاء الذين يختارون نقطة الالتقاء."
 
 #: src/Editor.php:296
+#: src/Sheet.php:60
 msgid "Prices"
 msgstr "الأسعار"
 
@@ -525,6 +536,7 @@ msgid "Add add-on"
 msgstr "إضافة خيار"
 
 #: src/Editor.php:325
+#: src/Sheet.php:62
 msgid "Supplements"
 msgstr "المكملات"
 
@@ -586,8 +598,9 @@ msgstr "الاستقبال من منطقتك"
 
 #: src/Module.php:33
 #: src/Module.php:51
-#: src/Module.php:167
-#: src/Module.php:205
+#: src/Module.php:168
+#: src/Module.php:206
+#: src/Sheet.php:31
 msgid "Excursions"
 msgstr "الرحلات اليومية"
 
@@ -599,35 +612,39 @@ msgstr "رحلة"
 msgid "Bookings"
 msgstr "الحجوزات"
 
-#: src/Module.php:168
+#: src/Module.php:135
+msgid "Import / export"
+msgstr "استيراد / تصدير"
+
+#: src/Module.php:169
 msgid "Find excursions"
 msgstr "ابحث عن رحلة"
 
-#: src/Module.php:173
+#: src/Module.php:174
 msgid "Staying in"
 msgstr "مكان الإقامة"
 
-#: src/Module.php:175
+#: src/Module.php:176
 msgid "Hurghada, Sharm, Luxor…"
 msgstr "الغردقة، شرم الشيخ، الأقصر…"
 
-#: src/Module.php:206
+#: src/Module.php:207
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الرحلات اليومية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:210
+#: src/Module.php:211
 msgid "Excursions page"
 msgstr "صفحة الرحلات اليومية"
 
-#: src/Module.php:213
+#: src/Module.php:214
 msgid "The page that lists all excursions and day trips."
 msgstr "الصفحة التي تعرض جميع الرحلات والجولات اليومية."
 
-#: src/Module.php:216
+#: src/Module.php:217
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:219
+#: src/Module.php:220
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."
 
@@ -699,3 +716,97 @@ msgstr "الاستقبال من %1$s: %2$s للفرد"
 #: src/Page.php:104
 msgid "Extras"
 msgstr "الإضافات"
+
+#: src/Sheet.php:34
+msgid "One excursion per row. Prices, pick-up zones and the other \"one per line\" cells take one entry per line (Alt+Enter in Excel), parts separated by |. The Instructions sheet explains every column. Photos are added on each excursion afterwards."
+msgstr "رحلة واحدة في كل صف. الأسعار ومناطق الاستقبال وباقي خلايا «واحد في كل سطر» تأخذ إدخالًا في كل سطر (Alt+Enter في Excel) والأجزاء مفصولة بـ |. ورقة التعليمات تشرح كل عمود. الصور تُضاف لكل رحلة بعد ذلك."
+
+#: src/Sheet.php:49
+msgid "A destination name from Location Tree."
+msgstr "اسم وجهة من شجرة المواقع."
+
+#: src/Sheet.php:50
+msgid "As shown on the page, e.g. 12 hours or Half day."
+msgstr "كما يظهر في الصفحة، مثل 12 ساعة أو نصف يوم."
+
+#: src/Sheet.php:51
+msgid "Deposit %"
+msgstr "العربون %"
+
+#: src/Sheet.php:51
+msgid "0 = full price at checkout."
+msgstr "0 = السعر كاملًا عند الدفع."
+
+#: src/Sheet.php:52
+msgid "Comma separated weekdays, e.g. Mon, Wed, Fri. \"any\" for every day."
+msgstr "أيام مفصولة بفواصل، مثل Mon, Wed, Fri. ‏«any» لكل الأيام."
+
+#: src/Sheet.php:53
+msgid "Comma separated, 24-hour, e.g. 04:00, 09:30."
+msgstr "مفصولة بفواصل، بنظام 24 ساعة، مثل 04:00, 09:30."
+
+#: src/Sheet.php:54
+msgid "Booking closes (hours)"
+msgstr "يُغلق الحجز (ساعات)"
+
+#: src/Sheet.php:54
+msgid "Hours before the start."
+msgstr "ساعات قبل البدء."
+
+#: src/Sheet.php:55
+msgid "0 = no limit."
+msgstr "0 = بلا حد."
+
+#: src/Sheet.php:56
+msgid "One per line: From | To (To empty for a single day)."
+msgstr "واحد في كل سطر: من | إلى (إلى فارغ ليوم واحد)."
+
+#: src/Sheet.php:57
+msgid "Comma separated: hotel (hotels in the zones), typed (customer types the hotel), meeting (meeting point)."
+msgstr "مفصولة بفواصل: hotel (فنادق المناطق)، typed (يكتب العميل الفندق)، meeting (نقطة الالتقاء)."
+
+#: src/Sheet.php:58
+msgid "One per line: Zone (Location Tree name) | Pick-up time | Extra per person."
+msgstr "واحدة في كل سطر: المنطقة (اسم من شجرة المواقع) | وقت الاستقبال | إضافي للفرد."
+
+#: src/Sheet.php:59
+msgid "Shown to customers who choose it."
+msgstr "يظهر للعملاء الذين يختارونها."
+
+#: src/Sheet.php:60
+msgid "One price row per line: Type (shared or private) | Season from | Season to | From travellers | To travellers | Adult | Child | Infant. Season empty = all year; To travellers empty = no limit."
+msgstr "صف سعر في كل سطر: النوع (shared أو private) | الموسم من | الموسم إلى | من عدد مسافرين | إلى عدد مسافرين | بالغ | طفل | رضيع. الموسم فارغ = العام كله؛ «إلى» فارغ = بلا حد."
+
+#: src/Sheet.php:61
+msgid "One per line: Name | Price | person or booking."
+msgstr "واحد في كل سطر: الاسم | السعر | person أو booking."
+
+#: src/Sheet.php:62
+msgid "One per line: Name | Date | Until (optional) | Adult | Child | Infant."
+msgstr "واحد في كل سطر: الاسم | التاريخ | حتى (اختياري) | بالغ | طفل | رضيع."
+
+#. translators: %s: name.
+#: src/Sheet.php:198
+#, php-format
+msgid "Destination “%s” isn’t in Location Tree."
+msgstr "الوجهة «%s» غير موجودة في شجرة المواقع."
+
+#: src/Sheet.php:202
+msgid "Runs on: use day names like Mon, Wed, Fri, or any."
+msgstr "أيام التشغيل: استخدم أسماء أيام مثل Mon, Wed, Fri أو any."
+
+#. translators: %s: value.
+#: src/Sheet.php:209
+#, php-format
+msgid "Start times: “%s” isn’t a time like 04:00."
+msgstr "أوقات البدء: «%s» ليس وقتًا مثل 04:00."
+
+#: src/Sheet.php:215
+msgid "Pick-up: use hotel, typed and/or meeting."
+msgstr "الاستقبال: استخدم hotel و/أو typed و/أو meeting."
+
+#. translators: %s: column.
+#: src/Sheet.php:220
+#, php-format
+msgid "%s must be a whole number."
+msgstr "%s يجب أن يكون عددًا صحيحًا."

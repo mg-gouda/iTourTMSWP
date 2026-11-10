@@ -81,6 +81,24 @@ final class Module extends \ITour\Core\Module {
 	}
 
 	/**
+	 * Module screens go under the Tour Packages menu.
+	 *
+	 * @return array<string,mixed>
+	 */
+	public function menu(): array {
+		return array( 'parent' => 'edit.php?post_type=' . Tour::TYPE );
+	}
+
+	/**
+	 * Import / export.
+	 *
+	 * @return array<string,array{title:string,callback:callable,load?:callable}>
+	 */
+	public function admin_pages(): array {
+		return array( 'import' => Sheet::screen( 'edit_posts' )->page( __( 'Import / export', 'itour-tours' ) ) );
+	}
+
+	/**
 	 * New post type → refresh permalinks once.
 	 *
 	 * @param string $from Previous version.

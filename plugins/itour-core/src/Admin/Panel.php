@@ -48,6 +48,22 @@ final class Panel {
 	}
 
 	/**
+	 * Run one section's own save code with panel-shaped input (used by the bulk import, so imported
+	 * data goes through exactly the same checks as the edit screen).
+	 *
+	 * @param string              $post_type Post type.
+	 * @param string              $section   Section id.
+	 * @param int                 $post_id   Post id.
+	 * @param array<string,mixed> $input     Input as the panel would post it.
+	 */
+	public static function save_section( string $post_type, string $section, int $post_id, array $input ): void {
+		$s = self::$panels[ $post_type ]['sections'][ $section ] ?? null;
+		if ( $s ) {
+			( $s['save'] )( $post_id, $input );
+		}
+	}
+
+	/**
 	 * Input name for a field: itp[section][field].
 	 *
 	 * @param string $section Section id.

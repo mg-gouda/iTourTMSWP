@@ -10,7 +10,8 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **Location Tree (built, `itour-core`, own admin menu):** destination → zone → hotel / airport / port / meeting point, set up once and used by every product. Table `itour_locations` (`parent_id` tree, `lat`/`lng`/`place_id` ready for maps and Google Places).
 - **Hotel and airport list (excursions + transfers):** comes from the Location Tree; every hotel and airport sits in a zone. Google Places autocomplete can find addresses that aren't on the list (owner supplies the API key).
 - **Payments (WooCommerce, D-005):** card online, cash on arrival / pay the driver, bank transfer, deposit now and the rest later.
-- **Cancellation:** one site-wide table of tiers that applies to all products. Each tier has a travel date range, days before travel, and fee %. Example: 1 Dec–10 Jan, 30+ days 0%, 15–29 days 50%, under 15 days 100%.
+- **Cancellation (changed 10 Nov 2026, owner: "similar to Rehlla"):** each tour and excursion has its own **Cancellation** tab; transfers have one on Transfers → Rules, per vehicle or for all vehicles. A tier = days before arrival → fee % of the price, optionally limited to travel dates (season tiers replace the all-year ones on those dates). The closest reachable tier wins; none = no refund. Shown on the product page, on transfer results, and as a dated line on every booking ("Free cancellation until … · then no refund"). Built in core `Policies`.
+- **Bulk import / export (10 Nov 2026):** Tour Packages, Excursions and Transfers each have an Import / export screen: .xlsx template (one product per row, Instructions sheet), export of what is saved, upload → per-row check report → confirm. Imports run through the edit screens' own save code. Empty cell = keep, "-" = clear; no images.
 - **B2B:** comes later, after B2C launches. Partner net prices go in a later phase; the data model leaves room for them now.
 
 ## Tour Packages (`itour-tours`)

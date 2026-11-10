@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:42:20+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:56:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -60,6 +60,130 @@ msgstr ""
 #: src/Admin/Crud.php:257
 #: src/Admin/Crud.php:258
 msgid "Search"
+msgstr ""
+
+#. translators: 1: column, 2: line number, 3: the value.
+#: src/Admin/Cells.php:207
+#, php-format
+msgid "%1$s, line %2$d: “%3$s” isn’t valid here."
+msgstr ""
+
+#: src/Admin/Cells.php:245
+#: src/Admin/Cells.php:292
+#: src/Policies.php:186
+#: src/Policies.php:235
+msgid "Cancellation"
+msgstr ""
+
+#: src/Admin/Cells.php:245
+msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to (dates optional, for a season tier). Example: 30 | 0 then 14 | 50 then 0 | 100."
+msgstr ""
+
+#: src/Admin/Cells.php:246
+#: src/Products.php:156
+#: src/Products.php:163
+#: src/Products.php:221
+msgid "Included"
+msgstr ""
+
+#: src/Admin/Cells.php:246
+#: src/Admin/Cells.php:247
+msgid "One item per line."
+msgstr ""
+
+#: src/Admin/Cells.php:247
+#: src/Products.php:163
+#: src/Products.php:222
+msgid "Not included"
+msgstr ""
+
+#: src/Admin/Cells.php:248
+#: src/Admin/Cells.php:299
+#: src/Products.php:178
+msgid "FAQ"
+msgstr ""
+
+#: src/Admin/Cells.php:248
+msgid "One question per line: Question | Answer."
+msgstr ""
+
+#: src/Admin/Cells.php:335
+msgid "Empty for a new product. Keep the number from an export to update that product."
+msgstr ""
+
+#: src/Admin/Cells.php:336
+msgid "Title"
+msgstr ""
+
+#: src/Admin/Cells.php:336
+msgid "Required for new products."
+msgstr ""
+
+#: src/Admin/Cells.php:337
+msgid "Status"
+msgstr ""
+
+#: src/Admin/Cells.php:337
+msgid "publish or draft. New products are drafts unless you write publish."
+msgstr ""
+
+#: src/Admin/Cells.php:338
+msgid "Summary"
+msgstr ""
+
+#: src/Admin/Cells.php:338
+msgid "One or two sentences, shown in lists."
+msgstr ""
+
+#: src/Admin/Cells.php:339
+msgid "Description"
+msgstr ""
+
+#: src/Admin/Cells.php:339
+msgid "The page text. Leave a blank line between paragraphs."
+msgstr ""
+
+#: src/Admin/Cells.php:340
+#: src/Products.php:67
+msgid "Categories"
+msgstr ""
+
+#: src/Admin/Cells.php:340
+msgid "Comma separated. New names are created."
+msgstr ""
+
+#: src/Admin/Cells.php:341
+#: src/Products.php:77
+#: src/Products.php:249
+msgid "Languages"
+msgstr ""
+
+#: src/Admin/Cells.php:341
+msgid "Comma separated, e.g. English, German."
+msgstr ""
+
+#: src/Admin/Cells.php:342
+#: src/Products.php:78
+#: src/Products.php:249
+msgid "Suitable for"
+msgstr ""
+
+#: src/Admin/Cells.php:342
+msgid "Comma separated, e.g. Families, Couples."
+msgstr ""
+
+#. translators: %d: post id.
+#: src/Admin/Cells.php:381
+#, php-format
+msgid "ID %d is not one of these products. Leave ID empty to create a new one."
+msgstr ""
+
+#: src/Admin/Cells.php:384
+msgid "Title is required for a new product."
+msgstr ""
+
+#: src/Admin/Cells.php:388
+msgid "Status must be publish or draft."
 msgstr ""
 
 #. translators: %s: field value.
@@ -172,6 +296,153 @@ msgstr ""
 msgid "%s is required."
 msgstr ""
 
+#: src/Admin/Import.php:121
+msgid "Column"
+msgstr ""
+
+#: src/Admin/Import.php:121
+msgid "What to write"
+msgstr ""
+
+#: src/Admin/Import.php:126
+msgid "Rules"
+msgstr ""
+
+#: src/Admin/Import.php:126
+msgid "One product per row. Leave ID empty to create a new product; keep the ID to update that product. When updating, an empty cell keeps what is saved; write - (a dash) to clear it. Cells marked \"one per line\" take one entry per line (Alt+Enter in Excel) with the parts separated by | in the order given. Images are not imported: add them on each product afterwards."
+msgstr ""
+
+#: src/Admin/Import.php:135
+msgid "Instructions"
+msgstr ""
+
+#. translators: %s: product type, e.g. "Tour Packages".
+#: src/Admin/Import.php:241
+#, php-format
+msgid "Import / export: %s"
+msgstr ""
+
+#: src/Admin/Import.php:243
+msgid "That file couldn’t be read. Upload the .xlsx you downloaded here (Excel: File → Save As → Excel Workbook)."
+msgstr ""
+
+#: src/Admin/Import.php:244
+msgid "The file has no rows under the header."
+msgstr ""
+
+#: src/Admin/Import.php:245
+#: src/Admin/Import.php:295
+msgid "The checked file expired. Upload it again."
+msgstr ""
+
+#: src/Admin/Import.php:251
+msgid "This server can’t read or write Excel files (the PHP zip extension is missing). Ask your host to enable it."
+msgstr ""
+
+#. translators: 1: created, 2: updated, 3: failed.
+#: src/Admin/Import.php:263
+#, php-format
+msgid "Import finished: %1$d created, %2$d updated, %3$d failed."
+msgstr ""
+
+#: src/Admin/Import.php:265
+msgid "Add photos to the new products from their edit screens."
+msgstr ""
+
+#: src/Admin/Import.php:280
+msgid "Add or update many at once"
+msgstr ""
+
+#: src/Admin/Import.php:281
+msgid "1. Get the spreadsheet"
+msgstr ""
+
+#: src/Admin/Import.php:281
+msgid "Download template"
+msgstr ""
+
+#: src/Admin/Import.php:281
+msgid "Export current data"
+msgstr ""
+
+#: src/Admin/Import.php:281
+msgid "The template has one example row and an Instructions sheet. Export gives you what is saved now, ready to edit and upload back."
+msgstr ""
+
+#: src/Admin/Import.php:282
+msgid "2. Fill it in"
+msgstr ""
+
+#: src/Admin/Import.php:282
+msgid "One product per row. Keep the header row as it is."
+msgstr ""
+
+#: src/Admin/Import.php:285
+msgid "3. Upload and check"
+msgstr ""
+
+#: src/Admin/Import.php:285
+msgid "Check file"
+msgstr ""
+
+#: src/Admin/Import.php:285
+msgid "Every row is checked first. Nothing is saved until you confirm."
+msgstr ""
+
+#: src/Admin/Import.php:302
+msgid "New"
+msgstr ""
+
+#: src/Admin/Import.php:303
+msgid "Update"
+msgstr ""
+
+#. translators: 1: rows, 2: new, 3: updates, 4: rows with problems.
+#: src/Admin/Import.php:308
+#, php-format
+msgid "%1$d rows: %2$d new, %3$d updates, %4$d with problems."
+msgstr ""
+
+#: src/Admin/Import.php:314
+msgid "Check the file"
+msgstr ""
+
+#: src/Admin/Import.php:315
+msgid "Row"
+msgstr ""
+
+#: src/Admin/Import.php:315
+msgid "Product"
+msgstr ""
+
+#: src/Admin/Import.php:315
+msgid "Action"
+msgstr ""
+
+#: src/Admin/Import.php:315
+msgid "Problems"
+msgstr ""
+
+#: src/Admin/Import.php:317
+msgid "Ready"
+msgstr ""
+
+#: src/Admin/Import.php:322
+msgid "Fix the rows with problems in the spreadsheet and upload it again. Rows without problems can be imported now; the others are skipped."
+msgstr ""
+
+#. translators: %d: rows.
+#: src/Admin/Import.php:327
+#, php-format
+msgid "Import %d row"
+msgid_plural "Import %d rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/Import.php:329
+msgid "Start again"
+msgstr ""
+
 #: src/Admin/Menu.php:40
 msgid "Overview"
 msgstr ""
@@ -192,28 +463,28 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: src/Admin/Panel.php:140
+#: src/Admin/Panel.php:156
 msgid "Saving…"
 msgstr ""
 
-#: src/Admin/Panel.php:141
+#: src/Admin/Panel.php:157
 msgid "All changes saved"
 msgstr ""
 
-#: src/Admin/Panel.php:142
+#: src/Admin/Panel.php:158
 msgid "Couldn’t save. Check your connection."
 msgstr ""
 
-#: src/Admin/Panel.php:143
+#: src/Admin/Panel.php:159
 msgid "Retry"
 msgstr ""
 
-#: src/Admin/Panel.php:149
+#: src/Admin/Panel.php:165
 msgid "Changes save as you go."
 msgstr ""
 
-#: src/Admin/Panel.php:261
-#: src/Admin/Panel.php:270
+#: src/Admin/Panel.php:277
+#: src/Admin/Panel.php:286
 msgid "You can’t edit this item, or the page expired. Reload it."
 msgstr ""
 
@@ -784,11 +1055,6 @@ msgstr ""
 msgid "then no refund"
 msgstr ""
 
-#: src/Policies.php:186
-#: src/Policies.php:235
-msgid "Cancellation"
-msgstr ""
-
 #: src/Policies.php:191
 msgid "All other travel dates"
 msgstr ""
@@ -837,17 +1103,8 @@ msgstr ""
 msgid "Add tier"
 msgstr ""
 
-#: src/Products.php:67
-msgid "Categories"
-msgstr ""
-
 #: src/Products.php:68
 msgid "Category"
-msgstr ""
-
-#: src/Products.php:77
-#: src/Products.php:249
-msgid "Languages"
 msgstr ""
 
 #: src/Products.php:77
@@ -858,11 +1115,6 @@ msgstr ""
 msgid "Suitability"
 msgstr ""
 
-#: src/Products.php:78
-#: src/Products.php:249
-msgid "Suitable for"
-msgstr ""
-
 #: src/Products.php:126
 msgid "Question"
 msgstr ""
@@ -871,27 +1123,12 @@ msgstr ""
 msgid "Answer"
 msgstr ""
 
-#: src/Products.php:156
-#: src/Products.php:163
-#: src/Products.php:221
-msgid "Included"
-msgstr ""
-
 #: src/Products.php:163
 msgid "One item per line, e.g. \"Airport transfers\"."
 msgstr ""
 
 #: src/Products.php:163
-#: src/Products.php:222
-msgid "Not included"
-msgstr ""
-
-#: src/Products.php:163
 msgid "One item per line, e.g. \"Flights\", \"Visa\"."
-msgstr ""
-
-#: src/Products.php:178
-msgid "FAQ"
 msgstr ""
 
 #: src/Products.php:181

@@ -56,6 +56,130 @@ msgstr "أبحث عن"
 msgid "Search"
 msgstr "بحث"
 
+#. translators: 1: column, 2: line number, 3: the value.
+#: src/Admin/Cells.php:207
+#, php-format
+msgid "%1$s, line %2$d: “%3$s” isn’t valid here."
+msgstr "%1$s، السطر %2$d: «%3$s» غير صالح هنا."
+
+#: src/Admin/Cells.php:245
+#: src/Admin/Cells.php:292
+#: src/Policies.php:186
+#: src/Policies.php:235
+msgid "Cancellation"
+msgstr "الإلغاء"
+
+#: src/Admin/Cells.php:245
+msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to (dates optional, for a season tier). Example: 30 | 0 then 14 | 50 then 0 | 100."
+msgstr "شريحة في كل سطر: أيام قبل الوصول | الرسوم % | السفر من | السفر إلى (التواريخ اختيارية، لشريحة موسمية). مثال: 30 | 0 ثم 14 | 50 ثم 0 | 100."
+
+#: src/Admin/Cells.php:246
+#: src/Products.php:156
+#: src/Products.php:163
+#: src/Products.php:221
+msgid "Included"
+msgstr "يشمل"
+
+#: src/Admin/Cells.php:246
+#: src/Admin/Cells.php:247
+msgid "One item per line."
+msgstr "بند في كل سطر."
+
+#: src/Admin/Cells.php:247
+#: src/Products.php:163
+#: src/Products.php:222
+msgid "Not included"
+msgstr "لا يشمل"
+
+#: src/Admin/Cells.php:248
+#: src/Admin/Cells.php:299
+#: src/Products.php:178
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: src/Admin/Cells.php:248
+msgid "One question per line: Question | Answer."
+msgstr "سؤال في كل سطر: السؤال | الإجابة."
+
+#: src/Admin/Cells.php:335
+msgid "Empty for a new product. Keep the number from an export to update that product."
+msgstr "فارغ لمنتج جديد. احتفظ بالرقم من التصدير لتحديث ذلك المنتج."
+
+#: src/Admin/Cells.php:336
+msgid "Title"
+msgstr "العنوان"
+
+#: src/Admin/Cells.php:336
+msgid "Required for new products."
+msgstr "مطلوب للمنتجات الجديدة."
+
+#: src/Admin/Cells.php:337
+msgid "Status"
+msgstr "الحالة"
+
+#: src/Admin/Cells.php:337
+msgid "publish or draft. New products are drafts unless you write publish."
+msgstr "publish أو draft. المنتجات الجديدة مسودات ما لم تكتب publish."
+
+#: src/Admin/Cells.php:338
+msgid "Summary"
+msgstr "الملخص"
+
+#: src/Admin/Cells.php:338
+msgid "One or two sentences, shown in lists."
+msgstr "جملة أو جملتان تظهر في القوائم."
+
+#: src/Admin/Cells.php:339
+msgid "Description"
+msgstr "الوصف"
+
+#: src/Admin/Cells.php:339
+msgid "The page text. Leave a blank line between paragraphs."
+msgstr "نص الصفحة. اترك سطرًا فارغًا بين الفقرات."
+
+#: src/Admin/Cells.php:340
+#: src/Products.php:67
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: src/Admin/Cells.php:340
+msgid "Comma separated. New names are created."
+msgstr "مفصولة بفواصل. الأسماء الجديدة تُنشأ."
+
+#: src/Admin/Cells.php:341
+#: src/Products.php:77
+#: src/Products.php:249
+msgid "Languages"
+msgstr "اللغات"
+
+#: src/Admin/Cells.php:341
+msgid "Comma separated, e.g. English, German."
+msgstr "مفصولة بفواصل، مثل English, German."
+
+#: src/Admin/Cells.php:342
+#: src/Products.php:78
+#: src/Products.php:249
+msgid "Suitable for"
+msgstr "مناسبة لـ"
+
+#: src/Admin/Cells.php:342
+msgid "Comma separated, e.g. Families, Couples."
+msgstr "مفصولة بفواصل، مثل Families, Couples."
+
+#. translators: %d: post id.
+#: src/Admin/Cells.php:381
+#, php-format
+msgid "ID %d is not one of these products. Leave ID empty to create a new one."
+msgstr "المعرف %d ليس من هذه المنتجات. اترك ID فارغًا لإنشاء منتج جديد."
+
+#: src/Admin/Cells.php:384
+msgid "Title is required for a new product."
+msgstr "العنوان مطلوب للمنتج الجديد."
+
+#: src/Admin/Cells.php:388
+msgid "Status must be publish or draft."
+msgstr "الحالة يجب أن تكون publish أو draft."
+
 #. translators: %s: field value.
 #: src/Admin/Crud.php:115
 #, php-format
@@ -166,6 +290,157 @@ msgstr "قيمة «%s» غير صحيحة."
 msgid "%s is required."
 msgstr "«%s» مطلوب."
 
+#: src/Admin/Import.php:121
+msgid "Column"
+msgstr "العمود"
+
+#: src/Admin/Import.php:121
+msgid "What to write"
+msgstr "ما يُكتب"
+
+#: src/Admin/Import.php:126
+msgid "Rules"
+msgstr "القواعد"
+
+#: src/Admin/Import.php:126
+msgid "One product per row. Leave ID empty to create a new product; keep the ID to update that product. When updating, an empty cell keeps what is saved; write - (a dash) to clear it. Cells marked \"one per line\" take one entry per line (Alt+Enter in Excel) with the parts separated by | in the order given. Images are not imported: add them on each product afterwards."
+msgstr "منتج واحد في كل صف. اترك ID فارغًا لإنشاء منتج جديد؛ احتفظ بالـ ID لتحديث ذلك المنتج. عند التحديث، الخلية الفارغة تُبقي المحفوظ؛ اكتب - (شرطة) لمسحه. الخلايا المكتوب عليها «واحد في كل سطر» تأخذ إدخالًا في كل سطر (Alt+Enter في Excel) والأجزاء مفصولة بـ | بالترتيب المذكور. الصور لا تُستورد: أضفها لكل منتج بعد ذلك."
+
+#: src/Admin/Import.php:135
+msgid "Instructions"
+msgstr "التعليمات"
+
+#. translators: %s: product type, e.g. "Tour Packages".
+#: src/Admin/Import.php:241
+#, php-format
+msgid "Import / export: %s"
+msgstr "استيراد / تصدير: %s"
+
+#: src/Admin/Import.php:243
+msgid "That file couldn’t be read. Upload the .xlsx you downloaded here (Excel: File → Save As → Excel Workbook)."
+msgstr "تعذرت قراءة الملف. ارفع ملف ‎.xlsx الذي نزّلته من هنا (في Excel: ملف ← حفظ باسم ← مصنف Excel)."
+
+#: src/Admin/Import.php:244
+msgid "The file has no rows under the header."
+msgstr "لا توجد صفوف تحت صف العناوين في الملف."
+
+#: src/Admin/Import.php:245
+#: src/Admin/Import.php:295
+msgid "The checked file expired. Upload it again."
+msgstr "انتهت صلاحية الملف المفحوص. ارفعه مرة أخرى."
+
+#: src/Admin/Import.php:251
+msgid "This server can’t read or write Excel files (the PHP zip extension is missing). Ask your host to enable it."
+msgstr "هذا الخادم لا يستطيع قراءة ملفات Excel أو كتابتها (إضافة zip في PHP غير موجودة). اطلب من الاستضافة تفعيلها."
+
+#. translators: 1: created, 2: updated, 3: failed.
+#: src/Admin/Import.php:263
+#, php-format
+msgid "Import finished: %1$d created, %2$d updated, %3$d failed."
+msgstr "انتهى الاستيراد: إنشاء %1$d، تحديث %2$d، فشل %3$d."
+
+#: src/Admin/Import.php:265
+msgid "Add photos to the new products from their edit screens."
+msgstr "أضف الصور للمنتجات الجديدة من شاشات تعديلها."
+
+#: src/Admin/Import.php:280
+msgid "Add or update many at once"
+msgstr "إضافة أو تحديث الكثير دفعة واحدة"
+
+#: src/Admin/Import.php:281
+msgid "1. Get the spreadsheet"
+msgstr "1. احصل على الملف"
+
+#: src/Admin/Import.php:281
+msgid "Download template"
+msgstr "تنزيل القالب"
+
+#: src/Admin/Import.php:281
+msgid "Export current data"
+msgstr "تصدير البيانات الحالية"
+
+#: src/Admin/Import.php:281
+msgid "The template has one example row and an Instructions sheet. Export gives you what is saved now, ready to edit and upload back."
+msgstr "القالب فيه صف مثال وورقة تعليمات. التصدير يعطيك المحفوظ الآن، جاهزًا للتعديل وإعادة الرفع."
+
+#: src/Admin/Import.php:282
+msgid "2. Fill it in"
+msgstr "2. املأه"
+
+#: src/Admin/Import.php:282
+msgid "One product per row. Keep the header row as it is."
+msgstr "منتج واحد في كل صف. اترك صف العناوين كما هو."
+
+#: src/Admin/Import.php:285
+msgid "3. Upload and check"
+msgstr "3. ارفعه وافحصه"
+
+#: src/Admin/Import.php:285
+msgid "Check file"
+msgstr "فحص الملف"
+
+#: src/Admin/Import.php:285
+msgid "Every row is checked first. Nothing is saved until you confirm."
+msgstr "يُفحص كل صف أولًا. لا يُحفظ شيء حتى تؤكد."
+
+#: src/Admin/Import.php:302
+msgid "New"
+msgstr "جديد"
+
+#: src/Admin/Import.php:303
+msgid "Update"
+msgstr "تحديث"
+
+#. translators: 1: rows, 2: new, 3: updates, 4: rows with problems.
+#: src/Admin/Import.php:308
+#, php-format
+msgid "%1$d rows: %2$d new, %3$d updates, %4$d with problems."
+msgstr "%1$d صفوف: %2$d جديد، %3$d تحديث، %4$d بها مشكلات."
+
+#: src/Admin/Import.php:314
+msgid "Check the file"
+msgstr "فحص الملف"
+
+#: src/Admin/Import.php:315
+msgid "Row"
+msgstr "الصف"
+
+#: src/Admin/Import.php:315
+msgid "Product"
+msgstr "المنتج"
+
+#: src/Admin/Import.php:315
+msgid "Action"
+msgstr "الإجراء"
+
+#: src/Admin/Import.php:315
+msgid "Problems"
+msgstr "المشكلات"
+
+#: src/Admin/Import.php:317
+msgid "Ready"
+msgstr "جاهز"
+
+#: src/Admin/Import.php:322
+msgid "Fix the rows with problems in the spreadsheet and upload it again. Rows without problems can be imported now; the others are skipped."
+msgstr "صحح الصفوف التي بها مشكلات في الملف وارفعه مرة أخرى. الصفوف السليمة يمكن استيرادها الآن؛ والباقي يُتخطى."
+
+#. translators: %d: rows.
+#: src/Admin/Import.php:327
+#, php-format
+msgid "Import %d row"
+msgid_plural "Import %d rows"
+msgstr[0] "استيراد %d صف"
+msgstr[1] "استيراد صف واحد"
+msgstr[2] "استيراد صفين"
+msgstr[3] "استيراد %d صفوف"
+msgstr[4] "استيراد %d صفًا"
+msgstr[5] "استيراد %d صف"
+
+#: src/Admin/Import.php:329
+msgid "Start again"
+msgstr "البدء من جديد"
+
 #: src/Admin/Menu.php:40
 msgid "Overview"
 msgstr "نظرة عامة"
@@ -186,28 +461,28 @@ msgstr "الوحدة"
 msgid "Version"
 msgstr "الإصدار"
 
-#: src/Admin/Panel.php:140
+#: src/Admin/Panel.php:156
 msgid "Saving…"
 msgstr "جارٍ الحفظ…"
 
-#: src/Admin/Panel.php:141
+#: src/Admin/Panel.php:157
 msgid "All changes saved"
 msgstr "تم حفظ كل التغييرات"
 
-#: src/Admin/Panel.php:142
+#: src/Admin/Panel.php:158
 msgid "Couldn’t save. Check your connection."
 msgstr "تعذر الحفظ. تحقق من الاتصال."
 
-#: src/Admin/Panel.php:143
+#: src/Admin/Panel.php:159
 msgid "Retry"
 msgstr "إعادة المحاولة"
 
-#: src/Admin/Panel.php:149
+#: src/Admin/Panel.php:165
 msgid "Changes save as you go."
 msgstr "تُحفظ التغييرات تلقائيًا أثناء العمل."
 
-#: src/Admin/Panel.php:261
-#: src/Admin/Panel.php:270
+#: src/Admin/Panel.php:277
+#: src/Admin/Panel.php:286
 msgid "You can’t edit this item, or the page expired. Reload it."
 msgstr "لا يمكنك تعديل هذا العنصر، أو انتهت صلاحية الصفحة. أعد تحميلها."
 
@@ -778,11 +1053,6 @@ msgstr "%1$s حتى %2$s"
 msgid "then no refund"
 msgstr "ثم بلا استرداد"
 
-#: src/Policies.php:186
-#: src/Policies.php:235
-msgid "Cancellation"
-msgstr "الإلغاء"
-
 #: src/Policies.php:191
 msgid "All other travel dates"
 msgstr "باقي تواريخ السفر"
@@ -843,18 +1113,9 @@ msgstr "صف لكل شريحة: الإلغاء قبل الوصول بهذا ال
 msgid "Add tier"
 msgstr "إضافة شريحة"
 
-#: src/Products.php:67
-msgid "Categories"
-msgstr "التصنيفات"
-
 #: src/Products.php:68
 msgid "Category"
 msgstr "التصنيف"
-
-#: src/Products.php:77
-#: src/Products.php:249
-msgid "Languages"
-msgstr "اللغات"
 
 #: src/Products.php:77
 msgid "Language"
@@ -862,11 +1123,6 @@ msgstr "اللغة"
 
 #: src/Products.php:78
 msgid "Suitability"
-msgstr "مناسبة لـ"
-
-#: src/Products.php:78
-#: src/Products.php:249
-msgid "Suitable for"
 msgstr "مناسبة لـ"
 
 #: src/Products.php:126
@@ -877,28 +1133,13 @@ msgstr "السؤال"
 msgid "Answer"
 msgstr "الإجابة"
 
-#: src/Products.php:156
-#: src/Products.php:163
-#: src/Products.php:221
-msgid "Included"
-msgstr "يشمل"
-
 #: src/Products.php:163
 msgid "One item per line, e.g. \"Airport transfers\"."
 msgstr "بند في كل سطر، مثل «التنقل من المطار»."
 
 #: src/Products.php:163
-#: src/Products.php:222
-msgid "Not included"
-msgstr "لا يشمل"
-
-#: src/Products.php:163
 msgid "One item per line, e.g. \"Flights\", \"Visa\"."
 msgstr "بند في كل سطر، مثل «تذاكر الطيران»، «التأشيرة»."
-
-#: src/Products.php:178
-msgid "FAQ"
-msgstr "الأسئلة الشائعة"
 
 #: src/Products.php:181
 msgid "Questions travellers ask before booking. Shown as an expandable list on the page."

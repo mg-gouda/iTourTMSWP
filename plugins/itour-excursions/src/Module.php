@@ -132,6 +132,7 @@ final class Module extends \ITour\Core\Module {
 				'callback' => array( $crud, 'render' ),
 				'load'     => array( $crud, 'load' ),
 			),
+			'import'   => Sheet::screen( 'edit_posts' )->page( __( 'Import / export', 'itour-excursions' ) ),
 		);
 	}
 

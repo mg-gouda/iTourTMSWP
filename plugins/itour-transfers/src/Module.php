@@ -145,6 +145,7 @@ final class Module extends \ITour\Core\Module {
 			'title'    => __( 'Rules', 'itour-transfers' ),
 			'callback' => array( Settings::class, 'render' ),
 		);
+		$pages['import']   = Sheet::screen( $this->capability() )->page( __( 'Import / export', 'itour-transfers' ) );
 		return $pages;
 	}
 

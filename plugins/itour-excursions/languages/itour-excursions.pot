@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:42:22+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:56:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-excursions\n"
@@ -74,7 +74,7 @@ msgstr ""
 #: src/Booking.php:426
 #: src/Booking.php:453
 #: src/Editor.php:132
-#: src/Module.php:180
+#: src/Module.php:181
 msgid "Date"
 msgstr ""
 
@@ -114,6 +114,7 @@ msgstr ""
 #: src/Booking.php:457
 #: src/Editor.php:258
 #: src/Page.php:53
+#: src/Sheet.php:57
 msgid "Pick-up"
 msgstr ""
 
@@ -132,6 +133,7 @@ msgstr ""
 #: src/Booking.php:219
 #: src/Booking.php:459
 #: src/Editor.php:315
+#: src/Sheet.php:61
 msgid "Add-ons"
 msgstr ""
 
@@ -256,7 +258,7 @@ msgid "Excursion"
 msgstr ""
 
 #: src/Booking.php:428
-#: src/Module.php:186
+#: src/Module.php:187
 msgid "Travellers"
 msgstr ""
 
@@ -377,6 +379,7 @@ msgid "— Choose —"
 msgstr ""
 
 #: src/Editor.php:199
+#: src/Sheet.php:49
 msgid "Destination"
 msgstr ""
 
@@ -386,6 +389,7 @@ msgstr ""
 
 #: src/Editor.php:200
 #: src/Page.php:38
+#: src/Sheet.php:50
 msgid "Duration"
 msgstr ""
 
@@ -414,6 +418,7 @@ msgid "daily"
 msgstr ""
 
 #: src/Editor.php:236
+#: src/Sheet.php:52
 msgid "Runs on"
 msgstr ""
 
@@ -422,6 +427,7 @@ msgid "Customers can only book these weekdays."
 msgstr ""
 
 #: src/Editor.php:237
+#: src/Sheet.php:53
 msgid "Start times"
 msgstr ""
 
@@ -442,6 +448,7 @@ msgid "hours before the start"
 msgstr ""
 
 #: src/Editor.php:239
+#: src/Sheet.php:55
 msgid "Seats per day"
 msgstr ""
 
@@ -450,6 +457,7 @@ msgid "0 = no limit. Counts every booked traveller, infants included."
 msgstr ""
 
 #: src/Editor.php:240
+#: src/Sheet.php:56
 msgid "Closed dates"
 msgstr ""
 
@@ -471,6 +479,7 @@ msgstr ""
 
 #: src/Editor.php:272
 #: src/Editor.php:276
+#: src/Sheet.php:59
 msgid "Meeting point"
 msgstr ""
 
@@ -483,6 +492,7 @@ msgid "Tick every way you offer. The customer chooses one when booking."
 msgstr ""
 
 #: src/Editor.php:275
+#: src/Sheet.php:58
 msgid "Pick-up zones"
 msgstr ""
 
@@ -503,6 +513,7 @@ msgid "Shown to customers who choose the meeting point."
 msgstr ""
 
 #: src/Editor.php:296
+#: src/Sheet.php:60
 msgid "Prices"
 msgstr ""
 
@@ -523,6 +534,7 @@ msgid "Add add-on"
 msgstr ""
 
 #: src/Editor.php:325
+#: src/Sheet.php:62
 msgid "Supplements"
 msgstr ""
 
@@ -572,8 +584,9 @@ msgstr ""
 
 #: src/Module.php:33
 #: src/Module.php:51
-#: src/Module.php:167
-#: src/Module.php:205
+#: src/Module.php:168
+#: src/Module.php:206
+#: src/Sheet.php:31
 msgid "Excursions"
 msgstr ""
 
@@ -585,35 +598,39 @@ msgstr ""
 msgid "Bookings"
 msgstr ""
 
-#: src/Module.php:168
+#: src/Module.php:135
+msgid "Import / export"
+msgstr ""
+
+#: src/Module.php:169
 msgid "Find excursions"
 msgstr ""
 
-#: src/Module.php:173
+#: src/Module.php:174
 msgid "Staying in"
 msgstr ""
 
-#: src/Module.php:175
+#: src/Module.php:176
 msgid "Hurghada, Sharm, Luxor…"
 msgstr ""
 
-#: src/Module.php:206
+#: src/Module.php:207
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr ""
 
-#: src/Module.php:210
+#: src/Module.php:211
 msgid "Excursions page"
 msgstr ""
 
-#: src/Module.php:213
+#: src/Module.php:214
 msgid "The page that lists all excursions and day trips."
 msgstr ""
 
-#: src/Module.php:216
+#: src/Module.php:217
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:219
+#: src/Module.php:220
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr ""
 
@@ -684,4 +701,98 @@ msgstr ""
 
 #: src/Page.php:104
 msgid "Extras"
+msgstr ""
+
+#: src/Sheet.php:34
+msgid "One excursion per row. Prices, pick-up zones and the other \"one per line\" cells take one entry per line (Alt+Enter in Excel), parts separated by |. The Instructions sheet explains every column. Photos are added on each excursion afterwards."
+msgstr ""
+
+#: src/Sheet.php:49
+msgid "A destination name from Location Tree."
+msgstr ""
+
+#: src/Sheet.php:50
+msgid "As shown on the page, e.g. 12 hours or Half day."
+msgstr ""
+
+#: src/Sheet.php:51
+msgid "Deposit %"
+msgstr ""
+
+#: src/Sheet.php:51
+msgid "0 = full price at checkout."
+msgstr ""
+
+#: src/Sheet.php:52
+msgid "Comma separated weekdays, e.g. Mon, Wed, Fri. \"any\" for every day."
+msgstr ""
+
+#: src/Sheet.php:53
+msgid "Comma separated, 24-hour, e.g. 04:00, 09:30."
+msgstr ""
+
+#: src/Sheet.php:54
+msgid "Booking closes (hours)"
+msgstr ""
+
+#: src/Sheet.php:54
+msgid "Hours before the start."
+msgstr ""
+
+#: src/Sheet.php:55
+msgid "0 = no limit."
+msgstr ""
+
+#: src/Sheet.php:56
+msgid "One per line: From | To (To empty for a single day)."
+msgstr ""
+
+#: src/Sheet.php:57
+msgid "Comma separated: hotel (hotels in the zones), typed (customer types the hotel), meeting (meeting point)."
+msgstr ""
+
+#: src/Sheet.php:58
+msgid "One per line: Zone (Location Tree name) | Pick-up time | Extra per person."
+msgstr ""
+
+#: src/Sheet.php:59
+msgid "Shown to customers who choose it."
+msgstr ""
+
+#: src/Sheet.php:60
+msgid "One price row per line: Type (shared or private) | Season from | Season to | From travellers | To travellers | Adult | Child | Infant. Season empty = all year; To travellers empty = no limit."
+msgstr ""
+
+#: src/Sheet.php:61
+msgid "One per line: Name | Price | person or booking."
+msgstr ""
+
+#: src/Sheet.php:62
+msgid "One per line: Name | Date | Until (optional) | Adult | Child | Infant."
+msgstr ""
+
+#. translators: %s: name.
+#: src/Sheet.php:198
+#, php-format
+msgid "Destination “%s” isn’t in Location Tree."
+msgstr ""
+
+#: src/Sheet.php:202
+msgid "Runs on: use day names like Mon, Wed, Fri, or any."
+msgstr ""
+
+#. translators: %s: value.
+#: src/Sheet.php:209
+#, php-format
+msgid "Start times: “%s” isn’t a time like 04:00."
+msgstr ""
+
+#: src/Sheet.php:215
+msgid "Pick-up: use hotel, typed and/or meeting."
+msgstr ""
+
+#. translators: %s: column.
+#: src/Sheet.php:220
+#, php-format
+msgid "%s must be a whole number."
 msgstr ""
