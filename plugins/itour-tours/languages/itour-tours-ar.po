@@ -33,56 +33,489 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
+#: src/Editor.php:34
+msgid "Tour details"
+msgstr "تفاصيل البرنامج"
+
+#: src/Editor.php:55
+msgid "Departure date"
+msgstr "تاريخ المغادرة"
+
+#: src/Editor.php:57
+msgid "Seats (0 = no limit)"
+msgstr "المقاعد (0 = بلا حد)"
+
+#: src/Editor.php:64
+msgid "Day title"
+msgstr "عنوان اليوم"
+
+#: src/Editor.php:69
+msgid "On the map"
+msgstr "على الخريطة"
+
+#: src/Editor.php:75
+msgid "Places visited"
+msgstr "الأماكن المزارة"
+
+#: src/Editor.php:80
+msgid "Meals"
+msgstr "الوجبات"
+
+#: src/Editor.php:86
+msgid "Overnight"
+msgstr "المبيت"
+
+#: src/Editor.php:91
+msgid "What happens"
+msgstr "البرنامج"
+
+#: src/Editor.php:97
+msgid "Hotels"
+msgstr "الفنادق"
+
+#: src/Editor.php:102
+msgid "Season from"
+msgstr "الموسم من"
+
+#: src/Editor.php:103
+msgid "Season to"
+msgstr "الموسم إلى"
+
+#: src/Editor.php:105
+msgid "From travellers"
+msgstr "من عدد مسافرين"
+
+#: src/Editor.php:111
+msgid "To travellers"
+msgstr "إلى عدد مسافرين"
+
+#: src/Editor.php:115
+msgid "Adult (sharing)"
+msgstr "بالغ (غرفة مشتركة)"
+
+#: src/Editor.php:116
+#: src/Editor.php:145
+#: src/Page.php:128
+msgid "Child"
+msgstr "طفل"
+
+#: src/Editor.php:117
+#: src/Editor.php:146
+#: src/Page.php:128
+msgid "Infant"
+msgstr "رضيع"
+
+#: src/Editor.php:118
+msgid "Single room +"
+msgstr "غرفة مفردة +"
+
+#: src/Editor.php:119
+msgid "Triple room −"
+msgstr "غرفة ثلاثية −"
+
+#: src/Editor.php:123
+msgid "Optional extra"
+msgstr "إضافة اختيارية"
+
+#: src/Editor.php:126
+msgid "Price"
+msgstr "السعر"
+
+#: src/Editor.php:128
+msgid "Charged"
+msgstr "يُحتسب"
+
+#. translators: 1: extra, 2: price, 3: per person / per booking.
+#: src/Editor.php:131
+#: src/Page.php:152
+msgid "per person"
+msgstr "للفرد"
+
+#. translators: 1: extra, 2: price, 3: per person / per booking.
+#: src/Editor.php:132
+#: src/Page.php:152
+msgid "per booking"
+msgstr "للحجز"
+
+#: src/Editor.php:139
+msgid "Supplement"
+msgstr "مكمل"
+
+#: src/Editor.php:142
+msgid "Date"
+msgstr "التاريخ"
+
+#: src/Editor.php:143
+msgid "Until (optional)"
+msgstr "حتى (اختياري)"
+
+#: src/Editor.php:144
+msgid "Adult"
+msgstr "بالغ"
+
+#: src/Editor.php:165
+msgid "Basics"
+msgstr "الأساسيات"
+
+#: src/Editor.php:167
+msgid "Main destination"
+msgstr "الوجهة الرئيسية"
+
+#: src/Editor.php:167
+msgid "— Choose —"
+msgstr "— اختر —"
+
+#: src/Editor.php:172
+msgid "Days"
+msgstr "الأيام"
+
+#: src/Editor.php:173
+#: src/Page.php:55
+msgid "Booking"
+msgstr "الحجز"
+
+#: src/Editor.php:174
+msgid "Instant booking, pay online"
+msgstr "حجز فوري والدفع عبر الإنترنت"
+
+#: src/Editor.php:174
+msgid "Enquiry only (you reply with a quote)"
+msgstr "استفسار فقط (ترد بعرض سعر)"
+
+#: src/Editor.php:178
+msgid "Deposit (%)"
+msgstr "العربون (%)"
+
+#: src/Editor.php:179
+msgid "Deposit 0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest before travel."
+msgstr "العربون 0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي قبل السفر."
+
+#: src/Editor.php:181
+msgid "Dates"
+msgstr "التواريخ"
+
+#: src/Editor.php:182
+msgid "Starts on the weekdays below (tick all seven for any day)"
+msgstr "يبدأ في أيام الأسبوع أدناه (حدد السبعة لأي يوم)"
+
+#: src/Editor.php:183
+msgid "Fixed departures only (dates and seats below)"
+msgstr "مغادرات بتواريخ ثابتة فقط (التواريخ والمقاعد أدناه)"
+
+#: src/Editor.php:184
+msgid "Start days"
+msgstr "أيام البدء"
+
+#: src/Editor.php:189
+msgid "Booking closes (days before the start)"
+msgstr "يُغلق الحجز (أيام قبل البدء)"
+
+#: src/Editor.php:190
+msgid "Fixed departures:"
+msgstr "المغادرات الثابتة:"
+
+#: src/Editor.php:191
+msgid "Add departure"
+msgstr "إضافة مغادرة"
+
+#: src/Editor.php:193
+msgid "Itinerary"
+msgstr "البرنامج اليومي"
+
+#: src/Editor.php:193
+msgid "One row per day, in order. \"On the map\" picks a place from Location Tree (it needs latitude and longitude there) to draw the route map."
+msgstr "صف لكل يوم بالترتيب. «على الخريطة» يختار مكانًا من شجرة المواقع (يحتاج خط العرض والطول هناك) لرسم خريطة المسار."
+
+#: src/Editor.php:194
+msgid "Add day"
+msgstr "إضافة يوم"
+
+#: src/Editor.php:196
+msgid "Prices"
+msgstr "الأسعار"
+
+#: src/Editor.php:196
+msgid "Price per person sharing a double or twin room. Add rows per hotel class, season and group size: the more travellers, the lower the price. \"To travellers\" empty = no upper limit. Season rows override all-year rows. Single room + is added per traveller in a single room; Triple room − is taken off per traveller in a triple room."
+msgstr "السعر للفرد في غرفة مزدوجة. أضف صفوفًا لكل فئة فنادق وموسم وحجم مجموعة: كلما زاد المسافرون قل السعر. «إلى عدد مسافرين» فارغ = بلا حد أعلى. صفوف الموسم تتقدم على صفوف العام كله. «غرفة مفردة +» يُضاف لكل مسافر في غرفة مفردة؛ «غرفة ثلاثية −» يُخصم لكل مسافر في غرفة ثلاثية."
+
+#: src/Editor.php:197
+msgid "Add price row"
+msgstr "إضافة صف سعر"
+
+#: src/Editor.php:199
+msgid "Optional extras"
+msgstr "إضافات اختيارية"
+
+#: src/Editor.php:199
+msgid "Paid extras the customer can tick, e.g. a hot-air balloon ride or a sound and light show."
+msgstr "إضافات مدفوعة يختارها العميل، مثل رحلة المنطاد أو عرض الصوت والضوء."
+
+#: src/Editor.php:200
+msgid "Add extra"
+msgstr "إضافة خيار"
+
+#: src/Editor.php:202
+msgid "Supplements"
+msgstr "المكملات"
+
+#: src/Editor.php:202
+msgid "Charged automatically per person when the tour dates include these dates, e.g. a Christmas Gala Meal."
+msgstr "تُحتسب تلقائيًا للفرد عندما تشمل تواريخ البرنامج هذه التواريخ، مثل عشاء حفل الكريسماس."
+
+#: src/Editor.php:203
+msgid "Add supplement"
+msgstr "إضافة مكمل"
+
 #: src/Module.php:33
-#: src/Module.php:50
-#: src/Module.php:124
+#: src/Module.php:74
+#: src/Module.php:150
 msgid "Tour Packages"
 msgstr "الباقات السياحية"
 
-#: src/Module.php:50
+#: src/Module.php:74
 msgid "tour package"
 msgstr "برنامج سياحي"
 
-#: src/Module.php:86
+#: src/Module.php:112
 msgid "Tour packages"
 msgstr "الباقات السياحية"
 
-#: src/Module.php:87
+#: src/Module.php:113
 msgid "Find tours"
 msgstr "ابحث عن باقة"
 
-#: src/Module.php:92
+#: src/Module.php:118
 msgid "Destination"
 msgstr "الوجهة"
 
-#: src/Module.php:94
+#: src/Module.php:120
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr "القاهرة، الأقصر، رحلة نيلية…"
 
-#: src/Module.php:99
+#: src/Module.php:125
 msgid "Start date"
 msgstr "تاريخ البدء"
 
-#: src/Module.php:105
+#: src/Module.php:131
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Module.php:125
+#: src/Module.php:151
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الباقات السياحية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:129
+#: src/Module.php:155
 msgid "Tour packages page"
 msgstr "صفحة الباقات السياحية"
 
-#: src/Module.php:132
+#: src/Module.php:158
 msgid "The page that lists all tour packages."
 msgstr "الصفحة التي تعرض جميع الباقات السياحية."
 
-#: src/Module.php:135
+#: src/Module.php:161
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:138
+#: src/Module.php:164
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الباقات. اتركها فارغة لاستخدام صفحة الباقات السياحية."
+
+#. translators: 1: days, 2: nights.
+#: src/Page.php:46
+msgid "Duration"
+msgstr "المدة"
+
+#. translators: 1: days, 2: nights.
+#: src/Page.php:46
+#, php-format
+msgid "%1$d days / %2$d nights"
+msgstr "%1$d أيام / %2$d ليالٍ"
+
+#. translators: 1: days, 2: nights.
+#: src/Page.php:46
+msgid "1 day"
+msgstr "يوم واحد"
+
+#: src/Page.php:50
+msgid "Departures"
+msgstr "المغادرات"
+
+#: src/Page.php:50
+msgid "New dates coming soon"
+msgstr "تواريخ جديدة قريبًا"
+
+#: src/Page.php:53
+msgid "Starts"
+msgstr "يبدأ"
+
+#: src/Page.php:53
+msgid "Any day"
+msgstr "أي يوم"
+
+#: src/Page.php:55
+msgid "On request: we confirm availability and send a quote"
+msgstr "عند الطلب: نؤكد التوفر ونرسل عرض سعر"
+
+#: src/Page.php:55
+msgid "Instant confirmation"
+msgstr "تأكيد فوري"
+
+#: src/Page.php:74
+msgid "Day by day"
+msgstr "يومًا بيوم"
+
+#. translators: %d: day number.
+#: src/Page.php:78
+#, php-format
+msgid "Day %d"
+msgstr "اليوم %d"
+
+#. translators: %s: overnight place.
+#: src/Page.php:79
+#, php-format
+msgid "Overnight: %s"
+msgstr "المبيت: %s"
+
+#: src/Page.php:103
+msgid "Route map"
+msgstr "خريطة المسار"
+
+#. translators: 1: start date, 2: end date.
+#: src/Page.php:119
+#, php-format
+msgid "%1$s – %2$s"
+msgstr "%1$s – %2$s"
+
+#: src/Page.php:126
+msgid "Prices per person"
+msgstr "الأسعار للفرد"
+
+#: src/Page.php:128
+msgid "Group size"
+msgstr "حجم المجموعة"
+
+#: src/Page.php:128
+msgid "Adult, sharing"
+msgstr "بالغ، غرفة مشتركة"
+
+#: src/Page.php:128
+msgid "Single room"
+msgstr "غرفة مفردة"
+
+#: src/Page.php:133
+msgid "Free"
+msgstr "مجانًا"
+
+#. translators: %s: group size, e.g. "2–3" or "11+".
+#: src/Page.php:135
+#, php-format
+msgid "%s travellers"
+msgstr "%s مسافرين"
+
+#. translators: 1: extra, 2: price, 3: per person / per booking.
+#: src/Page.php:152
+#, php-format
+msgid "%1$s: %2$s %3$s"
+msgstr "%1$s: %2$s %3$s"
+
+#. translators: 1: supplement, 2: date(s), 3: adult price.
+#: src/Page.php:157
+#, php-format
+msgid "%1$s (%2$s): %3$s per adult, added automatically"
+msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
+
+#: src/Page.php:159
+msgid "Extras"
+msgstr "الإضافات"
+
+#: src/Tour.php:63
+msgid "Standard"
+msgstr "قياسي"
+
+#: src/Tour.php:64
+msgid "3-star hotels"
+msgstr "فنادق 3 نجوم"
+
+#: src/Tour.php:65
+msgid "4-star hotels"
+msgstr "فنادق 4 نجوم"
+
+#: src/Tour.php:66
+msgid "5-star hotels"
+msgstr "فنادق 5 نجوم"
+
+#: src/Tour.php:77
+msgid "No meals"
+msgstr "بدون وجبات"
+
+#: src/Tour.php:78
+msgid "Breakfast"
+msgstr "إفطار"
+
+#: src/Tour.php:79
+msgid "Breakfast, lunch"
+msgstr "إفطار، غداء"
+
+#: src/Tour.php:80
+msgid "Breakfast, dinner"
+msgstr "إفطار، عشاء"
+
+#: src/Tour.php:81
+msgid "All meals"
+msgstr "جميع الوجبات"
+
+#: src/Tour.php:82
+msgid "Lunch"
+msgstr "غداء"
+
+#: src/Tour.php:83
+msgid "Dinner"
+msgstr "عشاء"
+
+#: src/Tour.php:84
+msgid "Lunch, dinner"
+msgstr "غداء، عشاء"
+
+#. translators: %d: number of adults.
+#: src/Tour.php:154
+#, php-format
+msgid "%d adult"
+msgid_plural "%d adults"
+msgstr[0] "%d بالغ"
+msgstr[1] "بالغ واحد"
+msgstr[2] "بالغان"
+msgstr[3] "%d بالغين"
+msgstr[4] "%d بالغًا"
+msgstr[5] "%d بالغ"
+
+#. translators: %d: number of children.
+#: src/Tour.php:156
+#, php-format
+msgid "%d child"
+msgid_plural "%d children"
+msgstr[0] "%d طفل"
+msgstr[1] "طفل واحد"
+msgstr[2] "طفلان"
+msgstr[3] "%d أطفال"
+msgstr[4] "%d طفلًا"
+msgstr[5] "%d طفل"
+
+#. translators: %d: number of infants.
+#: src/Tour.php:158
+#, php-format
+msgid "%d infant"
+msgid_plural "%d infants"
+msgstr[0] "%d رضيع"
+msgstr[1] "رضيع واحد"
+msgstr[2] "رضيعان"
+msgstr[3] "%d رضع"
+msgstr[4] "%d رضيعًا"
+msgstr[5] "%d رضيع"
+
+#: src/Tour.php:159
+msgid "Single room supplement"
+msgstr "مكمل الغرفة المفردة"
+
+#: src/Tour.php:160
+msgid "Triple room reduction"
+msgstr "خصم الغرفة الثلاثية"

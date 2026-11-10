@@ -62,6 +62,26 @@ final class Locations {
 	}
 
 	/**
+	 * Every active location as "Destination › Zone › Place" (for itinerary maps). Includes '' = none.
+	 *
+	 * @return array<string,string>
+	 */
+	public static function all_options(): array {
+		global $wpdb;
+		$rows = (array) $wpdb->get_results( $wpdb->prepare( 'SELECT id, parent_id, name FROM %i WHERE active = 1', $wpdb->prefix . 'itour_locations' ), OBJECT_K ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$out  = array();
+		foreach ( $rows as $id => $r ) {
+			$path = array( $r->name );
+			for ( $p = $r->parent_id, $guard = 0; $p && isset( $rows[ $p ] ) && $guard < 5; $p = $rows[ $p ]->parent_id, $guard++ ) {
+				array_unshift( $path, $rows[ $p ]->name );
+			}
+			$out[ (string) $id ] = implode( ' › ', $path );
+		}
+		asort( $out );
+		return array( '' => '—' ) + $out;
+	}
+
+	/**
 	 * Zones only, labelled "Destination › Zone" (for price tables).
 	 *
 	 * @return array<string,string>

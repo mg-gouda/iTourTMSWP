@@ -3,7 +3,7 @@
  * Repeating rows editor (price tables, pick-up zones, add-ons…): a table of inputs with Add row /
  * Remove. Rows post as name[i][key]; Rows::clean() sanitizes them and drops empty ones.
  *
- * Column: key => [ 'label' => …, 'type' => text|number|decimal|date|time|select, 'options' => [] | callable, 'width' => '8em' ]
+ * Column: key => [ 'label' => …, 'type' => text|textarea|number|decimal|date|time|select, 'options' => [] | callable, 'width' => '8em' ]
  *
  * @package ITour\Core
  */
@@ -62,6 +62,8 @@ final class Rows {
 					echo '<option value="' . esc_attr( (string) $opt ) . '"' . selected( $v, (string) $opt, false ) . '>' . esc_html( $label ) . '</option>';
 				}
 				echo '</select>';
+			} elseif ( 'textarea' === $c['type'] ) {
+				echo '<textarea class="widefat" rows="3"' . $a . '>' . esc_textarea( $v ) . '</textarea>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above.
 			} else {
 				$type = array(
 					'number'  => 'number',
@@ -108,6 +110,9 @@ final class Rows {
 						break;
 					case 'select':
 						$v = array_key_exists( $v, Fields::options( $c ) ) ? $v : (string) array_key_first( Fields::options( $c ) );
+						break;
+					case 'textarea':
+						$v = sanitize_textarea_field( (string) ( $r[ $key ] ?? '' ) );
 						break;
 					default:
 						$v = sanitize_text_field( $v );

@@ -1,18 +1,4 @@
-/* iTour excursion page: facts and prices. Uses the theme's tokens when available. */
-.itour-exc { --itour-exc-line: var(--wp--preset--color--line, #d5dae3); --itour-exc-radius: var(--wp-itourtms-radius, 10px); margin-block-start: 40px; }
-.itour-exc__facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px 24px; margin: 0; padding: 20px; border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); }
-.itour-exc__facts dt { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--wp--preset--color--muted, #5b6472); }
-.itour-exc__facts dd { margin: 4px 0 0; }
-.itour-exc__title { margin-block: 40px 12px; font-size: 1.375rem; }
-.itour-exc__prices { width: 100%; margin-block-end: 20px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-.itour-exc__prices caption { text-align: start; font-weight: 600; padding-block-end: 8px; }
-.itour-exc__prices th, .itour-exc__prices td { padding: 10px 12px; border-block-end: 1px solid var(--itour-exc-line); text-align: start; }
-.itour-exc__prices thead th { font-size: 0.875rem; color: var(--wp--preset--color--muted, #5b6472); font-weight: 600; }
-.itour-exc__prices small { font-weight: 400; }
-.itour-exc__extras { padding-inline-start: 1.2em; }
-.itour-exc__extras li + li { margin-block-start: 6px; }
-.itour-exc__note { padding: 12px 16px; border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); }
-@media (max-width: 560px) { .itour-exc__prices th, .itour-exc__prices td { padding: 8px 6px; font-size: 0.9375rem; } }
+/* iTour excursion page: booking form. Facts, price tables and info come from iTour Core's products.css. */
 
 /* Booking form (same look as the transfer booking form). */
 .itour-exc .itour-tb { padding: 20px; border: 1px solid var(--itour-exc-line); border-radius: var(--itour-exc-radius); }

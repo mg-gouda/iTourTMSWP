@@ -73,23 +73,23 @@ msgstr "العودة إلى القائمة"
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:37
+#: src/Products.php:52
 #, php-format
 msgid "Add %s"
 msgstr "إضافة %s"
 
 #. translators: %s: item type, e.g. "branch".
-#. translators: %s: product type.
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:41
+#: src/Products.php:56
 #, php-format
 msgid "View %s"
 msgstr "عرض %s"
 
 #. translators: %s: item type, e.g. "branch".
-#. translators: %s: product type.
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:39
+#: src/Products.php:54
 #, php-format
 msgid "Edit %s"
 msgstr "تعديل %s"
@@ -187,7 +187,7 @@ msgid "Version"
 msgstr "الإصدار"
 
 #: src/Admin/Rows.php:34
-#: src/Admin/Rows.php:76
+#: src/Admin/Rows.php:78
 msgid "Remove"
 msgstr "إزالة"
 
@@ -250,14 +250,14 @@ msgid "Website"
 msgstr "الموقع الإلكتروني"
 
 #: src/Company.php:67
-#: src/Locations.php:190
+#: src/Locations.php:210
 msgid "Address"
 msgstr "العنوان"
 
 #: src/Company.php:72
 #: src/CoreModule.php:208
 #: src/CoreModule.php:263
-#: src/Locations.php:183
+#: src/Locations.php:203
 msgid "Country"
 msgstr "الدولة"
 
@@ -315,8 +315,8 @@ msgstr "الفرع"
 #: src/CoreModule.php:160
 #: src/CoreModule.php:173
 #: src/CoreModule.php:322
-#: src/Locations.php:135
-#: src/Locations.php:176
+#: src/Locations.php:155
+#: src/Locations.php:196
 msgid "Code"
 msgstr "الرمز"
 
@@ -330,8 +330,8 @@ msgstr "المقر الرئيسي"
 #: src/CoreModule.php:303
 #: src/CoreModule.php:326
 #: src/CoreModule.php:382
-#: src/Locations.php:136
-#: src/Locations.php:206
+#: src/Locations.php:156
+#: src/Locations.php:226
 msgid "Active"
 msgstr "نشط"
 
@@ -340,8 +340,8 @@ msgstr "نشط"
 #: src/CoreModule.php:213
 #: src/CoreModule.php:323
 #: src/CoreModule.php:356
-#: src/Locations.php:133
-#: src/Locations.php:163
+#: src/Locations.php:153
+#: src/Locations.php:183
 msgid "Name"
 msgstr "الاسم"
 
@@ -368,8 +368,8 @@ msgstr "لا يوجد شركاء بعد. الشركاء هم عملاؤك ومو
 
 #: src/CoreModule.php:205
 #: src/CoreModule.php:219
-#: src/Locations.php:134
-#: src/Locations.php:156
+#: src/Locations.php:154
+#: src/Locations.php:176
 msgid "Type"
 msgstr "النوع"
 
@@ -614,54 +614,54 @@ msgstr "ميناء"
 msgid "Meeting point"
 msgstr "نقطة التقاء"
 
-#: src/Locations.php:113
-#: src/Locations.php:127
+#: src/Locations.php:133
+#: src/Locations.php:147
 msgid "Location Tree"
 msgstr "شجرة المواقع"
 
-#: src/Locations.php:126
+#: src/Locations.php:146
 msgid "location"
 msgstr "موقع"
 
-#: src/Locations.php:131
+#: src/Locations.php:151
 msgid "No locations yet. Add a destination (e.g. Hurghada), then its zones (e.g. Sahl Hasheesh, El Gouna), then the hotels and airports in each zone. Excursions, transfers and tours all use this list."
 msgstr "لا توجد مواقع بعد. أضف وجهة (مثل الغردقة)، ثم مناطقها (مثل سهل حشيش والجونة)، ثم الفنادق والمطارات في كل منطقة. تستخدم الرحلات والتنقلات والجولات هذه القائمة."
 
-#: src/Locations.php:143
+#: src/Locations.php:163
 msgid "A destination is top level: leave “Inside” empty."
 msgstr "الوجهة في المستوى الأعلى: اترك «داخل» فارغًا."
 
 #. translators: 1: location type, e.g. "Hotel"; 2: parent type, e.g. "zone".
-#: src/Locations.php:148
+#: src/Locations.php:168
 #, php-format
 msgid "A %1$s must be inside a %2$s."
 msgstr "يجب أن يكون %1$s داخل %2$s."
 
-#: src/Locations.php:169
+#: src/Locations.php:189
 msgid "Inside"
 msgstr "داخل"
 
-#: src/Locations.php:172
+#: src/Locations.php:192
 msgid "Zones go inside a destination; hotels, airports, ports and meeting points go inside a zone."
 msgstr "المناطق داخل وجهة؛ والفنادق والمطارات والموانئ ونقاط الالتقاء داخل منطقة."
 
-#: src/Locations.php:179
+#: src/Locations.php:199
 msgid "Optional short code, e.g. the airport code HRG."
 msgstr "رمز قصير اختياري، مثل رمز المطار HRG."
 
-#: src/Locations.php:186
+#: src/Locations.php:206
 msgid "For destinations."
 msgstr "للوجهات."
 
-#: src/Locations.php:195
+#: src/Locations.php:215
 msgid "Latitude"
 msgstr "خط العرض"
 
-#: src/Locations.php:197
+#: src/Locations.php:217
 msgid "Optional. Used for maps; copy from Google Maps (right-click the place)."
 msgstr "اختياري. يُستخدم للخرائط؛ انسخه من خرائط Google (انقر بزر الفأرة الأيمن على المكان)."
 
-#: src/Locations.php:201
+#: src/Locations.php:221
 msgid "Longitude"
 msgstr "خط الطول"
 
@@ -698,6 +698,96 @@ msgstr "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم ي�
 #, php-format
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
 msgstr "iTour: الوحدة %1$s لا تعمل لأنها تحتاج إلى هذه الوحدات: %2$s."
+
+#: src/Products.php:73
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: src/Products.php:74
+msgid "Category"
+msgstr "التصنيف"
+
+#: src/Products.php:83
+#: src/Products.php:247
+msgid "Languages"
+msgstr "اللغات"
+
+#: src/Products.php:83
+msgid "Language"
+msgstr "اللغة"
+
+#: src/Products.php:84
+msgid "Suitability"
+msgstr "مناسبة لـ"
+
+#: src/Products.php:84
+#: src/Products.php:247
+msgid "Suitable for"
+msgstr "مناسبة لـ"
+
+#: src/Products.php:137
+msgid "Question"
+msgstr "السؤال"
+
+#: src/Products.php:142
+msgid "Answer"
+msgstr "الإجابة"
+
+#: src/Products.php:155
+msgid "Info: included, FAQ, gallery"
+msgstr "معلومات: ما يشمله، الأسئلة الشائعة، الصور"
+
+#: src/Products.php:170
+msgid "Included (one per line)"
+msgstr "يشمل (بند في كل سطر)"
+
+#: src/Products.php:170
+msgid "Not included (one per line)"
+msgstr "لا يشمل (بند في كل سطر)"
+
+#: src/Products.php:173
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: src/Products.php:174
+msgid "Add question"
+msgstr "إضافة سؤال"
+
+#: src/Products.php:175
+msgid "Gallery"
+msgstr "معرض الصور"
+
+#: src/Products.php:181
+msgid "Gallery photos"
+msgstr "صور المعرض"
+
+#: src/Products.php:181
+msgid "Use these photos"
+msgstr "استخدم هذه الصور"
+
+#: src/Products.php:181
+msgid "Choose photos"
+msgstr "اختر الصور"
+
+#: src/Products.php:182
+msgid "Clear"
+msgstr "مسح"
+
+#: src/Products.php:219
+msgid "Included"
+msgstr "يشمل"
+
+#: src/Products.php:220
+msgid "Not included"
+msgstr "لا يشمل"
+
+#: src/Products.php:233
+msgid "Photos"
+msgstr "الصور"
+
+#: src/Products.php:240
+msgid "Questions"
+msgstr "أسئلة"
 
 #: blocks/booking-widget/editor.js:8
 msgid "Tour packages"

@@ -37,7 +37,31 @@ final class Module extends \ITour\Core\Module {
 	 * Module version.
 	 */
 	public function version(): string {
-		return '0.2.0';
+		return '0.3.0';
+	}
+
+	/**
+	 * Price rows per tour package.
+	 *
+	 * @return array<string,string>
+	 */
+	public function tables(): array {
+		return array(
+			'tour_rates' => "id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  post_id bigint(20) unsigned NOT NULL,
+  hotel_class varchar(10) NOT NULL DEFAULT '',
+  season_from date NULL,
+  season_to date NULL,
+  pax_min smallint(5) unsigned NOT NULL DEFAULT 1,
+  pax_max smallint(5) unsigned NOT NULL DEFAULT 0,
+  adult decimal(12,2) NOT NULL,
+  child decimal(12,2) NOT NULL DEFAULT 0,
+  infant decimal(12,2) NOT NULL DEFAULT 0,
+  single_supp decimal(12,2) NOT NULL DEFAULT 0,
+  triple_red decimal(12,2) NOT NULL DEFAULT 0,
+  PRIMARY KEY  (id),
+  KEY post_id (post_id)",
+		);
 	}
 
 	/**
@@ -47,9 +71,11 @@ final class Module extends \ITour\Core\Module {
 		add_action(
 			'init',
 			static function (): void {
-				\ITour\Core\Products::register( 'itour_tour', 'tour', __( 'Tour Packages', 'itour-tours' ), __( 'tour package', 'itour-tours' ), 'dashicons-admin-site-alt3', 6 );
+				\ITour\Core\Products::register( Tour::TYPE, 'tour', __( 'Tour Packages', 'itour-tours' ), __( 'tour package', 'itour-tours' ), 'dashicons-admin-site-alt3', 6 );
 			}
 		);
+		( new Editor() )->hooks();
+		add_filter( 'the_content', array( Page::class, 'append' ) );
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
 	}

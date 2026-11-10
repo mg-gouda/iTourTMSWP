@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:03:34+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:14:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -79,23 +79,23 @@ msgstr ""
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:37
+#: src/Products.php:52
 #, php-format
 msgid "Add %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
-#. translators: %s: product type.
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:41
+#: src/Products.php:56
 #, php-format
 msgid "View %s"
 msgstr ""
 
 #. translators: %s: item type, e.g. "branch".
-#. translators: %s: product type.
+#. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:39
+#: src/Products.php:54
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Version"
 msgstr ""
 
 #: src/Admin/Rows.php:34
-#: src/Admin/Rows.php:76
+#: src/Admin/Rows.php:78
 msgid "Remove"
 msgstr ""
 
@@ -256,14 +256,14 @@ msgid "Website"
 msgstr ""
 
 #: src/Company.php:67
-#: src/Locations.php:190
+#: src/Locations.php:210
 msgid "Address"
 msgstr ""
 
 #: src/Company.php:72
 #: src/CoreModule.php:208
 #: src/CoreModule.php:263
-#: src/Locations.php:183
+#: src/Locations.php:203
 msgid "Country"
 msgstr ""
 
@@ -321,8 +321,8 @@ msgstr ""
 #: src/CoreModule.php:160
 #: src/CoreModule.php:173
 #: src/CoreModule.php:322
-#: src/Locations.php:135
-#: src/Locations.php:176
+#: src/Locations.php:155
+#: src/Locations.php:196
 msgid "Code"
 msgstr ""
 
@@ -336,8 +336,8 @@ msgstr ""
 #: src/CoreModule.php:303
 #: src/CoreModule.php:326
 #: src/CoreModule.php:382
-#: src/Locations.php:136
-#: src/Locations.php:206
+#: src/Locations.php:156
+#: src/Locations.php:226
 msgid "Active"
 msgstr ""
 
@@ -346,8 +346,8 @@ msgstr ""
 #: src/CoreModule.php:213
 #: src/CoreModule.php:323
 #: src/CoreModule.php:356
-#: src/Locations.php:133
-#: src/Locations.php:163
+#: src/Locations.php:153
+#: src/Locations.php:183
 msgid "Name"
 msgstr ""
 
@@ -374,8 +374,8 @@ msgstr ""
 
 #: src/CoreModule.php:205
 #: src/CoreModule.php:219
-#: src/Locations.php:134
-#: src/Locations.php:156
+#: src/Locations.php:154
+#: src/Locations.php:176
 msgid "Type"
 msgstr ""
 
@@ -620,54 +620,54 @@ msgstr ""
 msgid "Meeting point"
 msgstr ""
 
-#: src/Locations.php:113
-#: src/Locations.php:127
+#: src/Locations.php:133
+#: src/Locations.php:147
 msgid "Location Tree"
 msgstr ""
 
-#: src/Locations.php:126
+#: src/Locations.php:146
 msgid "location"
 msgstr ""
 
-#: src/Locations.php:131
+#: src/Locations.php:151
 msgid "No locations yet. Add a destination (e.g. Hurghada), then its zones (e.g. Sahl Hasheesh, El Gouna), then the hotels and airports in each zone. Excursions, transfers and tours all use this list."
 msgstr ""
 
-#: src/Locations.php:143
+#: src/Locations.php:163
 msgid "A destination is top level: leave “Inside” empty."
 msgstr ""
 
 #. translators: 1: location type, e.g. "Hotel"; 2: parent type, e.g. "zone".
-#: src/Locations.php:148
+#: src/Locations.php:168
 #, php-format
 msgid "A %1$s must be inside a %2$s."
 msgstr ""
 
-#: src/Locations.php:169
+#: src/Locations.php:189
 msgid "Inside"
 msgstr ""
 
-#: src/Locations.php:172
+#: src/Locations.php:192
 msgid "Zones go inside a destination; hotels, airports, ports and meeting points go inside a zone."
 msgstr ""
 
-#: src/Locations.php:179
+#: src/Locations.php:199
 msgid "Optional short code, e.g. the airport code HRG."
 msgstr ""
 
-#: src/Locations.php:186
+#: src/Locations.php:206
 msgid "For destinations."
 msgstr ""
 
-#: src/Locations.php:195
+#: src/Locations.php:215
 msgid "Latitude"
 msgstr ""
 
-#: src/Locations.php:197
+#: src/Locations.php:217
 msgid "Optional. Used for maps; copy from Google Maps (right-click the place)."
 msgstr ""
 
-#: src/Locations.php:201
+#: src/Locations.php:221
 msgid "Longitude"
 msgstr ""
 
@@ -703,6 +703,96 @@ msgstr ""
 #: src/Modules.php:95
 #, php-format
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
+msgstr ""
+
+#: src/Products.php:73
+msgid "Categories"
+msgstr ""
+
+#: src/Products.php:74
+msgid "Category"
+msgstr ""
+
+#: src/Products.php:83
+#: src/Products.php:247
+msgid "Languages"
+msgstr ""
+
+#: src/Products.php:83
+msgid "Language"
+msgstr ""
+
+#: src/Products.php:84
+msgid "Suitability"
+msgstr ""
+
+#: src/Products.php:84
+#: src/Products.php:247
+msgid "Suitable for"
+msgstr ""
+
+#: src/Products.php:137
+msgid "Question"
+msgstr ""
+
+#: src/Products.php:142
+msgid "Answer"
+msgstr ""
+
+#: src/Products.php:155
+msgid "Info: included, FAQ, gallery"
+msgstr ""
+
+#: src/Products.php:170
+msgid "Included (one per line)"
+msgstr ""
+
+#: src/Products.php:170
+msgid "Not included (one per line)"
+msgstr ""
+
+#: src/Products.php:173
+msgid "FAQ"
+msgstr ""
+
+#: src/Products.php:174
+msgid "Add question"
+msgstr ""
+
+#: src/Products.php:175
+msgid "Gallery"
+msgstr ""
+
+#: src/Products.php:181
+msgid "Gallery photos"
+msgstr ""
+
+#: src/Products.php:181
+msgid "Use these photos"
+msgstr ""
+
+#: src/Products.php:181
+msgid "Choose photos"
+msgstr ""
+
+#: src/Products.php:182
+msgid "Clear"
+msgstr ""
+
+#: src/Products.php:219
+msgid "Included"
+msgstr ""
+
+#: src/Products.php:220
+msgid "Not included"
+msgstr ""
+
+#: src/Products.php:233
+msgid "Photos"
+msgstr ""
+
+#: src/Products.php:240
+msgid "Questions"
 msgstr ""
 
 #: blocks/booking-widget/editor.js:8

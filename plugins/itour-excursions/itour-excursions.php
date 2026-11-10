@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Excursions
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Day trips and excursions: programmes, pick-up, prices, availability and booking.
- * Version:           0.3.0
+ * Version:           0.3.1
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  itour-core

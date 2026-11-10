@@ -111,7 +111,7 @@ msgstr "سأقابلكم عند %s"
 #: src/Booking.php:428
 #: src/Booking.php:456
 #: src/Editor.php:176
-#: src/Page.php:52
+#: src/Page.php:53
 msgid "Pick-up"
 msgstr "الاستقبال"
 
@@ -143,7 +143,7 @@ msgstr "%1$s (+%2$s %3$s)"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:116
-#: src/Page.php:88
+#: src/Page.php:89
 msgid "per booking"
 msgstr "للحجز"
 
@@ -151,7 +151,7 @@ msgstr "للحجز"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:115
-#: src/Page.php:88
+#: src/Page.php:89
 msgid "per person"
 msgstr "للفرد"
 
@@ -284,7 +284,7 @@ msgid "Seats"
 msgstr "المقاعد"
 
 #: src/Editor.php:32
-#: src/Page.php:54
+#: src/Page.php:55
 msgid "Trip details"
 msgstr "تفاصيل الرحلة"
 
@@ -310,19 +310,19 @@ msgstr "إلى عدد مسافرين"
 
 #: src/Editor.php:73
 #: src/Editor.php:134
-#: src/Page.php:72
+#: src/Page.php:73
 msgid "Adult"
 msgstr "بالغ"
 
 #: src/Editor.php:74
 #: src/Editor.php:135
-#: src/Page.php:72
+#: src/Page.php:73
 msgid "Child"
 msgstr "طفل"
 
 #: src/Editor.php:75
 #: src/Editor.php:136
-#: src/Page.php:72
+#: src/Page.php:73
 msgid "Infant"
 msgstr "رضيع"
 
@@ -383,7 +383,7 @@ msgid "From Location Tree. Searches by destination use it."
 msgstr "من شجرة المواقع. يُستخدم في البحث حسب الوجهة."
 
 #: src/Editor.php:161
-#: src/Page.php:37
+#: src/Page.php:38
 msgid "Duration"
 msgstr "المدة"
 
@@ -579,71 +579,71 @@ msgstr "صفحة نتائج البحث"
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."
 
-#: src/Page.php:39
+#: src/Page.php:40
 msgid "Runs"
 msgstr "التشغيل"
 
-#: src/Page.php:39
+#: src/Page.php:40
 msgid "Every day"
 msgstr "يوميًا"
 
-#: src/Page.php:41
+#: src/Page.php:42
 msgid "Starts"
 msgstr "يبدأ"
 
-#: src/Page.php:45
+#: src/Page.php:46
 msgid "Pick-up from your hotel"
 msgstr "الاستقبال من فندقك"
 
 #. translators: %s: meeting point.
-#: src/Page.php:49
+#: src/Page.php:50
 #, php-format
 msgid "or meet us at %s"
 msgstr "أو قابلنا عند %s"
 
 #. translators: 1: start date, 2: end date.
-#: src/Page.php:65
+#: src/Page.php:66
 #, php-format
 msgid "%1$s – %2$s"
 msgstr "%1$s – %2$s"
 
-#: src/Page.php:70
+#: src/Page.php:71
 msgid "Prices per person"
 msgstr "الأسعار للفرد"
 
-#: src/Page.php:72
+#: src/Page.php:73
 msgid "Group size"
 msgstr "حجم المجموعة"
 
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:78
+#: src/Page.php:79
 #, php-format
 msgid "%s travellers"
 msgstr "%s مسافرين"
 
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:78
+#: src/Page.php:79
 msgid "Free"
 msgstr "مجانًا"
 
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Page.php:88
+#: src/Page.php:89
 #, php-format
 msgid "%1$s: %2$s %3$s"
 msgstr "%1$s: %2$s %3$s"
 
 #. translators: 1: supplement name, 2: date(s), 3: adult price.
-#: src/Page.php:93
+#: src/Page.php:94
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
 
 #. translators: 1: zone, 2: price.
-#: src/Page.php:99
+#: src/Page.php:100
 #, php-format
 msgid "Pick-up from %1$s: %2$s per person"
 msgstr "الاستقبال من %1$s: %2$s للفرد"
 
-#: src/Page.php:103
+#: src/Page.php:104
 msgid "Extras"
 msgstr "الإضافات"

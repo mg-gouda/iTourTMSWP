@@ -14,6 +14,9 @@ Owner's answers to the 14 product questions, plus two later rules. Decision D-02
 - **B2B:** comes later, after B2C launches. Partner net prices go in a later phase; the data model leaves room for them now.
 
 ## Tour Packages (`itour-tours`)
+Status: **data entry built (0.3.0)**. Own "Tour Packages" menu; edit screen = block editor text + "Tour details" box (destination, days, instant/enquiry booking, deposit %, start weekdays or fixed departures with seats, cut-off days, day-by-day itinerary with map place / places / meals / overnight / text, prices per hotel class × season × group size with child, infant, single + and triple −, optional extras, dated supplements) + shared "Info" box + Categories / Languages / Suitability in the sidebar. Price engine `Tour::price()` (supplements apply when the trip's days overlap their dates). The page shows facts, itinerary, route map, price tables, extras and info. **Booking is next.**
+- Shared for every product (core `Products`): own Categories taxonomy, shared Languages and Suitability tags, "Info" box (included / not included, FAQ, gallery from the media library) and their display. Excursions use them too.
+
 - **Pricing:**
   - Per person, by season and by pax bracket.
   - Hotel class options: 3★, 4★, 5★.
