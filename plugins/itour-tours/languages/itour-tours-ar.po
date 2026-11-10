@@ -33,236 +33,273 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
-#: src/Editor.php:34
+#: src/Editor.php:31
 msgid "Tour details"
 msgstr "تفاصيل البرنامج"
 
-#: src/Editor.php:55
+#: src/Editor.php:65
 msgid "Departure date"
 msgstr "تاريخ المغادرة"
 
-#: src/Editor.php:57
+#: src/Editor.php:67
 msgid "Seats (0 = no limit)"
 msgstr "المقاعد (0 = بلا حد)"
 
-#: src/Editor.php:64
+#: src/Editor.php:74
 msgid "Day title"
 msgstr "عنوان اليوم"
 
-#: src/Editor.php:69
+#: src/Editor.php:79
 msgid "On the map"
 msgstr "على الخريطة"
 
-#: src/Editor.php:75
+#: src/Editor.php:85
 msgid "Places visited"
 msgstr "الأماكن المزارة"
 
-#: src/Editor.php:80
+#: src/Editor.php:90
 msgid "Meals"
 msgstr "الوجبات"
 
-#: src/Editor.php:86
+#: src/Editor.php:96
 msgid "Overnight"
 msgstr "المبيت"
 
-#: src/Editor.php:91
+#: src/Editor.php:101
 msgid "What happens"
 msgstr "البرنامج"
 
-#: src/Editor.php:97
+#: src/Editor.php:107
 msgid "Hotels"
 msgstr "الفنادق"
 
-#: src/Editor.php:102
+#: src/Editor.php:112
 msgid "Season from"
 msgstr "الموسم من"
 
-#: src/Editor.php:103
+#: src/Editor.php:113
 msgid "Season to"
 msgstr "الموسم إلى"
 
-#: src/Editor.php:105
+#: src/Editor.php:115
 msgid "From travellers"
 msgstr "من عدد مسافرين"
 
-#: src/Editor.php:111
+#: src/Editor.php:121
 msgid "To travellers"
 msgstr "إلى عدد مسافرين"
 
-#: src/Editor.php:115
+#: src/Editor.php:126
 msgid "Adult (sharing)"
 msgstr "بالغ (غرفة مشتركة)"
 
-#: src/Editor.php:116
-#: src/Editor.php:145
+#: src/Editor.php:127
+#: src/Editor.php:156
 #: src/Page.php:128
 msgid "Child"
 msgstr "طفل"
 
-#: src/Editor.php:117
-#: src/Editor.php:146
+#: src/Editor.php:128
+#: src/Editor.php:157
 #: src/Page.php:128
 msgid "Infant"
 msgstr "رضيع"
 
-#: src/Editor.php:118
+#: src/Editor.php:129
 msgid "Single room +"
 msgstr "غرفة مفردة +"
 
-#: src/Editor.php:119
+#: src/Editor.php:130
 msgid "Triple room −"
 msgstr "غرفة ثلاثية −"
 
-#: src/Editor.php:123
+#: src/Editor.php:134
 msgid "Optional extra"
 msgstr "إضافة اختيارية"
 
-#: src/Editor.php:126
+#: src/Editor.php:137
 msgid "Price"
 msgstr "السعر"
 
-#: src/Editor.php:128
+#: src/Editor.php:139
 msgid "Charged"
 msgstr "يُحتسب"
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Editor.php:131
+#: src/Editor.php:142
 #: src/Page.php:152
 msgid "per person"
 msgstr "للفرد"
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Editor.php:132
+#: src/Editor.php:143
 #: src/Page.php:152
 msgid "per booking"
 msgstr "للحجز"
 
-#: src/Editor.php:139
+#: src/Editor.php:150
 msgid "Supplement"
 msgstr "مكمل"
 
-#: src/Editor.php:142
+#: src/Editor.php:153
 msgid "Date"
 msgstr "التاريخ"
 
-#: src/Editor.php:143
+#: src/Editor.php:154
 msgid "Until (optional)"
 msgstr "حتى (اختياري)"
 
-#: src/Editor.php:144
+#: src/Editor.php:155
 msgid "Adult"
 msgstr "بالغ"
 
-#: src/Editor.php:165
+#: src/Editor.php:201
 msgid "Basics"
 msgstr "الأساسيات"
 
-#: src/Editor.php:167
-msgid "Main destination"
-msgstr "الوجهة الرئيسية"
-
-#: src/Editor.php:167
+#: src/Editor.php:206
 msgid "— Choose —"
 msgstr "— اختر —"
 
-#: src/Editor.php:172
-msgid "Days"
-msgstr "الأيام"
+#: src/Editor.php:207
+msgid "Main destination"
+msgstr "الوجهة الرئيسية"
 
-#: src/Editor.php:173
+#: src/Editor.php:207
+msgid "From Location Tree. Searches by destination use it."
+msgstr "من شجرة المواقع. يُستخدم في البحث حسب الوجهة."
+
+#: src/Editor.php:209
+msgid "Length"
+msgstr "المدة"
+
+#: src/Editor.php:219
+msgid "days"
+msgstr "أيام"
+
+#: src/Editor.php:220
+msgid "Nights are worked out for you: days minus one."
+msgstr "تُحسب الليالي تلقائيًا: الأيام ناقص واحد."
+
+#: src/Editor.php:224
 #: src/Page.php:55
 msgid "Booking"
 msgstr "الحجز"
 
-#: src/Editor.php:174
-msgid "Instant booking, pay online"
-msgstr "حجز فوري والدفع عبر الإنترنت"
+#: src/Editor.php:229
+msgid "Instant, pay online"
+msgstr "فوري، دفع عبر الإنترنت"
 
-#: src/Editor.php:174
-msgid "Enquiry only (you reply with a quote)"
-msgstr "استفسار فقط (ترد بعرض سعر)"
+#: src/Editor.php:230
+msgid "Enquiry only"
+msgstr "استفسار فقط"
 
-#: src/Editor.php:178
-msgid "Deposit (%)"
-msgstr "العربون (%)"
+#: src/Editor.php:235
+msgid "Enquiry only: the customer sends a request and you reply with a quote."
+msgstr "استفسار فقط: يرسل العميل طلبًا وترد بعرض سعر."
 
-#: src/Editor.php:179
-msgid "Deposit 0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest before travel."
-msgstr "العربون 0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي قبل السفر."
+#: src/Editor.php:238
+msgid "Deposit"
+msgstr "العربون"
 
-#: src/Editor.php:181
+#: src/Editor.php:249
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest before travel."
+msgstr "0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي قبل السفر."
+
+#: src/Editor.php:266
 msgid "Dates"
 msgstr "التواريخ"
 
-#: src/Editor.php:182
-msgid "Starts on the weekdays below (tick all seven for any day)"
-msgstr "يبدأ في أيام الأسبوع أدناه (حدد السبعة لأي يوم)"
+#: src/Editor.php:269
+msgid "any"
+msgstr "أي يوم"
 
-#: src/Editor.php:183
-msgid "Fixed departures only (dates and seats below)"
-msgstr "مغادرات بتواريخ ثابتة فقط (التواريخ والمقاعد أدناه)"
+#: src/Editor.php:274
+msgid "How it starts"
+msgstr "طريقة البدء"
 
-#: src/Editor.php:184
+#: src/Editor.php:279
+msgid "On chosen weekdays"
+msgstr "في أيام محددة من الأسبوع"
+
+#: src/Editor.php:280
+msgid "Fixed departures"
+msgstr "مغادرات ثابتة"
+
+#: src/Editor.php:285
+msgid "Weekdays: the customer picks any date that falls on one of them. Fixed: only the departures listed below, each with its own seats."
+msgstr "أيام الأسبوع: يختار العميل أي تاريخ يقع في أحدها. ثابتة: المغادرات المذكورة أدناه فقط، لكل منها مقاعدها."
+
+#: src/Editor.php:287
 msgid "Start days"
 msgstr "أيام البدء"
 
-#: src/Editor.php:189
-msgid "Booking closes (days before the start)"
-msgstr "يُغلق الحجز (أيام قبل البدء)"
+#: src/Editor.php:287
+msgid "Tick all seven to allow any day."
+msgstr "حدد السبعة للسماح بأي يوم."
 
-#: src/Editor.php:190
-msgid "Fixed departures:"
-msgstr "المغادرات الثابتة:"
+#: src/Editor.php:288
+msgid "Booking closes"
+msgstr "يُغلق الحجز"
 
-#: src/Editor.php:191
+#: src/Editor.php:288
+msgid "days before the start"
+msgstr "أيام قبل البدء"
+
+#: src/Editor.php:289
+msgid "Fixed departures: one row per date. Used when \"Fixed departures\" is chosen above."
+msgstr "المغادرات الثابتة: صف لكل تاريخ. تُستخدم عند اختيار «مغادرات ثابتة» أعلاه."
+
+#: src/Editor.php:289
 msgid "Add departure"
 msgstr "إضافة مغادرة"
 
-#: src/Editor.php:193
+#: src/Editor.php:306
 msgid "Itinerary"
 msgstr "البرنامج اليومي"
 
-#: src/Editor.php:193
+#: src/Editor.php:309
 msgid "One row per day, in order. \"On the map\" picks a place from Location Tree (it needs latitude and longitude there) to draw the route map."
 msgstr "صف لكل يوم بالترتيب. «على الخريطة» يختار مكانًا من شجرة المواقع (يحتاج خط العرض والطول هناك) لرسم خريطة المسار."
 
-#: src/Editor.php:194
+#: src/Editor.php:309
 msgid "Add day"
 msgstr "إضافة يوم"
 
-#: src/Editor.php:196
+#: src/Editor.php:316
 msgid "Prices"
 msgstr "الأسعار"
 
-#: src/Editor.php:196
-msgid "Price per person sharing a double or twin room. Add rows per hotel class, season and group size: the more travellers, the lower the price. \"To travellers\" empty = no upper limit. Season rows override all-year rows. Single room + is added per traveller in a single room; Triple room − is taken off per traveller in a triple room."
-msgstr "السعر للفرد في غرفة مزدوجة. أضف صفوفًا لكل فئة فنادق وموسم وحجم مجموعة: كلما زاد المسافرون قل السعر. «إلى عدد مسافرين» فارغ = بلا حد أعلى. صفوف الموسم تتقدم على صفوف العام كله. «غرفة مفردة +» يُضاف لكل مسافر في غرفة مفردة؛ «غرفة ثلاثية −» يُخصم لكل مسافر في غرفة ثلاثية."
+#: src/Editor.php:319
+msgid "Price per person sharing a double or twin room. One row per hotel class, season and group size: the more travellers, the lower the price. Empty \"To travellers\" = no upper limit. Season rows override all-year rows. Single room + is added per traveller in a single room; Triple room − is taken off per traveller in a triple room."
+msgstr "السعر للفرد في غرفة مزدوجة. صف لكل فئة فنادق وموسم وحجم مجموعة: كلما زاد المسافرون قل السعر. «إلى عدد مسافرين» فارغ = بلا حد أعلى. صفوف الموسم تتقدم على صفوف العام كله. «غرفة مفردة +» يُضاف لكل مسافر في غرفة مفردة؛ «غرفة ثلاثية −» يُخصم لكل مسافر في غرفة ثلاثية."
 
-#: src/Editor.php:197
+#: src/Editor.php:319
 msgid "Add price row"
 msgstr "إضافة صف سعر"
 
-#: src/Editor.php:199
-msgid "Optional extras"
-msgstr "إضافات اختيارية"
+#: src/Editor.php:335
+#: src/Page.php:159
+msgid "Extras"
+msgstr "الإضافات"
 
-#: src/Editor.php:199
+#: src/Editor.php:338
 msgid "Paid extras the customer can tick, e.g. a hot-air balloon ride or a sound and light show."
 msgstr "إضافات مدفوعة يختارها العميل، مثل رحلة المنطاد أو عرض الصوت والضوء."
 
-#: src/Editor.php:200
+#: src/Editor.php:338
 msgid "Add extra"
 msgstr "إضافة خيار"
 
-#: src/Editor.php:202
+#: src/Editor.php:345
 msgid "Supplements"
 msgstr "المكملات"
 
-#: src/Editor.php:202
+#: src/Editor.php:348
 msgid "Charged automatically per person when the tour dates include these dates, e.g. a Christmas Gala Meal."
 msgstr "تُحتسب تلقائيًا للفرد عندما تشمل تواريخ البرنامج هذه التواريخ، مثل عشاء حفل الكريسماس."
 
-#: src/Editor.php:203
+#: src/Editor.php:348
 msgid "Add supplement"
 msgstr "إضافة مكمل"
 
@@ -423,10 +460,6 @@ msgstr "%1$s: %2$s %3$s"
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
-
-#: src/Page.php:159
-msgid "Extras"
-msgstr "الإضافات"
 
 #: src/Tour.php:63
 msgid "Standard"

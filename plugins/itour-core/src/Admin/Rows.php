@@ -54,6 +54,9 @@ final class Rows {
 		foreach ( $cols as $key => $c ) {
 			$n = $name . '[' . $i . '][' . $key . ']';
 			$v = (string) ( $row[ $key ] ?? ( $c['default'] ?? '' ) );
+			if ( ! empty( $c['zero_empty'] ) && '0' === $v ) {
+				$v = ''; // e.g. "To travellers": 0 means no limit, shown empty.
+			}
 			$a = ' name="' . esc_attr( $n ) . '" aria-label="' . esc_attr( $c['label'] ) . '"';
 			echo '<td>';
 			if ( 'select' === $c['type'] ) {

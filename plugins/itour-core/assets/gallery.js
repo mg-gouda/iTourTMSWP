@@ -1,4 +1,5 @@
-/* iTour product gallery picker: WordPress media library, multiple images, order kept. */
+/* iTour product gallery picker: WordPress media library, multiple images, order kept. Fires "change"
+   on the hidden input so the product panel saves it. */
 ( function () {
 	document.addEventListener( 'click', function ( e ) {
 		var pick = e.target.closest( '[data-itour-gallery-pick]' );
@@ -8,10 +9,14 @@
 			return;
 		}
 		var input = box.querySelector( 'input' );
-		var list = box.querySelector( '.itour-gallery__list' );
+		var list = box.querySelector( '[data-itour-gallery-list]' );
+		var changed = function () {
+			input.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+		};
 		if ( clear ) {
 			input.value = '';
 			list.replaceChildren();
+			changed();
 			return;
 		}
 		var frame = window.wp.media( {
@@ -37,10 +42,10 @@
 				var img = document.createElement( 'img' );
 				img.src = ( a.sizes && a.sizes.thumbnail ? a.sizes.thumbnail : a ).url;
 				img.alt = '';
-				img.style.cssText = 'display:block;width:80px;height:80px;object-fit:cover;border-radius:4px';
 				li.appendChild( img );
 				list.appendChild( li );
 			} );
+			changed();
 		} );
 		frame.open();
 	} );

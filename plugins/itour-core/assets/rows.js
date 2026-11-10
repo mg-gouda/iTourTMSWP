@@ -19,9 +19,11 @@
 		} else if ( del ) {
 			var row = del.closest( 'tr' );
 			var nextFocus = row.nextElementSibling || row.previousElementSibling;
-			var addBtn = row.closest( '[data-itour-rows]' ).querySelector( '[data-itour-rows-add]' );
+			var tableEl = row.closest( '[data-itour-rows]' );
+			var addBtn = tableEl.querySelector( '[data-itour-rows-add]' );
 			row.remove();
-			( nextFocus ? nextFocus.querySelector( 'input, select' ) : addBtn ).focus();
+			tableEl.dispatchEvent( new CustomEvent( 'itour-rows-removed', { bubbles: true } ) ); // Lets the product panel save.
+			( nextFocus ? nextFocus.querySelector( 'input, select, textarea' ) : addBtn ).focus();
 		}
 	} );
 }() );

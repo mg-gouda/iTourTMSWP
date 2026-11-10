@@ -1,14 +1,15 @@
 <?php
 /**
  * Product post types (Tour Packages, Excursions…): public pages edited in the block editor, each with its
- * own admin menu, its own Categories, the shared Languages and Suitability tags, and an "Info" box
- * (included, not included, FAQ, gallery). Prices, schedules and bookings stay in the module (D-003).
+ * own admin menu, its own Categories, the shared Languages and Suitability tags, and shared panel tabs
+ * (included, FAQ, photos). Prices, schedules and bookings stay in the module (D-003).
  *
  * @package ITour\Core
  */
 
 namespace ITour\Core;
 
+use ITour\Core\Admin\Panel;
 use ITour\Core\Admin\Rows;
 
 defined( 'ABSPATH' ) || exit;
@@ -22,13 +23,6 @@ final class Products {
 	 * Meta key for the shared info.
 	 */
 	public const INFO = '_itour_info';
-
-	/**
-	 * Product types registered so far.
-	 *
-	 * @var string[]
-	 */
-	private static array $types = array();
 
 	/**
 	 * Register on init.
@@ -101,11 +95,6 @@ final class Products {
 			}
 			register_taxonomy_for_object_type( $tax, $type );
 		}
-		if ( ! self::$types ) {
-			add_action( 'add_meta_boxes', array( self::class, 'box' ) );
-			add_action( 'save_post', array( self::class, 'save' ) );
-		}
-		self::$types[] = $type;
 	}
 
 	/**
@@ -146,64 +135,77 @@ final class Products {
 	}
 
 	/**
-	 * Add the "Info" box to every product type.
+	 * Merge values into the shared info.
 	 *
-	 * @param string $post_type Post type.
+	 * @param int                 $post   Post id.
+	 * @param array<string,mixed> $values Values.
 	 */
-	public static function box( $post_type ): void {
-		if ( in_array( $post_type, self::$types, true ) ) {
-			add_meta_box( 'itour-info', __( 'Info: included, FAQ, gallery', 'itour-core' ), array( self::class, 'render' ), $post_type, 'normal', 'default' );
-		}
+	private static function put( int $post, array $values ): void {
+		update_post_meta( $post, self::INFO, array_merge( self::info( $post ), $values ) );
 	}
 
 	/**
-	 * The box.
+	 * The shared panel tabs every product appends: Included, FAQ, Photos.
 	 *
-	 * @param \WP_Post $post Product.
+	 * @return array<string,array<string,mixed>>
 	 */
-	public static function render( \WP_Post $post ): void {
-		$i = self::info( $post->ID );
-		wp_enqueue_media();
-		wp_enqueue_script( 'itour-gallery', plugins_url( 'assets/gallery.js', ITOUR_CORE_FILE ), array( 'jquery' ), ITOUR_CORE_VERSION, true );
-		wp_nonce_field( 'itour_info_save', '_itour_info_nonce' );
-		echo '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">';
-		foreach ( array( 'includes' => __( 'Included (one per line)', 'itour-core' ), 'excludes' => __( 'Not included (one per line)', 'itour-core' ) ) as $k => $label ) { // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing
-			echo '<p style="margin:0"><label><strong>' . esc_html( $label ) . '</strong><br><textarea class="widefat" rows="6" name="itour_info[' . esc_attr( $k ) . ']">' . esc_textarea( $i[ $k ] ) . '</textarea></label></p>';
-		}
-		echo '</div><h3 style="margin:20px 0 6px;font-size:14px">' . esc_html__( 'FAQ', 'itour-core' ) . '</h3>';
-		Rows::render( 'itour_info[faq]', self::faq_cols(), $i['faq'], __( 'Add question', 'itour-core' ) );
-		echo '<h3 style="margin:20px 0 6px;font-size:14px">' . esc_html__( 'Gallery', 'itour-core' ) . '</h3><div data-itour-gallery>';
-		echo '<input type="hidden" name="itour_info[gallery]" value="' . esc_attr( implode( ',', array_map( 'intval', $i['gallery'] ) ) ) . '">';
-		echo '<ul class="itour-gallery__list" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;padding:0;list-style:none">';
-		foreach ( $i['gallery'] as $id ) {
-			echo '<li>' . wp_get_attachment_image( (int) $id, array( 80, 80 ), false, array( 'style' => 'display:block;width:80px;height:80px;object-fit:cover;border-radius:4px' ) ) . '</li>';
-		}
-		echo '</ul><button type="button" class="button" data-itour-gallery-pick data-title="' . esc_attr__( 'Gallery photos', 'itour-core' ) . '" data-button="' . esc_attr__( 'Use these photos', 'itour-core' ) . '">' . esc_html__( 'Choose photos', 'itour-core' ) . '</button> ';
-		echo '<button type="button" class="button-link button-link-delete" data-itour-gallery-clear>' . esc_html__( 'Clear', 'itour-core' ) . '</button></div>';
-	}
-
-	/**
-	 * Save the box.
-	 *
-	 * @param int $post_id Post id.
-	 */
-	public static function save( $post_id ): void {
-		if ( ! isset( $_POST['_itour_info_nonce'], $_POST['itour_info'] ) || wp_is_post_revision( $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-		if ( ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_itour_info_nonce'] ) ), 'itour_info_save' ) ) {
-			return;
-		}
-		$in = wp_unslash( (array) $_POST['itour_info'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each part sanitized below.
-		update_post_meta(
-			$post_id,
-			self::INFO,
-			array(
-				'includes' => sanitize_textarea_field( (string) ( $in['includes'] ?? '' ) ),
-				'excludes' => sanitize_textarea_field( (string) ( $in['excludes'] ?? '' ) ),
-				'faq'      => Rows::clean( self::faq_cols(), $in['faq'] ?? array(), array( 'q', 'a' ) ),
-				'gallery'  => array_values( array_filter( array_map( 'absint', explode( ',', (string) ( $in['gallery'] ?? '' ) ) ), static fn( $id ) => wp_attachment_is_image( $id ) ) ),
-			)
+	public static function info_sections(): array {
+		$lines = static fn( string $text ): string => (string) count( array_filter( array_map( 'trim', explode( "\n", $text ) ) ) );
+		return array(
+			'included' => array(
+				'label'  => __( 'Included', 'itour-core' ),
+				'badge'  => static function ( int $post ) use ( $lines ): string {
+					$i = self::info( $post );
+					return '' === trim( $i['includes'] . $i['excludes'] ) ? '' : $lines( $i['includes'] ) . '/' . $lines( $i['excludes'] );
+				},
+				'render' => static function ( \WP_Post $post ): void {
+					$i = self::info( $post->ID );
+					foreach ( array( 'includes' => array( __( 'Included', 'itour-core' ), __( 'One item per line, e.g. "Airport transfers".', 'itour-core' ) ), 'excludes' => array( __( 'Not included', 'itour-core' ), __( 'One item per line, e.g. "Flights", "Visa".', 'itour-core' ) ) ) as $k => list( $label, $help ) ) { // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing
+						echo Panel::row( $label, '<textarea class="itp-input" id="itp-included-' . esc_attr( $k ) . '" rows="6" name="' . esc_attr( Panel::name( 'included', $k ) ) . '">' . esc_textarea( $i[ $k ] ) . '</textarea>', $help, 'itp-included-' . $k ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+					}
+				},
+				'save'   => static function ( int $post, array $in ): void {
+					self::put(
+						$post,
+						array(
+							'includes' => sanitize_textarea_field( (string) ( $in['includes'] ?? '' ) ),
+							'excludes' => sanitize_textarea_field( (string) ( $in['excludes'] ?? '' ) ),
+						)
+					);
+				},
+			),
+			'faq'      => array(
+				'label'  => __( 'FAQ', 'itour-core' ),
+				'badge'  => static fn( int $post ): string => self::info( $post )['faq'] ? (string) count( self::info( $post )['faq'] ) : '',
+				'render' => static function ( \WP_Post $post ): void {
+					echo '<div class="itp-row itp-row--wide"><div class="itp-row-text"><p class="itp-help">' . esc_html__( 'Questions travellers ask before booking. Shown as an expandable list on the page.', 'itour-core' ) . '</p></div><div class="itp-table-wrap">';
+					Rows::render( Panel::name( 'faq', 'rows' ), self::faq_cols(), self::info( $post->ID )['faq'], __( 'Add question', 'itour-core' ) );
+					echo '</div></div>';
+				},
+				'save'   => static function ( int $post, array $in ): void {
+					self::put( $post, array( 'faq' => Rows::clean( self::faq_cols(), $in['rows'] ?? array(), array( 'q', 'a' ) ) ) );
+				},
+			),
+			'photos'   => array(
+				'label'  => __( 'Photos', 'itour-core' ),
+				'badge'  => static fn( int $post ): string => self::info( $post )['gallery'] ? (string) count( self::info( $post )['gallery'] ) : '',
+				'render' => static function ( \WP_Post $post ): void {
+					$ids = array_map( 'intval', self::info( $post->ID )['gallery'] );
+					wp_enqueue_media();
+					wp_enqueue_script( 'itour-gallery', plugins_url( 'assets/gallery.js', ITOUR_CORE_FILE ), array( 'jquery' ), ITOUR_CORE_VERSION, true );
+					$list = '';
+					foreach ( $ids as $id ) {
+						$list .= '<li>' . wp_get_attachment_image( $id, 'thumbnail' ) . '</li>';
+					}
+					$control = '<div data-itour-gallery><input type="hidden" name="' . esc_attr( Panel::name( 'photos', 'gallery' ) ) . '" value="' . esc_attr( implode( ',', $ids ) ) . '"><ul class="itp-gallery-list" data-itour-gallery-list>' . $list . '</ul>'
+						. '<button type="button" class="itp-btn" data-itour-gallery-pick data-title="' . esc_attr__( 'Gallery photos', 'itour-core' ) . '" data-button="' . esc_attr__( 'Use these photos', 'itour-core' ) . '">' . esc_html__( 'Choose photos', 'itour-core' ) . '</button> '
+						. '<button type="button" class="itp-btn itp-btn--quiet" data-itour-gallery-clear>' . esc_html__( 'Remove all', 'itour-core' ) . '</button></div>';
+					echo Panel::row( __( 'Gallery', 'itour-core' ), $control, __( 'Shown on the page below the details. Drag to reorder inside the picker. The featured image (editor sidebar) stays the main photo.', 'itour-core' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+				},
+				'save'   => static function ( int $post, array $in ): void {
+					self::put( $post, array( 'gallery' => array_values( array_filter( array_map( 'absint', explode( ',', (string) ( $in['gallery'] ?? '' ) ) ), static fn( $id ) => wp_attachment_is_image( $id ) ) ) ) );
+				},
+			),
 		);
 	}
 

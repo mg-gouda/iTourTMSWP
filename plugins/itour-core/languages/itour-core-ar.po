@@ -73,7 +73,7 @@ msgstr "العودة إلى القائمة"
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:52
+#: src/Products.php:46
 #, php-format
 msgid "Add %s"
 msgstr "إضافة %s"
@@ -81,7 +81,7 @@ msgstr "إضافة %s"
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:56
+#: src/Products.php:50
 #, php-format
 msgid "View %s"
 msgstr "عرض %s"
@@ -89,7 +89,7 @@ msgstr "عرض %s"
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:54
+#: src/Products.php:48
 #, php-format
 msgid "Edit %s"
 msgstr "تعديل %s"
@@ -186,8 +186,32 @@ msgstr "الوحدة"
 msgid "Version"
 msgstr "الإصدار"
 
+#: src/Admin/Panel.php:83
+msgid "Saving…"
+msgstr "جارٍ الحفظ…"
+
+#: src/Admin/Panel.php:84
+msgid "All changes saved"
+msgstr "تم حفظ كل التغييرات"
+
+#: src/Admin/Panel.php:85
+msgid "Couldn’t save. Check your connection."
+msgstr "تعذر الحفظ. تحقق من الاتصال."
+
+#: src/Admin/Panel.php:86
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#: src/Admin/Panel.php:92
+msgid "Changes save as you go."
+msgstr "تُحفظ التغييرات تلقائيًا أثناء العمل."
+
+#: src/Admin/Panel.php:203
+msgid "You can’t edit this item, or the page expired. Reload it."
+msgstr "لا يمكنك تعديل هذا العنصر، أو انتهت صلاحية الصفحة. أعد تحميلها."
+
 #: src/Admin/Rows.php:34
-#: src/Admin/Rows.php:78
+#: src/Admin/Rows.php:81
 msgid "Remove"
 msgstr "إزالة"
 
@@ -699,93 +723,101 @@ msgstr "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم ي�
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
 msgstr "iTour: الوحدة %1$s لا تعمل لأنها تحتاج إلى هذه الوحدات: %2$s."
 
-#: src/Products.php:73
+#: src/Products.php:67
 msgid "Categories"
 msgstr "التصنيفات"
 
-#: src/Products.php:74
+#: src/Products.php:68
 msgid "Category"
 msgstr "التصنيف"
 
-#: src/Products.php:83
-#: src/Products.php:247
+#: src/Products.php:77
+#: src/Products.php:249
 msgid "Languages"
 msgstr "اللغات"
 
-#: src/Products.php:83
+#: src/Products.php:77
 msgid "Language"
 msgstr "اللغة"
 
-#: src/Products.php:84
+#: src/Products.php:78
 msgid "Suitability"
 msgstr "مناسبة لـ"
 
-#: src/Products.php:84
-#: src/Products.php:247
+#: src/Products.php:78
+#: src/Products.php:249
 msgid "Suitable for"
 msgstr "مناسبة لـ"
 
-#: src/Products.php:137
+#: src/Products.php:126
 msgid "Question"
 msgstr "السؤال"
 
-#: src/Products.php:142
+#: src/Products.php:131
 msgid "Answer"
 msgstr "الإجابة"
 
-#: src/Products.php:155
-msgid "Info: included, FAQ, gallery"
-msgstr "معلومات: ما يشمله، الأسئلة الشائعة، الصور"
-
-#: src/Products.php:170
-msgid "Included (one per line)"
-msgstr "يشمل (بند في كل سطر)"
-
-#: src/Products.php:170
-msgid "Not included (one per line)"
-msgstr "لا يشمل (بند في كل سطر)"
-
-#: src/Products.php:173
-msgid "FAQ"
-msgstr "الأسئلة الشائعة"
-
-#: src/Products.php:174
-msgid "Add question"
-msgstr "إضافة سؤال"
-
-#: src/Products.php:175
-msgid "Gallery"
-msgstr "معرض الصور"
-
-#: src/Products.php:181
-msgid "Gallery photos"
-msgstr "صور المعرض"
-
-#: src/Products.php:181
-msgid "Use these photos"
-msgstr "استخدم هذه الصور"
-
-#: src/Products.php:181
-msgid "Choose photos"
-msgstr "اختر الصور"
-
-#: src/Products.php:182
-msgid "Clear"
-msgstr "مسح"
-
-#: src/Products.php:219
+#: src/Products.php:156
+#: src/Products.php:163
+#: src/Products.php:221
 msgid "Included"
 msgstr "يشمل"
 
-#: src/Products.php:220
+#: src/Products.php:163
+msgid "One item per line, e.g. \"Airport transfers\"."
+msgstr "بند في كل سطر، مثل «التنقل من المطار»."
+
+#: src/Products.php:163
+#: src/Products.php:222
 msgid "Not included"
 msgstr "لا يشمل"
 
-#: src/Products.php:233
+#: src/Products.php:163
+msgid "One item per line, e.g. \"Flights\", \"Visa\"."
+msgstr "بند في كل سطر، مثل «تذاكر الطيران»، «التأشيرة»."
+
+#: src/Products.php:178
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: src/Products.php:181
+msgid "Questions travellers ask before booking. Shown as an expandable list on the page."
+msgstr "أسئلة يطرحها المسافرون قبل الحجز. تظهر كقائمة قابلة للتوسيع في الصفحة."
+
+#: src/Products.php:182
+msgid "Add question"
+msgstr "إضافة سؤال"
+
+#: src/Products.php:190
+#: src/Products.php:235
 msgid "Photos"
 msgstr "الصور"
 
-#: src/Products.php:240
+#: src/Products.php:201
+msgid "Gallery photos"
+msgstr "صور المعرض"
+
+#: src/Products.php:201
+msgid "Use these photos"
+msgstr "استخدم هذه الصور"
+
+#: src/Products.php:201
+msgid "Choose photos"
+msgstr "اختر الصور"
+
+#: src/Products.php:202
+msgid "Remove all"
+msgstr "إزالة الكل"
+
+#: src/Products.php:203
+msgid "Gallery"
+msgstr "معرض الصور"
+
+#: src/Products.php:203
+msgid "Shown on the page below the details. Drag to reorder inside the picker. The featured image (editor sidebar) stays the main photo."
+msgstr "تظهر في الصفحة أسفل التفاصيل. اسحب لإعادة الترتيب داخل أداة الاختيار. تبقى الصورة البارزة (الشريط الجانبي للمحرر) هي الصورة الرئيسية."
+
+#: src/Products.php:242
 msgid "Questions"
 msgstr "أسئلة"
 

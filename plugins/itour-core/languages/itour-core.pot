@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:14:52+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:30:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -79,7 +79,7 @@ msgstr ""
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:52
+#: src/Products.php:46
 #, php-format
 msgid "Add %s"
 msgstr ""
@@ -87,7 +87,7 @@ msgstr ""
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:56
+#: src/Products.php:50
 #, php-format
 msgid "View %s"
 msgstr ""
@@ -95,7 +95,7 @@ msgstr ""
 #. translators: %s: item type, e.g. "branch".
 #. translators: %s: product type, e.g. "excursion".
 #: src/Admin/Crud.php:184
-#: src/Products.php:54
+#: src/Products.php:48
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -192,8 +192,32 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+#: src/Admin/Panel.php:83
+msgid "Saving…"
+msgstr ""
+
+#: src/Admin/Panel.php:84
+msgid "All changes saved"
+msgstr ""
+
+#: src/Admin/Panel.php:85
+msgid "Couldn’t save. Check your connection."
+msgstr ""
+
+#: src/Admin/Panel.php:86
+msgid "Retry"
+msgstr ""
+
+#: src/Admin/Panel.php:92
+msgid "Changes save as you go."
+msgstr ""
+
+#: src/Admin/Panel.php:203
+msgid "You can’t edit this item, or the page expired. Reload it."
+msgstr ""
+
 #: src/Admin/Rows.php:34
-#: src/Admin/Rows.php:78
+#: src/Admin/Rows.php:81
 msgid "Remove"
 msgstr ""
 
@@ -705,93 +729,101 @@ msgstr ""
 msgid "iTour: %1$s is not running because it needs these modules: %2$s."
 msgstr ""
 
-#: src/Products.php:73
+#: src/Products.php:67
 msgid "Categories"
 msgstr ""
 
-#: src/Products.php:74
+#: src/Products.php:68
 msgid "Category"
 msgstr ""
 
-#: src/Products.php:83
-#: src/Products.php:247
+#: src/Products.php:77
+#: src/Products.php:249
 msgid "Languages"
 msgstr ""
 
-#: src/Products.php:83
+#: src/Products.php:77
 msgid "Language"
 msgstr ""
 
-#: src/Products.php:84
+#: src/Products.php:78
 msgid "Suitability"
 msgstr ""
 
-#: src/Products.php:84
-#: src/Products.php:247
+#: src/Products.php:78
+#: src/Products.php:249
 msgid "Suitable for"
 msgstr ""
 
-#: src/Products.php:137
+#: src/Products.php:126
 msgid "Question"
 msgstr ""
 
-#: src/Products.php:142
+#: src/Products.php:131
 msgid "Answer"
 msgstr ""
 
-#: src/Products.php:155
-msgid "Info: included, FAQ, gallery"
-msgstr ""
-
-#: src/Products.php:170
-msgid "Included (one per line)"
-msgstr ""
-
-#: src/Products.php:170
-msgid "Not included (one per line)"
-msgstr ""
-
-#: src/Products.php:173
-msgid "FAQ"
-msgstr ""
-
-#: src/Products.php:174
-msgid "Add question"
-msgstr ""
-
-#: src/Products.php:175
-msgid "Gallery"
-msgstr ""
-
-#: src/Products.php:181
-msgid "Gallery photos"
-msgstr ""
-
-#: src/Products.php:181
-msgid "Use these photos"
-msgstr ""
-
-#: src/Products.php:181
-msgid "Choose photos"
-msgstr ""
-
-#: src/Products.php:182
-msgid "Clear"
-msgstr ""
-
-#: src/Products.php:219
+#: src/Products.php:156
+#: src/Products.php:163
+#: src/Products.php:221
 msgid "Included"
 msgstr ""
 
-#: src/Products.php:220
+#: src/Products.php:163
+msgid "One item per line, e.g. \"Airport transfers\"."
+msgstr ""
+
+#: src/Products.php:163
+#: src/Products.php:222
 msgid "Not included"
 msgstr ""
 
-#: src/Products.php:233
+#: src/Products.php:163
+msgid "One item per line, e.g. \"Flights\", \"Visa\"."
+msgstr ""
+
+#: src/Products.php:178
+msgid "FAQ"
+msgstr ""
+
+#: src/Products.php:181
+msgid "Questions travellers ask before booking. Shown as an expandable list on the page."
+msgstr ""
+
+#: src/Products.php:182
+msgid "Add question"
+msgstr ""
+
+#: src/Products.php:190
+#: src/Products.php:235
 msgid "Photos"
 msgstr ""
 
-#: src/Products.php:240
+#: src/Products.php:201
+msgid "Gallery photos"
+msgstr ""
+
+#: src/Products.php:201
+msgid "Use these photos"
+msgstr ""
+
+#: src/Products.php:201
+msgid "Choose photos"
+msgstr ""
+
+#: src/Products.php:202
+msgid "Remove all"
+msgstr ""
+
+#: src/Products.php:203
+msgid "Gallery"
+msgstr ""
+
+#: src/Products.php:203
+msgid "Shown on the page below the details. Drag to reorder inside the picker. The featured image (editor sidebar) stays the main photo."
+msgstr ""
+
+#: src/Products.php:242
 msgid "Questions"
 msgstr ""
 

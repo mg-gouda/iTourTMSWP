@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:15:02+00:00\n"
+"POT-Creation-Date: 2026-11-10T18:30:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-tours\n"
@@ -39,236 +39,273 @@ msgstr ""
 msgid "https://wa.me/+201002805139"
 msgstr ""
 
-#: src/Editor.php:34
+#: src/Editor.php:31
 msgid "Tour details"
 msgstr ""
 
-#: src/Editor.php:55
+#: src/Editor.php:65
 msgid "Departure date"
 msgstr ""
 
-#: src/Editor.php:57
+#: src/Editor.php:67
 msgid "Seats (0 = no limit)"
 msgstr ""
 
-#: src/Editor.php:64
+#: src/Editor.php:74
 msgid "Day title"
 msgstr ""
 
-#: src/Editor.php:69
+#: src/Editor.php:79
 msgid "On the map"
 msgstr ""
 
-#: src/Editor.php:75
+#: src/Editor.php:85
 msgid "Places visited"
 msgstr ""
 
-#: src/Editor.php:80
+#: src/Editor.php:90
 msgid "Meals"
 msgstr ""
 
-#: src/Editor.php:86
+#: src/Editor.php:96
 msgid "Overnight"
 msgstr ""
 
-#: src/Editor.php:91
+#: src/Editor.php:101
 msgid "What happens"
 msgstr ""
 
-#: src/Editor.php:97
+#: src/Editor.php:107
 msgid "Hotels"
 msgstr ""
 
-#: src/Editor.php:102
+#: src/Editor.php:112
 msgid "Season from"
 msgstr ""
 
-#: src/Editor.php:103
+#: src/Editor.php:113
 msgid "Season to"
 msgstr ""
 
-#: src/Editor.php:105
+#: src/Editor.php:115
 msgid "From travellers"
 msgstr ""
 
-#: src/Editor.php:111
+#: src/Editor.php:121
 msgid "To travellers"
 msgstr ""
 
-#: src/Editor.php:115
+#: src/Editor.php:126
 msgid "Adult (sharing)"
 msgstr ""
 
-#: src/Editor.php:116
-#: src/Editor.php:145
+#: src/Editor.php:127
+#: src/Editor.php:156
 #: src/Page.php:128
 msgid "Child"
 msgstr ""
 
-#: src/Editor.php:117
-#: src/Editor.php:146
+#: src/Editor.php:128
+#: src/Editor.php:157
 #: src/Page.php:128
 msgid "Infant"
 msgstr ""
 
-#: src/Editor.php:118
+#: src/Editor.php:129
 msgid "Single room +"
 msgstr ""
 
-#: src/Editor.php:119
+#: src/Editor.php:130
 msgid "Triple room −"
 msgstr ""
 
-#: src/Editor.php:123
+#: src/Editor.php:134
 msgid "Optional extra"
 msgstr ""
 
-#: src/Editor.php:126
+#: src/Editor.php:137
 msgid "Price"
 msgstr ""
 
-#: src/Editor.php:128
+#: src/Editor.php:139
 msgid "Charged"
 msgstr ""
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Editor.php:131
+#: src/Editor.php:142
 #: src/Page.php:152
 msgid "per person"
 msgstr ""
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Editor.php:132
+#: src/Editor.php:143
 #: src/Page.php:152
 msgid "per booking"
 msgstr ""
 
-#: src/Editor.php:139
+#: src/Editor.php:150
 msgid "Supplement"
 msgstr ""
 
-#: src/Editor.php:142
+#: src/Editor.php:153
 msgid "Date"
 msgstr ""
 
-#: src/Editor.php:143
+#: src/Editor.php:154
 msgid "Until (optional)"
 msgstr ""
 
-#: src/Editor.php:144
+#: src/Editor.php:155
 msgid "Adult"
 msgstr ""
 
-#: src/Editor.php:165
+#: src/Editor.php:201
 msgid "Basics"
 msgstr ""
 
-#: src/Editor.php:167
-msgid "Main destination"
-msgstr ""
-
-#: src/Editor.php:167
+#: src/Editor.php:206
 msgid "— Choose —"
 msgstr ""
 
-#: src/Editor.php:172
-msgid "Days"
+#: src/Editor.php:207
+msgid "Main destination"
 msgstr ""
 
-#: src/Editor.php:173
+#: src/Editor.php:207
+msgid "From Location Tree. Searches by destination use it."
+msgstr ""
+
+#: src/Editor.php:209
+msgid "Length"
+msgstr ""
+
+#: src/Editor.php:219
+msgid "days"
+msgstr ""
+
+#: src/Editor.php:220
+msgid "Nights are worked out for you: days minus one."
+msgstr ""
+
+#: src/Editor.php:224
 #: src/Page.php:55
 msgid "Booking"
 msgstr ""
 
-#: src/Editor.php:174
-msgid "Instant booking, pay online"
+#: src/Editor.php:229
+msgid "Instant, pay online"
 msgstr ""
 
-#: src/Editor.php:174
-msgid "Enquiry only (you reply with a quote)"
+#: src/Editor.php:230
+msgid "Enquiry only"
 msgstr ""
 
-#: src/Editor.php:178
-msgid "Deposit (%)"
+#: src/Editor.php:235
+msgid "Enquiry only: the customer sends a request and you reply with a quote."
 msgstr ""
 
-#: src/Editor.php:179
-msgid "Deposit 0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest before travel."
+#: src/Editor.php:238
+msgid "Deposit"
 msgstr ""
 
-#: src/Editor.php:181
+#: src/Editor.php:249
+msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest before travel."
+msgstr ""
+
+#: src/Editor.php:266
 msgid "Dates"
 msgstr ""
 
-#: src/Editor.php:182
-msgid "Starts on the weekdays below (tick all seven for any day)"
+#: src/Editor.php:269
+msgid "any"
 msgstr ""
 
-#: src/Editor.php:183
-msgid "Fixed departures only (dates and seats below)"
+#: src/Editor.php:274
+msgid "How it starts"
 msgstr ""
 
-#: src/Editor.php:184
+#: src/Editor.php:279
+msgid "On chosen weekdays"
+msgstr ""
+
+#: src/Editor.php:280
+msgid "Fixed departures"
+msgstr ""
+
+#: src/Editor.php:285
+msgid "Weekdays: the customer picks any date that falls on one of them. Fixed: only the departures listed below, each with its own seats."
+msgstr ""
+
+#: src/Editor.php:287
 msgid "Start days"
 msgstr ""
 
-#: src/Editor.php:189
-msgid "Booking closes (days before the start)"
+#: src/Editor.php:287
+msgid "Tick all seven to allow any day."
 msgstr ""
 
-#: src/Editor.php:190
-msgid "Fixed departures:"
+#: src/Editor.php:288
+msgid "Booking closes"
 msgstr ""
 
-#: src/Editor.php:191
+#: src/Editor.php:288
+msgid "days before the start"
+msgstr ""
+
+#: src/Editor.php:289
+msgid "Fixed departures: one row per date. Used when \"Fixed departures\" is chosen above."
+msgstr ""
+
+#: src/Editor.php:289
 msgid "Add departure"
 msgstr ""
 
-#: src/Editor.php:193
+#: src/Editor.php:306
 msgid "Itinerary"
 msgstr ""
 
-#: src/Editor.php:193
+#: src/Editor.php:309
 msgid "One row per day, in order. \"On the map\" picks a place from Location Tree (it needs latitude and longitude there) to draw the route map."
 msgstr ""
 
-#: src/Editor.php:194
+#: src/Editor.php:309
 msgid "Add day"
 msgstr ""
 
-#: src/Editor.php:196
+#: src/Editor.php:316
 msgid "Prices"
 msgstr ""
 
-#: src/Editor.php:196
-msgid "Price per person sharing a double or twin room. Add rows per hotel class, season and group size: the more travellers, the lower the price. \"To travellers\" empty = no upper limit. Season rows override all-year rows. Single room + is added per traveller in a single room; Triple room − is taken off per traveller in a triple room."
+#: src/Editor.php:319
+msgid "Price per person sharing a double or twin room. One row per hotel class, season and group size: the more travellers, the lower the price. Empty \"To travellers\" = no upper limit. Season rows override all-year rows. Single room + is added per traveller in a single room; Triple room − is taken off per traveller in a triple room."
 msgstr ""
 
-#: src/Editor.php:197
+#: src/Editor.php:319
 msgid "Add price row"
 msgstr ""
 
-#: src/Editor.php:199
-msgid "Optional extras"
+#: src/Editor.php:335
+#: src/Page.php:159
+msgid "Extras"
 msgstr ""
 
-#: src/Editor.php:199
+#: src/Editor.php:338
 msgid "Paid extras the customer can tick, e.g. a hot-air balloon ride or a sound and light show."
 msgstr ""
 
-#: src/Editor.php:200
+#: src/Editor.php:338
 msgid "Add extra"
 msgstr ""
 
-#: src/Editor.php:202
+#: src/Editor.php:345
 msgid "Supplements"
 msgstr ""
 
-#: src/Editor.php:202
+#: src/Editor.php:348
 msgid "Charged automatically per person when the tour dates include these dates, e.g. a Christmas Gala Meal."
 msgstr ""
 
-#: src/Editor.php:203
+#: src/Editor.php:348
 msgid "Add supplement"
 msgstr ""
 
@@ -428,10 +465,6 @@ msgstr ""
 #: src/Page.php:157
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
-msgstr ""
-
-#: src/Page.php:159
-msgid "Extras"
 msgstr ""
 
 #: src/Tour.php:63
