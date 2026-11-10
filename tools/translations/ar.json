@@ -1179,7 +1179,6 @@
   "Transfer vehicles": "مركبات التنقل",
   "Transfer prices": "أسعار التنقلات",
   "Transfer rules": "قواعد التنقلات",
-  "vehicle": "مركبة",
   "No vehicles yet. Add the cars you sell, e.g. Sedan (3 passengers), Van (7), Minibus (14), Bus (28).": "لا توجد مركبات بعد. أضف السيارات التي تبيعها، مثل سيدان (3 ركاب)، فان (7)، ميني باص (14)، باص (28).",
   "Vehicle": "المركبة",
   "Bags": "الحقائب",
@@ -1216,7 +1215,6 @@
   "Save": "حفظ",
   "Saved.": "تم الحفظ.",
   "Please fix the highlighted fields.": "يرجى تصحيح الحقول المحددة.",
-  "Transfer results": "نتائج التنقلات",
   "Visitors see the vehicles and prices for their search here.": "يرى الزوار هنا المركبات والأسعار لبحثهم.",
   "We couldn’t find “%s” in our list. Pick one of the suggestions while typing, or contact us for a price.": "لم نجد «%s» في قائمتنا. اختر أحد الاقتراحات أثناء الكتابة، أو تواصل معنا لمعرفة السعر.",
   "We don’t have a fixed price for this route and group size yet. Contact us and we’ll quote it.": "ليس لدينا سعر ثابت لهذا المسار وحجم المجموعة بعد. تواصل معنا وسنرسل لك عرض سعر.",
@@ -1320,10 +1318,12 @@
   "One way, per vehicle. Empty = keep the saved price; - = no price for this vehicle.": "اتجاه واحد، للمركبة. فارغ = إبقاء السعر المحفوظ؛ - = بلا سعر لهذه المركبة.",
   "%1$s “%2$s” isn’t a zone in Location Tree.": "%1$s «%2$s» ليست منطقة في شجرة المواقع.",
   "%1$s: “%2$s” isn’t a price.": "%1$s: «%2$s» ليس سعرًا.",
-  "Vehicles and prices for the transfer searched in the booking widget. Put it on the transfer search results page.": "المركبات والأسعار للتنقل الذي تم البحث عنه في أداة الحجز. ضعها في صفحة نتائج بحث التنقلات.",
-  "transfer": "تنقل",
-  "airport": "مطار",
-  "prices": "أسعار"
+  "block title\u0004Transfer results": "نتائج التنقلات",
+  "block description\u0004Vehicles and prices for the transfer searched in the booking widget. Put it on the transfer search results page.": "المركبات والأسعار للتنقل الذي تم البحث عنه في أداة الحجز. ضعها في صفحة نتائج بحث التنقلات.",
+  "block keyword\u0004transfer": "تنقل",
+  "block keyword\u0004airport": "مطار",
+  "block keyword\u0004vehicle": "مركبة",
+  "block keyword\u0004prices": "أسعار"
  },
  "itour-shield": {
   "Speed and security in one plugin: page cache and front-end tweaks, hidden login and masked WordPress paths, firewall, login protection with two-factor codes, malware and file scan, hardening and an activity log. Works on any WordPress site.": "السرعة والحماية في إضافة واحدة: تخزين الصفحات مؤقتًا وتحسينات الواجهة، وإخفاء صفحة الدخول ومسارات ووردبريس، وجدار حماية، وحماية الدخول برموز التحقق بخطوتين، وفحص الملفات والبرمجيات الخبيثة، وتقوية الإعدادات، وسجل النشاط. تعمل على أي موقع ووردبريس.",

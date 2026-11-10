@@ -351,7 +351,7 @@ msgstr "العملة"
 
 #: src/Module.php:243
 msgid "vehicle"
-msgstr "مركبة"
+msgstr ""
 
 #: src/Module.php:244
 msgid "Transfer vehicles"
@@ -587,7 +587,7 @@ msgstr "%1$s: «%2$s» ليس سعرًا."
 
 #: blocks/transfer-results/editor.js:10
 msgid "Transfer results"
-msgstr "نتائج التنقلات"
+msgstr ""
 
 #: blocks/transfer-results/editor.js:11
 msgid "Visitors see the vehicles and prices for their search here."
@@ -596,29 +596,29 @@ msgstr "يرى الزوار هنا المركبات والأسعار لبحثه�
 #: blocks/transfer-results/block.json
 msgctxt "block title"
 msgid "Transfer results"
-msgstr ""
+msgstr "نتائج التنقلات"
 
 #: blocks/transfer-results/block.json
 msgctxt "block description"
 msgid "Vehicles and prices for the transfer searched in the booking widget. Put it on the transfer search results page."
-msgstr ""
+msgstr "المركبات والأسعار للتنقل الذي تم البحث عنه في أداة الحجز. ضعها في صفحة نتائج بحث التنقلات."
 
 #: blocks/transfer-results/block.json
 msgctxt "block keyword"
 msgid "transfer"
-msgstr ""
+msgstr "تنقل"
 
 #: blocks/transfer-results/block.json
 msgctxt "block keyword"
 msgid "airport"
-msgstr ""
+msgstr "مطار"
 
 #: blocks/transfer-results/block.json
 msgctxt "block keyword"
 msgid "vehicle"
-msgstr ""
+msgstr "مركبة"
 
 #: blocks/transfer-results/block.json
 msgctxt "block keyword"
 msgid "prices"
-msgstr ""
+msgstr "أسعار"
