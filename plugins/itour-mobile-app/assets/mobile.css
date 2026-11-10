@@ -1,0 +1,64 @@
+/* iTour Mobile App: phone tab bar + "More" sheet. Theme tokens (theme.json presets) with fallbacks. */
+.itm-bar, .itm-sheet { display: none; }
+
+@media (max-width: 767px) {
+	body.itour-tabs { padding-block-end: calc(64px + env(safe-area-inset-bottom, 0px)); -webkit-tap-highlight-color: transparent; }
+	/* The bar's "More" sheet carries the menu and contacts: the top bar and the menu button step aside. */
+	body.itour-tabs .site-topbar, body.itour-tabs .site-nav { display: none; }
+	body.itour-tabs .site-header .itour-account { margin-inline-start: auto; }
+
+	.itm-bar {
+		position: fixed; inset: auto 0 0 0; z-index: 90;
+		display: flex; padding: 4px 4px calc(4px + env(safe-area-inset-bottom, 0px));
+		background: var(--wp--preset--color--base, #fff);
+		border-block-start: 1px solid var(--wp--preset--color--line, #e5e7eb);
+		box-shadow: 0 -6px 18px rgb(16 24 40 / 0.06);
+	}
+	.itm-tab {
+		flex: 1 1 0; min-width: 0; min-height: 56px; padding: 6px 2px 4px;
+		display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+		border: 0; border-radius: 12px; background: none; cursor: pointer;
+		color: var(--wp--preset--color--muted, #5b6472); font: inherit; font-size: 11px; font-weight: 600; line-height: 1.1;
+		text-decoration: none;
+	}
+	.itm-tab span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.itm-tab svg { transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+	.itm-tab[aria-current="page"] { color: var(--wp--preset--color--ink, #111827); }
+	.itm-tab[aria-current="page"] svg { color: var(--wp--preset--color--brand-dark, #660066); transform: translateY(-1px); }
+	.itm-tab:active svg { transform: scale(0.9); }
+	.itm-tab:focus-visible { outline: 2px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: -2px; }
+
+	/* Sheet: native <dialog> sliding up from the bottom. */
+	.itm-sheet[open] {
+		display: block; position: fixed; inset: auto 0 0 0; width: 100%; max-width: none; max-height: 88dvh; margin: 0; padding: 0;
+		border: 0; border-radius: 20px 20px 0 0; overflow: hidden auto; overscroll-behavior: contain;
+		background: var(--wp--preset--color--surface, #f4f5f7); color: var(--wp--preset--color--ink, #111827);
+		animation: itm-up 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.itm-sheet::backdrop { background: rgb(10 8 14 / 0.5); }
+	@keyframes itm-up { from { transform: translateY(100%); } }
+	@media (prefers-reduced-motion: reduce) { .itm-sheet[open] { animation: none; } .itm-tab svg { transition: none; } }
+
+	.itm-sheet__panel { display: grid; gap: 12px; padding: 8px 16px calc(20px + env(safe-area-inset-bottom, 0px)); }
+	.itm-sheet__panel::before { content: ""; justify-self: center; width: 36px; height: 4px; margin-block: 2px 4px; border-radius: 2px; background: color-mix(in srgb, currentColor 22%, transparent); }
+	.itm-sheet__head { display: flex; align-items: center; justify-content: space-between; }
+	.itm-sheet__head h2 { margin: 0; font-size: 18px; line-height: 1.2; }
+	.itm-sheet__x { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 999px; background: var(--wp--preset--color--base, #fff); color: inherit; cursor: pointer; }
+
+	.itm-group { overflow: hidden; border-radius: 14px; background: var(--wp--preset--color--base, #fff); }
+	.itm-group__title { margin: 0; padding: 12px 16px 2px; font-size: 13px; font-weight: 600; color: var(--wp--preset--color--muted, #5b6472); }
+	.itm-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 0 16px; color: inherit; font-size: 15px; font-weight: 500; text-decoration: none; }
+	.itm-row + .itm-row { border-block-start: 1px solid var(--wp--preset--color--line, #eef0f3); }
+	.itm-row svg { width: 18px; height: 18px; flex: none; color: var(--wp--preset--color--muted, #9aa3ae); }
+	[dir="rtl"] .itm-row svg { transform: scaleX(-1); }
+	.itm-row:active { background: var(--wp--preset--color--surface, #f4f5f7); }
+	.itm-signin.wp-element-button { display: block; margin: 12px; padding: 12px 16px; text-align: center; text-decoration: none; }
+
+	.itm-contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; }
+	.itm-contact a {
+		display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px;
+		border-radius: 14px; background: var(--wp--preset--color--base, #fff); color: inherit;
+		font-size: 13px; font-weight: 600; text-decoration: none;
+	}
+	.itm-contact svg { color: var(--wp--preset--color--brand-dark, #660066); }
+}

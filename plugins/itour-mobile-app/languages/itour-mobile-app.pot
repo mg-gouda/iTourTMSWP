@@ -1,0 +1,97 @@
+# Copyright (C) 2026 Mohamed Gouda
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: iTour Mobile App 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-10T23:30:46+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: itour-mobile-app\n"
+
+#. Plugin Name of the plugin
+#: itour-mobile-app.php
+msgid "iTour Mobile App"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-mobile-app.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-mobile-app.php
+msgid "On phones (up to 767px) the site behaves like an app: a bottom tab bar (Explore, Tours, Day trips, Transfers, More) and a \"More\" sheet with the account, contact buttons and the main menu. Tour and day-trip pages keep their own \"Book\" bar instead; cart and checkout show no bar. Tablets and desktops are unchanged. Made for the WP iTourTMS theme."
+msgstr ""
+
+#. Author of the plugin
+#: itour-mobile-app.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-mobile-app.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: itour-mobile-app.php:57
+msgid "Explore"
+msgstr ""
+
+#: itour-mobile-app.php:59
+msgid "Tours"
+msgstr ""
+
+#: itour-mobile-app.php:60
+msgid "Day trips"
+msgstr ""
+
+#: itour-mobile-app.php:61
+msgid "Transfers"
+msgstr ""
+
+#: templates/bar.php:26
+msgid "Quick navigation"
+msgstr ""
+
+#: templates/bar.php:35
+#: templates/bar.php:42
+msgid "More"
+msgstr ""
+
+#: templates/bar.php:43
+msgid "Close"
+msgstr ""
+
+#: templates/bar.php:49
+msgid "My account & bookings"
+msgstr ""
+
+#: templates/bar.php:50
+msgid "Sign out"
+msgstr ""
+
+#: templates/bar.php:52
+msgid "Sign in or create an account"
+msgstr ""
+
+#: templates/bar.php:57
+msgid "Contact us"
+msgstr ""
+
+#: templates/bar.php:60
+msgid "Call"
+msgstr ""
+
+#: templates/bar.php:61
+msgid "Email"
+msgstr ""
+
+#: templates/bar.php:75
+msgid "Main menu"
+msgstr ""

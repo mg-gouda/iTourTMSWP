@@ -62,6 +62,7 @@
 				<element value="itour-webp"/>
 				<element value="itour-registration-guard"/>
 				<element value="itour-traffic-guard"/>
+				<element value="itour-mobile-app"/>
 				<element value="itour-contracting"/>
 				<element value="itour-reservations"/>
 				<element value="itour-nile-cruises"/>

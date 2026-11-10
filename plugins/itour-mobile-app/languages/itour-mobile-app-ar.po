@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-mobile-app\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-mobile-app\n"
+
+#. Plugin Name of the plugin
+#: itour-mobile-app.php
+msgid "iTour Mobile App"
+msgstr "iTour Mobile App"
+
+#. Plugin URI of the plugin
+#: itour-mobile-app.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-mobile-app.php
+msgid "On phones (up to 767px) the site behaves like an app: a bottom tab bar (Explore, Tours, Day trips, Transfers, More) and a \"More\" sheet with the account, contact buttons and the main menu. Tour and day-trip pages keep their own \"Book\" bar instead; cart and checkout show no bar. Tablets and desktops are unchanged. Made for the WP iTourTMS theme."
+msgstr "على الهواتف (حتى 767 بكسل) يعمل الموقع كتطبيق: شريط تبويبات سفلي (استكشف، البرامج، الرحلات اليومية، التنقلات، المزيد) ولوحة «المزيد» بها الحساب وأزرار التواصل والقائمة الرئيسية. صفحات البرامج والرحلات تحتفظ بشريط «احجز» الخاص بها، ولا يظهر الشريط في السلة والدفع. لا تغيير على الأجهزة اللوحية وأجهزة الكمبيوتر. مصممة لقالب WP iTourTMS."
+
+#. Author of the plugin
+#: itour-mobile-app.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-mobile-app.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: itour-mobile-app.php:57
+msgid "Explore"
+msgstr "استكشف"
+
+#: itour-mobile-app.php:59
+msgid "Tours"
+msgstr "البرامج"
+
+#: itour-mobile-app.php:60
+msgid "Day trips"
+msgstr "رحلات يومية"
+
+#: itour-mobile-app.php:61
+msgid "Transfers"
+msgstr "التنقلات"
+
+#: templates/bar.php:26
+msgid "Quick navigation"
+msgstr "التنقل السريع"
+
+#: templates/bar.php:35
+#: templates/bar.php:42
+msgid "More"
+msgstr "المزيد"
+
+#: templates/bar.php:43
+msgid "Close"
+msgstr "إغلاق"
+
+#: templates/bar.php:49
+msgid "My account & bookings"
+msgstr "حسابي وحجوزاتي"
+
+#: templates/bar.php:50
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+#: templates/bar.php:52
+msgid "Sign in or create an account"
+msgstr "سجّل الدخول أو أنشئ حسابًا"
+
+#: templates/bar.php:57
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+#: templates/bar.php:60
+msgid "Call"
+msgstr "اتصال"
+
+#: templates/bar.php:61
+msgid "Email"
+msgstr "البريد"
+
+#: templates/bar.php:75
+msgid "Main menu"
+msgstr "القائمة الرئيسية"
