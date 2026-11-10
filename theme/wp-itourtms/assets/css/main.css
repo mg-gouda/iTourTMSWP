@@ -142,6 +142,7 @@ img, video { max-width: 100%; height: auto; }
 .site-footer__title { margin: 0 0 12px; font-size: var(--wp--preset--font-size--medium); font-weight: 600; letter-spacing: .01em; }
 .site-footer__brand { margin-block-end: 12px; }
 .site-footer__brand .custom-logo { max-height: 44px; width: auto; }
+.site-footer__brand .site-logo .site-logo__img { height: 44px; }
 .site-footer__site { font-size: var(--wp--preset--font-size--large); font-weight: 700; }
 .site-footer__text { margin: 0; max-width: 36ch; font-size: var(--wp--preset--font-size--small); line-height: 1.7; opacity: .85; }
 .site-footer__menu { display: grid; gap: 8px; font-size: var(--wp--preset--font-size--small); }

@@ -44,15 +44,20 @@ function wp_itourtms_icon( string $service ): string {
 /**
  * The site logo from Theme Options → Logo: retina srcset, separate phone logo, SVG friendly.
  * Falls back to the Customizer logo, then to the site title. Returns '' when no image logo is set.
+ *
+ * @param string $place 'header' or 'footer': picks the light logo on that area's dark background.
  */
-function wp_itourtms_logo(): string {
+function wp_itourtms_logo( string $place = 'header' ): string {
 	$o    = wp_itourtms_options();
 	$main = (int) $o['logo_image'];
 	if ( ! $main ) {
 		return has_custom_logo() ? get_custom_logo() : '';
 	}
-	// A dark header background shows the light logo everywhere (the transparent header swaps it in CSS).
-	if ( $o['logo_light'] && 'transparent' !== $o['header_layout'] && wp_itourtms_contrast( (string) $o['header_bg'], '#ffffff' ) >= 4.5 ) {
+	// A dark background shows the light logo (the transparent header swaps it in CSS instead).
+	$dark = 'footer' === $place
+		? wp_itourtms_contrast( (string) $o['footer_bg'], '#ffffff' ) >= 4.5
+		: 'transparent' !== $o['header_layout'] && wp_itourtms_contrast( (string) $o['header_bg'], '#ffffff' ) >= 4.5;
+	if ( $o['logo_light'] && $dark ) {
 		$main = (int) $o['logo_light'];
 	}
 	$url    = (string) wp_get_attachment_image_url( $main, 'full' );
@@ -68,7 +73,7 @@ function wp_itourtms_logo(): string {
 	$html .= '<img class="site-logo__img" src="' . esc_url( $url ) . '"' . ( $retina ? ' srcset="' . esc_url( $url ) . ' 1x, ' . esc_url( $retina ) . ' 2x"' : '' )
 		. ' alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="' . $height . '"' . ( $width ? ' width="' . $width . '"' : '' ) . ' decoding="async">';
 	$html .= '</picture>';
-	if ( $o['logo_light'] && 'transparent' === $o['header_layout'] ) {
+	if ( 'header' === $place && $o['logo_light'] && 'transparent' === $o['header_layout'] ) {
 		$html .= '<img class="site-logo__img site-logo__img--light" src="' . esc_url( (string) wp_get_attachment_image_url( (int) $o['logo_light'], 'full' ) ) . '" alt="" height="' . $height . '"' . ( $width ? ' width="' . $width . '"' : '' ) . ' decoding="async">';
 	}
 	return $html . '</a>';

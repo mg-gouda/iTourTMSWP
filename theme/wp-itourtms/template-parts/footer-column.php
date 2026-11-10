@@ -32,9 +32,12 @@ if ( 'none' === $wp_itourtms_type ) {
 	<?php else : ?>
 		<?php if ( 'about' === $wp_itourtms_type ) : ?>
 			<div class="site-footer__brand">
-				<?php if ( has_custom_logo() ) : ?>
-					<?php the_custom_logo(); ?>
-				<?php else : ?>
+				<?php
+				$wp_itourtms_logo = wp_itourtms_logo( 'footer' );
+				if ( '' !== $wp_itourtms_logo ) :
+					echo $wp_itourtms_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_* in wp_itourtms_logo().
+				else :
+					?>
 					<a class="site-footer__site" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				<?php endif; ?>
 			</div>
