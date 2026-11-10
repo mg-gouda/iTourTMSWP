@@ -68,7 +68,7 @@ msgstr "نوع الرحلة"
 #: src/Booking.php:426
 #: src/Booking.php:453
 #: src/Editor.php:132
-#: src/Module.php:181
+#: src/Module.php:185
 msgid "Date"
 msgstr "التاريخ"
 
@@ -141,7 +141,7 @@ msgstr "%1$s (+%2$s %3$s)"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:122
-#: src/Page.php:126
+#: src/Page.php:127
 msgid "per booking"
 msgstr "للحجز"
 
@@ -149,7 +149,7 @@ msgstr "للحجز"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:121
-#: src/Page.php:126
+#: src/Page.php:127
 msgid "per person"
 msgstr "للفرد"
 
@@ -257,7 +257,7 @@ msgid "Excursion"
 msgstr "الرحلة"
 
 #: src/Booking.php:428
-#: src/Module.php:187
+#: src/Module.php:191
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
@@ -312,19 +312,19 @@ msgstr "إلى عدد مسافرين"
 
 #: src/Editor.php:84
 #: src/Editor.php:134
-#: src/Page.php:101
+#: src/Page.php:102
 msgid "Adult"
 msgstr "بالغ"
 
 #: src/Editor.php:85
 #: src/Editor.php:135
-#: src/Page.php:101
+#: src/Page.php:102
 msgid "Child"
 msgstr "طفل"
 
 #: src/Editor.php:86
 #: src/Editor.php:136
-#: src/Page.php:101
+#: src/Page.php:102
 msgid "Infant"
 msgstr "رضيع"
 
@@ -595,8 +595,8 @@ msgstr "الاستقبال من منطقتك"
 
 #: src/Module.php:33
 #: src/Module.php:51
-#: src/Module.php:168
-#: src/Module.php:206
+#: src/Module.php:172
+#: src/Module.php:210
 #: src/Sheet.php:31
 msgid "Excursions"
 msgstr "الرحلات اليومية"
@@ -605,43 +605,47 @@ msgstr "الرحلات اليومية"
 msgid "excursion"
 msgstr "رحلة"
 
-#: src/Module.php:131
+#: src/Module.php:59
+msgid "Day trips"
+msgstr "رحلات يومية"
+
+#: src/Module.php:135
 msgid "Bookings"
 msgstr "الحجوزات"
 
-#: src/Module.php:135
+#: src/Module.php:139
 msgid "Import / export"
 msgstr "استيراد / تصدير"
 
-#: src/Module.php:169
+#: src/Module.php:173
 msgid "Find excursions"
 msgstr "ابحث عن رحلة"
 
-#: src/Module.php:174
+#: src/Module.php:178
 msgid "Staying in"
 msgstr "مكان الإقامة"
 
-#: src/Module.php:176
+#: src/Module.php:180
 msgid "Hurghada, Sharm, Luxor…"
 msgstr "الغردقة، شرم الشيخ، الأقصر…"
 
-#: src/Module.php:207
+#: src/Module.php:211
 msgid "Pages used by Excursions. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الرحلات اليومية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:211
+#: src/Module.php:215
 msgid "Excursions page"
 msgstr "صفحة الرحلات اليومية"
 
-#: src/Module.php:214
+#: src/Module.php:218
 msgid "The page that lists all excursions and day trips."
 msgstr "الصفحة التي تعرض جميع الرحلات والجولات اليومية."
 
-#: src/Module.php:217
+#: src/Module.php:221
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:220
+#: src/Module.php:224
 msgid "Where the booking widget sends excursion searches. Leave empty to use the excursions page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الرحلات. اتركها فارغة لاستخدام صفحة الرحلات اليومية."
 
@@ -677,40 +681,44 @@ msgstr "للبالغ"
 msgid "Book this trip"
 msgstr "احجز هذه الرحلة"
 
+#: src/Page.php:81
+msgid "Pick-up from your hotel"
+msgstr "الاستقبال من فندقك"
+
 #. translators: 1: start date, 2: end date.
-#: src/Page.php:95
+#: src/Page.php:96
 #, php-format
 msgid "%1$s – %2$s"
 msgstr "%1$s – %2$s"
 
-#: src/Page.php:101
+#: src/Page.php:102
 msgid "Group size"
 msgstr "حجم المجموعة"
 
-#: src/Page.php:106
+#: src/Page.php:107
 msgid "Free"
 msgstr "مجانًا"
 
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:108
+#: src/Page.php:109
 #, php-format
 msgid "%s travellers"
 msgstr "%s مسافرين"
 
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Page.php:126
+#: src/Page.php:127
 #, php-format
 msgid "%1$s: %2$s %3$s"
 msgstr "%1$s: %2$s %3$s"
 
 #. translators: 1: supplement name, 2: date(s), 3: adult price.
-#: src/Page.php:131
+#: src/Page.php:132
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
 
 #. translators: 1: zone, 2: price.
-#: src/Page.php:137
+#: src/Page.php:138
 #, php-format
 msgid "Pick-up from %1$s: %2$s per person"
 msgstr "الاستقبال من %1$s: %2$s للفرد"

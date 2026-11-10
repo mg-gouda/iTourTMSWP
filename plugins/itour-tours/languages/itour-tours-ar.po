@@ -313,7 +313,7 @@ msgstr "إضافة مكمل"
 
 #: src/Module.php:33
 #: src/Module.php:74
-#: src/Module.php:168
+#: src/Module.php:184
 #: src/Sheet.php:31
 msgid "Tour Packages"
 msgstr "الباقات السياحية"
@@ -322,51 +322,64 @@ msgstr "الباقات السياحية"
 msgid "tour package"
 msgstr "برنامج سياحي"
 
-#: src/Module.php:98
+#: src/Module.php:82
+#: src/Module.php:146
+msgid "Tour packages"
+msgstr "البرامج السياحية"
+
+#. translators: %d: number of days.
+#: src/Module.php:90
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d يوم"
+msgstr[1] "يوم واحد"
+msgstr[2] "يومان"
+msgstr[3] "%d أيام"
+msgstr[4] "%d يومًا"
+msgstr[5] "%d يوم"
+
+#: src/Module.php:114
 msgid "Import / export"
 msgstr "استيراد / تصدير"
 
-#: src/Module.php:130
-msgid "Tour packages"
-msgstr "الباقات السياحية"
-
-#: src/Module.php:131
+#: src/Module.php:147
 msgid "Find tours"
 msgstr "ابحث عن باقة"
 
-#: src/Module.php:136
+#: src/Module.php:152
 msgid "Destination"
 msgstr "الوجهة"
 
-#: src/Module.php:138
+#: src/Module.php:154
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr "القاهرة، الأقصر، رحلة نيلية…"
 
-#: src/Module.php:143
+#: src/Module.php:159
 msgid "Start date"
 msgstr "تاريخ البدء"
 
-#: src/Module.php:149
+#: src/Module.php:165
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Module.php:169
+#: src/Module.php:185
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الباقات السياحية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:173
+#: src/Module.php:189
 msgid "Tour packages page"
 msgstr "صفحة الباقات السياحية"
 
-#: src/Module.php:176
+#: src/Module.php:192
 msgid "The page that lists all tour packages."
 msgstr "الصفحة التي تعرض جميع الباقات السياحية."
 
-#: src/Module.php:179
+#: src/Module.php:195
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:182
+#: src/Module.php:198
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الباقات. اتركها فارغة لاستخدام صفحة الباقات السياحية."
 

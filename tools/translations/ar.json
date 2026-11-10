@@ -486,7 +486,7 @@
   "In the block editor, click + and search for these blocks:": "في محرر المكوّنات، اضغط + وابحث عن هذه المكوّنات:",
   "This SVG file could not be read safely, so it was not uploaded.": "تعذّرت قراءة ملف SVG هذا بأمان، لذلك لم يُرفع.",
   "iTour: %1$s is not running because it needs these modules: %2$s.": "iTour: الوحدة %1$s لا تعمل لأنها تحتاج إلى هذه الوحدات: %2$s.",
-  "Tour packages": "الباقات السياحية",
+  "Tour packages": "البرامج السياحية",
   "Excursions": "الرحلات اليومية",
   "Transfers": "التنقلات",
   "Booking widget": "أداة الحجز",
@@ -501,7 +501,7 @@
   "block description\u0004Search box for tour packages, excursions and transfers, in three designs: tabs, search bar or card.": "خانة بحث عن الباقات السياحية والرحلات اليومية والتنقلات بثلاثة تصاميم: تبويبات أو شريط بحث أو بطاقة.",
   "block keyword\u0004search": "بحث",
   "block keyword\u0004booking": "حجز",
-  "block keyword\u0004tours": "باقات",
+  "block keyword\u0004tours": "برامج",
   "block keyword\u0004transfers": "تنقلات",
   "block keyword\u0004excursions": "رحلات",
   "Sorry, you are not allowed to do that.": "عذرًا، غير مسموح لك بذلك.",
@@ -699,7 +699,7 @@
   "A full-width photo with the title on it, then the story day by day. Best when you have strong photos.": "صورة بعرض الصفحة عليها العنوان، ثم القصة يومًا بيوم. الأفضل عندما تكون لديك صور قوية.",
   "Compact": "مختصر",
   "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones.": "المعلومات الأساسية في مربعات، ونموذج الحجز مباشرة، والتفاصيل مطوية أسفلها. الأفضل للرحلات اليومية القصيرة والهواتف.",
-  "From": "من",
+  "From": "ابتداءً من",
   "All %d photos": "كل الصور (%d)",
   "On this page": "في هذه الصفحة",
   "What’s included": "ما يشمله",
@@ -733,7 +733,43 @@
   "New accounts are closed on this site.": "إنشاء حسابات جديدة متوقف في هذا الموقع.",
   "Enter your name and a valid email address.": "أدخل اسمك وبريدًا إلكترونيًا صحيحًا.",
   "Choose a password of at least 8 characters.": "اختر كلمة مرور من 8 أحرف على الأقل.",
-  "This email already has an account. Sign in instead, or reset your password.": "هذا البريد له حساب بالفعل. سجّل الدخول، أو أعد تعيين كلمة المرور."
+  "This email already has an account. Sign in instead, or reset your password.": "هذا البريد له حساب بالفعل. سجّل الدخول، أو أعد تعيين كلمة المرور.",
+  "per adult": "للبالغ",
+  "You may also like": "قد يعجبك أيضًا",
+  "Nothing found for “%s”. Try another place, or see everything below.": "لا نتائج لـ «%s». جرّب مكانًا آخر، أو تصفح كل الرحلات أدناه.",
+  "Trips are coming soon.": "الرحلات قادمة قريبًا.",
+  "Destinations: set a destination (Location Tree) on your tours or day trips to show tiles here.": "الوجهات: حدّد وجهة (من شجرة المواقع) لبرامجك أو رحلاتك اليومية لتظهر البطاقات هنا.",
+  "%d trip": [
+   "%d رحلة",
+   "رحلة واحدة",
+   "رحلتان",
+   "%d رحلات",
+   "%d رحلة",
+   "%d رحلة"
+  ],
+  "Where we go": "وجهاتنا",
+  "Popular trips": "رحلات مميزة",
+  "Trips": "الرحلات",
+  "Tour packages and day trips as cards. On the home page: tabs per kind, with the transfer search as the last tab. On a listing page: every trip of one kind, answering the booking widget's search.": "البرامج السياحية والرحلات اليومية كبطاقات. في الصفحة الرئيسية: تبويب لكل نوع، مع بحث التنقلات كآخر تبويب. في صفحة القائمة: كل رحلات نوع واحد، وتستجيب لبحث أداة الحجز.",
+  "Destinations": "الوجهات",
+  "Photo tiles for the Location Tree destinations that have trips, most trips first. Each tile opens the listing page for that place.": "بطاقات مصورة لوجهات شجرة المواقع التي لها رحلات، الأكثر رحلات أولًا. كل بطاقة تفتح صفحة القائمة لهذا المكان.",
+  "Heading (optional)": "العنوان (اختياري)",
+  "Listing page": "صفحة القائمة",
+  "Shows every trip of the first kind ticked below and answers the booking widget’s search. Use it on your Tours or Day trips page.": "تعرض كل رحلات أول نوع محدد أدناه وتستجيب لبحث أداة الحجز. استخدمها في صفحة البرامج أو الرحلات اليومية.",
+  "Show these kinds": "اعرض هذه الأنواع",
+  "Cards per tab": "عدد البطاقات في كل تبويب",
+  "Transfers tab (transfer search)": "تبويب التنقلات (بحث التنقلات)",
+  "Tiles": "عدد البطاقات",
+  "block title\u0004Trips": "الرحلات",
+  "block title\u0004Destinations": "الوجهات",
+  "block description\u0004Tour packages and day trips as cards. On the home page: tabs per kind, with the transfer search as the last tab. On a listing page: every trip of one kind, answering the booking widget's search.": "البرامج السياحية والرحلات اليومية كبطاقات. في الصفحة الرئيسية: تبويب لكل نوع، مع بحث التنقلات كآخر تبويب. في صفحة القائمة: كل رحلات نوع واحد، وتستجيب لبحث أداة الحجز.",
+  "block description\u0004Photo tiles for the Location Tree destinations that have trips, most trips first. Each tile opens the listing page for that place.": "بطاقات مصورة لوجهات شجرة المواقع التي لها رحلات، الأكثر رحلات أولًا. كل بطاقة تفتح صفحة القائمة لهذا المكان.",
+  "block keyword\u0004day trips": "رحلات يومية",
+  "block keyword\u0004cards": "بطاقات",
+  "block keyword\u0004listing": "قائمة",
+  "block keyword\u0004destinations": "وجهات",
+  "block keyword\u0004places": "أماكن",
+  "block keyword\u0004location": "موقع"
  },
  "itour-forms": {
   "Thank you! We’ll reply within one working day.": "شكرًا لك! سنرد عليك خلال يوم عمل واحد.",
@@ -826,7 +862,7 @@
  },
  "itour-tours": {
   "Tour Packages": "الباقات السياحية",
-  "Tour packages": "الباقات السياحية",
+  "Tour packages": "البرامج السياحية",
   "Find tours": "ابحث عن باقة",
   "Destination": "الوجهة",
   "Cairo, Luxor, Nile cruise…": "القاهرة، الأقصر، رحلة نيلية…",
@@ -1000,7 +1036,15 @@
   "Send us your dates and group size and we will confirm availability.": "أرسل لنا تواريخك وحجم مجموعتك وسنؤكد التوفر.",
   "Ask for this tour": "اطلب هذا البرنامج",
   "On request": "عند الطلب",
-  "Cancellation": "الإلغاء"
+  "Cancellation": "الإلغاء",
+  "%d day": [
+   "%d يوم",
+   "يوم واحد",
+   "يومان",
+   "%d أيام",
+   "%d يومًا",
+   "%d يوم"
+  ]
  },
  "itour-excursions": {
   "Excursions": "الرحلات اليومية",
@@ -1211,7 +1255,8 @@
   "Pick-up: use hotel, typed and/or meeting.": "الاستقبال: استخدم hotel و/أو typed و/أو meeting.",
   "%s must be a whole number.": "%s يجب أن يكون عددًا صحيحًا.",
   "From your hotel": "من فندقك",
-  "per adult": "للبالغ"
+  "per adult": "للبالغ",
+  "Day trips": "رحلات يومية"
  },
  "itour-transfers": {
   "Transfers": "التنقلات",

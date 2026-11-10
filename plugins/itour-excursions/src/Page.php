@@ -78,6 +78,7 @@ final class Page {
 				'html'  => $form,
 			) : null,
 			'notice'   => Policies::headline( $tiers ),
+			'trust'    => array_intersect( array( 'hotel', 'typed' ), $modes ) ? array( __( 'Pick-up from your hotel', 'itour-excursions' ) ) : array(),
 		);
 	}
 

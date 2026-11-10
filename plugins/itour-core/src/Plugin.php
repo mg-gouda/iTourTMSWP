@@ -106,6 +106,7 @@ final class Plugin {
 		( new Locations() )->hooks();
 		( new Checkout() )->hooks();
 		( new Account() )->hooks();
+		( new Cards() )->hooks();
 		add_action(
 			'admin_enqueue_scripts',
 			static function ( string $hook ): void {

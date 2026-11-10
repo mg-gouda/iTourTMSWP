@@ -154,9 +154,9 @@ msgstr "%1$s، السطر %2$d: «%3$s» غير صالح هنا."
 
 #: src/Admin/Cells.php:245
 #: src/Admin/Cells.php:292
-#: src/Layouts.php:289
+#: src/Layouts.php:311
 #: src/Policies.php:187
-#: src/Policies.php:261
+#: src/Policies.php:271
 msgid "Cancellation"
 msgstr "الإلغاء"
 
@@ -165,7 +165,7 @@ msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to 
 msgstr "شريحة في كل سطر: أيام قبل الوصول | الرسوم % | السفر من | السفر إلى (التواريخ اختيارية، لشريحة موسمية). مثال: 30 | 0 ثم 14 | 50 ثم 0 | 100."
 
 #: src/Admin/Cells.php:246
-#: src/Layouts.php:324
+#: src/Layouts.php:346
 #: src/Products.php:156
 #: src/Products.php:163
 msgid "Included"
@@ -177,7 +177,7 @@ msgid "One item per line."
 msgstr "بند في كل سطر."
 
 #: src/Admin/Cells.php:247
-#: src/Layouts.php:324
+#: src/Layouts.php:346
 #: src/Products.php:163
 msgid "Not included"
 msgstr "لا يشمل"
@@ -238,7 +238,7 @@ msgid "Comma separated. New names are created."
 msgstr "مفصولة بفواصل. الأسماء الجديدة تُنشأ."
 
 #: src/Admin/Cells.php:341
-#: src/Layouts.php:316
+#: src/Layouts.php:338
 #: src/Products.php:77
 msgid "Languages"
 msgstr "اللغات"
@@ -248,7 +248,7 @@ msgid "Comma separated, e.g. English, German."
 msgstr "مفصولة بفواصل، مثل English, German."
 
 #: src/Admin/Cells.php:342
-#: src/Layouts.php:316
+#: src/Layouts.php:338
 #: src/Products.php:78
 msgid "Suitable for"
 msgstr "مناسبة لـ"
@@ -533,7 +533,7 @@ msgid "Start again"
 msgstr "البدء من جديد"
 
 #: src/Admin/Menu.php:40
-#: src/Layouts.php:230
+#: src/Layouts.php:252
 msgid "Overview"
 msgstr "نظرة عامة"
 
@@ -586,6 +586,53 @@ msgstr "إزالة"
 #: src/Admin/Rows.php:41
 msgid "Add row"
 msgstr "إضافة صف"
+
+#: src/Cards.php:90
+#: src/Layouts.php:167
+#: src/Layouts.php:225
+#: src/Layouts.php:301
+msgid "From"
+msgstr "ابتداءً من"
+
+#: src/Cards.php:90
+msgid "per adult"
+msgstr "للبالغ"
+
+#: src/Cards.php:164
+msgid "You may also like"
+msgstr "قد يعجبك أيضًا"
+
+#. translators: %s: what the visitor searched for.
+#: src/Cards.php:190
+#, php-format
+msgid "Nothing found for “%s”. Try another place, or see everything below."
+msgstr "لا نتائج لـ «%s». جرّب مكانًا آخر، أو تصفح كل الرحلات أدناه."
+
+#: src/Cards.php:191
+msgid "Trips are coming soon."
+msgstr "الرحلات قادمة قريبًا."
+
+#: src/Cards.php:200
+#: src/Demo.php:179
+#: blocks/booking-widget/editor.js:10
+msgid "Transfers"
+msgstr "التنقلات"
+
+#: src/Cards.php:260
+msgid "Destinations: set a destination (Location Tree) on your tours or day trips to show tiles here."
+msgstr "الوجهات: حدّد وجهة (من شجرة المواقع) لبرامجك أو رحلاتك اليومية لتظهر البطاقات هنا."
+
+#. translators: %d: number of trips.
+#: src/Cards.php:290
+#, php-format
+msgid "%d trip"
+msgid_plural "%d trips"
+msgstr[0] "%d رحلة"
+msgstr[1] "رحلة واحدة"
+msgstr[2] "رحلتان"
+msgstr[3] "%d رحلات"
+msgstr[4] "%d رحلة"
+msgstr[5] "%d رحلة"
 
 #: src/Checkout.php:72
 msgid "Booking"
@@ -903,76 +950,56 @@ msgstr "إضافة المحتوى التجريبي"
 msgid "Demo menu"
 msgstr "القائمة التجريبية"
 
-#: src/Demo.php:170
+#: src/Demo.php:169
 msgid "Home"
 msgstr "الرئيسية"
 
 #: src/Demo.php:171
+msgid "Where we go"
+msgstr "وجهاتنا"
+
+#: src/Demo.php:172
+msgid "Popular trips"
+msgstr "رحلات مميزة"
+
+#: src/Demo.php:174
 msgid "Tours"
 msgstr "الجولات"
 
-#: src/Demo.php:171
+#: src/Demo.php:174
 msgid "Multi-day packages with hotels, guides and transfers included. Nile cruises, Cairo and the pyramids, Luxor and Aswan, the Red Sea coast."
 msgstr "برامج لعدة أيام تشمل الفنادق والمرشدين والتنقلات. رحلات نيلية، القاهرة والأهرامات، الأقصر وأسوان، ساحل البحر الأحمر."
 
-#: src/Demo.php:173
-msgid "Classic Egypt, 8 days: Cairo, Nile cruise, Luxor"
-msgstr "مصر الكلاسيكية، 8 أيام: القاهرة، رحلة نيلية، الأقصر"
-
-#: src/Demo.php:173
-msgid "Red Sea and Cairo, 7 days"
-msgstr "البحر الأحمر والقاهرة، 7 أيام"
-
-#: src/Demo.php:173
-msgid "Desert and oases, 5 days"
-msgstr "الصحراء والواحات، 5 أيام"
-
-#: src/Demo.php:174
+#: src/Demo.php:177
+#: blocks/trips/editor.js:23
 msgid "Day trips"
 msgstr "رحلات يومية"
 
-#: src/Demo.php:174
+#: src/Demo.php:177
 msgid "Excursions from your hotel, with pick-up and drop-off."
 msgstr "رحلات من فندقك، مع التوصيل ذهابًا وإيابًا."
 
-#: src/Demo.php:175
-msgid "Pyramids of Giza and the Egyptian Museum"
-msgstr "أهرامات الجيزة والمتحف المصري"
-
-#: src/Demo.php:175
-msgid "Luxor from Hurghada"
-msgstr "الأقصر من الغردقة"
-
-#: src/Demo.php:175
-msgid "Snorkelling trip to Giftun Island"
-msgstr "رحلة غطس إلى جزيرة الجفتون"
-
-#: src/Demo.php:176
-#: blocks/booking-widget/editor.js:10
-msgid "Transfers"
-msgstr "التنقلات"
-
-#: src/Demo.php:176
+#: src/Demo.php:179
 msgid "Private airport and hotel transfers with a fixed price per car, not per person. Your driver waits at arrivals with your name."
 msgstr "تنقلات خاصة من المطار والفندق بسعر ثابت للسيارة، لا للفرد. ينتظرك السائق في صالة الوصول باسمك."
 
-#: src/Demo.php:178
+#: src/Demo.php:181
 msgid "About"
 msgstr "من نحن"
 
-#: src/Demo.php:178
+#: src/Demo.php:181
 msgid "A local travel company"
 msgstr "شركة سياحة محلية"
 
-#: src/Demo.php:179
+#: src/Demo.php:182
 msgid "We are a destination management company: we plan, book and run every part of the trip ourselves, from the airport pick-up to the last excursion. Replace this text with your own story."
 msgstr "نحن شركة إدارة وجهات سياحية: نخطط ونحجز وننفذ كل جزء من الرحلة بأنفسنا، من الاستقبال في المطار حتى آخر رحلة. استبدل هذا النص بقصتك."
 
-#: src/Demo.php:180
+#: src/Demo.php:183
 msgid "Contact"
 msgstr "اتصل بنا"
 
-#: src/Demo.php:180
+#: src/Demo.php:183
 msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
 msgstr "أخبرنا متى تريد السفر وما الذي تود رؤيته. نرد خلال يوم عمل واحد."
 
@@ -1000,41 +1027,35 @@ msgstr "مختصر"
 msgid "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones."
 msgstr "المعلومات الأساسية في مربعات، ونموذج الحجز مباشرة، والتفاصيل مطوية أسفلها. الأفضل للرحلات اليومية القصيرة والهواتف."
 
-#: src/Layouts.php:145
-#: src/Layouts.php:203
-#: src/Layouts.php:279
-msgid "From"
-msgstr "من"
-
 #. translators: %d: number of photos.
-#: src/Layouts.php:222
+#: src/Layouts.php:244
 #, php-format
 msgid "All %d photos"
 msgstr "كل الصور (%d)"
 
-#: src/Layouts.php:228
+#: src/Layouts.php:250
 msgid "On this page"
 msgstr "في هذه الصفحة"
 
-#: src/Layouts.php:331
+#: src/Layouts.php:353
 msgid "What’s included"
 msgstr "ما يشمله"
 
-#: src/Layouts.php:338
+#: src/Layouts.php:360
 msgid "Questions"
 msgstr "أسئلة"
 
-#: src/Layouts.php:345
+#: src/Layouts.php:367
 #: src/Products.php:190
 msgid "Photos"
 msgstr "الصور"
 
-#: src/Layouts.php:371
-#: src/Layouts.php:394
+#: src/Layouts.php:393
+#: src/Layouts.php:416
 msgid "Layout"
 msgstr "التصميم"
 
-#: src/Layouts.php:394
+#: src/Layouts.php:416
 msgid "How this page looks to visitors. Every layout shows the same information and uses your design (Theme Options); only the arrangement changes."
 msgstr "شكل هذه الصفحة للزوار. كل تصميم يعرض المعلومات نفسها ويستخدم تصميمك (خيارات القالب)؛ يتغير الترتيب فقط."
 
@@ -1270,11 +1291,11 @@ msgstr[3] "حتى %d أيام قبل الوصول"
 msgstr[4] "حتى %d يومًا قبل الوصول"
 msgstr[5] "حتى %d يوم قبل الوصول"
 
-#: src/Policies.php:264
+#: src/Policies.php:274
 msgid "One row per tier: cancelling this many days or more before arrival costs this share of the price. Example: 30 days → 0% (free), 14 days → 50%, 0 days → 100%. Closer than every tier = no refund. Add travel dates to make a season tier: on those dates its tiers replace the all-year ones. No rows = non-refundable."
 msgstr "صف لكل شريحة: الإلغاء قبل الوصول بهذا العدد من الأيام أو أكثر يكلف هذه النسبة من السعر. مثال: 30 يومًا ← 0% (مجاني)، 14 يومًا ← 50%، 0 يوم ← 100%. أقرب من كل الشرائح = بلا استرداد. أضف تواريخ سفر لإنشاء شريحة موسمية: في تلك التواريخ تحل شرائحها محل شرائح العام كله. بلا صفوف = غير قابل للاسترداد."
 
-#: src/Policies.php:265
+#: src/Policies.php:275
 msgid "Add tier"
 msgstr "إضافة شريحة"
 
@@ -1339,8 +1360,9 @@ msgid "Shown on the page below the details. Drag to reorder inside the picker. T
 msgstr "تظهر في الصفحة أسفل التفاصيل. اسحب لإعادة الترتيب داخل أداة الاختيار. تبقى الصورة البارزة (الشريط الجانبي للمحرر) هي الصورة الرئيسية."
 
 #: blocks/booking-widget/editor.js:8
+#: blocks/trips/editor.js:22
 msgid "Tour packages"
-msgstr "الباقات السياحية"
+msgstr "البرامج السياحية"
 
 #: blocks/booking-widget/editor.js:9
 msgid "Excursions"
@@ -1378,6 +1400,42 @@ msgstr "إظهار عمليات البحث هذه"
 msgid "Heading (card design)"
 msgstr "العنوان (تصميم البطاقة)"
 
+#: blocks/trips/editor.js:12
+msgid "Heading (optional)"
+msgstr "العنوان (اختياري)"
+
+#: blocks/trips/editor.js:33
+msgid "Trips"
+msgstr "الرحلات"
+
+#: blocks/trips/editor.js:35
+msgid "Listing page"
+msgstr "صفحة القائمة"
+
+#: blocks/trips/editor.js:36
+msgid "Shows every trip of the first kind ticked below and answers the booking widget’s search. Use it on your Tours or Day trips page."
+msgstr "تعرض كل رحلات أول نوع محدد أدناه وتستجيب لبحث أداة الحجز. استخدمها في صفحة البرامج أو الرحلات اليومية."
+
+#: blocks/trips/editor.js:40
+msgid "Show these kinds"
+msgstr "اعرض هذه الأنواع"
+
+#: blocks/trips/editor.js:54
+msgid "Cards per tab"
+msgstr "عدد البطاقات في كل تبويب"
+
+#: blocks/trips/editor.js:56
+msgid "Transfers tab (transfer search)"
+msgstr "تبويب التنقلات (بحث التنقلات)"
+
+#: blocks/trips/editor.js:76
+msgid "Destinations"
+msgstr "الوجهات"
+
+#: blocks/trips/editor.js:76
+msgid "Tiles"
+msgstr "عدد البطاقات"
+
 #: blocks/booking-widget/block.json
 msgctxt "block title"
 msgid "Booking widget"
@@ -1399,9 +1457,10 @@ msgid "booking"
 msgstr "حجز"
 
 #: blocks/booking-widget/block.json
+#: blocks/trips/block.json
 msgctxt "block keyword"
 msgid "tours"
-msgstr "باقات"
+msgstr "برامج"
 
 #: blocks/booking-widget/block.json
 msgctxt "block keyword"
@@ -1409,6 +1468,57 @@ msgid "transfers"
 msgstr "تنقلات"
 
 #: blocks/booking-widget/block.json
+#: blocks/trips/block.json
 msgctxt "block keyword"
 msgid "excursions"
 msgstr "رحلات"
+
+#: blocks/destinations/block.json
+msgctxt "block title"
+msgid "Destinations"
+msgstr "الوجهات"
+
+#: blocks/destinations/block.json
+msgctxt "block description"
+msgid "Photo tiles for the Location Tree destinations that have trips, most trips first. Each tile opens the listing page for that place."
+msgstr "بطاقات مصورة لوجهات شجرة المواقع التي لها رحلات، الأكثر رحلات أولًا. كل بطاقة تفتح صفحة القائمة لهذا المكان."
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "destinations"
+msgstr "وجهات"
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "places"
+msgstr "أماكن"
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "موقع"
+
+#: blocks/trips/block.json
+msgctxt "block title"
+msgid "Trips"
+msgstr "الرحلات"
+
+#: blocks/trips/block.json
+msgctxt "block description"
+msgid "Tour packages and day trips as cards. On the home page: tabs per kind, with the transfer search as the last tab. On a listing page: every trip of one kind, answering the booking widget's search."
+msgstr "البرامج السياحية والرحلات اليومية كبطاقات. في الصفحة الرئيسية: تبويب لكل نوع، مع بحث التنقلات كآخر تبويب. في صفحة القائمة: كل رحلات نوع واحد، وتستجيب لبحث أداة الحجز."
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "day trips"
+msgstr "رحلات يومية"
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "cards"
+msgstr "بطاقات"
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "listing"
+msgstr "قائمة"

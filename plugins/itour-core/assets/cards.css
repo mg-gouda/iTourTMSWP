@@ -1,0 +1,57 @@
+/* iTour cards: trip cards, Trips block tabs, related trips, Destinations tiles. Theme tokens with fallbacks. */
+.itc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 264px), 1fr)); gap: 28px 24px; }
+
+.itc { min-width: 0; }
+.itc__link { display: flex; flex-direction: column; gap: 12px; height: 100%; color: inherit; text-decoration: none; }
+.itc__media { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--wp-itourtms-radius, 10px); background: var(--wp--preset--color--surface, #f2f0f3); }
+.itc__media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.itc__link:hover .itc__media img { transform: scale(1.04); }
+.itc__noimg { position: absolute; inset: 0; background: linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--brand, #660066) 18%, transparent), transparent); }
+.itc__where { position: absolute; inset-block-end: 10px; inset-inline-start: 10px; padding: 4px 10px; border-radius: 999px; background: rgb(12 10 16 / 0.62); color: #fff; font-size: 12.5px; font-weight: 600; line-height: 1.3; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.itc__body { display: grid; gap: 4px; }
+.itc__title { margin: 0; font-family: var(--wp--preset--font-family--heading, inherit); font-size: 1.125rem; line-height: 1.3; text-wrap: balance; }
+.itc__link:hover .itc__title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.itc__facts { margin: 0; color: var(--wp--preset--color--muted, #5b6472); font-size: 0.875rem; }
+.itc__price { margin: 4px 0 0; color: var(--wp--preset--color--muted, #5b6472); font-size: 0.875rem; }
+.itc__price strong { color: var(--wp--preset--color--ink, #111827); font-size: 1.0625rem; font-variant-numeric: tabular-nums; }
+.itc__link:focus-visible { outline: none; }
+.itc__link:focus-visible .itc__media { outline: 3px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: 3px; }
+
+.itc-empty { color: var(--wp--preset--color--muted, #5b6472); }
+.itc-empty + .itc-grid { margin-block-start: 24px; }
+
+/* Trips block: heading left, tabs right; stacks on phones. */
+.itc-trips__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; margin-block-end: 24px; }
+.itc-trips__title { margin: 0 0 24px; }
+.itc-trips__head .itc-trips__title { margin: 0; }
+.itc-tabs { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--wp--preset--color--surface, #f2f0f3); overflow-x: auto; scrollbar-width: none; }
+.itc-tabs button { flex: none; min-height: 40px; padding: 8px 18px; border: 0; border-radius: 999px; background: transparent; color: var(--wp--preset--color--muted, #5b6472); font: inherit; font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s ease-out, color 0.2s ease-out; }
+.itc-tabs button:hover { color: var(--wp--preset--color--ink, #111827); }
+.itc-tabs [aria-selected="true"] { background: var(--wp--preset--color--base, #fff); color: var(--wp--preset--color--ink, #111827); box-shadow: 0 1px 3px rgb(16 24 40 / 0.12); }
+.itc-tabs button:focus-visible { outline: 2px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: 1px; }
+.itc-panel[hidden] { display: none; }
+@media (max-width: 600px) { .itc-tabs { width: 100%; } .itc-tabs button { flex: 1 1 auto; padding-inline: 10px; } }
+
+/* Related trips under a product page. */
+.itc-related { padding-block: 56px 16px; }
+.itc-related__title { margin: 0 0 24px; }
+
+/* Destinations: a mosaic; the place with most trips gets the big tile. */
+.itc-dest__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); grid-auto-rows: 200px; gap: 16px; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 900px) {
+	.itc-dest__grid { grid-template-columns: repeat(var(--itc-cols, 3), 1fr); grid-auto-rows: 240px; }
+	.itc-dest__grid--mosaic { grid-auto-rows: 210px; }
+	.itc-dest__grid--mosaic .itc-dest__tile:first-child { grid-column: span 2; grid-row: span 2; }
+	.itc-dest__grid--mosaic[style*="--itc-cols:2"] .itc-dest__tile:first-child { grid-column: span 1; }
+}
+.itc-dest__tile a { position: relative; display: block; height: 100%; overflow: hidden; border-radius: var(--wp-itourtms-radius, 10px); background: linear-gradient(135deg, var(--wp--preset--color--brand-dark, #3d003d), var(--wp--preset--color--ink, #111)); color: #fff; text-decoration: none; isolation: isolate; }
+.itc-dest__tile img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.itc-dest__tile a::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(8 6 12 / 0.72), rgb(8 6 12 / 0) 60%); }
+.itc-dest__tile a:hover img { transform: scale(1.05); }
+.itc-dest__text { position: absolute; inset: auto 16px 14px; display: grid; gap: 2px; }
+.itc-dest__text strong { font-family: var(--wp--preset--font-family--heading, inherit); font-size: 1.375rem; line-height: 1.15; }
+.itc-dest__grid--mosaic .itc-dest__tile:first-child .itc-dest__text strong { font-size: clamp(1.5rem, 2.4vw, 2.125rem); }
+.itc-dest__text span { font-size: 0.875rem; opacity: 0.9; }
+.itc-dest__tile a:focus-visible { outline: 3px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) { .itc__media img, .itc-dest__tile img { transition: none; } }

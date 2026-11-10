@@ -78,6 +78,22 @@ final class Module extends \ITour\Core\Module {
 		\ITour\Core\Layouts::register( Tour::TYPE, array( Page::class, 'parts' ) );
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
+		// Cards (core Cards): tab, destination, "4 days".
+		add_filter( 'itour/card_types', static fn( $t ) => $t + array( 'tours' => array( Tour::TYPE, __( 'Tour packages', 'itour-tours' ), self::page_url( 'listing_page' ) ) ) );
+		add_filter( 'itour/destination', static fn( $d, $post ) => Tour::TYPE === get_post_type( $post ) ? (int) Tour::config( (int) $post )['destination'] : $d, 10, 2 );
+		add_filter(
+			'itour/card_facts',
+			static function ( $facts, $post ) {
+				if ( Tour::TYPE === get_post_type( $post ) ) {
+					$days = (int) Tour::config( (int) $post )['days'];
+					/* translators: %d: number of days. */
+					$facts[] = sprintf( _n( '%d day', '%d days', $days, 'itour-tours' ), $days );
+				}
+				return $facts;
+			},
+			10,
+			2
+		);
 	}
 
 	/**

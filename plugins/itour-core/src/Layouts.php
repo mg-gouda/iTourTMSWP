@@ -91,7 +91,7 @@ final class Layouts {
 		if ( ! $post instanceof \WP_Post || ! isset( self::$types[ $post->post_type ] ) ) {
 			return;
 		}
-		$parts  = ( self::$types[ $post->post_type ] )( $post->ID ) + array(
+		$parts = ( self::$types[ $post->post_type ] )( $post->ID ) + array(
 			'title'    => get_the_title( $post ),
 			'summary'  => has_excerpt( $post ) ? get_the_excerpt( $post ) : '',
 			'images'   => array(),
@@ -101,8 +101,12 @@ final class Layouts {
 			'sections' => array(),
 			'book'     => null,
 			'notice'   => '',
+			'trust'    => array(),
 		);
-		$layout = self::of( $post->ID );
+		// Reassurance line under the title: only facts this product really has, plus the owner's own (filter).
+		$free           = Policies::free_line( Policies::of( $post->ID ) );
+		$parts['trust'] = array_values( array_filter( (array) apply_filters( 'itour/trust', array_merge( '' !== $free ? array( $free ) : array(), (array) $parts['trust'] ), $post->ID ) ) );
+		$layout         = self::of( $post->ID );
 		wp_enqueue_style( 'itour-layouts', plugins_url( 'assets/layouts.css', ITOUR_CORE_FILE ), array( 'itour-products' ), ITOUR_CORE_VERSION );
 		wp_enqueue_script( 'itour-layouts', plugins_url( 'assets/layouts.js', ITOUR_CORE_FILE ), array(), ITOUR_CORE_VERSION, true );
 		Products::enqueue_style();
@@ -114,6 +118,24 @@ final class Layouts {
 		};
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- parts are escaped by their makers, layout markup in the methods.
 		echo '</article>';
+		echo Cards::related( $post ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in Cards.
+	}
+
+	/**
+	 * Reassurance line: "✓ Free cancellation up to 2 days before arrival  ✓ Pick-up from your hotel".
+	 *
+	 * @param array<string,mixed> $p Parts.
+	 */
+	private static function trust_html( array $p ): string {
+		if ( ! $p['trust'] ) {
+			return '';
+		}
+		$tick = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>';
+		$h    = '<ul class="itl-trust">';
+		foreach ( $p['trust'] as $t ) {
+			$h .= '<li>' . $tick . esc_html( (string) $t ) . '</li>';
+		}
+		return $h . '</ul>';
 	}
 
 	/**
@@ -223,7 +245,7 @@ final class Layouts {
 			}
 			$h .= '</div>';
 		}
-		$h .= '<header class="itl-head"><h1 class="itl-title">' . esc_html( $p['title'] ) . '</h1>' . ( '' !== $p['summary'] ? '<p class="itl-summary">' . esc_html( $p['summary'] ) . '</p>' : '' ) . self::facts_html( $p, 'itl-chips' ) . '</header>';
+		$h .= '<header class="itl-head"><h1 class="itl-title">' . esc_html( $p['title'] ) . '</h1>' . ( '' !== $p['summary'] ? '<p class="itl-summary">' . esc_html( $p['summary'] ) . '</p>' : '' ) . self::trust_html( $p ) . self::facts_html( $p, 'itl-chips' ) . '</header>';
 		if ( count( $p['sections'] ) > 1 ) {
 			$h .= '<nav class="itl-tabs" aria-label="' . esc_attr__( 'On this page', 'itour-core' ) . '" data-itl-tabs><ul>';
 			if ( '' !== trim( wp_strip_all_tags( $p['content'] ) ) ) {
@@ -252,7 +274,7 @@ final class Layouts {
 		$hero = $p['images'] ? self::img( (int) $p['images'][0], 'full', true ) : '';
 		$h    = '<header class="itl-hero' . ( '' === $hero ? ' itl-hero--plain' : '' ) . '">' . ( '' !== $hero ? '<div class="itl-hero__media">' . $hero . '</div>' : '' );
 		$h   .= '<div class="itl-hero__body container"><h1 class="itl-title">' . esc_html( $p['title'] ) . '</h1>' . ( '' !== $p['summary'] ? '<p class="itl-summary">' . esc_html( $p['summary'] ) . '</p>' : '' );
-		$h   .= '<div class="itl-hero__actions">' . self::price_html( $p ) . ( $p['book'] ? '<a class="wp-element-button itl-hero__cta" href="#book">' . esc_html( $p['book']['title'] ) . '</a>' : '' ) . '</div></div></header>';
+		$h   .= self::trust_html( $p ) . '<div class="itl-hero__actions">' . self::price_html( $p ) . ( $p['book'] ? '<a class="wp-element-button itl-hero__cta" href="#book">' . esc_html( $p['book']['title'] ) . '</a>' : '' ) . '</div></div></header>';
 		$h   .= '<div class="itl-band">' . self::facts_html( $p, 'itl-facts itl-facts--band container' ) . '</div>';
 		$h   .= '<div class="container itl-story">';
 		if ( '' !== trim( wp_strip_all_tags( $p['content'] ) ) ) {
@@ -269,7 +291,7 @@ final class Layouts {
 	 */
 	private static function compact( array $p ): string {
 		$h  = '<div class="container">';
-		$h .= '<header class="itl-head"><h1 class="itl-title">' . esc_html( $p['title'] ) . '</h1>' . ( '' !== $p['summary'] ? '<p class="itl-summary">' . esc_html( $p['summary'] ) . '</p>' : '' ) . '</header>';
+		$h .= '<header class="itl-head"><h1 class="itl-title">' . esc_html( $p['title'] ) . '</h1>' . ( '' !== $p['summary'] ? '<p class="itl-summary">' . esc_html( $p['summary'] ) . '</p>' : '' ) . self::trust_html( $p ) . '</header>';
 		$h .= '<div class="itl-bento' . ( $p['images'] ? '' : ' itl-bento--nophoto' ) . '">';
 		if ( $p['images'] ) {
 			$h .= '<figure class="itl-tile itl-tile--photo">' . self::img( (int) $p['images'][0], 'large', true ) . '</figure>';

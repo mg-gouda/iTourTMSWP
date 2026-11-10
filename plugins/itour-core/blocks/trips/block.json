@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/trips",
+	"version": "0.1.0",
+	"title": "Trips",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Tour packages and day trips as cards. On the home page: tabs per kind, with the transfer search as the last tab. On a listing page: every trip of one kind, answering the booking widget's search.",
+	"keywords": [ "tours", "excursions", "day trips", "cards", "listing" ],
+	"textdomain": "itour-core",
+	"supports": { "align": [ "wide", "full" ], "html": false, "spacing": { "margin": true } },
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"types": { "type": "array", "default": [] },
+		"count": { "type": "number", "default": 6 },
+		"transfers": { "type": "boolean", "default": true },
+		"listing": { "type": "boolean", "default": false }
+	},
+	"editorScript": "file:./editor.js"
+}

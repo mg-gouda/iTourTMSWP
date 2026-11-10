@@ -240,6 +240,16 @@ final class Policies {
 	}
 
 	/**
+	 * "Free cancellation up to 2 days before arrival" when the all-year tiers allow a free cancellation, else ''.
+	 *
+	 * @param array<int,array<string,mixed>> $rows Tiers.
+	 */
+	public static function free_line( array $rows ): string {
+		$year = array_filter( $rows, static fn( $r ) => '' === (string) $r['from'] && '' === (string) $r['to'] );
+		return $year && min( array_map( static fn( $r ) => (float) $r['fee'], $year ) ) <= 0 ? self::headline( $rows ) : '';
+	}
+
+	/**
 	 * A product's tiers.
 	 *
 	 * @param int $post Post id.

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/destinations",
+	"version": "0.1.0",
+	"title": "Destinations",
+	"category": "widgets",
+	"icon": "location-alt",
+	"description": "Photo tiles for the Location Tree destinations that have trips, most trips first. Each tile opens the listing page for that place.",
+	"keywords": [ "destinations", "places", "location" ],
+	"textdomain": "itour-core",
+	"supports": { "align": [ "wide", "full" ], "html": false, "spacing": { "margin": true } },
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"count": { "type": "number", "default": 6 }
+	}
+}

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T23:05:40+00:00\n"
+"POT-Creation-Date: 2026-11-10T23:43:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -160,9 +160,9 @@ msgstr ""
 
 #: src/Admin/Cells.php:245
 #: src/Admin/Cells.php:292
-#: src/Layouts.php:289
+#: src/Layouts.php:311
 #: src/Policies.php:187
-#: src/Policies.php:261
+#: src/Policies.php:271
 msgid "Cancellation"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to 
 msgstr ""
 
 #: src/Admin/Cells.php:246
-#: src/Layouts.php:324
+#: src/Layouts.php:346
 #: src/Products.php:156
 #: src/Products.php:163
 msgid "Included"
@@ -183,7 +183,7 @@ msgid "One item per line."
 msgstr ""
 
 #: src/Admin/Cells.php:247
-#: src/Layouts.php:324
+#: src/Layouts.php:346
 #: src/Products.php:163
 msgid "Not included"
 msgstr ""
@@ -244,7 +244,7 @@ msgid "Comma separated. New names are created."
 msgstr ""
 
 #: src/Admin/Cells.php:341
-#: src/Layouts.php:316
+#: src/Layouts.php:338
 #: src/Products.php:77
 msgid "Languages"
 msgstr ""
@@ -254,7 +254,7 @@ msgid "Comma separated, e.g. English, German."
 msgstr ""
 
 #: src/Admin/Cells.php:342
-#: src/Layouts.php:316
+#: src/Layouts.php:338
 #: src/Products.php:78
 msgid "Suitable for"
 msgstr ""
@@ -535,7 +535,7 @@ msgid "Start again"
 msgstr ""
 
 #: src/Admin/Menu.php:40
-#: src/Layouts.php:230
+#: src/Layouts.php:252
 msgid "Overview"
 msgstr ""
 
@@ -588,6 +588,49 @@ msgstr ""
 #: src/Admin/Rows.php:41
 msgid "Add row"
 msgstr ""
+
+#: src/Cards.php:90
+#: src/Layouts.php:167
+#: src/Layouts.php:225
+#: src/Layouts.php:301
+msgid "From"
+msgstr ""
+
+#: src/Cards.php:90
+msgid "per adult"
+msgstr ""
+
+#: src/Cards.php:164
+msgid "You may also like"
+msgstr ""
+
+#. translators: %s: what the visitor searched for.
+#: src/Cards.php:190
+#, php-format
+msgid "Nothing found for “%s”. Try another place, or see everything below."
+msgstr ""
+
+#: src/Cards.php:191
+msgid "Trips are coming soon."
+msgstr ""
+
+#: src/Cards.php:200
+#: src/Demo.php:179
+#: blocks/booking-widget/editor.js:10
+msgid "Transfers"
+msgstr ""
+
+#: src/Cards.php:260
+msgid "Destinations: set a destination (Location Tree) on your tours or day trips to show tiles here."
+msgstr ""
+
+#. translators: %d: number of trips.
+#: src/Cards.php:290
+#, php-format
+msgid "%d trip"
+msgid_plural "%d trips"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/Checkout.php:72
 msgid "Booking"
@@ -905,76 +948,56 @@ msgstr ""
 msgid "Demo menu"
 msgstr ""
 
-#: src/Demo.php:170
+#: src/Demo.php:169
 msgid "Home"
 msgstr ""
 
 #: src/Demo.php:171
+msgid "Where we go"
+msgstr ""
+
+#: src/Demo.php:172
+msgid "Popular trips"
+msgstr ""
+
+#: src/Demo.php:174
 msgid "Tours"
 msgstr ""
 
-#: src/Demo.php:171
+#: src/Demo.php:174
 msgid "Multi-day packages with hotels, guides and transfers included. Nile cruises, Cairo and the pyramids, Luxor and Aswan, the Red Sea coast."
 msgstr ""
 
-#: src/Demo.php:173
-msgid "Classic Egypt, 8 days: Cairo, Nile cruise, Luxor"
-msgstr ""
-
-#: src/Demo.php:173
-msgid "Red Sea and Cairo, 7 days"
-msgstr ""
-
-#: src/Demo.php:173
-msgid "Desert and oases, 5 days"
-msgstr ""
-
-#: src/Demo.php:174
+#: src/Demo.php:177
+#: blocks/trips/editor.js:23
 msgid "Day trips"
 msgstr ""
 
-#: src/Demo.php:174
+#: src/Demo.php:177
 msgid "Excursions from your hotel, with pick-up and drop-off."
 msgstr ""
 
-#: src/Demo.php:175
-msgid "Pyramids of Giza and the Egyptian Museum"
-msgstr ""
-
-#: src/Demo.php:175
-msgid "Luxor from Hurghada"
-msgstr ""
-
-#: src/Demo.php:175
-msgid "Snorkelling trip to Giftun Island"
-msgstr ""
-
-#: src/Demo.php:176
-#: blocks/booking-widget/editor.js:10
-msgid "Transfers"
-msgstr ""
-
-#: src/Demo.php:176
+#: src/Demo.php:179
 msgid "Private airport and hotel transfers with a fixed price per car, not per person. Your driver waits at arrivals with your name."
 msgstr ""
 
-#: src/Demo.php:178
+#: src/Demo.php:181
 msgid "About"
 msgstr ""
 
-#: src/Demo.php:178
+#: src/Demo.php:181
 msgid "A local travel company"
 msgstr ""
 
-#: src/Demo.php:179
+#: src/Demo.php:182
 msgid "We are a destination management company: we plan, book and run every part of the trip ourselves, from the airport pick-up to the last excursion. Replace this text with your own story."
 msgstr ""
 
-#: src/Demo.php:180
+#: src/Demo.php:183
 msgid "Contact"
 msgstr ""
 
-#: src/Demo.php:180
+#: src/Demo.php:183
 msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
 msgstr ""
 
@@ -1002,41 +1025,35 @@ msgstr ""
 msgid "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones."
 msgstr ""
 
-#: src/Layouts.php:145
-#: src/Layouts.php:203
-#: src/Layouts.php:279
-msgid "From"
-msgstr ""
-
 #. translators: %d: number of photos.
-#: src/Layouts.php:222
+#: src/Layouts.php:244
 #, php-format
 msgid "All %d photos"
 msgstr ""
 
-#: src/Layouts.php:228
+#: src/Layouts.php:250
 msgid "On this page"
 msgstr ""
 
-#: src/Layouts.php:331
+#: src/Layouts.php:353
 msgid "What’s included"
 msgstr ""
 
-#: src/Layouts.php:338
+#: src/Layouts.php:360
 msgid "Questions"
 msgstr ""
 
-#: src/Layouts.php:345
+#: src/Layouts.php:367
 #: src/Products.php:190
 msgid "Photos"
 msgstr ""
 
-#: src/Layouts.php:371
-#: src/Layouts.php:394
+#: src/Layouts.php:393
+#: src/Layouts.php:416
 msgid "Layout"
 msgstr ""
 
-#: src/Layouts.php:394
+#: src/Layouts.php:416
 msgid "How this page looks to visitors. Every layout shows the same information and uses your design (Theme Options); only the arrangement changes."
 msgstr ""
 
@@ -1256,11 +1273,11 @@ msgid_plural "up to %d days before arrival"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Policies.php:264
+#: src/Policies.php:274
 msgid "One row per tier: cancelling this many days or more before arrival costs this share of the price. Example: 30 days → 0% (free), 14 days → 50%, 0 days → 100%. Closer than every tier = no refund. Add travel dates to make a season tier: on those dates its tiers replace the all-year ones. No rows = non-refundable."
 msgstr ""
 
-#: src/Policies.php:265
+#: src/Policies.php:275
 msgid "Add tier"
 msgstr ""
 
@@ -1325,6 +1342,7 @@ msgid "Shown on the page below the details. Drag to reorder inside the picker. T
 msgstr ""
 
 #: blocks/booking-widget/editor.js:8
+#: blocks/trips/editor.js:22
 msgid "Tour packages"
 msgstr ""
 
@@ -1364,6 +1382,42 @@ msgstr ""
 msgid "Heading (card design)"
 msgstr ""
 
+#: blocks/trips/editor.js:12
+msgid "Heading (optional)"
+msgstr ""
+
+#: blocks/trips/editor.js:33
+msgid "Trips"
+msgstr ""
+
+#: blocks/trips/editor.js:35
+msgid "Listing page"
+msgstr ""
+
+#: blocks/trips/editor.js:36
+msgid "Shows every trip of the first kind ticked below and answers the booking widget’s search. Use it on your Tours or Day trips page."
+msgstr ""
+
+#: blocks/trips/editor.js:40
+msgid "Show these kinds"
+msgstr ""
+
+#: blocks/trips/editor.js:54
+msgid "Cards per tab"
+msgstr ""
+
+#: blocks/trips/editor.js:56
+msgid "Transfers tab (transfer search)"
+msgstr ""
+
+#: blocks/trips/editor.js:76
+msgid "Destinations"
+msgstr ""
+
+#: blocks/trips/editor.js:76
+msgid "Tiles"
+msgstr ""
+
 #: blocks/booking-widget/block.json
 msgctxt "block title"
 msgid "Booking widget"
@@ -1385,6 +1439,7 @@ msgid "booking"
 msgstr ""
 
 #: blocks/booking-widget/block.json
+#: blocks/trips/block.json
 msgctxt "block keyword"
 msgid "tours"
 msgstr ""
@@ -1395,6 +1450,57 @@ msgid "transfers"
 msgstr ""
 
 #: blocks/booking-widget/block.json
+#: blocks/trips/block.json
 msgctxt "block keyword"
 msgid "excursions"
+msgstr ""
+
+#: blocks/destinations/block.json
+msgctxt "block title"
+msgid "Destinations"
+msgstr ""
+
+#: blocks/destinations/block.json
+msgctxt "block description"
+msgid "Photo tiles for the Location Tree destinations that have trips, most trips first. Each tile opens the listing page for that place."
+msgstr ""
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "destinations"
+msgstr ""
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "places"
+msgstr ""
+
+#: blocks/destinations/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr ""
+
+#: blocks/trips/block.json
+msgctxt "block title"
+msgid "Trips"
+msgstr ""
+
+#: blocks/trips/block.json
+msgctxt "block description"
+msgid "Tour packages and day trips as cards. On the home page: tabs per kind, with the transfer search as the last tab. On a listing page: every trip of one kind, answering the booking widget's search."
+msgstr ""
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "day trips"
+msgstr ""
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "cards"
+msgstr ""
+
+#: blocks/trips/block.json
+msgctxt "block keyword"
+msgid "listing"
 msgstr ""

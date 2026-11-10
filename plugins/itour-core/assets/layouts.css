@@ -148,3 +148,9 @@
 .itl :focus-visible { outline: 3px solid var(--itl-brand); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .itl-jump, .itl-fold > summary::after { transition: none; } html:has(.itl) { scroll-behavior: auto; } }
 html:has(.itl) { scroll-behavior: smooth; }
+
+/* Reassurance line under the title (only real facts: free cancellation, hotel pick-up, owner's own). */
+.itl-trust { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 0.9375rem; font-weight: 500; }
+.itl-trust li { display: inline-flex; align-items: center; gap: 6px; }
+.itl-trust svg { flex: none; color: var(--wp--preset--color--brand-dark, #660066); }
+.itl-hero .itl-trust svg { color: inherit; }
