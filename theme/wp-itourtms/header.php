@@ -30,7 +30,7 @@ if ( $wp_itourtms_o['topbar_enabled'] ) {
 	<div class="container site-header__inner">
 		<div class="site-branding">
 			<?php echo $wp_itourtms_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built with esc_* in wp_itourtms_logo() / core get_custom_logo(). ?>
-			<?php if ( '' === $wp_itourtms_logo || $wp_itourtms_o['header_show_title'] ) : ?>
+			<?php if ( '' === $wp_itourtms_logo ) : // A logo replaces the name. ?>
 				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			<?php endif; ?>
 		</div>

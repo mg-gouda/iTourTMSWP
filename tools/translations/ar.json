@@ -389,7 +389,8 @@
   "WP iTourTMS is active. Pick a design, add your logo and create the main menu in a minute.": "قالب WP iTourTMS مفعّل. اختر تصميمًا وأضف شعارك وأنشئ القائمة الرئيسية في دقيقة.",
   "Right after activation, Appearance → Theme Options opens on “Quick setup”: pick a design, add your logo and contact details, and create the main menu from your pages. It shows until you finish or skip it. The steps below do the rest by hand.": "بعد التفعيل مباشرة، تفتح صفحة المظهر ← خيارات القالب على «الإعداد السريع»: اختر تصميمًا، وأضف شعارك وبيانات التواصل، وأنشئ القائمة الرئيسية من صفحاتك. تبقى ظاهرة حتى تُكملها أو تتخطاها. الخطوات التالية تُكمل الباقي يدويًا.",
   "Account link": "رابط الحساب",
-  "Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin.": "إظهار «تسجيل الدخول» (أو «حسابي» بعد الدخول)، ويفتح نافذة الدخول / إنشاء الحساب. يتطلب إضافة iTour Core."
+  "Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin.": "إظهار «تسجيل الدخول» (أو «حسابي» بعد الدخول)، ويفتح نافذة الدخول / إنشاء الحساب. يتطلب إضافة iTour Core.",
+  "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the account link. With a logo, the site title is hidden.": "الرأس: أربعة تصميمات (كلاسيكي، في المنتصف، فوق الصورة الرئيسية، عائم)، والألوان، وزر اختياري، ورأس ثابت، ورابط الحساب. عند وجود شعار يُخفى اسم الموقع."
  },
  "itour-core": {
   "Booking widget: activate iTour Tour Packages, Excursions or Transfers to add their searches here.": "أداة الحجز: فعّل إضافة الباقات السياحية أو الرحلات اليومية أو التنقلات لتظهر خانات البحث الخاصة بها هنا.",

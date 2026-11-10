@@ -225,7 +225,7 @@ function wp_itourtms_theme_option_fields(): array {
 			'title'       => __( 'Header', 'wp-itourtms' ),
 			'description' => __( 'Choose the header design, its colours and an optional button.', 'wp-itourtms' ),
 			'fields'      => array(
-				'header_layout'     => array(
+				'header_layout'   => array(
 					'label'   => __( 'Header design', 'wp-itourtms' ),
 					'type'    => 'select',
 					'default' => 'classic',
@@ -236,44 +236,38 @@ function wp_itourtms_theme_option_fields(): array {
 						'floating'    => __( 'Floating: a rounded bar with space around it', 'wp-itourtms' ),
 					),
 				),
-				'header_bg'         => array(
+				'header_bg'       => array(
 					'label'   => __( 'Header background', 'wp-itourtms' ),
 					'type'    => 'color',
 					'default' => '#ffffff',
 				),
-				'header_fg'         => array(
+				'header_fg'       => array(
 					'label'   => __( 'Header text', 'wp-itourtms' ),
 					'type'    => 'color',
 					'default' => '#1a2b48',
 				),
-				'header_cta_text'   => array(
+				'header_cta_text' => array(
 					'label'   => __( 'Button text', 'wp-itourtms' ),
 					'type'    => 'text',
 					'default' => '',
 					'help'    => __( 'Optional button at the end of the header, e.g. “Book now”. Leave empty for no button.', 'wp-itourtms' ),
 				),
-				'header_cta_url'    => array(
+				'header_cta_url'  => array(
 					'label'   => __( 'Button link', 'wp-itourtms' ),
 					'type'    => 'url',
 					'default' => '',
 				),
-				'header_account'    => array(
+				'header_account'  => array(
 					'label'   => __( 'Account link', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 1,
 					'text'    => __( 'Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin.', 'wp-itourtms' ),
 				),
-				'header_sticky'     => array(
+				'header_sticky'   => array(
 					'label'   => __( 'Sticky header', 'wp-itourtms' ),
 					'type'    => 'checkbox',
 					'default' => 0,
 					'text'    => __( 'Keep the header at the top of the screen while scrolling', 'wp-itourtms' ),
-				),
-				'header_show_title' => array(
-					'label'   => __( 'Site title with logo', 'wp-itourtms' ),
-					'type'    => 'checkbox',
-					'default' => 0,
-					'text'    => __( 'Show the site title next to the logo', 'wp-itourtms' ),
 				),
 			),
 		),

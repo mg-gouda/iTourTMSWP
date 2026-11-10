@@ -99,8 +99,8 @@ msgid "Skip to content"
 msgstr "انتقل إلى المحتوى"
 
 #: header.php:40
-#: inc/options.php:458
-#: inc/options.php:507
+#: inc/options.php:452
+#: inc/options.php:501
 msgid "Menu"
 msgstr "القائمة"
 
@@ -253,8 +253,8 @@ msgid "Add your logo"
 msgstr "أضف شعارك"
 
 #: inc/admin-page.php:190
-#: inc/options.php:322
-#: inc/options.php:459
+#: inc/options.php:316
+#: inc/options.php:453
 msgid "Contact details"
 msgstr "بيانات التواصل"
 
@@ -663,8 +663,8 @@ msgid "Module tabs: each iTourTMS plugin you install adds its own tab here, for 
 msgstr "تبويبات الوحدات: كل إضافة iTourTMS تثبّتها تضيف تبويبها هنا، مثلًا لاختيار الصفحات التي تستخدمها."
 
 #: inc/manual.php:107
-msgid "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the site title next to the logo."
-msgstr "الرأس: أربعة تصاميم (كلاسيكي، متوسط، فوق اللافتة، عائم)، والألوان، وزر اختياري، ورأس ثابت، واسم الموقع بجانب الشعار."
+msgid "Header: four designs (classic, centred, over the hero, floating), colours, an optional button, a sticky header and the account link. With a logo, the site title is hidden."
+msgstr "الرأس: أربعة تصميمات (كلاسيكي، في المنتصف، فوق الصورة الرئيسية، عائم)، والألوان، وزر اختياري، ورأس ثابت، ورابط الحساب. عند وجود شعار يُخفى اسم الموقع."
 
 #: inc/manual.php:108
 msgid "Top bar: switch on “Show top bar” to reveal its settings: four designs (split, centred, minimal, announcement), a short message and link, whether to show contact details and social links, its colours, and whether it shows on phones (as icons)."
@@ -884,7 +884,7 @@ msgid "Colours"
 msgstr "الألوان"
 
 #: inc/options.php:78
-#: inc/options.php:829
+#: inc/options.php:823
 msgid "Brand"
 msgstr "لون العلامة"
 
@@ -901,8 +901,8 @@ msgid "Buttons and links on hover, focus outlines. White text sits on it, so kee
 msgstr "الأزرار والروابط عند التمرير وإطارات التركيز. يوضع عليه نص أبيض، فاجعله داكنًا."
 
 #: inc/options.php:90
-#: inc/options.php:461
-#: inc/options.php:515
+#: inc/options.php:455
+#: inc/options.php:509
 msgid "Text"
 msgstr "النص"
 
@@ -1031,7 +1031,7 @@ msgid "Black (900)"
 msgstr "أسود (900)"
 
 #: inc/options.php:196
-#: inc/options.php:473
+#: inc/options.php:467
 msgid "Layout"
 msgstr "التخطيط"
 
@@ -1123,304 +1123,296 @@ msgstr "رأس ثابت"
 msgid "Keep the header at the top of the screen while scrolling"
 msgstr "إبقاء الرأس أعلى الشاشة أثناء التمرير"
 
-#: inc/options.php:273
-msgid "Site title with logo"
-msgstr "اسم الموقع مع الشعار"
-
-#: inc/options.php:276
-msgid "Show the site title next to the logo"
-msgstr "إظهار اسم الموقع بجانب الشعار"
-
-#: inc/options.php:281
+#: inc/options.php:275
 msgid "Top bar"
 msgstr "الشريط العلوي"
 
-#: inc/options.php:282
+#: inc/options.php:276
 msgid "A thin bar above the header for contact details, a short message and social links."
 msgstr "شريط رفيع فوق الرأس لبيانات التواصل ورسالة قصيرة والروابط الاجتماعية."
 
-#: inc/options.php:285
+#: inc/options.php:279
 msgid "Show top bar"
 msgstr "إظهار الشريط العلوي"
 
-#: inc/options.php:288
+#: inc/options.php:282
 msgid "Display the top bar above the header"
 msgstr "عرض الشريط العلوي فوق الرأس"
 
-#: inc/options.php:291
+#: inc/options.php:285
 msgid "Top bar design"
 msgstr "تصميم الشريط العلوي"
 
-#: inc/options.php:296
+#: inc/options.php:290
 msgid "Split: contacts left, message centre, social right"
 msgstr "مقسوم: التواصل في البداية والرسالة في المنتصف والروابط الاجتماعية في النهاية"
 
-#: inc/options.php:297
+#: inc/options.php:291
 msgid "Centred: message only, with social links beside it"
 msgstr "متوسط: الرسالة فقط مع الروابط الاجتماعية بجانبها"
 
-#: inc/options.php:298
+#: inc/options.php:292
 msgid "Minimal: contacts left, social right, no message"
 msgstr "بسيط: التواصل في البداية والروابط الاجتماعية في النهاية بدون رسالة"
 
-#: inc/options.php:299
+#: inc/options.php:293
 msgid "Announcement: brand-coloured bar with the message and a link"
 msgstr "إعلان: شريط بلون العلامة مع الرسالة ورابط"
 
-#: inc/options.php:303
+#: inc/options.php:297
 msgid "Message"
 msgstr "الرسالة"
 
-#: inc/options.php:307
+#: inc/options.php:301
 msgid "Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed."
 msgstr "سطر قصير مثل «إلغاء مجاني حتى 24 ساعة قبل معظم الرحلات». يُسمح بالروابط البسيطة والخط العريض."
 
-#: inc/options.php:310
+#: inc/options.php:304
 msgid "Link text"
 msgstr "نص الرابط"
 
-#: inc/options.php:316
+#: inc/options.php:310
 msgid "Link"
 msgstr "الرابط"
 
-#: inc/options.php:326
+#: inc/options.php:320
 msgid "Show phone, email and WhatsApp from the Contact & social tab"
 msgstr "إظهار الهاتف والبريد وواتساب من تبويب التواصل والشبكات الاجتماعية"
 
-#: inc/options.php:329
-#: inc/options.php:382
-#: inc/options.php:460
+#: inc/options.php:323
+#: inc/options.php:376
+#: inc/options.php:454
 msgid "Social links"
 msgstr "الروابط الاجتماعية"
 
-#: inc/options.php:333
+#: inc/options.php:327
 msgid "Show the social icons from the Contact & social tab"
 msgstr "إظهار أيقونات الشبكات الاجتماعية من تبويب التواصل والشبكات الاجتماعية"
 
-#: inc/options.php:336
+#: inc/options.php:330
 msgid "Top bar background"
 msgstr "خلفية الشريط العلوي"
 
-#: inc/options.php:342
+#: inc/options.php:336
 msgid "Top bar text"
 msgstr "نص الشريط العلوي"
 
-#: inc/options.php:348
+#: inc/options.php:342
 msgid "On phones"
 msgstr "على الهواتف"
 
-#: inc/options.php:352
+#: inc/options.php:346
 msgid "Also show the top bar on small screens"
 msgstr "إظهار الشريط العلوي على الشاشات الصغيرة أيضًا"
 
-#: inc/options.php:357
+#: inc/options.php:351
 msgid "Contact & social"
 msgstr "التواصل والشبكات الاجتماعية"
 
-#: inc/options.php:358
+#: inc/options.php:352
 msgid "Entered once, used by the top bar and the footer. Leave a field empty to hide it."
 msgstr "تُدخل مرة واحدة ويستخدمها الشريط العلوي والتذييل. اترك الحقل فارغًا لإخفائه."
 
-#: inc/options.php:361
+#: inc/options.php:355
 msgid "Phone"
 msgstr "الهاتف"
 
-#: inc/options.php:366
+#: inc/options.php:360
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: inc/options.php:371
+#: inc/options.php:365
 #: inc/template-tags.php:93
 msgid "WhatsApp"
 msgstr "واتساب"
 
-#: inc/options.php:374
+#: inc/options.php:368
 msgid "International format, e.g. +20 100 000 0000. Opens a WhatsApp chat."
 msgstr "بالصيغة الدولية، مثل ‎+20 100 000 0000‎. يفتح محادثة واتساب."
 
-#: inc/options.php:377
+#: inc/options.php:371
 msgid "Address"
 msgstr "العنوان"
 
-#: inc/options.php:418
+#: inc/options.php:412
 msgid "Footer"
 msgstr "التذييل"
 
-#: inc/options.php:419
+#: inc/options.php:413
 msgid "Columns at the top of the footer, its colours and the bottom line."
 msgstr "الأعمدة في أعلى التذييل وألوانه والسطر الأخير."
 
-#: inc/options.php:423
+#: inc/options.php:417
 msgid "Blog"
 msgstr "المدونة"
 
-#: inc/options.php:426
+#: inc/options.php:420
 msgid "Post dates"
 msgstr "تواريخ المقالات"
 
-#: inc/options.php:429
+#: inc/options.php:423
 msgid "Show the date on posts and in lists"
 msgstr "إظهار التاريخ في المقالات والقوائم"
 
-#: inc/options.php:432
+#: inc/options.php:426
 msgid "Featured image on posts"
 msgstr "الصورة البارزة في المقالات"
 
-#: inc/options.php:435
+#: inc/options.php:429
 msgid "Show the featured image at the top of each post"
 msgstr "إظهار الصورة البارزة أعلى كل مقالة"
 
-#: inc/options.php:438
+#: inc/options.php:432
 msgid "Summary length"
 msgstr "طول الملخص"
 
-#: inc/options.php:443
+#: inc/options.php:437
 msgid "Words shown for each post in lists when the post has no manual excerpt."
 msgstr "عدد الكلمات المعروضة لكل مقالة في القوائم عندما لا يوجد مقتطف يدوي."
 
-#: inc/options.php:457
+#: inc/options.php:451
 msgid "About (logo and text)"
 msgstr "نبذة (شعار ونص)"
 
-#: inc/options.php:462
+#: inc/options.php:456
 msgid "Widgets (Appearance → Widgets)"
 msgstr "ودجات (المظهر ← الودجات)"
 
-#: inc/options.php:463
+#: inc/options.php:457
 msgid "Empty"
 msgstr "فارغ"
 
-#: inc/options.php:467
+#: inc/options.php:461
 msgid "Explore"
 msgstr "استكشف"
 
-#: inc/options.php:468
+#: inc/options.php:462
 msgid "Contact"
 msgstr "تواصل معنا"
 
-#: inc/options.php:469
+#: inc/options.php:463
 msgid "Follow us"
 msgstr "تابعنا"
 
-#: inc/options.php:477
+#: inc/options.php:471
 msgid "No columns (bottom line only)"
 msgstr "بدون أعمدة (السطر الأخير فقط)"
 
-#: inc/options.php:478
+#: inc/options.php:472
 msgid "3 columns"
 msgstr "3 أعمدة"
 
-#: inc/options.php:479
+#: inc/options.php:473
 msgid "4 columns"
 msgstr "4 أعمدة"
 
 #. translators: %d: column number.
-#: inc/options.php:489
+#: inc/options.php:483
 #, php-format
 msgid "Column %d"
 msgstr "العمود %d"
 
-#: inc/options.php:494
+#: inc/options.php:488
 msgid "Shows"
 msgstr "يعرض"
 
-#: inc/options.php:501
+#: inc/options.php:495
 msgid "Title"
 msgstr "العنوان"
 
-#: inc/options.php:512
+#: inc/options.php:506
 msgid "Create menus under Appearance → Menus. This sets the “Footer column” menu location."
 msgstr "أنشئ القوائم من المظهر ← القوائم. هذا يضبط موقع قائمة «عمود التذييل»."
 
-#: inc/options.php:519
+#: inc/options.php:513
 msgid "Basic links, bold and line breaks are allowed. For “About”, leave empty to use the site tagline."
 msgstr "يُسمح بالروابط البسيطة والخط العريض وفواصل الأسطر. في «نبذة» اتركه فارغًا لاستخدام وصف الموقع."
 
 #. translators: %d: column number.
-#: inc/options.php:523
+#: inc/options.php:517
 #, php-format
 msgid "Add blocks to “Footer column %d” under Appearance → Widgets."
 msgstr "أضف مكوّنات إلى «عمود التذييل %d» من المظهر ← الودجات."
 
-#: inc/options.php:530
+#: inc/options.php:524
 msgid "Colours and bottom line"
 msgstr "الألوان والسطر الأخير"
 
-#: inc/options.php:534
+#: inc/options.php:528
 msgid "Footer background"
 msgstr "خلفية التذييل"
 
-#: inc/options.php:539
+#: inc/options.php:533
 msgid "Footer text"
 msgstr "نص التذييل"
 
-#: inc/options.php:544
+#: inc/options.php:538
 msgid "Bottom line"
 msgstr "السطر الأخير"
 
-#: inc/options.php:547
+#: inc/options.php:541
 msgid "{year} becomes the current year and {site} the site title. Basic links and bold are allowed. Leave empty to hide it."
 msgstr "يتحول {year} إلى السنة الحالية و{site} إلى اسم الموقع. يُسمح بالروابط البسيطة والخط العريض. اتركه فارغًا لإخفائه."
 
-#: inc/options.php:788
+#: inc/options.php:782
 msgid "Text on the page background"
 msgstr "النص على خلفية الصفحة"
 
-#: inc/options.php:789
+#: inc/options.php:783
 msgid "Text on brand buttons"
 msgstr "النص على أزرار العلامة"
 
-#: inc/options.php:790
+#: inc/options.php:784
 msgid "White text on the hover colour"
 msgstr "النص الأبيض على لون التمرير"
 
-#: inc/options.php:793
+#: inc/options.php:787
 msgid "Top bar text on its background"
 msgstr "نص الشريط العلوي على خلفيته"
 
-#: inc/options.php:795
+#: inc/options.php:789
 msgid "Footer text on its background"
 msgstr "نص التذييل على خلفيته"
 
-#: inc/options.php:796
+#: inc/options.php:790
 msgid "Header text on its background"
 msgstr "نص الرأس على خلفيته"
 
 #. translators: 1: colour pair, 2: contrast ratio.
-#: inc/options.php:802
+#: inc/options.php:796
 #, php-format
 msgid "%1$s is hard to read (%2$s:1). Aim for at least 4.5:1."
 msgstr "%1$s صعب القراءة (%2$s:1). استهدف 4.5:1 على الأقل."
 
-#: inc/options.php:830
+#: inc/options.php:824
 msgid "Brand dark"
 msgstr "لون العلامة الداكن"
 
-#: inc/options.php:831
+#: inc/options.php:825
 msgid "Ink"
 msgstr "الحبر"
 
-#: inc/options.php:832
+#: inc/options.php:826
 msgid "Muted"
 msgstr "خافت"
 
-#: inc/options.php:833
+#: inc/options.php:827
 msgid "Line"
 msgstr "الخطوط الفاصلة"
 
-#: inc/options.php:834
+#: inc/options.php:828
 msgid "Surface"
 msgstr "السطح"
 
-#: inc/options.php:835
+#: inc/options.php:829
 msgid "Base"
 msgstr "الأساس"
 
-#: inc/options.php:857
+#: inc/options.php:851
 msgid "System"
 msgstr "النظام"
 
-#: inc/options.php:862
+#: inc/options.php:856
 msgid "Headings"
 msgstr "العناوين"
 
