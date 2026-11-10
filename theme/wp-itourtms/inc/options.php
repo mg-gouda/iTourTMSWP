@@ -257,6 +257,12 @@ function wp_itourtms_theme_option_fields(): array {
 					'type'    => 'url',
 					'default' => '',
 				),
+				'header_account'    => array(
+					'label'   => __( 'Account link', 'wp-itourtms' ),
+					'type'    => 'checkbox',
+					'default' => 1,
+					'text'    => __( 'Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin.', 'wp-itourtms' ),
+				),
 				'header_sticky'     => array(
 					'label'   => __( 'Sticky header', 'wp-itourtms' ),
 					'type'    => 'checkbox',

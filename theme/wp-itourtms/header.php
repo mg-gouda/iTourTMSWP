@@ -51,6 +51,11 @@ if ( $wp_itourtms_o['topbar_enabled'] ) {
 				?>
 			</nav>
 		<?php endif; ?>
+		<?php
+		if ( $wp_itourtms_o['header_account'] ) {
+			do_action( 'wp_itourtms_header_account' ); // iTour Core prints the account link + popup.
+		}
+		?>
 		<?php if ( '' !== $wp_itourtms_o['header_cta_text'] && '' !== $wp_itourtms_o['header_cta_url'] ) : ?>
 			<a class="site-header__cta wp-element-button" href="<?php echo esc_url( $wp_itourtms_o['header_cta_url'] ); ?>"><?php echo esc_html( $wp_itourtms_o['header_cta_text'] ); ?></a>
 		<?php endif; ?>

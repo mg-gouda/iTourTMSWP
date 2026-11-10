@@ -56,6 +56,96 @@ msgstr "أبحث عن"
 msgid "Search"
 msgstr "بحث"
 
+#: src/Account.php:52
+msgid "My account"
+msgstr "حسابي"
+
+#: src/Account.php:55
+#: src/Account.php:110
+#: src/Account.php:126
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#: src/Account.php:62
+msgid "Signing in…"
+msgstr "جارٍ تسجيل الدخول…"
+
+#: src/Account.php:63
+msgid "Creating your account…"
+msgstr "جارٍ إنشاء حسابك…"
+
+#: src/Account.php:64
+msgid "No connection. Check your internet and try again."
+msgstr "لا يوجد اتصال. تحقق من الإنترنت وحاول مرة أخرى."
+
+#: src/Account.php:83
+msgid "Show password"
+msgstr "إظهار كلمة المرور"
+
+#: src/Account.php:106
+msgid "Close"
+msgstr "إغلاق"
+
+#: src/Account.php:111
+msgid "Sign up"
+msgstr "إنشاء حساب"
+
+#: src/Account.php:117
+msgid "Email or username"
+msgstr "البريد الإلكتروني أو اسم المستخدم"
+
+#: src/Account.php:118
+#: src/Account.php:134
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: src/Account.php:121
+msgid "Keep me signed in"
+msgstr "تذكرني"
+
+#: src/Account.php:122
+msgid "Forgot password?"
+msgstr "نسيت كلمة المرور؟"
+
+#: src/Account.php:132
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#: src/Account.php:133
+#: src/Company.php:52
+#: src/CoreModule.php:206
+#: src/CoreModule.php:238
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: src/Account.php:136
+msgid "At least 8 characters."
+msgstr "8 أحرف على الأقل."
+
+#: src/Account.php:143
+msgid "Create account"
+msgstr "إنشاء الحساب"
+
+#: src/Account.php:171
+msgid "Enter your email or username and your password."
+msgstr "أدخل بريدك الإلكتروني أو اسم المستخدم وكلمة المرور."
+
+#: src/Account.php:186
+msgid "New accounts are closed on this site."
+msgstr "إنشاء حسابات جديدة متوقف في هذا الموقع."
+
+#: src/Account.php:194
+msgid "Enter your name and a valid email address."
+msgstr "أدخل اسمك وبريدًا إلكترونيًا صحيحًا."
+
+#: src/Account.php:197
+msgid "Choose a password of at least 8 characters."
+msgstr "اختر كلمة مرور من 8 أحرف على الأقل."
+
+#: src/Account.php:200
+msgid "This email already has an account. Sign in instead, or reset your password."
+msgstr "هذا البريد له حساب بالفعل. سجّل الدخول، أو أعد تعيين كلمة المرور."
+
 #. translators: 1: column, 2: line number, 3: the value.
 #: src/Admin/Cells.php:207
 #, php-format
@@ -533,12 +623,6 @@ msgstr "الرقم الضريبي"
 #: src/Company.php:47
 msgid "Tourism licence no."
 msgstr "رقم الترخيص السياحي"
-
-#: src/Company.php:52
-#: src/CoreModule.php:206
-#: src/CoreModule.php:238
-msgid "Email"
-msgstr "البريد الإلكتروني"
 
 #: src/Company.php:57
 #: src/CoreModule.php:207

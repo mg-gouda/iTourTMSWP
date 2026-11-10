@@ -1,0 +1,89 @@
+/* iTour account: header link + sign-in / sign-up popup.
+   Compact glass card over a black abstract backdrop blurred 10px. The <dialog> itself is the backdrop
+   (custom properties don't reach ::backdrop in every browser). */
+
+.itour-account { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 6px 10px; border-radius: 999px; color: inherit; font-weight: 600; font-size: var(--wp--preset--font-size--small, 0.9rem); text-decoration: none; white-space: nowrap; transition: background-color 0.15s ease-out; }
+.itour-account:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
+@media (max-width: 781px) { .itour-account span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .itour-account { min-width: 44px; justify-content: center; } }
+
+.itour-auth {
+	--glass-fg: #f7f2f8;
+	--glass-muted: rgb(247 242 248 / 0.72);
+	--glass-line: rgb(255 255 255 / 0.16);
+	--glass-field: rgb(255 255 255 / 0.07);
+	--glass-error: #ffb3c1;
+	position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 16px; border: 0;
+	display: grid; place-items: center; overflow-y: auto;
+	color: var(--glass-fg);
+	background:
+		radial-gradient(38% 46% at 16% 22%, color-mix(in srgb, var(--wp--preset--color--brand, #660066) 55%, transparent), transparent 70%),
+		radial-gradient(34% 40% at 86% 78%, color-mix(in srgb, var(--wp--preset--color--brand-dark, #3d003d) 70%, transparent), transparent 70%),
+		radial-gradient(22% 28% at 74% 14%, rgb(255 255 255 / 0.07), transparent 70%),
+		repeating-linear-gradient(118deg, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 22px),
+		rgb(4 3 6 / 0.88);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	font-size: 14px;
+	line-height: 1.45;
+}
+.itour-auth:not([open]) { display: none; }
+.itour-auth::backdrop { background: transparent; }
+.itour-auth ::selection { background: color-mix(in srgb, var(--wp--preset--color--brand, #660066) 70%, #fff); color: #fff; }
+
+.itour-auth__card {
+	position: relative; width: min(100%, 340px); padding: 22px 20px 20px;
+	border: 1px solid var(--glass-line);
+	border-radius: calc(var(--wp-itourtms-radius, 10px) + 6px);
+	background: linear-gradient(155deg, rgb(255 255 255 / 0.13), rgb(255 255 255 / 0.04) 60%);
+	-webkit-backdrop-filter: blur(22px) saturate(150%);
+	backdrop-filter: blur(22px) saturate(150%);
+	box-shadow: 0 24px 64px rgb(0 0 0 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.18);
+}
+.itour-auth[open] .itour-auth__card { animation: itour-auth-in 0.32s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes itour-auth-in { from { opacity: 0; transform: translateY(10px) scale(0.98); filter: blur(6px); } }
+@media (prefers-reduced-motion: reduce) { .itour-auth[open] .itour-auth__card { animation: none; } }
+
+.itour-auth__title { margin: 0 32px 14px 0; margin-inline: 0 32px; font-family: var(--wp--preset--font-family--heading, inherit); font-size: 17px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: var(--glass-fg); }
+.itour-auth__close { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 999px; background: transparent; color: var(--glass-muted); cursor: pointer; }
+.itour-auth__close:hover { background: rgb(255 255 255 / 0.1); color: var(--glass-fg); }
+
+.itour-auth__tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-block-end: 14px; padding: 3px; border-radius: 10px; background: rgb(0 0 0 / 0.28); }
+.itour-auth__tabs button { min-height: 32px; border: 0; border-radius: 8px; background: transparent; color: var(--glass-muted); font: inherit; font-weight: 600; cursor: pointer; transition: background-color 0.15s ease-out, color 0.15s ease-out; }
+.itour-auth__tabs button:hover { color: var(--glass-fg); }
+.itour-auth__tabs [aria-selected="true"] { background: rgb(255 255 255 / 0.15); color: var(--glass-fg); box-shadow: 0 1px 2px rgb(0 0 0 / 0.3); }
+
+.itour-auth__form { display: grid; gap: 10px; margin: 0; }
+.itour-auth__form[hidden] { display: none; }
+.itour-auth__form p { margin: 0; }
+.itour-auth__field { display: grid; gap: 4px; }
+.itour-auth__field label { font-size: 12.5px; font-weight: 600; color: var(--glass-muted); }
+.itour-auth__input { position: relative; display: block; }
+.itour-auth__input input {
+	box-sizing: border-box; width: 100%; height: 38px; padding: 0 11px; margin: 0;
+	border: 1px solid var(--glass-line); border-radius: 8px; background: var(--glass-field);
+	color: var(--glass-fg); caret-color: var(--glass-fg); font: inherit;
+	transition: border-color 0.15s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.itour-auth__input input[type="password"], .itour-auth__input input.is-shown { padding-inline-end: 40px; }
+.itour-auth__input input:hover { border-color: rgb(255 255 255 / 0.28); }
+.itour-auth__input input:focus { outline: none; border-color: rgb(255 255 255 / 0.6); background: rgb(255 255 255 / 0.11); box-shadow: 0 0 0 3px rgb(255 255 255 / 0.12); }
+.itour-auth__input input[aria-invalid="true"] { border-color: var(--glass-error); }
+.itour-auth__input input:-webkit-autofill { -webkit-text-fill-color: var(--glass-fg); box-shadow: inset 0 0 0 40px #2a1d2c; }
+.itour-auth__eye { position: absolute; inset-block: 0; inset-inline-end: 3px; display: grid; place-items: center; width: 34px; padding: 0; border: 0; background: transparent; color: var(--glass-muted); cursor: pointer; }
+.itour-auth__eye:hover, .itour-auth__eye[aria-pressed="true"] { color: var(--glass-fg); }
+
+.itour-auth__hint { margin-block-start: -4px !important; font-size: 12px; color: var(--glass-muted); }
+.itour-auth__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; font-size: 12.5px; color: var(--glass-muted); }
+.itour-auth__check { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.itour-auth__check input { width: 15px; height: 15px; margin: 0; accent-color: var(--wp--preset--color--brand, #660066); }
+.itour-auth a { color: var(--glass-fg); text-decoration: underline; text-decoration-color: rgb(255 255 255 / 0.4); text-underline-offset: 3px; }
+.itour-auth a:hover { text-decoration-color: currentColor; }
+
+.itour-auth__msg { font-size: 12.5px; color: var(--glass-error); }
+.itour-auth__msg:empty { display: none; }
+
+.itour-auth__submit.wp-element-button { width: 100%; min-height: 40px; margin-block-start: 2px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+.itour-auth__submit[aria-busy="true"] { opacity: 0.7; cursor: progress; }
+
+.itour-auth :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.itour-auth__input input:focus-visible { outline: none; }

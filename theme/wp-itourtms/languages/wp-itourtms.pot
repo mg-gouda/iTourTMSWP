@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T03:20:37+00:00\n"
+"POT-Creation-Date: 2026-11-10T23:05:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-itourtms\n"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: functions.php:42
 #: header.php:38
-#: inc/admin-page.php:202
+#: inc/admin-page.php:201
 #: inc/rest.php:111
 msgid "Main menu"
 msgstr ""
@@ -101,8 +101,8 @@ msgid "Skip to content"
 msgstr ""
 
 #: header.php:40
-#: inc/options.php:452
-#: inc/options.php:501
+#: inc/options.php:458
+#: inc/options.php:507
 msgid "Menu"
 msgstr ""
 
@@ -157,12 +157,12 @@ msgid "applied below. Review, then click Save options."
 msgstr ""
 
 #: inc/admin-page.php:54
-#: inc/admin-page.php:286
+#: inc/admin-page.php:290
 msgid "Choose image"
 msgstr ""
 
 #: inc/admin-page.php:55
-#: inc/admin-page.php:286
+#: inc/admin-page.php:290
 msgid "Replace image"
 msgstr ""
 
@@ -176,7 +176,7 @@ msgstr ""
 
 #: inc/admin-page.php:74
 #: inc/admin-page.php:193
-#: inc/admin-page.php:229
+#: inc/admin-page.php:228
 msgid "Quick setup"
 msgstr ""
 
@@ -255,8 +255,8 @@ msgid "Add your logo"
 msgstr ""
 
 #: inc/admin-page.php:190
-#: inc/options.php:316
-#: inc/options.php:453
+#: inc/options.php:322
+#: inc/options.php:459
 msgid "Contact details"
 msgstr ""
 
@@ -264,179 +264,179 @@ msgstr ""
 msgid "Four quick steps. Everything here can be changed later under Options."
 msgstr ""
 
-#: inc/admin-page.php:204
+#: inc/admin-page.php:203
 msgid "A main menu is already set. Edit it under Appearance → Menus."
 msgstr ""
 
-#: inc/admin-page.php:206
+#: inc/admin-page.php:205
 msgid "Create the main menu"
 msgstr ""
 
-#: inc/admin-page.php:207
+#: inc/admin-page.php:206
 msgid "Adds your published top-level pages to a new menu in the header."
 msgstr ""
 
-#: inc/admin-page.php:210
+#: inc/admin-page.php:209
 msgid "Save and finish"
 msgstr ""
 
-#: inc/admin-page.php:211
+#: inc/admin-page.php:210
 msgid "Skip setup"
 msgstr ""
 
-#: inc/admin-page.php:227
+#: inc/admin-page.php:226
 msgid "WP iTourTMS is active. Pick a design, add your logo and create the main menu in a minute."
 msgstr ""
 
-#: inc/admin-page.php:287
+#: inc/admin-page.php:291
 msgid "Remove"
 msgstr ""
 
-#: inc/admin-page.php:293
+#: inc/admin-page.php:297
 msgid "— Choose a menu —"
 msgstr ""
 
 #. translators: %s: colour name.
-#: inc/admin-page.php:323
+#: inc/admin-page.php:327
 #, php-format
 msgid "Pick %s colour"
 msgstr ""
 
-#: inc/admin-page.php:332
+#: inc/admin-page.php:336
 msgid "Same as body"
 msgstr ""
 
-#: inc/admin-page.php:332
+#: inc/admin-page.php:336
 msgid "System font (fastest)"
 msgstr ""
 
-#: inc/admin-page.php:346
+#: inc/admin-page.php:350
 msgid "— Choose a page —"
 msgstr ""
 
-#: inc/admin-page.php:362
+#: inc/admin-page.php:366
 msgid "words"
 msgstr ""
 
-#: inc/admin-page.php:375
+#: inc/admin-page.php:379
 msgid "License Information"
 msgstr ""
 
-#: inc/admin-page.php:376
+#: inc/admin-page.php:380
 msgid "Activate your license to receive theme updates and support. Your site keeps working either way."
 msgstr ""
 
-#: inc/admin-page.php:378
+#: inc/admin-page.php:382
 msgid "The license server is not set up on this site yet. Add WP_ITOURTMS_LICENSE_SERVER and WP_ITOURTMS_LICENSE_PUBKEY to wp-config.php (see Documentation → License)."
 msgstr ""
 
-#: inc/admin-page.php:384
+#: inc/admin-page.php:388
 msgid "Replace license key"
 msgstr ""
 
-#: inc/admin-page.php:384
+#: inc/admin-page.php:388
 msgid "License key"
 msgstr ""
 
-#: inc/admin-page.php:385
+#: inc/admin-page.php:389
 msgid "Paste the license key from your purchase email"
 msgstr ""
 
-#: inc/admin-page.php:386
+#: inc/admin-page.php:390
 msgid "Activate"
 msgstr ""
 
-#: inc/admin-page.php:388
+#: inc/admin-page.php:392
 msgid "Check now"
 msgstr ""
 
-#: inc/admin-page.php:389
+#: inc/admin-page.php:393
 msgid "Remove license"
 msgstr ""
 
-#: inc/admin-page.php:401
+#: inc/admin-page.php:405
 msgid "Not activated"
 msgstr ""
 
-#: inc/admin-page.php:402
+#: inc/admin-page.php:406
 msgid "Active"
 msgstr ""
 
-#: inc/admin-page.php:403
+#: inc/admin-page.php:407
 msgid "Active (needs attention)"
 msgstr ""
 
-#: inc/admin-page.php:404
+#: inc/admin-page.php:408
 msgid "Expired"
 msgstr ""
 
-#: inc/admin-page.php:405
+#: inc/admin-page.php:409
 msgid "Revoked"
 msgstr ""
 
-#: inc/admin-page.php:406
+#: inc/admin-page.php:410
 msgid "Invalid key"
 msgstr ""
 
-#: inc/admin-page.php:407
+#: inc/admin-page.php:411
 msgid "Not licensed for this domain"
 msgstr ""
 
-#: inc/admin-page.php:408
+#: inc/admin-page.php:412
 msgid "Install limit reached"
 msgstr ""
 
-#: inc/admin-page.php:409
+#: inc/admin-page.php:413
 msgid "Server IP not allowed"
 msgstr ""
 
-#: inc/admin-page.php:410
+#: inc/admin-page.php:414
 msgid "Could not reach the license server"
 msgstr ""
 
 #. translators: %d: days.
-#: inc/admin-page.php:415
+#: inc/admin-page.php:419
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/admin-page.php:417
-#: inc/admin-page.php:432
+#: inc/admin-page.php:421
+#: inc/admin-page.php:436
 msgid "License Key"
 msgstr ""
 
-#: inc/admin-page.php:418
-#: inc/admin-page.php:429
+#: inc/admin-page.php:422
+#: inc/admin-page.php:433
 msgid "Status"
 msgstr ""
 
-#: inc/admin-page.php:419
+#: inc/admin-page.php:423
 msgid "Licensed to"
 msgstr ""
 
-#: inc/admin-page.php:420
+#: inc/admin-page.php:424
 msgid "Plan"
 msgstr ""
 
-#: inc/admin-page.php:421
+#: inc/admin-page.php:425
 msgid "Expires On"
 msgstr ""
 
-#: inc/admin-page.php:422
+#: inc/admin-page.php:426
 msgid "Days Remaining"
 msgstr ""
 
-#: inc/admin-page.php:423
+#: inc/admin-page.php:427
 msgid "Domains"
 msgstr ""
 
-#: inc/admin-page.php:424
+#: inc/admin-page.php:428
 msgid "Last checked"
 msgstr ""
 
-#: inc/admin-page.php:446
+#: inc/admin-page.php:450
 msgid "On this page"
 msgstr ""
 
@@ -882,7 +882,7 @@ msgid "Colours"
 msgstr ""
 
 #: inc/options.php:78
-#: inc/options.php:823
+#: inc/options.php:829
 msgid "Brand"
 msgstr ""
 
@@ -899,8 +899,8 @@ msgid "Buttons and links on hover, focus outlines. White text sits on it, so kee
 msgstr ""
 
 #: inc/options.php:90
-#: inc/options.php:455
-#: inc/options.php:509
+#: inc/options.php:461
+#: inc/options.php:515
 msgid "Text"
 msgstr ""
 
@@ -1029,7 +1029,7 @@ msgid "Black (900)"
 msgstr ""
 
 #: inc/options.php:196
-#: inc/options.php:467
+#: inc/options.php:473
 msgid "Layout"
 msgstr ""
 
@@ -1106,311 +1106,319 @@ msgid "Button link"
 msgstr ""
 
 #: inc/options.php:261
-msgid "Sticky header"
+msgid "Account link"
 msgstr ""
 
 #: inc/options.php:264
-msgid "Keep the header at the top of the screen while scrolling"
+msgid "Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin."
 msgstr ""
 
 #: inc/options.php:267
-msgid "Site title with logo"
+msgid "Sticky header"
 msgstr ""
 
 #: inc/options.php:270
-msgid "Show the site title next to the logo"
+msgid "Keep the header at the top of the screen while scrolling"
 msgstr ""
 
-#: inc/options.php:275
-msgid "Top bar"
+#: inc/options.php:273
+msgid "Site title with logo"
 msgstr ""
 
 #: inc/options.php:276
-msgid "A thin bar above the header for contact details, a short message and social links."
+msgid "Show the site title next to the logo"
 msgstr ""
 
-#: inc/options.php:279
-msgid "Show top bar"
+#: inc/options.php:281
+msgid "Top bar"
 msgstr ""
 
 #: inc/options.php:282
-msgid "Display the top bar above the header"
+msgid "A thin bar above the header for contact details, a short message and social links."
 msgstr ""
 
 #: inc/options.php:285
-msgid "Top bar design"
+msgid "Show top bar"
 msgstr ""
 
-#: inc/options.php:290
-msgid "Split: contacts left, message centre, social right"
+#: inc/options.php:288
+msgid "Display the top bar above the header"
 msgstr ""
 
 #: inc/options.php:291
-msgid "Centred: message only, with social links beside it"
+msgid "Top bar design"
 msgstr ""
 
-#: inc/options.php:292
-msgid "Minimal: contacts left, social right, no message"
-msgstr ""
-
-#: inc/options.php:293
-msgid "Announcement: brand-coloured bar with the message and a link"
+#: inc/options.php:296
+msgid "Split: contacts left, message centre, social right"
 msgstr ""
 
 #: inc/options.php:297
+msgid "Centred: message only, with social links beside it"
+msgstr ""
+
+#: inc/options.php:298
+msgid "Minimal: contacts left, social right, no message"
+msgstr ""
+
+#: inc/options.php:299
+msgid "Announcement: brand-coloured bar with the message and a link"
+msgstr ""
+
+#: inc/options.php:303
 msgid "Message"
 msgstr ""
 
-#: inc/options.php:301
+#: inc/options.php:307
 msgid "Short line such as “Free cancellation up to 24 hours before most trips”. Basic links and bold are allowed."
 msgstr ""
 
-#: inc/options.php:304
+#: inc/options.php:310
 msgid "Link text"
 msgstr ""
 
-#: inc/options.php:310
+#: inc/options.php:316
 msgid "Link"
 msgstr ""
 
-#: inc/options.php:320
+#: inc/options.php:326
 msgid "Show phone, email and WhatsApp from the Contact & social tab"
 msgstr ""
 
-#: inc/options.php:323
-#: inc/options.php:376
-#: inc/options.php:454
+#: inc/options.php:329
+#: inc/options.php:382
+#: inc/options.php:460
 msgid "Social links"
 msgstr ""
 
-#: inc/options.php:327
+#: inc/options.php:333
 msgid "Show the social icons from the Contact & social tab"
 msgstr ""
 
-#: inc/options.php:330
+#: inc/options.php:336
 msgid "Top bar background"
 msgstr ""
 
-#: inc/options.php:336
+#: inc/options.php:342
 msgid "Top bar text"
 msgstr ""
 
-#: inc/options.php:342
+#: inc/options.php:348
 msgid "On phones"
 msgstr ""
 
-#: inc/options.php:346
+#: inc/options.php:352
 msgid "Also show the top bar on small screens"
 msgstr ""
 
-#: inc/options.php:351
+#: inc/options.php:357
 msgid "Contact & social"
 msgstr ""
 
-#: inc/options.php:352
+#: inc/options.php:358
 msgid "Entered once, used by the top bar and the footer. Leave a field empty to hide it."
 msgstr ""
 
-#: inc/options.php:355
+#: inc/options.php:361
 msgid "Phone"
 msgstr ""
 
-#: inc/options.php:360
+#: inc/options.php:366
 msgid "Email"
 msgstr ""
 
-#: inc/options.php:365
+#: inc/options.php:371
 #: inc/template-tags.php:93
 msgid "WhatsApp"
 msgstr ""
 
-#: inc/options.php:368
+#: inc/options.php:374
 msgid "International format, e.g. +20 100 000 0000. Opens a WhatsApp chat."
 msgstr ""
 
-#: inc/options.php:371
+#: inc/options.php:377
 msgid "Address"
 msgstr ""
 
-#: inc/options.php:412
+#: inc/options.php:418
 msgid "Footer"
 msgstr ""
 
-#: inc/options.php:413
+#: inc/options.php:419
 msgid "Columns at the top of the footer, its colours and the bottom line."
 msgstr ""
 
-#: inc/options.php:417
+#: inc/options.php:423
 msgid "Blog"
 msgstr ""
 
-#: inc/options.php:420
+#: inc/options.php:426
 msgid "Post dates"
 msgstr ""
 
-#: inc/options.php:423
+#: inc/options.php:429
 msgid "Show the date on posts and in lists"
 msgstr ""
 
-#: inc/options.php:426
+#: inc/options.php:432
 msgid "Featured image on posts"
 msgstr ""
 
-#: inc/options.php:429
+#: inc/options.php:435
 msgid "Show the featured image at the top of each post"
 msgstr ""
 
-#: inc/options.php:432
+#: inc/options.php:438
 msgid "Summary length"
 msgstr ""
 
-#: inc/options.php:437
+#: inc/options.php:443
 msgid "Words shown for each post in lists when the post has no manual excerpt."
 msgstr ""
 
-#: inc/options.php:451
+#: inc/options.php:457
 msgid "About (logo and text)"
 msgstr ""
 
-#: inc/options.php:456
+#: inc/options.php:462
 msgid "Widgets (Appearance → Widgets)"
 msgstr ""
 
-#: inc/options.php:457
+#: inc/options.php:463
 msgid "Empty"
 msgstr ""
 
-#: inc/options.php:461
+#: inc/options.php:467
 msgid "Explore"
 msgstr ""
 
-#: inc/options.php:462
+#: inc/options.php:468
 msgid "Contact"
 msgstr ""
 
-#: inc/options.php:463
+#: inc/options.php:469
 msgid "Follow us"
 msgstr ""
 
-#: inc/options.php:471
+#: inc/options.php:477
 msgid "No columns (bottom line only)"
 msgstr ""
 
-#: inc/options.php:472
+#: inc/options.php:478
 msgid "3 columns"
 msgstr ""
 
-#: inc/options.php:473
+#: inc/options.php:479
 msgid "4 columns"
 msgstr ""
 
 #. translators: %d: column number.
-#: inc/options.php:483
+#: inc/options.php:489
 #, php-format
 msgid "Column %d"
 msgstr ""
 
-#: inc/options.php:488
+#: inc/options.php:494
 msgid "Shows"
 msgstr ""
 
-#: inc/options.php:495
+#: inc/options.php:501
 msgid "Title"
 msgstr ""
 
-#: inc/options.php:506
+#: inc/options.php:512
 msgid "Create menus under Appearance → Menus. This sets the “Footer column” menu location."
 msgstr ""
 
-#: inc/options.php:513
+#: inc/options.php:519
 msgid "Basic links, bold and line breaks are allowed. For “About”, leave empty to use the site tagline."
 msgstr ""
 
 #. translators: %d: column number.
-#: inc/options.php:517
+#: inc/options.php:523
 #, php-format
 msgid "Add blocks to “Footer column %d” under Appearance → Widgets."
 msgstr ""
 
-#: inc/options.php:524
+#: inc/options.php:530
 msgid "Colours and bottom line"
 msgstr ""
 
-#: inc/options.php:528
+#: inc/options.php:534
 msgid "Footer background"
 msgstr ""
 
-#: inc/options.php:533
+#: inc/options.php:539
 msgid "Footer text"
 msgstr ""
 
-#: inc/options.php:538
+#: inc/options.php:544
 msgid "Bottom line"
 msgstr ""
 
-#: inc/options.php:541
+#: inc/options.php:547
 msgid "{year} becomes the current year and {site} the site title. Basic links and bold are allowed. Leave empty to hide it."
 msgstr ""
 
-#: inc/options.php:782
+#: inc/options.php:788
 msgid "Text on the page background"
 msgstr ""
 
-#: inc/options.php:783
+#: inc/options.php:789
 msgid "Text on brand buttons"
 msgstr ""
 
-#: inc/options.php:784
+#: inc/options.php:790
 msgid "White text on the hover colour"
 msgstr ""
 
-#: inc/options.php:787
+#: inc/options.php:793
 msgid "Top bar text on its background"
 msgstr ""
 
-#: inc/options.php:789
+#: inc/options.php:795
 msgid "Footer text on its background"
 msgstr ""
 
-#: inc/options.php:790
+#: inc/options.php:796
 msgid "Header text on its background"
 msgstr ""
 
 #. translators: 1: colour pair, 2: contrast ratio.
-#: inc/options.php:796
+#: inc/options.php:802
 #, php-format
 msgid "%1$s is hard to read (%2$s:1). Aim for at least 4.5:1."
 msgstr ""
 
-#: inc/options.php:824
+#: inc/options.php:830
 msgid "Brand dark"
 msgstr ""
 
-#: inc/options.php:825
+#: inc/options.php:831
 msgid "Ink"
 msgstr ""
 
-#: inc/options.php:826
+#: inc/options.php:832
 msgid "Muted"
 msgstr ""
 
-#: inc/options.php:827
+#: inc/options.php:833
 msgid "Line"
 msgstr ""
 
-#: inc/options.php:828
+#: inc/options.php:834
 msgid "Surface"
 msgstr ""
 
-#: inc/options.php:829
+#: inc/options.php:835
 msgid "Base"
 msgstr ""
 
-#: inc/options.php:851
+#: inc/options.php:857
 msgid "System"
 msgstr ""
 
-#: inc/options.php:856
+#: inc/options.php:862
 msgid "Headings"
 msgstr ""
 

@@ -387,7 +387,9 @@
   "Save and finish": "حفظ وإنهاء",
   "Skip setup": "تخطي الإعداد",
   "WP iTourTMS is active. Pick a design, add your logo and create the main menu in a minute.": "قالب WP iTourTMS مفعّل. اختر تصميمًا وأضف شعارك وأنشئ القائمة الرئيسية في دقيقة.",
-  "Right after activation, Appearance → Theme Options opens on “Quick setup”: pick a design, add your logo and contact details, and create the main menu from your pages. It shows until you finish or skip it. The steps below do the rest by hand.": "بعد التفعيل مباشرة، تفتح صفحة المظهر ← خيارات القالب على «الإعداد السريع»: اختر تصميمًا، وأضف شعارك وبيانات التواصل، وأنشئ القائمة الرئيسية من صفحاتك. تبقى ظاهرة حتى تُكملها أو تتخطاها. الخطوات التالية تُكمل الباقي يدويًا."
+  "Right after activation, Appearance → Theme Options opens on “Quick setup”: pick a design, add your logo and contact details, and create the main menu from your pages. It shows until you finish or skip it. The steps below do the rest by hand.": "بعد التفعيل مباشرة، تفتح صفحة المظهر ← خيارات القالب على «الإعداد السريع»: اختر تصميمًا، وأضف شعارك وبيانات التواصل، وأنشئ القائمة الرئيسية من صفحاتك. تبقى ظاهرة حتى تُكملها أو تتخطاها. الخطوات التالية تُكمل الباقي يدويًا.",
+  "Account link": "رابط الحساب",
+  "Show “Sign in” (or “My account” once signed in), opening the sign-in / sign-up popup. Needs the iTour Core plugin.": "إظهار «تسجيل الدخول» (أو «حسابي» بعد الدخول)، ويفتح نافذة الدخول / إنشاء الحساب. يتطلب إضافة iTour Core."
  },
  "itour-core": {
   "Booking widget: activate iTour Tour Packages, Excursions or Transfers to add their searches here.": "أداة الحجز: فعّل إضافة الباقات السياحية أو الرحلات اليومية أو التنقلات لتظهر خانات البحث الخاصة بها هنا.",
@@ -710,7 +712,27 @@
    "حتى %d أيام قبل الوصول",
    "حتى %d يومًا قبل الوصول",
    "حتى %d يوم قبل الوصول"
-  ]
+  ],
+  "My account": "حسابي",
+  "Sign in": "تسجيل الدخول",
+  "Sign up": "إنشاء حساب",
+  "Signing in…": "جارٍ تسجيل الدخول…",
+  "Creating your account…": "جارٍ إنشاء حسابك…",
+  "No connection. Check your internet and try again.": "لا يوجد اتصال. تحقق من الإنترنت وحاول مرة أخرى.",
+  "Show password": "إظهار كلمة المرور",
+  "Close": "إغلاق",
+  "Email or username": "البريد الإلكتروني أو اسم المستخدم",
+  "Password": "كلمة المرور",
+  "Keep me signed in": "تذكرني",
+  "Forgot password?": "نسيت كلمة المرور؟",
+  "Full name": "الاسم الكامل",
+  "At least 8 characters.": "8 أحرف على الأقل.",
+  "Create account": "إنشاء الحساب",
+  "Enter your email or username and your password.": "أدخل بريدك الإلكتروني أو اسم المستخدم وكلمة المرور.",
+  "New accounts are closed on this site.": "إنشاء حسابات جديدة متوقف في هذا الموقع.",
+  "Enter your name and a valid email address.": "أدخل اسمك وبريدًا إلكترونيًا صحيحًا.",
+  "Choose a password of at least 8 characters.": "اختر كلمة مرور من 8 أحرف على الأقل.",
+  "This email already has an account. Sign in instead, or reset your password.": "هذا البريد له حساب بالفعل. سجّل الدخول، أو أعد تعيين كلمة المرور."
  },
  "itour-forms": {
   "Thank you! We’ll reply within one working day.": "شكرًا لك! سنرد عليك خلال يوم عمل واحد.",
