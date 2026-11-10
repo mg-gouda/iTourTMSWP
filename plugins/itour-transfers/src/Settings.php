@@ -58,6 +58,32 @@ final class Settings {
 	}
 
 	/**
+	 * Option with the results layout.
+	 */
+	public const LAYOUT = 'itour_transfers_layout';
+
+	/**
+	 * Results page layouts: key => [ name, description ].
+	 *
+	 * @return array<string,array{0:string,1:string}>
+	 */
+	public static function layouts(): array {
+		return array(
+			'list'    => array( __( 'List', 'itour-transfers' ), __( 'One row per vehicle with capacity, one-way and return prices side by side. Quickest to compare.', 'itour-transfers' ) ),
+			'cards'   => array( __( 'Cards', 'itour-transfers' ), __( 'A card per vehicle in a grid. Visual and easy to tap on phones.', 'itour-transfers' ) ),
+			'summary' => array( __( 'Trip summary', 'itour-transfers' ), __( 'Route, date and travellers stay pinned beside the vehicles. Reassuring for airport pick-ups.', 'itour-transfers' ) ),
+		);
+	}
+
+	/**
+	 * The chosen results layout.
+	 */
+	public static function layout(): string {
+		$v = (string) get_option( self::LAYOUT, 'list' );
+		return isset( self::layouts()[ $v ] ) ? $v : 'list';
+	}
+
+	/**
 	 * Cancellation tiers that apply to a vehicle: its own rows, else the "all vehicles" rows.
 	 *
 	 * @param int $vehicle Vehicle id.
@@ -149,6 +175,17 @@ final class Settings {
 					},
 					'save'   => static function ( int $unused, array $in ) use ( $cols ): void {
 						update_option( self::CANCEL, Policies::clean( $cols(), $in['rows'] ?? array() ), false );
+					},
+				),
+				'layout'       => array(
+					'label'  => __( 'Layout', 'itour-transfers' ),
+					'badge'  => static fn(): string => self::layouts()[ self::layout() ][0],
+					'render' => static function (): void {
+						echo \ITour\Core\Layouts::picker( 'layout', 'layout', self::layouts(), self::layout() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
+					},
+					'save'   => static function ( int $unused, array $in ): void {
+						$v = sanitize_key( (string) ( $in['layout'] ?? '' ) );
+						update_option( self::LAYOUT, isset( self::layouts()[ $v ] ) ? $v : 'list' );
 					},
 				),
 			)

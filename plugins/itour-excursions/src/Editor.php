@@ -27,7 +27,7 @@ final class Editor {
 		add_action(
 			'init',
 			static function (): void {
-				Panel::register( Excursion::TYPE, __( 'Trip details', 'itour-excursions' ), self::sections() + \ITour\Core\Policies::section() + Products::info_sections() );
+				Panel::register( Excursion::TYPE, __( 'Trip details', 'itour-excursions' ), self::sections() + \ITour\Core\Policies::section() + Products::info_sections() + \ITour\Core\Layouts::section() );
 			},
 			20
 		);

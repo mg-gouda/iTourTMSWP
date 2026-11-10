@@ -64,8 +64,9 @@ msgstr "%1$s، السطر %2$d: «%3$s» غير صالح هنا."
 
 #: src/Admin/Cells.php:245
 #: src/Admin/Cells.php:292
-#: src/Policies.php:186
-#: src/Policies.php:235
+#: src/Layouts.php:289
+#: src/Policies.php:187
+#: src/Policies.php:261
 msgid "Cancellation"
 msgstr "الإلغاء"
 
@@ -74,9 +75,9 @@ msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to 
 msgstr "شريحة في كل سطر: أيام قبل الوصول | الرسوم % | السفر من | السفر إلى (التواريخ اختيارية، لشريحة موسمية). مثال: 30 | 0 ثم 14 | 50 ثم 0 | 100."
 
 #: src/Admin/Cells.php:246
+#: src/Layouts.php:324
 #: src/Products.php:156
 #: src/Products.php:163
-#: src/Products.php:221
 msgid "Included"
 msgstr "يشمل"
 
@@ -86,8 +87,8 @@ msgid "One item per line."
 msgstr "بند في كل سطر."
 
 #: src/Admin/Cells.php:247
+#: src/Layouts.php:324
 #: src/Products.php:163
-#: src/Products.php:222
 msgid "Not included"
 msgstr "لا يشمل"
 
@@ -147,8 +148,8 @@ msgid "Comma separated. New names are created."
 msgstr "مفصولة بفواصل. الأسماء الجديدة تُنشأ."
 
 #: src/Admin/Cells.php:341
+#: src/Layouts.php:316
 #: src/Products.php:77
-#: src/Products.php:249
 msgid "Languages"
 msgstr "اللغات"
 
@@ -157,8 +158,8 @@ msgid "Comma separated, e.g. English, German."
 msgstr "مفصولة بفواصل، مثل English, German."
 
 #: src/Admin/Cells.php:342
+#: src/Layouts.php:316
 #: src/Products.php:78
-#: src/Products.php:249
 msgid "Suitable for"
 msgstr "مناسبة لـ"
 
@@ -442,6 +443,7 @@ msgid "Start again"
 msgstr "البدء من جديد"
 
 #: src/Admin/Menu.php:40
+#: src/Layouts.php:230
 msgid "Overview"
 msgstr "نظرة عامة"
 
@@ -890,6 +892,68 @@ msgstr "اتصل بنا"
 msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
 msgstr "أخبرنا متى تريد السفر وما الذي تود رؤيته. نرد خلال يوم عمل واحد."
 
+#: src/Layouts.php:48
+msgid "Classic"
+msgstr "كلاسيكي"
+
+#: src/Layouts.php:48
+msgid "Photo grid, then the details beside a booking card that stays in view. The most familiar booking page; best for longer tours."
+msgstr "شبكة صور، ثم التفاصيل بجانب بطاقة حجز تبقى ظاهرة. أكثر صفحات الحجز ألفة؛ الأفضل للبرامج الطويلة."
+
+#: src/Layouts.php:49
+msgid "Immersive"
+msgstr "غامر"
+
+#: src/Layouts.php:49
+msgid "A full-width photo with the title on it, then the story day by day. Best when you have strong photos."
+msgstr "صورة بعرض الصفحة عليها العنوان، ثم القصة يومًا بيوم. الأفضل عندما تكون لديك صور قوية."
+
+#: src/Layouts.php:50
+msgid "Compact"
+msgstr "مختصر"
+
+#: src/Layouts.php:50
+msgid "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones."
+msgstr "المعلومات الأساسية في مربعات، ونموذج الحجز مباشرة، والتفاصيل مطوية أسفلها. الأفضل للرحلات اليومية القصيرة والهواتف."
+
+#: src/Layouts.php:145
+#: src/Layouts.php:203
+#: src/Layouts.php:279
+msgid "From"
+msgstr "من"
+
+#. translators: %d: number of photos.
+#: src/Layouts.php:222
+#, php-format
+msgid "All %d photos"
+msgstr "كل الصور (%d)"
+
+#: src/Layouts.php:228
+msgid "On this page"
+msgstr "في هذه الصفحة"
+
+#: src/Layouts.php:331
+msgid "What’s included"
+msgstr "ما يشمله"
+
+#: src/Layouts.php:338
+msgid "Questions"
+msgstr "أسئلة"
+
+#: src/Layouts.php:345
+#: src/Products.php:190
+msgid "Photos"
+msgstr "الصور"
+
+#: src/Layouts.php:371
+#: src/Layouts.php:394
+msgid "Layout"
+msgstr "التصميم"
+
+#: src/Layouts.php:394
+msgid "How this page looks to visitors. Every layout shows the same information and uses your design (Theme Options); only the arrangement changes."
+msgstr "شكل هذه الصفحة للزوار. كل تصميم يعرض المعلومات نفسها ويستخدم تصميمك (خيارات القالب)؛ يتغير الترتيب فقط."
+
 #: src/Locations.php:39
 msgid "Destination"
 msgstr "وجهة"
@@ -1040,6 +1104,7 @@ msgstr "رسوم %s%%"
 
 #: src/Policies.php:152
 #: src/Policies.php:166
+#: src/Policies.php:233
 msgid "Non-refundable"
 msgstr "غير قابل للاسترداد"
 
@@ -1053,18 +1118,18 @@ msgstr "%1$s حتى %2$s"
 msgid "then no refund"
 msgstr "ثم بلا استرداد"
 
-#: src/Policies.php:191
+#: src/Policies.php:192
 msgid "All other travel dates"
 msgstr "باقي تواريخ السفر"
 
 #. translators: 1: from date, 2: to date.
-#: src/Policies.php:193
+#: src/Policies.php:194
 #, php-format
 msgid "Travel %1$s – %2$s"
 msgstr "السفر %1$s – %2$s"
 
 #. translators: %d: days.
-#: src/Policies.php:202
+#: src/Policies.php:203
 #, php-format
 msgid "%d day or more before arrival"
 msgid_plural "%d days or more before arrival"
@@ -1076,13 +1141,13 @@ msgstr[4] "%d يومًا أو أكثر قبل الوصول"
 msgstr[5] "%d يوم أو أكثر قبل الوصول"
 
 #. translators: 1: fewest days, 2: most days.
-#: src/Policies.php:204
+#: src/Policies.php:205
 #, php-format
 msgid "%1$d–%2$d days before arrival"
 msgstr "%1$d–%2$d يومًا قبل الوصول"
 
 #. translators: 1: fewest days, 2: most days.
-#: src/Policies.php:204
+#: src/Policies.php:205
 #, php-format
 msgid "%d day before arrival"
 msgid_plural "%d days before arrival"
@@ -1094,7 +1159,7 @@ msgstr[4] "%d يومًا قبل الوصول"
 msgstr[5] "%d يوم قبل الوصول"
 
 #. translators: %d: days.
-#: src/Policies.php:210
+#: src/Policies.php:211
 #, php-format
 msgid "Less than %d day before arrival"
 msgid_plural "Less than %d days before arrival"
@@ -1105,11 +1170,27 @@ msgstr[3] "أقل من %d أيام قبل الوصول"
 msgstr[4] "أقل من %d يومًا قبل الوصول"
 msgstr[5] "أقل من %d يوم قبل الوصول"
 
+#: src/Policies.php:236
+msgid "up to the day of arrival"
+msgstr "حتى يوم الوصول"
+
+#. translators: %d: days.
 #: src/Policies.php:238
+#, php-format
+msgid "up to %d day before arrival"
+msgid_plural "up to %d days before arrival"
+msgstr[0] "حتى %d يوم قبل الوصول"
+msgstr[1] "حتى يوم قبل الوصول"
+msgstr[2] "حتى يومين قبل الوصول"
+msgstr[3] "حتى %d أيام قبل الوصول"
+msgstr[4] "حتى %d يومًا قبل الوصول"
+msgstr[5] "حتى %d يوم قبل الوصول"
+
+#: src/Policies.php:264
 msgid "One row per tier: cancelling this many days or more before arrival costs this share of the price. Example: 30 days → 0% (free), 14 days → 50%, 0 days → 100%. Closer than every tier = no refund. Add travel dates to make a season tier: on those dates its tiers replace the all-year ones. No rows = non-refundable."
 msgstr "صف لكل شريحة: الإلغاء قبل الوصول بهذا العدد من الأيام أو أكثر يكلف هذه النسبة من السعر. مثال: 30 يومًا ← 0% (مجاني)، 14 يومًا ← 50%، 0 يوم ← 100%. أقرب من كل الشرائح = بلا استرداد. أضف تواريخ سفر لإنشاء شريحة موسمية: في تلك التواريخ تحل شرائحها محل شرائح العام كله. بلا صفوف = غير قابل للاسترداد."
 
-#: src/Policies.php:239
+#: src/Policies.php:265
 msgid "Add tier"
 msgstr "إضافة شريحة"
 
@@ -1149,11 +1230,6 @@ msgstr "أسئلة يطرحها المسافرون قبل الحجز. تظهر �
 msgid "Add question"
 msgstr "إضافة سؤال"
 
-#: src/Products.php:190
-#: src/Products.php:235
-msgid "Photos"
-msgstr "الصور"
-
 #: src/Products.php:201
 msgid "Gallery photos"
 msgstr "صور المعرض"
@@ -1177,10 +1253,6 @@ msgstr "معرض الصور"
 #: src/Products.php:203
 msgid "Shown on the page below the details. Drag to reorder inside the picker. The featured image (editor sidebar) stays the main photo."
 msgstr "تظهر في الصفحة أسفل التفاصيل. اسحب لإعادة الترتيب داخل أداة الاختيار. تبقى الصورة البارزة (الشريط الجانبي للمحرر) هي الصورة الرئيسية."
-
-#: src/Products.php:242
-msgid "Questions"
-msgstr "أسئلة"
 
 #: blocks/booking-widget/editor.js:8
 msgid "Tour packages"

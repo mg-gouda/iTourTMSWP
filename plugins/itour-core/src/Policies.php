@@ -172,9 +172,10 @@ final class Policies {
 	/**
 	 * The policy for a product page: one list per season, all-year last.
 	 *
-	 * @param array<int,array<string,mixed>> $rows Tiers.
+	 * @param array<int,array<string,mixed>> $rows    Tiers.
+	 * @param bool                           $heading Print the "Cancellation" heading (layouts print their own).
 	 */
-	public static function html( array $rows ): string {
+	public static function html( array $rows, bool $heading = true ): string {
 		if ( ! $rows ) {
 			return '';
 		}
@@ -183,7 +184,7 @@ final class Policies {
 			$groups[ $r['from'] . '|' . $r['to'] ][] = $r;
 		}
 		uksort( $groups, static fn( $a, $b ) => array( '|' === $a ? 1 : 0, $a ) <=> array( '|' === $b ? 1 : 0, $b ) ); // Seasons by date, all-year last.
-		$h = '<h2 class="itour-exc__title">' . esc_html__( 'Cancellation', 'itour-core' ) . '</h2><div class="itour-cancel">';
+		$h = ( $heading ? '<h2 class="itour-exc__title">' . esc_html__( 'Cancellation', 'itour-core' ) . '</h2>' : '' ) . '<div class="itour-cancel">';
 		foreach ( $groups as $range => $tiers ) {
 			list( $from, $to ) = explode( '|', $range );
 			usort( $tiers, static fn( $a, $b ) => (int) $b['days'] <=> (int) $a['days'] );
@@ -215,13 +216,38 @@ final class Policies {
 	}
 
 	/**
+	 * One line for a booking card, from the all-year tiers: "Free cancellation up to 30 days before arrival",
+	 * else the best fee ("50% fee up to 14 days before arrival"), else "Non-refundable".
+	 *
+	 * @param array<int,array<string,mixed>> $rows Tiers.
+	 */
+	public static function headline( array $rows ): string {
+		$year = array_values( array_filter( $rows, static fn( $r ) => '' === (string) $r['from'] && '' === (string) $r['to'] ) );
+		$use  = $year ? $year : $rows;
+		if ( ! $use ) {
+			return '';
+		}
+		usort( $use, static fn( $a, $b ) => array( (float) $a['fee'], - (int) $a['days'] ) <=> array( (float) $b['fee'], - (int) $b['days'] ) ); // Cheapest first, then the latest date.
+		$best = $use[0];
+		if ( (float) $best['fee'] >= 100 ) {
+			return __( 'Non-refundable', 'itour-core' );
+		}
+		$days = (int) $best['days'];
+		$when = 0 === $days ? __( 'up to the day of arrival', 'itour-core' )
+			/* translators: %d: days. */
+			: sprintf( _n( 'up to %d day before arrival', 'up to %d days before arrival', $days, 'itour-core' ), $days );
+		return ucfirst( self::fee_text( (float) $best['fee'] ) ) . ' ' . $when;
+	}
+
+	/**
 	 * A product's tiers.
 	 *
 	 * @param int $post Post id.
 	 * @return array<int,array<string,mixed>>
 	 */
 	public static function of( int $post ): array {
-		return (array) get_post_meta( $post, self::META, true );
+		$v = get_post_meta( $post, self::META, true );
+		return is_array( $v ) ? $v : array(); // Not "(array) ''", which is [ '' ].
 	}
 
 	/**

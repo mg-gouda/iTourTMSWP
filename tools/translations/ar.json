@@ -689,7 +689,28 @@
   "Comma separated, e.g. Families, Couples.": "مفصولة بفواصل، مثل Families, Couples.",
   "ID %d is not one of these products. Leave ID empty to create a new one.": "المعرف %d ليس من هذه المنتجات. اترك ID فارغًا لإنشاء منتج جديد.",
   "Title is required for a new product.": "العنوان مطلوب للمنتج الجديد.",
-  "Status must be publish or draft.": "الحالة يجب أن تكون publish أو draft."
+  "Status must be publish or draft.": "الحالة يجب أن تكون publish أو draft.",
+  "Classic": "كلاسيكي",
+  "Photo grid, then the details beside a booking card that stays in view. The most familiar booking page; best for longer tours.": "شبكة صور، ثم التفاصيل بجانب بطاقة حجز تبقى ظاهرة. أكثر صفحات الحجز ألفة؛ الأفضل للبرامج الطويلة.",
+  "Immersive": "غامر",
+  "A full-width photo with the title on it, then the story day by day. Best when you have strong photos.": "صورة بعرض الصفحة عليها العنوان، ثم القصة يومًا بيوم. الأفضل عندما تكون لديك صور قوية.",
+  "Compact": "مختصر",
+  "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones.": "المعلومات الأساسية في مربعات، ونموذج الحجز مباشرة، والتفاصيل مطوية أسفلها. الأفضل للرحلات اليومية القصيرة والهواتف.",
+  "From": "من",
+  "All %d photos": "كل الصور (%d)",
+  "On this page": "في هذه الصفحة",
+  "What’s included": "ما يشمله",
+  "Layout": "التصميم",
+  "How this page looks to visitors. Every layout shows the same information and uses your design (Theme Options); only the arrangement changes.": "شكل هذه الصفحة للزوار. كل تصميم يعرض المعلومات نفسها ويستخدم تصميمك (خيارات القالب)؛ يتغير الترتيب فقط.",
+  "up to the day of arrival": "حتى يوم الوصول",
+  "up to %d day before arrival": [
+   "حتى %d يوم قبل الوصول",
+   "حتى يوم قبل الوصول",
+   "حتى يومين قبل الوصول",
+   "حتى %d أيام قبل الوصول",
+   "حتى %d يومًا قبل الوصول",
+   "حتى %d يوم قبل الوصول"
+  ]
  },
  "itour-forms": {
   "Thank you! We’ll reply within one working day.": "شكرًا لك! سنرد عليك خلال يوم عمل واحد.",
@@ -950,7 +971,13 @@
   "Main destination “%s” isn’t in Location Tree.": "الوجهة الرئيسية «%s» غير موجودة في شجرة المواقع.",
   "Start days: use day names like Mon, Sat, or any.": "أيام البدء: استخدم أسماء أيام مثل Mon, Sat أو any.",
   "%1$s must be %2$s.": "%1$s يجب أن يكون %2$s.",
-  "%s must be a whole number.": "%s يجب أن يكون عددًا صحيحًا."
+  "%s must be a whole number.": "%s يجب أن يكون عددًا صحيحًا.",
+  "Plan this tour": "خطط لهذا البرنامج",
+  "Tell us your dates and group: we check availability and send a quote within one working day.": "أخبرنا بتواريخك ومجموعتك: نتحقق من التوفر ونرسل عرض سعر خلال يوم عمل واحد.",
+  "Send us your dates and group size and we will confirm availability.": "أرسل لنا تواريخك وحجم مجموعتك وسنؤكد التوفر.",
+  "Ask for this tour": "اطلب هذا البرنامج",
+  "On request": "عند الطلب",
+  "Cancellation": "الإلغاء"
  },
  "itour-excursions": {
   "Excursions": "الرحلات اليومية",
@@ -1159,7 +1186,9 @@
   "Runs on: use day names like Mon, Wed, Fri, or any.": "أيام التشغيل: استخدم أسماء أيام مثل Mon, Wed, Fri أو any.",
   "Start times: “%s” isn’t a time like 04:00.": "أوقات البدء: «%s» ليس وقتًا مثل 04:00.",
   "Pick-up: use hotel, typed and/or meeting.": "الاستقبال: استخدم hotel و/أو typed و/أو meeting.",
-  "%s must be a whole number.": "%s يجب أن يكون عددًا صحيحًا."
+  "%s must be a whole number.": "%s يجب أن يكون عددًا صحيحًا.",
+  "From your hotel": "من فندقك",
+  "per adult": "للبالغ"
  },
  "itour-transfers": {
   "Transfers": "التنقلات",
@@ -1323,7 +1352,20 @@
   "block keyword\u0004transfer": "تنقل",
   "block keyword\u0004airport": "مطار",
   "block keyword\u0004vehicle": "مركبة",
-  "block keyword\u0004prices": "أسعار"
+  "block keyword\u0004prices": "أسعار",
+  "List": "قائمة",
+  "One row per vehicle with capacity, one-way and return prices side by side. Quickest to compare.": "صف لكل مركبة مع السعة وسعري الاتجاه الواحد والعودة جنبًا إلى جنب. الأسرع للمقارنة.",
+  "Cards": "بطاقات",
+  "A card per vehicle in a grid. Visual and easy to tap on phones.": "بطاقة لكل مركبة في شبكة. مرئية وسهلة اللمس على الهواتف.",
+  "Trip summary": "ملخص الرحلة",
+  "Route, date and travellers stay pinned beside the vehicles. Reassuring for airport pick-ups.": "المسار والتاريخ والمسافرون يبقون مثبتين بجانب المركبات. مطمئن للاستقبال من المطار.",
+  "Layout": "التصميم",
+  "Best fit for your group": "الأنسب لمجموعتك",
+  "Your transfer": "تنقلك",
+  "Date": "التاريخ",
+  "Free waiting: %1$d minutes at airports, %2$d minutes at hotels.": "الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق.",
+  "Change search": "تغيير البحث",
+  "Price per vehicle, not per person.": "السعر لكل مركبة لا لكل شخص."
  },
  "itour-shield": {
   "Speed and security in one plugin: page cache and front-end tweaks, hidden login and masked WordPress paths, firewall, login protection with two-factor codes, malware and file scan, hardening and an activity log. Works on any WordPress site.": "السرعة والحماية في إضافة واحدة: تخزين الصفحات مؤقتًا وتحسينات الواجهة، وإخفاء صفحة الدخول ومسارات ووردبريس، وجدار حماية، وحماية الدخول برموز التحقق بخطوتين، وفحص الملفات والبرمجيات الخبيثة، وتقوية الإعدادات، وسجل النشاط. تعمل على أي موقع ووردبريس.",

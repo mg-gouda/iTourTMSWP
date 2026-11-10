@@ -45,10 +45,6 @@ msgstr[3] "%d مقاعد متبقية"
 msgstr[4] "%d مقعدًا متبقيًا"
 msgstr[5] "%d مقعد متبقٍ"
 
-#: src/Booking.php:141
-msgid "Book this trip"
-msgstr "احجز هذه الرحلة"
-
 #: src/Booking.php:143
 msgid "Online booking needs WooCommerce."
 msgstr "الحجز عبر الإنترنت يحتاج إلى WooCommerce."
@@ -111,7 +107,7 @@ msgstr "سأقابلكم عند %s"
 #: src/Booking.php:429
 #: src/Booking.php:457
 #: src/Editor.php:258
-#: src/Page.php:53
+#: src/Page.php:46
 #: src/Sheet.php:57
 msgid "Pick-up"
 msgstr "الاستقبال"
@@ -145,7 +141,7 @@ msgstr "%1$s (+%2$s %3$s)"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:122
-#: src/Page.php:89
+#: src/Page.php:126
 msgid "per booking"
 msgstr "للحجز"
 
@@ -153,7 +149,7 @@ msgstr "للحجز"
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:121
-#: src/Page.php:89
+#: src/Page.php:126
 msgid "per person"
 msgstr "للفرد"
 
@@ -234,6 +230,7 @@ msgid "We have no price for this group size and type. Contact us for a quote."
 msgstr "ليس لدينا سعر لهذا الحجم والنوع من المجموعات. تواصل معنا لعرض سعر."
 
 #: src/Booking.php:326
+#: src/Page.php:63
 msgid "Cancellation"
 msgstr "الإلغاء"
 
@@ -290,7 +287,6 @@ msgid "Seats"
 msgstr "المقاعد"
 
 #: src/Editor.php:30
-#: src/Page.php:55
 msgid "Trip details"
 msgstr "تفاصيل الرحلة"
 
@@ -316,19 +312,19 @@ msgstr "إلى عدد مسافرين"
 
 #: src/Editor.php:84
 #: src/Editor.php:134
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Adult"
 msgstr "بالغ"
 
 #: src/Editor.php:85
 #: src/Editor.php:135
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Child"
 msgstr "طفل"
 
 #: src/Editor.php:86
 #: src/Editor.php:136
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Infant"
 msgstr "رضيع"
 
@@ -481,6 +477,7 @@ msgstr "يكتب العميل اسم الفندق"
 
 #: src/Editor.php:272
 #: src/Editor.php:276
+#: src/Page.php:48
 #: src/Sheet.php:59
 msgid "Meeting point"
 msgstr "نقطة الالتقاء"
@@ -661,61 +658,62 @@ msgid "Starts"
 msgstr "يبدأ"
 
 #: src/Page.php:46
-msgid "Pick-up from your hotel"
-msgstr "الاستقبال من فندقك"
+msgid "From your hotel"
+msgstr "من فندقك"
 
-#. translators: %s: meeting point.
-#: src/Page.php:50
-#, php-format
-msgid "or meet us at %s"
-msgstr "أو قابلنا عند %s"
+#: src/Page.php:55
+msgid "Prices per person"
+msgstr "الأسعار للفرد"
+
+#: src/Page.php:59
+msgid "Extras"
+msgstr "الإضافات"
+
+#: src/Page.php:72
+msgid "per adult"
+msgstr "للبالغ"
+
+#: src/Page.php:77
+msgid "Book this trip"
+msgstr "احجز هذه الرحلة"
 
 #. translators: 1: start date, 2: end date.
-#: src/Page.php:66
+#: src/Page.php:95
 #, php-format
 msgid "%1$s – %2$s"
 msgstr "%1$s – %2$s"
 
-#: src/Page.php:71
-msgid "Prices per person"
-msgstr "الأسعار للفرد"
-
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Group size"
 msgstr "حجم المجموعة"
 
+#: src/Page.php:106
+msgid "Free"
+msgstr "مجانًا"
+
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:79
+#: src/Page.php:108
 #, php-format
 msgid "%s travellers"
 msgstr "%s مسافرين"
 
-#. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:79
-msgid "Free"
-msgstr "مجانًا"
-
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Page.php:89
+#: src/Page.php:126
 #, php-format
 msgid "%1$s: %2$s %3$s"
 msgstr "%1$s: %2$s %3$s"
 
 #. translators: 1: supplement name, 2: date(s), 3: adult price.
-#: src/Page.php:94
+#: src/Page.php:131
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
 
 #. translators: 1: zone, 2: price.
-#: src/Page.php:100
+#: src/Page.php:137
 #, php-format
 msgid "Pick-up from %1$s: %2$s per person"
 msgstr "الاستقبال من %1$s: %2$s للفرد"
-
-#: src/Page.php:104
-msgid "Extras"
-msgstr "الإضافات"
 
 #: src/Sheet.php:34
 msgid "One excursion per row. Prices, pick-up zones and the other \"one per line\" cells take one entry per line (Alt+Enter in Excel), parts separated by |. The Instructions sheet explains every column. Photos are added on each excursion afterwards."

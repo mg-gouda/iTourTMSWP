@@ -1,35 +1,35 @@
 <?php
 /**
- * The excursion page: after the owner's text, the key facts and the price table. Booking comes next.
+ * The excursion page as parts for the chosen layout (core Layouts): facts, prices, extras, cancellation,
+ * the shared info and the booking form.
  *
  * @package ITour\Excursions
  */
 
 namespace ITour\Excursions;
 
+use ITour\Core\Layouts;
 use ITour\Core\Locations;
+use ITour\Core\Policies;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Content filter.
+ * Parts builder.
  */
 final class Page {
 
 	/**
-	 * Append facts + prices to the excursion's own content (main query only).
+	 * Parts of one excursion page.
 	 *
-	 * @param string $content Post content.
+	 * @param int $id Post id.
+	 * @return array<string,mixed>
 	 */
-	public static function append( $content ): string {
-		if ( ! is_singular( Excursion::TYPE ) || ! in_the_loop() || ! is_main_query() ) {
-			return (string) $content;
-		}
-		\ITour\Core\Products::enqueue_style();
-		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array( 'itour-products' ), '0.3.1' );
-		$id  = (int) get_the_ID();
-		$c   = Excursion::config( $id );
-		$fmt = static fn( $v ): string => itour()->currencies()->format( (float) $v );
+	public static function parts( int $id ): array {
+		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array( 'itour-products' ), '0.4.0' );
+		$c    = Excursion::config( $id );
+		$fmt  = static fn( $v ): string => itour()->currencies()->format( (float) $v );
+		$info = Layouts::info_parts( $id );
 
 		// Facts.
 		$days  = array_map( 'intval', (array) $c['days'] );
@@ -37,28 +37,57 @@ final class Page {
 		if ( '' !== $c['duration'] ) {
 			$facts[ __( 'Duration', 'itour-excursions' ) ] = $c['duration'];
 		}
-		$facts[ __( 'Runs', 'itour-excursions' ) ] = 7 === count( $days ) ? __( 'Every day', 'itour-excursions' ) : implode( ', ', array_map( static fn( $d ) => wp_date( 'l', strtotime( "monday this week +{$d} days -1 day" ) ), $days ) );
+		$facts[ __( 'Runs', 'itour-excursions' ) ] = 7 === count( $days ) ? __( 'Every day', 'itour-excursions' ) : implode( ', ', array_map( static fn( $d ) => wp_date( 'D', strtotime( "monday this week +{$d} days -1 day" ) ), $days ) );
 		if ( $c['times'] ) {
 			$facts[ __( 'Starts', 'itour-excursions' ) ] = implode( ', ', array_map( static fn( $t ) => wp_date( get_option( 'time_format' ), strtotime( 'today ' . $t ) ), (array) $c['times'] ) );
 		}
-		$pick = array();
-		if ( in_array( 'hotel', (array) $c['pickup_modes'], true ) || in_array( 'typed', (array) $c['pickup_modes'], true ) ) {
-			$pick[] = __( 'Pick-up from your hotel', 'itour-excursions' );
+		$modes = (array) $c['pickup_modes'];
+		if ( array_intersect( array( 'hotel', 'typed' ), $modes ) ) {
+			$facts[ __( 'Pick-up', 'itour-excursions' ) ] = __( 'From your hotel', 'itour-excursions' );
+		} elseif ( in_array( 'meeting', $modes, true ) && '' !== $c['meeting_point'] ) {
+			$facts[ __( 'Meeting point', 'itour-excursions' ) ] = $c['meeting_point'];
 		}
-		if ( in_array( 'meeting', (array) $c['pickup_modes'], true ) && '' !== $c['meeting_point'] ) {
-			/* translators: %s: meeting point. */
-			$pick[] = sprintf( __( 'or meet us at %s', 'itour-excursions' ), $c['meeting_point'] );
-		}
-		if ( $pick ) {
-			$facts[ __( 'Pick-up', 'itour-excursions' ) ] = implode( ' ', $pick );
-		}
-		$h = '<section class="itour-exc" aria-label="' . esc_attr__( 'Trip details', 'itour-excursions' ) . '"><dl class="itour-exc__facts">';
-		foreach ( $facts as $k => $v ) {
-			$h .= '<div><dt>' . esc_html( $k ) . '</dt><dd>' . esc_html( $v ) . '</dd></div>';
-		}
-		$h .= '</dl>';
+		$facts += $info['facts'];
 
-		// Prices: one table per type and season.
+		$sections = array();
+		$prices   = self::prices( $id, $fmt );
+		if ( '' !== $prices ) {
+			$sections['prices'] = array( __( 'Prices per person', 'itour-excursions' ), $prices );
+		}
+		$extras = self::extras( $id, $c, $fmt );
+		if ( '' !== $extras ) {
+			$sections['extras'] = array( __( 'Extras', 'itour-excursions' ), $extras );
+		}
+		$tiers = Policies::of( $id );
+		if ( $tiers ) {
+			$sections['cancellation'] = array( __( 'Cancellation', 'itour-excursions' ), Policies::html( $tiers, false ) );
+		}
+		$from = Excursion::from_price( $id );
+		$form = Booking::form( $id );
+		return array(
+			'images'   => $info['images'],
+			'facts'    => $facts,
+			'price'    => $from ? array(
+				'amount' => $fmt( $from ),
+				'note'   => __( 'per adult', 'itour-excursions' ),
+			) : null,
+			'content'  => Layouts::content( $id ),
+			'sections' => $sections + $info['sections'],
+			'book'     => '' !== $form ? array(
+				'title' => __( 'Book this trip', 'itour-excursions' ),
+				'html'  => $form,
+			) : null,
+			'notice'   => Policies::headline( $tiers ),
+		);
+	}
+
+	/**
+	 * One price table per type and season.
+	 *
+	 * @param int      $id  Post id.
+	 * @param callable $fmt Money formatter.
+	 */
+	private static function prices( int $id, callable $fmt ): string {
 		$groups = array();
 		foreach ( Excursion::rates( $id ) as $r ) {
 			$season = '' !== (string) $r['season_from']
@@ -67,22 +96,30 @@ final class Page {
 				: '';
 			$groups[ Excursion::variants()[ $r['variant'] ] . ( '' !== $season ? ' · ' . $season : '' ) ][] = $r;
 		}
-		if ( $groups ) {
-			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Prices per person', 'itour-excursions' ) . '</h2>';
-			foreach ( $groups as $label => $rows ) {
-				$h .= '<table class="itour-exc__prices"><caption>' . esc_html( $label ) . '</caption><thead><tr><th scope="col">' . esc_html__( 'Group size', 'itour-excursions' ) . '</th><th scope="col">' . esc_html__( 'Adult', 'itour-excursions' ) . '</th><th scope="col">' . esc_html__( 'Child', 'itour-excursions' ) . ' <small>2–11</small></th><th scope="col">' . esc_html__( 'Infant', 'itour-excursions' ) . ' <small>0–1</small></th></tr></thead><tbody>';
-				foreach ( $rows as $r ) {
-					$min  = (int) $r['pax_min'];
-					$max  = (int) $r['pax_max'];
-					$size = $max ? ( $min === $max ? (string) $min : $min . '–' . $max ) : $min . '+';
-					/* translators: %s: group size, e.g. "2–3" or "11+". */
-					$h .= '<tr><th scope="row">' . esc_html( sprintf( __( '%s travellers', 'itour-excursions' ), $size ) ) . '</th><td>' . esc_html( $fmt( $r['adult'] ) ) . '</td><td>' . esc_html( (float) $r['child'] ? $fmt( $r['child'] ) : __( 'Free', 'itour-excursions' ) ) . '</td><td>' . esc_html( (float) $r['infant'] ? $fmt( $r['infant'] ) : __( 'Free', 'itour-excursions' ) ) . '</td></tr>';
-				}
-				$h .= '</tbody></table>';
+		$h = '';
+		foreach ( $groups as $label => $rows ) {
+			$h .= '<table class="itour-exc__prices"><caption>' . esc_html( $label ) . '</caption><thead><tr><th scope="col">' . esc_html__( 'Group size', 'itour-excursions' ) . '</th><th scope="col">' . esc_html__( 'Adult', 'itour-excursions' ) . '</th><th scope="col">' . esc_html__( 'Child', 'itour-excursions' ) . ' <small>2–11</small></th><th scope="col">' . esc_html__( 'Infant', 'itour-excursions' ) . ' <small>0–1</small></th></tr></thead><tbody>';
+			foreach ( $rows as $r ) {
+				$min  = (int) $r['pax_min'];
+				$max  = (int) $r['pax_max'];
+				$size = $max ? ( $min === $max ? (string) $min : $min . '–' . $max ) : $min . '+';
+				$free = static fn( $v ) => (float) $v ? $fmt( $v ) : __( 'Free', 'itour-excursions' );
+				/* translators: %s: group size, e.g. "2–3" or "11+". */
+				$h .= '<tr><th scope="row">' . esc_html( sprintf( __( '%s travellers', 'itour-excursions' ), $size ) ) . '</th><td>' . esc_html( $fmt( $r['adult'] ) ) . '</td><td>' . esc_html( $free( $r['child'] ) ) . '</td><td>' . esc_html( $free( $r['infant'] ) ) . '</td></tr>';
 			}
+			$h .= '</tbody></table>';
 		}
+		return $h;
+	}
 
-		// Extras.
+	/**
+	 * Add-ons, supplements and zone pick-up charges.
+	 *
+	 * @param int                 $id  Post id.
+	 * @param array<string,mixed> $c   Settings.
+	 * @param callable            $fmt Money formatter.
+	 */
+	private static function extras( int $id, array $c, callable $fmt ): string {
 		$extra = array();
 		foreach ( (array) $c['addons'] as $a ) {
 			/* translators: 1: add-on name, 2: price, 3: "per person" or "per booking". */
@@ -100,9 +137,6 @@ final class Page {
 				$extra[] = sprintf( __( 'Pick-up from %1$s: %2$s per person', 'itour-excursions' ), $zones[ $p['zone_id'] ], $fmt( $p['extra'] ) );
 			}
 		}
-		if ( $extra ) {
-			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Extras', 'itour-excursions' ) . '</h2><ul class="itour-exc__extras"><li>' . implode( '</li><li>', array_map( 'esc_html', $extra ) ) . '</li></ul>';
-		}
-		return $content . $h . \ITour\Core\Policies::html( \ITour\Core\Policies::of( $id ) ) . \ITour\Core\Products::render_info( $id ) . Booking::form( $id ) . '</section>';
+		return $extra ? '<ul class="itour-exc__extras"><li>' . implode( '</li><li>', array_map( 'esc_html', $extra ) ) . '</li></ul>' : '';
 	}
 }

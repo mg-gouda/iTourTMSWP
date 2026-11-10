@@ -111,7 +111,7 @@ final class Products {
 				'faq'      => array(),
 				'gallery'  => array(),
 			),
-			(array) get_post_meta( $post, self::INFO, true )
+			array_filter( (array) get_post_meta( $post, self::INFO, true ), 'is_string', ARRAY_FILTER_USE_KEY ) // Drops the [ 0 => '' ] an empty meta casts to.
 		);
 	}
 
@@ -207,59 +207,6 @@ final class Products {
 				},
 			),
 		);
-	}
-
-	/**
-	 * The info on the product page: included / not included, gallery, FAQ.
-	 *
-	 * @param int $post Post id.
-	 */
-	public static function render_info( int $post ): string {
-		$i     = self::info( $post );
-		$h     = '';
-		$lists = array(
-			'includes' => __( 'Included', 'itour-core' ),
-			'excludes' => __( 'Not included', 'itour-core' ),
-		);
-		$cols  = '';
-		foreach ( $lists as $k => $title ) {
-			$items = array_filter( array_map( 'trim', explode( "\n", $i[ $k ] ) ) );
-			if ( $items ) {
-				$cols .= '<div class="itour-info__list itour-info__list--' . esc_attr( $k ) . '"><h3>' . esc_html( $title ) . '</h3><ul><li>' . implode( '</li><li>', array_map( 'esc_html', $items ) ) . '</li></ul></div>';
-			}
-		}
-		if ( '' !== $cols ) {
-			$h .= '<div class="itour-info__lists">' . $cols . '</div>';
-		}
-		if ( $i['gallery'] ) {
-			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Photos', 'itour-core' ) . '</h2><ul class="itour-info__gallery">';
-			foreach ( $i['gallery'] as $id ) {
-				$h .= '<li><a href="' . esc_url( (string) wp_get_attachment_image_url( (int) $id, 'full' ) ) . '">' . wp_get_attachment_image( (int) $id, 'medium', false, array( 'loading' => 'lazy' ) ) . '</a></li>';
-			}
-			$h .= '</ul>';
-		}
-		if ( $i['faq'] ) {
-			$h .= '<h2 class="itour-exc__title">' . esc_html__( 'Questions', 'itour-core' ) . '</h2><div class="itour-info__faq">';
-			foreach ( $i['faq'] as $f ) {
-				$h .= '<details><summary>' . esc_html( $f['q'] ) . '</summary><p>' . nl2br( esc_html( $f['a'] ) ) . '</p></details>';
-			}
-			$h .= '</div>';
-		}
-		$terms = array();
-		foreach ( array( 'itour_language' => __( 'Languages', 'itour-core' ), 'itour_suitability' => __( 'Suitable for', 'itour-core' ) ) as $tax => $label ) { // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing
-			$names = wp_get_post_terms( $post, $tax, array( 'fields' => 'names' ) );
-			if ( ! is_wp_error( $names ) && $names ) {
-				$terms[ $label ] = implode( ', ', $names );
-			}
-		}
-		if ( $terms ) {
-			$t = '<dl class="itour-info__terms">';
-			foreach ( $terms as $k => $v ) {
-				$t .= '<div><dt>' . esc_html( $k ) . '</dt><dd>' . esc_html( $v ) . '</dd></div>';
-			}
-			$h = $t . '</dl>' . $h;
-		}
-		return '' === $h ? '' : '<div class="itour-info">' . $h . '</div>';
 	}
 
 	/**

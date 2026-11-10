@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:58:37+00:00\n"
+"POT-Creation-Date: 2026-11-10T19:15:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-transfers\n"
@@ -50,35 +50,84 @@ msgid "We don’t have a fixed price for this route and group size yet. Contact 
 msgstr ""
 
 #. translators: 1: from place, 2: to place, 3: number of passengers.
-#: blocks/transfer-results/render.php:46
+#: blocks/transfer-results/render.php:56
 #, php-format
 msgid "%1$s → %2$s, %3$d passenger"
 msgid_plural "%1$s → %2$s, %3$d passengers"
 msgstr[0] ""
 msgstr[1] ""
 
+#: blocks/transfer-results/render.php:59
+#: src/Module.php:213
+#: src/Module.php:462
+msgid "From"
+msgstr ""
+
+#: blocks/transfer-results/render.php:60
+#: src/Module.php:214
+#: src/Module.php:470
+msgid "To"
+msgstr ""
+
+#: blocks/transfer-results/render.php:61
+msgid "Date"
+msgstr ""
+
+#: blocks/transfer-results/render.php:62
+#: src/Booking.php:262
+#: src/Module.php:190
+#: src/Module.php:220
+#: src/Module.php:250
+#: src/Module.php:484
+msgid "Passengers"
+msgstr ""
+
+#: blocks/transfer-results/render.php:64
+msgid "Your transfer"
+msgstr ""
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:69
+#, php-format
+msgid "Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
+msgstr ""
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:69
+msgid "Change search"
+msgstr ""
+
+#: blocks/transfer-results/render.php:78
+msgid "Best fit for your group"
+msgstr ""
+
 #. translators: 1: passengers, 2: bags.
-#: blocks/transfer-results/render.php:54
+#: blocks/transfer-results/render.php:80
 #, php-format
 msgid "Up to %1$d passengers · %2$d bags"
 msgstr ""
 
-#: blocks/transfer-results/render.php:56
+#: blocks/transfer-results/render.php:82
 #: src/Booking.php:83
 msgid "One way"
 msgstr ""
 
-#: blocks/transfer-results/render.php:57
+#: blocks/transfer-results/render.php:83
 #: src/Booking.php:84
 msgid "Return"
 msgstr ""
 
-#: blocks/transfer-results/render.php:59
+#: blocks/transfer-results/render.php:85
 msgid "Book"
 msgstr ""
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: blocks/transfer-results/render.php:68
+#: blocks/transfer-results/render.php:94
+msgid "Price per vehicle, not per person."
+msgstr ""
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:94
 #, php-format
 msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr ""
@@ -230,14 +279,6 @@ msgstr ""
 msgid "Vehicle"
 msgstr ""
 
-#: src/Booking.php:262
-#: src/Module.php:190
-#: src/Module.php:220
-#: src/Module.php:250
-#: src/Module.php:484
-msgid "Passengers"
-msgstr ""
-
 #: src/Booking.php:263
 #: src/Module.php:187
 #: src/Module.php:215
@@ -265,7 +306,7 @@ msgid "Notes"
 msgstr ""
 
 #: src/Booking.php:281
-#: src/Settings.php:143
+#: src/Settings.php:169
 msgid "Cancellation"
 msgstr ""
 
@@ -323,16 +364,6 @@ msgstr ""
 
 #: src/Module.php:208
 msgid "Open the order (customer, payment, status)"
-msgstr ""
-
-#: src/Module.php:213
-#: src/Module.php:462
-msgid "From"
-msgstr ""
-
-#: src/Module.php:214
-#: src/Module.php:470
-msgid "To"
 msgstr ""
 
 #: src/Module.php:228
@@ -458,97 +489,125 @@ msgstr ""
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr ""
 
-#: src/Settings.php:80
+#: src/Settings.php:72
+msgid "List"
+msgstr ""
+
+#: src/Settings.php:72
+msgid "One row per vehicle with capacity, one-way and return prices side by side. Quickest to compare."
+msgstr ""
+
+#: src/Settings.php:73
+msgid "Cards"
+msgstr ""
+
+#: src/Settings.php:73
+msgid "A card per vehicle in a grid. Visual and easy to tap on phones."
+msgstr ""
+
+#: src/Settings.php:74
+msgid "Trip summary"
+msgstr ""
+
+#: src/Settings.php:74
+msgid "Route, date and travellers stay pinned beside the vehicles. Reassuring for airport pick-ups."
+msgstr ""
+
+#: src/Settings.php:106
 msgid "Transfer rules"
 msgstr ""
 
-#: src/Settings.php:84
+#: src/Settings.php:110
 msgid "Booking rules"
 msgstr ""
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "Book at least"
 msgstr ""
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "hours before pick-up"
 msgstr ""
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "Closer bookings are refused with a “please call us” message."
 msgstr ""
 
-#: src/Settings.php:102
+#: src/Settings.php:128
 msgid "Flight number for airport pick-ups"
 msgstr ""
 
-#: src/Settings.php:107
+#: src/Settings.php:133
 msgid "Required"
 msgstr ""
 
-#: src/Settings.php:108
+#: src/Settings.php:134
 msgid "Optional"
 msgstr ""
 
-#: src/Settings.php:113
+#: src/Settings.php:139
 msgid "Lets the driver follow delays."
 msgstr ""
 
-#: src/Settings.php:115
+#: src/Settings.php:141
 msgid "Free waiting at airports"
 msgstr ""
 
-#: src/Settings.php:115
-#: src/Settings.php:116
+#: src/Settings.php:141
+#: src/Settings.php:142
 msgid "minutes"
 msgstr ""
 
-#: src/Settings.php:115
+#: src/Settings.php:141
 msgid "Shown to the customer."
 msgstr ""
 
-#: src/Settings.php:116
+#: src/Settings.php:142
 msgid "Free waiting at hotels"
 msgstr ""
 
-#: src/Settings.php:117
+#: src/Settings.php:143
 msgid "Child seat"
 msgstr ""
 
-#: src/Settings.php:117
+#: src/Settings.php:143
 msgid "Per seat, per trip. 0 = free."
 msgstr ""
 
-#: src/Settings.php:118
+#: src/Settings.php:144
 msgid "Extra bag"
 msgstr ""
 
-#: src/Settings.php:118
+#: src/Settings.php:144
 msgid "Per bag above the vehicle’s limit, per trip."
 msgstr ""
 
-#: src/Settings.php:119
+#: src/Settings.php:145
 msgid "Return trip discount"
 msgstr ""
 
-#: src/Settings.php:119
+#: src/Settings.php:145
 msgid "Taken off the return leg when both ways are booked together."
 msgstr ""
 
-#: src/Settings.php:120
+#: src/Settings.php:146
 msgid "Deposit"
 msgstr ""
 
-#: src/Settings.php:120
+#: src/Settings.php:146
 msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day. Payment methods are set in WooCommerce → Settings → Payments."
 msgstr ""
 
-#: src/Settings.php:146
+#: src/Settings.php:172
 msgid "One row per tier: cancelling this many days or more before the pick-up costs this share of the price. \"All vehicles\" rows apply to every vehicle without rows of its own. Add travel dates for a season tier. No rows = non-refundable."
 msgstr ""
 
-#: src/Settings.php:147
+#: src/Settings.php:173
 msgid "Add tier"
+msgstr ""
+
+#: src/Settings.php:181
+msgid "Layout"
 msgstr ""
 
 #: src/Sheet.php:33

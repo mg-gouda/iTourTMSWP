@@ -49,7 +49,7 @@ final class Tour {
 				'extras'      => array(),   // [ name, price, per ].
 				'supplements' => array(),   // [ name, from, to, adult, child, infant ].
 			),
-			(array) get_post_meta( $post, self::META, true )
+			array_filter( (array) get_post_meta( $post, self::META, true ), 'is_string', ARRAY_FILTER_USE_KEY ) // Drops the [ 0 => '' ] an empty meta casts to.
 		);
 	}
 

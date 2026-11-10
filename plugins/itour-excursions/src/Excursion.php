@@ -49,7 +49,7 @@ final class Excursion {
 				'addons'        => array(),
 				'supplements'   => array(),
 			),
-			(array) get_post_meta( $post, self::META, true )
+			array_filter( (array) get_post_meta( $post, self::META, true ), 'is_string', ARRAY_FILTER_USE_KEY ) // Drops the [ 0 => '' ] an empty meta casts to.
 		);
 	}
 

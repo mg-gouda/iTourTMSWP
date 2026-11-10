@@ -138,7 +138,7 @@ final class Booking {
 		if ( ! $variants ) {
 			return '';
 		}
-		$h = '<h2 class="itour-exc__title" id="book">' . esc_html__( 'Book this trip', 'itour-excursions' ) . '</h2>';
+		$h = ''; // The layout prints the heading and the #book anchor.
 		if ( ! Checkout::available() ) {
 			return current_user_can( 'activate_plugins' ) ? $h . '<p class="itour-exc__note">' . esc_html__( 'Online booking needs WooCommerce.', 'itour-excursions' ) . '</p>' : '';
 		}

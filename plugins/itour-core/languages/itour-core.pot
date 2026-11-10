@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:56:49+00:00\n"
+"POT-Creation-Date: 2026-11-10T19:15:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -70,8 +70,9 @@ msgstr ""
 
 #: src/Admin/Cells.php:245
 #: src/Admin/Cells.php:292
-#: src/Policies.php:186
-#: src/Policies.php:235
+#: src/Layouts.php:289
+#: src/Policies.php:187
+#: src/Policies.php:261
 msgid "Cancellation"
 msgstr ""
 
@@ -80,9 +81,9 @@ msgid "One tier per line: Days before arrival | Fee % | Travel from | Travel to 
 msgstr ""
 
 #: src/Admin/Cells.php:246
+#: src/Layouts.php:324
 #: src/Products.php:156
 #: src/Products.php:163
-#: src/Products.php:221
 msgid "Included"
 msgstr ""
 
@@ -92,8 +93,8 @@ msgid "One item per line."
 msgstr ""
 
 #: src/Admin/Cells.php:247
+#: src/Layouts.php:324
 #: src/Products.php:163
-#: src/Products.php:222
 msgid "Not included"
 msgstr ""
 
@@ -153,8 +154,8 @@ msgid "Comma separated. New names are created."
 msgstr ""
 
 #: src/Admin/Cells.php:341
+#: src/Layouts.php:316
 #: src/Products.php:77
-#: src/Products.php:249
 msgid "Languages"
 msgstr ""
 
@@ -163,8 +164,8 @@ msgid "Comma separated, e.g. English, German."
 msgstr ""
 
 #: src/Admin/Cells.php:342
+#: src/Layouts.php:316
 #: src/Products.php:78
-#: src/Products.php:249
 msgid "Suitable for"
 msgstr ""
 
@@ -444,6 +445,7 @@ msgid "Start again"
 msgstr ""
 
 #: src/Admin/Menu.php:40
+#: src/Layouts.php:230
 msgid "Overview"
 msgstr ""
 
@@ -892,6 +894,68 @@ msgstr ""
 msgid "Tell us when you want to travel and what you would like to see. We reply within one working day."
 msgstr ""
 
+#: src/Layouts.php:48
+msgid "Classic"
+msgstr ""
+
+#: src/Layouts.php:48
+msgid "Photo grid, then the details beside a booking card that stays in view. The most familiar booking page; best for longer tours."
+msgstr ""
+
+#: src/Layouts.php:49
+msgid "Immersive"
+msgstr ""
+
+#: src/Layouts.php:49
+msgid "A full-width photo with the title on it, then the story day by day. Best when you have strong photos."
+msgstr ""
+
+#: src/Layouts.php:50
+msgid "Compact"
+msgstr ""
+
+#: src/Layouts.php:50
+msgid "Key facts as tiles, the booking form straight away, details folded below. Best for short day trips and phones."
+msgstr ""
+
+#: src/Layouts.php:145
+#: src/Layouts.php:203
+#: src/Layouts.php:279
+msgid "From"
+msgstr ""
+
+#. translators: %d: number of photos.
+#: src/Layouts.php:222
+#, php-format
+msgid "All %d photos"
+msgstr ""
+
+#: src/Layouts.php:228
+msgid "On this page"
+msgstr ""
+
+#: src/Layouts.php:331
+msgid "What’s included"
+msgstr ""
+
+#: src/Layouts.php:338
+msgid "Questions"
+msgstr ""
+
+#: src/Layouts.php:345
+#: src/Products.php:190
+msgid "Photos"
+msgstr ""
+
+#: src/Layouts.php:371
+#: src/Layouts.php:394
+msgid "Layout"
+msgstr ""
+
+#: src/Layouts.php:394
+msgid "How this page looks to visitors. Every layout shows the same information and uses your design (Theme Options); only the arrangement changes."
+msgstr ""
+
 #: src/Locations.php:39
 msgid "Destination"
 msgstr ""
@@ -1042,6 +1106,7 @@ msgstr ""
 
 #: src/Policies.php:152
 #: src/Policies.php:166
+#: src/Policies.php:233
 msgid "Non-refundable"
 msgstr ""
 
@@ -1055,18 +1120,18 @@ msgstr ""
 msgid "then no refund"
 msgstr ""
 
-#: src/Policies.php:191
+#: src/Policies.php:192
 msgid "All other travel dates"
 msgstr ""
 
 #. translators: 1: from date, 2: to date.
-#: src/Policies.php:193
+#: src/Policies.php:194
 #, php-format
 msgid "Travel %1$s – %2$s"
 msgstr ""
 
 #. translators: %d: days.
-#: src/Policies.php:202
+#: src/Policies.php:203
 #, php-format
 msgid "%d day or more before arrival"
 msgid_plural "%d days or more before arrival"
@@ -1074,13 +1139,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: fewest days, 2: most days.
-#: src/Policies.php:204
+#: src/Policies.php:205
 #, php-format
 msgid "%1$d–%2$d days before arrival"
 msgstr ""
 
 #. translators: 1: fewest days, 2: most days.
-#: src/Policies.php:204
+#: src/Policies.php:205
 #, php-format
 msgid "%d day before arrival"
 msgid_plural "%d days before arrival"
@@ -1088,18 +1153,30 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: days.
-#: src/Policies.php:210
+#: src/Policies.php:211
 #, php-format
 msgid "Less than %d day before arrival"
 msgid_plural "Less than %d days before arrival"
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/Policies.php:236
+msgid "up to the day of arrival"
+msgstr ""
+
+#. translators: %d: days.
 #: src/Policies.php:238
+#, php-format
+msgid "up to %d day before arrival"
+msgid_plural "up to %d days before arrival"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Policies.php:264
 msgid "One row per tier: cancelling this many days or more before arrival costs this share of the price. Example: 30 days → 0% (free), 14 days → 50%, 0 days → 100%. Closer than every tier = no refund. Add travel dates to make a season tier: on those dates its tiers replace the all-year ones. No rows = non-refundable."
 msgstr ""
 
-#: src/Policies.php:239
+#: src/Policies.php:265
 msgid "Add tier"
 msgstr ""
 
@@ -1139,11 +1216,6 @@ msgstr ""
 msgid "Add question"
 msgstr ""
 
-#: src/Products.php:190
-#: src/Products.php:235
-msgid "Photos"
-msgstr ""
-
 #: src/Products.php:201
 msgid "Gallery photos"
 msgstr ""
@@ -1166,10 +1238,6 @@ msgstr ""
 
 #: src/Products.php:203
 msgid "Shown on the page below the details. Drag to reorder inside the picker. The featured image (editor sidebar) stays the main photo."
-msgstr ""
-
-#: src/Products.php:242
-msgid "Questions"
 msgstr ""
 
 #: blocks/booking-widget/editor.js:8

@@ -1,0 +1,64 @@
+/* Layout picker in the product panel: radio cards with a small sketch of each page. */
+.itp-layouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.itp-layout { position: relative; display: block; cursor: pointer; }
+.itp-layout input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.itp-layout__card { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 12px; border: 1px solid var(--itp-border); border-radius: 10px; background: var(--itp-bg); transition: border-color .15s ease, box-shadow .15s ease; }
+.itp-layout input:hover + .itp-layout__card { border-color: #c4cad5; }
+.itp-layout input:checked + .itp-layout__card { border-color: var(--itp-primary); box-shadow: 0 0 0 3px var(--itp-ring); }
+.itp-layout input:focus-visible + .itp-layout__card { outline: 2px solid var(--itp-primary); outline-offset: 2px; }
+.itp-layout__name { font-weight: 600; color: var(--itp-fg); }
+.itp-layout input:checked + .itp-layout__card .itp-layout__name { color: var(--itp-primary); }
+.itp-layout__desc { color: var(--itp-muted-fg); font-size: 12.5px; line-height: 1.45; }
+
+/* Sketches: six blocks placed per layout */
+.itp-layout__sketch { display: grid; gap: 4px; height: 112px; margin-bottom: 4px; padding: 8px; border-radius: 6px; background: var(--itp-page); }
+.itp-layout__sketch i { display: block; border-radius: 3px; background: #d9dde5; }
+.itp-layout input:checked + .itp-layout__card .itp-layout__sketch i.is-key, .itp-layout input:checked + .itp-layout__card .itp-layout__sketch i:nth-child(1) { background: #c9a6c9; }
+
+/* Classic: photo grid, title, content beside a booking card */
+.itp-layout__sketch--classic { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 34px 8px 1fr; }
+.itp-layout__sketch--classic i:nth-child(1) { grid-column: 1; grid-row: 1; }
+.itp-layout__sketch--classic i:nth-child(2) { grid-column: 2; grid-row: 1; }
+.itp-layout__sketch--classic i:nth-child(3) { grid-column: 3; grid-row: 1; }
+.itp-layout__sketch--classic i:nth-child(4) { grid-column: 1 / span 2; grid-row: 2; width: 60%; }
+.itp-layout__sketch--classic i:nth-child(5) { grid-column: 1 / span 2; grid-row: 3; }
+.itp-layout__sketch--classic i:nth-child(6) { grid-column: 3; grid-row: 2 / span 2; background: var(--itp-primary); opacity: .55; }
+
+/* Immersive: full-width photo with title, then a narrow story */
+.itp-layout__sketch--immersive { grid-template-columns: 1fr 2fr 1fr; grid-template-rows: 48px 8px 1fr 12px; }
+.itp-layout__sketch--immersive i:nth-child(1) { grid-column: 1 / span 3; grid-row: 1; }
+.itp-layout__sketch--immersive i:nth-child(2) { grid-column: 1 / span 3; grid-row: 2; opacity: .6; }
+.itp-layout__sketch--immersive i:nth-child(3) { grid-column: 2; grid-row: 3; }
+.itp-layout__sketch--immersive i:nth-child(4) { grid-column: 2; grid-row: 4; background: var(--itp-primary); opacity: .55; }
+.itp-layout__sketch--immersive i:nth-child(5), .itp-layout__sketch--immersive i:nth-child(6) { display: none; }
+
+/* Transfers — List: stacked rows */
+.itp-layout__sketch--list { grid-template-columns: 1fr; grid-template-rows: 10px repeat(4, 1fr); }
+.itp-layout__sketch--list i:nth-child(1) { width: 55%; }
+.itp-layout__sketch--list i:nth-child(2) { background: var(--itp-primary); opacity: .45; }
+.itp-layout__sketch--list i:nth-child(6) { display: none; }
+/* Transfers — Cards: a grid */
+.itp-layout__sketch--cards { grid-template-columns: repeat(3, 1fr); grid-template-rows: 10px 1fr 1fr; }
+.itp-layout__sketch--cards i:nth-child(1) { grid-column: 1 / span 2; }
+.itp-layout__sketch--cards i:nth-child(2) { grid-column: 1; grid-row: 2; background: var(--itp-primary); opacity: .45; }
+.itp-layout__sketch--cards i:nth-child(3) { grid-column: 2; grid-row: 2; }
+.itp-layout__sketch--cards i:nth-child(4) { grid-column: 3; grid-row: 2; }
+.itp-layout__sketch--cards i:nth-child(5) { grid-column: 1; grid-row: 3; }
+.itp-layout__sketch--cards i:nth-child(6) { grid-column: 2; grid-row: 3; }
+/* Transfers — Trip summary: pinned summary beside the rows */
+.itp-layout__sketch--summary { grid-template-columns: 1fr 2fr; grid-template-rows: repeat(4, 1fr); }
+.itp-layout__sketch--summary i:nth-child(1) { grid-column: 1; grid-row: 1 / span 4; }
+.itp-layout__sketch--summary i:nth-child(2) { grid-column: 2; grid-row: 1; background: var(--itp-primary); opacity: .45; }
+.itp-layout__sketch--summary i:nth-child(3) { grid-column: 2; grid-row: 2; }
+.itp-layout__sketch--summary i:nth-child(4) { grid-column: 2; grid-row: 3; }
+.itp-layout__sketch--summary i:nth-child(5) { grid-column: 2; grid-row: 4; }
+.itp-layout__sketch--summary i:nth-child(6) { display: none; }
+
+/* Compact: bento tiles, then booking beside folded details */
+.itp-layout__sketch--compact { grid-template-columns: repeat(4, 1fr); grid-template-rows: 22px 22px 1fr; }
+.itp-layout__sketch--compact i:nth-child(1) { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+.itp-layout__sketch--compact i:nth-child(2) { grid-column: 3 / span 2; grid-row: 1; background: var(--itp-primary); opacity: .55; }
+.itp-layout__sketch--compact i:nth-child(3) { grid-column: 3; grid-row: 2; }
+.itp-layout__sketch--compact i:nth-child(4) { grid-column: 4; grid-row: 2; }
+.itp-layout__sketch--compact i:nth-child(5) { grid-column: 1 / span 3; grid-row: 3; }
+.itp-layout__sketch--compact i:nth-child(6) { grid-column: 4; grid-row: 3; background: var(--itp-primary); opacity: .35; }

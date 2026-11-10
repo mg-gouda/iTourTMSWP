@@ -18,6 +18,35 @@
 .itour-tr__item.is-open { border-color: var(--wp--preset--color--brand, #660066); }
 .itour-tr__form { grid-column: 1 / -1; border-block-start: 1px solid var(--itour-tr-line); padding-block-start: 16px; margin-block-start: 8px; }
 
+/* Best fit for the group */
+.itour-tr__vehicle .itour-tr__badge { align-self: flex-start; margin-block-end: 4px; padding: 2px 9px; border-radius: 999px; background: var(--wp--preset--color--brand, #660066); color: #fff; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.01em; }
+.itour-tr__item.is-best { border-color: var(--wp--preset--color--brand, #660066); box-shadow: 0 0 0 1px var(--wp--preset--color--brand, #660066); }
+.itour-tr__cancel { color: var(--wp--preset--color--ink, #1a2b48) !important; }
+
+/* Layout: cards */
+.itour-tr__list--cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.itour-tr__list--cards .itour-tr__item { grid-template-columns: 1fr 1fr; align-content: start; gap: 14px 16px; padding: 20px; }
+.itour-tr__list--cards .itour-tr__vehicle { grid-column: 1 / -1; }
+.itour-tr__list--cards .itour-tr__vehicle strong { font-size: 1.1875rem; }
+.itour-tr__list--cards .itour-tr__price { text-align: start; padding-block-start: 12px; border-block-start: 1px solid var(--itour-tr-line); }
+.itour-tr__list--cards .itour-tr__book { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
+.itour-tr__list--cards .itour-tr__item.is-open { grid-column: 1 / -1; grid-template-columns: 1fr auto auto; }
+.itour-tr__list--cards .itour-tr__item.is-open .itour-tr__vehicle { grid-column: auto; }
+
+/* Layout: trip summary */
+.itour-tr__split { display: grid; gap: 24px; margin-block-start: 32px; }
+@media (min-width: 900px) { .itour-tr__split { grid-template-columns: 300px minmax(0, 1fr); gap: 36px; align-items: start; } }
+.itour-tr__summary { padding: 20px; border-radius: var(--itour-tr-radius); background: var(--wp--preset--color--surface, #f4f6f9); }
+@media (min-width: 900px) { .itour-tr__summary { position: sticky; top: calc(var(--wp-admin--admin-bar--height, 0px) + 96px); } }
+.itour-tr__summary-title { margin: 0 0 12px; font-size: 1.125rem; }
+.itour-tr__summary dl { display: grid; gap: 10px; margin: 0 0 14px; }
+.itour-tr__summary dt { color: var(--wp--preset--color--muted, #5b6472); font-size: 0.8125rem; font-weight: 600; }
+.itour-tr__summary dd { margin: 2px 0 0; font-weight: 600; }
+.itour-tr__summary p { margin: 0 0 12px; font-size: 0.875rem; color: var(--wp--preset--color--muted, #5b6472); }
+.itour-tr__change { font-weight: 600; }
+.itour-tr--summary .itour-tr__item { grid-template-columns: 1fr auto auto; }
+.itour-tr--summary .itour-tr__book { grid-column: 1 / -1; justify-self: end; }
+
 /* Booking form */
 .itour-tb__title { margin: 0 0 12px; font-size: 1.125rem; }
 .itour-tb__trip { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 16px; padding: 0; border: 0; }

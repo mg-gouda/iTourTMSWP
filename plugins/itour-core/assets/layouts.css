@@ -1,0 +1,150 @@
+/*
+ * iTour product page layouts: classic, immersive, compact. Built only from the theme's tokens
+ * (brand, ink, muted, line, surface, base, heading font, radius), so every design preset carries through.
+ */
+.itl {
+	--itl-brand: var(--wp--preset--color--brand, #660066);
+	--itl-brand-dark: var(--wp--preset--color--brand-dark, #4a004a);
+	--itl-ink: var(--wp--preset--color--ink, #1a2b48);
+	--itl-muted: var(--wp--preset--color--muted, #4f5d6b);
+	--itl-line: var(--wp--preset--color--line, #e3e7ed);
+	--itl-surface: var(--wp--preset--color--surface, #f4f6f9);
+	--itl-base: var(--wp--preset--color--base, #fff);
+	--itl-radius: var(--wp-itourtms-radius, 10px);
+	--itl-head: var(--wp--preset--font-family--heading, inherit);
+	--itl-top: var(--wp-admin--admin-bar--height, 0px);
+	--itl-shadow: 0 1px 2px rgb(16 24 40 / 0.05), 0 8px 24px -8px rgb(16 24 40 / 0.14);
+	padding-block-end: 64px;
+	color: var(--itl-ink);
+}
+.itl img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.itl figure { margin: 0; }
+.itl-title { margin: 0; font-family: var(--itl-head); font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem); line-height: 1.12; letter-spacing: -0.015em; text-wrap: balance; }
+.itl-summary { max-width: 62ch; margin: 10px 0 0; color: var(--itl-muted); font-size: 1.125rem; line-height: 1.55; text-wrap: pretty; }
+.itl-section { scroll-margin-top: calc(var(--itl-top) + 72px); margin-block-start: 48px; }
+.itl-section__title, .itl-book__title { margin: 0 0 16px; font-family: var(--itl-head); font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem); letter-spacing: -0.01em; }
+.itl-content > :first-child { margin-top: 0; }
+.itl-content { font-size: 1.0625rem; line-height: 1.7; max-width: 72ch; }
+
+/* Price and notice */
+.itl-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 6px; margin: 0 0 12px; }
+.itl-price__from, .itl-price__note { color: var(--itl-muted); font-size: 0.9375rem; }
+.itl-price strong { font-family: var(--itl-head); font-size: 1.75rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.itl-notice { margin: 0 0 16px; padding: 10px 12px; border-radius: calc(var(--itl-radius) - 2px); background: var(--itl-surface); color: var(--itl-ink); font-size: 0.9375rem; }
+
+/* Booking block: inherits the booking form styles of each product */
+.itl-book { padding: 24px; border: 1px solid var(--itl-line); border-radius: var(--itl-radius); background: var(--itl-base); }
+.itl-book .itour-tb { padding: 0; border: 0; }
+.itl-book .itl-cta { display: flex; flex-direction: column; gap: 10px; }
+.itl-book .itl-cta .wp-element-button { text-align: center; text-decoration: none; }
+
+/* Facts: chips (classic head), band (immersive) */
+.itl-chips { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 0; }
+.itl-chips div { display: flex; gap: 6px; align-items: baseline; }
+.itl-chips dt { color: var(--itl-muted); font-size: 0.875rem; }
+.itl-chips dt::after { content: ":"; }
+.itl-chips dd { margin: 0; font-weight: 600; }
+
+/* Jump to booking: phone bar (classic, compact) and floating pill (immersive) */
+.itl-jump { position: fixed; z-index: 30; display: flex; align-items: center; gap: 14px; transition: transform .25s cubic-bezier(.2, .8, .2, 1), opacity .25s ease; }
+.itl-jump.is-hidden { opacity: 0; pointer-events: none; transform: translateY(16px); }
+.itl-jump__price { font-size: 0.9375rem; color: var(--itl-muted); }
+.itl-jump__price strong { color: var(--itl-ink); font-size: 1.125rem; font-variant-numeric: tabular-nums; }
+.itl-jump__btn { text-decoration: none; white-space: nowrap; }
+.itl-jump--bar { inset: auto 0 0 0; justify-content: space-between; padding: 12px var(--wp-itourtms-gutter, 16px) calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid var(--itl-line); background: var(--itl-base); box-shadow: 0 -6px 18px rgb(16 24 40 / 0.08); }
+@media (min-width: 1024px) { .itl-jump--bar { display: none; } }
+.itl-jump--float { inset: auto 20px calc(20px + env(safe-area-inset-bottom)) auto; padding: 8px 8px 8px 18px; border-radius: 999px; background: var(--itl-base); box-shadow: var(--itl-shadow); }
+[dir="rtl"] .itl-jump--float { inset: auto auto calc(20px + env(safe-area-inset-bottom)) 20px; padding: 8px 18px 8px 8px; }
+.itl-jump--float .itl-jump__btn { border-radius: 999px; }
+
+/* ---------- Classic ---------- */
+.itl--classic { padding-block-start: 24px; }
+.itl-gallery { position: relative; display: grid; gap: 8px; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); height: clamp(260px, 42vw, 460px); border-radius: var(--itl-radius); overflow: hidden; }
+.itl-gallery__item:first-child { grid-row: 1 / span 2; }
+.itl-gallery--1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+.itl-gallery--2 { grid-template-columns: 2fr 1fr; }
+.itl-gallery--2 .itl-gallery__item:nth-child(2) { grid-row: 1 / span 2; }
+.itl-gallery--3 { grid-template-columns: 2fr 1fr; }
+.itl-gallery--4 .itl-gallery__item:nth-child(4) { grid-column: 2 / span 2; }
+.itl-gallery__all { position: absolute; inset: auto 14px 14px auto; padding: 8px 14px; border-radius: 999px; background: rgb(255 255 255 / 0.94); color: var(--itl-ink); font-size: 0.875rem; font-weight: 600; text-decoration: none; box-shadow: var(--itl-shadow); }
+[dir="rtl"] .itl-gallery__all { inset: auto auto 14px 14px; }
+@media (max-width: 720px) {
+	.itl-gallery, .itl-gallery--2, .itl-gallery--3, .itl-gallery--4 { display: flex; height: 260px; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 0; margin-inline: calc(-1 * var(--wp-itourtms-gutter, 16px)); padding-inline: var(--wp-itourtms-gutter, 16px); scrollbar-width: none; }
+	.itl-gallery__item { flex: 0 0 86%; scroll-snap-align: center; border-radius: var(--itl-radius); overflow: hidden; }
+	.itl-gallery--1 .itl-gallery__item { flex-basis: 100%; }
+}
+.itl--classic .itl-head { margin-block-start: 28px; }
+.itl-tabs { position: sticky; top: var(--itl-top); z-index: 20; margin-block-start: 28px; border-block: 1px solid var(--itl-line); background: var(--itl-base); }
+.itl-tabs ul { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.itl-tabs a { display: block; padding: 14px 12px; border-bottom: 2px solid transparent; color: var(--itl-muted); font-weight: 600; font-size: 0.9375rem; white-space: nowrap; text-decoration: none; }
+.itl-tabs a:hover { color: var(--itl-ink); }
+.itl-tabs a.is-current { border-bottom-color: var(--itl-brand); color: var(--itl-ink); }
+.itl-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) {
+	.itl-grid { grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; }
+	.itl--classic .itl-aside { position: sticky; top: calc(var(--itl-top) + 76px); align-self: start; margin-block-start: 40px; max-height: calc(100vh - var(--itl-top) - 96px); overflow-y: auto; scrollbar-width: thin; }
+	.itl--classic .itl-book { box-shadow: var(--itl-shadow); }
+}
+
+/* ---------- Immersive ---------- */
+.itl-hero { position: relative; display: flex; align-items: flex-end; min-height: min(78vh, 760px); color: #fff; isolation: isolate; }
+.itl-hero__media { position: absolute; inset: 0; z-index: -1; }
+/* Shade: light at the top, deep where the title sits, so any photo keeps the text legible. */
+.itl-hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 0.18) 0%, rgb(0 0 0 / 0.22) 35%, rgb(0 0 0 / 0.78) 100%); }
+.itl-hero .itl-title, .itl-hero .itl-summary { text-shadow: 0 1px 18px rgb(0 0 0 / 0.35); }
+.itl-hero--plain { min-height: 46vh; background: var(--itl-brand-dark); }
+.itl-hero__body { width: 100%; padding-block: 64px 48px; }
+.itl-hero .itl-title { max-width: 18ch; font-size: clamp(2.25rem, 1.4rem + 4vw, 4.5rem); line-height: 1.02; letter-spacing: -0.025em; }
+.itl-hero .itl-summary { color: rgb(255 255 255 / 0.9); font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem); }
+.itl-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 28px; }
+.itl-hero .itl-price { margin: 0; }
+.itl-hero .itl-price__from, .itl-hero .itl-price__note { color: rgb(255 255 255 / 0.85); }
+.itl-hero__cta { text-decoration: none; }
+.itl-band { background: var(--itl-surface); border-block-end: 1px solid var(--itl-line); }
+.itl-facts--band { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px 32px; margin: 0 auto; padding-block: 22px; }
+.itl-facts--band dt { color: var(--itl-muted); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.02em; }
+.itl-facts--band dd { margin: 4px 0 0; font-weight: 600; }
+.itl-story { max-width: calc(820px + 2 * var(--wp-itourtms-gutter, 16px)); }
+.itl-story .itl-section { margin-block-start: 72px; }
+.itl-story .itl-section__title { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+.itl-lead { margin-block-start: 56px; font-size: 1.1875rem; }
+.itl-story .itl-book { margin-block-start: 72px; padding: clamp(24px, 4vw, 40px); background: var(--itl-surface); border: 0; }
+.itl--immersive .itour-tour__days > li { padding-block-end: 36px; }
+.itl--immersive .itour-tour__days h3 { font-size: 1.375rem; }
+
+/* ---------- Compact ---------- */
+.itl--compact { padding-block-start: 28px; }
+.itl-bento { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); margin-block-start: 22px; }
+@media (min-width: 760px) { .itl-bento { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); } .itl-bento--nophoto { grid-template-columns: minmax(0, 1fr); } }
+.itl-bento__side { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: stretch; }
+.itl-tile { display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; min-height: 96px; padding: 16px; border-radius: var(--itl-radius); background: var(--itl-surface); }
+.itl-tile--photo { padding: 0; overflow: hidden; min-height: 240px; }
+.itl-tile--price, .itl-tile--wide { grid-column: 1 / -1; }
+.itl-tile--price { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 16px; background: var(--itl-brand-dark); color: #fff; }
+.itl-tile--price > div { display: flex; flex-direction: column; gap: 4px; }
+.itl-tile--price .wp-element-button { flex: none; background: #fff; color: var(--itl-brand-dark); text-decoration: none; }
+.itl-tile__label { color: var(--itl-muted); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.02em; }
+.itl-tile--price .itl-tile__label, .itl-tile--price .itl-tile__note { color: rgb(255 255 255 / 0.82); }
+.itl-tile__value { font-weight: 600; line-height: 1.35; }
+.itl-tile__big { font-family: var(--itl-head); font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.itl-compact-grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr); margin-block-start: 32px; }
+.itl--compact .itl-aside { order: -1; }
+@media (min-width: 1024px) {
+	.itl-compact-grid { grid-template-columns: minmax(0, 1fr) 400px; gap: 48px; }
+	.itl--compact .itl-aside { order: 0; position: sticky; top: calc(var(--itl-top) + 24px); align-self: start; }
+}
+.itl--compact .itl-content { margin-block-start: 0; }
+.itl-folds { margin-block-start: 24px; border-top: 1px solid var(--itl-line); }
+.itl-fold { border-bottom: 1px solid var(--itl-line); scroll-margin-top: calc(var(--itl-top) + 24px); }
+.itl-fold > summary { display: flex; align-items: center; justify-content: space-between; min-height: 56px; cursor: pointer; font-family: var(--itl-head); font-size: 1.125rem; font-weight: 600; list-style: none; }
+.itl-fold > summary::-webkit-details-marker { display: none; }
+.itl-fold > summary::after { content: ""; width: 9px; height: 9px; margin-inline-end: 6px; border-inline-end: 2px solid currentColor; border-block-end: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s ease; }
+.itl-fold[open] > summary::after { transform: rotate(-135deg); }
+.itl-fold__body { padding-block-end: 24px; }
+.itl-fold__body > .itour-exc__title:first-child, .itl-fold__body > h2:first-child { display: none; }
+
+/* Room for the phone bar */
+@media (max-width: 1023px) { .itl--classic, .itl--compact { padding-block-end: 96px; } }
+.itl :focus-visible { outline: 3px solid var(--itl-brand); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .itl-jump, .itl-fold > summary::after { transition: none; } html:has(.itl) { scroll-behavior: auto; } }
+html:has(.itl) { scroll-behavior: smooth; }

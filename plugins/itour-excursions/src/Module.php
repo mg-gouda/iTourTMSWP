@@ -53,7 +53,7 @@ final class Module extends \ITour\Core\Module {
 		);
 		( new Editor() )->hooks();
 		( new Booking() )->hooks();
-		add_filter( 'the_content', array( Page::class, 'append' ) );
+		\ITour\Core\Layouts::register( Excursion::TYPE, array( Page::class, 'parts' ) );
 		add_filter( 'itour_booking_widget_tabs', array( $this, 'booking_tab' ) );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
 	}

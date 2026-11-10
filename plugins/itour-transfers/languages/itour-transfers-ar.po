@@ -44,7 +44,7 @@ msgid "We don’t have a fixed price for this route and group size yet. Contact 
 msgstr "ليس لدينا سعر ثابت لهذا المسار وحجم المجموعة بعد. تواصل معنا وسنرسل لك عرض سعر."
 
 #. translators: 1: from place, 2: to place, 3: number of passengers.
-#: blocks/transfer-results/render.php:46
+#: blocks/transfer-results/render.php:56
 #, php-format
 msgid "%1$s → %2$s, %3$d passenger"
 msgid_plural "%1$s → %2$s, %3$d passengers"
@@ -55,28 +55,77 @@ msgstr[3] "%1$s ← %2$s، %3$d ركاب"
 msgstr[4] "%1$s ← %2$s، %3$d راكبًا"
 msgstr[5] "%1$s ← %2$s، %3$d راكب"
 
+#: blocks/transfer-results/render.php:59
+#: src/Module.php:213
+#: src/Module.php:462
+msgid "From"
+msgstr "من"
+
+#: blocks/transfer-results/render.php:60
+#: src/Module.php:214
+#: src/Module.php:470
+msgid "To"
+msgstr "إلى"
+
+#: blocks/transfer-results/render.php:61
+msgid "Date"
+msgstr "التاريخ"
+
+#: blocks/transfer-results/render.php:62
+#: src/Booking.php:262
+#: src/Module.php:190
+#: src/Module.php:220
+#: src/Module.php:250
+#: src/Module.php:484
+msgid "Passengers"
+msgstr "عدد الركاب"
+
+#: blocks/transfer-results/render.php:64
+msgid "Your transfer"
+msgstr "تنقلك"
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:69
+#, php-format
+msgid "Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
+msgstr "الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق."
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:69
+msgid "Change search"
+msgstr "تغيير البحث"
+
+#: blocks/transfer-results/render.php:78
+msgid "Best fit for your group"
+msgstr "الأنسب لمجموعتك"
+
 #. translators: 1: passengers, 2: bags.
-#: blocks/transfer-results/render.php:54
+#: blocks/transfer-results/render.php:80
 #, php-format
 msgid "Up to %1$d passengers · %2$d bags"
 msgstr "حتى %1$d ركاب · %2$d حقائب"
 
-#: blocks/transfer-results/render.php:56
+#: blocks/transfer-results/render.php:82
 #: src/Booking.php:83
 msgid "One way"
 msgstr "اتجاه واحد"
 
-#: blocks/transfer-results/render.php:57
+#: blocks/transfer-results/render.php:83
 #: src/Booking.php:84
 msgid "Return"
 msgstr "ذهاب وعودة"
 
-#: blocks/transfer-results/render.php:59
+#: blocks/transfer-results/render.php:85
 msgid "Book"
 msgstr "احجز"
 
 #. translators: 1: minutes at airports, 2: minutes at hotels.
-#: blocks/transfer-results/render.php:68
+#: blocks/transfer-results/render.php:94
+msgid "Price per vehicle, not per person."
+msgstr "السعر لكل مركبة لا لكل شخص."
+
+#. translators: 1: minutes at airports, 2: minutes at hotels.
+#: blocks/transfer-results/render.php:94
 #, php-format
 msgid "Price per vehicle, not per person. Free waiting: %1$d minutes at airports, %2$d minutes at hotels."
 msgstr "السعر لكل مركبة لا لكل شخص. الانتظار المجاني: %1$d دقيقة في المطارات، و%2$d دقيقة في الفنادق."
@@ -232,14 +281,6 @@ msgstr "تنقل: %1$s ← %2$s"
 msgid "Vehicle"
 msgstr "المركبة"
 
-#: src/Booking.php:262
-#: src/Module.php:190
-#: src/Module.php:220
-#: src/Module.php:250
-#: src/Module.php:484
-msgid "Passengers"
-msgstr "عدد الركاب"
-
 #: src/Booking.php:263
 #: src/Module.php:187
 #: src/Module.php:215
@@ -267,7 +308,7 @@ msgid "Notes"
 msgstr "ملاحظات"
 
 #: src/Booking.php:281
-#: src/Settings.php:143
+#: src/Settings.php:169
 msgid "Cancellation"
 msgstr "الإلغاء"
 
@@ -326,16 +367,6 @@ msgstr "حالة الطلب"
 #: src/Module.php:208
 msgid "Open the order (customer, payment, status)"
 msgstr "افتح الطلب (العميل، الدفع، الحالة)"
-
-#: src/Module.php:213
-#: src/Module.php:462
-msgid "From"
-msgstr "من"
-
-#: src/Module.php:214
-#: src/Module.php:470
-msgid "To"
-msgstr "إلى"
 
 #: src/Module.php:228
 msgid "Total"
@@ -460,98 +491,126 @@ msgstr "صفحة نتائج البحث"
 msgid "Where the booking widget sends transfer searches. Put the “Transfer results” block on it. Leave empty to use the transfers page."
 msgstr "الصفحة التي ترسل إليها أداة الحجز عمليات البحث عن التنقلات. ضع عليها كتلة «نتائج التنقلات». اتركها فارغة لاستخدام صفحة التنقلات."
 
-#: src/Settings.php:80
+#: src/Settings.php:72
+msgid "List"
+msgstr "قائمة"
+
+#: src/Settings.php:72
+msgid "One row per vehicle with capacity, one-way and return prices side by side. Quickest to compare."
+msgstr "صف لكل مركبة مع السعة وسعري الاتجاه الواحد والعودة جنبًا إلى جنب. الأسرع للمقارنة."
+
+#: src/Settings.php:73
+msgid "Cards"
+msgstr "بطاقات"
+
+#: src/Settings.php:73
+msgid "A card per vehicle in a grid. Visual and easy to tap on phones."
+msgstr "بطاقة لكل مركبة في شبكة. مرئية وسهلة اللمس على الهواتف."
+
+#: src/Settings.php:74
+msgid "Trip summary"
+msgstr "ملخص الرحلة"
+
+#: src/Settings.php:74
+msgid "Route, date and travellers stay pinned beside the vehicles. Reassuring for airport pick-ups."
+msgstr "المسار والتاريخ والمسافرون يبقون مثبتين بجانب المركبات. مطمئن للاستقبال من المطار."
+
+#: src/Settings.php:106
 msgid "Transfer rules"
 msgstr "قواعد التنقلات"
 
-#: src/Settings.php:84
+#: src/Settings.php:110
 msgid "Booking rules"
 msgstr "قواعد الحجز"
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "Book at least"
 msgstr "الحجز قبل"
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "hours before pick-up"
 msgstr "ساعات من الاستقبال"
 
-#: src/Settings.php:100
+#: src/Settings.php:126
 msgid "Closer bookings are refused with a “please call us” message."
 msgstr "الحجوزات الأقرب تُرفض برسالة «يرجى الاتصال بنا»."
 
-#: src/Settings.php:102
+#: src/Settings.php:128
 msgid "Flight number for airport pick-ups"
 msgstr "رقم الرحلة للاستقبال من المطار"
 
-#: src/Settings.php:107
+#: src/Settings.php:133
 msgid "Required"
 msgstr "مطلوب"
 
-#: src/Settings.php:108
+#: src/Settings.php:134
 msgid "Optional"
 msgstr "اختياري"
 
-#: src/Settings.php:113
+#: src/Settings.php:139
 msgid "Lets the driver follow delays."
 msgstr "ليتابع السائق أي تأخير."
 
-#: src/Settings.php:115
+#: src/Settings.php:141
 msgid "Free waiting at airports"
 msgstr "الانتظار المجاني في المطارات"
 
-#: src/Settings.php:115
-#: src/Settings.php:116
+#: src/Settings.php:141
+#: src/Settings.php:142
 msgid "minutes"
 msgstr "دقيقة"
 
-#: src/Settings.php:115
+#: src/Settings.php:141
 msgid "Shown to the customer."
 msgstr "يظهر للعميل."
 
-#: src/Settings.php:116
+#: src/Settings.php:142
 msgid "Free waiting at hotels"
 msgstr "الانتظار المجاني في الفنادق"
 
-#: src/Settings.php:117
+#: src/Settings.php:143
 msgid "Child seat"
 msgstr "مقعد طفل"
 
-#: src/Settings.php:117
+#: src/Settings.php:143
 msgid "Per seat, per trip. 0 = free."
 msgstr "لكل مقعد ولكل رحلة. 0 = مجاني."
 
-#: src/Settings.php:118
+#: src/Settings.php:144
 msgid "Extra bag"
 msgstr "حقيبة إضافية"
 
-#: src/Settings.php:118
+#: src/Settings.php:144
 msgid "Per bag above the vehicle’s limit, per trip."
 msgstr "لكل حقيبة فوق حد المركبة ولكل رحلة."
 
-#: src/Settings.php:119
+#: src/Settings.php:145
 msgid "Return trip discount"
 msgstr "خصم رحلة العودة"
 
-#: src/Settings.php:119
+#: src/Settings.php:145
 msgid "Taken off the return leg when both ways are booked together."
 msgstr "يُخصم من رحلة العودة عند حجز الاتجاهين معًا."
 
-#: src/Settings.php:120
+#: src/Settings.php:146
 msgid "Deposit"
 msgstr "العربون"
 
-#: src/Settings.php:120
+#: src/Settings.php:146
 msgid "0 = customers pay the full price at checkout. Otherwise they may pay this share now and the rest on the day. Payment methods are set in WooCommerce → Settings → Payments."
 msgstr "0 = يدفع العملاء السعر كاملًا عند الدفع. وإلا يمكنهم دفع هذه النسبة الآن والباقي يوم الرحلة. طرق الدفع تُضبط من WooCommerce ← الإعدادات ← المدفوعات."
 
-#: src/Settings.php:146
+#: src/Settings.php:172
 msgid "One row per tier: cancelling this many days or more before the pick-up costs this share of the price. \"All vehicles\" rows apply to every vehicle without rows of its own. Add travel dates for a season tier. No rows = non-refundable."
 msgstr "صف لكل شريحة: الإلغاء قبل الاستقبال بهذا العدد من الأيام أو أكثر يكلف هذه النسبة من السعر. صفوف «كل المركبات» تنطبق على كل مركبة ليس لها صفوف خاصة. أضف تواريخ سفر لشريحة موسمية. بلا صفوف = غير قابل للاسترداد."
 
-#: src/Settings.php:147
+#: src/Settings.php:173
 msgid "Add tier"
 msgstr "إضافة شريحة"
+
+#: src/Settings.php:181
+msgid "Layout"
+msgstr "التصميم"
 
 #: src/Sheet.php:33
 msgid "One route per row: the two zones, then the price per vehicle (one way, per vehicle, in your base currency). Vehicles and zones must exist first (Vehicles, Location Tree). A route priced one way also serves the way back unless the return route has its own row."

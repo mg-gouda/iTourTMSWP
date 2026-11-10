@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:56:58+00:00\n"
+"POT-Creation-Date: 2026-11-10T19:15:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-tours\n"
@@ -101,13 +101,13 @@ msgstr ""
 
 #: src/Editor.php:127
 #: src/Editor.php:156
-#: src/Page.php:128
+#: src/Page.php:158
 msgid "Child"
 msgstr ""
 
 #: src/Editor.php:128
 #: src/Editor.php:157
-#: src/Page.php:128
+#: src/Page.php:158
 msgid "Infant"
 msgstr ""
 
@@ -133,13 +133,14 @@ msgstr ""
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:142
-#: src/Page.php:152
+#: src/Page.php:56
+#: src/Page.php:182
 msgid "per person"
 msgstr ""
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:143
-#: src/Page.php:152
+#: src/Page.php:182
 msgid "per booking"
 msgstr ""
 
@@ -189,7 +190,7 @@ msgid "Nights are worked out for you: days minus one."
 msgstr ""
 
 #: src/Editor.php:224
-#: src/Page.php:55
+#: src/Page.php:89
 #: src/Sheet.php:51
 msgid "Booking"
 msgstr ""
@@ -291,7 +292,7 @@ msgid "Add price row"
 msgstr ""
 
 #: src/Editor.php:335
-#: src/Page.php:159
+#: src/Page.php:36
 msgid "Extras"
 msgstr ""
 
@@ -375,107 +376,127 @@ msgstr ""
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr ""
 
+#: src/Page.php:34
+msgid "Day by day"
+msgstr ""
+
+#: src/Page.php:35
+msgid "Prices per person"
+msgstr ""
+
+#: src/Page.php:44
+msgid "Cancellation"
+msgstr ""
+
+#: src/Page.php:50
+msgid "Tell us your dates and group: we check availability and send a quote within one working day."
+msgstr ""
+
+#: src/Page.php:50
+msgid "Send us your dates and group size and we will confirm availability."
+msgstr ""
+
+#: src/Page.php:50
+msgid "Ask for this tour"
+msgstr ""
+
+#: src/Page.php:61
+msgid "Plan this tour"
+msgstr ""
+
 #. translators: 1: days, 2: nights.
-#: src/Page.php:46
+#: src/Page.php:78
 msgid "Duration"
 msgstr ""
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:46
+#: src/Page.php:78
 #, php-format
 msgid "%1$d days / %2$d nights"
 msgstr ""
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:46
+#: src/Page.php:78
 msgid "1 day"
 msgstr ""
 
-#: src/Page.php:50
+#: src/Page.php:83
 #: src/Sheet.php:56
 msgid "Departures"
 msgstr ""
 
-#: src/Page.php:50
+#: src/Page.php:83
 msgid "New dates coming soon"
 msgstr ""
 
-#: src/Page.php:53
+#: src/Page.php:87
 msgid "Starts"
 msgstr ""
 
-#: src/Page.php:53
+#: src/Page.php:87
 msgid "Any day"
 msgstr ""
 
-#: src/Page.php:55
-msgid "On request: we confirm availability and send a quote"
+#: src/Page.php:89
+msgid "On request"
 msgstr ""
 
-#: src/Page.php:55
+#: src/Page.php:89
 msgid "Instant confirmation"
 msgstr ""
 
-#: src/Page.php:74
-msgid "Day by day"
-msgstr ""
-
 #. translators: %d: day number.
-#: src/Page.php:78
+#: src/Page.php:108
 #, php-format
 msgid "Day %d"
 msgstr ""
 
 #. translators: %s: overnight place.
-#: src/Page.php:79
+#: src/Page.php:109
 #, php-format
 msgid "Overnight: %s"
 msgstr ""
 
-#: src/Page.php:103
+#: src/Page.php:133
 msgid "Route map"
 msgstr ""
 
 #. translators: 1: start date, 2: end date.
-#: src/Page.php:119
+#: src/Page.php:149
 #, php-format
 msgid "%1$s – %2$s"
 msgstr ""
 
-#: src/Page.php:126
-msgid "Prices per person"
-msgstr ""
-
-#: src/Page.php:128
+#: src/Page.php:158
 msgid "Group size"
 msgstr ""
 
-#: src/Page.php:128
+#: src/Page.php:158
 msgid "Adult, sharing"
 msgstr ""
 
-#: src/Page.php:128
+#: src/Page.php:158
 msgid "Single room"
 msgstr ""
 
-#: src/Page.php:133
+#: src/Page.php:163
 msgid "Free"
 msgstr ""
 
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:135
+#: src/Page.php:165
 #, php-format
 msgid "%s travellers"
 msgstr ""
 
 #. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Page.php:152
+#: src/Page.php:182
 #, php-format
 msgid "%1$s: %2$s %3$s"
 msgstr ""
 
 #. translators: 1: supplement, 2: date(s), 3: adult price.
-#: src/Page.php:157
+#: src/Page.php:187
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr ""

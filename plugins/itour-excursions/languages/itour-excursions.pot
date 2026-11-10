@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T18:56:51+00:00\n"
+"POT-Creation-Date: 2026-11-10T19:15:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-excursions\n"
@@ -46,10 +46,6 @@ msgid "%d seat left"
 msgid_plural "%d seats left"
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/Booking.php:141
-msgid "Book this trip"
-msgstr ""
 
 #: src/Booking.php:143
 msgid "Online booking needs WooCommerce."
@@ -113,7 +109,7 @@ msgstr ""
 #: src/Booking.php:429
 #: src/Booking.php:457
 #: src/Editor.php:258
-#: src/Page.php:53
+#: src/Page.php:46
 #: src/Sheet.php:57
 msgid "Pick-up"
 msgstr ""
@@ -147,7 +143,7 @@ msgstr ""
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:122
-#: src/Page.php:89
+#: src/Page.php:126
 msgid "per booking"
 msgstr ""
 
@@ -155,7 +151,7 @@ msgstr ""
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
 #: src/Booking.php:223
 #: src/Editor.php:121
-#: src/Page.php:89
+#: src/Page.php:126
 msgid "per person"
 msgstr ""
 
@@ -232,6 +228,7 @@ msgid "We have no price for this group size and type. Contact us for a quote."
 msgstr ""
 
 #: src/Booking.php:326
+#: src/Page.php:63
 msgid "Cancellation"
 msgstr ""
 
@@ -288,7 +285,6 @@ msgid "Seats"
 msgstr ""
 
 #: src/Editor.php:30
-#: src/Page.php:55
 msgid "Trip details"
 msgstr ""
 
@@ -314,19 +310,19 @@ msgstr ""
 
 #: src/Editor.php:84
 #: src/Editor.php:134
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Adult"
 msgstr ""
 
 #: src/Editor.php:85
 #: src/Editor.php:135
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Child"
 msgstr ""
 
 #: src/Editor.php:86
 #: src/Editor.php:136
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Infant"
 msgstr ""
 
@@ -479,6 +475,7 @@ msgstr ""
 
 #: src/Editor.php:272
 #: src/Editor.php:276
+#: src/Page.php:48
 #: src/Sheet.php:59
 msgid "Meeting point"
 msgstr ""
@@ -647,60 +644,61 @@ msgid "Starts"
 msgstr ""
 
 #: src/Page.php:46
-msgid "Pick-up from your hotel"
+msgid "From your hotel"
 msgstr ""
 
-#. translators: %s: meeting point.
-#: src/Page.php:50
-#, php-format
-msgid "or meet us at %s"
+#: src/Page.php:55
+msgid "Prices per person"
+msgstr ""
+
+#: src/Page.php:59
+msgid "Extras"
+msgstr ""
+
+#: src/Page.php:72
+msgid "per adult"
+msgstr ""
+
+#: src/Page.php:77
+msgid "Book this trip"
 msgstr ""
 
 #. translators: 1: start date, 2: end date.
-#: src/Page.php:66
+#: src/Page.php:95
 #, php-format
 msgid "%1$s – %2$s"
 msgstr ""
 
-#: src/Page.php:71
-msgid "Prices per person"
-msgstr ""
-
-#: src/Page.php:73
+#: src/Page.php:101
 msgid "Group size"
 msgstr ""
 
+#: src/Page.php:106
+msgid "Free"
+msgstr ""
+
 #. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:79
+#: src/Page.php:108
 #, php-format
 msgid "%s travellers"
 msgstr ""
 
-#. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:79
-msgid "Free"
-msgstr ""
-
 #. translators: 1: add-on name, 2: price, 3: "per person" or "per booking".
-#: src/Page.php:89
+#: src/Page.php:126
 #, php-format
 msgid "%1$s: %2$s %3$s"
 msgstr ""
 
 #. translators: 1: supplement name, 2: date(s), 3: adult price.
-#: src/Page.php:94
+#: src/Page.php:131
 #, php-format
 msgid "%1$s (%2$s): %3$s per adult, added automatically"
 msgstr ""
 
 #. translators: 1: zone, 2: price.
-#: src/Page.php:100
+#: src/Page.php:137
 #, php-format
 msgid "Pick-up from %1$s: %2$s per person"
-msgstr ""
-
-#: src/Page.php:104
-msgid "Extras"
 msgstr ""
 
 #: src/Sheet.php:34
