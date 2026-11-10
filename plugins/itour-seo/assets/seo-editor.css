@@ -1,0 +1,25 @@
+/* iTour SEO tabs inside the product panel. */
+.itp .itp-input--url, .itp .itp-input--email, .itp .itp-input--tel { width: min(100%, 26em); }
+/* Settings → Content types: title and description templates stacked per type */
+.itseo-type { display: grid; gap: 4px; width: min(100%, 30em); }
+.itseo-type .itp-help { margin-top: 6px !important; font-weight: 500; }
+.itseo-type .itp-input--text { width: 100%; }
+.itseo-type .itp-chip { margin-top: 8px; justify-self: start; }
+.itp-control .itp-unit[data-seo-count] { flex-basis: 100%; font-variant-numeric: tabular-nums; }
+
+/* Google preview: the real result's type sizes and colours, so it reads like the search page. */
+.itseo-preview { max-width: 620px; padding: 16px 18px; border: 1px solid var(--itp-border); border-radius: 10px; background: #fff; font-family: Arial, sans-serif; }
+.itseo-preview__site { display: flex; flex-direction: column; margin: 0 0 6px !important; line-height: 1.3; }
+.itseo-preview__name { color: #202124; font-size: 14px; }
+.itseo-preview__url { color: #4d5156; font-size: 12px; overflow-wrap: anywhere; }
+.itseo-preview__title { margin: 0 0 4px !important; color: #1a0dab; font-size: 20px; line-height: 1.3; }
+.itseo-preview__desc { margin: 0 !important; color: #4d5156; font-size: 14px; line-height: 1.58; }
+
+/* Checklist */
+.itseo-checks { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.itseo-checks li { position: relative; padding-inline-start: 26px; line-height: 1.45; }
+.itseo-checks li::before { content: ""; position: absolute; inset-inline-start: 2px; top: 3px; width: 14px; height: 14px; border-radius: 50%; }
+.itseo-checks li.is-ok { color: var(--itp-fg); }
+.itseo-checks li.is-ok::before { background: var(--itp-ok); box-shadow: inset 0 0 0 4px #e7f5ec; }
+.itseo-checks li.is-todo { color: var(--itp-muted-fg); }
+.itseo-checks li.is-todo::before { border: 2px solid #c9ced8; }

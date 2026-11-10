@@ -1,0 +1,435 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-seo\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-seo\n"
+
+#. Plugin Name of the plugin
+#: itour-seo.php
+msgid "iTour SEO"
+msgstr "iTour SEO"
+
+#. Plugin URI of the plugin
+#: itour-seo.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-seo.php
+msgid "Search titles and descriptions with a live Google preview and checklist, social sharing cards, structured data for tours and excursions, indexing rules and sitemap control. Imports Yoast SEO data."
+msgstr "عناوين وأوصاف البحث مع معاينة Google مباشرة وقائمة تحقق، وبطاقات المشاركة الاجتماعية، والبيانات المنظمة للبرامج والرحلات، وقواعد الفهرسة والتحكم في خريطة الموقع. يستورد بيانات Yoast SEO."
+
+#. Author of the plugin
+#: itour-seo.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-seo.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Editor.php:29
+#: src/Editor.php:45
+#: src/Module.php:29
+#: src/Module.php:64
+msgid "SEO"
+msgstr "تحسين محركات البحث"
+
+#: src/Editor.php:56
+msgid "A focus keyphrase is set"
+msgstr "تم تحديد العبارة المفتاحية"
+
+#: src/Editor.php:57
+msgid "The keyphrase is in the SEO title"
+msgstr "العبارة المفتاحية في عنوان البحث"
+
+#: src/Editor.php:58
+msgid "The keyphrase is in the meta description"
+msgstr "العبارة المفتاحية في الوصف"
+
+#: src/Editor.php:59
+msgid "The keyphrase is in the page address"
+msgstr "العبارة المفتاحية في عنوان الصفحة (الرابط)"
+
+#: src/Editor.php:60
+msgid "The keyphrase is in the first paragraph"
+msgstr "العبارة المفتاحية في الفقرة الأولى"
+
+#: src/Editor.php:61
+msgid "SEO title is 30–60 characters"
+msgstr "عنوان البحث بين 30 و60 حرفًا"
+
+#: src/Editor.php:62
+msgid "Meta description is 120–156 characters"
+msgstr "الوصف بين 120 و156 حرفًا"
+
+#: src/Editor.php:63
+msgid "The text has at least 250 words"
+msgstr "النص 250 كلمة على الأقل"
+
+#: src/Editor.php:64
+msgid "Every image in the text has alt text"
+msgstr "كل صورة في النص لها نص بديل"
+
+#: src/Editor.php:65
+msgid "The text links to another page of this site"
+msgstr "النص يربط بصفحة أخرى في الموقع"
+
+#. translators: %d: characters.
+#: src/Editor.php:68
+#, php-format
+msgid "%d characters"
+msgstr "%d حرفًا"
+
+#: src/Editor.php:73
+msgid "Focus keyphrase"
+msgstr "العبارة المفتاحية"
+
+#: src/Editor.php:73
+msgid "e.g. Luxor day trip from Hurghada"
+msgstr "مثل رحلة الأقصر اليومية من الغردقة"
+
+#: src/Editor.php:73
+msgid "The search phrase this page should be found for. The checklist below uses it."
+msgstr "عبارة البحث التي يجب أن تظهر لها هذه الصفحة. تستخدمها قائمة التحقق أدناه."
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Editor.php:75
+msgid "SEO title"
+msgstr "عنوان البحث"
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Editor.php:75
+msgid "Shown as the blue link in Google. Empty = the default for this content type (SEO → Settings). Variables: {title} {sep} {site} {price}."
+msgstr "يظهر كرابط أزرق في Google. فارغ = الافتراضي لهذا النوع من المحتوى (تحسين محركات البحث ← الإعدادات). المتغيرات: {title} {sep} {site} {price}."
+
+#: src/Editor.php:76
+msgid "Meta description"
+msgstr "الوصف"
+
+#: src/Editor.php:76
+msgid "The grey text under the link. Write it like a short advert: what the visitor gets and why book with you."
+msgstr "النص الرمادي أسفل الرابط. اكتبه كإعلان قصير: ماذا يحصل الزائر ولماذا يحجز معك."
+
+#: src/Editor.php:78
+msgid "Google preview"
+msgstr "معاينة Google"
+
+#: src/Editor.php:81
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#: src/Editor.php:81
+msgid "Updates as you type. Green items help this page rank; none of them is required."
+msgstr "تتحدث أثناء الكتابة. البنود الخضراء تساعد ترتيب الصفحة؛ لا شيء منها إلزامي."
+
+#: src/Editor.php:97
+msgid "Social"
+msgstr "التواصل الاجتماعي"
+
+#: src/Editor.php:102
+msgid "How the page looks when shared on Facebook, WhatsApp, LinkedIn and X. Empty fields use the SEO title, the meta description and the featured image."
+msgstr "شكل الصفحة عند مشاركتها على فيسبوك وواتساب ولينكدإن وX. الحقول الفارغة تستخدم عنوان البحث والوصف والصورة البارزة."
+
+#: src/Editor.php:103
+msgid "Share title"
+msgstr "عنوان المشاركة"
+
+#: src/Editor.php:104
+msgid "Share description"
+msgstr "وصف المشاركة"
+
+#: src/Editor.php:108
+#: src/Editor.php:109
+msgid "Share image"
+msgstr "صورة المشاركة"
+
+#: src/Editor.php:109
+#: src/Settings.php:39
+msgid "Use this image"
+msgstr "استخدم هذه الصورة"
+
+#: src/Editor.php:109
+#: src/Settings.php:39
+msgid "Choose image"
+msgstr "اختر صورة"
+
+#: src/Editor.php:109
+#: src/Settings.php:39
+msgid "Remove"
+msgstr "إزالة"
+
+#: src/Editor.php:110
+msgid "Best at 1200 × 630 pixels. Empty = the featured image."
+msgstr "الأفضل بمقاس 1200 × 630 بكسل. فارغ = الصورة البارزة."
+
+#: src/Editor.php:127
+msgid "Advanced"
+msgstr "متقدم"
+
+#: src/Editor.php:128
+msgid "hidden"
+msgstr "مخفية"
+
+#: src/Editor.php:133
+msgid "Search engines"
+msgstr "محركات البحث"
+
+#: src/Editor.php:138
+msgid "Hide this page from search results"
+msgstr "إخفاء هذه الصفحة من نتائج البحث"
+
+#: src/Editor.php:139
+msgid "Don’t follow its links"
+msgstr "عدم تتبع روابطها"
+
+#: src/Editor.php:143
+msgid "Hidden pages also leave the sitemap. Use it for thank-you pages, drafts made public, duplicates."
+msgstr "الصفحات المخفية تُحذف من خريطة الموقع أيضًا. استخدمها لصفحات الشكر والمسودات المنشورة والصفحات المكررة."
+
+#: src/Editor.php:145
+msgid "Canonical address"
+msgstr "العنوان الأساسي (Canonical)"
+
+#: src/Editor.php:145
+msgid "Only when this page copies another one: the address of the original. Empty = this page’s own address."
+msgstr "فقط عندما تنسخ هذه الصفحة صفحة أخرى: عنوان الأصل. فارغ = عنوان الصفحة نفسها."
+
+#. translators: %s: search terms.
+#: src/Head.php:52
+#, php-format
+msgid "Search results for “%s”"
+msgstr "نتائج البحث عن «%s»"
+
+#: src/Head.php:62
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+#: src/Import.php:100
+msgid "Sorry, you are not allowed to do that."
+msgstr "عذرًا، غير مسموح لك بذلك."
+
+#: src/Module.php:78
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/Schema.php:110
+msgid "Home"
+msgstr "الرئيسية"
+
+#: src/Settings.php:61
+msgid "Hide tag archives"
+msgstr "إخفاء أرشيف الوسوم"
+
+#: src/Settings.php:62
+msgid "Hide blog category archives"
+msgstr "إخفاء أرشيف تصنيفات المدونة"
+
+#: src/Settings.php:63
+msgid "Hide author archives"
+msgstr "إخفاء أرشيف الكتّاب"
+
+#: src/Settings.php:64
+msgid "Hide date archives"
+msgstr "إخفاء أرشيف التواريخ"
+
+#: src/Settings.php:65
+msgid "Keep RSS feeds out of search results"
+msgstr "إبعاد خلاصات RSS عن نتائج البحث"
+
+#: src/Settings.php:66
+msgid "Deleted pages answer “410 Gone”"
+msgstr "الصفحات المحذوفة ترد بـ «410 محذوفة»"
+
+#: src/Settings.php:67
+msgid "Attachment pages open the file itself"
+msgstr "صفحات المرفقات تفتح الملف نفسه"
+
+#: src/Settings.php:71
+msgid "SEO settings"
+msgstr "إعدادات تحسين محركات البحث"
+
+#: src/Settings.php:75
+msgid "General"
+msgstr "عام"
+
+#: src/Settings.php:79
+msgid "Yoast SEO is active, so iTour SEO adds nothing to your pages yet (no double tags). Import Yoast’s data on the Import tab, then deactivate Yoast."
+msgstr "Yoast SEO مفعّل، لذا لا يضيف iTour SEO شيئًا لصفحاتك بعد (لا وسوم مكررة). استورد بيانات Yoast من تبويب الاستيراد، ثم عطّل Yoast."
+
+#: src/Settings.php:82
+msgid "Title separator"
+msgstr "فاصل العنوان"
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Settings.php:97
+msgid "Used by {sep} in titles, e.g. “Luxor day trip – Nile & Sea Travel”."
+msgstr "يُستخدم في {sep} داخل العناوين، مثل «رحلة الأقصر اليومية – Nile & Sea Travel»."
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Settings.php:100
+msgid "Home page title"
+msgstr "عنوان الصفحة الرئيسية"
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Settings.php:100
+msgid "Variables: {site} {sep} {tagline}. A static home page can override it in its own SEO tab."
+msgstr "المتغيرات: {site} {sep} {tagline}. يمكن لصفحة رئيسية ثابتة تجاوزه من تبويب SEO الخاص بها."
+
+#: src/Settings.php:101
+msgid "Home page description"
+msgstr "وصف الصفحة الرئيسية"
+
+#: src/Settings.php:101
+msgid "About 120–156 characters: what you offer and where."
+msgstr "نحو 120–156 حرفًا: ماذا تقدم وأين."
+
+#: src/Settings.php:114
+msgid "Content types"
+msgstr "أنواع المحتوى"
+
+#. translators: {title}, {sep}, {site}, {tagline}, {excerpt} and {price} are template variables: keep them as they are.
+#: src/Settings.php:118
+msgid "Default title and description for each kind of page, used when a page leaves its own SEO fields empty. Variables: {title} {sep} {site} {excerpt} {price} (tours and excursions: the “from” price)."
+msgstr "العنوان والوصف الافتراضيان لكل نوع صفحة، يُستخدمان عندما تترك الصفحة حقول SEO الخاصة بها فارغة. المتغيرات: {title} {sep} {site} {excerpt} {price} (للبرامج والرحلات: السعر «ابتداءً من»)."
+
+#: src/Settings.php:120
+msgid "Title"
+msgstr "العنوان"
+
+#: src/Settings.php:122
+msgid "Description"
+msgstr "الوصف"
+
+#: src/Settings.php:124
+msgid "Hide from search results"
+msgstr "إخفاء من نتائج البحث"
+
+#: src/Settings.php:142
+#: src/Settings.php:154
+msgid "Organization"
+msgstr "الشركة"
+
+#: src/Settings.php:145
+msgid "Who runs this site. Google uses it for your knowledge panel and to link your tours to your company."
+msgstr "من يدير هذا الموقع. يستخدمه Google للوحة المعرفة ولربط برامجك بشركتك."
+
+#: src/Settings.php:147
+msgid "Type"
+msgstr "النوع"
+
+#: src/Settings.php:152
+msgid "Travel agency / DMC"
+msgstr "وكالة سفر / شركة إدارة وجهات"
+
+#: src/Settings.php:153
+msgid "Local business"
+msgstr "نشاط تجاري محلي"
+
+#: src/Settings.php:160
+msgid "Name"
+msgstr "الاسم"
+
+#: src/Settings.php:161
+msgid "Logo"
+msgstr "الشعار"
+
+#: src/Settings.php:161
+msgid "Square or wide, at least 112 × 112 pixels."
+msgstr "مربع أو عريض، 112 × 112 بكسل على الأقل."
+
+#: src/Settings.php:162
+msgid "Phone"
+msgstr "الهاتف"
+
+#: src/Settings.php:162
+msgid "With the country code, e.g. +20 100 000 0000."
+msgstr "مع رمز الدولة، مثل ‎+20 100 000 0000."
+
+#: src/Settings.php:163
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: src/Settings.php:164
+msgid "Social profiles"
+msgstr "حسابات التواصل الاجتماعي"
+
+#: src/Settings.php:164
+msgid "One address per line: Facebook, Instagram, TikTok, YouTube, LinkedIn, TripAdvisor."
+msgstr "عنوان في كل سطر: فيسبوك، إنستغرام، تيك توك، يوتيوب، لينكدإن، تريب أدفايزر."
+
+#: src/Settings.php:165
+msgid "Default share image"
+msgstr "صورة المشاركة الافتراضية"
+
+#: src/Settings.php:165
+msgid "Used when a page has no image of its own. Best at 1200 × 630 pixels."
+msgstr "تُستخدم عندما لا تكون للصفحة صورة خاصة. الأفضل بمقاس 1200 × 630 بكسل."
+
+#: src/Settings.php:182
+msgid "Indexing"
+msgstr "الفهرسة"
+
+#: src/Settings.php:186
+msgid "Keep out of search results"
+msgstr "إبعاد عن نتائج البحث"
+
+#: src/Settings.php:186
+msgid "Thin listing pages and feeds compete with the pages that sell. Search result pages are always hidden."
+msgstr "صفحات القوائم الضعيفة والخلاصات تنافس الصفحات التي تبيع. صفحات نتائج البحث مخفية دائمًا."
+
+#. translators: %s: sitemap address.
+#: src/Settings.php:188
+msgid "Sitemap"
+msgstr "خريطة الموقع"
+
+#. translators: %s: sitemap address.
+#: src/Settings.php:188
+msgid "Submit this address in Google Search Console. Hidden pages, hidden content types and the archives above are left out automatically."
+msgstr "أرسل هذا العنوان في Google Search Console. الصفحات المخفية وأنواع المحتوى المخفية والأرشيفات أعلاه تُستبعد تلقائيًا."
+
+#: src/Settings.php:196
+msgid "Import"
+msgstr "استيراد"
+
+#. translators: %d: number of pages.
+#: src/Settings.php:201
+#, php-format
+msgid "%d page has Yoast SEO data. Importing copies its SEO title, description, focus keyphrase, canonical, noindex and social fields into iTour SEO. Fields you already filled here are kept."
+msgid_plural "%d pages have Yoast SEO data. Importing copies their SEO titles, descriptions, focus keyphrases, canonicals, noindex and social fields into iTour SEO. Fields you already filled here are kept."
+msgstr[0] "%d صفحة بها بيانات Yoast SEO. الاستيراد ينسخ العناوين والأوصاف والعبارات المفتاحية والعناوين الأساسية وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+msgstr[1] "صفحة واحدة بها بيانات Yoast SEO. الاستيراد ينسخ عنوانها ووصفها وعبارتها المفتاحية وعنوانها الأساسي وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+msgstr[2] "صفحتان بهما بيانات Yoast SEO. الاستيراد ينسخ العناوين والأوصاف والعبارات المفتاحية والعناوين الأساسية وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+msgstr[3] "%d صفحات بها بيانات Yoast SEO. الاستيراد ينسخ العناوين والأوصاف والعبارات المفتاحية والعناوين الأساسية وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+msgstr[4] "%d صفحة بها بيانات Yoast SEO. الاستيراد ينسخ العناوين والأوصاف والعبارات المفتاحية والعناوين الأساسية وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+msgstr[5] "%d صفحة بها بيانات Yoast SEO. الاستيراد ينسخ العناوين والأوصاف والعبارات المفتاحية والعناوين الأساسية وإعداد الإخفاء وحقول المشاركة إلى iTour SEO. الحقول التي ملأتها هنا تبقى كما هي."
+
+#. translators: %d: number of pages.
+#: src/Settings.php:201
+msgid "No Yoast SEO data found on this site."
+msgstr "لا توجد بيانات Yoast SEO في هذا الموقع."
+
+#: src/Settings.php:202
+msgid "From Yoast SEO"
+msgstr "من Yoast SEO"
+
+#: src/Settings.php:202
+msgid "Import Yoast data"
+msgstr "استيراد بيانات Yoast"
+
+#. translators: %d: pages.
+#: src/Settings.php:218
+#, php-format
+msgid "Imported Yoast data for %d page."
+msgid_plural "Imported Yoast data for %d pages."
+msgstr[0] "تم استيراد بيانات Yoast لـ %d صفحة."
+msgstr[1] "تم استيراد بيانات Yoast لصفحة واحدة."
+msgstr[2] "تم استيراد بيانات Yoast لصفحتين."
+msgstr[3] "تم استيراد بيانات Yoast لـ %d صفحات."
+msgstr[4] "تم استيراد بيانات Yoast لـ %d صفحة."
+msgstr[5] "تم استيراد بيانات Yoast لـ %d صفحة."

@@ -48,6 +48,22 @@ final class Panel {
 	}
 
 	/**
+	 * Add tabs to a post type's panel (e.g. SEO tabs on tours), or give the type a panel when it has none.
+	 * Call on init after the type's own panel is registered (priority > 20).
+	 *
+	 * @param string                            $post_type Post type.
+	 * @param string                            $title     Title used when the type has no panel yet.
+	 * @param array<string,array<string,mixed>> $sections  Extra sections.
+	 */
+	public static function extend( string $post_type, string $title, array $sections ): void {
+		if ( isset( self::$panels[ $post_type ] ) ) {
+			self::$panels[ $post_type ]['sections'] += $sections;
+			return;
+		}
+		self::register( $post_type, $title, $sections );
+	}
+
+	/**
 	 * Run one section's own save code with panel-shaped input (used by the bulk import, so imported
 	 * data goes through exactly the same checks as the edit screen).
 	 *

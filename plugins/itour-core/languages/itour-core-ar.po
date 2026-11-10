@@ -463,28 +463,28 @@ msgstr "الوحدة"
 msgid "Version"
 msgstr "الإصدار"
 
-#: src/Admin/Panel.php:156
+#: src/Admin/Panel.php:172
 msgid "Saving…"
 msgstr "جارٍ الحفظ…"
 
-#: src/Admin/Panel.php:157
+#: src/Admin/Panel.php:173
 msgid "All changes saved"
 msgstr "تم حفظ كل التغييرات"
 
-#: src/Admin/Panel.php:158
+#: src/Admin/Panel.php:174
 msgid "Couldn’t save. Check your connection."
 msgstr "تعذر الحفظ. تحقق من الاتصال."
 
-#: src/Admin/Panel.php:159
+#: src/Admin/Panel.php:175
 msgid "Retry"
 msgstr "إعادة المحاولة"
 
-#: src/Admin/Panel.php:165
+#: src/Admin/Panel.php:181
 msgid "Changes save as you go."
 msgstr "تُحفظ التغييرات تلقائيًا أثناء العمل."
 
-#: src/Admin/Panel.php:277
-#: src/Admin/Panel.php:286
+#: src/Admin/Panel.php:293
+#: src/Admin/Panel.php:302
 msgid "You can’t edit this item, or the page expired. Reload it."
 msgstr "لا يمكنك تعديل هذا العنصر، أو انتهت صلاحية الصفحة. أعد تحميلها."
 

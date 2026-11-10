@@ -3,6 +3,7 @@
 #   bin/dev.sh          start (first run installs WP + iTour Core/CRM + WP iTourTMS theme)  → http://localhost:8091
 #   bin/dev.sh wp …     run WP-CLI
 #   bin/dev.sh stop     stop containers (data kept in Docker volumes)
+#   bin/dev.sh restart  recreate the web container (needed after adding a plugin or theme folder: mounts are per folder)
 # Admin login is generated once into .dev.env (git-ignored).
 set -euo pipefail
 
@@ -35,6 +36,9 @@ case "${1:-start}" in
 		;;
 esac
 
+if [ "${1:-}" = restart ]; then
+	docker rm -f itourwp-wp >/dev/null 2>&1 || true # Files live in the itourwp-wp volume; only the mounts are rebuilt.
+fi
 docker network inspect "$net" >/dev/null 2>&1 || docker network create "$net" >/dev/null
 if ! docker start itourwp-db >/dev/null 2>&1; then
 	docker run -d --name itourwp-db --network "$net" --restart unless-stopped -v itourwp-db:/var/lib/mysql \
