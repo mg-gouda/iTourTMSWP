@@ -60,6 +60,7 @@
 				<element value="itour-shield"/>
 				<element value="itour-seo"/>
 				<element value="itour-webp"/>
+				<element value="itour-registration-guard"/>
 				<element value="itour-contracting"/>
 				<element value="itour-reservations"/>
 				<element value="itour-nile-cruises"/>
