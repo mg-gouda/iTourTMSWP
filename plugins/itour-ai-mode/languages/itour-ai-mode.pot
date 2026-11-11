@@ -1,0 +1,353 @@
+# Copyright (C) 2026 Mohamed Gouda
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: iTour AI Mode 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-11T12:37:09+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: itour-ai-mode\n"
+
+#. Plugin Name of the plugin
+#: itour-ai-mode.php
+msgid "iTour AI Mode"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: itour-ai-mode.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-ai-mode.php
+msgid "A Google Gemini booking assistant on every page: guests describe their trip in their own words (typed or spoken), get matching tours and day trips as cards, and book excursions and transfers in the chat up to checkout. Grounded only in your own trips, prices and rules; prices and availability always come from the site, never from the AI. Needs your own Gemini API key."
+msgstr ""
+
+#. Author of the plugin
+#: itour-ai-mode.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-ai-mode.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Agent.php:72
+msgid "You’re sending messages very quickly. Please wait a moment and try again."
+msgstr ""
+
+#: src/Agent.php:78
+msgid "The assistant is very busy today. Please use the search on the page or contact us."
+msgstr ""
+
+#: src/Agent.php:92
+msgid "The assistant isn’t available right now. Please use the search on the page."
+msgstr ""
+
+#: src/Agent.php:133
+msgid "Please type your question."
+msgstr ""
+
+#: src/Agent.php:144
+msgid "The assistant is busy right now. Please try again in a moment."
+msgstr ""
+
+#: src/Agent.php:144
+msgid "Sorry, I couldn’t process that. Please rephrase it or use the search on the page."
+msgstr ""
+
+#: src/Agent.php:163
+msgid "All set! Taking you to checkout to finish your booking."
+msgstr ""
+
+#: src/Agent.php:180
+msgid "Could you tell me a bit more?"
+msgstr ""
+
+#: src/Agent.php:291
+msgid "Please choose one of the vehicles I listed."
+msgstr ""
+
+#: src/Agent.php:293
+msgid "I can book day trips and transfers here. For tour packages, send an enquiry from the tour’s page."
+msgstr ""
+
+#. translators: %s: day trip name.
+#: src/Front.php:38
+#, php-format
+msgid "%s for 2 adults"
+msgstr ""
+
+#: src/Front.php:42
+msgid "Airport transfer to my hotel"
+msgstr ""
+
+#: src/Front.php:44
+msgid "What can I do in 3 days?"
+msgstr ""
+
+#. translators: %s: site name.
+#: src/Front.php:59
+#: src/Settings.php:151
+#, php-format
+msgid "%s assistant"
+msgstr ""
+
+#: src/Front.php:70
+msgid "Finds and books your trips"
+msgstr ""
+
+#: src/Front.php:71
+msgid "Hi! Tell me what you’re looking for in your own words, for example “a day trip to Luxor for 2 next Friday” or “transfer from the airport to my hotel tomorrow at 3pm”. I’ll find the best options and book them for you, all the way to checkout."
+msgstr ""
+
+#: src/Front.php:72
+msgid "Describe your trip…"
+msgstr ""
+
+#: src/Front.php:73
+msgid "Listening…"
+msgstr ""
+
+#: src/Front.php:74
+msgid "Thinking…"
+msgstr ""
+
+#: src/Front.php:75
+msgid "Send"
+msgstr ""
+
+#: src/Front.php:76
+msgid "Speak"
+msgstr ""
+
+#: src/Front.php:77
+msgid "Read replies aloud: on"
+msgstr ""
+
+#: src/Front.php:78
+msgid "Read replies aloud: off"
+msgstr ""
+
+#: src/Front.php:79
+msgid "Start over"
+msgstr ""
+
+#: src/Front.php:80
+msgid "Close"
+msgstr ""
+
+#: src/Front.php:81
+msgid "Ask our assistant"
+msgstr ""
+
+#: src/Front.php:82
+msgid "Sorry, something went wrong. Please try again or use the search on the page."
+msgstr ""
+
+#: src/Front.php:83
+msgid "AI assistant for our trips and bookings only. Prices are confirmed at checkout."
+msgstr ""
+
+#: src/Front.php:84
+msgid "Book this"
+msgstr ""
+
+#: src/Front.php:85
+msgid "View"
+msgstr ""
+
+#: src/Front.php:86
+msgid "from"
+msgstr ""
+
+#: src/Front.php:87
+msgid "Taking you to checkout…"
+msgstr ""
+
+#: src/Module.php:28
+#: src/Module.php:99
+#: src/Settings.php:112
+msgid "AI Mode"
+msgstr ""
+
+#: src/Settings.php:116
+msgid "Assistant"
+msgstr ""
+
+#: src/Settings.php:117
+msgid "on"
+msgstr ""
+
+#: src/Settings.php:117
+msgid "off"
+msgstr ""
+
+#: src/Settings.php:120
+msgid "A booking assistant on every page (not on cart and checkout). Guests describe their trip in their own words, typed or spoken, in any language; it suggests your tours and day trips and books excursions and transfers up to checkout. It only knows your own trips, prices and rules, and every price and date is checked by the site before anything is booked."
+msgstr ""
+
+#: src/Settings.php:122
+msgid "Add your Gemini API key on the Gemini tab first."
+msgstr ""
+
+#: src/Settings.php:125
+msgid "Show the assistant"
+msgstr ""
+
+#: src/Settings.php:130
+msgid "On"
+msgstr ""
+
+#: src/Settings.php:131
+msgid "Off"
+msgstr ""
+
+#: src/Settings.php:138
+msgid "Open by itself on the home page"
+msgstr ""
+
+#: src/Settings.php:143
+msgid "Yes, once per visit"
+msgstr ""
+
+#: src/Settings.php:144
+msgid "No"
+msgstr ""
+
+#. translators: %s: site name.
+#: src/Settings.php:151
+msgid "Name"
+msgstr ""
+
+#. translators: %s: site name.
+#: src/Settings.php:151
+msgid "Shown at the top of the chat. Empty = your site name + “assistant”."
+msgstr ""
+
+#: src/Settings.php:152
+msgid "Example requests"
+msgstr ""
+
+#: src/Settings.php:152
+msgid ""
+"Airport transfer from Hurghada airport\n"
+"Day trip to Luxor for 2 adults"
+msgstr ""
+
+#: src/Settings.php:152
+msgid "One per line, up to 4. Shown as buttons before the first message. Empty = examples made from your trips."
+msgstr ""
+
+#: src/Settings.php:166
+msgid "Gemini"
+msgstr ""
+
+#: src/Settings.php:172
+msgid "The assistant runs on Google Gemini with your own API key: create one in Google AI Studio (aistudio.google.com → Get API key). Google bills your account for what guests send."
+msgstr ""
+
+#: src/Settings.php:174
+msgid "API key"
+msgstr ""
+
+#: src/Settings.php:175
+msgid "Saved. Type a new key to replace it."
+msgstr ""
+
+#: src/Settings.php:176
+msgid "Remove the saved key (switches the assistant off)"
+msgstr ""
+
+#: src/Settings.php:177
+msgid "Kept in the database, never shown again on this page."
+msgstr ""
+
+#: src/Settings.php:184
+msgid "— None —"
+msgstr ""
+
+#: src/Settings.php:186
+msgid "Model"
+msgstr ""
+
+#: src/Settings.php:186
+msgid "Models your key can use. A “flash” model is fast and cheap enough for chat."
+msgstr ""
+
+#: src/Settings.php:186
+msgid "Model id, e.g. gemini-3.8-flash. Save a key to choose from a list."
+msgstr ""
+
+#: src/Settings.php:187
+msgid "Backup model"
+msgstr ""
+
+#: src/Settings.php:187
+msgid "Used when the main model is busy or slow."
+msgstr ""
+
+#: src/Settings.php:206
+msgid "Limits"
+msgstr ""
+
+#: src/Settings.php:210
+msgid "Messages per visitor per minute"
+msgstr ""
+
+#: src/Settings.php:221
+msgid "Stops one visitor or bot from running up your Gemini bill."
+msgstr ""
+
+#: src/Settings.php:225
+msgid "Messages per day, whole site"
+msgstr ""
+
+#: src/Settings.php:236
+msgid "After this the assistant asks guests to use the normal search or contact you, until midnight."
+msgstr ""
+
+#: src/Settings.php:240
+msgid "Keep conversations for (days)"
+msgstr ""
+
+#: src/Settings.php:251
+msgid "Older conversations are deleted every day."
+msgstr ""
+
+#: src/Settings.php:266
+msgid "Conversations"
+msgstr ""
+
+#. translators: %d: days.
+#: src/Settings.php:283
+#, php-format
+msgid "The last 100 conversations (kept %d days). Use them to see what guests ask for and what you don’t offer yet. No names or IP addresses are stored."
+msgstr ""
+
+#: src/Settings.php:285
+msgid "No conversations yet."
+msgstr ""
+
+#: src/Settings.php:288
+msgid "Started"
+msgstr ""
+
+#: src/Settings.php:288
+msgid "First message"
+msgstr ""
+
+#: src/Settings.php:288
+msgid "Messages"
+msgstr ""
+
+#: src/Settings.php:288
+msgid "Booked"
+msgstr ""

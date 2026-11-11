@@ -107,7 +107,7 @@ final class Booking {
 	 * @param int $post Post id.
 	 * @return array<int,array{label:string,zone:int,time:string}>
 	 */
-	private static function hotels( int $post ): array {
+	public static function hotels( int $post ): array {
 		global $wpdb;
 		$zones = array_column( Excursion::pickups( $post ), null, 'zone_id' );
 		if ( ! $zones ) {
@@ -249,10 +249,22 @@ final class Booking {
 			self::$errors['slot'] = __( 'This page expired. Please try again.', 'itour-excursions' );
 			return;
 		}
-		$p    = wp_unslash( (array) $_POST[ self::KEY ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value checked below.
+		self::$errors = self::book( wp_unslash( (array) $_POST[ self::KEY ] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value checked in book().
+	}
+
+	/**
+	 * Check a booking, price it on the server and put it in the cart. Shared by the booking form and the AI
+	 * assistant, so both follow the same dates, seats, pick-up and price rules.
+	 *
+	 * @param array<string,mixed> $p        Fields: post, slot (Y-m-d H:i), variant, adults, children, infants,
+	 *                                      pickup (hotel|typed|meeting), hotel (place id), address, addons[], notes, pay.
+	 * @param bool                $redirect Go to checkout afterwards.
+	 * @return array<string,string> Errors by field ([] = added to the cart).
+	 */
+	public static function book( array $p, bool $redirect = true ): array {
 		$post = absint( $p['post'] ?? 0 );
 		if ( Excursion::TYPE !== get_post_type( $post ) || 'publish' !== get_post_status( $post ) ) {
-			return;
+			return array( 'slot' => __( 'This trip is not available.', 'itour-excursions' ) );
 		}
 		$c        = Excursion::config( $post );
 		$slot     = (string) ( $p['slot'] ?? '' );
@@ -307,8 +319,7 @@ final class Booking {
 		$addons = array_values( array_intersect( array_map( 'intval', (array) ( $p['addons'] ?? array() ) ), array_keys( (array) $c['addons'] ) ) );
 		$price  = $e ? null : Excursion::price( $post, $variant, substr( $slot, 0, 10 ), $adults, $children, $infants, $zone, $addons );
 		if ( null === $price ) {
-			self::$errors = $e ? $e : array( 'adults' => __( 'We have no price for this group size and type. Contact us for a quote.', 'itour-excursions' ) );
-			return;
+			return $e ? $e : array( 'adults' => __( 'We have no price for this group size and type. Contact us for a quote.', 'itour-excursions' ) );
 		}
 
 		$deposit = (int) $c['deposit'] > 0 && 'deposit' === ( $p['pay'] ?? 'full' );
@@ -345,8 +356,10 @@ final class Booking {
 				'pickup_time' => $p_time,
 				'addons'      => implode( ', ', array_map( static fn( $i ) => $c['addons'][ $i ]['name'], $addons ) ),
 				'notes'       => $notes,
-			)
+			),
+			$redirect
 		);
+		return array();
 	}
 
 	/**

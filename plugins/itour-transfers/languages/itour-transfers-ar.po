@@ -72,7 +72,7 @@ msgid "Date"
 msgstr "التاريخ"
 
 #: blocks/transfer-results/render.php:62
-#: src/Booking.php:262
+#: src/Booking.php:276
 #: src/Module.php:190
 #: src/Module.php:220
 #: src/Module.php:250
@@ -174,13 +174,13 @@ msgid "Departure flight number"
 msgstr "رقم رحلة المغادرة"
 
 #: src/Booking.php:99
-#: src/Booking.php:275
+#: src/Booking.php:289
 #: src/Module.php:221
 msgid "Child seats"
 msgstr "مقاعد الأطفال"
 
 #: src/Booking.php:100
-#: src/Booking.php:277
+#: src/Booking.php:291
 #: src/Module.php:222
 #: src/Module.php:251
 msgid "Bags"
@@ -222,12 +222,16 @@ msgstr "يظهر السعر النهائي مع الإضافات عند الدف
 msgid "This page expired. Please try again."
 msgstr "انتهت صلاحية الصفحة. يرجى المحاولة مرة أخرى."
 
-#: src/Booking.php:142
+#: src/Booking.php:149
+msgid "Unknown pick-up or drop-off place."
+msgstr "مكان الاستقبال أو التوصيل غير معروف."
+
+#: src/Booking.php:156
 msgid "Enter the pick-up date and time."
 msgstr "أدخل تاريخ ووقت الاستقبال."
 
 #. translators: %d: hours.
-#: src/Booking.php:145
+#: src/Booking.php:159
 #, php-format
 msgid "Book at least %d hour before pick-up. For sooner, please call us."
 msgid_plural "Book at least %d hours before pick-up. For sooner, please call us."
@@ -238,41 +242,41 @@ msgstr[3] "احجز قبل الاستقبال بـ %d ساعات على الأق
 msgstr[4] "احجز قبل الاستقبال بـ %d ساعة على الأقل. للأقرب، اتصل بنا."
 msgstr[5] "احجز قبل الاستقبال بـ %d ساعة على الأقل. للأقرب، اتصل بنا."
 
-#: src/Booking.php:149
+#: src/Booking.php:163
 msgid "Enter your flight number so the driver can follow delays."
 msgstr "أدخل رقم رحلتك ليتابع السائق أي تأخير."
 
-#: src/Booking.php:156
+#: src/Booking.php:170
 msgid "Enter the return date and time."
 msgstr "أدخل تاريخ ووقت العودة."
 
-#: src/Booking.php:158
+#: src/Booking.php:172
 msgid "The return must be after the first pick-up."
 msgstr "يجب أن تكون العودة بعد الاستقبال الأول."
 
-#: src/Booking.php:161
+#: src/Booking.php:175
 msgid "Enter your departure flight number."
 msgstr "أدخل رقم رحلة المغادرة."
 
-#: src/Booking.php:167
+#: src/Booking.php:181
 msgid "At most one child seat per passenger."
 msgstr "مقعد طفل واحد لكل راكب كحد أقصى."
 
-#: src/Booking.php:170
+#: src/Booking.php:184
 msgid "Enter the number of bags."
 msgstr "أدخل عدد الحقائب."
 
-#: src/Booking.php:174
+#: src/Booking.php:188
 msgid "This vehicle is no longer available for this route. Please search again."
 msgstr "هذه المركبة لم تعد متاحة لهذا المسار. يرجى البحث مرة أخرى."
 
 #. translators: 1: from place, 2: to place.
-#: src/Booking.php:249
+#: src/Booking.php:263
 #, php-format
 msgid "Transfer: %1$s → %2$s"
 msgstr "تنقل: %1$s ← %2$s"
 
-#: src/Booking.php:261
+#: src/Booking.php:275
 #: src/Module.php:189
 #: src/Module.php:219
 #: src/Module.php:249
@@ -281,33 +285,33 @@ msgstr "تنقل: %1$s ← %2$s"
 msgid "Vehicle"
 msgstr "المركبة"
 
-#: src/Booking.php:263
+#: src/Booking.php:277
 #: src/Module.php:187
 #: src/Module.php:215
 msgid "Pick-up"
 msgstr "الاستقبال"
 
-#: src/Booking.php:266
+#: src/Booking.php:280
 #: src/Module.php:216
 msgid "Flight number"
 msgstr "رقم الرحلة"
 
-#: src/Booking.php:269
+#: src/Booking.php:283
 #: src/Module.php:217
 msgid "Return pick-up"
 msgstr "استقبال العودة"
 
-#: src/Booking.php:271
+#: src/Booking.php:285
 #: src/Module.php:218
 msgid "Return flight number"
 msgstr "رقم رحلة العودة"
 
-#: src/Booking.php:279
+#: src/Booking.php:293
 #: src/Module.php:225
 msgid "Notes"
 msgstr "ملاحظات"
 
-#: src/Booking.php:281
+#: src/Booking.php:295
 #: src/Settings.php:169
 msgid "Cancellation"
 msgstr "الإلغاء"
@@ -382,7 +386,7 @@ msgstr "العملة"
 
 #: src/Module.php:243
 msgid "vehicle"
-msgstr ""
+msgstr "سيارة"
 
 #: src/Module.php:244
 msgid "Transfer vehicles"
@@ -646,7 +650,7 @@ msgstr "%1$s: «%2$s» ليس سعرًا."
 
 #: blocks/transfer-results/editor.js:10
 msgid "Transfer results"
-msgstr ""
+msgstr "نتائج التنقلات"
 
 #: blocks/transfer-results/editor.js:11
 msgid "Visitors see the vehicles and prices for their search here."

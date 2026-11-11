@@ -126,13 +126,27 @@ final class Booking {
 			self::$errors['date'] = __( 'This page expired. Please try again.', 'itour-transfers' );
 			return;
 		}
-		$p    = array_map( 'sanitize_textarea_field', wp_unslash( (array) $_POST[ self::KEY ] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized by array_map.
+		self::$errors = self::book( (array) wp_unslash( $_POST[ self::KEY ] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in book().
+	}
+
+	/**
+	 * Check a transfer, price it on the server and put it in the cart. Shared by the booking form and the AI
+	 * assistant, so both follow the same notice, flight and price rules.
+	 *
+	 * @param array<string,mixed> $p        Fields: from, to (place names), pax, trip (one|return), date, time,
+	 *                                      flight, return_date, return_time, return_flight, vehicle (id), seats,
+	 *                                      bags, notes, pay.
+	 * @param bool                $redirect Go to checkout afterwards.
+	 * @return array<string,string> Errors by field ([] = added to the cart).
+	 */
+	public static function book( array $p, bool $redirect = true ): array {
+		$p    = array_map( static fn( $v ) => sanitize_textarea_field( (string) ( is_scalar( $v ) ? $v : '' ) ), $p );
 		$from = Locations::find( $p['from'] ?? '' );
 		$to   = Locations::find( $p['to'] ?? '' );
 		$pax  = max( 1, min( 99, (int) ( $p['pax'] ?? 1 ) ) );
 		$back = 'return' === ( $p['trip'] ?? 'one' );
 		if ( ! $from || ! $to ) {
-			return; // Tampered or renamed place: the results block explains.
+			return array( 'date' => __( 'Unknown pick-up or drop-off place.', 'itour-transfers' ) ); // Tampered or renamed place.
 		}
 		$rules = Settings::get();
 		$tz    = wp_timezone();
@@ -174,8 +188,7 @@ final class Booking {
 			$e['date'] = __( 'This vehicle is no longer available for this route. Please search again.', 'itour-transfers' );
 		}
 		if ( $e ) {
-			self::$errors = $e;
-			return;
+			return $e;
 		}
 
 		$deposit       = (float) $rules['deposit_percent'] > 0 && 'deposit' === ( $p['pay'] ?? 'full' );
@@ -200,7 +213,8 @@ final class Booking {
 		$data['type']  = 'transfer';
 		$data['title'] = self::title( $data );
 		$data['lines'] = self::lines( $data );
-		Checkout::add( $data );
+		Checkout::add( $data, $redirect );
+		return array();
 	}
 
 	/**

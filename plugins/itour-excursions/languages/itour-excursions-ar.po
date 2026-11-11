@@ -58,32 +58,32 @@ msgid "Please check the highlighted fields."
 msgstr "يرجى مراجعة الحقول المحددة."
 
 #: src/Booking.php:160
-#: src/Booking.php:317
-#: src/Booking.php:452
+#: src/Booking.php:328
+#: src/Booking.php:465
 msgid "Trip type"
 msgstr "نوع الرحلة"
 
 #: src/Booking.php:169
-#: src/Booking.php:318
-#: src/Booking.php:426
-#: src/Booking.php:453
+#: src/Booking.php:329
+#: src/Booking.php:439
+#: src/Booking.php:466
 #: src/Editor.php:132
 #: src/Module.php:185
 msgid "Date"
 msgstr "التاريخ"
 
 #: src/Booking.php:175
-#: src/Booking.php:454
+#: src/Booking.php:467
 msgid "Adults"
 msgstr "البالغون"
 
 #: src/Booking.php:176
-#: src/Booking.php:455
+#: src/Booking.php:468
 msgid "Children (2–11)"
 msgstr "الأطفال (2–11)"
 
 #: src/Booking.php:177
-#: src/Booking.php:456
+#: src/Booking.php:469
 msgid "Infants (0–1)"
 msgstr "الرضّع (0–1)"
 
@@ -103,9 +103,9 @@ msgid "I’ll meet you at %s"
 msgstr "سأقابلكم عند %s"
 
 #: src/Booking.php:200
-#: src/Booking.php:324
-#: src/Booking.php:429
-#: src/Booking.php:457
+#: src/Booking.php:335
+#: src/Booking.php:442
+#: src/Booking.php:470
 #: src/Editor.php:258
 #: src/Page.php:46
 #: src/Sheet.php:57
@@ -125,7 +125,7 @@ msgid "Hotel name or address"
 msgstr "اسم الفندق أو العنوان"
 
 #: src/Booking.php:219
-#: src/Booking.php:459
+#: src/Booking.php:472
 #: src/Editor.php:315
 #: src/Sheet.php:61
 msgid "Add-ons"
@@ -154,8 +154,8 @@ msgid "per person"
 msgstr "للفرد"
 
 #: src/Booking.php:228
-#: src/Booking.php:329
-#: src/Booking.php:462
+#: src/Booking.php:340
+#: src/Booking.php:475
 msgid "Notes"
 msgstr "ملاحظات"
 
@@ -190,11 +190,15 @@ msgid "This page expired. Please try again."
 msgstr "انتهت صلاحية الصفحة. يرجى المحاولة مرة أخرى."
 
 #: src/Booking.php:267
+msgid "This trip is not available."
+msgstr "هذه الرحلة غير متاحة."
+
+#: src/Booking.php:279
 msgid "This date is no longer available. Please pick another."
 msgstr "هذا التاريخ لم يعد متاحًا. يرجى اختيار تاريخ آخر."
 
 #. translators: %d: seats left.
-#: src/Booking.php:270
+#: src/Booking.php:282
 #, php-format
 msgid "Only %d seat is left on this date."
 msgid_plural "Only %d seats are left on this date."
@@ -205,84 +209,84 @@ msgstr[3] "لم يتبقَّ سوى %d مقاعد في هذا التاريخ."
 msgstr[4] "لم يتبقَّ سوى %d مقعدًا في هذا التاريخ."
 msgstr[5] "لم يتبقَّ سوى %d مقعد في هذا التاريخ."
 
-#: src/Booking.php:273
+#: src/Booking.php:285
 msgid "At least one adult must travel."
 msgstr "يجب أن يسافر بالغ واحد على الأقل."
 
-#: src/Booking.php:276
+#: src/Booking.php:288
 msgid "For groups this large, please contact us."
 msgstr "للمجموعات بهذا الحجم، يرجى التواصل معنا."
 
-#: src/Booking.php:290
+#: src/Booking.php:302
 msgid "Choose your hotel."
 msgstr "اختر فندقك."
 
-#: src/Booking.php:298
+#: src/Booking.php:310
 msgid "Enter your hotel name or address."
 msgstr "أدخل اسم فندقك أو عنوانك."
 
-#: src/Booking.php:304
+#: src/Booking.php:316
 msgid "Choose how we pick you up."
 msgstr "اختر طريقة الاستقبال."
 
-#: src/Booking.php:310
+#: src/Booking.php:322
 msgid "We have no price for this group size and type. Contact us for a quote."
 msgstr "ليس لدينا سعر لهذا الحجم والنوع من المجموعات. تواصل معنا لعرض سعر."
 
-#: src/Booking.php:326
+#: src/Booking.php:337
 #: src/Page.php:63
 msgid "Cancellation"
 msgstr "الإلغاء"
 
-#: src/Booking.php:414
+#: src/Booking.php:427
 msgid "excursion booking"
 msgstr "حجز رحلة"
 
-#: src/Booking.php:415
+#: src/Booking.php:428
 msgid "Excursion bookings"
 msgstr "حجوزات الرحلات"
 
-#: src/Booking.php:423
+#: src/Booking.php:436
 msgid "No excursion bookings yet. They appear here when a customer checks out."
 msgstr "لا توجد حجوزات رحلات بعد. تظهر هنا عندما يُتم العميل الدفع."
 
-#: src/Booking.php:425
-#: src/Booking.php:450
+#: src/Booking.php:438
+#: src/Booking.php:463
 msgid "Booking"
 msgstr "الحجز"
 
-#: src/Booking.php:427
-#: src/Booking.php:451
+#: src/Booking.php:440
+#: src/Booking.php:464
 msgid "Excursion"
 msgstr "الرحلة"
 
-#: src/Booking.php:428
+#: src/Booking.php:441
 #: src/Module.php:191
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Booking.php:430
+#: src/Booking.php:443
 msgid "Order status"
 msgstr "حالة الطلب"
 
-#: src/Booking.php:446
+#: src/Booking.php:459
 msgid "Open the order (customer, payment, status)"
 msgstr "افتح الطلب (العميل، الدفع، الحالة)"
 
-#: src/Booking.php:458
+#: src/Booking.php:471
 #: src/Editor.php:105
 msgid "Pick-up time"
 msgstr "وقت الاستقبال"
 
-#: src/Booking.php:465
+#: src/Booking.php:478
 msgid "Total"
 msgstr "الإجمالي"
 
-#: src/Booking.php:466
+#: src/Booking.php:479
 msgid "Paid at checkout"
 msgstr "المدفوع عند الدفع"
 
-#: src/Booking.php:467
+#: src/Booking.php:480
 msgid "Seats"
 msgstr "المقاعد"
 

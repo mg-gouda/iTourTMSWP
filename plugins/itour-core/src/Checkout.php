@@ -51,13 +51,19 @@ final class Checkout {
 	/**
 	 * Put a booking in the cart and go to checkout.
 	 *
-	 * @param array<string,mixed> $booking Booking (see file header).
+	 * @param array<string,mixed> $booking  Booking (see file header).
+	 * @param bool                $redirect Go to checkout now (false for AJAX callers, e.g. the AI assistant).
 	 */
-	public static function add( array $booking ): void {
+	public static function add( array $booking, bool $redirect = true ): void {
 		$booking['uid'] = wp_generate_uuid4(); // Two identical bookings stay two cart lines.
+		if ( null === WC()->cart && function_exists( 'wc_load_cart' ) ) {
+			wc_load_cart(); // admin-ajax requests have no cart until asked.
+		}
 		WC()->cart->add_to_cart( self::product_id(), 1, 0, array(), array( self::KEY => $booking ) );
-		wp_safe_redirect( wc_get_checkout_url() );
-		exit;
+		if ( $redirect ) {
+			wp_safe_redirect( wc_get_checkout_url() );
+			exit;
+		}
 	}
 
 	/**
