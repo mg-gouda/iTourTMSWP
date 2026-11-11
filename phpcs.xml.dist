@@ -9,6 +9,7 @@
 	<exclude-pattern>*.l10n.php</exclude-pattern>
 	<!-- Ported as-is from Rehlla Languages (owner asked to copy, not rewrite): kept out of the style rules. -->
 	<exclude-pattern>plugins/itour-languages/*</exclude-pattern>
+	<exclude-pattern>plugins/itour-social/*</exclude-pattern>
 
 	<arg name="extensions" value="php"/>
 	<arg name="colors"/>

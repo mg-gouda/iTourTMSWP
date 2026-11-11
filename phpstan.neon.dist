@@ -7,6 +7,7 @@ parameters:
 		- */vendor/*
 		- */languages/*
 		- plugins/itour-languages/*
+		- plugins/itour-social/*
 	scanFiles:
 		- vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
 	bootstrapFiles:
