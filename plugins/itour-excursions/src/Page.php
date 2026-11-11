@@ -26,8 +26,8 @@ final class Page {
 	 * @return array<string,mixed>
 	 */
 	public static function parts( int $id ): array {
-		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array( 'itour-products' ), '0.4.0' );
-		wp_enqueue_script( 'itour-exc-quote', plugins_url( 'assets/quote.js', ITOUR_EXCURSIONS_FILE ), array(), '0.5.0', true );
+		wp_enqueue_style( 'itour-excursions', plugins_url( 'assets/excursion.css', ITOUR_EXCURSIONS_FILE ), array( 'itour-products' ), '0.5.1' );
+		wp_enqueue_script( 'itour-exc-quote', plugins_url( 'assets/quote.js', ITOUR_EXCURSIONS_FILE ), array(), '0.5.1', true );
 		wp_localize_script(
 			'itour-exc-quote',
 			'itourExcQuote',

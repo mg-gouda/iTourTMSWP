@@ -24,3 +24,6 @@
 .itour-eb__hotel, .itour-eb__typed { display: none; }
 .itour-tb:has(input[value="hotel"]:checked) .itour-eb__hotel,
 .itour-tb:has(input[value="typed"]:checked) .itour-eb__typed { display: flex; }
+
+/* Per-person add-on count beside its name ("× 3"). */
+.itour-eb__qty { margin-inline-start: 4px; padding: 1px 7px; border-radius: 999px; background: var(--wp--preset--color--surface, #f4f6f9); font-size: 0.8125rem; font-weight: 600; font-variant-numeric: tabular-nums; }

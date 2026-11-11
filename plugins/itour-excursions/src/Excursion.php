@@ -158,7 +158,7 @@ final class Excursion {
 		foreach ( $addons as $i ) {
 			$a = $cfg['addons'][ $i ] ?? null;
 			if ( $a ) {
-				$add( (string) $a['name'], 'booking' === $a['per'] ? (float) $a['price'] : $paid * (float) $a['price'] );
+				$add( 'booking' === $a['per'] ? (string) $a['name'] : $a['name'] . ' × ' . $paid, 'booking' === $a['per'] ? (float) $a['price'] : $paid * (float) $a['price'] );
 			}
 		}
 		return array(

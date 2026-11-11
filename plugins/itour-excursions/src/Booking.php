@@ -222,7 +222,7 @@ final class Booking {
 			$on = array_map( 'intval', (array) ( $p['addons'] ?? array() ) );
 			foreach ( (array) $c['addons'] as $i => $a ) {
 				$label = (string) $a['name']; // The price band shows the new total when it's ticked.
-				$h    .= '<label><input type="checkbox" name="' . esc_attr( self::KEY . '[addons][]' ) . '" value="' . (int) $i . '"' . checked( in_array( (int) $i, $on, true ), true, false ) . '> ' . esc_html( $label ) . '</label>';
+				$h    .= '<label><input type="checkbox" name="' . esc_attr( self::KEY . '[addons][]' ) . '" value="' . (int) $i . '"' . checked( in_array( (int) $i, $on, true ), true, false ) . '> ' . esc_html( $label ) . ( 'booking' === $a['per'] ? '' : ' <span class="itour-eb__qty" data-itour-qty>× ' . (int) ( max( 1, (int) $val( 'adults', '2' ) ) + (int) $val( 'children', '0' ) ) . '</span>' ) . '</label>'; // Per person: × travellers (infants free).
 			}
 			$h .= '</fieldset>';
 		}

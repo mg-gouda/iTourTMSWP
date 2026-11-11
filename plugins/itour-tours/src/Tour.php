@@ -167,7 +167,7 @@ final class Tour {
 		foreach ( $extras as $i ) {
 			$x = $cfg['extras'][ $i ] ?? null;
 			if ( $x ) {
-				$add( (string) $x['name'], 'booking' === $x['per'] ? (float) $x['price'] : $paid * (float) $x['price'] );
+				$add( 'booking' === $x['per'] ? (string) $x['name'] : $x['name'] . ' × ' . $paid, 'booking' === $x['per'] ? (float) $x['price'] : $paid * (float) $x['price'] );
 			}
 		}
 		return array(

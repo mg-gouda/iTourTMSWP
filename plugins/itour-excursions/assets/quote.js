@@ -26,7 +26,19 @@
 			} )
 			.catch( function () {} );
 	}
+	// "× 3" beside per-person add-ons: adults + children (infants are free).
+	function counts() {
+		var n = 0;
+		[ 'adults', 'children' ].forEach( function ( k ) {
+			var f = form.querySelector( '[name$="[' + k + ']"]' );
+			n += f ? Math.max( 0, parseInt( f.value, 10 ) || 0 ) : 0;
+		} );
+		form.querySelectorAll( '[data-itour-qty]' ).forEach( function ( q ) {
+			q.textContent = '× ' + Math.max( 1, n );
+		} );
+	}
 	function later() {
+		counts();
 		clearTimeout( timer );
 		timer = setTimeout( update, 250 );
 	}
