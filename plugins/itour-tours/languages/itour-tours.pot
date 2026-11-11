@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T23:43:56+00:00\n"
+"POT-Creation-Date: 2026-11-11T13:32:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-tours\n"
@@ -101,13 +101,11 @@ msgstr ""
 
 #: src/Editor.php:127
 #: src/Editor.php:156
-#: src/Page.php:158
 msgid "Child"
 msgstr ""
 
 #: src/Editor.php:128
 #: src/Editor.php:157
-#: src/Page.php:158
 msgid "Infant"
 msgstr ""
 
@@ -131,16 +129,11 @@ msgstr ""
 msgid "Charged"
 msgstr ""
 
-#. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:142
-#: src/Page.php:56
-#: src/Page.php:182
 msgid "per person"
 msgstr ""
 
-#. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:143
-#: src/Page.php:182
 msgid "per booking"
 msgstr ""
 
@@ -190,7 +183,7 @@ msgid "Nights are worked out for you: days minus one."
 msgstr ""
 
 #: src/Editor.php:224
-#: src/Page.php:89
+#: src/Page.php:84
 #: src/Sheet.php:51
 msgid "Booking"
 msgstr ""
@@ -292,7 +285,7 @@ msgid "Add price row"
 msgstr ""
 
 #: src/Editor.php:335
-#: src/Page.php:36
+#: src/Page.php:34
 msgid "Extras"
 msgstr ""
 
@@ -319,7 +312,7 @@ msgstr ""
 
 #: src/Module.php:33
 #: src/Module.php:74
-#: src/Module.php:184
+#: src/Module.php:204
 #: src/Sheet.php:31
 msgid "Tour Packages"
 msgstr ""
@@ -329,185 +322,153 @@ msgid "tour package"
 msgstr ""
 
 #: src/Module.php:82
-#: src/Module.php:146
+#: src/Module.php:166
 msgid "Tour packages"
 msgstr ""
 
 #. translators: %d: number of days.
-#: src/Module.php:90
+#: src/Module.php:110
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Module.php:114
+#: src/Module.php:134
 msgid "Import / export"
 msgstr ""
 
-#: src/Module.php:147
+#: src/Module.php:167
 msgid "Find tours"
 msgstr ""
 
-#: src/Module.php:152
+#: src/Module.php:172
 msgid "Destination"
 msgstr ""
 
-#: src/Module.php:154
+#: src/Module.php:174
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr ""
 
-#: src/Module.php:159
+#: src/Module.php:179
 msgid "Start date"
 msgstr ""
 
-#: src/Module.php:165
+#: src/Module.php:185
 msgid "Travellers"
 msgstr ""
 
-#: src/Module.php:185
+#: src/Module.php:205
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr ""
 
-#: src/Module.php:189
+#: src/Module.php:209
 msgid "Tour packages page"
 msgstr ""
 
-#: src/Module.php:192
+#: src/Module.php:212
 msgid "The page that lists all tour packages."
 msgstr ""
 
-#: src/Module.php:195
+#: src/Module.php:215
 msgid "Search results page"
 msgstr ""
 
-#: src/Module.php:198
+#: src/Module.php:218
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr ""
 
-#: src/Page.php:34
+#: src/Page.php:33
 msgid "Day by day"
 msgstr ""
 
-#: src/Page.php:35
-msgid "Prices per person"
-msgstr ""
-
-#: src/Page.php:44
+#: src/Page.php:42
 msgid "Cancellation"
 msgstr ""
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Tell us your dates and group: we check availability and send a quote within one working day."
 msgstr ""
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Send us your dates and group size and we will confirm availability."
 msgstr ""
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Ask for this tour"
 msgstr ""
 
-#: src/Page.php:61
+#: src/Page.php:56
 msgid "Plan this tour"
 msgstr ""
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 msgid "Duration"
 msgstr ""
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 #, php-format
 msgid "%1$d days / %2$d nights"
 msgstr ""
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 msgid "1 day"
 msgstr ""
 
-#: src/Page.php:83
+#: src/Page.php:78
 #: src/Sheet.php:56
 msgid "Departures"
 msgstr ""
 
-#: src/Page.php:83
+#: src/Page.php:78
 msgid "New dates coming soon"
 msgstr ""
 
-#: src/Page.php:87
+#: src/Page.php:82
 msgid "Starts"
 msgstr ""
 
-#: src/Page.php:87
+#: src/Page.php:82
 msgid "Any day"
 msgstr ""
 
-#: src/Page.php:89
+#: src/Page.php:84
 msgid "On request"
 msgstr ""
 
-#: src/Page.php:89
+#: src/Page.php:84
 msgid "Instant confirmation"
 msgstr ""
 
 #. translators: %d: day number.
-#: src/Page.php:108
+#: src/Page.php:103
 #, php-format
 msgid "Day %d"
 msgstr ""
 
 #. translators: %s: overnight place.
-#: src/Page.php:109
+#: src/Page.php:104
 #, php-format
 msgid "Overnight: %s"
 msgstr ""
 
-#: src/Page.php:133
+#: src/Page.php:128
 msgid "Route map"
 msgstr ""
 
-#. translators: 1: start date, 2: end date.
-#: src/Page.php:149
+#. translators: %s: extra.
+#: src/Page.php:142
 #, php-format
-msgid "%1$s – %2$s"
+msgid "%s (optional, ask us to add it)"
 msgstr ""
 
-#: src/Page.php:158
-msgid "Group size"
-msgstr ""
-
-#: src/Page.php:158
-msgid "Adult, sharing"
-msgstr ""
-
-#: src/Page.php:158
-msgid "Single room"
-msgstr ""
-
-#: src/Page.php:163
-msgid "Free"
-msgstr ""
-
-#. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:165
+#. translators: 1: supplement, 2: date(s).
+#: src/Page.php:147
 #, php-format
-msgid "%s travellers"
-msgstr ""
-
-#. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Page.php:182
-#, php-format
-msgid "%1$s: %2$s %3$s"
-msgstr ""
-
-#. translators: 1: supplement, 2: date(s), 3: adult price.
-#: src/Page.php:187
-#, php-format
-msgid "%1$s (%2$s): %3$s per adult, added automatically"
+msgid "%1$s (%2$s): included in the price for these dates"
 msgstr ""
 
 #: src/Sheet.php:34

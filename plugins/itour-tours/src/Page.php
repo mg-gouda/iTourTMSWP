@@ -27,13 +27,11 @@ final class Page {
 	public static function parts( int $id ): array {
 		wp_enqueue_style( 'itour-tours', plugins_url( 'assets/tour.css', ITOUR_TOURS_FILE ), array( 'itour-products' ), '0.4.0' );
 		$c        = Tour::config( $id );
-		$fmt      = static fn( $v ): string => itour()->currencies()->format( (float) $v );
 		$info     = Layouts::info_parts( $id );
 		$sections = array();
 		foreach ( array(
 			'itinerary' => array( __( 'Day by day', 'itour-tours' ), self::itinerary( $c ) ),
-			'prices'    => array( __( 'Prices per person', 'itour-tours' ), self::prices( $id, $fmt ) ),
-			'extras'    => array( __( 'Extras', 'itour-tours' ), self::extras( $c, $fmt ) ),
+			'extras'    => array( __( 'Extras', 'itour-tours' ), self::extras( $c ) ),
 		) as $k => $s ) {
 			if ( '' !== $s[1] ) {
 				$sections[ $k ] = $s;
@@ -51,10 +49,7 @@ final class Page {
 		return array(
 			'images'   => $info['images'],
 			'facts'    => self::facts( $c ) + $info['facts'],
-			'price'    => $from ? array(
-				'amount' => $fmt( $from ),
-				'note'   => __( 'per person', 'itour-tours' ),
-			) : null,
+			'price'    => $from ? array( 'amount' => \ITour\Core\Cards::money( $from ) ) : null, // Lowest price; no per-person rates on the page.
 			'content'  => Layouts::content( $id ),
 			'sections' => $sections + $info['sections'],
 			'book'     => array(
@@ -136,55 +131,20 @@ final class Page {
 	}
 
 	/**
-	 * One price table per hotel class and season.
-	 *
-	 * @param int      $id  Post id.
-	 * @param callable $fmt Money formatter.
-	 */
-	private static function prices( int $id, callable $fmt ): string {
-		$groups = array();
-		foreach ( Tour::rates( $id ) as $r ) {
-			$season = '' !== (string) $r['season_from']
-				/* translators: 1: start date, 2: end date. */
-				? ' · ' . sprintf( __( '%1$s – %2$s', 'itour-tours' ), wp_date( 'j M', strtotime( $r['season_from'] ) ), wp_date( 'j M Y', strtotime( (string) $r['season_to'] ) ) )
-				: '';
-			$groups[ Tour::classes()[ (string) $r['hotel_class'] ] . $season ][] = $r;
-		}
-		if ( ! $groups ) {
-			return '';
-		}
-		$h = '';
-		foreach ( $groups as $label => $rows ) {
-			$h .= '<table class="itour-exc__prices"><caption>' . esc_html( $label ) . '</caption><thead><tr><th scope="col">' . esc_html__( 'Group size', 'itour-tours' ) . '</th><th scope="col">' . esc_html__( 'Adult, sharing', 'itour-tours' ) . '</th><th scope="col">' . esc_html__( 'Child', 'itour-tours' ) . ' <small>2–11</small></th><th scope="col">' . esc_html__( 'Infant', 'itour-tours' ) . ' <small>0–1</small></th><th scope="col">' . esc_html__( 'Single room', 'itour-tours' ) . '</th></tr></thead><tbody>';
-			foreach ( $rows as $r ) {
-				$min  = (int) $r['pax_min'];
-				$max  = (int) $r['pax_max'];
-				$size = $max ? ( $min === $max ? (string) $min : $min . '–' . $max ) : $min . '+';
-				$free = static fn( $v ) => (float) $v ? $fmt( $v ) : __( 'Free', 'itour-tours' );
-				/* translators: %s: group size, e.g. "2–3" or "11+". */
-				$h .= '<tr><th scope="row">' . esc_html( sprintf( __( '%s travellers', 'itour-tours' ), $size ) ) . '</th><td>' . esc_html( $fmt( $r['adult'] ) ) . '</td><td>' . esc_html( $free( $r['child'] ) ) . '</td><td>' . esc_html( $free( $r['infant'] ) ) . '</td><td>' . esc_html( (float) $r['single_supp'] ? '+' . $fmt( $r['single_supp'] ) : '—' ) . '</td></tr>';
-			}
-			$h .= '</tbody></table>';
-		}
-		return $h;
-	}
-
-	/**
 	 * Optional extras and dated supplements.
 	 *
 	 * @param array<string,mixed> $c   Settings.
-	 * @param callable            $fmt Money formatter.
 	 */
-	private static function extras( array $c, callable $fmt ): string {
+	private static function extras( array $c ): string {
 		$items = array();
 		foreach ( (array) $c['extras'] as $x ) {
-			/* translators: 1: extra, 2: price, 3: per person / per booking. */
-			$items[] = sprintf( __( '%1$s: %2$s %3$s', 'itour-tours' ), $x['name'], $fmt( $x['price'] ), 'booking' === $x['per'] ? __( 'per booking', 'itour-tours' ) : __( 'per person', 'itour-tours' ) );
+			/* translators: %s: extra. */
+			$items[] = sprintf( __( '%s (optional, ask us to add it)', 'itour-tours' ), $x['name'] );
 		}
 		foreach ( (array) $c['supplements'] as $s ) {
 			$when = wp_date( 'j M Y', strtotime( $s['from'] ) ) . ( '' !== $s['to'] && $s['to'] !== $s['from'] ? ' – ' . wp_date( 'j M Y', strtotime( $s['to'] ) ) : '' );
-			/* translators: 1: supplement, 2: date(s), 3: adult price. */
-			$items[] = sprintf( __( '%1$s (%2$s): %3$s per adult, added automatically', 'itour-tours' ), $s['name'], $when, $fmt( $s['adult'] ) );
+			/* translators: 1: supplement, 2: date(s). */
+			$items[] = sprintf( __( '%1$s (%2$s): included in the price for these dates', 'itour-tours' ), $s['name'], $when );
 		}
 		return $items ? '<ul class="itour-exc__extras"><li>' . implode( '</li><li>', array_map( 'esc_html', $items ) ) . '</li></ul>' : '';
 	}

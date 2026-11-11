@@ -58,6 +58,25 @@ final class Module extends \ITour\Core\Module {
 		// Cards (core Cards): tab, destination, duration.
 		add_filter( 'itour/card_types', static fn( $t ) => $t + array( 'excursions' => array( Excursion::TYPE, __( 'Day trips', 'itour-excursions' ), self::page_url( 'listing_page' ) ) ) );
 		add_filter( 'itour/destination', static fn( $d, $post ) => Excursion::TYPE === get_post_type( $post ) ? (int) Excursion::config( (int) $post )['destination'] : $d, 10, 2 );
+		// Search cards: the total for the searched group (cheapest trip type), with the trip's own rules.
+		add_filter(
+			'itour/quote',
+			static function ( $total, $post, $date, $pax ) {
+				if ( Excursion::TYPE !== get_post_type( $post ) ) {
+					return $total;
+				}
+				$best = null;
+				foreach ( array_keys( Excursion::variants() ) as $v ) {
+					$p = Excursion::price( (int) $post, (string) $v, (string) $date, (int) $pax, 0, 0 );
+					if ( $p && ( null === $best || (float) $p['total'] < $best ) ) {
+						$best = (float) $p['total'];
+					}
+				}
+				return $best;
+			},
+			10,
+			4
+		);
 		add_filter( 'itour/card_facts', static fn( $f, $post ) => Excursion::TYPE === get_post_type( $post ) ? array_merge( $f, array( (string) Excursion::config( (int) $post )['duration'] ) ) : $f, 10, 2 );
 		add_filter( 'wp_itourtms_option_sections', array( $this, 'options_tab' ) );
 	}

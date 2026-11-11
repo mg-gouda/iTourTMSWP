@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-11T13:13:45+00:00\n"
+"POT-Creation-Date: 2026-11-11T13:32:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: itour-core\n"
@@ -59,7 +59,8 @@ msgstr ""
 #: blocks/booking-widget/render.php:100
 #: src/Admin/Crud.php:257
 #: src/Admin/Crud.php:258
-#: src/Cards.php:342
+#: src/Cards.php:379
+#: src/Cards.php:381
 msgid "Search"
 msgstr ""
 
@@ -353,7 +354,7 @@ msgid "Nothing here yet. Use “Add new” to create the first one."
 msgstr ""
 
 #: src/Admin/Crud.php:293
-#: src/Cards.php:379
+#: src/Cards.php:418
 msgid "View"
 msgstr ""
 
@@ -592,96 +593,102 @@ msgstr ""
 msgid "Add row"
 msgstr ""
 
-#: src/Cards.php:100
+#. translators: %d: number of travellers.
+#: src/Cards.php:123
+#, php-format
+msgid "Total for %d traveller"
+msgid_plural "Total for %d travellers"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Cards.php:127
 #: src/Layouts.php:182
 #: src/Layouts.php:227
 #: src/Layouts.php:247
 #: src/Layouts.php:402
-msgid "From"
+msgid "Starting from"
 msgstr ""
 
-#: src/Cards.php:100
-msgid "per adult"
-msgstr ""
-
-#: src/Cards.php:174
+#: src/Cards.php:220
 msgid "You may also like"
 msgstr ""
 
-#. translators: %s: what the visitor searched for.
-#: src/Cards.php:203
-#, php-format
-msgid "Nothing found for “%s”. Try another place, or see everything below."
-msgstr ""
-
-#: src/Cards.php:204
+#: src/Cards.php:245
 msgid "Trips are coming soon."
 msgstr ""
 
-#: src/Cards.php:213
+#: src/Cards.php:250
 #: src/Demo.php:219
 #: blocks/booking-widget/editor.js:10
 msgid "Transfers"
 msgstr ""
 
 #. translators: %s: kind of trips, e.g. "Tour packages".
-#: src/Cards.php:238
+#: src/Cards.php:275
 #, php-format
 msgid "See all %s"
 msgstr ""
 
-#: src/Cards.php:342
-#: src/Cards.php:358
+#: src/Cards.php:379
+#: src/Cards.php:397
 #: src/Locations.php:39
 msgid "Destination"
 msgstr ""
 
-#: src/Cards.php:342
+#: src/Cards.php:379
 msgid "Where are you going?"
 msgstr ""
 
-#: src/Cards.php:343
+#: src/Cards.php:380
+msgid "Date"
+msgstr ""
+
+#: src/Cards.php:381
+msgid "Travellers"
+msgstr ""
+
+#: src/Cards.php:382
 msgid "Filter by"
 msgstr ""
 
-#: src/Cards.php:346
+#: src/Cards.php:385
 msgid "Price up to"
 msgstr ""
 
-#: src/Cards.php:359
+#: src/Cards.php:398
 #: src/Products.php:68
 msgid "Category"
 msgstr ""
 
-#: src/Cards.php:361
+#: src/Cards.php:400
 msgid "Apply"
 msgstr ""
 
-#: src/Cards.php:363
+#: src/Cards.php:402
 msgid "Clear all filters"
 msgstr ""
 
 #. translators: %d: number of trips found.
-#: src/Cards.php:368
+#: src/Cards.php:407
 #, php-format
 msgid "%d trip found"
 msgid_plural "%d trips found"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Cards.php:370
+#: src/Cards.php:409
 msgid "Recommended"
 msgstr ""
 
-#: src/Cards.php:371
+#: src/Cards.php:410
 msgid "Price: low to high"
 msgstr ""
 
-#: src/Cards.php:372
+#: src/Cards.php:411
 msgid "Price: high to low"
 msgstr ""
 
-#: src/Cards.php:373
+#: src/Cards.php:412
 #: src/CoreModule.php:167
 #: src/CoreModule.php:204
 #: src/CoreModule.php:213
@@ -692,32 +699,32 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/Cards.php:375
+#: src/Cards.php:414
 msgid "Sort"
 msgstr ""
 
-#: src/Cards.php:381
+#: src/Cards.php:420
 msgid "Grid"
 msgstr ""
 
-#: src/Cards.php:382
+#: src/Cards.php:421
 msgid "List"
 msgstr ""
 
-#: src/Cards.php:391
+#: src/Cards.php:430
 msgid "No trips match these filters."
 msgstr ""
 
-#: src/Cards.php:391
+#: src/Cards.php:430
 msgid "Show all trips"
 msgstr ""
 
-#: src/Cards.php:416
+#: src/Cards.php:455
 msgid "Destinations: set a destination (Location Tree) on your tours or day trips to show tiles here."
 msgstr ""
 
 #. translators: %d: number of trips.
-#: src/Cards.php:446
+#: src/Cards.php:485
 #, php-format
 msgid "%d trip"
 msgid_plural "%d trips"

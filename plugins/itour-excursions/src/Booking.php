@@ -40,6 +40,8 @@ final class Booking {
 	 */
 	public function hooks(): void {
 		add_action( 'template_redirect', array( $this, 'submit' ) );
+		add_action( 'wp_ajax_itour_exc_quote', array( $this, 'quote_json' ) );
+		add_action( 'wp_ajax_nopriv_itour_exc_quote', array( $this, 'quote_json' ) );
 		add_filter( 'itour/checkout/record_excursion', array( $this, 'record' ), 10, 3 );
 		add_action( 'woocommerce_order_status_changed', array( $this, 'order_status' ), 10, 3 );
 	}
@@ -219,8 +221,7 @@ final class Booking {
 			$h .= '<fieldset class="itour-tb__trip itour-eb__addons"><legend>' . esc_html__( 'Add-ons', 'itour-excursions' ) . '</legend>';
 			$on = array_map( 'intval', (array) ( $p['addons'] ?? array() ) );
 			foreach ( (array) $c['addons'] as $i => $a ) {
-				/* translators: 1: add-on, 2: price, 3: per person / per booking. */
-				$label = sprintf( __( '%1$s (+%2$s %3$s)', 'itour-excursions' ), $a['name'], itour()->currencies()->format( (float) $a['price'] ), 'booking' === $a['per'] ? __( 'per booking', 'itour-excursions' ) : __( 'per person', 'itour-excursions' ) );
+				$label = (string) $a['name']; // The price band shows the new total when it's ticked.
 				$h    .= '<label><input type="checkbox" name="' . esc_attr( self::KEY . '[addons][]' ) . '" value="' . (int) $i . '"' . checked( in_array( (int) $i, $on, true ), true, false ) . '> ' . esc_html( $label ) . '</label>';
 			}
 			$h .= '</fieldset>';
@@ -234,7 +235,7 @@ final class Booking {
 			$h .= '<label><input type="radio" name="' . esc_attr( $n( 'pay' ) ) . '" value="deposit"' . checked( $dep, true, false ) . '> ' . esc_html( sprintf( __( 'Deposit (%d%%), the rest on the day', 'itour-excursions' ), (int) $c['deposit'] ) ) . '</label></fieldset>';
 		}
 		$h .= '<button type="submit" class="itour-tb__submit wp-element-button">' . esc_html__( 'Continue to checkout', 'itour-excursions' ) . '</button>';
-		$h .= '<p class="itour-tb__small">' . esc_html__( 'The price for your group, with pick-up, add-ons and any supplements, is shown at checkout.', 'itour-excursions' ) . '</p>';
+		$h .= '<p class="itour-tb__small">' . esc_html__( 'The total above is for your whole group, with pick-up, add-ons and any supplements.', 'itour-excursions' ) . '</p>';
 		return $h . '</form>';
 	}
 
@@ -250,6 +251,35 @@ final class Booking {
 			return;
 		}
 		self::$errors = self::book( wp_unslash( (array) $_POST[ self::KEY ] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value checked in book().
+	}
+
+	/**
+	 * Total for the booking form as it stands (date, trip type, travellers, hotel pick-up zone, add-ons), or null
+	 * when it can't be priced yet. Same price rules as the booking itself.
+	 *
+	 * @param array<string,mixed> $p Form fields (see book()).
+	 */
+	public static function quote( array $p ): ?float {
+		$post = absint( $p['post'] ?? 0 );
+		if ( Excursion::TYPE !== get_post_type( $post ) ) {
+			return null;
+		}
+		$c      = Excursion::config( $post );
+		$slot   = (string) ( $p['slot'] ?? '' );
+		$hotels = 'hotel' === ( $p['pickup'] ?? '' ) ? self::hotels( $post ) : array();
+		$zone   = (int) ( $hotels[ absint( $p['hotel'] ?? 0 ) ]['zone'] ?? 0 );
+		$addons = array_values( array_intersect( array_map( 'intval', (array) ( $p['addons'] ?? array() ) ), array_keys( (array) $c['addons'] ) ) );
+		$price  = Excursion::price( $post, sanitize_key( (string) ( $p['variant'] ?? 'shared' ) ), substr( $slot, 0, 10 ), absint( $p['adults'] ?? 0 ), absint( $p['children'] ?? 0 ), absint( $p['infants'] ?? 0 ), $zone, $addons );
+		return $price ? (float) $price['total'] : null;
+	}
+
+	/**
+	 * Live total for the booking card (admin-ajax, public; read-only, so no nonce).
+	 */
+	public function quote_json(): void {
+		$p     = isset( $_POST[ self::KEY ] ) && is_array( $_POST[ self::KEY ] ) ? wp_unslash( $_POST[ self::KEY ] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- read-only price check; each value is checked in quote().
+		$total = self::quote( (array) $p );
+		wp_send_json( array( 'total' => null !== $total ? \ITour\Core\Cards::money( $total ) : null ) );
 	}
 
 	/**

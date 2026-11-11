@@ -179,7 +179,7 @@ final class Layouts {
 		if ( ! $p['price'] ) {
 			return '';
 		}
-		return '<p class="itl-price"><span class="itl-price__from">' . esc_html__( 'From', 'itour-core' ) . '</span> <strong>' . esc_html( $p['price']['amount'] ) . '</strong> <span class="itl-price__note">' . esc_html( $p['price']['note'] ?? '' ) . '</span></p>';
+		return '<p class="itl-price"><span class="itl-price__from">' . esc_html__( 'Starting from', 'itour-core' ) . '</span> <strong>' . esc_html( $p['price']['amount'] ) . '</strong></p>';
 	}
 
 	/**
@@ -224,7 +224,7 @@ final class Layouts {
 		if ( ! $p['book'] ) {
 			return '';
 		}
-		$band = $p['price'] ? '<div class="itl-book__band"><span>' . esc_html__( 'From', 'itour-core' ) . '</span> <strong>' . esc_html( $p['price']['amount'] ) . '</strong> <span>' . esc_html( $p['price']['note'] ?? '' ) . '</span></div>' : '';
+		$band = $p['price'] ? '<div class="itl-book__band" data-itl-band aria-live="polite"><span data-itl-band-label>' . esc_html__( 'Starting from', 'itour-core' ) . '</span> <strong data-itl-band-amount>' . esc_html( $p['price']['amount'] ) . '</strong></div>' : '';
 		$cond = '';
 		if ( isset( $p['sections']['cancellation'] ) ) {
 			$cond = '<button type="button" class="itl-book__cond" data-itl-cond>' . esc_html__( 'Booking conditions', 'itour-core' ) . '</button>'
@@ -244,7 +244,7 @@ final class Layouts {
 		if ( ! $p['book'] ) {
 			return '';
 		}
-		$price = $p['price'] ? '<span class="itl-jump__price">' . esc_html__( 'From', 'itour-core' ) . ' <strong>' . esc_html( $p['price']['amount'] ) . '</strong></span>' : '';
+		$price = $p['price'] ? '<span class="itl-jump__price">' . esc_html__( 'Starting from', 'itour-core' ) . ' <strong>' . esc_html( $p['price']['amount'] ) . '</strong></span>' : '';
 		return '<div class="itl-jump ' . esc_attr( $css ) . ( 'itl-jump--float' === $css ? ' is-hidden' : '' ) . '" data-itl-jump>' . $price . '<a class="itl-jump__btn wp-element-button" href="#book">' . esc_html( $p['book']['title'] ) . '</a></div>';
 	}
 
@@ -399,7 +399,7 @@ final class Layouts {
 		}
 		$h .= '<div class="itl-bento__side">';
 		if ( $p['price'] ) {
-			$h .= '<div class="itl-tile itl-tile--price"><div><span class="itl-tile__label">' . esc_html__( 'From', 'itour-core' ) . '</span><strong class="itl-tile__big">' . esc_html( $p['price']['amount'] ) . '</strong><span class="itl-tile__note">' . esc_html( $p['price']['note'] ?? '' ) . '</span></div>' . ( $p['book'] ? '<a class="wp-element-button" href="#book">' . esc_html( $p['book']['title'] ) . '</a>' : '' ) . '</div>';
+			$h .= '<div class="itl-tile itl-tile--price"><div><span class="itl-tile__label">' . esc_html__( 'Starting from', 'itour-core' ) . '</span><strong class="itl-tile__big">' . esc_html( $p['price']['amount'] ) . '</strong></div>' . ( $p['book'] ? '<a class="wp-element-button" href="#book">' . esc_html( $p['book']['title'] ) . '</a>' : '' ) . '</div>';
 		}
 		$facts = array_slice( $p['facts'], 0, 6, true );
 		$n     = 0;

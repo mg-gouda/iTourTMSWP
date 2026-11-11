@@ -79,6 +79,55 @@ final class Cards {
 	}
 
 	/**
+	 * "45 USD" / "1,250.50 USD": amount then the site currency code.
+	 *
+	 * @param float $amount Amount.
+	 */
+	public static function money( float $amount ): string {
+		return number_format_i18n( $amount, floor( $amount ) === $amount ? 0 : 2 ) . ' ' . itour()->currencies()->base();
+	}
+
+	/**
+	 * Search criteria from the address (booking widget or listing search): [ Y-m-d date, travellers ].
+	 *
+	 * @return array{0:string,1:int}
+	 */
+	public static function criteria(): array {
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- public search (GET).
+		$date = sanitize_text_field( wp_unslash( $_GET['date'] ?? '' ) );
+		$pax  = absint( $_GET['pax'] ?? 0 );
+		// phpcs:enable
+		return array( preg_match( '/^\d{4}-\d{2}-\d{2}$/', $date ) ? $date : '', min( 99, $pax ) );
+	}
+
+	/**
+	 * Price line of a card: the total for the searched group when the visitor searched (travellers, and the date
+	 * when given), else the lowest price. Never a per-person rate.
+	 *
+	 * @param int $post Post id.
+	 */
+	public static function price_line( int $post ): string {
+		list( $date, $pax ) = self::criteria();
+		if ( $pax ) {
+			/**
+			 * Total for a group (modules price it with their own rules), or null when they can't.
+			 *
+			 * @param float|null $total Total so far.
+			 * @param int        $post  Post id.
+			 * @param string     $date  Y-m-d (today when not searched).
+			 * @param int        $pax   Travellers (adults).
+			 */
+			$total = apply_filters( 'itour/quote', null, $post, '' !== $date ? $date : wp_date( 'Y-m-d' ), $pax );
+			if ( null !== $total && (float) $total > 0 ) {
+				/* translators: %d: number of travellers. */
+				return '<p class="itc__price itc__price--total"><span>' . esc_html( sprintf( _n( 'Total for %d traveller', 'Total for %d travellers', $pax, 'itour-core' ), $pax ) ) . '</span> <strong>' . esc_html( self::money( (float) $total ) ) . '</strong></p>';
+			}
+		}
+		$from = (float) get_post_meta( $post, '_itour_price_from', true );
+		return $from > 0 ? '<p class="itc__price"><span>' . esc_html__( 'Starting from', 'itour-core' ) . '</span> <strong>' . esc_html( self::money( $from ) ) . '</strong></p>' : '';
+	}
+
+	/**
 	 * One card.
 	 *
 	 * @param int $post Post id.
@@ -89,16 +138,13 @@ final class Cards {
 		$img   = get_post_thumbnail_id( $post ) ? wp_get_attachment_image( (int) get_post_thumbnail_id( $post ), 'medium_large', false, array( 'loading' => 'lazy' ) ) : '';
 		$where = self::destination_names()[ self::destination( $post ) ] ?? '';
 		$facts = array_filter( (array) apply_filters( 'itour/card_facts', array(), $post ) );
-		$from  = (float) get_post_meta( $post, '_itour_price_from', true );
 		$h     = '<article class="itc"><a class="itc__link" href="' . esc_url( $url ) . '">';
 		$h    .= '<div class="itc__media">' . ( '' !== $img ? $img : '<span class="itc__noimg" aria-hidden="true"></span>' ) . ( '' !== $where ? '<span class="itc__where">' . esc_html( $where ) . '</span>' : '' ) . '</div>';
 		$h    .= '<div class="itc__body"><h3 class="itc__title">' . esc_html( $title ) . '</h3>';
 		if ( $facts ) {
 			$h .= '<p class="itc__facts">' . esc_html( implode( ' · ', $facts ) ) . '</p>';
 		}
-		if ( $from > 0 ) {
-			$h .= '<p class="itc__price"><span>' . esc_html__( 'From', 'itour-core' ) . '</span> <strong>' . esc_html( itour()->currencies()->format( $from ) ) . '</strong> <span>' . esc_html__( 'per adult', 'itour-core' ) . '</span></p>';
-		}
+		$h .= self::price_line( $post );
 		return $h . '</div></a></article>';
 	}
 
@@ -330,7 +376,9 @@ final class Cards {
 		) : '' ) . '<div class="itc-banner__body"><span class="itc-banner__chip">' . esc_html( (string) $kind[1] ) . '</span><h1 class="itc-banner__title">' . esc_html( $title ) . '</h1>' . ( '' !== $sub ? '<p class="itc-banner__sub">' . esc_html( $sub ) . '</p>' : '' ) . '</div></header>';
 
 		$h .= '<div class="itc-listing__grid"><aside class="itc-filters"><form method="get" data-itc-filters>';
-		$h .= '<section class="itc-filters__box"><h2 class="itc-filters__title">' . esc_html__( 'Search', 'itour-core' ) . '</h2><label class="itc-field"><span>' . esc_html__( 'Destination', 'itour-core' ) . '</span><input type="search" name="where" value="' . esc_attr( $where ) . '" placeholder="' . esc_attr__( 'Where are you going?', 'itour-core' ) . '"></label><button type="submit" class="wp-element-button itc-filters__go">' . esc_html__( 'Search', 'itour-core' ) . '</button></section>';
+		$h .= '<section class="itc-filters__box"><h2 class="itc-filters__title">' . esc_html__( 'Search', 'itour-core' ) . '</h2><label class="itc-field"><span>' . esc_html__( 'Destination', 'itour-core' ) . '</span><input type="search" name="where" value="' . esc_attr( $where ) . '" placeholder="' . esc_attr__( 'Where are you going?', 'itour-core' ) . '"></label>'
+			. '<label class="itc-field"><span>' . esc_html__( 'Date', 'itour-core' ) . '</span><input type="date" name="date" min="' . esc_attr( wp_date( 'Y-m-d' ) ) . '" value="' . esc_attr( self::criteria()[0] ) . '"></label>'
+			. '<label class="itc-field"><span>' . esc_html__( 'Travellers', 'itour-core' ) . '</span><input type="number" name="pax" min="1" max="99" inputmode="numeric" value="' . esc_attr( (string) ( self::criteria()[1] ? self::criteria()[1] : '' ) ) . '" placeholder="2"></label><button type="submit" class="wp-element-button itc-filters__go">' . esc_html__( 'Search', 'itour-core' ) . '</button></section>';
 		$h .= '<details class="itc-filters__box itc-filters__more" open data-itc-more><summary class="itc-filters__title">' . esc_html__( 'Filter by', 'itour-core' ) . '</summary>';
 		if ( $top > 0 ) {
 			$cur = $max ? min( $max, $top ) : $top;

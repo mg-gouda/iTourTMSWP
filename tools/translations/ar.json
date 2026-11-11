@@ -815,7 +815,18 @@
   "Cards": "البطاقات",
   "Photo on top": "الصورة في الأعلى",
   "Photo beside the text": "الصورة بجانب النص",
-  "“See all” button (one kind only)": "زر «عرض الكل» (لنوع واحد فقط)"
+  "“See all” button (one kind only)": "زر «عرض الكل» (لنوع واحد فقط)",
+  "Total for %d traveller": [
+   "الإجمالي لـ %d مسافر",
+   "الإجمالي لمسافر واحد",
+   "الإجمالي لمسافرَين",
+   "الإجمالي لـ %d مسافرين",
+   "الإجمالي لـ %d مسافرًا",
+   "الإجمالي لـ %d مسافر"
+  ],
+  "Starting from": "ابتداءً من",
+  "Date": "التاريخ",
+  "Travellers": "المسافرون"
  },
  "itour-forms": {
   "Thank you! We’ll reply within one working day.": "شكرًا لك! سنرد عليك خلال يوم عمل واحد.",
@@ -1090,7 +1101,9 @@
    "%d أيام",
    "%d يومًا",
    "%d يوم"
-  ]
+  ],
+  "%s (optional, ask us to add it)": "%s (اختياري، اطلب إضافته)",
+  "%1$s (%2$s): included in the price for these dates": "%1$s (%2$s): مشمول في السعر لهذه التواريخ"
  },
  "itour-excursions": {
   "Excursions": "الرحلات اليومية",
@@ -1303,7 +1316,12 @@
   "From your hotel": "من فندقك",
   "per adult": "للبالغ",
   "Day trips": "رحلات يومية",
-  "This trip is not available.": "هذه الرحلة غير متاحة."
+  "This trip is not available.": "هذه الرحلة غير متاحة.",
+  "The total above is for your whole group, with pick-up, add-ons and any supplements.": "الإجمالي أعلاه لمجموعتك كاملة، شاملًا الاستقبال والإضافات وأي رسوم إضافية.",
+  "Total for your group": "الإجمالي لمجموعتك",
+  "%s (optional, choose it when you book)": "%s (اختياري، اختره عند الحجز)",
+  "%1$s (%2$s): included in the total for these dates": "%1$s (%2$s): مشمول في الإجمالي لهذه التواريخ",
+  "Pick-up from %s: a small surcharge, included in the total": "الاستقبال من %s: رسوم إضافية بسيطة مشمولة في الإجمالي"
  },
  "itour-transfers": {
   "Transfers": "التنقلات",

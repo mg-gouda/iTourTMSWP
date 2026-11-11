@@ -53,7 +53,8 @@ msgstr "أبحث عن"
 #: blocks/booking-widget/render.php:100
 #: src/Admin/Crud.php:257
 #: src/Admin/Crud.php:258
-#: src/Cards.php:342
+#: src/Cards.php:379
+#: src/Cards.php:381
 msgid "Search"
 msgstr "بحث"
 
@@ -347,7 +348,7 @@ msgid "Nothing here yet. Use “Add new” to create the first one."
 msgstr "لا يوجد شيء هنا بعد. استخدم «إضافة جديد» لإنشاء أول عنصر."
 
 #: src/Admin/Crud.php:293
-#: src/Cards.php:379
+#: src/Cards.php:418
 msgid "View"
 msgstr "عرض"
 
@@ -590,77 +591,87 @@ msgstr "إزالة"
 msgid "Add row"
 msgstr "إضافة صف"
 
-#: src/Cards.php:100
+#. translators: %d: number of travellers.
+#: src/Cards.php:123
+#, php-format
+msgid "Total for %d traveller"
+msgid_plural "Total for %d travellers"
+msgstr[0] "الإجمالي لـ %d مسافر"
+msgstr[1] "الإجمالي لمسافر واحد"
+msgstr[2] "الإجمالي لمسافرَين"
+msgstr[3] "الإجمالي لـ %d مسافرين"
+msgstr[4] "الإجمالي لـ %d مسافرًا"
+msgstr[5] "الإجمالي لـ %d مسافر"
+
+#: src/Cards.php:127
 #: src/Layouts.php:182
 #: src/Layouts.php:227
 #: src/Layouts.php:247
 #: src/Layouts.php:402
-msgid "From"
+msgid "Starting from"
 msgstr "ابتداءً من"
 
-#: src/Cards.php:100
-msgid "per adult"
-msgstr "للبالغ"
-
-#: src/Cards.php:174
+#: src/Cards.php:220
 msgid "You may also like"
 msgstr "قد يعجبك أيضًا"
 
-#. translators: %s: what the visitor searched for.
-#: src/Cards.php:203
-#, php-format
-msgid "Nothing found for “%s”. Try another place, or see everything below."
-msgstr "لا نتائج لـ «%s». جرّب مكانًا آخر، أو تصفح كل الرحلات أدناه."
-
-#: src/Cards.php:204
+#: src/Cards.php:245
 msgid "Trips are coming soon."
 msgstr "الرحلات قادمة قريبًا."
 
-#: src/Cards.php:213
+#: src/Cards.php:250
 #: src/Demo.php:219
 #: blocks/booking-widget/editor.js:10
 msgid "Transfers"
 msgstr "التنقلات"
 
 #. translators: %s: kind of trips, e.g. "Tour packages".
-#: src/Cards.php:238
+#: src/Cards.php:275
 #, php-format
 msgid "See all %s"
 msgstr "عرض كل %s"
 
-#: src/Cards.php:342
-#: src/Cards.php:358
+#: src/Cards.php:379
+#: src/Cards.php:397
 #: src/Locations.php:39
 msgid "Destination"
 msgstr "وجهة"
 
-#: src/Cards.php:342
+#: src/Cards.php:379
 msgid "Where are you going?"
 msgstr "إلى أين ستذهب؟"
 
-#: src/Cards.php:343
+#: src/Cards.php:380
+msgid "Date"
+msgstr "التاريخ"
+
+#: src/Cards.php:381
+msgid "Travellers"
+msgstr "المسافرون"
+
+#: src/Cards.php:382
 msgid "Filter by"
 msgstr "تصفية حسب"
 
-#: src/Cards.php:346
+#: src/Cards.php:385
 msgid "Price up to"
 msgstr "السعر حتى"
 
-#: src/Cards.php:359
+#: src/Cards.php:398
 #: src/Products.php:68
 msgid "Category"
 msgstr "التصنيف"
 
-#: src/Cards.php:361
+#: src/Cards.php:400
 msgid "Apply"
 msgstr "تطبيق"
 
-#: src/Cards.php:363
+#: src/Cards.php:402
 msgid "Clear all filters"
 msgstr "مسح كل عوامل التصفية"
 
 #. translators: %d: number of trips found.
-#: src/Cards.php:368
+#: src/Cards.php:407
 #, php-format
 msgid "%d trip found"
 msgid_plural "%d trips found"
@@ -671,19 +682,19 @@ msgstr[3] "%d رحلات"
 msgstr[4] "%d رحلة"
 msgstr[5] "%d رحلة"
 
-#: src/Cards.php:370
+#: src/Cards.php:409
 msgid "Recommended"
 msgstr "المقترح"
 
-#: src/Cards.php:371
+#: src/Cards.php:410
 msgid "Price: low to high"
 msgstr "السعر: من الأقل للأعلى"
 
-#: src/Cards.php:372
+#: src/Cards.php:411
 msgid "Price: high to low"
 msgstr "السعر: من الأعلى للأقل"
 
-#: src/Cards.php:373
+#: src/Cards.php:412
 #: src/CoreModule.php:167
 #: src/CoreModule.php:204
 #: src/CoreModule.php:213
@@ -694,32 +705,32 @@ msgstr "السعر: من الأعلى للأقل"
 msgid "Name"
 msgstr "الاسم"
 
-#: src/Cards.php:375
+#: src/Cards.php:414
 msgid "Sort"
 msgstr "ترتيب"
 
-#: src/Cards.php:381
+#: src/Cards.php:420
 msgid "Grid"
 msgstr "شبكة"
 
-#: src/Cards.php:382
+#: src/Cards.php:421
 msgid "List"
 msgstr "قائمة"
 
-#: src/Cards.php:391
+#: src/Cards.php:430
 msgid "No trips match these filters."
 msgstr "لا توجد رحلات تطابق عوامل التصفية."
 
-#: src/Cards.php:391
+#: src/Cards.php:430
 msgid "Show all trips"
 msgstr "عرض كل الرحلات"
 
-#: src/Cards.php:416
+#: src/Cards.php:455
 msgid "Destinations: set a destination (Location Tree) on your tours or day trips to show tiles here."
 msgstr "الوجهات: حدّد وجهة (من شجرة المواقع) لبرامجك أو رحلاتك اليومية لتظهر البطاقات هنا."
 
 #. translators: %d: number of trips.
-#: src/Cards.php:446
+#: src/Cards.php:485
 #, php-format
 msgid "%d trip"
 msgid_plural "%d trips"

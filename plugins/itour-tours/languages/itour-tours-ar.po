@@ -95,13 +95,11 @@ msgstr "بالغ (غرفة مشتركة)"
 
 #: src/Editor.php:127
 #: src/Editor.php:156
-#: src/Page.php:158
 msgid "Child"
 msgstr "طفل"
 
 #: src/Editor.php:128
 #: src/Editor.php:157
-#: src/Page.php:158
 msgid "Infant"
 msgstr "رضيع"
 
@@ -125,16 +123,11 @@ msgstr "السعر"
 msgid "Charged"
 msgstr "يُحتسب"
 
-#. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:142
-#: src/Page.php:56
-#: src/Page.php:182
 msgid "per person"
 msgstr "للفرد"
 
-#. translators: 1: extra, 2: price, 3: per person / per booking.
 #: src/Editor.php:143
-#: src/Page.php:182
 msgid "per booking"
 msgstr "للحجز"
 
@@ -184,7 +177,7 @@ msgid "Nights are worked out for you: days minus one."
 msgstr "تُحسب الليالي تلقائيًا: الأيام ناقص واحد."
 
 #: src/Editor.php:224
-#: src/Page.php:89
+#: src/Page.php:84
 #: src/Sheet.php:51
 msgid "Booking"
 msgstr "الحجز"
@@ -286,7 +279,7 @@ msgid "Add price row"
 msgstr "إضافة صف سعر"
 
 #: src/Editor.php:335
-#: src/Page.php:36
+#: src/Page.php:34
 msgid "Extras"
 msgstr "الإضافات"
 
@@ -313,7 +306,7 @@ msgstr "إضافة مكمل"
 
 #: src/Module.php:33
 #: src/Module.php:74
-#: src/Module.php:184
+#: src/Module.php:204
 #: src/Sheet.php:31
 msgid "Tour Packages"
 msgstr "الباقات السياحية"
@@ -323,12 +316,12 @@ msgid "tour package"
 msgstr "برنامج سياحي"
 
 #: src/Module.php:82
-#: src/Module.php:146
+#: src/Module.php:166
 msgid "Tour packages"
 msgstr "البرامج السياحية"
 
 #. translators: %d: number of days.
-#: src/Module.php:90
+#: src/Module.php:110
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -339,174 +332,142 @@ msgstr[3] "%d أيام"
 msgstr[4] "%d يومًا"
 msgstr[5] "%d يوم"
 
-#: src/Module.php:114
+#: src/Module.php:134
 msgid "Import / export"
 msgstr "استيراد / تصدير"
 
-#: src/Module.php:147
+#: src/Module.php:167
 msgid "Find tours"
 msgstr "ابحث عن باقة"
 
-#: src/Module.php:152
+#: src/Module.php:172
 msgid "Destination"
 msgstr "الوجهة"
 
-#: src/Module.php:154
+#: src/Module.php:174
 msgid "Cairo, Luxor, Nile cruise…"
 msgstr "القاهرة، الأقصر، رحلة نيلية…"
 
-#: src/Module.php:159
+#: src/Module.php:179
 msgid "Start date"
 msgstr "تاريخ البدء"
 
-#: src/Module.php:165
+#: src/Module.php:185
 msgid "Travellers"
 msgstr "عدد المسافرين"
 
-#: src/Module.php:185
+#: src/Module.php:205
 msgid "Pages used by Tour Packages. Layout and booking settings appear here as the module is built."
 msgstr "الصفحات التي تستخدمها الباقات السياحية. تظهر هنا إعدادات العرض والحجز مع اكتمال الإضافة."
 
-#: src/Module.php:189
+#: src/Module.php:209
 msgid "Tour packages page"
 msgstr "صفحة الباقات السياحية"
 
-#: src/Module.php:192
+#: src/Module.php:212
 msgid "The page that lists all tour packages."
 msgstr "الصفحة التي تعرض جميع الباقات السياحية."
 
-#: src/Module.php:195
+#: src/Module.php:215
 msgid "Search results page"
 msgstr "صفحة نتائج البحث"
 
-#: src/Module.php:198
+#: src/Module.php:218
 msgid "Where the booking widget sends tour searches. Leave empty to use the tour packages page."
 msgstr "الصفحة التي تُرسل إليها أداة الحجز عمليات البحث عن الباقات. اتركها فارغة لاستخدام صفحة الباقات السياحية."
 
-#: src/Page.php:34
+#: src/Page.php:33
 msgid "Day by day"
 msgstr "يومًا بيوم"
 
-#: src/Page.php:35
-msgid "Prices per person"
-msgstr "الأسعار للفرد"
-
-#: src/Page.php:44
+#: src/Page.php:42
 msgid "Cancellation"
 msgstr "الإلغاء"
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Tell us your dates and group: we check availability and send a quote within one working day."
 msgstr "أخبرنا بتواريخك ومجموعتك: نتحقق من التوفر ونرسل عرض سعر خلال يوم عمل واحد."
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Send us your dates and group size and we will confirm availability."
 msgstr "أرسل لنا تواريخك وحجم مجموعتك وسنؤكد التوفر."
 
-#: src/Page.php:50
+#: src/Page.php:48
 msgid "Ask for this tour"
 msgstr "اطلب هذا البرنامج"
 
-#: src/Page.php:61
+#: src/Page.php:56
 msgid "Plan this tour"
 msgstr "خطط لهذا البرنامج"
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 msgid "Duration"
 msgstr "المدة"
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 #, php-format
 msgid "%1$d days / %2$d nights"
 msgstr "%1$d أيام / %2$d ليالٍ"
 
 #. translators: 1: days, 2: nights.
-#: src/Page.php:78
+#: src/Page.php:73
 msgid "1 day"
 msgstr "يوم واحد"
 
-#: src/Page.php:83
+#: src/Page.php:78
 #: src/Sheet.php:56
 msgid "Departures"
 msgstr "المغادرات"
 
-#: src/Page.php:83
+#: src/Page.php:78
 msgid "New dates coming soon"
 msgstr "تواريخ جديدة قريبًا"
 
-#: src/Page.php:87
+#: src/Page.php:82
 msgid "Starts"
 msgstr "يبدأ"
 
-#: src/Page.php:87
+#: src/Page.php:82
 msgid "Any day"
 msgstr "أي يوم"
 
-#: src/Page.php:89
+#: src/Page.php:84
 msgid "On request"
 msgstr "عند الطلب"
 
-#: src/Page.php:89
+#: src/Page.php:84
 msgid "Instant confirmation"
 msgstr "تأكيد فوري"
 
 #. translators: %d: day number.
-#: src/Page.php:108
+#: src/Page.php:103
 #, php-format
 msgid "Day %d"
 msgstr "اليوم %d"
 
 #. translators: %s: overnight place.
-#: src/Page.php:109
+#: src/Page.php:104
 #, php-format
 msgid "Overnight: %s"
 msgstr "المبيت: %s"
 
-#: src/Page.php:133
+#: src/Page.php:128
 msgid "Route map"
 msgstr "خريطة المسار"
 
-#. translators: 1: start date, 2: end date.
-#: src/Page.php:149
+#. translators: %s: extra.
+#: src/Page.php:142
 #, php-format
-msgid "%1$s – %2$s"
-msgstr "%1$s – %2$s"
+msgid "%s (optional, ask us to add it)"
+msgstr "%s (اختياري، اطلب إضافته)"
 
-#: src/Page.php:158
-msgid "Group size"
-msgstr "حجم المجموعة"
-
-#: src/Page.php:158
-msgid "Adult, sharing"
-msgstr "بالغ، غرفة مشتركة"
-
-#: src/Page.php:158
-msgid "Single room"
-msgstr "غرفة مفردة"
-
-#: src/Page.php:163
-msgid "Free"
-msgstr "مجانًا"
-
-#. translators: %s: group size, e.g. "2–3" or "11+".
-#: src/Page.php:165
+#. translators: 1: supplement, 2: date(s).
+#: src/Page.php:147
 #, php-format
-msgid "%s travellers"
-msgstr "%s مسافرين"
-
-#. translators: 1: extra, 2: price, 3: per person / per booking.
-#: src/Page.php:182
-#, php-format
-msgid "%1$s: %2$s %3$s"
-msgstr "%1$s: %2$s %3$s"
-
-#. translators: 1: supplement, 2: date(s), 3: adult price.
-#: src/Page.php:187
-#, php-format
-msgid "%1$s (%2$s): %3$s per adult, added automatically"
-msgstr "%1$s (%2$s): %3$s للبالغ، يُضاف تلقائيًا"
+msgid "%1$s (%2$s): included in the price for these dates"
+msgstr "%1$s (%2$s): مشمول في السعر لهذه التواريخ"
 
 #: src/Sheet.php:34
 msgid "One tour per row. Itinerary, prices and the other \"one per line\" cells take one entry per line (Alt+Enter in Excel), parts separated by |. The Instructions sheet explains every column. Photos are added on each tour afterwards."

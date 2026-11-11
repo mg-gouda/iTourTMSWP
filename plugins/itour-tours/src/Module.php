@@ -81,6 +81,26 @@ final class Module extends \ITour\Core\Module {
 		// Cards (core Cards): tab, destination, "4 days".
 		add_filter( 'itour/card_types', static fn( $t ) => $t + array( 'tours' => array( Tour::TYPE, __( 'Tour packages', 'itour-tours' ), self::page_url( 'listing_page' ) ) ) );
 		add_filter( 'itour/destination', static fn( $d, $post ) => Tour::TYPE === get_post_type( $post ) ? (int) Tour::config( (int) $post )['destination'] : $d, 10, 2 );
+		// Search cards: the total for the searched group (cheapest hotel class), with the tour's own rules.
+		add_filter(
+			'itour/quote',
+			static function ( $total, $post, $date, $pax ) {
+				if ( Tour::TYPE !== get_post_type( $post ) ) {
+					return $total;
+				}
+				$classes = array_unique( array_map( 'strval', array_column( Tour::rates( (int) $post ), 'hotel_class' ) ) );
+				$best    = null;
+				foreach ( $classes as $stars ) {
+					$p = Tour::price( (int) $post, $stars, (string) $date, (int) $pax, 0, 0 );
+					if ( $p && ( null === $best || (float) $p['total'] < $best ) ) {
+						$best = (float) $p['total'];
+					}
+				}
+				return $best;
+			},
+			10,
+			4
+		);
 		add_filter(
 			'itour/card_facts',
 			static function ( $facts, $post ) {
