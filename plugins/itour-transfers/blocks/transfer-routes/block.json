@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "itour/transfer-routes",
+	"version": "0.1.0",
+	"title": "Transfer routes",
+	"category": "widgets",
+	"icon": "car",
+	"description": "Your priced transfer routes as cards (airport → area, from-price per car). Each card opens the prices for that route.",
+	"keywords": [ "transfer", "airport", "routes" ],
+	"textdomain": "itour-transfers",
+	"supports": { "align": [ "wide" ], "html": false, "spacing": { "margin": true } },
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"subtitle": { "type": "string", "default": "" },
+		"count": { "type": "number", "default": 6 }
+	},
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

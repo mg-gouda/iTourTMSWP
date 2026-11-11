@@ -79,8 +79,8 @@ final class Settings {
 	 * The chosen results layout.
 	 */
 	public static function layout(): string {
-		$v = (string) get_option( self::LAYOUT, 'list' );
-		return isset( self::layouts()[ $v ] ) ? $v : 'list';
+		$v = (string) get_option( self::LAYOUT, 'summary' );
+		return isset( self::layouts()[ $v ] ) ? $v : 'summary';
 	}
 
 	/**

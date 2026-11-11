@@ -53,3 +53,67 @@
 		} );
 	}
 }() );
+
+/* Photo slider (native scroll-snap: swipe works without script) and the "Booking conditions" dialog. */
+( function () {
+	document.querySelectorAll( '[data-itl-slider]' ).forEach( function ( box ) {
+		var track = box.querySelector( '.itl-slider__track' );
+		var slides = track.children;
+		var thumbs = box.nextElementSibling && box.nextElementSibling.classList.contains( 'itl-thumbs' ) ? box.nextElementSibling.querySelectorAll( '[data-itl-thumb]' ) : [];
+		var prev = box.querySelector( '[data-itl-prev]' );
+		var next = box.querySelector( '[data-itl-next]' );
+		var at = box.querySelector( '[data-itl-at]' );
+		var rtl = 'rtl' === getComputedStyle( track ).direction;
+		function index() {
+			return Math.round( Math.abs( track.scrollLeft ) / track.clientWidth );
+		}
+		function go( i ) {
+			i = Math.max( 0, Math.min( slides.length - 1, i ) );
+			track.scrollTo( { left: ( rtl ? -1 : 1 ) * i * track.clientWidth } );
+		}
+		function sync() {
+			var i = index();
+			if ( at ) {
+				at.textContent = i + 1;
+			}
+			if ( prev ) {
+				prev.disabled = 0 === i;
+				next.disabled = i === slides.length - 1;
+			}
+			Array.prototype.forEach.call( thumbs, function ( t, n ) {
+				t.setAttribute( 'aria-current', n === i ? 'true' : 'false' );
+				if ( n === i ) {
+					t.scrollIntoView( { block: 'nearest', inline: 'nearest' } );
+				}
+			} );
+		}
+		track.addEventListener( 'scroll', function () {
+			window.requestAnimationFrame( sync );
+		}, { passive: true } );
+		if ( prev ) {
+			prev.addEventListener( 'click', function () { go( index() - 1 ); } );
+			next.addEventListener( 'click', function () { go( index() + 1 ); } );
+		}
+		track.addEventListener( 'keydown', function ( e ) {
+			var d = { ArrowRight: 1, ArrowLeft: -1 }[ e.key ];
+			if ( d ) {
+				e.preventDefault();
+				go( index() + ( rtl ? -d : d ) );
+			}
+		} );
+		Array.prototype.forEach.call( thumbs, function ( t ) {
+			t.addEventListener( 'click', function () { go( +t.getAttribute( 'data-itl-thumb' ) ); } );
+		} );
+		sync();
+	} );
+	var dlg = document.querySelector( '.itl-cond' );
+	if ( dlg && 'function' === typeof dlg.showModal ) {
+		document.addEventListener( 'click', function ( e ) {
+			if ( e.target.closest( '[data-itl-cond]' ) ) {
+				dlg.showModal();
+			} else if ( e.target.closest( '[data-itl-cond-close]' ) || e.target === dlg ) {
+				dlg.close();
+			}
+		} );
+	}
+}() );

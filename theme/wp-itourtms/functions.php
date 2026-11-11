@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WP_ITOURTMS_VERSION', '0.1.0' );
+define( 'WP_ITOURTMS_VERSION', '0.1.1' );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 760; // Default text column; Theme Options → Layout can change it.

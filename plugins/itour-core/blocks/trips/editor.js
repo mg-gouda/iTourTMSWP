@@ -52,6 +52,9 @@
 							} );
 						} ),
 						a.listing ? null : titleAndCount( a, set, __( 'Cards per tab', 'itour-core' ) ),
+						el( c.TextControl, { label: __( 'Subtitle (optional)', 'itour-core' ), value: a.subtitle, onChange: function ( v ) { set( { subtitle: v } ); } } ),
+						a.listing ? null : el( c.SelectControl, { label: __( 'Cards', 'itour-core' ), value: a.style, options: [ { label: __( 'Photo on top', 'itour-core' ), value: 'grid' }, { label: __( 'Photo beside the text', 'itour-core' ), value: 'row' } ], onChange: function ( v ) { set( { style: v } ); } } ),
+						a.listing ? null : el( c.ToggleControl, { label: __( '“See all” button (one kind only)', 'itour-core' ), checked: a.more, onChange: function ( v ) { set( { more: v } ); } } ),
 						a.listing ? null : el( c.ToggleControl, {
 							label: __( 'Transfers tab (transfer search)', 'itour-core' ),
 							checked: a.transfers,

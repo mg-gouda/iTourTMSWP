@@ -1222,7 +1222,7 @@ msgid "Email"
 msgstr "البريد الإلكتروني"
 
 #: inc/options.php:365
-#: inc/template-tags.php:93
+#: inc/template-tags.php:98
 msgid "WhatsApp"
 msgstr "واتساب"
 
@@ -1465,6 +1465,28 @@ msgstr "ابحث عن رحلة"
 #: patterns/hero.php:31
 msgid "Talk to us"
 msgstr "تحدّث إلينا"
+
+#: patterns/trust-strip.php
+msgctxt "Pattern title"
+msgid "Reassurance strip"
+msgstr "شريط الطمأنة"
+
+#: patterns/trust-strip.php
+msgctxt "Pattern description"
+msgid "Three short reasons to book in one row with icons, under the home page search."
+msgstr "ثلاثة أسباب قصيرة للحجز في صف واحد مع أيقونات، أسفل بحث الصفحة الرئيسية."
+
+#: patterns/trust-strip.php:16
+msgid "Tours and day trips all over the country"
+msgstr "برامج ورحلات يومية في كل أنحاء البلاد"
+
+#: patterns/trust-strip.php:20
+msgid "Easy and secure online booking"
+msgstr "حجز إلكتروني سهل وآمن"
+
+#: patterns/trust-strip.php:24
+msgid "Local travel experts to help you"
+msgstr "خبراء سفر محليون لمساعدتك"
 
 #: patterns/why-book.php
 msgctxt "Pattern title"

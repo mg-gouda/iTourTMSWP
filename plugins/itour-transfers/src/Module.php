@@ -54,6 +54,7 @@ final class Module extends \ITour\Core\Module {
 			'init',
 			static function (): void {
 				register_block_type( dirname( ITOUR_TRANSFERS_FILE ) . '/blocks/transfer-results' );
+				register_block_type( dirname( ITOUR_TRANSFERS_FILE ) . '/blocks/transfer-routes' );
 			}
 		);
 		( new Booking() )->hooks();

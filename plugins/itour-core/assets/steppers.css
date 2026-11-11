@@ -1,0 +1,8 @@
+/* −/+ counters around booking-form number fields (steppers.js). */
+.itl-step { display: inline-flex; flex-direction: row; align-items: center; gap: 6px; }
+.itl-step input[type="number"], .itour-tb .itl-step input[type="number"] { flex: none; width: 3.25em; min-width: 0; padding-inline: 4px; text-align: center; -moz-appearance: textfield; }
+.itl-step input[type="number"]::-webkit-inner-spin-button, .itl-step input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.itl-step__btn { display: grid; place-items: center; flex: none; width: 34px; height: 34px; padding: 0; border: 1px solid var(--wp--preset--color--line, #e3e7ed); border-radius: 999px; background: var(--wp--preset--color--base, #fff); color: var(--wp--preset--color--ink, #1a2b48); font: inherit; font-size: 1.125rem; line-height: 1; cursor: pointer; }
+.itl-step__btn:hover:not([disabled]) { border-color: var(--wp--preset--color--brand, #660066); color: var(--wp--preset--color--brand-dark, #660066); }
+.itl-step__btn[disabled] { opacity: 0.35; cursor: default; }
+.itl-step__btn:focus-visible { outline: 2px solid var(--wp--preset--color--brand-dark, #660066); outline-offset: 2px; }

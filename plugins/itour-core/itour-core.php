@@ -3,7 +3,7 @@
  * Plugin Name:       iTour Core
  * Plugin URI:        https://github.com/mg-gouda/iTourTMSWP
  * Description:       Foundation for the iTourTMS modules: company settings, module registry, database migrations and shared services. Install this first, then add the modules you need.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Author:            Mohamed Gouda
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ITOUR_CORE_VERSION', '0.1.0' );
+define( 'ITOUR_CORE_VERSION', '0.2.0' );
 define( 'ITOUR_CORE_FILE', __FILE__ );
 
 require_once __DIR__ . '/src/Autoloader.php';

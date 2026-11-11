@@ -75,3 +75,37 @@
 	.itour-tr__price { text-align: start; }
 	.itour-tr__book { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
 }
+
+/* ---------- Booking-site pattern: steps, vehicle rows with chips, trip summary + guarantees ---------- */
+.itour-tr__steps { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.itour-tr__steps li { display: inline-flex; align-items: center; gap: 8px; color: var(--wp--preset--color--muted, #5b6472); font-size: 0.9375rem; font-weight: 600; }
+.itour-tr__steps li span { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--itour-tr-line); border-radius: 999px; font-size: 0.8125rem; }
+.itour-tr__steps .is-current { color: var(--wp--preset--color--ink, #1a2b48); }
+.itour-tr__steps .is-current span { border-color: var(--wp--preset--color--brand-dark, #660066); background: var(--wp--preset--color--brand-dark, #660066); color: #fff; }
+.itour-tr__steps .is-done span { border-color: var(--wp--preset--color--brand-dark, #660066); color: var(--wp--preset--color--brand-dark, #660066); }
+.itour-tr__item { grid-template-columns: auto 1fr auto auto auto; }
+.itour-tr__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: var(--itour-tr-radius); background: var(--wp--preset--color--surface, #f4f6f9); color: var(--wp--preset--color--brand-dark, #660066); }
+.itour-tr__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-block-start: 4px; }
+.itour-tr__chips span { padding: 2px 9px; border-radius: 999px; background: var(--wp--preset--color--surface, #f4f6f9); color: var(--wp--preset--color--ink, #1a2b48); font-size: 0.8125rem; }
+.itour-tr__form { grid-column: 1 / -1; }
+.itour-tr--summary .itour-tr__item { grid-template-columns: auto 1fr auto auto; }
+.itour-tr--summary .itour-tr__book { grid-column: auto; }
+.itour-tr__side { display: grid; gap: 14px; }
+@media (min-width: 900px) { .itour-tr__side { position: sticky; top: calc(var(--wp-admin--admin-bar--height, 0px) + 96px); } .itour-tr__summary { position: static; } }
+.itour-tr__good { display: grid; gap: 8px; margin: 0; padding: 16px 18px; border: 1px solid var(--itour-tr-line); border-radius: var(--itour-tr-radius); list-style: none; font-size: 0.875rem; }
+.itour-tr__good li { display: flex; gap: 8px; }
+.itour-tr__good li::before { content: ""; flex: none; width: 14px; height: 8px; margin-block-start: 5px; border-inline-start: 2px solid var(--wp--preset--color--brand-dark, #660066); border-block-end: 2px solid var(--wp--preset--color--brand-dark, #660066); transform: rotate(-45deg); }
+@media (min-width: 900px) { .itour-tr__split { grid-template-columns: minmax(0, 1fr) 300px; } .itour-tr__side { order: 2; } }
+@media (max-width: 560px) { .itour-tr__icon { display: none; } .itour-tr--summary .itour-tr__item { grid-template-columns: 1fr 1fr; } }
+/* Vehicle row: icon | name + chips | one way | return | select. */
+.itour-tr__item, .itour-tr--summary .itour-tr__item { grid-template-columns: auto minmax(0, 1fr) auto auto auto; column-gap: 20px; }
+.itour-tr--summary .itour-tr__book, .itour-tr__book { grid-column: auto; justify-self: end; }
+.itour-tr__list--cards .itour-tr__item { grid-template-columns: 1fr 1fr; }
+.itour-tr__list--cards .itour-tr__icon { display: none; }
+@media (max-width: 760px) {
+	.itour-tr__item, .itour-tr--summary .itour-tr__item { grid-template-columns: 1fr 1fr; }
+	.itour-tr__icon { display: none; }
+	.itour-tr__vehicle { grid-column: 1 / -1; }
+	.itour-tr__price { text-align: start; }
+	.itour-tr__book, .itour-tr--summary .itour-tr__book { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
+}

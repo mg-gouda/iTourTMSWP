@@ -25,6 +25,16 @@ final class Cards {
 	 * Hooks.
 	 */
 	public function hooks(): void {
+		add_filter(
+			'body_class',
+			static function ( $classes ) {
+				$post = get_queried_object();
+				if ( $post instanceof \WP_Post && is_page() && has_block( 'itour/trips', $post ) && str_contains( $post->post_content, '"listing":true' ) ) {
+					$classes[] = 'itour-has-listing';
+				}
+				return $classes;
+			}
+		);
 		add_action(
 			'init',
 			static function (): void {
@@ -176,23 +186,17 @@ final class Cards {
 		if ( $want ) {
 			$types = array_intersect_key( $types, array_flip( $want ) );
 		}
-		$count     = max( 0, (int) ( $a['count'] ?? 6 ) );
-		$listing   = ! empty( $a['listing'] );
-		$types     = $listing ? array_slice( $types, 0, 1, true ) : $types; // A listing page lists one kind.
-		$transfers = ! $listing && ! empty( $a['transfers'] ) && isset( BookingWidget::tabs()['transfers'] );
+		$count   = max( 0, (int) ( $a['count'] ?? 6 ) );
+		$listing = ! empty( $a['listing'] );
+		$types   = $listing ? array_slice( $types, 0, 1, true ) : $types; // A listing page lists one kind.
+		if ( $listing && $types ) {
+			return self::listing( reset( $types ), $a );
+		}
+		$transfers = ! $listing && ! empty( $a['transfers'] ) && count( $types ) > 1 && isset( BookingWidget::tabs()['transfers'] ); // A one-kind section has no tabs.
 		$panels    = array();
 		foreach ( $types as $slug => list( $type, $label ) ) {
-			$where = $listing ? sanitize_text_field( wp_unslash( $_GET['where'] ?? '' ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- public search.
-			$ids   = self::find( $type, $listing ? 0 : $count, $where );
-			$body  = $ids ? self::grid( $ids ) : '<p class="itc-empty">' . esc_html(
-				'' !== $where
-					/* translators: %s: what the visitor searched for. */
-					? sprintf( __( 'Nothing found for “%s”. Try another place, or see everything below.', 'itour-core' ), $where )
-					: __( 'Trips are coming soon.', 'itour-core' )
-			) . '</p>';
-			if ( ! $ids && '' !== $where ) {
-				$body .= self::grid( self::find( $type, 0 ) );
-			}
+			$ids             = self::find( $type, $count );
+			$body            = $ids ? self::grid( $ids ) : '<p class="itc-empty">' . esc_html__( 'Trips are coming soon.', 'itour-core' ) . '</p>';
 			$panels[ $slug ] = array( $label, $body );
 		}
 		if ( $transfers ) {
@@ -217,8 +221,16 @@ final class Cards {
 		$title = (string) ( $a['title'] ?? '' );
 		$h     = '<div ' . $wrap . '>';
 		if ( 1 === count( $panels ) ) {
-			$p = reset( $panels );
-			return $h . ( '' !== $title ? '<h2 class="itc-trips__title">' . esc_html( $title ) . '</h2>' : '' ) . $p[1] . '</div>';
+			$p    = reset( $panels );
+			$kind = reset( $types );
+			$sub  = (string) ( $a['subtitle'] ?? '' );
+			$more = ! empty( $a['more'] ) && '' !== (string) ( $kind[2] ?? '' )
+				/* translators: %s: kind of trips, e.g. "Tour packages". */
+				? '<p class="itc-more"><a class="wp-element-button" href="' . esc_url( (string) $kind[2] ) . '">' . esc_html( sprintf( __( 'See all %s', 'itour-core' ), mb_strtolower( (string) $kind[1] ) ) ) . '</a></p>'
+				: '';
+			$head = '' !== $title ? '<header class="itc-trips__heading"><h2 class="itc-trips__title">' . esc_html( $title ) . '</h2>' . ( '' !== $sub ? '<p class="itc-trips__sub">' . esc_html( $sub ) . '</p>' : '' ) . '</header>' : '';
+			$body = 'row' === ( $a['style'] ?? '' ) ? str_replace( 'class="itc-grid"', 'class="itc-grid itc-grid--row"', $p[1] ) : $p[1];
+			return $h . $head . $body . $more . '</div>';
 		}
 		$uid = wp_unique_id( 'itc-' );
 		$h  .= '<div class="itc-trips__head">' . ( '' !== $title ? '<h2 class="itc-trips__title">' . esc_html( $title ) . '</h2>' : '' ) . '<div class="itc-tabs" role="tablist">';
@@ -235,6 +247,141 @@ final class Cards {
 		}
 		wp_enqueue_script( 'itour-cards', plugins_url( 'assets/cards.js', ITOUR_CORE_FILE ), array(), ITOUR_CORE_VERSION, array( 'strategy' => 'defer' ) );
 		return $h . '</div>';
+	}
+
+	/**
+	 * Listing page (search results): banner, filters sidebar (search, price, destination, category),
+	 * results count, sort and grid / list view. Every filter is a GET parameter, so results can be shared.
+	 *
+	 * @param array{0:string,1:string,2?:string} $kind Post type, label, listing URL.
+	 * @param array<string,mixed>                $a    Attributes.
+	 */
+	private static function listing( array $kind, array $a ): string {
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- public search form (GET).
+		$type  = $kind[0];
+		$where = sanitize_text_field( wp_unslash( $_GET['where'] ?? '' ) );
+		$dests = array_map( 'absint', (array) wp_unslash( $_GET['dest'] ?? array() ) );
+		$cats  = array_map( 'absint', (array) wp_unslash( $_GET['cat'] ?? array() ) );
+		$max   = absint( $_GET['max'] ?? 0 );
+		$sort  = sanitize_key( wp_unslash( $_GET['sort'] ?? '' ) );
+		$view  = 'list' === sanitize_key( wp_unslash( $_GET['view'] ?? '' ) ) ? 'list' : 'grid';
+		// phpcs:enable
+		$all   = self::find( $type, 0 );
+		$price = static fn( int $id ): float => (float) get_post_meta( $id, '_itour_price_from', true );
+		$top   = $all ? (int) ceil( max( array_map( $price, $all ) ) ) : 0;
+		$ids   = self::find( $type, 0, $where );
+		$ids   = array_values(
+			array_filter(
+				$ids,
+				static fn( int $id ): bool => ( ! $dests || in_array( self::destination( $id ), $dests, true ) )
+					&& ( ! $cats || has_term( $cats, $type . '_cat', $id ) )
+					&& ( ! $max || $price( $id ) <= $max )
+			)
+		);
+		if ( 'price_asc' === $sort || 'price_desc' === $sort ) {
+			usort( $ids, static fn( $x, $y ) => 'price_asc' === $sort ? $price( $x ) <=> $price( $y ) : $price( $y ) <=> $price( $x ) );
+		} elseif ( 'name' === $sort ) {
+			usort( $ids, static fn( $x, $y ) => strcasecmp( get_the_title( $x ), get_the_title( $y ) ) );
+		}
+
+		// Filter options from what the trips really have.
+		$names    = self::destination_names();
+		$dest_opt = array();
+		foreach ( $all as $id ) {
+			$d = self::destination( $id );
+			if ( $d && isset( $names[ $d ] ) ) {
+				$dest_opt[ $d ] = $names[ $d ];
+			}
+		}
+		asort( $dest_opt );
+		$terms = get_terms(
+			array(
+				'taxonomy'   => $type . '_cat',
+				'hide_empty' => true,
+			)
+		);
+		$terms = is_wp_error( $terms ) ? array() : $terms;
+
+		self::style();
+		wp_enqueue_script( 'itour-cards', plugins_url( 'assets/cards.js', ITOUR_CORE_FILE ), array(), ITOUR_CORE_VERSION, array( 'strategy' => 'defer' ) );
+		$page  = get_queried_object();
+		$title = (string) ( $a['title'] ?? '' );
+		$title = '' !== $title ? $title : ( $page instanceof \WP_Post ? get_the_title( $page ) : (string) $kind[1] );
+		$sub   = (string) ( $a['subtitle'] ?? '' );
+		$sub   = '' !== $sub ? $sub : ( $page instanceof \WP_Post && has_excerpt( $page ) ? get_the_excerpt( $page ) : '' );
+		$photo = 0;
+		foreach ( $all as $id ) {
+			$photo = (int) get_post_thumbnail_id( $id );
+			if ( $photo ) {
+				break;
+			}
+		}
+		$photo = $page instanceof \WP_Post && has_post_thumbnail( $page ) ? (int) get_post_thumbnail_id( $page ) : $photo;
+
+		$h  = '<div ' . get_block_wrapper_attributes( array( 'class' => 'itc-listing' ) ) . '>';
+		$h .= '<header class="itc-banner">' . ( $photo ? wp_get_attachment_image(
+			$photo,
+			'large',
+			false,
+			array(
+				'class'   => 'itc-banner__img',
+				'loading' => 'eager',
+			)
+		) : '' ) . '<div class="itc-banner__body"><span class="itc-banner__chip">' . esc_html( (string) $kind[1] ) . '</span><h1 class="itc-banner__title">' . esc_html( $title ) . '</h1>' . ( '' !== $sub ? '<p class="itc-banner__sub">' . esc_html( $sub ) . '</p>' : '' ) . '</div></header>';
+
+		$h .= '<div class="itc-listing__grid"><aside class="itc-filters"><form method="get" data-itc-filters>';
+		$h .= '<section class="itc-filters__box"><h2 class="itc-filters__title">' . esc_html__( 'Search', 'itour-core' ) . '</h2><label class="itc-field"><span>' . esc_html__( 'Destination', 'itour-core' ) . '</span><input type="search" name="where" value="' . esc_attr( $where ) . '" placeholder="' . esc_attr__( 'Where are you going?', 'itour-core' ) . '"></label><button type="submit" class="wp-element-button itc-filters__go">' . esc_html__( 'Search', 'itour-core' ) . '</button></section>';
+		$h .= '<details class="itc-filters__box itc-filters__more" open data-itc-more><summary class="itc-filters__title">' . esc_html__( 'Filter by', 'itour-core' ) . '</summary>';
+		if ( $top > 0 ) {
+			$cur = $max ? min( $max, $top ) : $top;
+			$h  .= '<fieldset class="itc-filter"><legend>' . esc_html__( 'Price up to', 'itour-core' ) . '</legend><input type="range" name="max" min="0" max="' . (int) $top . '" step="5" value="' . (int) $cur . '" data-itc-range aria-describedby="itc-max-out"><output id="itc-max-out" data-itc-out>' . esc_html( itour()->currencies()->format( (float) $cur ) ) . '</output></fieldset>';
+		}
+		$box = static function ( string $legend, string $name, array $opts, array $on ): string {
+			if ( ! $opts ) {
+				return '';
+			}
+			$h = '<fieldset class="itc-filter"><legend>' . esc_html( $legend ) . '</legend>';
+			foreach ( $opts as $v => $label ) {
+				$h .= '<label class="itc-check"><input type="checkbox" name="' . esc_attr( $name ) . '[]" value="' . (int) $v . '"' . checked( in_array( (int) $v, $on, true ), true, false ) . '> ' . esc_html( (string) $label ) . '</label>';
+			}
+			return $h . '</fieldset>';
+		};
+		$h  .= $box( __( 'Destination', 'itour-core' ), 'dest', $dest_opt, $dests );
+		$h  .= $box( __( 'Category', 'itour-core' ), 'cat', wp_list_pluck( $terms, 'name', 'term_id' ), $cats );
+		$h  .= '<input type="hidden" name="sort" value="' . esc_attr( $sort ) . '"><input type="hidden" name="view" value="' . esc_attr( $view ) . '">';
+		$h  .= '<noscript><button type="submit" class="wp-element-button">' . esc_html__( 'Apply', 'itour-core' ) . '</button></noscript>';
+		if ( $where || $dests || $cats || $max ) {
+			$h .= '<a class="itc-filters__reset" href="' . esc_url( (string) strtok( (string) get_permalink(), '?' ) ) . '">' . esc_html__( 'Clear all filters', 'itour-core' ) . '</a>';
+		}
+		$h .= '</details></form></aside>';
+
+		/* translators: %d: number of trips found. */
+		$found = sprintf( _n( '%d trip found', '%d trips found', count( $ids ), 'itour-core' ), count( $ids ) );
+		$sorts = array(
+			''           => __( 'Recommended', 'itour-core' ),
+			'price_asc'  => __( 'Price: low to high', 'itour-core' ),
+			'price_desc' => __( 'Price: high to low', 'itour-core' ),
+			'name'       => __( 'Name', 'itour-core' ),
+		);
+		$h    .= '<div class="itc-results"><div class="itc-results__bar"><p class="itc-results__count" role="status">' . esc_html( $found ) . '</p><label class="itc-sort"><span>' . esc_html__( 'Sort', 'itour-core' ) . '</span><select data-itc-sort>';
+		foreach ( $sorts as $k => $label ) {
+			$h .= '<option value="' . esc_attr( $k ) . '"' . selected( $sort, $k, false ) . '>' . esc_html( $label ) . '</option>';
+		}
+		$h    .= '</select></label><div class="itc-view" role="group" aria-label="' . esc_attr__( 'View', 'itour-core' ) . '">';
+		$icons = array(
+			'grid' => array( __( 'Grid', 'itour-core' ), '<rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/>' ),
+			'list' => array( __( 'List', 'itour-core' ), '<rect x="4" y="5" width="5" height="5" rx="1"/><rect x="4" y="14" width="5" height="5" rx="1"/><path d="M12 6.5h8M12 9h5M12 15.5h8M12 18h5"/>' ),
+		);
+		foreach ( $icons as $k => list( $label, $path ) ) {
+			$h .= '<a href="' . esc_url( add_query_arg( 'view', $k ) ) . '" aria-label="' . esc_attr( $label ) . '"' . ( $view === $k ? ' aria-current="true"' : '' ) . '><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">' . $path . '</svg></a>';
+		}
+		$h .= '</div></div>';
+		if ( $ids ) {
+			$h .= str_replace( 'class="itc-grid"', 'class="itc-grid' . ( 'list' === $view ? ' itc-grid--row' : '' ) . '"', self::grid( $ids ) );
+		} else {
+			$h .= '<div class="itc-none"><p>' . esc_html__( 'No trips match these filters.', 'itour-core' ) . '</p><a class="wp-element-button" href="' . esc_url( (string) strtok( (string) get_permalink(), '?' ) ) . '">' . esc_html__( 'Show all trips', 'itour-core' ) . '</a></div>';
+		}
+		return $h . '</div></div></div>';
 	}
 
 	/**

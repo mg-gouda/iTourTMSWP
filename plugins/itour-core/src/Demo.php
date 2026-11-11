@@ -164,18 +164,58 @@ final class Demo {
 		$h    = static fn( string $text ): string => "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">" . esc_html( $text ) . "</h2>\n<!-- /wp:heading -->\n";
 		$pat  = static fn( string $slug ): string => '<!-- wp:pattern {"slug":"wp-itourtms/' . $slug . '"} /-->' . "\n";
 		$book = "<!-- wp:itour/booking-widget {\"align\":\"wide\"} /-->\n";
+		$blk  = static fn( string $name, array $attrs ): string => '<!-- wp:itour/' . $name . ' ' . wp_json_encode( $attrs + array( 'align' => 'wide' ), JSON_UNESCAPED_UNICODE ) . ' /-->' . "\n";
 
 		return array(
-			__( 'Home', 'itour-core' )      => $pat( 'hero' ) . $book
-				// Blocks show nothing until trips exist (Tour Packages / Excursions plugins).
-				. '<!-- wp:itour/destinations {"title":"' . esc_attr__( 'Where we go', 'itour-core' ) . '","align":"wide"} /-->' . "\n"
-				. '<!-- wp:itour/trips {"title":"' . esc_attr__( 'Popular trips', 'itour-core' ) . '","align":"wide"} /-->' . "\n"
+			// Booking-site order: search, reassurance, a section per kind, destinations, transfers.
+			// Blocks show nothing until trips exist (Tour Packages / Excursions / Transfers plugins).
+			__( 'Home', 'itour-core' )      => $pat( 'hero' ) . $book . $pat( 'trust-strip' )
+				. $blk(
+					'trips',
+					array(
+						'types'    => array( 'tours' ),
+						'title'    => __( 'Top tour packages', 'itour-core' ),
+						'subtitle' => __( 'Hand-picked multi-day holidays', 'itour-core' ),
+						'style'    => 'row',
+						'more'     => true,
+					)
+				)
+				. $blk( 'destinations', array( 'title' => __( 'Popular destinations', 'itour-core' ) ) )
+				. $blk(
+					'trips',
+					array(
+						'types'    => array( 'excursions' ),
+						'title'    => __( 'Excursions and day trips', 'itour-core' ),
+						'subtitle' => __( 'Add an unforgettable experience to your stay', 'itour-core' ),
+						'style'    => 'row',
+						'more'     => true,
+					)
+				)
+				. $blk(
+					'transfer-routes',
+					array(
+						'title'    => __( 'Airport transfers', 'itour-core' ),
+						'subtitle' => __( 'Private, fixed-price rides from the airport to your hotel', 'itour-core' ),
+					)
+				)
 				. $pat( 'why-book' ) . $pat( 'call-to-action' ),
-			__( 'Tours', 'itour-core' )     => $p( esc_html__( 'Multi-day packages with hotels, guides and transfers included. Nile cruises, Cairo and the pyramids, Luxor and Aswan, the Red Sea coast.', 'itour-core' ) )
-				. $book
-				. "<!-- wp:itour/trips {\"types\":[\"tours\"],\"listing\":true,\"align\":\"wide\"} /-->\n",
-			__( 'Day trips', 'itour-core' ) => $p( esc_html__( 'Excursions from your hotel, with pick-up and drop-off.', 'itour-core' ) )
-				. "<!-- wp:itour/trips {\"types\":[\"excursions\"],\"listing\":true,\"align\":\"wide\"} /-->\n",
+			// Listing pages: the block brings its own banner (page title + subtitle), search and filters.
+			__( 'Tours', 'itour-core' )     => $blk(
+				'trips',
+				array(
+					'types'    => array( 'tours' ),
+					'listing'  => true,
+					'subtitle' => __( 'Multi-day packages with hotels, guides and transfers included.', 'itour-core' ),
+				)
+			),
+			__( 'Day trips', 'itour-core' ) => $blk(
+				'trips',
+				array(
+					'types'    => array( 'excursions' ),
+					'listing'  => true,
+					'subtitle' => __( 'Excursions from your hotel, with pick-up and drop-off.', 'itour-core' ),
+				)
+			),
 			__( 'Transfers', 'itour-core' ) => $p( esc_html__( 'Private airport and hotel transfers with a fixed price per car, not per person. Your driver waits at arrivals with your name.', 'itour-core' ) )
 				. "<!-- wp:itour/booking-widget {\"tabs\":[\"transfers\"]} /-->\n", // Hidden from visitors until iTour Transfers is active.
 			__( 'About', 'itour-core' )     => $h( __( 'A local travel company', 'itour-core' ) )

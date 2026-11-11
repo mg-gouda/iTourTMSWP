@@ -12,6 +12,9 @@
 	"supports": { "align": [ "wide", "full" ], "html": false, "spacing": { "margin": true } },
 	"attributes": {
 		"title": { "type": "string", "default": "" },
+		"subtitle": { "type": "string", "default": "" },
+		"style": { "type": "string", "default": "grid" },
+		"more": { "type": "boolean", "default": false },
 		"types": { "type": "array", "default": [] },
 		"count": { "type": "number", "default": 6 },
 		"transfers": { "type": "boolean", "default": true },

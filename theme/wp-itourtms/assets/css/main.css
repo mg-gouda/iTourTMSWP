@@ -173,3 +173,11 @@ a[href^="tel:"], a[href^="mailto:"] { unicode-bidi: isolate; direction: ltr; }
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Reassurance strip (pattern wp-itourtms/trust-strip): three reasons with line icons, under the home search. */
+.wp-itourtms-trust { gap: 12px 40px; padding-block: 18px; border-block-end: 1px solid var(--wp--preset--color--line); }
+.wp-itourtms-trust__item { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-weight: 600; }
+.wp-itourtms-trust__item::before { content: ""; flex: none; width: 22px; height: 22px; background: var(--wp--preset--color--brand-dark); -webkit-mask: var(--wp-itourtms-trust-icon) center / contain no-repeat; mask: var(--wp-itourtms-trust-icon) center / contain no-repeat; }
+.wp-itourtms-trust__item.is-icon-map { --wp-itourtms-trust-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4Z'/%3E%3Cpath d='M9 4v13.5M15 6.5V20'/%3E%3C/svg%3E"); }
+.wp-itourtms-trust__item.is-icon-lock { --wp-itourtms-trust-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='10.5' width='15' height='10' rx='2'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E"); }
+.wp-itourtms-trust__item.is-icon-chat { --wp-itourtms-trust-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5 5 16.2a8.5 8.5 0 1 1 15.5-4.6Z'/%3E%3C/svg%3E"); }

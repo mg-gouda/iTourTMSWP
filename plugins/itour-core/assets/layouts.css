@@ -154,3 +154,66 @@ html:has(.itl) { scroll-behavior: smooth; }
 .itl-trust li { display: inline-flex; align-items: center; gap: 6px; }
 .itl-trust svg { flex: none; color: var(--wp--preset--color--brand-dark, #660066); }
 .itl-hero .itl-trust svg { color: inherit; }
+
+/* ---------- Classic (booking-site pattern): breadcrumb, key facts, photo slider, booking card ---------- */
+.itl-crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 8px; margin: 0; padding: 0; list-style: none; color: var(--itl-muted); font-size: 0.875rem; }
+.itl-crumbs li:not(:last-child)::after { content: "/"; margin-inline-start: 8px; color: var(--itl-line); }
+.itl-crumbs a { color: inherit; text-decoration: none; }
+.itl-crumbs a:hover { color: var(--itl-ink); text-decoration: underline; text-underline-offset: 3px; }
+.itl-crumbs [aria-current] { color: var(--itl-ink); }
+.itl--classic .itl-grid { margin-block-start: 18px; }
+.itl--classic .itl-head { margin: 0; }
+@media (min-width: 1024px) { .itl--classic .itl-aside { margin-block-start: 0; } }
+
+.itl-keyfacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px 20px; margin: 22px 0 0; padding: 16px 0; border-block: 1px solid var(--itl-line); }
+.itl-keyfacts div { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
+.itl-keyfacts svg { grid-row: span 2; color: var(--itl-brand); }
+.itl-keyfacts dt { color: var(--itl-muted); font-size: 0.8125rem; }
+.itl-keyfacts dd { margin: 0; font-weight: 600; line-height: 1.3; }
+
+.itl-slider { position: relative; margin-block-start: 22px; border-radius: var(--itl-radius); overflow: hidden; background: var(--itl-surface); }
+.itl-slider__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; aspect-ratio: 16 / 10; max-height: 520px; }
+.itl-slider__track::-webkit-scrollbar { display: none; }
+.itl-slider__track:focus-visible { outline-offset: -3px; }
+.itl-slider__slide { flex: 0 0 100%; scroll-snap-align: center; }
+.itl-slider__nav { position: absolute; top: 50%; display: grid; place-items: center; width: 42px; height: 42px; margin-top: -21px; padding: 0; border: 0; border-radius: 999px; background: rgb(255 255 255 / 0.92); color: var(--itl-ink); cursor: pointer; box-shadow: 0 2px 10px rgb(0 0 0 / 0.18); transition: transform .15s ease-out, opacity .15s ease-out; }
+.itl-slider__nav:hover { transform: scale(1.06); }
+.itl-slider__nav[disabled] { opacity: 0; pointer-events: none; }
+.itl-slider__nav--prev { inset-inline-start: 14px; }
+.itl-slider__nav--next { inset-inline-end: 14px; }
+[dir="rtl"] .itl-slider__nav svg { transform: scaleX(-1); }
+.itl-slider__count { position: absolute; inset-block-end: 14px; inset-inline-end: 14px; padding: 4px 10px; border-radius: 999px; background: rgb(12 10 16 / 0.6); color: #fff; font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.itl-thumbs { display: flex; gap: 8px; margin-block-start: 8px; overflow-x: auto; scrollbar-width: thin; }
+.itl-thumbs__item { flex: 0 0 auto; width: 96px; height: 64px; padding: 0; border: 2px solid transparent; border-radius: calc(var(--itl-radius) - 4px); overflow: hidden; background: none; cursor: pointer; opacity: 0.7; transition: opacity .15s ease-out, border-color .15s ease-out; }
+.itl-thumbs__item:hover { opacity: 1; }
+.itl-thumbs__item[aria-current="true"] { border-color: var(--itl-brand); opacity: 1; }
+@media (max-width: 720px) {
+	.itl-slider { margin-inline: calc(-1 * var(--wp-itourtms-gutter, 16px)); border-radius: 0; }
+	.itl-slider__nav { display: none; }
+	.itl-thumbs { display: none; }
+}
+
+/* Booking card: price band, form, booking conditions. */
+.itl-book { padding: 0; overflow: hidden; }
+.itl-book__band { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; padding: 14px 20px; background: var(--itl-brand-dark); color: #fff; }
+.itl-book__band span { color: rgb(255 255 255 / 0.82); font-size: 0.875rem; }
+.itl-book__band strong { font-family: var(--itl-head); font-size: 1.625rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.itl-book__body { padding: 20px; }
+.itl-book__title { font-size: 1.125rem; }
+.itl-book__cond { display: block; margin: 14px auto 0; padding: 4px; border: 0; background: none; color: var(--itl-muted); font: inherit; font-size: 0.875rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.itl-book__cond:hover { color: var(--itl-ink); }
+.itl-cond { width: min(560px, calc(100vw - 32px)); max-height: 80vh; padding: 0 24px 24px; border: 0; border-radius: var(--itl-radius); color: var(--itl-ink); box-shadow: 0 24px 60px rgb(16 12 24 / 0.3); }
+.itl-cond::backdrop { background: rgb(10 8 14 / 0.5); }
+.itl-cond__head { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 18px 0 8px; background: inherit; }
+.itl-cond__head h2 { margin: 0; font-family: var(--itl-head); font-size: 1.25rem; }
+.itl-cond h3 { margin: 12px 0 8px; font-size: 1rem; }
+.itl-cond__x { width: 36px; height: 36px; border: 0; border-radius: 999px; background: var(--itl-surface); color: var(--itl-ink); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+
+/* In the booking card each traveller type is one row: label on the left, −/+ on the right. */
+.itl-book .itour-tb__field:has(.itl-step) { display: flex; grid-column: 1 / -1; align-items: center; justify-content: space-between; gap: 12px; padding-block: 6px; border-block-end: 1px solid var(--itl-line); }
+.itl-book .itour-tb__field:has(.itl-step) label { margin: 0; }
+.itl-book .itour-tb__field:has(.itl-step) .itour-tb__error { flex-basis: 100%; }
+.itl-book .itour-tb__field:has(.itl-step) { flex-wrap: wrap; }
+.itl-book .itour-tb__field:has(.itl-step) label { flex: 1 1 auto; width: auto; text-align: start; }
+.itl-book .itour-tb__field:has(.itl-step) .itl-step { flex: none; }
+.itl-book .itour-tb__field:has(.itl-step) { flex-direction: row; }

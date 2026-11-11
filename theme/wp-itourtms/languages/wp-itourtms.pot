@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP iTourTMS 0.1.0\n"
+"Project-Id-Version: WP iTourTMS 0.1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/mg-gouda/iTourTMSWP/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T23:12:01+00:00\n"
+"POT-Creation-Date: 2026-11-11T13:13:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-itourtms\n"
@@ -1220,7 +1220,7 @@ msgid "Email"
 msgstr ""
 
 #: inc/options.php:365
-#: inc/template-tags.php:93
+#: inc/template-tags.php:98
 msgid "WhatsApp"
 msgstr ""
 
@@ -1462,6 +1462,28 @@ msgstr ""
 
 #: patterns/hero.php:31
 msgid "Talk to us"
+msgstr ""
+
+#: patterns/trust-strip.php
+msgctxt "Pattern title"
+msgid "Reassurance strip"
+msgstr ""
+
+#: patterns/trust-strip.php
+msgctxt "Pattern description"
+msgid "Three short reasons to book in one row with icons, under the home page search."
+msgstr ""
+
+#: patterns/trust-strip.php:16
+msgid "Tours and day trips all over the country"
+msgstr ""
+
+#: patterns/trust-strip.php:20
+msgid "Easy and secure online booking"
+msgstr ""
+
+#: patterns/trust-strip.php:24
+msgid "Local travel experts to help you"
 msgstr ""
 
 #: patterns/why-book.php
