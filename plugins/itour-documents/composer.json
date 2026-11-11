@@ -1,0 +1,17 @@
+{
+	"name": "mg-gouda/itour-documents",
+	"description": "Travel vouchers, service orders and booking reports for iTourTMS (PDF via mPDF).",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=8.1",
+		"mpdf/mpdf": "^8.2"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"platform": { "php": "8.1" }
+	},
+	"scripts": {
+		"post-install-cmd": "php trim-fonts.php",
+		"post-update-cmd": "php trim-fonts.php"
+	}
+}

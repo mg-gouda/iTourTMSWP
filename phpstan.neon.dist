@@ -10,3 +10,8 @@ parameters:
 		- vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
 	bootstrapFiles:
 		- tools/phpstan-bootstrap.php
+	ignoreErrors:
+		# mPDF lives in the plugin's own vendor/ (composer install; not in git), so CI cannot see it.
+		-
+			identifier: class.notFound
+			path: plugins/itour-documents/src/Pdf.php

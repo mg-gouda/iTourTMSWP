@@ -1,0 +1,408 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: itour-documents\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: itour-documents\n"
+
+#. Plugin Name of the plugin
+#: itour-documents.php
+msgid "iTour Travel Documents"
+msgstr "iTour Travel Documents"
+
+#. Plugin URI of the plugin
+#: itour-documents.php
+msgid "https://github.com/mg-gouda/iTourTMSWP"
+msgstr ""
+
+#. Description of the plugin
+#: itour-documents.php
+msgid "PDF travel documents: a Travel Voucher for the guest (attached to the order emails and linked from My account), a Service Order for drivers and suppliers (no guest prices, cash to collect), and a Booking Report for any date range with totals per currency. Covers excursion and transfer bookings."
+msgstr "مستندات سفر PDF: قسيمة سفر للضيف (مرفقة برسائل الطلب ومتاحة من حسابي)، وأمر خدمة للسائقين والموردين (بدون أسعار الضيف، مع المبلغ المطلوب تحصيله)، وتقرير حجوزات لأي فترة مع الإجماليات لكل عملة. يشمل حجوزات الرحلات والتنقلات."
+
+#. Author of the plugin
+#: itour-documents.php
+msgid "Mohamed Gouda"
+msgstr ""
+
+#. Author URI of the plugin
+#: itour-documents.php
+msgid "https://wa.me/+201002805139"
+msgstr ""
+
+#: src/Data.php:138
+msgid "Excursion"
+msgstr "رحلة"
+
+#: src/Data.php:144
+#: src/Pdf.php:348
+msgid "Date"
+msgstr "التاريخ"
+
+#: src/Data.php:145
+msgid "Start time"
+msgstr "وقت البدء"
+
+#: src/Data.php:146
+msgid "Duration"
+msgstr "المدة"
+
+#: src/Data.php:147
+#: src/Data.php:167
+msgid "Pick-up"
+msgstr "الاستقبال"
+
+#: src/Data.php:148
+msgid "Meeting point"
+msgstr "نقطة التجمع"
+
+#: src/Data.php:149
+msgid "Travellers"
+msgstr "المسافرون"
+
+#: src/Data.php:150
+msgid "Option"
+msgstr "الخيار"
+
+#: src/Data.php:150
+msgid "Private"
+msgstr "خاصة"
+
+#: src/Data.php:150
+msgid "Shared group"
+msgstr "مجموعة مشتركة"
+
+#: src/Data.php:151
+msgid "Extras"
+msgstr "الإضافات"
+
+#: src/Data.php:161
+msgid "Private transfer"
+msgstr "تنقل خاص"
+
+#: src/Data.php:168
+#: src/Routes.php:196
+msgid "From"
+msgstr "من"
+
+#: src/Data.php:169
+#: src/Routes.php:196
+msgid "To"
+msgstr "إلى"
+
+#: src/Data.php:170
+msgid "Flight"
+msgstr "الرحلة الجوية"
+
+#: src/Data.php:171
+msgid "Return"
+msgstr "العودة"
+
+#: src/Data.php:172
+msgid "Return flight"
+msgstr "رحلة العودة"
+
+#: src/Data.php:173
+msgid "Vehicle"
+msgstr "السيارة"
+
+#: src/Data.php:174
+msgid "Passengers"
+msgstr "الركاب"
+
+#: src/Data.php:175
+msgid "Child seats"
+msgstr "مقاعد الأطفال"
+
+#: src/Data.php:176
+msgid "Bags"
+msgstr "الحقائب"
+
+#. translators: %d: number of adults.
+#: src/Data.php:194
+#, php-format
+msgid "%d adult"
+msgid_plural "%d adults"
+msgstr[0] "%d بالغ"
+msgstr[1] "بالغ واحد"
+msgstr[2] "بالغان"
+msgstr[3] "%d بالغين"
+msgstr[4] "%d بالغًا"
+msgstr[5] "%d بالغ"
+
+#. translators: %d: number of children.
+#: src/Data.php:197
+#, php-format
+msgid "%d child"
+msgid_plural "%d children"
+msgstr[0] "%d طفل"
+msgstr[1] "طفل واحد"
+msgstr[2] "طفلان"
+msgstr[3] "%d أطفال"
+msgstr[4] "%d طفلًا"
+msgstr[5] "%d طفل"
+
+#. translators: %d: number of infants.
+#: src/Data.php:201
+#, php-format
+msgid "%d infant"
+msgid_plural "%d infants"
+msgstr[0] "%d رضيع"
+msgstr[1] "رضيع واحد"
+msgstr[2] "رضيعان"
+msgstr[3] "%d رضّع"
+msgstr[4] "%d رضيعًا"
+msgstr[5] "%d رضيع"
+
+#: src/Module.php:28
+msgid "Travel Documents"
+msgstr "مستندات السفر"
+
+#: src/Module.php:62
+#: src/Routes.php:193
+msgid "Booking report"
+msgstr "تقرير الحجوزات"
+
+#: src/Pdf.php:192
+msgid "Booking ref."
+msgstr "رقم الحجز"
+
+#. translators: %s: date.
+#: src/Pdf.php:196
+#, php-format
+msgid "Issued %s"
+msgstr "صدر في %s"
+
+#. translators: %s: licence number.
+#: src/Pdf.php:204
+#, php-format
+msgid "Tourism licence %s"
+msgstr "ترخيص سياحي %s"
+
+#. translators: 1: page number, 2: page count (mPDF fills them in).
+#: src/Pdf.php:206
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "صفحة %1$s من %2$s"
+
+#: src/Pdf.php:243
+msgid "Cancelled"
+msgstr "ملغى"
+
+#: src/Pdf.php:244
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#: src/Pdf.php:264
+msgid "Contact us for changes or cancellation."
+msgstr "تواصل معنا للتعديل أو الإلغاء."
+
+#. translators: %s: booking date.
+#: src/Pdf.php:278
+msgid "Travel Voucher"
+msgstr "قسيمة السفر"
+
+#. translators: %s: booking date.
+#: src/Pdf.php:278
+#, php-format
+msgid "Booking confirmation · booked on %s"
+msgstr "تأكيد الحجز · تاريخ الحجز %s"
+
+#: src/Pdf.php:281
+#: src/Pdf.php:327
+#: src/Pdf.php:348
+msgid "Lead traveller"
+msgstr "المسافر الرئيسي"
+
+#: src/Pdf.php:283
+msgid "Name"
+msgstr "الاسم"
+
+#: src/Pdf.php:284
+#: src/Pdf.php:305
+#: src/Pdf.php:328
+msgid "Phone"
+msgstr "الهاتف"
+
+#: src/Pdf.php:285
+#: src/Pdf.php:306
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: src/Pdf.php:287
+msgid "Your notes"
+msgstr "ملاحظاتك"
+
+#: src/Pdf.php:288
+msgid "Payment"
+msgstr "الدفع"
+
+#: src/Pdf.php:290
+msgid "Total price"
+msgstr "السعر الإجمالي"
+
+#: src/Pdf.php:291
+#: src/Pdf.php:348
+#: src/Pdf.php:368
+msgid "Paid"
+msgstr "المدفوع"
+
+#: src/Pdf.php:292
+msgid "To pay on the day"
+msgstr "يُدفع يوم الرحلة"
+
+#: src/Pdf.php:293
+msgid "Method"
+msgstr "طريقة الدفع"
+
+#: src/Pdf.php:300
+msgid "Included"
+msgstr "يشمل"
+
+#: src/Pdf.php:300
+msgid "Not included"
+msgstr "لا يشمل"
+
+#: src/Pdf.php:303
+msgid "Contact on the day"
+msgstr "للتواصل يوم الرحلة"
+
+#: src/Pdf.php:309
+msgid "Cancellation"
+msgstr "الإلغاء"
+
+#. translators: %s: booking reference.
+#: src/Pdf.php:312
+msgid "Good to know"
+msgstr "معلومات مهمة"
+
+#. translators: %s: booking reference.
+#: src/Pdf.php:312
+#, php-format
+msgid "Show this voucher, printed or on your phone, with a photo ID to your guide or driver. Be ready at the pick-up point 10 minutes early. For changes, quote booking ref. %s."
+msgstr "اعرض هذه القسيمة مطبوعة أو على هاتفك مع إثبات هوية بصورة للمرشد أو السائق. كن جاهزًا عند نقطة الاستقبال قبل الموعد بعشر دقائق. للتعديل، اذكر رقم الحجز %s."
+
+#: src/Pdf.php:321
+msgid "Service Order"
+msgstr "أمر خدمة"
+
+#: src/Pdf.php:321
+msgid "For the driver / supplier"
+msgstr "للسائق / المورد"
+
+#: src/Pdf.php:325
+msgid "Guest"
+msgstr "الضيف"
+
+#: src/Pdf.php:329
+#: src/Pdf.php:348
+msgid "People"
+msgstr "الأفراد"
+
+#: src/Pdf.php:331
+msgid "Guest notes"
+msgstr "ملاحظات الضيف"
+
+#: src/Pdf.php:332
+msgid "Cash to collect"
+msgstr "المبلغ المطلوب تحصيله"
+
+#: src/Pdf.php:332
+msgid "Nothing: paid online"
+msgstr "لا شيء: مدفوع أونلاين"
+
+#: src/Pdf.php:335
+msgid "Driver / guide name"
+msgstr "اسم السائق / المرشد"
+
+#: src/Pdf.php:335
+msgid "Signature"
+msgstr "التوقيع"
+
+#. translators: 1: start date, 2: end date.
+#: src/Pdf.php:347
+msgid "Booking Report"
+msgstr "تقرير الحجوزات"
+
+#. translators: 1: start date, 2: end date.
+#: src/Pdf.php:347
+#, php-format
+msgid "Service dates %1$s to %2$s"
+msgstr "تواريخ الخدمة من %1$s إلى %2$s"
+
+#: src/Pdf.php:348
+msgid "Ref."
+msgstr "الرقم"
+
+#: src/Pdf.php:348
+msgid "Service"
+msgstr "الخدمة"
+
+#: src/Pdf.php:348
+#: src/Pdf.php:368
+msgid "Total"
+msgstr "الإجمالي"
+
+#: src/Pdf.php:348
+#: src/Pdf.php:368
+msgid "To collect"
+msgstr "للتحصيل"
+
+#: src/Pdf.php:348
+msgid "Status"
+msgstr "الحالة"
+
+#: src/Pdf.php:364
+msgid "No bookings in these dates."
+msgstr "لا توجد حجوزات في هذه التواريخ."
+
+#: src/Pdf.php:368
+msgid "Currency"
+msgstr "العملة"
+
+#: src/Pdf.php:368
+msgid "Bookings"
+msgstr "الحجوزات"
+
+#: src/Pdf.php:372
+msgid "Totals leave out cancelled bookings."
+msgstr "الإجماليات لا تشمل الحجوزات الملغاة."
+
+#: src/Routes.php:105
+msgid "This document link is not valid. Open it from your booking email or your account."
+msgstr "رابط المستند غير صالح. افتحه من رسالة الحجز أو من حسابك."
+
+#: src/Routes.php:152
+msgid "Travel vouchers"
+msgstr "قسائم السفر"
+
+#: src/Routes.php:169
+msgid "Travel documents"
+msgstr "مستندات السفر"
+
+#: src/Routes.php:174
+msgid "No excursion or transfer bookings in this order."
+msgstr "لا توجد حجوزات رحلات أو تنقلات في هذا الطلب."
+
+#: src/Routes.php:178
+msgid "Travel voucher"
+msgstr "قسيمة السفر"
+
+#: src/Routes.php:178
+msgid "Service order"
+msgstr "أمر الخدمة"
+
+#: src/Routes.php:193
+msgid "Every excursion and transfer booking with a service date in this range: guest, people, price, paid and still to collect, with totals per currency. Opens as a PDF (A4 landscape)."
+msgstr "كل حجوزات الرحلات والتنقلات التي يقع تاريخ خدمتها في هذه الفترة: الضيف وعدد الأفراد والسعر والمدفوع والمتبقي للتحصيل، مع الإجماليات لكل عملة. يُفتح كملف PDF (A4 بالعرض)."
+
+#: src/Routes.php:197
+msgid "Open report"
+msgstr "فتح التقرير"
+
+#: src/Routes.php:207
+msgid "Sorry, you are not allowed to do that."
+msgstr "عذرًا، غير مسموح لك بذلك."

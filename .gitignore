@@ -9,3 +9,4 @@ node_modules/
 dist/
 theme/wp-itourtms/inc/license-pubkey.pem
 .impeccable/hook.cache.json
+plugins/*/vendor/

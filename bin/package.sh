@@ -52,6 +52,11 @@ cp dist/themeforest/wp-itourtms.zip dist/stage/
 
 echo "→ plugins"
 mkdir -p dist/stage/plugins
+# Plugins with a composer.json ship their vendor/ (e.g. iTour Travel Documents → mPDF): install it, no dev deps.
+for c in plugins/*/composer.json; do
+	d="$(dirname "$c")"
+	docker run --rm -u "$(id -u):$(id -g)" -v "$root/$d:/app" -w /app composer:2 composer install --no-dev --no-interaction --no-progress --ignore-platform-req=ext-gd >/dev/null
+done
 for p in plugins/*/; do
 	# Module placeholders (plugin header + empty Module class) aren't shipped until they do something.
 	[ "$(find "$p" -name '*.php' | wc -l)" -gt 2 ] || { echo "  skip $(basename "$p") (placeholder)"; continue; }
@@ -63,7 +68,13 @@ mkdir -p dist/stage/licensing
 cat > dist/stage/licensing/README.txt <<EOF
 WP iTourTMS ${ver}, (C) 2026 Mohamed Gouda.
 The theme, child theme and iTour plugins are 100% GPL: GNU General Public License v2 or later
-(https://www.gnu.org/licenses/gpl-2.0.html). No third-party code, fonts or images are bundled.
+(https://www.gnu.org/licenses/gpl-2.0.html). No third-party images are bundled.
+
+Third-party code inside the iTour Travel Documents plugin (plugins/itour-documents.zip → vendor/):
+- mPDF (https://mpdf.github.io), GPL-2.0-only
+- FPDI by Setasign (https://www.setasign.com/fpdi), MIT
+- DeepCopy by myclabs, MIT; random_compat by Paragon Initiative, MIT; PSR HTTP Message and PSR Log interfaces, MIT
+- DejaVu Sans fonts (https://dejavu-fonts.github.io), Bitstream Vera / DejaVu free licence (see vendor/mpdf/mpdf/ttfonts/DejaVuinfo.txt)
 EOF
 cat > dist/stage/README.txt <<EOF
 WP iTourTMS ${ver}
