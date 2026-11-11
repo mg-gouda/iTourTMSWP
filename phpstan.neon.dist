@@ -6,6 +6,7 @@ parameters:
 	excludePaths:
 		- */vendor/*
 		- */languages/*
+		- plugins/itour-languages/*
 	scanFiles:
 		- vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
 	bootstrapFiles:
